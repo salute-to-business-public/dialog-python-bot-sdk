@@ -5,10 +5,14 @@ import time
 
 
 class Messaging(ManagedService):
-    def send_message(self, peer, text):
+    def send_message(self, peer, text, iteractive_media_groups=None):
         outpeer = self.manager.get_outpeer(peer)
         msg = messaging_pb2.MessageContent()
         msg.textMessage.text = text
+        if iteractive_media_groups is not None:
+            for g in iteractive_media_groups:
+                media = msg.textMessage.media.add()
+                g.render(media)
         return self.internal.messaging.SendMessage(messaging_pb2.RequestSendMessage(
             peer = outpeer,
             rid = int(time.time()),
