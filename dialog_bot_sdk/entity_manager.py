@@ -14,6 +14,14 @@ class EntityManager(object):
     def __init__(self, internal):
         self.internal = internal
         self.peers_to_outpeers = {}
+        self.bootstrap()
+
+    def bootstrap(self):
+        contacts = self.internal.contacts.GetContacts(contacts_pb2.RequestGetContacts(
+            optimizations = DEFAULT_OPTIMIZATIONS
+        ))
+        for user in contacts.user_peers:
+            self.adopt_peer(user)
 
     def adopt_peer(self, peer):
         if isinstance(peer, peers_pb2.UserOutPeer):

@@ -1,6 +1,7 @@
 from service import ManagedService
 from dialog_api import messaging_pb2, sequence_and_updates_pb2
 from google.protobuf import empty_pb2
+import time
 
 
 class Messaging(ManagedService):
@@ -10,10 +11,16 @@ class Messaging(ManagedService):
         msg.textMessage.text = text
         return self.internal.messaging.SendMessage(messaging_pb2.RequestSendMessage(
             peer = outpeer,
+            rid = int(time.time()),
             message = msg
         )).mid
 
     def on_message(self, callback):
         for update in self.internal.updates.SeqUpdates(empty_pb2.Empty()):
-            #up = sequence_and_updates_pb2.UpdateSeqUpdate()
-            return
+            up = sequence_and_updates_pb2.UpdateSeqUpdate()
+            up.ParseFromString(update.update.value)
+            print up.WhichOneof('update'), up.update_header
+            if up.update_header == 55:
+                #up.WhichOneof('update')
+                callback(up.updateMessage)
+            #return
