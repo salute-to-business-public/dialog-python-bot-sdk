@@ -1,7 +1,7 @@
 import grpc
-from internal.bot import InternalBot
-from entity_manager import EntityManager
-from messaging import Messaging
+from .internal.bot import InternalBot
+from .entity_manager import EntityManager
+from .messaging import Messaging
 
 
 class DialogBot(object):

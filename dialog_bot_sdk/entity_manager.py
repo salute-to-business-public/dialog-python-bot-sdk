@@ -1,6 +1,9 @@
-from internal.peers import private_peer, group_peer, peer_hasher
-from dialog_api import peers_pb2, messaging_pb2, miscellaneous_pb2, \
-                       contacts_pb2, search_pb2
+from .internal.peers import private_peer, group_peer, peer_hasher
+import dialog_api
+if dialog_api.PATH_WORKAROUND:
+    import peers_pb2, messaging_pb2, miscellaneous_pb2, contacts_pb2, search_pb2
+else:
+    from dialog_api import peers_pb2, messaging_pb2, miscellaneous_pb2, contacts_pb2, search_pb2
 
 DEFAULT_OPTIMIZATIONS = [
     miscellaneous_pb2.UPDATEOPTIMIZATION_STRIP_ENTITIES,
@@ -38,7 +41,7 @@ class EntityManager(object):
         result = self.peers_to_outpeers.get(hash)
         if result is None:
             req = messaging_pb2.RequestLoadDialogs(
-                min_date = 0L, limit = 1, peers_to_load=[peer],
+                min_date = 0, limit = 1, peers_to_load=[peer],
                 optimizations = DEFAULT_OPTIMIZATIONS
             )
             result = self.internal.messaging.LoadDialogs(req)
