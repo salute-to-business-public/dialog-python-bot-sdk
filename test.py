@@ -7,7 +7,7 @@ from dialog_bot_sdk import interactive_media
 import time
 
 def on_msg(*params):
-    print 'on msg', params
+    print('on msg', params)
 
 if __name__ == '__main__':
     d = DialogBot.get_insecure_bot("grpc-test.transmit.im:8080", "c1ff5ca4b7e5fa4660c6a730fdcb613e31deafd8")

@@ -1,4 +1,4 @@
-from service import AuthenticatedService
+from .service import AuthenticatedService
 from dialog_api import registration_pb2, registration_pb2_grpc,\
                        sequence_and_updates_pb2_grpc,\
                        authentication_pb2, authentication_pb2_grpc,\
@@ -28,7 +28,7 @@ class InternalBot(object):
                 device_title = self.app_title
             )
         )
-        print registation_response.token
+        print(registation_response.token)
         return registation_response.token
 
     def wrap_sevice(self, stub_func):

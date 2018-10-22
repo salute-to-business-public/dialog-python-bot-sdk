@@ -10,7 +10,7 @@ class AuthenticatedService(object):
     def __decorated(self, method_name, method):
         def inner(param):
             auth_token = self.auth_token_func()
-            print 'Calling %s with token=`%s`' % (method_name, auth_token)
+            print('Calling %s with token=`%s`' % (method_name, auth_token))
             if auth_token is not None:
                 metadata = (('x-auth-ticket', auth_token),)
             else:

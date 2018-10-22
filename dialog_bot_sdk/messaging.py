@@ -1,4 +1,4 @@
-from service import ManagedService
+from .service import ManagedService
 from dialog_api import messaging_pb2, sequence_and_updates_pb2
 from google.protobuf import empty_pb2
 import time
@@ -23,7 +23,7 @@ class Messaging(ManagedService):
         for update in self.internal.updates.SeqUpdates(empty_pb2.Empty()):
             up = sequence_and_updates_pb2.UpdateSeqUpdate()
             up.ParseFromString(update.update.value)
-            print up.WhichOneof('update'), up.update_header
+            print(up.WhichOneof('update'), up.update_header)
             if up.update_header == 55:
                 #up.WhichOneof('update')
                 callback(up.updateMessage)

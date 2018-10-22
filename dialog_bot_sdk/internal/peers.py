@@ -1,4 +1,8 @@
-from dialog_api import peers_pb2
+import dialog_api
+if dialog_api.PATH_WORKAROUND:
+    import peers_pb2
+else:
+    from dialog_api import peers_pb2
 
 def private_peer(user_id):
     return peers_pb2.Peer(type=peers_pb2.PEERTYPE_PRIVATE, id=user_id)
