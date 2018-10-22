@@ -12,6 +12,7 @@ class InteractiveMediaButton(object):
             target.label.value = self.label
         target.value = self.value
 
+
 class InteractiveMediaSelect(object):
     # options = {'value': 'label'}
     def __init__(self, label=None, default_value=None, options=None):
@@ -29,6 +30,7 @@ class InteractiveMediaSelect(object):
             opt = target.options.add()
             opt.value = value
             opt.label = label
+
 
 class InteractiveMediaConfirm(object):
     def __init__(self, text=None, title=None, ok=None, dismiss=None):
@@ -58,6 +60,7 @@ class InteractiveMedia(object):
     }
     # style one of ['default', 'primary', 'danger', None]
     # widget = InteractiveMediaButton | InteractiveMediaSelect
+
     def __init__(self, id, widget, style=None, confirm=None):
         self.id = id
         self.widget = widget
@@ -65,7 +68,7 @@ class InteractiveMedia(object):
         self.confirm = confirm
 
     def render(self, target):
-        target.id = unicode(self.id)
+        target.id = str(self.id)
         target.style = self.style_map.get(self.style, messaging_pb2.INTERACTIVEMEDIASTYLE_UNKNOWN)
         if self.widget is not None:
             if isinstance(self.widget, InteractiveMediaButton):
@@ -79,7 +82,7 @@ class InteractiveMedia(object):
 
 class InteractiveMediaGroup(object):
     # translations = {'lang': [{'id': 'value'}]} dict
-    def __init__(self, actions, title=None, description=None, translations={}):
+    def __init__(self, actions, title=None, description=None, translations=None):
         assert isinstance(actions, list)
         self.actions = actions
         self.title = title
@@ -95,8 +98,8 @@ class InteractiveMediaGroup(object):
             media.title.value = self.title
         if self.description is not None:
             media.description.value = self.description
-        for lang, trans in self.translations.iteritems():
+        for lang, trans in self.translations.items():
             group = messaging_pb2.InteractiveMediaTranslationGroup(lang=lang)
-            for id, value in trans.iteritems():
-                group.messages.append(InteractiveMediaTranslation(id=id, value=value))
+            for idx, value in trans.items():
+                group.messages.append(messaging_pb2.InteractiveMediaTranslation(id=idx, value=value))
             media.translations.append(group)
