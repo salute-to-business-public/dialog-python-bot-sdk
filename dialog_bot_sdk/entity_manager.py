@@ -21,7 +21,7 @@ class EntityManager(object):
 
     def bootstrap(self):
         contacts = self.internal.contacts.GetContacts(contacts_pb2.RequestGetContacts(
-            optimizations = DEFAULT_OPTIMIZATIONS
+            optimizations=DEFAULT_OPTIMIZATIONS
         ))
         for user in contacts.user_peers:
             self.adopt_peer(user)

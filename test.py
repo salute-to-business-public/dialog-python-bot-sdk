@@ -1,14 +1,16 @@
 # coding: utf-8
 from dialog_bot_sdk.peers import private_peer
 from dialog_bot_sdk.bot import DialogBot
-from dialog_api import messaging_pb2
-#from threading import Thread
+# from dialog_api import messaging_pb2
+# from threading import Thread
 from dialog_bot_sdk import interactive_media
 import time
 
 
 def on_msg(*params):
-    print('on msg', params)
+    # print('on msg', params)
+    for update in d.updates.get_difference(2089).updates:
+        print(update)
 
 
 if __name__ == '__main__':
