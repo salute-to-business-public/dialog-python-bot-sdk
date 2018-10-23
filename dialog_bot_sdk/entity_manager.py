@@ -1,9 +1,9 @@
 from .internal.peers import private_peer, group_peer, peer_hasher
 import dialog_api
 if dialog_api.PATH_WORKAROUND:
-    import peers_pb2, messaging_pb2, miscellaneous_pb2, contacts_pb2, search_pb2
+    import peers_pb2, messaging_pb2, miscellaneous_pb2, contacts_pb2
 else:
-    from dialog_api import peers_pb2, messaging_pb2, miscellaneous_pb2, contacts_pb2, search_pb2
+    from dialog_api import peers_pb2, messaging_pb2, miscellaneous_pb2, contacts_pb2
 
 DEFAULT_OPTIMIZATIONS = [
     miscellaneous_pb2.UPDATEOPTIMIZATION_STRIP_ENTITIES,
@@ -37,17 +37,19 @@ class EntityManager(object):
             raise RuntimeError("Unknown peer type")
 
     def get_outpeer(self, peer):
-        hash = peer_hasher(peer)
-        result = self.peers_to_outpeers.get(hash)
+        peer_hash = peer_hasher(peer)
+        result = self.peers_to_outpeers.get(peer_hash)
         if result is None:
             req = messaging_pb2.RequestLoadDialogs(
-                min_date = 0, limit = 1, peers_to_load=[peer],
-                optimizations = DEFAULT_OPTIMIZATIONS
+                min_date=0,
+                limit=1,
+                peers_to_load=[peer],
+                optimizations=DEFAULT_OPTIMIZATIONS
             )
             result = self.internal.messaging.LoadDialogs(req)
             for user in result.user_peers:
                 self.adopt_peer(user)
             for group in result.group_peers:
                 self.adopt_peer(group)
-            return self.peers_to_outpeers.get(hash)
+            return self.peers_to_outpeers.get(peer_hash)
         return result

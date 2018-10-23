@@ -6,11 +6,13 @@ from dialog_api import messaging_pb2
 from dialog_bot_sdk import interactive_media
 import time
 
+
 def on_msg(*params):
     print('on msg', params)
 
+
 if __name__ == '__main__':
-    d = DialogBot.get_insecure_bot("grpc-test.transmit.im:8080", "c1ff5ca4b7e5fa4660c6a730fdcb613e31deafd8")
+    d = DialogBot.get_insecure_bot("grpc-test.transmit.im:8080", "ad8db1fbda7ae7465e3517f1e9ea6fb80e8946ac")
     # d = DialogBot.get_insecure_bot("localhost:8080", "a4e1d8a184f2a94400dd19492119cbe427d38ef8")
     # d.messaging.send_message(private_peer(966246115), "test", )
 
@@ -46,10 +48,12 @@ if __name__ == '__main__':
                 )
             time.sleep(2)
     #
-    # def receiver():
-    #     d.messaging.on_message(on_msg)
-    #
-    sender()
+
+
+    def receiver():
+        d.messaging.on_message(on_msg)
+
+    receiver()
 
     # rcvThread = Thread(target = receiver)
     # rcvThread.setDaemon(True)
