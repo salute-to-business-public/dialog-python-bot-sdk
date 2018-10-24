@@ -1,16 +1,6 @@
-Dialog Python Bot SDK
-=================
-
-Bot SDK for [Dialog](https://dlg.im) messenger.
-
-**Work in progress**
-
-Usage
------
-
-```python
 from dialog_bot_sdk.bot import DialogBot
 import os
+
 
 def on_msg(*params):
     print('on msg', params)
@@ -28,9 +18,3 @@ if __name__ == '__main__':
         d.messaging.on_message(on_msg)
 
     receiver()
-
-```
-
-License
--------
-[Apache 2.0](LICENSE)
