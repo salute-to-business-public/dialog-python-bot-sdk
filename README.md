@@ -9,47 +9,26 @@ Usage
 -----
 
 ```python
-mport dotenv from 'dotenv';
-import Bot, { MessageAttachment } from '@dlghq/dialog-bot-sdk';
+from dialog_bot_sdk.bot import DialogBot
+import os
 
-dotenv.config();
 
-const token = process.env.BOT_TOKEN;
-if (typeof token !== 'string') {
-  throw new Error('BOT_TOKEN env variable not configured');
-}
+def on_msg(*params):
+    print('on msg', params)
+    d.messaging.send_message(
+        params[0].peer, str(params[0].message.textMessage.text)
+    )
 
-const bot = new Bot({
-  token,
-  endpoints: ['https://grpc-test.transmit.im:9443']
-});
 
-bot.updateSubject.subscribe({
-  next(update) {
-    console.log('update', update);
-  }
-});
+if __name__ == '__main__':
+    d = DialogBot.get_insecure_bot(
+        "grpc-test.transmit.im:8080", os.environ.get('BOT_TOKEN')
+    )
 
-bot
-  .onMessage(async (message) => {
-    if (message.content.type === 'text') {
-      // echo message with reply
-      const mid = await bot.sendText(
-        message.peer,
-        message.content.text,
-        MessageAttachment.reply(message.id)
-      );
+    def receiver():
+        d.messaging.on_message(on_msg)
 
-      // reply to self sent message with document
-      await bot.sendDocument(message.peer, __filename, MessageAttachment.reply(mid));
-    }
-  })
-  .toPromise()
-  .catch((error) => {
-    console.error(error);
-    process.exit(1);
-  });
-
+    receiver()
 ```
 
 License
