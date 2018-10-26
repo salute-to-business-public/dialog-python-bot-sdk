@@ -3,6 +3,8 @@ Dialog Python Bot SDK
 
 Bot SDK for [Dialog](https://dlg.im) messenger.
 
+Full documentation is available [here](https://dialogs.github.io/python-bot-sdk/).
+
 **Work in progress**
 
 Usage
