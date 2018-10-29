@@ -5,6 +5,9 @@ from .messaging import Messaging
 
 
 class DialogBot(object):
+    """Main Dialog Bot class.
+
+    """
     def __init__(self, channel, bot_token):
         self.internal = InternalBot(channel)
         # TODO: analyze auth errors
@@ -14,5 +17,11 @@ class DialogBot(object):
 
     @staticmethod
     def get_insecure_bot(endpoint, bot_token):
+        """Returns Dialog bot with established gRPC insecure channel.
+
+        :param endpoint: bot's endpoint address
+        :param bot_token: bot's token
+        :return: Dialog bot instance
+        """
         channel = grpc.insecure_channel(endpoint)
         return DialogBot(channel, bot_token)

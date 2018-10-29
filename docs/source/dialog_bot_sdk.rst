@@ -5,8 +5,9 @@ Subpackages
 -----------
 
 .. toctree::
+   :maxdepth: 1
 
-    dialog_bot_sdk.internal
+   dialog_bot_sdk.internal
 
 Submodules
 ----------
@@ -43,14 +44,6 @@ dialog\_bot\_sdk.messaging module
     :undoc-members:
     :show-inheritance:
 
-dialog\_bot\_sdk.peers module
------------------------------
-
-.. automodule:: dialog_bot_sdk.peers
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
 dialog\_bot\_sdk.service module
 -------------------------------
 
@@ -60,10 +53,3 @@ dialog\_bot\_sdk.service module
     :show-inheritance:
 
 
-Module contents
----------------
-
-.. automodule:: dialog_bot_sdk
-    :members:
-    :undoc-members:
-    :show-inheritance:

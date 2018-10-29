@@ -1,5 +1,5 @@
 # coding: utf-8
-from dialog_bot_sdk.peers import private_peer
+from dialog_bot_sdk.internal.peers import private_peer
 from dialog_bot_sdk.bot import DialogBot
 from dialog_api import messaging_pb2
 #from threading import Thread

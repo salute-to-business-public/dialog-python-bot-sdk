@@ -29,10 +29,3 @@ dialog\_bot\_sdk.internal.service module
     :show-inheritance:
 
 
-Module contents
----------------
-
-.. automodule:: dialog_bot_sdk.internal
-    :members:
-    :undoc-members:
-    :show-inheritance:

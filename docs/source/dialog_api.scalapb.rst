@@ -20,11 +20,3 @@ dialog\_api.scalapb.scalapb\_pb2\_grpc module
     :undoc-members:
     :show-inheritance:
 
-
-Module contents
----------------
-
-.. automodule:: dialog_api.scalapb
-    :members:
-    :undoc-members:
-    :show-inheritance:
