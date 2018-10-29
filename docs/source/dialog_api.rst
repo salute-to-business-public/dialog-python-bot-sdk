@@ -427,11 +427,3 @@ dialog\_api.web\_rtc\_pb2\_grpc module
     :undoc-members:
     :show-inheritance:
 
-
-Module contents
----------------
-
-.. automodule:: dialog_api
-    :members:
-    :undoc-members:
-    :show-inheritance:

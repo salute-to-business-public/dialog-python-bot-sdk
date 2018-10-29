@@ -1,4 +1,7 @@
 class AuthenticatedService(object):
+    """Initialization class for gRPC services.
+
+    """
     def __init__(self, auth_token_func, stub):
         self.stub = stub
         self.auth_token_func = auth_token_func

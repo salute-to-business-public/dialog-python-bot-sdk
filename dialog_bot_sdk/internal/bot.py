@@ -6,11 +6,12 @@ from dialog_api import registration_pb2, registration_pb2_grpc,\
 
 
 class InternalBot(object):
-    app_id = 10
-    app_title = "PythonBotSDK/1.0"
-    token = None
+    """Class with Dialog bot's internal services.
 
+    """
     def __init__(self, channel):
+        self.app_id = 10
+        self.app_title = "PythonBotSDK/1.0"
         self.channel = channel
         self.registration = self.wrap_service(registration_pb2_grpc.RegistrationStub)
         self.messaging = self.wrap_service(messaging_pb2_grpc.MessagingStub)
@@ -21,12 +22,21 @@ class InternalBot(object):
         self.token = self.get_session_token()
 
     def authorize(self, bot_token):
+        """Authorization function for Internal bot instance.
+
+        :param bot_token: bot token
+        :return: auth token (instance of gRPC RequestStartTokenAuth)
+        """
         return self.auth.StartTokenAuth(authentication_pb2.RequestStartTokenAuth(
             token=bot_token,
             app_id=self.app_id
         ))
 
     def get_session_token(self):
+        """Requests for sessions token for device.
+
+        :return: session token
+        """
         registration_response = self.registration.RegisterDevice(
             registration_pb2.RequestRegisterDevice(
                 app_id=self.app_id,
@@ -38,4 +48,9 @@ class InternalBot(object):
         return registration_response.token
 
     def wrap_service(self, stub_func):
+        """Wrapper for authenticating of gRPC service calls.
+
+        :param stub_func: name of gRPC service
+        :return: wrapped gRPC service
+        """
         return AuthenticatedService(lambda: self.token, stub_func(self.channel))
