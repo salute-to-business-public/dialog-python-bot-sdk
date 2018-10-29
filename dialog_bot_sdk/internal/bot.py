@@ -9,6 +9,7 @@ class InternalBot(object):
     """Class with Dialog bot's internal services.
 
     """
+
     def __init__(self, channel):
         self.app_id = 10
         self.app_title = "PythonBotSDK/1.0"
@@ -20,6 +21,7 @@ class InternalBot(object):
         self.contacts = self.wrap_service(contacts_pb2_grpc.ContactsStub)
         self.search = self.wrap_service(search_pb2_grpc.SearchStub)
         self.token = self.get_session_token()
+
 
     def authorize(self, bot_token):
         """Authorization function for Internal bot instance.
@@ -53,4 +55,4 @@ class InternalBot(object):
         :param stub_func: name of gRPC service
         :return: wrapped gRPC service
         """
-        return AuthenticatedService(lambda: self.token, stub_func(self.channel))
+        return AuthenticatedService(lambda: self.token if hasattr(self, 'token') else None, stub_func(self.channel))
