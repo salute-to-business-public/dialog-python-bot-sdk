@@ -2,6 +2,7 @@ import grpc
 from .internal.bot import InternalBot
 from .entity_manager import EntityManager
 from .messaging import Messaging
+from .updates import Updates
 
 
 class DialogBot(object):
@@ -14,6 +15,7 @@ class DialogBot(object):
         self.internal.authorize(bot_token)
         self.manager = EntityManager(self.internal)
         self.messaging = Messaging(self.manager, self.internal)
+        self.updates = Updates(self.manager, self.internal)
 
     @staticmethod
     def get_insecure_bot(endpoint, bot_token):

@@ -1,8 +1,10 @@
+from concurrent.futures import ThreadPoolExecutor
 from .service import AuthenticatedService
 from dialog_api import registration_pb2, registration_pb2_grpc,\
                        sequence_and_updates_pb2_grpc,\
                        authentication_pb2, authentication_pb2_grpc,\
-                       contacts_pb2_grpc, search_pb2_grpc, messaging_pb2_grpc
+                       contacts_pb2_grpc, search_pb2_grpc, messaging_pb2_grpc,\
+                       media_and_files_pb2_grpc
 
 
 class InternalBot(object):
@@ -16,12 +18,13 @@ class InternalBot(object):
         self.channel = channel
         self.registration = self.wrap_service(registration_pb2_grpc.RegistrationStub)
         self.messaging = self.wrap_service(messaging_pb2_grpc.MessagingStub)
+        self.media_and_files = self.wrap_service(media_and_files_pb2_grpc.MediaAndFilesStub)
         self.updates = self.wrap_service(sequence_and_updates_pb2_grpc.SequenceAndUpdatesStub)
         self.auth = self.wrap_service(authentication_pb2_grpc.AuthenticationStub)
         self.contacts = self.wrap_service(contacts_pb2_grpc.ContactsStub)
         self.search = self.wrap_service(search_pb2_grpc.SearchStub)
         self.token = self.get_session_token()
-
+        self.thread_pool_executor = ThreadPoolExecutor(max_workers=10)
 
     def authorize(self, bot_token):
         """Authorization function for Internal bot instance.
