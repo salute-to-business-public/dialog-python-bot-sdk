@@ -3,18 +3,27 @@ from google.protobuf import wrappers_pb2
 
 
 class InteractiveMediaButton(object):
+    """Button control class.
+
+    """
     def __init__(self, value, label=None):
         self.value = value
         self.label = label
 
     def render(self, target):
+        """Render method for button
+
+        :param target: target button
+        """
         if self.label is not None:
             target.label.value = self.label
         target.value = self.value
 
 
 class InteractiveMediaSelect(object):
-    # options = {'value': 'label'}
+    """Select control class.
+
+    """
     def __init__(self, label=None, default_value=None, options=None):
         assert options is not None
         self.label = label
@@ -22,6 +31,10 @@ class InteractiveMediaSelect(object):
         self.options = options
 
     def render(self, target):
+        """Render method for select
+
+        :param target: target select
+        """
         if self.label is not None:
             target.label.value = self.label
         if self.default_value is not None:
@@ -33,6 +46,9 @@ class InteractiveMediaSelect(object):
 
 
 class InteractiveMediaConfirm(object):
+    """Confirm control class.
+
+    """
     def __init__(self, text=None, title=None, ok=None, dismiss=None):
         self.text = text
         self.title = title
@@ -40,6 +56,10 @@ class InteractiveMediaConfirm(object):
         self.dismiss = dismiss
 
     def render(self):
+        """Render method for confirm
+
+        :return: confirm
+        """
         confirm = messaging_pb2.InteractiveMediaConfirm()
         if self.text is not None:
             confirm.text = wrappers_pb2.StringValue(value=self.text)
@@ -53,6 +73,9 @@ class InteractiveMediaConfirm(object):
 
 
 class InteractiveMedia(object):
+    """Wrapper class for interactive object styling.
+
+    """
     style_map = {
         'default': messaging_pb2.INTERACTIVEMEDIASTYLE_DEFAULT,
         'primary': messaging_pb2.INTERACTIVEMEDIASTYLE_PRIMARY,
@@ -68,6 +91,11 @@ class InteractiveMedia(object):
         self.confirm = confirm
 
     def render(self, target):
+        """Render method for wrapped interactive object.
+
+        :param target: target interactive object
+        :return: wrapped interactive object
+        """
         target.id = str(self.id)
         target.style = self.style_map.get(self.style, messaging_pb2.INTERACTIVEMEDIASTYLE_UNKNOWN)
         if self.widget is not None:
@@ -81,6 +109,9 @@ class InteractiveMedia(object):
 
 
 class InteractiveMediaGroup(object):
+    """Wrapper class for interactive object grouping.
+
+    """
     # translations = {'lang': [{'id': 'value'}]} dict
     def __init__(self, actions, title=None, description=None, translations=None):
         assert isinstance(actions, list)
@@ -90,6 +121,10 @@ class InteractiveMediaGroup(object):
         self.translations = translations
 
     def render(self, target):
+        """Render method for group of interactive objects.
+
+        :param target: group of interactive objects
+        """
         media = target.actions.add()
         for action in self.actions:
             act = media.actions.add()

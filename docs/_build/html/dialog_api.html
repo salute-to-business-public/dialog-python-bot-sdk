@@ -1,0 +1,1467 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>dialog_api package &#8212; Python Bot SDK 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="dialog-api-package">
+<h1>dialog_api package<a class="headerlink" href="#dialog-api-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dialog_api.scalapb.html">dialog_api.scalapb package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dialog_api.scalapb.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dialog_api.scalapb.html#dialog-api-scalapb-scalapb-pb2-module">dialog_api.scalapb.scalapb_pb2 module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dialog_api.scalapb.html#module-dialog_api.scalapb.scalapb_pb2_grpc">dialog_api.scalapb.scalapb_pb2_grpc module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dialog_api.scalapb.html#module-dialog_api.scalapb">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dialog_api.authentication_pb2">
+<span id="dialog-api-authentication-pb2-module"></span><h2>dialog_api.authentication_pb2 module<a class="headerlink" href="#module-dialog_api.authentication_pb2" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dialog_api.authentication_pb2_grpc">
+<span id="dialog-api-authentication-pb2-grpc-module"></span><h2>dialog_api.authentication_pb2_grpc module<a class="headerlink" href="#module-dialog_api.authentication_pb2_grpc" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dialog_api.authentication_pb2_grpc.AuthenticationServicer">
+<em class="property">class </em><code class="descclassname">dialog_api.authentication_pb2_grpc.</code><code class="descname">AuthenticationServicer</code><a class="headerlink" href="#dialog_api.authentication_pb2_grpc.AuthenticationServicer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="dialog_api.authentication_pb2_grpc.AuthenticationServicer.CompleteOAuth2">
+<code class="descname">CompleteOAuth2</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.authentication_pb2_grpc.AuthenticationServicer.CompleteOAuth2" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Deprecated</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.authentication_pb2_grpc.AuthenticationServicer.GetAuthSessions">
+<code class="descname">GetAuthSessions</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.authentication_pb2_grpc.AuthenticationServicer.GetAuthSessions" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Returns all authorized user’s sessions</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.authentication_pb2_grpc.AuthenticationServicer.GetOAuth2Params">
+<code class="descname">GetOAuth2Params</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.authentication_pb2_grpc.AuthenticationServicer.GetOAuth2Params" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Deprecated</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.authentication_pb2_grpc.AuthenticationServicer.ResendCode">
+<code class="descname">ResendCode</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.authentication_pb2_grpc.AuthenticationServicer.ResendCode" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Resend code if you don’t receive it with first attempt</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.authentication_pb2_grpc.AuthenticationServicer.SendAuthCallObsolete">
+<code class="descname">SendAuthCallObsolete</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.authentication_pb2_grpc.AuthenticationServicer.SendAuthCallObsolete" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Deprecated</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.authentication_pb2_grpc.AuthenticationServicer.SendAuthCodeObsolete">
+<code class="descname">SendAuthCodeObsolete</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.authentication_pb2_grpc.AuthenticationServicer.SendAuthCodeObsolete" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Deprecated</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.authentication_pb2_grpc.AuthenticationServicer.SendCodeByPhoneCall">
+<code class="descname">SendCodeByPhoneCall</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.authentication_pb2_grpc.AuthenticationServicer.SendCodeByPhoneCall" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Resend code by transaction hash</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.authentication_pb2_grpc.AuthenticationServicer.SignInObsolete">
+<code class="descname">SignInObsolete</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.authentication_pb2_grpc.AuthenticationServicer.SignInObsolete" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Deprecated</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.authentication_pb2_grpc.AuthenticationServicer.SignOut">
+<code class="descname">SignOut</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.authentication_pb2_grpc.AuthenticationServicer.SignOut" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Log out current session</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.authentication_pb2_grpc.AuthenticationServicer.SignUp">
+<code class="descname">SignUp</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.authentication_pb2_grpc.AuthenticationServicer.SignUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Sign up existed user</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.authentication_pb2_grpc.AuthenticationServicer.SignUpObsolete">
+<code class="descname">SignUpObsolete</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.authentication_pb2_grpc.AuthenticationServicer.SignUpObsolete" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Deprecated</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.authentication_pb2_grpc.AuthenticationServicer.StartAnonymousAuth">
+<code class="descname">StartAnonymousAuth</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.authentication_pb2_grpc.AuthenticationServicer.StartAnonymousAuth" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Deprecated</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.authentication_pb2_grpc.AuthenticationServicer.StartEmailAuth">
+<code class="descname">StartEmailAuth</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.authentication_pb2_grpc.AuthenticationServicer.StartEmailAuth" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Start email authorization process</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.authentication_pb2_grpc.AuthenticationServicer.StartPhoneAuth">
+<code class="descname">StartPhoneAuth</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.authentication_pb2_grpc.AuthenticationServicer.StartPhoneAuth" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Start authorization by phone</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.authentication_pb2_grpc.AuthenticationServicer.StartTokenAuth">
+<code class="descname">StartTokenAuth</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.authentication_pb2_grpc.AuthenticationServicer.StartTokenAuth" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Start token auth authorization (actual for bots)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.authentication_pb2_grpc.AuthenticationServicer.StartUsernameAuth">
+<code class="descname">StartUsernameAuth</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.authentication_pb2_grpc.AuthenticationServicer.StartUsernameAuth" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Start login/password authorization process</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.authentication_pb2_grpc.AuthenticationServicer.TerminateAllSessions">
+<code class="descname">TerminateAllSessions</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.authentication_pb2_grpc.AuthenticationServicer.TerminateAllSessions" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Log out user</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.authentication_pb2_grpc.AuthenticationServicer.TerminateSession">
+<code class="descname">TerminateSession</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.authentication_pb2_grpc.AuthenticationServicer.TerminateSession" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Deprecated. Does not produce any effect.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.authentication_pb2_grpc.AuthenticationServicer.ValidateCode">
+<code class="descname">ValidateCode</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.authentication_pb2_grpc.AuthenticationServicer.ValidateCode" title="Permalink to this definition">¶</a></dt>
+<dd><ul class="simple">
+<li>Validate code received by phone or email</li>
+</ul>
+<p>Returns error if user does not exist</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.authentication_pb2_grpc.AuthenticationServicer.ValidatePassword">
+<code class="descname">ValidatePassword</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.authentication_pb2_grpc.AuthenticationServicer.ValidatePassword" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Validate your passwword</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="dialog_api.authentication_pb2_grpc.AuthenticationStub">
+<em class="property">class </em><code class="descclassname">dialog_api.authentication_pb2_grpc.</code><code class="descname">AuthenticationStub</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.authentication_pb2_grpc.AuthenticationStub" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dialog_api.authentication_pb2_grpc.add_AuthenticationServicer_to_server">
+<code class="descclassname">dialog_api.authentication_pb2_grpc.</code><code class="descname">add_AuthenticationServicer_to_server</code><span class="sig-paren">(</span><em>servicer</em>, <em>server</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.authentication_pb2_grpc.add_AuthenticationServicer_to_server" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-dialog_api.config_sync_pb2">
+<span id="dialog-api-config-sync-pb2-module"></span><h2>dialog_api.config_sync_pb2 module<a class="headerlink" href="#module-dialog_api.config_sync_pb2" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dialog_api.config_sync_pb2_grpc">
+<span id="dialog-api-config-sync-pb2-grpc-module"></span><h2>dialog_api.config_sync_pb2_grpc module<a class="headerlink" href="#module-dialog_api.config_sync_pb2_grpc" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dialog_api.config_sync_pb2_grpc.ConfigSyncServicer">
+<em class="property">class </em><code class="descclassname">dialog_api.config_sync_pb2_grpc.</code><code class="descname">ConfigSyncServicer</code><a class="headerlink" href="#dialog_api.config_sync_pb2_grpc.ConfigSyncServicer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="dialog_api.config_sync_pb2_grpc.ConfigSyncServicer.EditParameter">
+<code class="descname">EditParameter</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.config_sync_pb2_grpc.ConfigSyncServicer.EditParameter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.config_sync_pb2_grpc.ConfigSyncServicer.GetParameters">
+<code class="descname">GetParameters</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.config_sync_pb2_grpc.ConfigSyncServicer.GetParameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="dialog_api.config_sync_pb2_grpc.ConfigSyncStub">
+<em class="property">class </em><code class="descclassname">dialog_api.config_sync_pb2_grpc.</code><code class="descname">ConfigSyncStub</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.config_sync_pb2_grpc.ConfigSyncStub" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dialog_api.config_sync_pb2_grpc.add_ConfigSyncServicer_to_server">
+<code class="descclassname">dialog_api.config_sync_pb2_grpc.</code><code class="descname">add_ConfigSyncServicer_to_server</code><span class="sig-paren">(</span><em>servicer</em>, <em>server</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.config_sync_pb2_grpc.add_ConfigSyncServicer_to_server" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-dialog_api.contacts_pb2">
+<span id="dialog-api-contacts-pb2-module"></span><h2>dialog_api.contacts_pb2 module<a class="headerlink" href="#module-dialog_api.contacts_pb2" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dialog_api.contacts_pb2_grpc">
+<span id="dialog-api-contacts-pb2-grpc-module"></span><h2>dialog_api.contacts_pb2_grpc module<a class="headerlink" href="#module-dialog_api.contacts_pb2_grpc" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dialog_api.contacts_pb2_grpc.ContactsServicer">
+<em class="property">class </em><code class="descclassname">dialog_api.contacts_pb2_grpc.</code><code class="descname">ContactsServicer</code><a class="headerlink" href="#dialog_api.contacts_pb2_grpc.ContactsServicer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="dialog_api.contacts_pb2_grpc.ContactsServicer.AddContact">
+<code class="descname">AddContact</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.contacts_pb2_grpc.ContactsServicer.AddContact" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.contacts_pb2_grpc.ContactsServicer.DeferredImportContacts">
+<code class="descname">DeferredImportContacts</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.contacts_pb2_grpc.ContactsServicer.DeferredImportContacts" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Same as above, but without waiting response</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.contacts_pb2_grpc.ContactsServicer.GetContacts">
+<code class="descname">GetContacts</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.contacts_pb2_grpc.ContactsServicer.GetContacts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.contacts_pb2_grpc.ContactsServicer.ImportContacts">
+<code class="descname">ImportContacts</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.contacts_pb2_grpc.ContactsServicer.ImportContacts" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Import contacts and wait while query is not finished</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.contacts_pb2_grpc.ContactsServicer.RemoveContact">
+<code class="descname">RemoveContact</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.contacts_pb2_grpc.ContactsServicer.RemoveContact" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.contacts_pb2_grpc.ContactsServicer.SearchContacts">
+<code class="descname">SearchContacts</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.contacts_pb2_grpc.ContactsServicer.SearchContacts" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Search contacts by query string</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="dialog_api.contacts_pb2_grpc.ContactsStub">
+<em class="property">class </em><code class="descclassname">dialog_api.contacts_pb2_grpc.</code><code class="descname">ContactsStub</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.contacts_pb2_grpc.ContactsStub" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dialog_api.contacts_pb2_grpc.add_ContactsServicer_to_server">
+<code class="descclassname">dialog_api.contacts_pb2_grpc.</code><code class="descname">add_ContactsServicer_to_server</code><span class="sig-paren">(</span><em>servicer</em>, <em>server</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.contacts_pb2_grpc.add_ContactsServicer_to_server" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-dialog_api.counters_pb2">
+<span id="dialog-api-counters-pb2-module"></span><h2>dialog_api.counters_pb2 module<a class="headerlink" href="#module-dialog_api.counters_pb2" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dialog_api.counters_pb2_grpc">
+<span id="dialog-api-counters-pb2-grpc-module"></span><h2>dialog_api.counters_pb2_grpc module<a class="headerlink" href="#module-dialog_api.counters_pb2_grpc" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dialog_api.crypto_pb2">
+<span id="dialog-api-crypto-pb2-module"></span><h2>dialog_api.crypto_pb2 module<a class="headerlink" href="#module-dialog_api.crypto_pb2" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dialog_api.crypto_pb2_grpc">
+<span id="dialog-api-crypto-pb2-grpc-module"></span><h2>dialog_api.crypto_pb2_grpc module<a class="headerlink" href="#module-dialog_api.crypto_pb2_grpc" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dialog_api.crypto_pb2_grpc.CryptoServicer">
+<em class="property">class </em><code class="descclassname">dialog_api.crypto_pb2_grpc.</code><code class="descname">CryptoServicer</code><a class="headerlink" href="#dialog_api.crypto_pb2_grpc.CryptoServicer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="dialog_api.crypto_pb2_grpc.CryptoServicer.KeyExchange">
+<code class="descname">KeyExchange</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.crypto_pb2_grpc.CryptoServicer.KeyExchange" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="dialog_api.crypto_pb2_grpc.CryptoStub">
+<em class="property">class </em><code class="descclassname">dialog_api.crypto_pb2_grpc.</code><code class="descname">CryptoStub</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.crypto_pb2_grpc.CryptoStub" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dialog_api.crypto_pb2_grpc.add_CryptoServicer_to_server">
+<code class="descclassname">dialog_api.crypto_pb2_grpc.</code><code class="descname">add_CryptoServicer_to_server</code><span class="sig-paren">(</span><em>servicer</em>, <em>server</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.crypto_pb2_grpc.add_CryptoServicer_to_server" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="dialog-api-definitions-pb2-module">
+<h2>dialog_api.definitions_pb2 module<a class="headerlink" href="#dialog-api-definitions-pb2-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dialog_api.definitions_pb2_grpc">
+<span id="dialog-api-definitions-pb2-grpc-module"></span><h2>dialog_api.definitions_pb2_grpc module<a class="headerlink" href="#module-dialog_api.definitions_pb2_grpc" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dialog_api.device_info_pb2">
+<span id="dialog-api-device-info-pb2-module"></span><h2>dialog_api.device_info_pb2 module<a class="headerlink" href="#module-dialog_api.device_info_pb2" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dialog_api.device_info_pb2_grpc">
+<span id="dialog-api-device-info-pb2-grpc-module"></span><h2>dialog_api.device_info_pb2_grpc module<a class="headerlink" href="#module-dialog_api.device_info_pb2_grpc" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dialog_api.device_info_pb2_grpc.DeviceInfoServicer">
+<em class="property">class </em><code class="descclassname">dialog_api.device_info_pb2_grpc.</code><code class="descname">DeviceInfoServicer</code><a class="headerlink" href="#dialog_api.device_info_pb2_grpc.DeviceInfoServicer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="dialog_api.device_info_pb2_grpc.DeviceInfoServicer.NotifyAboutDeviceInfo">
+<code class="descname">NotifyAboutDeviceInfo</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.device_info_pb2_grpc.DeviceInfoServicer.NotifyAboutDeviceInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Set info about current device</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="dialog_api.device_info_pb2_grpc.DeviceInfoStub">
+<em class="property">class </em><code class="descclassname">dialog_api.device_info_pb2_grpc.</code><code class="descname">DeviceInfoStub</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.device_info_pb2_grpc.DeviceInfoStub" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dialog_api.device_info_pb2_grpc.add_DeviceInfoServicer_to_server">
+<code class="descclassname">dialog_api.device_info_pb2_grpc.</code><code class="descname">add_DeviceInfoServicer_to_server</code><span class="sig-paren">(</span><em>servicer</em>, <em>server</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.device_info_pb2_grpc.add_DeviceInfoServicer_to_server" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-dialog_api.event_bus_pb2">
+<span id="dialog-api-event-bus-pb2-module"></span><h2>dialog_api.event_bus_pb2 module<a class="headerlink" href="#module-dialog_api.event_bus_pb2" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dialog_api.event_bus_pb2_grpc">
+<span id="dialog-api-event-bus-pb2-grpc-module"></span><h2>dialog_api.event_bus_pb2_grpc module<a class="headerlink" href="#module-dialog_api.event_bus_pb2_grpc" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dialog_api.event_bus_pb2_grpc.EventBusServicer">
+<em class="property">class </em><code class="descclassname">dialog_api.event_bus_pb2_grpc.</code><code class="descname">EventBusServicer</code><a class="headerlink" href="#dialog_api.event_bus_pb2_grpc.EventBusServicer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="dialog_api.event_bus_pb2_grpc.EventBusServicer.JoinEventBus">
+<code class="descname">JoinEventBus</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.event_bus_pb2_grpc.EventBusServicer.JoinEventBus" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.event_bus_pb2_grpc.EventBusServicer.KeepAliveEventBus">
+<code class="descname">KeepAliveEventBus</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.event_bus_pb2_grpc.EventBusServicer.KeepAliveEventBus" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.event_bus_pb2_grpc.EventBusServicer.PostToEventBus">
+<code class="descname">PostToEventBus</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.event_bus_pb2_grpc.EventBusServicer.PostToEventBus" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="dialog_api.event_bus_pb2_grpc.EventBusStub">
+<em class="property">class </em><code class="descclassname">dialog_api.event_bus_pb2_grpc.</code><code class="descname">EventBusStub</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.event_bus_pb2_grpc.EventBusStub" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dialog_api.event_bus_pb2_grpc.add_EventBusServicer_to_server">
+<code class="descclassname">dialog_api.event_bus_pb2_grpc.</code><code class="descname">add_EventBusServicer_to_server</code><span class="sig-paren">(</span><em>servicer</em>, <em>server</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.event_bus_pb2_grpc.add_EventBusServicer_to_server" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-dialog_api.groups_pb2">
+<span id="dialog-api-groups-pb2-module"></span><h2>dialog_api.groups_pb2 module<a class="headerlink" href="#module-dialog_api.groups_pb2" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dialog_api.groups_pb2_grpc">
+<span id="dialog-api-groups-pb2-grpc-module"></span><h2>dialog_api.groups_pb2_grpc module<a class="headerlink" href="#module-dialog_api.groups_pb2_grpc" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dialog_api.groups_pb2_grpc.GroupsServicer">
+<em class="property">class </em><code class="descclassname">dialog_api.groups_pb2_grpc.</code><code class="descname">GroupsServicer</code><a class="headerlink" href="#dialog_api.groups_pb2_grpc.GroupsServicer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="dialog_api.groups_pb2_grpc.GroupsServicer.CreateGroup">
+<code class="descname">CreateGroup</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.groups_pb2_grpc.GroupsServicer.CreateGroup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.groups_pb2_grpc.GroupsServicer.EditGroupAbout">
+<code class="descname">EditGroupAbout</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.groups_pb2_grpc.GroupsServicer.EditGroupAbout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.groups_pb2_grpc.GroupsServicer.EditGroupAvatar">
+<code class="descname">EditGroupAvatar</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.groups_pb2_grpc.GroupsServicer.EditGroupAvatar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.groups_pb2_grpc.GroupsServicer.EditGroupTitle">
+<code class="descname">EditGroupTitle</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.groups_pb2_grpc.GroupsServicer.EditGroupTitle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.groups_pb2_grpc.GroupsServicer.EditGroupTopic">
+<code class="descname">EditGroupTopic</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.groups_pb2_grpc.GroupsServicer.EditGroupTopic" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.groups_pb2_grpc.GroupsServicer.GetGroupInviteUrl">
+<code class="descname">GetGroupInviteUrl</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.groups_pb2_grpc.GroupsServicer.GetGroupInviteUrl" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.groups_pb2_grpc.GroupsServicer.GetGroupInviteUrlBase">
+<code class="descname">GetGroupInviteUrlBase</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.groups_pb2_grpc.GroupsServicer.GetGroupInviteUrlBase" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.groups_pb2_grpc.GroupsServicer.GetGroupMemberPermissions">
+<code class="descname">GetGroupMemberPermissions</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.groups_pb2_grpc.GroupsServicer.GetGroupMemberPermissions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.groups_pb2_grpc.GroupsServicer.InviteUser">
+<code class="descname">InviteUser</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.groups_pb2_grpc.GroupsServicer.InviteUser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.groups_pb2_grpc.GroupsServicer.JoinGroup">
+<code class="descname">JoinGroup</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.groups_pb2_grpc.GroupsServicer.JoinGroup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.groups_pb2_grpc.GroupsServicer.JoinGroupByPeer">
+<code class="descname">JoinGroupByPeer</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.groups_pb2_grpc.GroupsServicer.JoinGroupByPeer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.groups_pb2_grpc.GroupsServicer.KickUser">
+<code class="descname">KickUser</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.groups_pb2_grpc.GroupsServicer.KickUser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.groups_pb2_grpc.GroupsServicer.LeaveGroup">
+<code class="descname">LeaveGroup</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.groups_pb2_grpc.GroupsServicer.LeaveGroup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.groups_pb2_grpc.GroupsServicer.LoadFullGroups">
+<code class="descname">LoadFullGroups</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.groups_pb2_grpc.GroupsServicer.LoadFullGroups" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ deprecated</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.groups_pb2_grpc.GroupsServicer.LoadMembers">
+<code class="descname">LoadMembers</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.groups_pb2_grpc.GroupsServicer.LoadMembers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.groups_pb2_grpc.GroupsServicer.MakeUserAdmin">
+<code class="descname">MakeUserAdmin</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.groups_pb2_grpc.GroupsServicer.MakeUserAdmin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.groups_pb2_grpc.GroupsServicer.MakeUserAdminObsolete">
+<code class="descname">MakeUserAdminObsolete</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.groups_pb2_grpc.GroupsServicer.MakeUserAdminObsolete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.groups_pb2_grpc.GroupsServicer.RemoveGroupAvatar">
+<code class="descname">RemoveGroupAvatar</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.groups_pb2_grpc.GroupsServicer.RemoveGroupAvatar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.groups_pb2_grpc.GroupsServicer.RevokeInviteUrl">
+<code class="descname">RevokeInviteUrl</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.groups_pb2_grpc.GroupsServicer.RevokeInviteUrl" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.groups_pb2_grpc.GroupsServicer.SetGroupShortname">
+<code class="descname">SetGroupShortname</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.groups_pb2_grpc.GroupsServicer.SetGroupShortname" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.groups_pb2_grpc.GroupsServicer.TransferOwnership">
+<code class="descname">TransferOwnership</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.groups_pb2_grpc.GroupsServicer.TransferOwnership" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="dialog_api.groups_pb2_grpc.GroupsStub">
+<em class="property">class </em><code class="descclassname">dialog_api.groups_pb2_grpc.</code><code class="descname">GroupsStub</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.groups_pb2_grpc.GroupsStub" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dialog_api.groups_pb2_grpc.add_GroupsServicer_to_server">
+<code class="descclassname">dialog_api.groups_pb2_grpc.</code><code class="descname">add_GroupsServicer_to_server</code><span class="sig-paren">(</span><em>servicer</em>, <em>server</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.groups_pb2_grpc.add_GroupsServicer_to_server" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-dialog_api.integrations_pb2">
+<span id="dialog-api-integrations-pb2-module"></span><h2>dialog_api.integrations_pb2 module<a class="headerlink" href="#module-dialog_api.integrations_pb2" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dialog_api.integrations_pb2_grpc">
+<span id="dialog-api-integrations-pb2-grpc-module"></span><h2>dialog_api.integrations_pb2_grpc module<a class="headerlink" href="#module-dialog_api.integrations_pb2_grpc" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dialog_api.integrations_pb2_grpc.IntegrationsServicer">
+<em class="property">class </em><code class="descclassname">dialog_api.integrations_pb2_grpc.</code><code class="descname">IntegrationsServicer</code><a class="headerlink" href="#dialog_api.integrations_pb2_grpc.IntegrationsServicer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="dialog_api.integrations_pb2_grpc.IntegrationsServicer.GetIntegrationToken">
+<code class="descname">GetIntegrationToken</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.integrations_pb2_grpc.IntegrationsServicer.GetIntegrationToken" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Get token for posting to group</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.integrations_pb2_grpc.IntegrationsServicer.RevokeIntegrationToken">
+<code class="descname">RevokeIntegrationToken</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.integrations_pb2_grpc.IntegrationsServicer.RevokeIntegrationToken" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Revoke token</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="dialog_api.integrations_pb2_grpc.IntegrationsStub">
+<em class="property">class </em><code class="descclassname">dialog_api.integrations_pb2_grpc.</code><code class="descname">IntegrationsStub</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.integrations_pb2_grpc.IntegrationsStub" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dialog_api.integrations_pb2_grpc.add_IntegrationsServicer_to_server">
+<code class="descclassname">dialog_api.integrations_pb2_grpc.</code><code class="descname">add_IntegrationsServicer_to_server</code><span class="sig-paren">(</span><em>servicer</em>, <em>server</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.integrations_pb2_grpc.add_IntegrationsServicer_to_server" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-dialog_api.media_and_files_pb2">
+<span id="dialog-api-media-and-files-pb2-module"></span><h2>dialog_api.media_and_files_pb2 module<a class="headerlink" href="#module-dialog_api.media_and_files_pb2" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dialog_api.media_and_files_pb2_grpc">
+<span id="dialog-api-media-and-files-pb2-grpc-module"></span><h2>dialog_api.media_and_files_pb2_grpc module<a class="headerlink" href="#module-dialog_api.media_and_files_pb2_grpc" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dialog_api.media_and_files_pb2_grpc.MediaAndFilesServicer">
+<em class="property">class </em><code class="descclassname">dialog_api.media_and_files_pb2_grpc.</code><code class="descname">MediaAndFilesServicer</code><a class="headerlink" href="#dialog_api.media_and_files_pb2_grpc.MediaAndFilesServicer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="dialog_api.media_and_files_pb2_grpc.MediaAndFilesServicer.CommitFileUpload">
+<code class="descname">CommitFileUpload</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.media_and_files_pb2_grpc.MediaAndFilesServicer.CommitFileUpload" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Finish uploading a file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.media_and_files_pb2_grpc.MediaAndFilesServicer.GetFileUploadPartUrl">
+<code class="descname">GetFileUploadPartUrl</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.media_and_files_pb2_grpc.MediaAndFilesServicer.GetFileUploadPartUrl" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Get url for uploading chunk of file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.media_and_files_pb2_grpc.MediaAndFilesServicer.GetFileUploadUrl">
+<code class="descname">GetFileUploadUrl</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.media_and_files_pb2_grpc.MediaAndFilesServicer.GetFileUploadUrl" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Get url for uploading</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.media_and_files_pb2_grpc.MediaAndFilesServicer.GetFileUrl">
+<code class="descname">GetFileUrl</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.media_and_files_pb2_grpc.MediaAndFilesServicer.GetFileUrl" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Get link to file for downloading</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.media_and_files_pb2_grpc.MediaAndFilesServicer.GetFileUrlBuilder">
+<code class="descname">GetFileUrlBuilder</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.media_and_files_pb2_grpc.MediaAndFilesServicer.GetFileUrlBuilder" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Create builder for file url</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.media_and_files_pb2_grpc.MediaAndFilesServicer.GetFileUrls">
+<code class="descname">GetFileUrls</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.media_and_files_pb2_grpc.MediaAndFilesServicer.GetFileUrls" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Get link to files for downloading</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="dialog_api.media_and_files_pb2_grpc.MediaAndFilesStub">
+<em class="property">class </em><code class="descclassname">dialog_api.media_and_files_pb2_grpc.</code><code class="descname">MediaAndFilesStub</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.media_and_files_pb2_grpc.MediaAndFilesStub" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dialog_api.media_and_files_pb2_grpc.add_MediaAndFilesServicer_to_server">
+<code class="descclassname">dialog_api.media_and_files_pb2_grpc.</code><code class="descname">add_MediaAndFilesServicer_to_server</code><span class="sig-paren">(</span><em>servicer</em>, <em>server</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.media_and_files_pb2_grpc.add_MediaAndFilesServicer_to_server" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-dialog_api.messaging_pb2">
+<span id="dialog-api-messaging-pb2-module"></span><h2>dialog_api.messaging_pb2 module<a class="headerlink" href="#module-dialog_api.messaging_pb2" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dialog_api.messaging_pb2_grpc">
+<span id="dialog-api-messaging-pb2-grpc-module"></span><h2>dialog_api.messaging_pb2_grpc module<a class="headerlink" href="#module-dialog_api.messaging_pb2_grpc" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dialog_api.messaging_pb2_grpc.MessagingServicer">
+<em class="property">class </em><code class="descclassname">dialog_api.messaging_pb2_grpc.</code><code class="descname">MessagingServicer</code><a class="headerlink" href="#dialog_api.messaging_pb2_grpc.MessagingServicer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="dialog_api.messaging_pb2_grpc.MessagingServicer.ArchiveChat">
+<code class="descname">ArchiveChat</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.messaging_pb2_grpc.MessagingServicer.ArchiveChat" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ deprecated</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.messaging_pb2_grpc.MessagingServicer.ClearChat">
+<code class="descname">ClearChat</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.messaging_pb2_grpc.MessagingServicer.ClearChat" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Clear chat history</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.messaging_pb2_grpc.MessagingServicer.DeleteChat">
+<code class="descname">DeleteChat</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.messaging_pb2_grpc.MessagingServicer.DeleteChat" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.messaging_pb2_grpc.MessagingServicer.DeleteMessageObsolete">
+<code class="descname">DeleteMessageObsolete</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.messaging_pb2_grpc.MessagingServicer.DeleteMessageObsolete" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ deprecated</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.messaging_pb2_grpc.MessagingServicer.DoInteractiveMediaAction">
+<code class="descname">DoInteractiveMediaAction</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.messaging_pb2_grpc.MessagingServicer.DoInteractiveMediaAction" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Interact with a message media (click on button for example)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.messaging_pb2_grpc.MessagingServicer.FavouriteDialog">
+<code class="descname">FavouriteDialog</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.messaging_pb2_grpc.MessagingServicer.FavouriteDialog" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.messaging_pb2_grpc.MessagingServicer.FetchDialogIndex">
+<code class="descname">FetchDialogIndex</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.messaging_pb2_grpc.MessagingServicer.FetchDialogIndex" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Load short info about all user’s dialogs</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.messaging_pb2_grpc.MessagingServicer.HideDialog">
+<code class="descname">HideDialog</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.messaging_pb2_grpc.MessagingServicer.HideDialog" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ deprecated</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.messaging_pb2_grpc.MessagingServicer.LoadArchived">
+<code class="descname">LoadArchived</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.messaging_pb2_grpc.MessagingServicer.LoadArchived" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ deprecated</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.messaging_pb2_grpc.MessagingServicer.LoadDialogs">
+<code class="descname">LoadDialogs</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.messaging_pb2_grpc.MessagingServicer.LoadDialogs" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Load user’s dialogs</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.messaging_pb2_grpc.MessagingServicer.LoadGroupedDialogs">
+<code class="descname">LoadGroupedDialogs</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.messaging_pb2_grpc.MessagingServicer.LoadGroupedDialogs" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ deprecated</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.messaging_pb2_grpc.MessagingServicer.LoadHistory">
+<code class="descname">LoadHistory</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.messaging_pb2_grpc.MessagingServicer.LoadHistory" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Load conversation history</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.messaging_pb2_grpc.MessagingServicer.MessageRead">
+<code class="descname">MessageRead</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.messaging_pb2_grpc.MessagingServicer.MessageRead" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Mark message as read by self</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.messaging_pb2_grpc.MessagingServicer.MessageReceived">
+<code class="descname">MessageReceived</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.messaging_pb2_grpc.MessagingServicer.MessageReceived" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Mark message as received by self</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.messaging_pb2_grpc.MessagingServicer.MessageRemoveReaction">
+<code class="descname">MessageRemoveReaction</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.messaging_pb2_grpc.MessagingServicer.MessageRemoveReaction" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.messaging_pb2_grpc.MessagingServicer.MessageSetReaction">
+<code class="descname">MessageSetReaction</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.messaging_pb2_grpc.MessagingServicer.MessageSetReaction" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Add reaction on message (emoji)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.messaging_pb2_grpc.MessagingServicer.NotifyDialogOpened">
+<code class="descname">NotifyDialogOpened</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.messaging_pb2_grpc.MessagingServicer.NotifyDialogOpened" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.messaging_pb2_grpc.MessagingServicer.PinMessage">
+<code class="descname">PinMessage</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.messaging_pb2_grpc.MessagingServicer.PinMessage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.messaging_pb2_grpc.MessagingServicer.SendMessage">
+<code class="descname">SendMessage</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.messaging_pb2_grpc.MessagingServicer.SendMessage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.messaging_pb2_grpc.MessagingServicer.ShowDialog">
+<code class="descname">ShowDialog</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.messaging_pb2_grpc.MessagingServicer.ShowDialog" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ deprecated</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.messaging_pb2_grpc.MessagingServicer.UnfavouriteDialog">
+<code class="descname">UnfavouriteDialog</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.messaging_pb2_grpc.MessagingServicer.UnfavouriteDialog" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.messaging_pb2_grpc.MessagingServicer.UnpinMessage">
+<code class="descname">UnpinMessage</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.messaging_pb2_grpc.MessagingServicer.UnpinMessage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.messaging_pb2_grpc.MessagingServicer.UpdateMessage">
+<code class="descname">UpdateMessage</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.messaging_pb2_grpc.MessagingServicer.UpdateMessage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="dialog_api.messaging_pb2_grpc.MessagingStub">
+<em class="property">class </em><code class="descclassname">dialog_api.messaging_pb2_grpc.</code><code class="descname">MessagingStub</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.messaging_pb2_grpc.MessagingStub" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dialog_api.messaging_pb2_grpc.add_MessagingServicer_to_server">
+<code class="descclassname">dialog_api.messaging_pb2_grpc.</code><code class="descname">add_MessagingServicer_to_server</code><span class="sig-paren">(</span><em>servicer</em>, <em>server</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.messaging_pb2_grpc.add_MessagingServicer_to_server" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-dialog_api.miscellaneous_pb2">
+<span id="dialog-api-miscellaneous-pb2-module"></span><h2>dialog_api.miscellaneous_pb2 module<a class="headerlink" href="#module-dialog_api.miscellaneous_pb2" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dialog_api.miscellaneous_pb2_grpc">
+<span id="dialog-api-miscellaneous-pb2-grpc-module"></span><h2>dialog_api.miscellaneous_pb2_grpc module<a class="headerlink" href="#module-dialog_api.miscellaneous_pb2_grpc" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dialog_api.obsolete_pb2">
+<span id="dialog-api-obsolete-pb2-module"></span><h2>dialog_api.obsolete_pb2 module<a class="headerlink" href="#module-dialog_api.obsolete_pb2" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dialog_api.obsolete_pb2_grpc">
+<span id="dialog-api-obsolete-pb2-grpc-module"></span><h2>dialog_api.obsolete_pb2_grpc module<a class="headerlink" href="#module-dialog_api.obsolete_pb2_grpc" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dialog_api.obsolete_pb2_grpc.ObsoleteServicer">
+<em class="property">class </em><code class="descclassname">dialog_api.obsolete_pb2_grpc.</code><code class="descname">ObsoleteServicer</code><a class="headerlink" href="#dialog_api.obsolete_pb2_grpc.ObsoleteServicer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>/ deprecated</p>
+<dl class="method">
+<dt id="dialog_api.obsolete_pb2_grpc.ObsoleteServicer.Obsolete">
+<code class="descname">Obsolete</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.obsolete_pb2_grpc.ObsoleteServicer.Obsolete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.obsolete_pb2_grpc.ObsoleteServicer.SeqUpdates">
+<code class="descname">SeqUpdates</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.obsolete_pb2_grpc.ObsoleteServicer.SeqUpdates" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.obsolete_pb2_grpc.ObsoleteServicer.WeakUpdates">
+<code class="descname">WeakUpdates</code><span class="sig-paren">(</span><em>request_iterator</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.obsolete_pb2_grpc.ObsoleteServicer.WeakUpdates" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="dialog_api.obsolete_pb2_grpc.ObsoleteStub">
+<em class="property">class </em><code class="descclassname">dialog_api.obsolete_pb2_grpc.</code><code class="descname">ObsoleteStub</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.obsolete_pb2_grpc.ObsoleteStub" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>/ deprecated</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dialog_api.obsolete_pb2_grpc.add_ObsoleteServicer_to_server">
+<code class="descclassname">dialog_api.obsolete_pb2_grpc.</code><code class="descname">add_ObsoleteServicer_to_server</code><span class="sig-paren">(</span><em>servicer</em>, <em>server</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.obsolete_pb2_grpc.add_ObsoleteServicer_to_server" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-dialog_api.peers_pb2">
+<span id="dialog-api-peers-pb2-module"></span><h2>dialog_api.peers_pb2 module<a class="headerlink" href="#module-dialog_api.peers_pb2" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dialog_api.peers_pb2_grpc">
+<span id="dialog-api-peers-pb2-grpc-module"></span><h2>dialog_api.peers_pb2_grpc module<a class="headerlink" href="#module-dialog_api.peers_pb2_grpc" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dialog_api.privacy_pb2">
+<span id="dialog-api-privacy-pb2-module"></span><h2>dialog_api.privacy_pb2 module<a class="headerlink" href="#module-dialog_api.privacy_pb2" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dialog_api.privacy_pb2_grpc">
+<span id="dialog-api-privacy-pb2-grpc-module"></span><h2>dialog_api.privacy_pb2_grpc module<a class="headerlink" href="#module-dialog_api.privacy_pb2_grpc" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dialog_api.privacy_pb2_grpc.PrivacyServicer">
+<em class="property">class </em><code class="descclassname">dialog_api.privacy_pb2_grpc.</code><code class="descname">PrivacyServicer</code><a class="headerlink" href="#dialog_api.privacy_pb2_grpc.PrivacyServicer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="dialog_api.privacy_pb2_grpc.PrivacyServicer.BlockUser">
+<code class="descname">BlockUser</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.privacy_pb2_grpc.PrivacyServicer.BlockUser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.privacy_pb2_grpc.PrivacyServicer.LoadBlockedUsers">
+<code class="descname">LoadBlockedUsers</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.privacy_pb2_grpc.PrivacyServicer.LoadBlockedUsers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.privacy_pb2_grpc.PrivacyServicer.UnblockUser">
+<code class="descname">UnblockUser</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.privacy_pb2_grpc.PrivacyServicer.UnblockUser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="dialog_api.privacy_pb2_grpc.PrivacyStub">
+<em class="property">class </em><code class="descclassname">dialog_api.privacy_pb2_grpc.</code><code class="descname">PrivacyStub</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.privacy_pb2_grpc.PrivacyStub" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dialog_api.privacy_pb2_grpc.add_PrivacyServicer_to_server">
+<code class="descclassname">dialog_api.privacy_pb2_grpc.</code><code class="descname">add_PrivacyServicer_to_server</code><span class="sig-paren">(</span><em>servicer</em>, <em>server</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.privacy_pb2_grpc.add_PrivacyServicer_to_server" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-dialog_api.profile_pb2">
+<span id="dialog-api-profile-pb2-module"></span><h2>dialog_api.profile_pb2 module<a class="headerlink" href="#module-dialog_api.profile_pb2" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dialog_api.profile_pb2_grpc">
+<span id="dialog-api-profile-pb2-grpc-module"></span><h2>dialog_api.profile_pb2_grpc module<a class="headerlink" href="#module-dialog_api.profile_pb2_grpc" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dialog_api.profile_pb2_grpc.ProfileServicer">
+<em class="property">class </em><code class="descclassname">dialog_api.profile_pb2_grpc.</code><code class="descname">ProfileServicer</code><a class="headerlink" href="#dialog_api.profile_pb2_grpc.ProfileServicer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="dialog_api.profile_pb2_grpc.ProfileServicer.ChangeUserStatus">
+<code class="descname">ChangeUserStatus</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.profile_pb2_grpc.ProfileServicer.ChangeUserStatus" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.profile_pb2_grpc.ProfileServicer.CheckNickName">
+<code class="descname">CheckNickName</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.profile_pb2_grpc.ProfileServicer.CheckNickName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.profile_pb2_grpc.ProfileServicer.EditAbout">
+<code class="descname">EditAbout</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.profile_pb2_grpc.ProfileServicer.EditAbout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.profile_pb2_grpc.ProfileServicer.EditAvatar">
+<code class="descname">EditAvatar</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.profile_pb2_grpc.ProfileServicer.EditAvatar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.profile_pb2_grpc.ProfileServicer.EditCustomProfile">
+<code class="descname">EditCustomProfile</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.profile_pb2_grpc.ProfileServicer.EditCustomProfile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.profile_pb2_grpc.ProfileServicer.EditMyPreferredLanguages">
+<code class="descname">EditMyPreferredLanguages</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.profile_pb2_grpc.ProfileServicer.EditMyPreferredLanguages" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.profile_pb2_grpc.ProfileServicer.EditMyTimeZone">
+<code class="descname">EditMyTimeZone</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.profile_pb2_grpc.ProfileServicer.EditMyTimeZone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.profile_pb2_grpc.ProfileServicer.EditName">
+<code class="descname">EditName</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.profile_pb2_grpc.ProfileServicer.EditName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.profile_pb2_grpc.ProfileServicer.EditNickName">
+<code class="descname">EditNickName</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.profile_pb2_grpc.ProfileServicer.EditNickName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.profile_pb2_grpc.ProfileServicer.EditSex">
+<code class="descname">EditSex</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.profile_pb2_grpc.ProfileServicer.EditSex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.profile_pb2_grpc.ProfileServicer.RemoveAvatar">
+<code class="descname">RemoveAvatar</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.profile_pb2_grpc.ProfileServicer.RemoveAvatar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="dialog_api.profile_pb2_grpc.ProfileStub">
+<em class="property">class </em><code class="descclassname">dialog_api.profile_pb2_grpc.</code><code class="descname">ProfileStub</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.profile_pb2_grpc.ProfileStub" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dialog_api.profile_pb2_grpc.add_ProfileServicer_to_server">
+<code class="descclassname">dialog_api.profile_pb2_grpc.</code><code class="descname">add_ProfileServicer_to_server</code><span class="sig-paren">(</span><em>servicer</em>, <em>server</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.profile_pb2_grpc.add_ProfileServicer_to_server" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-dialog_api.push_pb2">
+<span id="dialog-api-push-pb2-module"></span><h2>dialog_api.push_pb2 module<a class="headerlink" href="#module-dialog_api.push_pb2" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dialog_api.push_pb2_grpc">
+<span id="dialog-api-push-pb2-grpc-module"></span><h2>dialog_api.push_pb2_grpc module<a class="headerlink" href="#module-dialog_api.push_pb2_grpc" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dialog_api.push_pb2_grpc.PushServicer">
+<em class="property">class </em><code class="descclassname">dialog_api.push_pb2_grpc.</code><code class="descname">PushServicer</code><a class="headerlink" href="#dialog_api.push_pb2_grpc.PushServicer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="dialog_api.push_pb2_grpc.PushServicer.RegisterApplePush">
+<code class="descname">RegisterApplePush</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.push_pb2_grpc.PushServicer.RegisterApplePush" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.push_pb2_grpc.PushServicer.RegisterApplePushKit">
+<code class="descname">RegisterApplePushKit</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.push_pb2_grpc.PushServicer.RegisterApplePushKit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.push_pb2_grpc.PushServicer.RegisterApplePushToken">
+<code class="descname">RegisterApplePushToken</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.push_pb2_grpc.PushServicer.RegisterApplePushToken" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.push_pb2_grpc.PushServicer.RegisterGooglePush">
+<code class="descname">RegisterGooglePush</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.push_pb2_grpc.PushServicer.RegisterGooglePush" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.push_pb2_grpc.PushServicer.UnregisterApplePush">
+<code class="descname">UnregisterApplePush</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.push_pb2_grpc.PushServicer.UnregisterApplePush" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.push_pb2_grpc.PushServicer.UnregisterApplePushKit">
+<code class="descname">UnregisterApplePushKit</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.push_pb2_grpc.PushServicer.UnregisterApplePushKit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.push_pb2_grpc.PushServicer.UnregisterApplePushToken">
+<code class="descname">UnregisterApplePushToken</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.push_pb2_grpc.PushServicer.UnregisterApplePushToken" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.push_pb2_grpc.PushServicer.UnregisterGooglePush">
+<code class="descname">UnregisterGooglePush</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.push_pb2_grpc.PushServicer.UnregisterGooglePush" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="dialog_api.push_pb2_grpc.PushStub">
+<em class="property">class </em><code class="descclassname">dialog_api.push_pb2_grpc.</code><code class="descname">PushStub</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.push_pb2_grpc.PushStub" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dialog_api.push_pb2_grpc.add_PushServicer_to_server">
+<code class="descclassname">dialog_api.push_pb2_grpc.</code><code class="descname">add_PushServicer_to_server</code><span class="sig-paren">(</span><em>servicer</em>, <em>server</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.push_pb2_grpc.add_PushServicer_to_server" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-dialog_api.raw_api_pb2">
+<span id="dialog-api-raw-api-pb2-module"></span><h2>dialog_api.raw_api_pb2 module<a class="headerlink" href="#module-dialog_api.raw_api_pb2" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dialog_api.raw_api_pb2_grpc">
+<span id="dialog-api-raw-api-pb2-grpc-module"></span><h2>dialog_api.raw_api_pb2_grpc module<a class="headerlink" href="#module-dialog_api.raw_api_pb2_grpc" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dialog_api.raw_api_pb2_grpc.RawAPIServicer">
+<em class="property">class </em><code class="descclassname">dialog_api.raw_api_pb2_grpc.</code><code class="descname">RawAPIServicer</code><a class="headerlink" href="#dialog_api.raw_api_pb2_grpc.RawAPIServicer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="dialog_api.raw_api_pb2_grpc.RawAPIServicer.RawRequest">
+<code class="descname">RawRequest</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.raw_api_pb2_grpc.RawAPIServicer.RawRequest" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="dialog_api.raw_api_pb2_grpc.RawAPIStub">
+<em class="property">class </em><code class="descclassname">dialog_api.raw_api_pb2_grpc.</code><code class="descname">RawAPIStub</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.raw_api_pb2_grpc.RawAPIStub" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dialog_api.raw_api_pb2_grpc.add_RawAPIServicer_to_server">
+<code class="descclassname">dialog_api.raw_api_pb2_grpc.</code><code class="descname">add_RawAPIServicer_to_server</code><span class="sig-paren">(</span><em>servicer</em>, <em>server</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.raw_api_pb2_grpc.add_RawAPIServicer_to_server" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-dialog_api.registration_pb2">
+<span id="dialog-api-registration-pb2-module"></span><h2>dialog_api.registration_pb2 module<a class="headerlink" href="#module-dialog_api.registration_pb2" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dialog_api.registration_pb2_grpc">
+<span id="dialog-api-registration-pb2-grpc-module"></span><h2>dialog_api.registration_pb2_grpc module<a class="headerlink" href="#module-dialog_api.registration_pb2_grpc" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dialog_api.registration_pb2_grpc.RegistrationServicer">
+<em class="property">class </em><code class="descclassname">dialog_api.registration_pb2_grpc.</code><code class="descname">RegistrationServicer</code><a class="headerlink" href="#dialog_api.registration_pb2_grpc.RegistrationServicer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="dialog_api.registration_pb2_grpc.RegistrationServicer.ExchangeAuthIdForToken">
+<code class="descname">ExchangeAuthIdForToken</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.registration_pb2_grpc.RegistrationServicer.ExchangeAuthIdForToken" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.registration_pb2_grpc.RegistrationServicer.RegisterDeprecatedDevice">
+<code class="descname">RegisterDeprecatedDevice</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.registration_pb2_grpc.RegistrationServicer.RegisterDeprecatedDevice" title="Permalink to this definition">¶</a></dt>
+<dd><p>deprecated</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.registration_pb2_grpc.RegistrationServicer.RegisterDevice">
+<code class="descname">RegisterDevice</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.registration_pb2_grpc.RegistrationServicer.RegisterDevice" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ register device to get auth token</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="dialog_api.registration_pb2_grpc.RegistrationStub">
+<em class="property">class </em><code class="descclassname">dialog_api.registration_pb2_grpc.</code><code class="descname">RegistrationStub</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.registration_pb2_grpc.RegistrationStub" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dialog_api.registration_pb2_grpc.add_RegistrationServicer_to_server">
+<code class="descclassname">dialog_api.registration_pb2_grpc.</code><code class="descname">add_RegistrationServicer_to_server</code><span class="sig-paren">(</span><em>servicer</em>, <em>server</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.registration_pb2_grpc.add_RegistrationServicer_to_server" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-dialog_api.search_pb2">
+<span id="dialog-api-search-pb2-module"></span><h2>dialog_api.search_pb2 module<a class="headerlink" href="#module-dialog_api.search_pb2" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dialog_api.search_pb2_grpc">
+<span id="dialog-api-search-pb2-grpc-module"></span><h2>dialog_api.search_pb2_grpc module<a class="headerlink" href="#module-dialog_api.search_pb2_grpc" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dialog_api.search_pb2_grpc.SearchServicer">
+<em class="property">class </em><code class="descclassname">dialog_api.search_pb2_grpc.</code><code class="descname">SearchServicer</code><a class="headerlink" href="#dialog_api.search_pb2_grpc.SearchServicer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="dialog_api.search_pb2_grpc.SearchServicer.MessageSearch">
+<code class="descname">MessageSearch</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.search_pb2_grpc.SearchServicer.MessageSearch" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Search by messages</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.search_pb2_grpc.SearchServicer.MessageSearchMore">
+<code class="descname">MessageSearchMore</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.search_pb2_grpc.SearchServicer.MessageSearchMore" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.search_pb2_grpc.SearchServicer.PeerSearch">
+<code class="descname">PeerSearch</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.search_pb2_grpc.SearchServicer.PeerSearch" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Search among groups/users/contacts</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.search_pb2_grpc.SearchServicer.ResolvePeer">
+<code class="descname">ResolvePeer</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.search_pb2_grpc.SearchServicer.ResolvePeer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.search_pb2_grpc.SearchServicer.SimpleSearch">
+<code class="descname">SimpleSearch</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.search_pb2_grpc.SearchServicer.SimpleSearch" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Custom search by conditions</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.search_pb2_grpc.SearchServicer.SimpleSearchMore">
+<code class="descname">SimpleSearchMore</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.search_pb2_grpc.SearchServicer.SimpleSearchMore" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="dialog_api.search_pb2_grpc.SearchStub">
+<em class="property">class </em><code class="descclassname">dialog_api.search_pb2_grpc.</code><code class="descname">SearchStub</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.search_pb2_grpc.SearchStub" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dialog_api.search_pb2_grpc.add_SearchServicer_to_server">
+<code class="descclassname">dialog_api.search_pb2_grpc.</code><code class="descname">add_SearchServicer_to_server</code><span class="sig-paren">(</span><em>servicer</em>, <em>server</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.search_pb2_grpc.add_SearchServicer_to_server" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-dialog_api.sequence_and_updates_pb2">
+<span id="dialog-api-sequence-and-updates-pb2-module"></span><h2>dialog_api.sequence_and_updates_pb2 module<a class="headerlink" href="#module-dialog_api.sequence_and_updates_pb2" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dialog_api.sequence_and_updates_pb2_grpc">
+<span id="dialog-api-sequence-and-updates-pb2-grpc-module"></span><h2>dialog_api.sequence_and_updates_pb2_grpc module<a class="headerlink" href="#module-dialog_api.sequence_and_updates_pb2_grpc" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dialog_api.sequence_and_updates_pb2_grpc.SequenceAndUpdatesServicer">
+<em class="property">class </em><code class="descclassname">dialog_api.sequence_and_updates_pb2_grpc.</code><code class="descname">SequenceAndUpdatesServicer</code><a class="headerlink" href="#dialog_api.sequence_and_updates_pb2_grpc.SequenceAndUpdatesServicer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="dialog_api.sequence_and_updates_pb2_grpc.SequenceAndUpdatesServicer.GetDialogsDifference">
+<code class="descname">GetDialogsDifference</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.sequence_and_updates_pb2_grpc.SequenceAndUpdatesServicer.GetDialogsDifference" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Load all dialogs that changed after given date</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.sequence_and_updates_pb2_grpc.SequenceAndUpdatesServicer.GetDifference">
+<code class="descname">GetDifference</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.sequence_and_updates_pb2_grpc.SequenceAndUpdatesServicer.GetDifference" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Get all update that happens after given seq number</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.sequence_and_updates_pb2_grpc.SequenceAndUpdatesServicer.GetReferencedEntitites">
+<code class="descname">GetReferencedEntitites</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.sequence_and_updates_pb2_grpc.SequenceAndUpdatesServicer.GetReferencedEntitites" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Load some required entities</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.sequence_and_updates_pb2_grpc.SequenceAndUpdatesServicer.GetState">
+<code class="descname">GetState</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.sequence_and_updates_pb2_grpc.SequenceAndUpdatesServicer.GetState" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Get last seq number</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.sequence_and_updates_pb2_grpc.SequenceAndUpdatesServicer.SeqUpdates">
+<code class="descname">SeqUpdates</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.sequence_and_updates_pb2_grpc.SequenceAndUpdatesServicer.SeqUpdates" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Get stream of the user’s updates</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.sequence_and_updates_pb2_grpc.SequenceAndUpdatesServicer.SubscribeFromGroupOnline">
+<code class="descname">SubscribeFromGroupOnline</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.sequence_and_updates_pb2_grpc.SequenceAndUpdatesServicer.SubscribeFromGroupOnline" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.sequence_and_updates_pb2_grpc.SequenceAndUpdatesServicer.SubscribeFromOnline">
+<code class="descname">SubscribeFromOnline</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.sequence_and_updates_pb2_grpc.SequenceAndUpdatesServicer.SubscribeFromOnline" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.sequence_and_updates_pb2_grpc.SequenceAndUpdatesServicer.SubscribeToGroupOnline">
+<code class="descname">SubscribeToGroupOnline</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.sequence_and_updates_pb2_grpc.SequenceAndUpdatesServicer.SubscribeToGroupOnline" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.sequence_and_updates_pb2_grpc.SequenceAndUpdatesServicer.SubscribeToOnline">
+<code class="descname">SubscribeToOnline</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.sequence_and_updates_pb2_grpc.SequenceAndUpdatesServicer.SubscribeToOnline" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="dialog_api.sequence_and_updates_pb2_grpc.SequenceAndUpdatesStub">
+<em class="property">class </em><code class="descclassname">dialog_api.sequence_and_updates_pb2_grpc.</code><code class="descname">SequenceAndUpdatesStub</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.sequence_and_updates_pb2_grpc.SequenceAndUpdatesStub" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dialog_api.sequence_and_updates_pb2_grpc.add_SequenceAndUpdatesServicer_to_server">
+<code class="descclassname">dialog_api.sequence_and_updates_pb2_grpc.</code><code class="descname">add_SequenceAndUpdatesServicer_to_server</code><span class="sig-paren">(</span><em>servicer</em>, <em>server</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.sequence_and_updates_pb2_grpc.add_SequenceAndUpdatesServicer_to_server" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-dialog_api.stickers_pb2">
+<span id="dialog-api-stickers-pb2-module"></span><h2>dialog_api.stickers_pb2 module<a class="headerlink" href="#module-dialog_api.stickers_pb2" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dialog_api.stickers_pb2_grpc">
+<span id="dialog-api-stickers-pb2-grpc-module"></span><h2>dialog_api.stickers_pb2_grpc module<a class="headerlink" href="#module-dialog_api.stickers_pb2_grpc" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dialog_api.stickers_pb2_grpc.StickersServicer">
+<em class="property">class </em><code class="descclassname">dialog_api.stickers_pb2_grpc.</code><code class="descname">StickersServicer</code><a class="headerlink" href="#dialog_api.stickers_pb2_grpc.StickersServicer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="dialog_api.stickers_pb2_grpc.StickersServicer.AddStickerCollection">
+<code class="descname">AddStickerCollection</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.stickers_pb2_grpc.StickersServicer.AddStickerCollection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.stickers_pb2_grpc.StickersServicer.AddStickerPackReference">
+<code class="descname">AddStickerPackReference</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.stickers_pb2_grpc.StickersServicer.AddStickerPackReference" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.stickers_pb2_grpc.StickersServicer.LoadAcesssibleStickers">
+<code class="descname">LoadAcesssibleStickers</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.stickers_pb2_grpc.StickersServicer.LoadAcesssibleStickers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.stickers_pb2_grpc.StickersServicer.LoadOwnStickers">
+<code class="descname">LoadOwnStickers</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.stickers_pb2_grpc.StickersServicer.LoadOwnStickers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.stickers_pb2_grpc.StickersServicer.LoadStickerCollection">
+<code class="descname">LoadStickerCollection</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.stickers_pb2_grpc.StickersServicer.LoadStickerCollection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.stickers_pb2_grpc.StickersServicer.RemoveStickerCollection">
+<code class="descname">RemoveStickerCollection</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.stickers_pb2_grpc.StickersServicer.RemoveStickerCollection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.stickers_pb2_grpc.StickersServicer.RemoveStickerPackReference">
+<code class="descname">RemoveStickerPackReference</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.stickers_pb2_grpc.StickersServicer.RemoveStickerPackReference" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="dialog_api.stickers_pb2_grpc.StickersStub">
+<em class="property">class </em><code class="descclassname">dialog_api.stickers_pb2_grpc.</code><code class="descname">StickersStub</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.stickers_pb2_grpc.StickersStub" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dialog_api.stickers_pb2_grpc.add_StickersServicer_to_server">
+<code class="descclassname">dialog_api.stickers_pb2_grpc.</code><code class="descname">add_StickersServicer_to_server</code><span class="sig-paren">(</span><em>servicer</em>, <em>server</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.stickers_pb2_grpc.add_StickersServicer_to_server" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-dialog_api.typing_and_online_pb2">
+<span id="dialog-api-typing-and-online-pb2-module"></span><h2>dialog_api.typing_and_online_pb2 module<a class="headerlink" href="#module-dialog_api.typing_and_online_pb2" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dialog_api.typing_and_online_pb2_grpc">
+<span id="dialog-api-typing-and-online-pb2-grpc-module"></span><h2>dialog_api.typing_and_online_pb2_grpc module<a class="headerlink" href="#module-dialog_api.typing_and_online_pb2_grpc" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dialog_api.typing_and_online_pb2_grpc.TypingAndOnlineServicer">
+<em class="property">class </em><code class="descclassname">dialog_api.typing_and_online_pb2_grpc.</code><code class="descname">TypingAndOnlineServicer</code><a class="headerlink" href="#dialog_api.typing_and_online_pb2_grpc.TypingAndOnlineServicer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="dialog_api.typing_and_online_pb2_grpc.TypingAndOnlineServicer.PauseNotifications">
+<code class="descname">PauseNotifications</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.typing_and_online_pb2_grpc.TypingAndOnlineServicer.PauseNotifications" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.typing_and_online_pb2_grpc.TypingAndOnlineServicer.RestoreNotifications">
+<code class="descname">RestoreNotifications</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.typing_and_online_pb2_grpc.TypingAndOnlineServicer.RestoreNotifications" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.typing_and_online_pb2_grpc.TypingAndOnlineServicer.SetOnline">
+<code class="descname">SetOnline</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.typing_and_online_pb2_grpc.TypingAndOnlineServicer.SetOnline" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.typing_and_online_pb2_grpc.TypingAndOnlineServicer.StopTyping">
+<code class="descname">StopTyping</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.typing_and_online_pb2_grpc.TypingAndOnlineServicer.StopTyping" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.typing_and_online_pb2_grpc.TypingAndOnlineServicer.Typing">
+<code class="descname">Typing</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.typing_and_online_pb2_grpc.TypingAndOnlineServicer.Typing" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="dialog_api.typing_and_online_pb2_grpc.TypingAndOnlineStub">
+<em class="property">class </em><code class="descclassname">dialog_api.typing_and_online_pb2_grpc.</code><code class="descname">TypingAndOnlineStub</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.typing_and_online_pb2_grpc.TypingAndOnlineStub" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dialog_api.typing_and_online_pb2_grpc.add_TypingAndOnlineServicer_to_server">
+<code class="descclassname">dialog_api.typing_and_online_pb2_grpc.</code><code class="descname">add_TypingAndOnlineServicer_to_server</code><span class="sig-paren">(</span><em>servicer</em>, <em>server</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.typing_and_online_pb2_grpc.add_TypingAndOnlineServicer_to_server" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-dialog_api.users_pb2">
+<span id="dialog-api-users-pb2-module"></span><h2>dialog_api.users_pb2 module<a class="headerlink" href="#module-dialog_api.users_pb2" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dialog_api.users_pb2_grpc">
+<span id="dialog-api-users-pb2-grpc-module"></span><h2>dialog_api.users_pb2_grpc module<a class="headerlink" href="#module-dialog_api.users_pb2_grpc" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dialog_api.users_pb2_grpc.UsersServicer">
+<em class="property">class </em><code class="descclassname">dialog_api.users_pb2_grpc.</code><code class="descname">UsersServicer</code><a class="headerlink" href="#dialog_api.users_pb2_grpc.UsersServicer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="dialog_api.users_pb2_grpc.UsersServicer.EditUserLocalName">
+<code class="descname">EditUserLocalName</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.users_pb2_grpc.UsersServicer.EditUserLocalName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.users_pb2_grpc.UsersServicer.LoadFullUsers">
+<code class="descname">LoadFullUsers</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.users_pb2_grpc.UsersServicer.LoadFullUsers" title="Permalink to this definition">¶</a></dt>
+<dd><p>/ Deprecated</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="dialog_api.users_pb2_grpc.UsersStub">
+<em class="property">class </em><code class="descclassname">dialog_api.users_pb2_grpc.</code><code class="descname">UsersStub</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.users_pb2_grpc.UsersStub" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dialog_api.users_pb2_grpc.add_UsersServicer_to_server">
+<code class="descclassname">dialog_api.users_pb2_grpc.</code><code class="descname">add_UsersServicer_to_server</code><span class="sig-paren">(</span><em>servicer</em>, <em>server</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.users_pb2_grpc.add_UsersServicer_to_server" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-dialog_api.web_rtc_pb2">
+<span id="dialog-api-web-rtc-pb2-module"></span><h2>dialog_api.web_rtc_pb2 module<a class="headerlink" href="#module-dialog_api.web_rtc_pb2" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dialog_api.web_rtc_pb2_grpc">
+<span id="dialog-api-web-rtc-pb2-grpc-module"></span><h2>dialog_api.web_rtc_pb2_grpc module<a class="headerlink" href="#module-dialog_api.web_rtc_pb2_grpc" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dialog_api.web_rtc_pb2_grpc.WebRTCServicer">
+<em class="property">class </em><code class="descclassname">dialog_api.web_rtc_pb2_grpc.</code><code class="descname">WebRTCServicer</code><a class="headerlink" href="#dialog_api.web_rtc_pb2_grpc.WebRTCServicer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="dialog_api.web_rtc_pb2_grpc.WebRTCServicer.ChangeCallDisplayName">
+<code class="descname">ChangeCallDisplayName</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.web_rtc_pb2_grpc.WebRTCServicer.ChangeCallDisplayName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.web_rtc_pb2_grpc.WebRTCServicer.DeleteCall">
+<code class="descname">DeleteCall</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.web_rtc_pb2_grpc.WebRTCServicer.DeleteCall" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.web_rtc_pb2_grpc.WebRTCServicer.DoCall">
+<code class="descname">DoCall</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.web_rtc_pb2_grpc.WebRTCServicer.DoCall" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.web_rtc_pb2_grpc.WebRTCServicer.GetCallInfo">
+<code class="descname">GetCallInfo</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.web_rtc_pb2_grpc.WebRTCServicer.GetCallInfo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.web_rtc_pb2_grpc.WebRTCServicer.JoinCall">
+<code class="descname">JoinCall</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.web_rtc_pb2_grpc.WebRTCServicer.JoinCall" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.web_rtc_pb2_grpc.WebRTCServicer.LoadCalls">
+<code class="descname">LoadCalls</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.web_rtc_pb2_grpc.WebRTCServicer.LoadCalls" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dialog_api.web_rtc_pb2_grpc.WebRTCServicer.RejectCall">
+<code class="descname">RejectCall</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.web_rtc_pb2_grpc.WebRTCServicer.RejectCall" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="dialog_api.web_rtc_pb2_grpc.WebRTCStub">
+<em class="property">class </em><code class="descclassname">dialog_api.web_rtc_pb2_grpc.</code><code class="descname">WebRTCStub</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.web_rtc_pb2_grpc.WebRTCStub" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dialog_api.web_rtc_pb2_grpc.add_WebRTCServicer_to_server">
+<code class="descclassname">dialog_api.web_rtc_pb2_grpc.</code><code class="descname">add_WebRTCServicer_to_server</code><span class="sig-paren">(</span><em>servicer</em>, <em>server</em><span class="sig-paren">)</span><a class="headerlink" href="#dialog_api.web_rtc_pb2_grpc.add_WebRTCServicer_to_server" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-dialog_api">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-dialog_api" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Python Bot SDK</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Dialog, LLC.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/dialog_api.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

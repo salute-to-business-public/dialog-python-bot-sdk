@@ -1,5 +1,5 @@
 # coding: utf-8
-from dialog_bot_sdk.peers import private_peer
+from dialog_bot_sdk.internal.peers import private_peer
 from dialog_bot_sdk.bot import DialogBot
 from threading import Thread, Timer
 from dialog_bot_sdk import interactive_media
