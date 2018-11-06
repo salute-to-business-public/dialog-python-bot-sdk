@@ -23,6 +23,8 @@ class Messaging(ManagedService):
         for update in self.internal.updates.SeqUpdates(empty_pb2.Empty()):
             up = sequence_and_updates_pb2.UpdateSeqUpdate()
             up.ParseFromString(update.update.value)
-            print(up.WhichOneof('update'), up.update_header)
-            if up.update_header == 55:
-                callback(up.updateMessage)
+            if up.WhichOneof('update') == 'updateMessage':
+                self.internal.thread_pool_executor.submit(
+                    callback(up.updateMessage)
+                )
+
