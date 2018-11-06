@@ -24,4 +24,7 @@ class Messaging(ManagedService):
             up = sequence_and_updates_pb2.UpdateSeqUpdate()
             up.ParseFromString(update.update.value)
             if up.WhichOneof('update') == 'updateMessage':
-                callback(up.updateMessage)
+                self.internal.thread_pool_executor.submit(
+                    callback(up.updateMessage)
+                )
+

@@ -4,6 +4,7 @@ from .entity_manager import EntityManager
 from .messaging import Messaging
 from .updates import Updates
 
+
 class DialogBot(object):
     def __init__(self, channel, bot_token):
         self.internal = InternalBot(channel)

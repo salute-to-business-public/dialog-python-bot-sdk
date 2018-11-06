@@ -1,3 +1,4 @@
+from concurrent.futures import ThreadPoolExecutor
 from .service import AuthenticatedService
 from dialog_api import registration_pb2, registration_pb2_grpc,\
                        sequence_and_updates_pb2_grpc,\
@@ -19,6 +20,7 @@ class InternalBot(object):
         self.contacts = self.wrap_service(contacts_pb2_grpc.ContactsStub)
         self.search = self.wrap_service(search_pb2_grpc.SearchStub)
         self.token = self.get_session_token()
+        self.thread_pool_executor = ThreadPoolExecutor(max_workers=10)
 
     def authorize(self, bot_token):
         return self.auth.StartTokenAuth(authentication_pb2.RequestStartTokenAuth(
