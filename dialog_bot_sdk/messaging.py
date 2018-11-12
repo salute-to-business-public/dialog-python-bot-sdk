@@ -54,9 +54,10 @@ class Messaging(ManagedService):
             headers={'Content-Type': 'application/octet-stream'}
         )
 
-        if put_response != 200:
+        if put_response.status_code != 200:
             print('Can\'t upload file chunk')
-            return None
+
+        return put_response
 
     def upload_file(self, file, max_chunk_size=1024*1024):
         upload_key = self.internal.media_and_files.GetFileUploadUrl(
