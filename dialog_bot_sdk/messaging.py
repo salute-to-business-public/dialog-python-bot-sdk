@@ -25,7 +25,6 @@ class Messaging(ManagedService):
     def send_file(self, peer, file):
         location = self.upload_file(file)
         outpeer = self.manager.get_outpeer(peer)
-
         msg = messaging_pb2.MessageContent()
         content = messaging_pb2.DocumentMessage()
         content.file_id = location.file_id
