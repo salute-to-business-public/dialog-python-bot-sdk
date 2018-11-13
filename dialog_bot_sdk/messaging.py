@@ -5,6 +5,7 @@ from google.protobuf import empty_pb2
 import time
 import os
 import requests
+from concurrent.futures import ThreadPoolExecutor
 
 
 class Messaging(ManagedService):
@@ -55,25 +56,33 @@ class Messaging(ManagedService):
         )
 
         if put_response.status_code != 200:
-            print('Can\'t upload file chunk')
+            print('Can\'t upload file chunk #{}' % part_number)
+            return None
 
         return put_response
 
-    def upload_file(self, file, max_chunk_size=1024*1024):
+    def upload_file(self, file, max_chunk_size=1024*1024, parallelism=10):
         upload_key = self.internal.media_and_files.GetFileUploadUrl(
             media_and_files_pb2.RequestGetFileUploadUrl(
                 expected_size=os.path.getsize(file)
             )
         ).upload_key
 
-        for part_number, chunk in enumerate(
-                read_file_in_chunks(
-                    file, max_chunk_size
+        with ThreadPoolExecutor(max_workers=parallelism) as executor:
+            result = list(
+                executor.map(
+                    lambda x: self.upload_file_chunk(*x),
+                    (
+                        (part_number, chunk, upload_key) for part_number, chunk in enumerate(
+                            read_file_in_chunks(file, max_chunk_size)
+                        )
+                    )
+
                 )
-        ):
-            self.internal.thread_pool_executor.submit(
-                self.upload_file_chunk(part_number, chunk, upload_key)
             )
+
+            if not all(result):
+                return None
 
         return self.internal.media_and_files.CommitFileUpload(
             media_and_files_pb2.RequestCommitFileUpload(
