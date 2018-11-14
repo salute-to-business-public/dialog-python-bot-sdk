@@ -11,9 +11,11 @@ DEFAULT_OPTIMIZATIONS = [
 
 class Updates(ManagedService):
     def get_difference(self, seq):
-        return self.internal.updates.GetDifference(
+        diff = self.internal.updates.GetDifference(
             sequence_and_updates_pb2.RequestGetDifference(
                 seq=seq,
                 optimizations=DEFAULT_OPTIMIZATIONS
             )
         )
+
+        return diff

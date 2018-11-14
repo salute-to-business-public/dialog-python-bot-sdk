@@ -6,20 +6,11 @@ from dialog_bot_sdk import interactive_media
 import time
 
 
-def hello():
-    print('Yay!')
-
-
 def on_msg(*params):
-    print('Receiving message...')
-    t = Timer(10, hello)
-    t.start()
     print('on msg', params[0].message.textMessage.text)
-    # for container in d.updates.get_difference(2100).updates:
-    #     if container.update_header == 55:
-    #         message = messaging_pb2.UpdateMessage()
-    #         message.ParseFromString(container.update)
-    #         print(message.message.textMessage.text)
+    # d.messaging.send_message(params[0].peer, 'Reply to: ' + str(params[0].message.textMessage.text))
+    # d.updates.get_difference(5272)
+    d.messaging.send_file(params[0].peer, 'file.txt')
 
 
 if __name__ == '__main__':
@@ -63,18 +54,4 @@ if __name__ == '__main__':
     def receiver():
         d.messaging.on_message(on_msg)
 
-
     receiver()
-
-    # rcvThread = Thread(target=receiver)
-    # rcvThread.setDaemon(True)
-    # rcvThread.start()
-    #
-    # # sndThread = Thread(target = sender)
-    # # sndThread.setDaemon(True)
-    # # sndThread.start()
-    # #
-    # # sndThread.join(timeout=10.0)
-    # # rcvThread.join(timeout=10.0)
-    # #
-    # time.sleep(60)
