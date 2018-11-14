@@ -9,7 +9,17 @@ from concurrent.futures import ThreadPoolExecutor
 
 
 class Messaging(ManagedService):
+    """Main messaging class.
+
+    """
     def send_message(self, peer, text, interactive_media_groups=None):
+        """Send message to current peer.
+
+        :param peer: receiver's peer
+        :param text: message text
+        :param interactive_media_groups: groups of interactive media components (buttons etc.)
+        :return: mid value of SendMessage response object
+        """
         outpeer = self.manager.get_outpeer(peer)
         msg = messaging_pb2.MessageContent()
         msg.textMessage.text = text
@@ -24,6 +34,12 @@ class Messaging(ManagedService):
         )).mid
 
     def send_file(self, peer, file):
+        """Send file to current peer.
+
+        :param peer: receiver's peer
+        :param file: path to file
+        :return: mid value of SendMessage response object
+        """
         location = self.upload_file(file)
         outpeer = self.manager.get_outpeer(peer)
         msg = messaging_pb2.MessageContent()
@@ -41,6 +57,13 @@ class Messaging(ManagedService):
         )).mid
 
     def upload_file_chunk(self, part_number, chunk, upload_key):
+        """Upload file chunk.
+
+        :param part_number: number of chunk
+        :param chunk: chunk content
+        :param upload_key: upload key (need to be received from RequestGetFileUploadUrl request before uploading)
+        :return: Response of HTTP PUT request if success or None otherwise
+        """
         url = self.internal.media_and_files.GetFileUploadPartUrl(
             media_and_files_pb2.RequestGetFileUploadPartUrl(
                 part_number=part_number,
@@ -62,6 +85,13 @@ class Messaging(ManagedService):
         return put_response
 
     def upload_file(self, file, max_chunk_size=1024*1024, parallelism=10):
+        """Upload file for sending.
+
+        :param file: path to file
+        :param max_chunk_size: maximum size of one chunk
+        :param parallelism: number of uploading threads
+        :return: FileLocation object if success or None otherwise
+        """
         upload_key = self.internal.media_and_files.GetFileUploadUrl(
             media_and_files_pb2.RequestGetFileUploadUrl(
                 expected_size=os.path.getsize(file)
@@ -92,6 +122,11 @@ class Messaging(ManagedService):
         ).uploaded_file_location
 
     def on_message(self, callback):
+        """Message receiving event handler.
+
+        :param callback: function that will be called when message received
+        :return:
+        """
         for update in self.internal.updates.SeqUpdates(empty_pb2.Empty()):
             up = sequence_and_updates_pb2.UpdateSeqUpdate()
             up.ParseFromString(update.update.value)
