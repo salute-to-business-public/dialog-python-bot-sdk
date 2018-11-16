@@ -1,10 +1,12 @@
 from .service import ManagedService
 from .utils.read_file_in_chunks import read_file_in_chunks
+from .utils.get_photo_metadata import get_photo_w_h, get_photo_thumb_bytes
 from dialog_api import messaging_pb2, sequence_and_updates_pb2, media_and_files_pb2
 from google.protobuf import empty_pb2
 import time
 import os
 import requests
+import mimetypes
 from concurrent.futures import ThreadPoolExecutor
 
 
@@ -43,11 +45,48 @@ class Messaging(ManagedService):
         location = self.upload_file(file)
         outpeer = self.manager.get_outpeer(peer)
         msg = messaging_pb2.MessageContent()
+
         content = messaging_pb2.DocumentMessage()
         content.file_id = location.file_id
         content.access_hash = location.access_hash
         content.name = os.path.basename(file)
         content.file_size = os.path.getsize(file)
+        msg.documentMessage.CopyFrom(content)
+
+        return self.internal.messaging.SendMessage(messaging_pb2.RequestSendMessage(
+            peer=outpeer,
+            rid=int(time.time()),
+            message=msg
+        )).mid
+
+    def send_photo(self, peer, file):
+        """Send photo as photo (not as file) to current peer.
+
+        :param peer: receiver's peer
+        :param file: path to photo file
+        :return: mid value of SendMessage response object
+        """
+
+        location = self.upload_file(file)
+        outpeer = self.manager.get_outpeer(peer)
+        msg = messaging_pb2.MessageContent()
+
+        content = messaging_pb2.DocumentMessage()
+
+        content.file_id = location.file_id
+        content.access_hash = location.access_hash
+        content.name = os.path.basename(file)
+        content.file_size = os.path.getsize(file)
+        content.mime_type = mimetypes.guess_type(file)[0]
+
+        content.thumb.w, content.thumb.h, content.thumb.thumb = get_photo_thumb_bytes(file)
+
+        ext = messaging_pb2.DocumentEx()
+
+        photo = messaging_pb2.DocumentExPhoto()
+        photo.w, photo.h = get_photo_w_h(file)
+        ext.photo.CopyFrom(photo)
+        content.ext.CopyFrom(ext)
         msg.documentMessage.CopyFrom(content)
 
         return self.internal.messaging.SendMessage(messaging_pb2.RequestSendMessage(
@@ -64,6 +103,7 @@ class Messaging(ManagedService):
         :param upload_key: upload key (need to be received from RequestGetFileUploadUrl request before uploading)
         :return: Response of HTTP PUT request if success or None otherwise
         """
+
         url = self.internal.media_and_files.GetFileUploadPartUrl(
             media_and_files_pb2.RequestGetFileUploadPartUrl(
                 part_number=part_number,
@@ -92,6 +132,7 @@ class Messaging(ManagedService):
         :param parallelism: number of uploading threads
         :return: FileLocation object if success or None otherwise
         """
+
         upload_key = self.internal.media_and_files.GetFileUploadUrl(
             media_and_files_pb2.RequestGetFileUploadUrl(
                 expected_size=os.path.getsize(file)
@@ -125,8 +166,9 @@ class Messaging(ManagedService):
         """Message receiving event handler.
 
         :param callback: function that will be called when message received
-        :return:
+        :return: None
         """
+
         for update in self.internal.updates.SeqUpdates(empty_pb2.Empty()):
             up = sequence_and_updates_pb2.UpdateSeqUpdate()
             up.ParseFromString(update.update.value)
