@@ -5,3 +5,4 @@ gevent
 grpcio
 grpcio-tools
 requests
+Pillow

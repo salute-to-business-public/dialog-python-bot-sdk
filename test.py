@@ -10,7 +10,7 @@ def on_msg(*params):
     print('on msg', params[0].message.textMessage.text)
     # d.messaging.send_message(params[0].peer, 'Reply to: ' + str(params[0].message.textMessage.text))
     # d.updates.get_difference(5272)
-    d.messaging.send_file(params[0].peer, 'file.txt')
+    d.messaging.send_photo(params[0].peer, 'image.png')
 
 
 if __name__ == '__main__':
