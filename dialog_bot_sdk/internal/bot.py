@@ -49,7 +49,6 @@ class InternalBot(object):
                 device_title=self.app_title
             )
         )
-        print(registration_response.token)
         return registration_response.token
 
     def wrap_service(self, stub_func):

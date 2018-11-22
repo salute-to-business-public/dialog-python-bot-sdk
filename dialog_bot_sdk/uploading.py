@@ -17,7 +17,7 @@ class Uploading(object):
     def upload_file_chunk(self, part_number, chunk, upload_key):
         """Upload file chunk.
 
-        :param part_number: number of chunk
+        :param part_number: number of chunk (>=0)
         :param chunk: chunk content
         :param upload_key: upload key (need to be received from RequestGetFileUploadUrl request before uploading)
         :return: Response of HTTP PUT request if success or None otherwise

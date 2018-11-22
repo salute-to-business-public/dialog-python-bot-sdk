@@ -1,8 +1,10 @@
+from google.protobuf import empty_pb2
+import time
+import imghdr
+
 from .service import ManagedService
 from dialog_api import messaging_pb2, sequence_and_updates_pb2
 from dialog_bot_sdk.content import content
-from google.protobuf import empty_pb2
-import time
 
 
 class Messaging(ManagedService):
@@ -17,6 +19,10 @@ class Messaging(ManagedService):
         :param interactive_media_groups: groups of interactive media components (buttons etc.)
         :return: mid value of SendMessage response object
         """
+
+        if text == '' or text is None:
+            raise AttributeError('Text message must contain some text.')
+
         outpeer = self.manager.get_outpeer(peer)
         msg = messaging_pb2.MessageContent()
         msg.textMessage.text = text
@@ -37,6 +43,7 @@ class Messaging(ManagedService):
         :param file: path to file
         :return: mid value of SendMessage response object
         """
+
         location = self.internal.uploading.upload_file(file)
         outpeer = self.manager.get_outpeer(peer)
         msg = messaging_pb2.MessageContent()
@@ -58,6 +65,9 @@ class Messaging(ManagedService):
         :param file: path to image file
         :return: mid value of SendMessage response object
         """
+
+        if imghdr.what(file) not in ['gif', 'jpeg', 'png', 'bmp']:
+            raise IOError('File is not an image.')
 
         location = self.internal.uploading.upload_file(file)
         outpeer = self.manager.get_outpeer(peer)
