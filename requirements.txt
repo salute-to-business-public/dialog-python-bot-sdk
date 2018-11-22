@@ -1,7 +1,9 @@
 protobuf
+google
 google-api-python-client
 googleapis-common-protos
 gevent
+grpc
 grpcio
 grpcio-tools
 requests
