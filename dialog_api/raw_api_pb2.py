@@ -7,7 +7,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -23,6 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='raw_api.proto',
   package='dialog',
   syntax='proto3',
+  serialized_options=_b('\342?\026\n\024im.dlg.grpc.services'),
   serialized_pb=_b('\n\rraw_api.proto\x12\x06\x64ialog\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x11\x64\x65\x66initions.proto\x1a\x15scalapb/scalapb.proto\"\xa8\x01\n\x11RequestRawRequest\x12<\n\x07service\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12\x37\n\x04\x62ody\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.BytesValueB\x0c\x8a\xea\x30\x08\n\x06hidden:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"^\n\x12ResponseRawRequest\x12)\n\x04\x62ody\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.BytesValue:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse2t\n\x06RawAPI\x12j\n\nRawRequest\x12\x19.dialog.RequestRawRequest\x1a\x1a.dialog.ResponseRawRequest\"%\x82\xd3\xe4\x93\x02\x1f\"\x1a/v1/grpc/RawAPI/RawRequest:\x01*B\x19\xe2?\x16\n\x14im.dlg.grpc.servicesb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,definitions__pb2.DESCRIPTOR,scalapb_dot_scalapb__pb2.DESCRIPTOR,])
@@ -43,21 +43,21 @@ _REQUESTRAWREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='body', full_name='dialog.RequestRawRequest.body', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -81,14 +81,14 @@ _RESPONSERAWREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -120,23 +120,18 @@ ResponseRawRequest = _reflection.GeneratedProtocolMessageType('ResponseRawReques
 _sym_db.RegisterMessage(ResponseRawRequest)
 
 
-DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\342?\026\n\024im.dlg.grpc.services'))
-_REQUESTRAWREQUEST.fields_by_name['service'].has_options = True
-_REQUESTRAWREQUEST.fields_by_name['service']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTRAWREQUEST.fields_by_name['body'].has_options = True
-_REQUESTRAWREQUEST.fields_by_name['body']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTRAWREQUEST.has_options = True
-_REQUESTRAWREQUEST._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSERAWREQUEST.has_options = True
-_RESPONSERAWREQUEST._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
+DESCRIPTOR._options = None
+_REQUESTRAWREQUEST.fields_by_name['service']._options = None
+_REQUESTRAWREQUEST.fields_by_name['body']._options = None
+_REQUESTRAWREQUEST._options = None
+_RESPONSERAWREQUEST._options = None
 
 _RAWAPI = _descriptor.ServiceDescriptor(
   name='RawAPI',
   full_name='dialog.RawAPI',
   file=DESCRIPTOR,
   index=0,
-  options=None,
+  serialized_options=None,
   serialized_start=396,
   serialized_end=512,
   methods=[
@@ -147,7 +142,7 @@ _RAWAPI = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTRAWREQUEST,
     output_type=_RESPONSERAWREQUEST,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\037\"\032/v1/grpc/RawAPI/RawRequest:\001*')),
+    serialized_options=_b('\202\323\344\223\002\037\"\032/v1/grpc/RawAPI/RawRequest:\001*'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_RAWAPI)

@@ -8,7 +8,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -29,7 +28,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='messaging.proto',
   package='dialog',
   syntax='proto3',
-  serialized_pb=_b('\n\x0fmessaging.proto\x12\x06\x64ialog\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x11\x64\x65\x66initions.proto\x1a\x13miscellaneous.proto\x1a\x0cgroups.proto\x1a\x0bpeers.proto\x1a\x15media_and_files.proto\x1a\x0busers.proto\x1a\x15scalapb/scalapb.proto\"\x9b\x02\n\x11MessageAttributes\x12?\n\x0cis_mentioned\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12\x41\n\x0eis_highlighted\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12>\n\x0bis_notified\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12\x42\n\x0fis_only_for_you\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\"\xed\x01\n\rQuotedMessage\x12!\n\nmessage_id\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12&\n\x0fpublic_group_id\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12%\n\x0esender_user_id\x18\x03 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12#\n\x0cmessage_date\x18\x04 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x45\n\x16quoted_message_content\x18\x05 \x01(\x0b\x32\x16.dialog.MessageContentB\r\x8a\xea\x30\t\n\x07visible\"\xe7\x01\n\x0cMessageMedia\x12\x34\n\x07webpage\x18\x01 \x01(\x0b\x32\x14.dialog.WebpageMediaB\r\x8a\xea\x30\t\n\x07visible\x12\x30\n\x05image\x18\x02 \x01(\x0b\x32\x12.dialog.ImageMediaB\r\x8a\xea\x30\t\n\x07visible\x12\x30\n\x05\x61udio\x18\x03 \x01(\x0b\x32\x12.dialog.AudioMediaB\r\x8a\xea\x30\t\n\x07visible\x12=\n\x07\x61\x63tions\x18\x06 \x03(\x0b\x32\x1d.dialog.InteractiveMediaGroupB\r\x8a\xea\x30\t\n\x07visible\"\xf8\x01\n\x0cWebpageMedia\x12\x37\n\x03url\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x39\n\x05title\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12?\n\x0b\x64\x65scription\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x33\n\x05image\x18\x04 \x01(\x0b\x32\x15.dialog.ImageLocationB\r\x8a\xea\x30\t\n\x07visible\"A\n\nImageMedia\x12\x33\n\x05image\x18\x01 \x01(\x0b\x32\x15.dialog.ImageLocationB\r\x8a\xea\x30\t\n\x07visible\"A\n\nAudioMedia\x12\x33\n\x05\x61udio\x18\x01 \x01(\x0b\x32\x15.dialog.AudioLocationB\r\x8a\xea\x30\t\n\x07visible\"\xa4\x01\n\x16InteractiveMediaWidget\x12@\n\x16interactiveMediaButton\x18\x01 \x01(\x0b\x32\x1e.dialog.InteractiveMediaButtonH\x00\x12@\n\x16interactiveMediaSelect\x18\x02 \x01(\x0b\x32\x1e.dialog.InteractiveMediaSelectH\x00\x42\x06\n\x04\x62ody\"r\n\x16InteractiveMediaButton\x12\x1c\n\x05value\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12:\n\x05label\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\"\xde\x01\n\x16InteractiveMediaSelect\x12\x44\n\x07options\x18\x01 \x03(\x0b\x32$.dialog.InteractiveMediaSelectOptionB\r\x8a\xea\x30\t\n\x07visible\x12:\n\x05label\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12\x42\n\rdefault_value\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\"Z\n\x1cInteractiveMediaSelectOption\x12\x1c\n\x05value\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05label\x18\x02 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\"\xea\x01\n\x10InteractiveMedia\x12\x19\n\x02id\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12=\n\x06widget\x18\x02 \x01(\x0b\x32\x1e.dialog.InteractiveMediaWidgetB\r\x8a\xea\x30\t\n\x07visible\x12;\n\x05style\x18\x03 \x01(\x0e\x32\x1d.dialog.InteractiveMediaStyleB\r\x8a\xea\x30\t\n\x07visible\x12?\n\x07\x63onfirm\x18\x04 \x01(\x0b\x32\x1f.dialog.InteractiveMediaConfirmB\r\x8a\xea\x30\t\n\x07visible\"V\n\x1bInteractiveMediaTranslation\x12\x19\n\x02id\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05value\x18\x02 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\"\x89\x01\n InteractiveMediaTranslationGroup\x12\x1f\n\x08language\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x44\n\x08messages\x18\x02 \x03(\x0b\x32#.dialog.InteractiveMediaTranslationB\r\x8a\xea\x30\t\n\x07visible\"\x9c\x02\n\x15InteractiveMediaGroup\x12\x38\n\x07\x61\x63tions\x18\x01 \x03(\x0b\x32\x18.dialog.InteractiveMediaB\r\x8a\xea\x30\t\n\x07visible\x12\x39\n\x05title\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12?\n\x0b\x64\x65scription\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12M\n\x0ctranslations\x18\x04 \x03(\x0b\x32(.dialog.InteractiveMediaTranslationGroupB\r\x8a\xea\x30\t\n\x07visible\"\x87\x02\n\x17InteractiveMediaConfirm\x12\x39\n\x04text\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12:\n\x05title\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12\x37\n\x02ok\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12<\n\x07\x64ismiss\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\"\xa1\x01\n\x1bUpdateInteractiveMediaEvent\x12-\n\x03mid\x18\x01 \x01(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\x12\x19\n\x02id\x18\x02 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05value\x18\x03 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03uid\x18\x04 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\"\xa7\x01\n\x1fRequestDoInteractiveMediaAction\x12-\n\x03mid\x18\x01 \x01(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\x12\x19\n\x02id\x18\x02 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05value\x18\x03 \x01(\tB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xd2\x03\n\x0eMessageContent\x12*\n\x0btextMessage\x18\x01 \x01(\x0b\x32\x13.dialog.TextMessageH\x00\x12\x30\n\x0eserviceMessage\x18\x02 \x01(\x0b\x32\x16.dialog.ServiceMessageH\x00\x12\x32\n\x0f\x64ocumentMessage\x18\x03 \x01(\x0b\x32\x17.dialog.DocumentMessageH\x00\x12*\n\x0bjsonMessage\x18\x04 \x01(\x0b\x32\x13.dialog.JsonMessageH\x00\x12\x38\n\x12unsupportedMessage\x18\x05 \x01(\x0b\x32\x1a.dialog.UnsupportedMessageH\x00\x12\x30\n\x0estickerMessage\x18\x06 \x01(\x0b\x32\x16.dialog.StickerMessageH\x00\x12.\n\rbinaryMessage\x18\x07 \x01(\x0b\x32\x15.dialog.BinaryMessageH\x00\x12,\n\x0c\x65mptyMessage\x18\x08 \x01(\x0b\x32\x14.dialog.EmptyMessageH\x00\x12\x30\n\x0e\x64\x65letedMessage\x18\t \x01(\x0b\x32\x16.dialog.DeletedMessageH\x00\x42\x06\n\x04\x62ody\"\xe1\x01\n\x0bTextMessage\x12\x1a\n\x04text\x18\x01 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x1f\n\x08mentions\x18\x02 \x03(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x31\n\x03\x65xt\x18\x03 \x01(\x0b\x32\x15.dialog.TextMessageExB\r\x8a\xea\x30\t\n\x07visible\x12\x32\n\x05media\x18\x04 \x03(\x0b\x32\x14.dialog.MessageMediaB\r\x8a\xea\x30\t\n\x07visible\x12.\n\nextensions\x18\x05 \x03(\x0b\x32\x0b.dialog.AnyB\r\x8a\xea\x30\t\n\x07visible\"\xad\x01\n\rTextMessageEx\x12\x30\n\x0etextExMarkdown\x18\x01 \x01(\x0b\x32\x16.dialog.TextExMarkdownH\x00\x12\x36\n\x11textModernMessage\x18\x02 \x01(\x0b\x32\x19.dialog.TextModernMessageH\x00\x12*\n\x0btextCommand\x18\x03 \x01(\x0b\x32\x13.dialog.TextCommandH\x00\x42\x06\n\x04\x62ody\"0\n\x0eTextExMarkdown\x12\x1e\n\x08markdown\x18\x02 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\"\xc7\x02\n\x11TextModernMessage\x12\x38\n\x04text\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12I\n\x14sender_name_override\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12<\n\x15sender_photo_override\x18\x03 \x01(\x0b\x32\x0e.dialog.AvatarB\r\x8a\xea\x30\t\n\x07visible\x12\x34\n\x05style\x18\x04 \x01(\x0b\x32\x16.dialog.ParagraphStyleB\r\x8a\xea\x30\t\n\x07visible\x12\x39\n\x08\x61ttaches\x18\x05 \x03(\x0b\x32\x18.dialog.TextModernAttachB\r\x8a\xea\x30\t\n\x07visible\"\xba\x01\n\x0eParagraphStyle\x12\x41\n\x0eshow_paragraph\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12\x35\n\x0fparagraph_color\x18\x02 \x01(\x0b\x32\r.dialog.ColorB\r\x8a\xea\x30\t\n\x07visible\x12.\n\x08\x62g_color\x18\x03 \x01(\x0b\x32\r.dialog.ColorB\r\x8a\xea\x30\t\n\x07visible\"\xe0\x02\n\x10TextModernAttach\x12\x39\n\x05title\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12>\n\ttitle_url\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12\x38\n\ntitle_icon\x18\x03 \x01(\x0b\x32\x15.dialog.ImageLocationB\r\x8a\xea\x30\t\n\x07visible\x12\x38\n\x04text\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x34\n\x05style\x18\x05 \x01(\x0b\x32\x16.dialog.ParagraphStyleB\r\x8a\xea\x30\t\n\x07visible\x12\'\n\x06\x66ields\x18\x06 \x03(\x0b\x32\x17.dialog.TextModernField\"\x8a\x01\n\x0fTextModernField\x12\x1c\n\x05title\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05value\x18\x02 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12;\n\x08is_short\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\"J\n\x0bTextCommand\x12\x1e\n\x07\x63ommand\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x61rgs\x18\x02 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\"[\n\x0eServiceMessage\x12\x1a\n\x04text\x18\x01 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\x12-\n\x03\x65xt\x18\x03 \x01(\x0b\x32\x11.dialog.ServiceExB\r\x8a\xea\x30\t\n\x07\x63ompact\"\xc0\x06\n\tServiceEx\x12\x33\n\x0buserInvited\x18\x01 \x01(\x0b\x32\x1c.dialog.ServiceExUserInvitedH\x00\x12\x31\n\nuserJoined\x18\x02 \x01(\x0b\x32\x1b.dialog.ServiceExUserJoinedH\x00\x12\x31\n\nuserKicked\x18\x03 \x01(\x0b\x32\x1b.dialog.ServiceExUserKickedH\x00\x12-\n\x08userLeft\x18\x04 \x01(\x0b\x32\x19.dialog.ServiceExUserLeftH\x00\x12\x35\n\x0cgroupCreated\x18\x05 \x01(\x0b\x32\x1d.dialog.ServiceExGroupCreatedH\x00\x12\x35\n\x0c\x63hangedTitle\x18\x06 \x01(\x0b\x32\x1d.dialog.ServiceExChangedTitleH\x00\x12\x35\n\x0c\x63hangedTopic\x18\x07 \x01(\x0b\x32\x1d.dialog.ServiceExChangedTopicH\x00\x12\x35\n\x0c\x63hangedAbout\x18\x08 \x01(\x0b\x32\x1d.dialog.ServiceExChangedAboutH\x00\x12\x37\n\rchangedAvatar\x18\t \x01(\x0b\x32\x1e.dialog.ServiceExChangedAvatarH\x00\x12?\n\x11\x63ontactRegistered\x18\n \x01(\x0b\x32\".dialog.ServiceExContactRegisteredH\x00\x12\x33\n\x0bphoneMissed\x18\x0b \x01(\x0b\x32\x1c.dialog.ServiceExPhoneMissedH\x00\x12/\n\tphoneCall\x18\x0c \x01(\x0b\x32\x1a.dialog.ServiceExPhoneCallH\x00\x12\x37\n\rphoneRejected\x18\r \x01(\x0b\x32\x1e.dialog.ServiceExPhoneRejectedH\x00\x12\x35\n\x0c\x63hatArchived\x18\x0e \x01(\x0b\x32\x1d.dialog.ServiceExChatArchivedH\x00\x12\x35\n\x0c\x63hatRestored\x18\x0f \x01(\x0b\x32\x1d.dialog.ServiceExChatRestoredH\x00\x42\x06\n\x04\x62ody\":\n\x14ServiceExUserInvited\x12\"\n\x0binvited_uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\"\x15\n\x13ServiceExUserJoined\"8\n\x13ServiceExUserKicked\x12!\n\nkicked_uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\"\x13\n\x11ServiceExUserLeft\"\x17\n\x15ServiceExGroupCreated\"4\n\x15ServiceExChangedTitle\x12\x1b\n\x05title\x18\x01 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\"R\n\x15ServiceExChangedTopic\x12\x39\n\x05topic\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\"R\n\x15ServiceExChangedAbout\x12\x39\n\x05\x61\x62out\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\"G\n\x16ServiceExChangedAvatar\x12-\n\x06\x61vatar\x18\x01 \x01(\x0b\x32\x0e.dialog.AvatarB\r\x8a\xea\x30\t\n\x07\x63ompact\"8\n\x1aServiceExContactRegistered\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\"\x16\n\x14ServiceExPhoneMissed\"5\n\x12ServiceExPhoneCall\x12\x1f\n\x08\x64uration\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\"\x18\n\x16ServiceExPhoneRejected\"\x17\n\x15ServiceExChatArchived\"\x17\n\x15ServiceExChatRestored\"\x95\x02\n\x0f\x44ocumentMessage\x12\x1e\n\x07\x66ile_id\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12!\n\x0b\x61\x63\x63\x65ss_hash\x18\x02 \x01(\x03\x42\x0c\x8a\xea\x30\x08\n\x06\x64\x61nger\x12 \n\tfile_size\x18\x03 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x04name\x18\x04 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\x12 \n\tmime_type\x18\x05 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12/\n\x05thumb\x18\x06 \x01(\x0b\x32\x11.dialog.FastThumbB\r\x8a\xea\x30\t\n\x07\x63ompact\x12.\n\x03\x65xt\x18\x08 \x01(\x0b\x32\x12.dialog.DocumentExB\r\x8a\xea\x30\t\n\x07\x63ompact\"\x92\x01\n\nDocumentEx\x12(\n\x05photo\x18\x01 \x01(\x0b\x32\x17.dialog.DocumentExPhotoH\x00\x12(\n\x05video\x18\x02 \x01(\x0b\x32\x17.dialog.DocumentExVideoH\x00\x12(\n\x05voice\x18\x03 \x01(\x0b\x32\x17.dialog.DocumentExVoiceH\x00\x42\x06\n\x04\x62ody\"E\n\x0f\x44ocumentExPhoto\x12\x18\n\x01w\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x18\n\x01h\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\"f\n\x0f\x44ocumentExVideo\x12\x18\n\x01w\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x18\n\x01h\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1f\n\x08\x64uration\x18\x03 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\"2\n\x0f\x44ocumentExVoice\x12\x1f\n\x08\x64uration\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\"-\n\x0bJsonMessage\x12\x1e\n\x08raw_json\x18\x01 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\"\x14\n\x12UnsupportedMessage\"\xde\x03\n\x0eStickerMessage\x12>\n\nsticker_id\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\r\x8a\xea\x30\t\n\x07visible\x12@\n\x0c\x66\x61st_preview\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.BytesValueB\r\x8a\xea\x30\t\n\x07visible\x12\x37\n\timage_512\x18\x03 \x01(\x0b\x32\x15.dialog.ImageLocationB\r\x8a\xea\x30\t\n\x07visible\x12\x37\n\timage_256\x18\x04 \x01(\x0b\x32\x15.dialog.ImageLocationB\r\x8a\xea\x30\t\n\x07visible\x12I\n\x15sticker_collection_id\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\r\x8a\xea\x30\t\n\x07visible\x12R\n\x1esticker_collection_access_hash\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\r\x8a\xea\x30\t\n\x07visible\x12\x39\n\x05\x65moji\x18\x07 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\"O\n\rBinaryMessage\x12\"\n\x0b\x63ontent_tag\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03msg\x18\x02 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07\x63ompact\"\x0e\n\x0c\x45mptyMessage\"M\n\x0e\x44\x65letedMessage\x12;\n\x08is_local\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07\x63ompact\"u\n\x0b\x44ialogShort\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1e\n\x07\x63ounter\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x64\x61te\x18\x04 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\"{\n\x0b\x44ialogGroup\x12\x1b\n\x05title\x18\x01 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x1a\n\x03key\x18\x02 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x33\n\x07\x64ialogs\x18\x03 \x03(\x0b\x32\x13.dialog.DialogShortB\r\x8a\xea\x30\t\n\x07visible\"L\n\x0fMessageReaction\x12\x1c\n\x05users\x18\x01 \x03(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x63ode\x18\x02 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\"\xd3\x02\n\x12RequestSendMessage\x12,\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03rid\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x36\n\x07message\x18\x04 \x01(\x0b\x32\x16.dialog.MessageContentB\r\x8a\xea\x30\t\n\x07visible\x12\'\n\x10is_only_for_user\x18\x05 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12:\n\x07\x66orward\x18\x08 \x01(\x0b\x32\x1a.dialog.ReferencedMessagesB\r\x8a\xea\x30\t\n\x07visible\x12\x38\n\x05reply\x18\t \x01(\x0b\x32\x1a.dialog.ReferencedMessagesB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xca\x01\n\x14RequestUpdateMessage\x12-\n\x03mid\x18\x02 \x01(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\x12>\n\x0fupdated_message\x18\x03 \x01(\x0b\x32\x16.dialog.MessageContentB\r\x8a\xea\x30\t\n\x07visible\x12%\n\x0elast_edited_at\x18\x04 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x81\x01\n\x16RequestMessageReceived\x12,\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x64\x61te\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"}\n\x12RequestMessageRead\x12,\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x64\x61te\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"l\n\x1cRequestDeleteMessageObsolete\x12.\n\x04mids\x18\x03 \x03(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x88\x01\n\x10RequestClearChat\x12,\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible\x12(\n\x11last_message_date\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x89\x01\n\x11RequestDeleteChat\x12,\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible\x12(\n\x11last_message_date\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"`\n\x12RequestArchiveChat\x12,\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xb3\x01\n\x19RequestMessageSetReaction\x12,\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible\x12-\n\x03mid\x18\x04 \x01(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x63ode\x18\x03 \x01(\tB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xb6\x01\n\x1cRequestMessageRemoveReaction\x12,\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible\x12-\n\x03mid\x18\x04 \x01(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x63ode\x18\x03 \x01(\tB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x82\x01\n\x19ResponseReactionsResponse\x12\x0b\n\x03seq\x18\x01 \x01(\x05\x12\r\n\x05state\x18\x02 \x01(\x0c\x12*\n\treactions\x18\x03 \x03(\x0b\x32\x17.dialog.MessageReaction:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\x98\x04\n\rUpdateMessage\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12!\n\nsender_uid\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x64\x61te\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12-\n\x03mid\x18\x08 \x01(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\x12\x36\n\x07message\x18\x05 \x01(\x0b\x32\x16.dialog.MessageContentB\r\x8a\xea\x30\t\n\x07visible\x12<\n\nattributes\x18\x06 \x01(\x0b\x32\x19.dialog.MessageAttributesB\r\x8a\xea\x30\t\n\x07visible\x12<\n\x07\x66orward\x18\t \x01(\x0b\x32\x1a.dialog.ReferencedMessagesB\r\x8a\xea\x30\t\n\x07visibleH\x00\x12:\n\x05reply\x18\n \x01(\x0b\x32\x1a.dialog.ReferencedMessagesB\r\x8a\xea\x30\t\n\x07visibleH\x00\x12\x36\n\x0cprevious_mid\x18\x0b \x01(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\x12;\n\x07\x63ounter\x18\x0c \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\r\x8a\xea\x30\t\n\x07visibleB\x08\n\x06\x61ttach\"\xd1\x01\n\x1bUpdateMessageContentChanged\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12-\n\x03mid\x18\x04 \x01(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\x12\x36\n\x07message\x18\x03 \x01(\x0b\x32\x16.dialog.MessageContentB\r\x8a\xea\x30\t\n\x07visible\x12 \n\tedited_at\x18\x05 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\"\x9e\x02\n\x11UpdateMessageSent\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03rid\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x64\x61te\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12-\n\x03mid\x18\x04 \x01(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\x12\x32\n\x08prev_mid\x18\x05 \x01(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\x12\x42\n\x0eunread_counter\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\r\x8a\xea\x30\t\n\x07visible\"\x8b\x01\n\x15UpdateMessageReceived\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12!\n\nstart_date\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12$\n\rreceived_date\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\"\x83\x01\n\x11UpdateMessageRead\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12!\n\nstart_date\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12 \n\tread_date\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\"\xa9\x01\n\x15UpdateMessageReadByMe\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12!\n\nstart_date\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x42\n\x0eunread_counter\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\r\x8a\xea\x30\t\n\x07visible\"\xd1\x01\n\x13UpdateMessageDelete\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12.\n\x04mids\x18\x03 \x03(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\x12;\n\x07\x63ounter\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\r\x8a\xea\x30\t\n\x07visible\x12\"\n\x0b\x61\x63tion_date\x18\x05 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\"`\n\x0fUpdateChatClear\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12\"\n\x0b\x61\x63tion_date\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\"a\n\x10UpdateChatDelete\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12\"\n\x0b\x61\x63tion_date\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\">\n\x11UpdateChatArchive\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\"N\n\x17UpdateChatGroupsChanged\x12\x33\n\x07\x64ialogs\x18\x01 \x03(\x0b\x32\x13.dialog.DialogGroupB\r\x8a\xea\x30\t\n\x07visible\"\xac\x01\n\x15UpdateReactionsUpdate\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12-\n\x03mid\x18\x04 \x01(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\x12\x39\n\treactions\x18\x03 \x03(\x0b\x32\x17.dialog.MessageReactionB\r\x8a\xea\x30\t\n\x07visible\"D\n\x12ReferencedMessages\x12.\n\x04mids\x18\x01 \x03(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07\x63ompact\"\x86\x05\n\x0eHistoryMessage\x12!\n\nsender_uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12$\n\x0bsender_peer\x18\x0f \x01(\x0b\x32\x0f.dialog.OutPeer\x12\x31\n\thost_peer\x18\x0c \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible\x12-\n\x03mid\x18\n \x01(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\x12#\n\x08prev_mid\x18\x11 \x01(\x0b\x32\x11.dialog.UUIDValue\x12\x1b\n\x04\x64\x61te\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x36\n\x07message\x18\x05 \x01(\x0b\x32\x16.dialog.MessageContentB\r\x8a\xea\x30\t\n\x07visible\x12\x32\n\x05state\x18\x06 \x01(\x0e\x32\x14.dialog.MessageStateB\r\x8a\xea\x30\t\n\x07visible\x12\x39\n\treactions\x18\x07 \x03(\x0b\x32\x17.dialog.MessageReactionB\r\x8a\xea\x30\t\n\x07visible\x12;\n\tattribute\x18\x08 \x01(\x0b\x32\x19.dialog.MessageAttributesB\r\x8a\xea\x30\t\n\x07visible\x12-\n\x07\x66orward\x18\r \x01(\x0b\x32\x1a.dialog.ReferencedMessagesH\x00\x12+\n\x05reply\x18\x0e \x01(\x0b\x32\x1a.dialog.ReferencedMessagesH\x00\x12=\n\tedited_at\x18\x10 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\r\x8a\xea\x30\t\n\x07visibleB\x08\n\x06\x61ttach\"\x95\x02\n\x12RequestLoadHistory\x12,\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x64\x61te\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x36\n\tload_mode\x18\x05 \x01(\x0e\x32\x14.dialog.ListLoadModeB\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05limit\x18\x04 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12@\n\roptimizations\x18\x06 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xb1\x02\n\x13ResponseLoadHistory\x12\'\n\x07history\x18\x01 \x03(\x0b\x32\x16.dialog.HistoryMessage\x12\x1b\n\x05users\x18\x02 \x03(\x0b\x32\x0c.dialog.User\x12\'\n\nuser_peers\x18\x04 \x03(\x0b\x32\x13.dialog.UserOutPeer\x12\x1d\n\x06groups\x18\x05 \x03(\x0b\x32\r.dialog.Group\x12)\n\x0bgroup_peers\x18\x06 \x03(\x0b\x32\x14.dialog.GroupOutPeer\x12,\n\x07\x63ounter\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.Int32Value\x12\x14\n\x0c\x63ounter_date\x18\x08 \x01(\x03:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\xef\x04\n\x06\x44ialog\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12#\n\x0cunread_count\x18\x03 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12 \n\tsort_date\x18\x04 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12!\n\nsender_uid\x18\x05 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12?\n\x0cis_favourite\x18\r \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12-\n\x03mid\x18\x0c \x01(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x64\x61te\x18\x07 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x36\n\x07message\x18\x08 \x01(\x0b\x32\x16.dialog.MessageContentB\r\x8a\xea\x30\t\n\x07visible\x12#\n\x05state\x18\t \x01(\x0e\x32\x14.dialog.MessageState\x12(\n\x11\x66irst_unread_date\x18\n \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12<\n\nattributes\x18\x0b \x01(\x0b\x32\x19.dialog.MessageAttributesB\r\x8a\xea\x30\t\n\x07visible\x12>\n\x0fpinned_messages\x18\x0e \x01(\x0b\x32\x16.dialog.PinnedMessagesB\r\x8a\xea\x30\t\n\x07visible\x12>\n\x0fhistory_message\x18\x0f \x01(\x0b\x32\x16.dialog.HistoryMessageB\r\x8a\xea\x30\t\n\x07visible\"\x9e\x02\n\x12RequestLoadDialogs\x12\x1f\n\x08min_date\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05limit\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12@\n\roptimizations\x18\x03 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible\x12\x35\n\x07\x66ilters\x18\x04 \x03(\x0e\x32\x15.dialog.DialogsFilterB\r\x8a\xea\x30\t\n\x07visible\x12\x32\n\rpeers_to_load\x18\x05 \x03(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xe5\x01\n\x13ResponseLoadDialogs\x12\x1d\n\x06groups\x18\x01 \x03(\x0b\x32\r.dialog.Group\x12\x1b\n\x05users\x18\x02 \x03(\x0b\x32\x0c.dialog.User\x12\x1f\n\x07\x64ialogs\x18\x03 \x03(\x0b\x32\x0e.dialog.Dialog\x12\'\n\nuser_peers\x18\x04 \x03(\x0b\x32\x13.dialog.UserOutPeer\x12)\n\x0bgroup_peers\x18\x05 \x03(\x0b\x32\x14.dialog.GroupOutPeer:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"Z\n\x0b\x44ialogIndex\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12 \n\ttimestamp\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\"7\n\x17RequestFetchDialogIndex:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"f\n\x18ResponseFetchDialogIndex\x12+\n\x0e\x64ialog_indices\x18\x01 \x03(\x0b\x32\x13.dialog.DialogIndex:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\xd4\x01\n\x13RequestLoadArchived\x12?\n\x0bnext_offset\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.BytesValueB\r\x8a\xea\x30\t\n\x07\x63ompact\x12\x1c\n\x05limit\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12@\n\roptimizations\x18\x03 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x98\x02\n\x14ResponseLoadArchived\x12\x1d\n\x06groups\x18\x01 \x03(\x0b\x32\r.dialog.Group\x12\x1b\n\x05users\x18\x02 \x03(\x0b\x32\x0c.dialog.User\x12\x1f\n\x07\x64ialogs\x18\x03 \x03(\x0b\x32\x0e.dialog.Dialog\x12\'\n\nuser_peers\x18\x05 \x03(\x0b\x32\x13.dialog.UserOutPeer\x12)\n\x0bgroup_peers\x18\x06 \x03(\x0b\x32\x14.dialog.GroupOutPeer\x12\x30\n\x0bnext_offset\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.BytesValue:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"l\n\x19RequestLoadGroupedDialogs\x12\x31\n\roptimizations\x18\x01 \x03(\x0e\x32\x1a.dialog.UpdateOptimization:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xd5\x02\n\x1aResponseLoadGroupedDialogs\x12$\n\x07\x64ialogs\x18\x01 \x03(\x0b\x32\x13.dialog.DialogGroup\x12\x1b\n\x05users\x18\x02 \x03(\x0b\x32\x0c.dialog.User\x12\x1d\n\x06groups\x18\x03 \x03(\x0b\x32\r.dialog.Group\x12\x31\n\rshow_archived\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12/\n\x0bshow_invite\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\'\n\nuser_peers\x18\x06 \x03(\x0b\x32\x13.dialog.UserOutPeer\x12)\n\x0bgroup_peers\x18\x07 \x03(\x0b\x32\x14.dialog.GroupOutPeer:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\xa3\x01\n\x14ResponseDialogsOrder\x12\x1a\n\x03seq\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05state\x18\x02 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07visible\x12\x32\n\x06groups\x18\x03 \x03(\x0b\x32\x13.dialog.DialogGroupB\r\x8a\xea\x30\t\n\x07visible:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"_\n\x11RequestHideDialog\x12,\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"P\n\x11RequestShowDialog\x12\x1d\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeer:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"d\n\x16RequestFavouriteDialog\x12,\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"f\n\x18RequestUnfavouriteDialog\x12,\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x8a\x01\n\x1cUpdateDialogFavouriteChanged\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12?\n\x0cis_favourite\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\"g\n\x19RequestNotifyDialogOpened\x12,\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"@\n\x0ePinnedMessages\x12.\n\x04mids\x18\x01 \x03(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\"\xb4\x01\n\x11RequestPinMessage\x12,\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible\x12-\n\x03mid\x18\x02 \x01(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\x12$\n\rlast_pin_date\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xb6\x01\n\x13RequestUnpinMessage\x12,\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible\x12-\n\x03mid\x18\x02 \x01(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\x12$\n\rlast_pin_date\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xac\x01\n\x1bUpdatePinnedMessagesChanged\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12>\n\x0fpinned_messages\x18\x02 \x01(\x0b\x32\x16.dialog.PinnedMessagesB\r\x8a\xea\x30\t\n\x07visible\x12\"\n\x0b\x61\x63tion_date\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible*\xa2\x01\n\x15InteractiveMediaStyle\x12!\n\x1dINTERACTIVEMEDIASTYLE_UNKNOWN\x10\x00\x12!\n\x1dINTERACTIVEMEDIASTYLE_DEFAULT\x10\x01\x12!\n\x1dINTERACTIVEMEDIASTYLE_PRIMARY\x10\x02\x12 \n\x1cINTERACTIVEMEDIASTYLE_DANGER\x10\x03*q\n\x0cMessageState\x12\x18\n\x14MESSAGESTATE_UNKNOWN\x10\x00\x12\x15\n\x11MESSAGESTATE_SENT\x10\x01\x12\x19\n\x15MESSAGESTATE_RECEIVED\x10\x02\x12\x15\n\x11MESSAGESTATE_READ\x10\x03*t\n\x0cListLoadMode\x12\x18\n\x14LISTLOADMODE_UNKNOWN\x10\x00\x12\x18\n\x14LISTLOADMODE_FORWARD\x10\x01\x12\x19\n\x15LISTLOADMODE_BACKWARD\x10\x02\x12\x15\n\x11LISTLOADMODE_BOTH\x10\x03*r\n\rDialogsFilter\x12\x19\n\x15\x44IALOGSFILTER_UNKNOWN\x10\x00\x12#\n\x1f\x44IALOGSFILTER_EXCLUDEFAVOURITES\x10\x01\x12!\n\x1d\x44IALOGSFILTER_EXCLUDEARCHIVED\x10\x02\x32\x8d\x16\n\tMessaging\x12\x91\x01\n\x18\x44oInteractiveMediaAction\x12\'.dialog.RequestDoInteractiveMediaAction\x1a\x14.dialog.ResponseVoid\"6\x82\xd3\xe4\x93\x02\x30\"+/v1/grpc/Messaging/DoInteractiveMediaAction:\x01*\x12m\n\x0bSendMessage\x12\x1a.dialog.RequestSendMessage\x1a\x17.dialog.ResponseSeqDate\")\x82\xd3\xe4\x93\x02#\"\x1e/v1/grpc/Messaging/SendMessage:\x01*\x12s\n\rUpdateMessage\x12\x1c.dialog.RequestUpdateMessage\x1a\x17.dialog.ResponseSeqDate\"+\x82\xd3\xe4\x93\x02%\" /v1/grpc/Messaging/UpdateMessage:\x01*\x12v\n\x0fMessageReceived\x12\x1e.dialog.RequestMessageReceived\x1a\x14.dialog.ResponseVoid\"-\x82\xd3\xe4\x93\x02\'\"\"/v1/grpc/Messaging/MessageReceived:\x01*\x12j\n\x0bMessageRead\x12\x1a.dialog.RequestMessageRead\x1a\x14.dialog.ResponseVoid\")\x82\xd3\xe4\x93\x02#\"\x1e/v1/grpc/Messaging/MessageRead:\x01*\x12\x87\x01\n\x15\x44\x65leteMessageObsolete\x12$.dialog.RequestDeleteMessageObsolete\x1a\x13.dialog.ResponseSeq\"3\x82\xd3\xe4\x93\x02-\"(/v1/grpc/Messaging/DeleteMessageObsolete:\x01*\x12\x63\n\tClearChat\x12\x18.dialog.RequestClearChat\x1a\x13.dialog.ResponseSeq\"\'\x82\xd3\xe4\x93\x02!\"\x1c/v1/grpc/Messaging/ClearChat:\x01*\x12\x66\n\nDeleteChat\x12\x19.dialog.RequestDeleteChat\x1a\x13.dialog.ResponseSeq\"(\x82\xd3\xe4\x93\x02\"\"\x1d/v1/grpc/Messaging/DeleteChat:\x01*\x12i\n\x0b\x41rchiveChat\x12\x1a.dialog.RequestArchiveChat\x1a\x13.dialog.ResponseSeq\")\x82\xd3\xe4\x93\x02#\"\x1e/v1/grpc/Messaging/ArchiveChat:\x01*\x12\x8c\x01\n\x12MessageSetReaction\x12!.dialog.RequestMessageSetReaction\x1a!.dialog.ResponseReactionsResponse\"0\x82\xd3\xe4\x93\x02*\"%/v1/grpc/Messaging/MessageSetReaction:\x01*\x12\x95\x01\n\x15MessageRemoveReaction\x12$.dialog.RequestMessageRemoveReaction\x1a!.dialog.ResponseReactionsResponse\"3\x82\xd3\xe4\x93\x02-\"(/v1/grpc/Messaging/MessageRemoveReaction:\x01*\x12q\n\x0bLoadHistory\x12\x1a.dialog.RequestLoadHistory\x1a\x1b.dialog.ResponseLoadHistory\")\x82\xd3\xe4\x93\x02#\"\x1e/v1/grpc/Messaging/LoadHistory:\x01*\x12q\n\x0bLoadDialogs\x12\x1a.dialog.RequestLoadDialogs\x1a\x1b.dialog.ResponseLoadDialogs\")\x82\xd3\xe4\x93\x02#\"\x1e/v1/grpc/Messaging/LoadDialogs:\x01*\x12\x85\x01\n\x10\x46\x65tchDialogIndex\x12\x1f.dialog.RequestFetchDialogIndex\x1a .dialog.ResponseFetchDialogIndex\".\x82\xd3\xe4\x93\x02(\"#/v1/grpc/Messaging/FetchDialogIndex:\x01*\x12u\n\x0cLoadArchived\x12\x1b.dialog.RequestLoadArchived\x1a\x1c.dialog.ResponseLoadArchived\"*\x82\xd3\xe4\x93\x02$\"\x1f/v1/grpc/Messaging/LoadArchived:\x01*\x12\x8d\x01\n\x12LoadGroupedDialogs\x12!.dialog.RequestLoadGroupedDialogs\x1a\".dialog.ResponseLoadGroupedDialogs\"0\x82\xd3\xe4\x93\x02*\"%/v1/grpc/Messaging/LoadGroupedDialogs:\x01*\x12o\n\nHideDialog\x12\x19.dialog.RequestHideDialog\x1a\x1c.dialog.ResponseDialogsOrder\"(\x82\xd3\xe4\x93\x02\"\"\x1d/v1/grpc/Messaging/HideDialog:\x01*\x12o\n\nShowDialog\x12\x19.dialog.RequestShowDialog\x1a\x1c.dialog.ResponseDialogsOrder\"(\x82\xd3\xe4\x93\x02\"\"\x1d/v1/grpc/Messaging/ShowDialog:\x01*\x12~\n\x0f\x46\x61vouriteDialog\x12\x1e.dialog.RequestFavouriteDialog\x1a\x1c.dialog.ResponseDialogsOrder\"-\x82\xd3\xe4\x93\x02\'\"\"/v1/grpc/Messaging/FavouriteDialog:\x01*\x12\x84\x01\n\x11UnfavouriteDialog\x12 .dialog.RequestUnfavouriteDialog\x1a\x1c.dialog.ResponseDialogsOrder\"/\x82\xd3\xe4\x93\x02)\"$/v1/grpc/Messaging/UnfavouriteDialog:\x01*\x12\x7f\n\x12NotifyDialogOpened\x12!.dialog.RequestNotifyDialogOpened\x1a\x14.dialog.ResponseVoid\"0\x82\xd3\xe4\x93\x02*\"%/v1/grpc/Messaging/NotifyDialogOpened:\x01*\x12j\n\nPinMessage\x12\x19.dialog.RequestPinMessage\x1a\x17.dialog.ResponseSeqDate\"(\x82\xd3\xe4\x93\x02\"\"\x1d/v1/grpc/Messaging/PinMessage:\x01*\x12p\n\x0cUnpinMessage\x12\x1b.dialog.RequestUnpinMessage\x1a\x17.dialog.ResponseSeqDate\"*\x82\xd3\xe4\x93\x02$\"\x1f/v1/grpc/Messaging/UnpinMessage:\x01*B\x19\xe2?\x16\n\x14im.dlg.grpc.servicesb\x06proto3')
+  serialized_options=_b('\342?\026\n\024im.dlg.grpc.services'),
+  serialized_pb=_b('\n\x0fmessaging.proto\x12\x06\x64ialog\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x11\x64\x65\x66initions.proto\x1a\x13miscellaneous.proto\x1a\x0cgroups.proto\x1a\x0bpeers.proto\x1a\x15media_and_files.proto\x1a\x0busers.proto\x1a\x15scalapb/scalapb.proto\"\x9b\x02\n\x11MessageAttributes\x12?\n\x0cis_mentioned\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12\x41\n\x0eis_highlighted\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12>\n\x0bis_notified\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12\x42\n\x0fis_only_for_you\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\"\xed\x01\n\rQuotedMessage\x12!\n\nmessage_id\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12&\n\x0fpublic_group_id\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12%\n\x0esender_user_id\x18\x03 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12#\n\x0cmessage_date\x18\x04 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x45\n\x16quoted_message_content\x18\x05 \x01(\x0b\x32\x16.dialog.MessageContentB\r\x8a\xea\x30\t\n\x07visible\"\xe7\x01\n\x0cMessageMedia\x12\x34\n\x07webpage\x18\x01 \x01(\x0b\x32\x14.dialog.WebpageMediaB\r\x8a\xea\x30\t\n\x07visible\x12\x30\n\x05image\x18\x02 \x01(\x0b\x32\x12.dialog.ImageMediaB\r\x8a\xea\x30\t\n\x07visible\x12\x30\n\x05\x61udio\x18\x03 \x01(\x0b\x32\x12.dialog.AudioMediaB\r\x8a\xea\x30\t\n\x07visible\x12=\n\x07\x61\x63tions\x18\x06 \x03(\x0b\x32\x1d.dialog.InteractiveMediaGroupB\r\x8a\xea\x30\t\n\x07visible\"\xf8\x01\n\x0cWebpageMedia\x12\x37\n\x03url\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x39\n\x05title\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12?\n\x0b\x64\x65scription\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x33\n\x05image\x18\x04 \x01(\x0b\x32\x15.dialog.ImageLocationB\r\x8a\xea\x30\t\n\x07visible\"A\n\nImageMedia\x12\x33\n\x05image\x18\x01 \x01(\x0b\x32\x15.dialog.ImageLocationB\r\x8a\xea\x30\t\n\x07visible\"A\n\nAudioMedia\x12\x33\n\x05\x61udio\x18\x01 \x01(\x0b\x32\x15.dialog.AudioLocationB\r\x8a\xea\x30\t\n\x07visible\"\xa4\x01\n\x16InteractiveMediaWidget\x12@\n\x16interactiveMediaButton\x18\x01 \x01(\x0b\x32\x1e.dialog.InteractiveMediaButtonH\x00\x12@\n\x16interactiveMediaSelect\x18\x02 \x01(\x0b\x32\x1e.dialog.InteractiveMediaSelectH\x00\x42\x06\n\x04\x62ody\"r\n\x16InteractiveMediaButton\x12\x1c\n\x05value\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12:\n\x05label\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\"\xde\x01\n\x16InteractiveMediaSelect\x12\x44\n\x07options\x18\x01 \x03(\x0b\x32$.dialog.InteractiveMediaSelectOptionB\r\x8a\xea\x30\t\n\x07visible\x12:\n\x05label\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12\x42\n\rdefault_value\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\"Z\n\x1cInteractiveMediaSelectOption\x12\x1c\n\x05value\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05label\x18\x02 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\"\xea\x01\n\x10InteractiveMedia\x12\x19\n\x02id\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12=\n\x06widget\x18\x02 \x01(\x0b\x32\x1e.dialog.InteractiveMediaWidgetB\r\x8a\xea\x30\t\n\x07visible\x12;\n\x05style\x18\x03 \x01(\x0e\x32\x1d.dialog.InteractiveMediaStyleB\r\x8a\xea\x30\t\n\x07visible\x12?\n\x07\x63onfirm\x18\x04 \x01(\x0b\x32\x1f.dialog.InteractiveMediaConfirmB\r\x8a\xea\x30\t\n\x07visible\"V\n\x1bInteractiveMediaTranslation\x12\x19\n\x02id\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05value\x18\x02 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\"\x89\x01\n InteractiveMediaTranslationGroup\x12\x1f\n\x08language\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x44\n\x08messages\x18\x02 \x03(\x0b\x32#.dialog.InteractiveMediaTranslationB\r\x8a\xea\x30\t\n\x07visible\"\x9c\x02\n\x15InteractiveMediaGroup\x12\x38\n\x07\x61\x63tions\x18\x01 \x03(\x0b\x32\x18.dialog.InteractiveMediaB\r\x8a\xea\x30\t\n\x07visible\x12\x39\n\x05title\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12?\n\x0b\x64\x65scription\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12M\n\x0ctranslations\x18\x04 \x03(\x0b\x32(.dialog.InteractiveMediaTranslationGroupB\r\x8a\xea\x30\t\n\x07visible\"\x87\x02\n\x17InteractiveMediaConfirm\x12\x39\n\x04text\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12:\n\x05title\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12\x37\n\x02ok\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12<\n\x07\x64ismiss\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\"\xa1\x01\n\x1bUpdateInteractiveMediaEvent\x12-\n\x03mid\x18\x01 \x01(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\x12\x19\n\x02id\x18\x02 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05value\x18\x03 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03uid\x18\x04 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\"\xa7\x01\n\x1fRequestDoInteractiveMediaAction\x12-\n\x03mid\x18\x01 \x01(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\x12\x19\n\x02id\x18\x02 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05value\x18\x03 \x01(\tB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xd2\x03\n\x0eMessageContent\x12*\n\x0btextMessage\x18\x01 \x01(\x0b\x32\x13.dialog.TextMessageH\x00\x12\x30\n\x0eserviceMessage\x18\x02 \x01(\x0b\x32\x16.dialog.ServiceMessageH\x00\x12\x32\n\x0f\x64ocumentMessage\x18\x03 \x01(\x0b\x32\x17.dialog.DocumentMessageH\x00\x12*\n\x0bjsonMessage\x18\x04 \x01(\x0b\x32\x13.dialog.JsonMessageH\x00\x12\x38\n\x12unsupportedMessage\x18\x05 \x01(\x0b\x32\x1a.dialog.UnsupportedMessageH\x00\x12\x30\n\x0estickerMessage\x18\x06 \x01(\x0b\x32\x16.dialog.StickerMessageH\x00\x12.\n\rbinaryMessage\x18\x07 \x01(\x0b\x32\x15.dialog.BinaryMessageH\x00\x12,\n\x0c\x65mptyMessage\x18\x08 \x01(\x0b\x32\x14.dialog.EmptyMessageH\x00\x12\x30\n\x0e\x64\x65letedMessage\x18\t \x01(\x0b\x32\x16.dialog.DeletedMessageH\x00\x42\x06\n\x04\x62ody\"\xe1\x01\n\x0bTextMessage\x12\x1a\n\x04text\x18\x01 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x1f\n\x08mentions\x18\x02 \x03(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x31\n\x03\x65xt\x18\x03 \x01(\x0b\x32\x15.dialog.TextMessageExB\r\x8a\xea\x30\t\n\x07visible\x12\x32\n\x05media\x18\x04 \x03(\x0b\x32\x14.dialog.MessageMediaB\r\x8a\xea\x30\t\n\x07visible\x12.\n\nextensions\x18\x05 \x03(\x0b\x32\x0b.dialog.AnyB\r\x8a\xea\x30\t\n\x07visible\"\xad\x01\n\rTextMessageEx\x12\x30\n\x0etextExMarkdown\x18\x01 \x01(\x0b\x32\x16.dialog.TextExMarkdownH\x00\x12\x36\n\x11textModernMessage\x18\x02 \x01(\x0b\x32\x19.dialog.TextModernMessageH\x00\x12*\n\x0btextCommand\x18\x03 \x01(\x0b\x32\x13.dialog.TextCommandH\x00\x42\x06\n\x04\x62ody\"0\n\x0eTextExMarkdown\x12\x1e\n\x08markdown\x18\x02 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\"\xc7\x02\n\x11TextModernMessage\x12\x38\n\x04text\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12I\n\x14sender_name_override\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12<\n\x15sender_photo_override\x18\x03 \x01(\x0b\x32\x0e.dialog.AvatarB\r\x8a\xea\x30\t\n\x07visible\x12\x34\n\x05style\x18\x04 \x01(\x0b\x32\x16.dialog.ParagraphStyleB\r\x8a\xea\x30\t\n\x07visible\x12\x39\n\x08\x61ttaches\x18\x05 \x03(\x0b\x32\x18.dialog.TextModernAttachB\r\x8a\xea\x30\t\n\x07visible\"\xba\x01\n\x0eParagraphStyle\x12\x41\n\x0eshow_paragraph\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12\x35\n\x0fparagraph_color\x18\x02 \x01(\x0b\x32\r.dialog.ColorB\r\x8a\xea\x30\t\n\x07visible\x12.\n\x08\x62g_color\x18\x03 \x01(\x0b\x32\r.dialog.ColorB\r\x8a\xea\x30\t\n\x07visible\"\xe0\x02\n\x10TextModernAttach\x12\x39\n\x05title\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12>\n\ttitle_url\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12\x38\n\ntitle_icon\x18\x03 \x01(\x0b\x32\x15.dialog.ImageLocationB\r\x8a\xea\x30\t\n\x07visible\x12\x38\n\x04text\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x34\n\x05style\x18\x05 \x01(\x0b\x32\x16.dialog.ParagraphStyleB\r\x8a\xea\x30\t\n\x07visible\x12\'\n\x06\x66ields\x18\x06 \x03(\x0b\x32\x17.dialog.TextModernField\"\x8a\x01\n\x0fTextModernField\x12\x1c\n\x05title\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05value\x18\x02 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12;\n\x08is_short\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\"J\n\x0bTextCommand\x12\x1e\n\x07\x63ommand\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x61rgs\x18\x02 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\"[\n\x0eServiceMessage\x12\x1a\n\x04text\x18\x01 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\x12-\n\x03\x65xt\x18\x03 \x01(\x0b\x32\x11.dialog.ServiceExB\r\x8a\xea\x30\t\n\x07\x63ompact\"\xc0\x06\n\tServiceEx\x12\x33\n\x0buserInvited\x18\x01 \x01(\x0b\x32\x1c.dialog.ServiceExUserInvitedH\x00\x12\x31\n\nuserJoined\x18\x02 \x01(\x0b\x32\x1b.dialog.ServiceExUserJoinedH\x00\x12\x31\n\nuserKicked\x18\x03 \x01(\x0b\x32\x1b.dialog.ServiceExUserKickedH\x00\x12-\n\x08userLeft\x18\x04 \x01(\x0b\x32\x19.dialog.ServiceExUserLeftH\x00\x12\x35\n\x0cgroupCreated\x18\x05 \x01(\x0b\x32\x1d.dialog.ServiceExGroupCreatedH\x00\x12\x35\n\x0c\x63hangedTitle\x18\x06 \x01(\x0b\x32\x1d.dialog.ServiceExChangedTitleH\x00\x12\x35\n\x0c\x63hangedTopic\x18\x07 \x01(\x0b\x32\x1d.dialog.ServiceExChangedTopicH\x00\x12\x35\n\x0c\x63hangedAbout\x18\x08 \x01(\x0b\x32\x1d.dialog.ServiceExChangedAboutH\x00\x12\x37\n\rchangedAvatar\x18\t \x01(\x0b\x32\x1e.dialog.ServiceExChangedAvatarH\x00\x12?\n\x11\x63ontactRegistered\x18\n \x01(\x0b\x32\".dialog.ServiceExContactRegisteredH\x00\x12\x33\n\x0bphoneMissed\x18\x0b \x01(\x0b\x32\x1c.dialog.ServiceExPhoneMissedH\x00\x12/\n\tphoneCall\x18\x0c \x01(\x0b\x32\x1a.dialog.ServiceExPhoneCallH\x00\x12\x37\n\rphoneRejected\x18\r \x01(\x0b\x32\x1e.dialog.ServiceExPhoneRejectedH\x00\x12\x35\n\x0c\x63hatArchived\x18\x0e \x01(\x0b\x32\x1d.dialog.ServiceExChatArchivedH\x00\x12\x35\n\x0c\x63hatRestored\x18\x0f \x01(\x0b\x32\x1d.dialog.ServiceExChatRestoredH\x00\x42\x06\n\x04\x62ody\":\n\x14ServiceExUserInvited\x12\"\n\x0binvited_uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\"\x15\n\x13ServiceExUserJoined\"8\n\x13ServiceExUserKicked\x12!\n\nkicked_uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\"\x13\n\x11ServiceExUserLeft\"\x17\n\x15ServiceExGroupCreated\"4\n\x15ServiceExChangedTitle\x12\x1b\n\x05title\x18\x01 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\"R\n\x15ServiceExChangedTopic\x12\x39\n\x05topic\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\"R\n\x15ServiceExChangedAbout\x12\x39\n\x05\x61\x62out\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\"G\n\x16ServiceExChangedAvatar\x12-\n\x06\x61vatar\x18\x01 \x01(\x0b\x32\x0e.dialog.AvatarB\r\x8a\xea\x30\t\n\x07\x63ompact\"8\n\x1aServiceExContactRegistered\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\"\x16\n\x14ServiceExPhoneMissed\"5\n\x12ServiceExPhoneCall\x12\x1f\n\x08\x64uration\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\"\x18\n\x16ServiceExPhoneRejected\"\x17\n\x15ServiceExChatArchived\"\x17\n\x15ServiceExChatRestored\"\x95\x02\n\x0f\x44ocumentMessage\x12\x1e\n\x07\x66ile_id\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12!\n\x0b\x61\x63\x63\x65ss_hash\x18\x02 \x01(\x03\x42\x0c\x8a\xea\x30\x08\n\x06\x64\x61nger\x12 \n\tfile_size\x18\x03 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x04name\x18\x04 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\x12 \n\tmime_type\x18\x05 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12/\n\x05thumb\x18\x06 \x01(\x0b\x32\x11.dialog.FastThumbB\r\x8a\xea\x30\t\n\x07\x63ompact\x12.\n\x03\x65xt\x18\x08 \x01(\x0b\x32\x12.dialog.DocumentExB\r\x8a\xea\x30\t\n\x07\x63ompact\"\x92\x01\n\nDocumentEx\x12(\n\x05photo\x18\x01 \x01(\x0b\x32\x17.dialog.DocumentExPhotoH\x00\x12(\n\x05video\x18\x02 \x01(\x0b\x32\x17.dialog.DocumentExVideoH\x00\x12(\n\x05voice\x18\x03 \x01(\x0b\x32\x17.dialog.DocumentExVoiceH\x00\x42\x06\n\x04\x62ody\"E\n\x0f\x44ocumentExPhoto\x12\x18\n\x01w\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x18\n\x01h\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\"f\n\x0f\x44ocumentExVideo\x12\x18\n\x01w\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x18\n\x01h\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1f\n\x08\x64uration\x18\x03 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\"2\n\x0f\x44ocumentExVoice\x12\x1f\n\x08\x64uration\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\"-\n\x0bJsonMessage\x12\x1e\n\x08raw_json\x18\x01 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\"\x14\n\x12UnsupportedMessage\"\xde\x03\n\x0eStickerMessage\x12>\n\nsticker_id\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\r\x8a\xea\x30\t\n\x07visible\x12@\n\x0c\x66\x61st_preview\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.BytesValueB\r\x8a\xea\x30\t\n\x07visible\x12\x37\n\timage_512\x18\x03 \x01(\x0b\x32\x15.dialog.ImageLocationB\r\x8a\xea\x30\t\n\x07visible\x12\x37\n\timage_256\x18\x04 \x01(\x0b\x32\x15.dialog.ImageLocationB\r\x8a\xea\x30\t\n\x07visible\x12I\n\x15sticker_collection_id\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\r\x8a\xea\x30\t\n\x07visible\x12R\n\x1esticker_collection_access_hash\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\r\x8a\xea\x30\t\n\x07visible\x12\x39\n\x05\x65moji\x18\x07 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\"O\n\rBinaryMessage\x12\"\n\x0b\x63ontent_tag\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03msg\x18\x02 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07\x63ompact\"\x0e\n\x0c\x45mptyMessage\"M\n\x0e\x44\x65letedMessage\x12;\n\x08is_local\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07\x63ompact\"u\n\x0b\x44ialogShort\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1e\n\x07\x63ounter\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x64\x61te\x18\x04 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\"{\n\x0b\x44ialogGroup\x12\x1b\n\x05title\x18\x01 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x1a\n\x03key\x18\x02 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x33\n\x07\x64ialogs\x18\x03 \x03(\x0b\x32\x13.dialog.DialogShortB\r\x8a\xea\x30\t\n\x07visible\"L\n\x0fMessageReaction\x12\x1c\n\x05users\x18\x01 \x03(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x63ode\x18\x02 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\"L\n\x0fSearchPredicate\x12\x1a\n\x03key\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1d\n\x06values\x18\x02 \x03(\tB\r\x8a\xea\x30\t\n\x07visible\"\xd5\x03\n\x12RequestSendMessage\x12,\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03rid\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x36\n\x07message\x18\x04 \x01(\x0b\x32\x16.dialog.MessageContentB\r\x8a\xea\x30\t\n\x07visible\x12\'\n\x10is_only_for_user\x18\x05 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12:\n\x07\x66orward\x18\x08 \x01(\x0b\x32\x1a.dialog.ReferencedMessagesB\r\x8a\xea\x30\t\n\x07visible\x12\x38\n\x05reply\x18\t \x01(\x0b\x32\x1a.dialog.ReferencedMessagesB\r\x8a\xea\x30\t\n\x07visible\x12:\n\npredicates\x18\n \x03(\x0b\x32\x17.dialog.SearchPredicateB\r\x8a\xea\x30\t\n\x07visible\x12!\n\nwhite_list\x18\x0b \x03(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12!\n\nblack_list\x18\x0c \x03(\x05\x42\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xca\x01\n\x14RequestUpdateMessage\x12-\n\x03mid\x18\x02 \x01(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\x12>\n\x0fupdated_message\x18\x03 \x01(\x0b\x32\x16.dialog.MessageContentB\r\x8a\xea\x30\t\n\x07visible\x12%\n\x0elast_edited_at\x18\x04 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x81\x01\n\x16RequestMessageReceived\x12,\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x64\x61te\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"}\n\x12RequestMessageRead\x12,\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x64\x61te\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"l\n\x1cRequestDeleteMessageObsolete\x12.\n\x04mids\x18\x03 \x03(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x88\x01\n\x10RequestClearChat\x12,\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible\x12(\n\x11last_message_date\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x89\x01\n\x11RequestDeleteChat\x12,\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible\x12(\n\x11last_message_date\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"`\n\x12RequestArchiveChat\x12,\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xb3\x01\n\x19RequestMessageSetReaction\x12,\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible\x12-\n\x03mid\x18\x04 \x01(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x63ode\x18\x03 \x01(\tB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xb6\x01\n\x1cRequestMessageRemoveReaction\x12,\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible\x12-\n\x03mid\x18\x04 \x01(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x63ode\x18\x03 \x01(\tB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x82\x01\n\x19ResponseReactionsResponse\x12\x0b\n\x03seq\x18\x01 \x01(\x05\x12\r\n\x05state\x18\x02 \x01(\x0c\x12*\n\treactions\x18\x03 \x03(\x0b\x32\x17.dialog.MessageReaction:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\x98\x04\n\rUpdateMessage\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12!\n\nsender_uid\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x64\x61te\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12-\n\x03mid\x18\x08 \x01(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\x12\x36\n\x07message\x18\x05 \x01(\x0b\x32\x16.dialog.MessageContentB\r\x8a\xea\x30\t\n\x07visible\x12<\n\nattributes\x18\x06 \x01(\x0b\x32\x19.dialog.MessageAttributesB\r\x8a\xea\x30\t\n\x07visible\x12<\n\x07\x66orward\x18\t \x01(\x0b\x32\x1a.dialog.ReferencedMessagesB\r\x8a\xea\x30\t\n\x07visibleH\x00\x12:\n\x05reply\x18\n \x01(\x0b\x32\x1a.dialog.ReferencedMessagesB\r\x8a\xea\x30\t\n\x07visibleH\x00\x12\x36\n\x0cprevious_mid\x18\x0b \x01(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\x12;\n\x07\x63ounter\x18\x0c \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\r\x8a\xea\x30\t\n\x07visibleB\x08\n\x06\x61ttach\"\xd1\x01\n\x1bUpdateMessageContentChanged\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12-\n\x03mid\x18\x04 \x01(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\x12\x36\n\x07message\x18\x03 \x01(\x0b\x32\x16.dialog.MessageContentB\r\x8a\xea\x30\t\n\x07visible\x12 \n\tedited_at\x18\x05 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\"\x9e\x02\n\x11UpdateMessageSent\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03rid\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x64\x61te\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12-\n\x03mid\x18\x04 \x01(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\x12\x32\n\x08prev_mid\x18\x05 \x01(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\x12\x42\n\x0eunread_counter\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\r\x8a\xea\x30\t\n\x07visible\"\x8b\x01\n\x15UpdateMessageReceived\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12!\n\nstart_date\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12$\n\rreceived_date\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\"\x83\x01\n\x11UpdateMessageRead\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12!\n\nstart_date\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12 \n\tread_date\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\"\xa9\x01\n\x15UpdateMessageReadByMe\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12!\n\nstart_date\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x42\n\x0eunread_counter\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\r\x8a\xea\x30\t\n\x07visible\"\xd1\x01\n\x13UpdateMessageDelete\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12.\n\x04mids\x18\x03 \x03(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\x12;\n\x07\x63ounter\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\r\x8a\xea\x30\t\n\x07visible\x12\"\n\x0b\x61\x63tion_date\x18\x05 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\"`\n\x0fUpdateChatClear\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12\"\n\x0b\x61\x63tion_date\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\"a\n\x10UpdateChatDelete\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12\"\n\x0b\x61\x63tion_date\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\">\n\x11UpdateChatArchive\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\"N\n\x17UpdateChatGroupsChanged\x12\x33\n\x07\x64ialogs\x18\x01 \x03(\x0b\x32\x13.dialog.DialogGroupB\r\x8a\xea\x30\t\n\x07visible\"\xac\x01\n\x15UpdateReactionsUpdate\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12-\n\x03mid\x18\x04 \x01(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\x12\x39\n\treactions\x18\x03 \x03(\x0b\x32\x17.dialog.MessageReactionB\r\x8a\xea\x30\t\n\x07visible\"\xdd\x01\n\x1bUpdateMessageRejectedByHook\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03rid\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x64\x61te\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1d\n\x06hookId\x18\x04 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12;\n\x06reason\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\"\xf4\x01\n\x1fUpdateMessageEditRejectedByHook\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12-\n\x03mid\x18\x02 \x01(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x64\x61te\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1d\n\x06hookId\x18\x04 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12;\n\x06reason\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\"D\n\x12ReferencedMessages\x12.\n\x04mids\x18\x01 \x03(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07\x63ompact\"\x86\x05\n\x0eHistoryMessage\x12!\n\nsender_uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12$\n\x0bsender_peer\x18\x0f \x01(\x0b\x32\x0f.dialog.OutPeer\x12\x31\n\thost_peer\x18\x0c \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible\x12-\n\x03mid\x18\n \x01(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\x12#\n\x08prev_mid\x18\x11 \x01(\x0b\x32\x11.dialog.UUIDValue\x12\x1b\n\x04\x64\x61te\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x36\n\x07message\x18\x05 \x01(\x0b\x32\x16.dialog.MessageContentB\r\x8a\xea\x30\t\n\x07visible\x12\x32\n\x05state\x18\x06 \x01(\x0e\x32\x14.dialog.MessageStateB\r\x8a\xea\x30\t\n\x07visible\x12\x39\n\treactions\x18\x07 \x03(\x0b\x32\x17.dialog.MessageReactionB\r\x8a\xea\x30\t\n\x07visible\x12;\n\tattribute\x18\x08 \x01(\x0b\x32\x19.dialog.MessageAttributesB\r\x8a\xea\x30\t\n\x07visible\x12-\n\x07\x66orward\x18\r \x01(\x0b\x32\x1a.dialog.ReferencedMessagesH\x00\x12+\n\x05reply\x18\x0e \x01(\x0b\x32\x1a.dialog.ReferencedMessagesH\x00\x12=\n\tedited_at\x18\x10 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\r\x8a\xea\x30\t\n\x07visibleB\x08\n\x06\x61ttach\"\x95\x02\n\x12RequestLoadHistory\x12,\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x64\x61te\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x36\n\tload_mode\x18\x05 \x01(\x0e\x32\x14.dialog.ListLoadModeB\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05limit\x18\x04 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12@\n\roptimizations\x18\x06 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xb1\x02\n\x13ResponseLoadHistory\x12\'\n\x07history\x18\x01 \x03(\x0b\x32\x16.dialog.HistoryMessage\x12\x1b\n\x05users\x18\x02 \x03(\x0b\x32\x0c.dialog.User\x12\'\n\nuser_peers\x18\x04 \x03(\x0b\x32\x13.dialog.UserOutPeer\x12\x1d\n\x06groups\x18\x05 \x03(\x0b\x32\r.dialog.Group\x12)\n\x0bgroup_peers\x18\x06 \x03(\x0b\x32\x14.dialog.GroupOutPeer\x12,\n\x07\x63ounter\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.Int32Value\x12\x14\n\x0c\x63ounter_date\x18\x08 \x01(\x03:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\xef\x04\n\x06\x44ialog\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12#\n\x0cunread_count\x18\x03 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12 \n\tsort_date\x18\x04 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12!\n\nsender_uid\x18\x05 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12?\n\x0cis_favourite\x18\r \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12-\n\x03mid\x18\x0c \x01(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x64\x61te\x18\x07 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x36\n\x07message\x18\x08 \x01(\x0b\x32\x16.dialog.MessageContentB\r\x8a\xea\x30\t\n\x07visible\x12#\n\x05state\x18\t \x01(\x0e\x32\x14.dialog.MessageState\x12(\n\x11\x66irst_unread_date\x18\n \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12<\n\nattributes\x18\x0b \x01(\x0b\x32\x19.dialog.MessageAttributesB\r\x8a\xea\x30\t\n\x07visible\x12>\n\x0fpinned_messages\x18\x0e \x01(\x0b\x32\x16.dialog.PinnedMessagesB\r\x8a\xea\x30\t\n\x07visible\x12>\n\x0fhistory_message\x18\x0f \x01(\x0b\x32\x16.dialog.HistoryMessageB\r\x8a\xea\x30\t\n\x07visible\"\x9e\x02\n\x12RequestLoadDialogs\x12\x1f\n\x08min_date\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05limit\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12@\n\roptimizations\x18\x03 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible\x12\x35\n\x07\x66ilters\x18\x04 \x03(\x0e\x32\x15.dialog.DialogsFilterB\r\x8a\xea\x30\t\n\x07visible\x12\x32\n\rpeers_to_load\x18\x05 \x03(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xe5\x01\n\x13ResponseLoadDialogs\x12\x1d\n\x06groups\x18\x01 \x03(\x0b\x32\r.dialog.Group\x12\x1b\n\x05users\x18\x02 \x03(\x0b\x32\x0c.dialog.User\x12\x1f\n\x07\x64ialogs\x18\x03 \x03(\x0b\x32\x0e.dialog.Dialog\x12\'\n\nuser_peers\x18\x04 \x03(\x0b\x32\x13.dialog.UserOutPeer\x12)\n\x0bgroup_peers\x18\x05 \x03(\x0b\x32\x14.dialog.GroupOutPeer:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"Z\n\x0b\x44ialogIndex\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12 \n\ttimestamp\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\"7\n\x17RequestFetchDialogIndex:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"f\n\x18ResponseFetchDialogIndex\x12+\n\x0e\x64ialog_indices\x18\x01 \x03(\x0b\x32\x13.dialog.DialogIndex:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\xd4\x01\n\x13RequestLoadArchived\x12?\n\x0bnext_offset\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.BytesValueB\r\x8a\xea\x30\t\n\x07\x63ompact\x12\x1c\n\x05limit\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12@\n\roptimizations\x18\x03 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x98\x02\n\x14ResponseLoadArchived\x12\x1d\n\x06groups\x18\x01 \x03(\x0b\x32\r.dialog.Group\x12\x1b\n\x05users\x18\x02 \x03(\x0b\x32\x0c.dialog.User\x12\x1f\n\x07\x64ialogs\x18\x03 \x03(\x0b\x32\x0e.dialog.Dialog\x12\'\n\nuser_peers\x18\x05 \x03(\x0b\x32\x13.dialog.UserOutPeer\x12)\n\x0bgroup_peers\x18\x06 \x03(\x0b\x32\x14.dialog.GroupOutPeer\x12\x30\n\x0bnext_offset\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.BytesValue:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"l\n\x19RequestLoadGroupedDialogs\x12\x31\n\roptimizations\x18\x01 \x03(\x0e\x32\x1a.dialog.UpdateOptimization:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xd5\x02\n\x1aResponseLoadGroupedDialogs\x12$\n\x07\x64ialogs\x18\x01 \x03(\x0b\x32\x13.dialog.DialogGroup\x12\x1b\n\x05users\x18\x02 \x03(\x0b\x32\x0c.dialog.User\x12\x1d\n\x06groups\x18\x03 \x03(\x0b\x32\r.dialog.Group\x12\x31\n\rshow_archived\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12/\n\x0bshow_invite\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\'\n\nuser_peers\x18\x06 \x03(\x0b\x32\x13.dialog.UserOutPeer\x12)\n\x0bgroup_peers\x18\x07 \x03(\x0b\x32\x14.dialog.GroupOutPeer:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\xa3\x01\n\x14ResponseDialogsOrder\x12\x1a\n\x03seq\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05state\x18\x02 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07visible\x12\x32\n\x06groups\x18\x03 \x03(\x0b\x32\x13.dialog.DialogGroupB\r\x8a\xea\x30\t\n\x07visible:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"_\n\x11RequestHideDialog\x12,\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"P\n\x11RequestShowDialog\x12\x1d\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeer:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"d\n\x16RequestFavouriteDialog\x12,\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"f\n\x18RequestUnfavouriteDialog\x12,\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x8a\x01\n\x1cUpdateDialogFavouriteChanged\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12?\n\x0cis_favourite\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\"g\n\x19RequestNotifyDialogOpened\x12,\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"@\n\x0ePinnedMessages\x12.\n\x04mids\x18\x01 \x03(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\"\xb4\x01\n\x11RequestPinMessage\x12,\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible\x12-\n\x03mid\x18\x02 \x01(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\x12$\n\rlast_pin_date\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xb6\x01\n\x13RequestUnpinMessage\x12,\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible\x12-\n\x03mid\x18\x02 \x01(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\x12$\n\rlast_pin_date\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xac\x01\n\x1bUpdatePinnedMessagesChanged\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12>\n\x0fpinned_messages\x18\x02 \x01(\x0b\x32\x16.dialog.PinnedMessagesB\r\x8a\xea\x30\t\n\x07visible\x12\"\n\x0b\x61\x63tion_date\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible*\xa2\x01\n\x15InteractiveMediaStyle\x12!\n\x1dINTERACTIVEMEDIASTYLE_UNKNOWN\x10\x00\x12!\n\x1dINTERACTIVEMEDIASTYLE_DEFAULT\x10\x01\x12!\n\x1dINTERACTIVEMEDIASTYLE_PRIMARY\x10\x02\x12 \n\x1cINTERACTIVEMEDIASTYLE_DANGER\x10\x03*q\n\x0cMessageState\x12\x18\n\x14MESSAGESTATE_UNKNOWN\x10\x00\x12\x15\n\x11MESSAGESTATE_SENT\x10\x01\x12\x19\n\x15MESSAGESTATE_RECEIVED\x10\x02\x12\x15\n\x11MESSAGESTATE_READ\x10\x03*t\n\x0cListLoadMode\x12\x18\n\x14LISTLOADMODE_UNKNOWN\x10\x00\x12\x18\n\x14LISTLOADMODE_FORWARD\x10\x01\x12\x19\n\x15LISTLOADMODE_BACKWARD\x10\x02\x12\x15\n\x11LISTLOADMODE_BOTH\x10\x03*r\n\rDialogsFilter\x12\x19\n\x15\x44IALOGSFILTER_UNKNOWN\x10\x00\x12#\n\x1f\x44IALOGSFILTER_EXCLUDEFAVOURITES\x10\x01\x12!\n\x1d\x44IALOGSFILTER_EXCLUDEARCHIVED\x10\x02\x32\x8d\x16\n\tMessaging\x12\x91\x01\n\x18\x44oInteractiveMediaAction\x12\'.dialog.RequestDoInteractiveMediaAction\x1a\x14.dialog.ResponseVoid\"6\x82\xd3\xe4\x93\x02\x30\"+/v1/grpc/Messaging/DoInteractiveMediaAction:\x01*\x12m\n\x0bSendMessage\x12\x1a.dialog.RequestSendMessage\x1a\x17.dialog.ResponseSeqDate\")\x82\xd3\xe4\x93\x02#\"\x1e/v1/grpc/Messaging/SendMessage:\x01*\x12s\n\rUpdateMessage\x12\x1c.dialog.RequestUpdateMessage\x1a\x17.dialog.ResponseSeqDate\"+\x82\xd3\xe4\x93\x02%\" /v1/grpc/Messaging/UpdateMessage:\x01*\x12v\n\x0fMessageReceived\x12\x1e.dialog.RequestMessageReceived\x1a\x14.dialog.ResponseVoid\"-\x82\xd3\xe4\x93\x02\'\"\"/v1/grpc/Messaging/MessageReceived:\x01*\x12j\n\x0bMessageRead\x12\x1a.dialog.RequestMessageRead\x1a\x14.dialog.ResponseVoid\")\x82\xd3\xe4\x93\x02#\"\x1e/v1/grpc/Messaging/MessageRead:\x01*\x12\x87\x01\n\x15\x44\x65leteMessageObsolete\x12$.dialog.RequestDeleteMessageObsolete\x1a\x13.dialog.ResponseSeq\"3\x82\xd3\xe4\x93\x02-\"(/v1/grpc/Messaging/DeleteMessageObsolete:\x01*\x12\x63\n\tClearChat\x12\x18.dialog.RequestClearChat\x1a\x13.dialog.ResponseSeq\"\'\x82\xd3\xe4\x93\x02!\"\x1c/v1/grpc/Messaging/ClearChat:\x01*\x12\x66\n\nDeleteChat\x12\x19.dialog.RequestDeleteChat\x1a\x13.dialog.ResponseSeq\"(\x82\xd3\xe4\x93\x02\"\"\x1d/v1/grpc/Messaging/DeleteChat:\x01*\x12i\n\x0b\x41rchiveChat\x12\x1a.dialog.RequestArchiveChat\x1a\x13.dialog.ResponseSeq\")\x82\xd3\xe4\x93\x02#\"\x1e/v1/grpc/Messaging/ArchiveChat:\x01*\x12\x8c\x01\n\x12MessageSetReaction\x12!.dialog.RequestMessageSetReaction\x1a!.dialog.ResponseReactionsResponse\"0\x82\xd3\xe4\x93\x02*\"%/v1/grpc/Messaging/MessageSetReaction:\x01*\x12\x95\x01\n\x15MessageRemoveReaction\x12$.dialog.RequestMessageRemoveReaction\x1a!.dialog.ResponseReactionsResponse\"3\x82\xd3\xe4\x93\x02-\"(/v1/grpc/Messaging/MessageRemoveReaction:\x01*\x12q\n\x0bLoadHistory\x12\x1a.dialog.RequestLoadHistory\x1a\x1b.dialog.ResponseLoadHistory\")\x82\xd3\xe4\x93\x02#\"\x1e/v1/grpc/Messaging/LoadHistory:\x01*\x12q\n\x0bLoadDialogs\x12\x1a.dialog.RequestLoadDialogs\x1a\x1b.dialog.ResponseLoadDialogs\")\x82\xd3\xe4\x93\x02#\"\x1e/v1/grpc/Messaging/LoadDialogs:\x01*\x12\x85\x01\n\x10\x46\x65tchDialogIndex\x12\x1f.dialog.RequestFetchDialogIndex\x1a .dialog.ResponseFetchDialogIndex\".\x82\xd3\xe4\x93\x02(\"#/v1/grpc/Messaging/FetchDialogIndex:\x01*\x12u\n\x0cLoadArchived\x12\x1b.dialog.RequestLoadArchived\x1a\x1c.dialog.ResponseLoadArchived\"*\x82\xd3\xe4\x93\x02$\"\x1f/v1/grpc/Messaging/LoadArchived:\x01*\x12\x8d\x01\n\x12LoadGroupedDialogs\x12!.dialog.RequestLoadGroupedDialogs\x1a\".dialog.ResponseLoadGroupedDialogs\"0\x82\xd3\xe4\x93\x02*\"%/v1/grpc/Messaging/LoadGroupedDialogs:\x01*\x12o\n\nHideDialog\x12\x19.dialog.RequestHideDialog\x1a\x1c.dialog.ResponseDialogsOrder\"(\x82\xd3\xe4\x93\x02\"\"\x1d/v1/grpc/Messaging/HideDialog:\x01*\x12o\n\nShowDialog\x12\x19.dialog.RequestShowDialog\x1a\x1c.dialog.ResponseDialogsOrder\"(\x82\xd3\xe4\x93\x02\"\"\x1d/v1/grpc/Messaging/ShowDialog:\x01*\x12~\n\x0f\x46\x61vouriteDialog\x12\x1e.dialog.RequestFavouriteDialog\x1a\x1c.dialog.ResponseDialogsOrder\"-\x82\xd3\xe4\x93\x02\'\"\"/v1/grpc/Messaging/FavouriteDialog:\x01*\x12\x84\x01\n\x11UnfavouriteDialog\x12 .dialog.RequestUnfavouriteDialog\x1a\x1c.dialog.ResponseDialogsOrder\"/\x82\xd3\xe4\x93\x02)\"$/v1/grpc/Messaging/UnfavouriteDialog:\x01*\x12\x7f\n\x12NotifyDialogOpened\x12!.dialog.RequestNotifyDialogOpened\x1a\x14.dialog.ResponseVoid\"0\x82\xd3\xe4\x93\x02*\"%/v1/grpc/Messaging/NotifyDialogOpened:\x01*\x12j\n\nPinMessage\x12\x19.dialog.RequestPinMessage\x1a\x17.dialog.ResponseSeqDate\"(\x82\xd3\xe4\x93\x02\"\"\x1d/v1/grpc/Messaging/PinMessage:\x01*\x12p\n\x0cUnpinMessage\x12\x1b.dialog.RequestUnpinMessage\x1a\x17.dialog.ResponseSeqDate\"*\x82\xd3\xe4\x93\x02$\"\x1f/v1/grpc/Messaging/UnpinMessage:\x01*B\x19\xe2?\x16\n\x14im.dlg.grpc.servicesb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,definitions__pb2.DESCRIPTOR,miscellaneous__pb2.DESCRIPTOR,groups__pb2.DESCRIPTOR,peers__pb2.DESCRIPTOR,media__and__files__pb2.DESCRIPTOR,users__pb2.DESCRIPTOR,scalapb_dot_scalapb__pb2.DESCRIPTOR,])
 
@@ -41,25 +41,25 @@ _INTERACTIVEMEDIASTYLE = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='INTERACTIVEMEDIASTYLE_UNKNOWN', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='INTERACTIVEMEDIASTYLE_DEFAULT', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='INTERACTIVEMEDIASTYLE_PRIMARY', index=2, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='INTERACTIVEMEDIASTYLE_DANGER', index=3, number=3,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
-  serialized_start=17728,
-  serialized_end=17890,
+  serialized_options=None,
+  serialized_start=18407,
+  serialized_end=18569,
 )
 _sym_db.RegisterEnumDescriptor(_INTERACTIVEMEDIASTYLE)
 
@@ -72,25 +72,25 @@ _MESSAGESTATE = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='MESSAGESTATE_UNKNOWN', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MESSAGESTATE_SENT', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MESSAGESTATE_RECEIVED', index=2, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MESSAGESTATE_READ', index=3, number=3,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
-  serialized_start=17892,
-  serialized_end=18005,
+  serialized_options=None,
+  serialized_start=18571,
+  serialized_end=18684,
 )
 _sym_db.RegisterEnumDescriptor(_MESSAGESTATE)
 
@@ -103,25 +103,25 @@ _LISTLOADMODE = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='LISTLOADMODE_UNKNOWN', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='LISTLOADMODE_FORWARD', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='LISTLOADMODE_BACKWARD', index=2, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='LISTLOADMODE_BOTH', index=3, number=3,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
-  serialized_start=18007,
-  serialized_end=18123,
+  serialized_options=None,
+  serialized_start=18686,
+  serialized_end=18802,
 )
 _sym_db.RegisterEnumDescriptor(_LISTLOADMODE)
 
@@ -134,21 +134,21 @@ _DIALOGSFILTER = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='DIALOGSFILTER_UNKNOWN', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='DIALOGSFILTER_EXCLUDEFAVOURITES', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='DIALOGSFILTER_EXCLUDEARCHIVED', index=2, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
-  serialized_start=18125,
-  serialized_end=18239,
+  serialized_options=None,
+  serialized_start=18804,
+  serialized_end=18918,
 )
 _sym_db.RegisterEnumDescriptor(_DIALOGSFILTER)
 
@@ -184,35 +184,35 @@ _MESSAGEATTRIBUTES = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='is_highlighted', full_name='dialog.MessageAttributes.is_highlighted', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='is_notified', full_name='dialog.MessageAttributes.is_notified', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='is_only_for_you', full_name='dialog.MessageAttributes.is_only_for_you', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -236,42 +236,42 @@ _QUOTEDMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='public_group_id', full_name='dialog.QuotedMessage.public_group_id', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sender_user_id', full_name='dialog.QuotedMessage.sender_user_id', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='message_date', full_name='dialog.QuotedMessage.message_date', index=3,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='quoted_message_content', full_name='dialog.QuotedMessage.quoted_message_content', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -295,35 +295,35 @@ _MESSAGEMEDIA = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='image', full_name='dialog.MessageMedia.image', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='audio', full_name='dialog.MessageMedia.audio', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='actions', full_name='dialog.MessageMedia.actions', index=3,
       number=6, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -347,35 +347,35 @@ _WEBPAGEMEDIA = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='title', full_name='dialog.WebpageMedia.title', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='description', full_name='dialog.WebpageMedia.description', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='image', full_name='dialog.WebpageMedia.image', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -399,14 +399,14 @@ _IMAGEMEDIA = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -430,14 +430,14 @@ _AUDIOMEDIA = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -461,21 +461,21 @@ _INTERACTIVEMEDIAWIDGET = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='interactiveMediaSelect', full_name='dialog.InteractiveMediaWidget.interactiveMediaSelect', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -502,21 +502,21 @@ _INTERACTIVEMEDIABUTTON = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='label', full_name='dialog.InteractiveMediaButton.label', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -540,28 +540,28 @@ _INTERACTIVEMEDIASELECT = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='label', full_name='dialog.InteractiveMediaSelect.label', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='default_value', full_name='dialog.InteractiveMediaSelect.default_value', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -585,21 +585,21 @@ _INTERACTIVEMEDIASELECTOPTION = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='label', full_name='dialog.InteractiveMediaSelectOption.label', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -623,35 +623,35 @@ _INTERACTIVEMEDIA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='widget', full_name='dialog.InteractiveMedia.widget', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='style', full_name='dialog.InteractiveMedia.style', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='confirm', full_name='dialog.InteractiveMedia.confirm', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -675,21 +675,21 @@ _INTERACTIVEMEDIATRANSLATION = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='dialog.InteractiveMediaTranslation.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -713,21 +713,21 @@ _INTERACTIVEMEDIATRANSLATIONGROUP = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='messages', full_name='dialog.InteractiveMediaTranslationGroup.messages', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -751,35 +751,35 @@ _INTERACTIVEMEDIAGROUP = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='title', full_name='dialog.InteractiveMediaGroup.title', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='description', full_name='dialog.InteractiveMediaGroup.description', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='translations', full_name='dialog.InteractiveMediaGroup.translations', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -803,35 +803,35 @@ _INTERACTIVEMEDIACONFIRM = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='title', full_name='dialog.InteractiveMediaConfirm.title', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='ok', full_name='dialog.InteractiveMediaConfirm.ok', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dismiss', full_name='dialog.InteractiveMediaConfirm.dismiss', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -855,35 +855,35 @@ _UPDATEINTERACTIVEMEDIAEVENT = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='id', full_name='dialog.UpdateInteractiveMediaEvent.id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='dialog.UpdateInteractiveMediaEvent.value', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='uid', full_name='dialog.UpdateInteractiveMediaEvent.uid', index=3,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -907,28 +907,28 @@ _REQUESTDOINTERACTIVEMEDIAACTION = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='id', full_name='dialog.RequestDoInteractiveMediaAction.id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='dialog.RequestDoInteractiveMediaAction.value', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -952,70 +952,70 @@ _MESSAGECONTENT = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='serviceMessage', full_name='dialog.MessageContent.serviceMessage', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='documentMessage', full_name='dialog.MessageContent.documentMessage', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='jsonMessage', full_name='dialog.MessageContent.jsonMessage', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='unsupportedMessage', full_name='dialog.MessageContent.unsupportedMessage', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='stickerMessage', full_name='dialog.MessageContent.stickerMessage', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='binaryMessage', full_name='dialog.MessageContent.binaryMessage', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='emptyMessage', full_name='dialog.MessageContent.emptyMessage', index=7,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='deletedMessage', full_name='dialog.MessageContent.deletedMessage', index=8,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1042,42 +1042,42 @@ _TEXTMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='mentions', full_name='dialog.TextMessage.mentions', index=1,
       number=2, type=5, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='ext', full_name='dialog.TextMessage.ext', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='media', full_name='dialog.TextMessage.media', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='extensions', full_name='dialog.TextMessage.extensions', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1101,28 +1101,28 @@ _TEXTMESSAGEEX = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='textModernMessage', full_name='dialog.TextMessageEx.textModernMessage', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='textCommand', full_name='dialog.TextMessageEx.textCommand', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1149,14 +1149,14 @@ _TEXTEXMARKDOWN = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1180,42 +1180,42 @@ _TEXTMODERNMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sender_name_override', full_name='dialog.TextModernMessage.sender_name_override', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sender_photo_override', full_name='dialog.TextModernMessage.sender_photo_override', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='style', full_name='dialog.TextModernMessage.style', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='attaches', full_name='dialog.TextModernMessage.attaches', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1239,28 +1239,28 @@ _PARAGRAPHSTYLE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='paragraph_color', full_name='dialog.ParagraphStyle.paragraph_color', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='bg_color', full_name='dialog.ParagraphStyle.bg_color', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1284,49 +1284,49 @@ _TEXTMODERNATTACH = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='title_url', full_name='dialog.TextModernAttach.title_url', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='title_icon', full_name='dialog.TextModernAttach.title_icon', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='text', full_name='dialog.TextModernAttach.text', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='style', full_name='dialog.TextModernAttach.style', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='fields', full_name='dialog.TextModernAttach.fields', index=5,
       number=6, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1350,28 +1350,28 @@ _TEXTMODERNFIELD = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='dialog.TextModernField.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='is_short', full_name='dialog.TextModernField.is_short', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1395,21 +1395,21 @@ _TEXTCOMMAND = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='args', full_name='dialog.TextCommand.args', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1433,21 +1433,21 @@ _SERVICEMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='ext', full_name='dialog.ServiceMessage.ext', index=1,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1471,112 +1471,112 @@ _SERVICEEX = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='userJoined', full_name='dialog.ServiceEx.userJoined', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='userKicked', full_name='dialog.ServiceEx.userKicked', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='userLeft', full_name='dialog.ServiceEx.userLeft', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='groupCreated', full_name='dialog.ServiceEx.groupCreated', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='changedTitle', full_name='dialog.ServiceEx.changedTitle', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='changedTopic', full_name='dialog.ServiceEx.changedTopic', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='changedAbout', full_name='dialog.ServiceEx.changedAbout', index=7,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='changedAvatar', full_name='dialog.ServiceEx.changedAvatar', index=8,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='contactRegistered', full_name='dialog.ServiceEx.contactRegistered', index=9,
       number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='phoneMissed', full_name='dialog.ServiceEx.phoneMissed', index=10,
       number=11, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='phoneCall', full_name='dialog.ServiceEx.phoneCall', index=11,
       number=12, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='phoneRejected', full_name='dialog.ServiceEx.phoneRejected', index=12,
       number=13, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='chatArchived', full_name='dialog.ServiceEx.chatArchived', index=13,
       number=14, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='chatRestored', full_name='dialog.ServiceEx.chatRestored', index=14,
       number=15, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1603,14 +1603,14 @@ _SERVICEEXUSERINVITED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1634,7 +1634,7 @@ _SERVICEEXUSERJOINED = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1658,14 +1658,14 @@ _SERVICEEXUSERKICKED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1689,7 +1689,7 @@ _SERVICEEXUSERLEFT = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1713,7 +1713,7 @@ _SERVICEEXGROUPCREATED = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1737,14 +1737,14 @@ _SERVICEEXCHANGEDTITLE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1768,14 +1768,14 @@ _SERVICEEXCHANGEDTOPIC = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1799,14 +1799,14 @@ _SERVICEEXCHANGEDABOUT = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1830,14 +1830,14 @@ _SERVICEEXCHANGEDAVATAR = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1861,14 +1861,14 @@ _SERVICEEXCONTACTREGISTERED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1892,7 +1892,7 @@ _SERVICEEXPHONEMISSED = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1916,14 +1916,14 @@ _SERVICEEXPHONECALL = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1947,7 +1947,7 @@ _SERVICEEXPHONEREJECTED = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1971,7 +1971,7 @@ _SERVICEEXCHATARCHIVED = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1995,7 +1995,7 @@ _SERVICEEXCHATRESTORED = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -2019,56 +2019,56 @@ _DOCUMENTMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='access_hash', full_name='dialog.DocumentMessage.access_hash', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006danger'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='file_size', full_name='dialog.DocumentMessage.file_size', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='name', full_name='dialog.DocumentMessage.name', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='mime_type', full_name='dialog.DocumentMessage.mime_type', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='thumb', full_name='dialog.DocumentMessage.thumb', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='ext', full_name='dialog.DocumentMessage.ext', index=6,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -2092,28 +2092,28 @@ _DOCUMENTEX = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='video', full_name='dialog.DocumentEx.video', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='voice', full_name='dialog.DocumentEx.voice', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -2140,21 +2140,21 @@ _DOCUMENTEXPHOTO = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='h', full_name='dialog.DocumentExPhoto.h', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -2178,28 +2178,28 @@ _DOCUMENTEXVIDEO = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='h', full_name='dialog.DocumentExVideo.h', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='duration', full_name='dialog.DocumentExVideo.duration', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -2223,14 +2223,14 @@ _DOCUMENTEXVOICE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -2254,14 +2254,14 @@ _JSONMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -2285,7 +2285,7 @@ _UNSUPPORTEDMESSAGE = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -2309,56 +2309,56 @@ _STICKERMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='fast_preview', full_name='dialog.StickerMessage.fast_preview', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='image_512', full_name='dialog.StickerMessage.image_512', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='image_256', full_name='dialog.StickerMessage.image_256', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sticker_collection_id', full_name='dialog.StickerMessage.sticker_collection_id', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sticker_collection_access_hash', full_name='dialog.StickerMessage.sticker_collection_access_hash', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='emoji', full_name='dialog.StickerMessage.emoji', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -2382,21 +2382,21 @@ _BINARYMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='msg', full_name='dialog.BinaryMessage.msg', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -2420,7 +2420,7 @@ _EMPTYMESSAGE = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -2444,14 +2444,14 @@ _DELETEDMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -2475,28 +2475,28 @@ _DIALOGSHORT = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='counter', full_name='dialog.DialogShort.counter', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='date', full_name='dialog.DialogShort.date', index=2,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -2520,28 +2520,28 @@ _DIALOGGROUP = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='key', full_name='dialog.DialogGroup.key', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dialogs', full_name='dialog.DialogGroup.dialogs', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -2565,21 +2565,21 @@ _MESSAGEREACTION = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='code', full_name='dialog.MessageReaction.code', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -2587,6 +2587,44 @@ _MESSAGEREACTION = _descriptor.Descriptor(
   ],
   serialized_start=8575,
   serialized_end=8651,
+)
+
+
+_SEARCHPREDICATE = _descriptor.Descriptor(
+  name='SearchPredicate',
+  full_name='dialog.SearchPredicate',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='dialog.SearchPredicate.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='values', full_name='dialog.SearchPredicate.values', index=1,
+      number=2, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=8653,
+  serialized_end=8729,
 )
 
 
@@ -2603,56 +2641,77 @@ _REQUESTSENDMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rid', full_name='dialog.RequestSendMessage.rid', index=1,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='message', full_name='dialog.RequestSendMessage.message', index=2,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='is_only_for_user', full_name='dialog.RequestSendMessage.is_only_for_user', index=3,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='forward', full_name='dialog.RequestSendMessage.forward', index=4,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='reply', full_name='dialog.RequestSendMessage.reply', index=5,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='predicates', full_name='dialog.RequestSendMessage.predicates', index=6,
+      number=10, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='white_list', full_name='dialog.RequestSendMessage.white_list', index=7,
+      number=11, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='black_list', full_name='dialog.RequestSendMessage.black_list', index=8,
+      number=12, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8654,
-  serialized_end=8993,
+  serialized_start=8732,
+  serialized_end=9201,
 )
 
 
@@ -2669,35 +2728,35 @@ _REQUESTUPDATEMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updated_message', full_name='dialog.RequestUpdateMessage.updated_message', index=1,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='last_edited_at', full_name='dialog.RequestUpdateMessage.last_edited_at', index=2,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8996,
-  serialized_end=9198,
+  serialized_start=9204,
+  serialized_end=9406,
 )
 
 
@@ -2714,28 +2773,28 @@ _REQUESTMESSAGERECEIVED = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='date', full_name='dialog.RequestMessageReceived.date', index=1,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9201,
-  serialized_end=9330,
+  serialized_start=9409,
+  serialized_end=9538,
 )
 
 
@@ -2752,28 +2811,28 @@ _REQUESTMESSAGEREAD = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='date', full_name='dialog.RequestMessageRead.date', index=1,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9332,
-  serialized_end=9457,
+  serialized_start=9540,
+  serialized_end=9665,
 )
 
 
@@ -2790,21 +2849,21 @@ _REQUESTDELETEMESSAGEOBSOLETE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9459,
-  serialized_end=9567,
+  serialized_start=9667,
+  serialized_end=9775,
 )
 
 
@@ -2821,28 +2880,28 @@ _REQUESTCLEARCHAT = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='last_message_date', full_name='dialog.RequestClearChat.last_message_date', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9570,
-  serialized_end=9706,
+  serialized_start=9778,
+  serialized_end=9914,
 )
 
 
@@ -2859,28 +2918,28 @@ _REQUESTDELETECHAT = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='last_message_date', full_name='dialog.RequestDeleteChat.last_message_date', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9709,
-  serialized_end=9846,
+  serialized_start=9917,
+  serialized_end=10054,
 )
 
 
@@ -2897,21 +2956,21 @@ _REQUESTARCHIVECHAT = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9848,
-  serialized_end=9944,
+  serialized_start=10056,
+  serialized_end=10152,
 )
 
 
@@ -2928,35 +2987,35 @@ _REQUESTMESSAGESETREACTION = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='mid', full_name='dialog.RequestMessageSetReaction.mid', index=1,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='code', full_name='dialog.RequestMessageSetReaction.code', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9947,
-  serialized_end=10126,
+  serialized_start=10155,
+  serialized_end=10334,
 )
 
 
@@ -2973,35 +3032,35 @@ _REQUESTMESSAGEREMOVEREACTION = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='mid', full_name='dialog.RequestMessageRemoveReaction.mid', index=1,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='code', full_name='dialog.RequestMessageRemoveReaction.code', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10129,
-  serialized_end=10311,
+  serialized_start=10337,
+  serialized_end=10519,
 )
 
 
@@ -3018,35 +3077,35 @@ _RESPONSEREACTIONSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='state', full_name='dialog.ResponseReactionsResponse.state', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='reactions', full_name='dialog.ResponseReactionsResponse.reactions', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10314,
-  serialized_end=10444,
+  serialized_start=10522,
+  serialized_end=10652,
 )
 
 
@@ -3063,77 +3122,77 @@ _UPDATEMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sender_uid', full_name='dialog.UpdateMessage.sender_uid', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='date', full_name='dialog.UpdateMessage.date', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='mid', full_name='dialog.UpdateMessage.mid', index=3,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='message', full_name='dialog.UpdateMessage.message', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='attributes', full_name='dialog.UpdateMessage.attributes', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='forward', full_name='dialog.UpdateMessage.forward', index=6,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='reply', full_name='dialog.UpdateMessage.reply', index=7,
       number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='previous_mid', full_name='dialog.UpdateMessage.previous_mid', index=8,
       number=11, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='counter', full_name='dialog.UpdateMessage.counter', index=9,
       number=12, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -3142,8 +3201,8 @@ _UPDATEMESSAGE = _descriptor.Descriptor(
       name='attach', full_name='dialog.UpdateMessage.attach',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=10447,
-  serialized_end=10983,
+  serialized_start=10655,
+  serialized_end=11191,
 )
 
 
@@ -3160,42 +3219,42 @@ _UPDATEMESSAGECONTENTCHANGED = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='mid', full_name='dialog.UpdateMessageContentChanged.mid', index=1,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='message', full_name='dialog.UpdateMessageContentChanged.message', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='edited_at', full_name='dialog.UpdateMessageContentChanged.edited_at', index=3,
       number=5, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10986,
-  serialized_end=11195,
+  serialized_start=11194,
+  serialized_end=11403,
 )
 
 
@@ -3212,56 +3271,56 @@ _UPDATEMESSAGESENT = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rid', full_name='dialog.UpdateMessageSent.rid', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='date', full_name='dialog.UpdateMessageSent.date', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='mid', full_name='dialog.UpdateMessageSent.mid', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='prev_mid', full_name='dialog.UpdateMessageSent.prev_mid', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='unread_counter', full_name='dialog.UpdateMessageSent.unread_counter', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11198,
-  serialized_end=11484,
+  serialized_start=11406,
+  serialized_end=11692,
 )
 
 
@@ -3278,35 +3337,35 @@ _UPDATEMESSAGERECEIVED = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_date', full_name='dialog.UpdateMessageReceived.start_date', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='received_date', full_name='dialog.UpdateMessageReceived.received_date', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11487,
-  serialized_end=11626,
+  serialized_start=11695,
+  serialized_end=11834,
 )
 
 
@@ -3323,35 +3382,35 @@ _UPDATEMESSAGEREAD = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_date', full_name='dialog.UpdateMessageRead.start_date', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='read_date', full_name='dialog.UpdateMessageRead.read_date', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11629,
-  serialized_end=11760,
+  serialized_start=11837,
+  serialized_end=11968,
 )
 
 
@@ -3368,35 +3427,35 @@ _UPDATEMESSAGEREADBYME = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_date', full_name='dialog.UpdateMessageReadByMe.start_date', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='unread_counter', full_name='dialog.UpdateMessageReadByMe.unread_counter', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11763,
-  serialized_end=11932,
+  serialized_start=11971,
+  serialized_end=12140,
 )
 
 
@@ -3413,42 +3472,42 @@ _UPDATEMESSAGEDELETE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='mids', full_name='dialog.UpdateMessageDelete.mids', index=1,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='counter', full_name='dialog.UpdateMessageDelete.counter', index=2,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='action_date', full_name='dialog.UpdateMessageDelete.action_date', index=3,
       number=5, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11935,
-  serialized_end=12144,
+  serialized_start=12143,
+  serialized_end=12352,
 )
 
 
@@ -3465,28 +3524,28 @@ _UPDATECHATCLEAR = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='action_date', full_name='dialog.UpdateChatClear.action_date', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12146,
-  serialized_end=12242,
+  serialized_start=12354,
+  serialized_end=12450,
 )
 
 
@@ -3503,28 +3562,28 @@ _UPDATECHATDELETE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='action_date', full_name='dialog.UpdateChatDelete.action_date', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12244,
-  serialized_end=12341,
+  serialized_start=12452,
+  serialized_end=12549,
 )
 
 
@@ -3541,21 +3600,21 @@ _UPDATECHATARCHIVE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12343,
-  serialized_end=12405,
+  serialized_start=12551,
+  serialized_end=12613,
 )
 
 
@@ -3572,21 +3631,21 @@ _UPDATECHATGROUPSCHANGED = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12407,
-  serialized_end=12485,
+  serialized_start=12615,
+  serialized_end=12693,
 )
 
 
@@ -3603,35 +3662,153 @@ _UPDATEREACTIONSUPDATE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='mid', full_name='dialog.UpdateReactionsUpdate.mid', index=1,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='reactions', full_name='dialog.UpdateReactionsUpdate.reactions', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12488,
-  serialized_end=12660,
+  serialized_start=12696,
+  serialized_end=12868,
+)
+
+
+_UPDATEMESSAGEREJECTEDBYHOOK = _descriptor.Descriptor(
+  name='UpdateMessageRejectedByHook',
+  full_name='dialog.UpdateMessageRejectedByHook',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='peer', full_name='dialog.UpdateMessageRejectedByHook.peer', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='rid', full_name='dialog.UpdateMessageRejectedByHook.rid', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='date', full_name='dialog.UpdateMessageRejectedByHook.date', index=2,
+      number=3, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='hookId', full_name='dialog.UpdateMessageRejectedByHook.hookId', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='reason', full_name='dialog.UpdateMessageRejectedByHook.reason', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=12871,
+  serialized_end=13092,
+)
+
+
+_UPDATEMESSAGEEDITREJECTEDBYHOOK = _descriptor.Descriptor(
+  name='UpdateMessageEditRejectedByHook',
+  full_name='dialog.UpdateMessageEditRejectedByHook',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='peer', full_name='dialog.UpdateMessageEditRejectedByHook.peer', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='mid', full_name='dialog.UpdateMessageEditRejectedByHook.mid', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='date', full_name='dialog.UpdateMessageEditRejectedByHook.date', index=2,
+      number=3, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='hookId', full_name='dialog.UpdateMessageEditRejectedByHook.hookId', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='reason', full_name='dialog.UpdateMessageEditRejectedByHook.reason', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=13095,
+  serialized_end=13339,
 )
 
 
@@ -3648,21 +3825,21 @@ _REFERENCEDMESSAGES = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12662,
-  serialized_end=12730,
+  serialized_start=13341,
+  serialized_end=13409,
 )
 
 
@@ -3679,98 +3856,98 @@ _HISTORYMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sender_peer', full_name='dialog.HistoryMessage.sender_peer', index=1,
       number=15, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='host_peer', full_name='dialog.HistoryMessage.host_peer', index=2,
       number=12, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='mid', full_name='dialog.HistoryMessage.mid', index=3,
       number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='prev_mid', full_name='dialog.HistoryMessage.prev_mid', index=4,
       number=17, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='date', full_name='dialog.HistoryMessage.date', index=5,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='message', full_name='dialog.HistoryMessage.message', index=6,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='state', full_name='dialog.HistoryMessage.state', index=7,
       number=6, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='reactions', full_name='dialog.HistoryMessage.reactions', index=8,
       number=7, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='attribute', full_name='dialog.HistoryMessage.attribute', index=9,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='forward', full_name='dialog.HistoryMessage.forward', index=10,
       number=13, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='reply', full_name='dialog.HistoryMessage.reply', index=11,
       number=14, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='edited_at', full_name='dialog.HistoryMessage.edited_at', index=12,
       number=16, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -3779,8 +3956,8 @@ _HISTORYMESSAGE = _descriptor.Descriptor(
       name='attach', full_name='dialog.HistoryMessage.attach',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=12733,
-  serialized_end=13379,
+  serialized_start=13412,
+  serialized_end=14058,
 )
 
 
@@ -3797,49 +3974,49 @@ _REQUESTLOADHISTORY = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='date', full_name='dialog.RequestLoadHistory.date', index=1,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='load_mode', full_name='dialog.RequestLoadHistory.load_mode', index=2,
       number=5, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='limit', full_name='dialog.RequestLoadHistory.limit', index=3,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optimizations', full_name='dialog.RequestLoadHistory.optimizations', index=4,
       number=6, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13382,
-  serialized_end=13659,
+  serialized_start=14061,
+  serialized_end=14338,
 )
 
 
@@ -3856,63 +4033,63 @@ _RESPONSELOADHISTORY = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='users', full_name='dialog.ResponseLoadHistory.users', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user_peers', full_name='dialog.ResponseLoadHistory.user_peers', index=2,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='groups', full_name='dialog.ResponseLoadHistory.groups', index=3,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='group_peers', full_name='dialog.ResponseLoadHistory.group_peers', index=4,
       number=6, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='counter', full_name='dialog.ResponseLoadHistory.counter', index=5,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='counter_date', full_name='dialog.ResponseLoadHistory.counter_date', index=6,
       number=8, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13662,
-  serialized_end=13967,
+  serialized_start=14341,
+  serialized_end=14646,
 )
 
 
@@ -3929,105 +4106,105 @@ _DIALOG = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='unread_count', full_name='dialog.Dialog.unread_count', index=1,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sort_date', full_name='dialog.Dialog.sort_date', index=2,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sender_uid', full_name='dialog.Dialog.sender_uid', index=3,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='is_favourite', full_name='dialog.Dialog.is_favourite', index=4,
       number=13, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='mid', full_name='dialog.Dialog.mid', index=5,
       number=12, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='date', full_name='dialog.Dialog.date', index=6,
       number=7, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='message', full_name='dialog.Dialog.message', index=7,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='state', full_name='dialog.Dialog.state', index=8,
       number=9, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='first_unread_date', full_name='dialog.Dialog.first_unread_date', index=9,
       number=10, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='attributes', full_name='dialog.Dialog.attributes', index=10,
       number=11, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='pinned_messages', full_name='dialog.Dialog.pinned_messages', index=11,
       number=14, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='history_message', full_name='dialog.Dialog.history_message', index=12,
       number=15, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13970,
-  serialized_end=14593,
+  serialized_start=14649,
+  serialized_end=15272,
 )
 
 
@@ -4044,49 +4221,49 @@ _REQUESTLOADDIALOGS = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='limit', full_name='dialog.RequestLoadDialogs.limit', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optimizations', full_name='dialog.RequestLoadDialogs.optimizations', index=2,
       number=3, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='filters', full_name='dialog.RequestLoadDialogs.filters', index=3,
       number=4, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='peers_to_load', full_name='dialog.RequestLoadDialogs.peers_to_load', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14596,
-  serialized_end=14882,
+  serialized_start=15275,
+  serialized_end=15561,
 )
 
 
@@ -4103,49 +4280,49 @@ _RESPONSELOADDIALOGS = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='users', full_name='dialog.ResponseLoadDialogs.users', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dialogs', full_name='dialog.ResponseLoadDialogs.dialogs', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user_peers', full_name='dialog.ResponseLoadDialogs.user_peers', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='group_peers', full_name='dialog.ResponseLoadDialogs.group_peers', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14885,
-  serialized_end=15114,
+  serialized_start=15564,
+  serialized_end=15793,
 )
 
 
@@ -4162,28 +4339,28 @@ _DIALOGINDEX = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='timestamp', full_name='dialog.DialogIndex.timestamp', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15116,
-  serialized_end=15206,
+  serialized_start=15795,
+  serialized_end=15885,
 )
 
 
@@ -4200,14 +4377,14 @@ _REQUESTFETCHDIALOGINDEX = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15208,
-  serialized_end=15263,
+  serialized_start=15887,
+  serialized_end=15942,
 )
 
 
@@ -4224,21 +4401,21 @@ _RESPONSEFETCHDIALOGINDEX = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15265,
-  serialized_end=15367,
+  serialized_start=15944,
+  serialized_end=16046,
 )
 
 
@@ -4255,35 +4432,35 @@ _REQUESTLOADARCHIVED = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='limit', full_name='dialog.RequestLoadArchived.limit', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optimizations', full_name='dialog.RequestLoadArchived.optimizations', index=2,
       number=3, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15370,
-  serialized_end=15582,
+  serialized_start=16049,
+  serialized_end=16261,
 )
 
 
@@ -4300,56 +4477,56 @@ _RESPONSELOADARCHIVED = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='users', full_name='dialog.ResponseLoadArchived.users', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dialogs', full_name='dialog.ResponseLoadArchived.dialogs', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user_peers', full_name='dialog.ResponseLoadArchived.user_peers', index=3,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='group_peers', full_name='dialog.ResponseLoadArchived.group_peers', index=4,
       number=6, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='next_offset', full_name='dialog.ResponseLoadArchived.next_offset', index=5,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15585,
-  serialized_end=15865,
+  serialized_start=16264,
+  serialized_end=16544,
 )
 
 
@@ -4366,21 +4543,21 @@ _REQUESTLOADGROUPEDDIALOGS = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15867,
-  serialized_end=15975,
+  serialized_start=16546,
+  serialized_end=16654,
 )
 
 
@@ -4397,63 +4574,63 @@ _RESPONSELOADGROUPEDDIALOGS = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='users', full_name='dialog.ResponseLoadGroupedDialogs.users', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='groups', full_name='dialog.ResponseLoadGroupedDialogs.groups', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='show_archived', full_name='dialog.ResponseLoadGroupedDialogs.show_archived', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='show_invite', full_name='dialog.ResponseLoadGroupedDialogs.show_invite', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user_peers', full_name='dialog.ResponseLoadGroupedDialogs.user_peers', index=5,
       number=6, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='group_peers', full_name='dialog.ResponseLoadGroupedDialogs.group_peers', index=6,
       number=7, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15978,
-  serialized_end=16319,
+  serialized_start=16657,
+  serialized_end=16998,
 )
 
 
@@ -4470,35 +4647,35 @@ _RESPONSEDIALOGSORDER = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='state', full_name='dialog.ResponseDialogsOrder.state', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='groups', full_name='dialog.ResponseDialogsOrder.groups', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16322,
-  serialized_end=16485,
+  serialized_start=17001,
+  serialized_end=17164,
 )
 
 
@@ -4515,21 +4692,21 @@ _REQUESTHIDEDIALOG = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16487,
-  serialized_end=16582,
+  serialized_start=17166,
+  serialized_end=17261,
 )
 
 
@@ -4546,21 +4723,21 @@ _REQUESTSHOWDIALOG = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16584,
-  serialized_end=16664,
+  serialized_start=17263,
+  serialized_end=17343,
 )
 
 
@@ -4577,21 +4754,21 @@ _REQUESTFAVOURITEDIALOG = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16666,
-  serialized_end=16766,
+  serialized_start=17345,
+  serialized_end=17445,
 )
 
 
@@ -4608,21 +4785,21 @@ _REQUESTUNFAVOURITEDIALOG = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16768,
-  serialized_end=16870,
+  serialized_start=17447,
+  serialized_end=17549,
 )
 
 
@@ -4639,28 +4816,28 @@ _UPDATEDIALOGFAVOURITECHANGED = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='is_favourite', full_name='dialog.UpdateDialogFavouriteChanged.is_favourite', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16873,
-  serialized_end=17011,
+  serialized_start=17552,
+  serialized_end=17690,
 )
 
 
@@ -4677,21 +4854,21 @@ _REQUESTNOTIFYDIALOGOPENED = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17013,
-  serialized_end=17116,
+  serialized_start=17692,
+  serialized_end=17795,
 )
 
 
@@ -4708,21 +4885,21 @@ _PINNEDMESSAGES = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17118,
-  serialized_end=17182,
+  serialized_start=17797,
+  serialized_end=17861,
 )
 
 
@@ -4739,35 +4916,35 @@ _REQUESTPINMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='mid', full_name='dialog.RequestPinMessage.mid', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='last_pin_date', full_name='dialog.RequestPinMessage.last_pin_date', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17185,
-  serialized_end=17365,
+  serialized_start=17864,
+  serialized_end=18044,
 )
 
 
@@ -4784,35 +4961,35 @@ _REQUESTUNPINMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='mid', full_name='dialog.RequestUnpinMessage.mid', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='last_pin_date', full_name='dialog.RequestUnpinMessage.last_pin_date', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17368,
-  serialized_end=17550,
+  serialized_start=18047,
+  serialized_end=18229,
 )
 
 
@@ -4829,35 +5006,35 @@ _UPDATEPINNEDMESSAGESCHANGED = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='pinned_messages', full_name='dialog.UpdatePinnedMessagesChanged.pinned_messages', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='action_date', full_name='dialog.UpdatePinnedMessagesChanged.action_date', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17553,
-  serialized_end=17725,
+  serialized_start=18232,
+  serialized_end=18404,
 )
 
 _MESSAGEATTRIBUTES.fields_by_name['is_mentioned'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
@@ -5059,6 +5236,7 @@ _REQUESTSENDMESSAGE.fields_by_name['peer'].message_type = peers__pb2._OUTPEER
 _REQUESTSENDMESSAGE.fields_by_name['message'].message_type = _MESSAGECONTENT
 _REQUESTSENDMESSAGE.fields_by_name['forward'].message_type = _REFERENCEDMESSAGES
 _REQUESTSENDMESSAGE.fields_by_name['reply'].message_type = _REFERENCEDMESSAGES
+_REQUESTSENDMESSAGE.fields_by_name['predicates'].message_type = _SEARCHPREDICATE
 _REQUESTUPDATEMESSAGE.fields_by_name['mid'].message_type = definitions__pb2._UUIDVALUE
 _REQUESTUPDATEMESSAGE.fields_by_name['updated_message'].message_type = _MESSAGECONTENT
 _REQUESTMESSAGERECEIVED.fields_by_name['peer'].message_type = peers__pb2._OUTPEER
@@ -5107,6 +5285,11 @@ _UPDATECHATGROUPSCHANGED.fields_by_name['dialogs'].message_type = _DIALOGGROUP
 _UPDATEREACTIONSUPDATE.fields_by_name['peer'].message_type = peers__pb2._PEER
 _UPDATEREACTIONSUPDATE.fields_by_name['mid'].message_type = definitions__pb2._UUIDVALUE
 _UPDATEREACTIONSUPDATE.fields_by_name['reactions'].message_type = _MESSAGEREACTION
+_UPDATEMESSAGEREJECTEDBYHOOK.fields_by_name['peer'].message_type = peers__pb2._PEER
+_UPDATEMESSAGEREJECTEDBYHOOK.fields_by_name['reason'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
+_UPDATEMESSAGEEDITREJECTEDBYHOOK.fields_by_name['peer'].message_type = peers__pb2._PEER
+_UPDATEMESSAGEEDITREJECTEDBYHOOK.fields_by_name['mid'].message_type = definitions__pb2._UUIDVALUE
+_UPDATEMESSAGEEDITREJECTEDBYHOOK.fields_by_name['reason'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
 _REFERENCEDMESSAGES.fields_by_name['mids'].message_type = definitions__pb2._UUIDVALUE
 _HISTORYMESSAGE.fields_by_name['sender_peer'].message_type = peers__pb2._OUTPEER
 _HISTORYMESSAGE.fields_by_name['host_peer'].message_type = peers__pb2._OUTPEER
@@ -5240,6 +5423,7 @@ DESCRIPTOR.message_types_by_name['DeletedMessage'] = _DELETEDMESSAGE
 DESCRIPTOR.message_types_by_name['DialogShort'] = _DIALOGSHORT
 DESCRIPTOR.message_types_by_name['DialogGroup'] = _DIALOGGROUP
 DESCRIPTOR.message_types_by_name['MessageReaction'] = _MESSAGEREACTION
+DESCRIPTOR.message_types_by_name['SearchPredicate'] = _SEARCHPREDICATE
 DESCRIPTOR.message_types_by_name['RequestSendMessage'] = _REQUESTSENDMESSAGE
 DESCRIPTOR.message_types_by_name['RequestUpdateMessage'] = _REQUESTUPDATEMESSAGE
 DESCRIPTOR.message_types_by_name['RequestMessageReceived'] = _REQUESTMESSAGERECEIVED
@@ -5263,6 +5447,8 @@ DESCRIPTOR.message_types_by_name['UpdateChatDelete'] = _UPDATECHATDELETE
 DESCRIPTOR.message_types_by_name['UpdateChatArchive'] = _UPDATECHATARCHIVE
 DESCRIPTOR.message_types_by_name['UpdateChatGroupsChanged'] = _UPDATECHATGROUPSCHANGED
 DESCRIPTOR.message_types_by_name['UpdateReactionsUpdate'] = _UPDATEREACTIONSUPDATE
+DESCRIPTOR.message_types_by_name['UpdateMessageRejectedByHook'] = _UPDATEMESSAGEREJECTEDBYHOOK
+DESCRIPTOR.message_types_by_name['UpdateMessageEditRejectedByHook'] = _UPDATEMESSAGEEDITREJECTEDBYHOOK
 DESCRIPTOR.message_types_by_name['ReferencedMessages'] = _REFERENCEDMESSAGES
 DESCRIPTOR.message_types_by_name['HistoryMessage'] = _HISTORYMESSAGE
 DESCRIPTOR.message_types_by_name['RequestLoadHistory'] = _REQUESTLOADHISTORY
@@ -5693,6 +5879,13 @@ MessageReaction = _reflection.GeneratedProtocolMessageType('MessageReaction', (_
   ))
 _sym_db.RegisterMessage(MessageReaction)
 
+SearchPredicate = _reflection.GeneratedProtocolMessageType('SearchPredicate', (_message.Message,), dict(
+  DESCRIPTOR = _SEARCHPREDICATE,
+  __module__ = 'messaging_pb2'
+  # @@protoc_insertion_point(class_scope:dialog.SearchPredicate)
+  ))
+_sym_db.RegisterMessage(SearchPredicate)
+
 RequestSendMessage = _reflection.GeneratedProtocolMessageType('RequestSendMessage', (_message.Message,), dict(
   DESCRIPTOR = _REQUESTSENDMESSAGE,
   __module__ = 'messaging_pb2'
@@ -5853,6 +6046,20 @@ UpdateReactionsUpdate = _reflection.GeneratedProtocolMessageType('UpdateReaction
   # @@protoc_insertion_point(class_scope:dialog.UpdateReactionsUpdate)
   ))
 _sym_db.RegisterMessage(UpdateReactionsUpdate)
+
+UpdateMessageRejectedByHook = _reflection.GeneratedProtocolMessageType('UpdateMessageRejectedByHook', (_message.Message,), dict(
+  DESCRIPTOR = _UPDATEMESSAGEREJECTEDBYHOOK,
+  __module__ = 'messaging_pb2'
+  # @@protoc_insertion_point(class_scope:dialog.UpdateMessageRejectedByHook)
+  ))
+_sym_db.RegisterMessage(UpdateMessageRejectedByHook)
+
+UpdateMessageEditRejectedByHook = _reflection.GeneratedProtocolMessageType('UpdateMessageEditRejectedByHook', (_message.Message,), dict(
+  DESCRIPTOR = _UPDATEMESSAGEEDITREJECTEDBYHOOK,
+  __module__ = 'messaging_pb2'
+  # @@protoc_insertion_point(class_scope:dialog.UpdateMessageEditRejectedByHook)
+  ))
+_sym_db.RegisterMessage(UpdateMessageEditRejectedByHook)
 
 ReferencedMessages = _reflection.GeneratedProtocolMessageType('ReferencedMessages', (_message.Message,), dict(
   DESCRIPTOR = _REFERENCEDMESSAGES,
@@ -6030,553 +6237,299 @@ UpdatePinnedMessagesChanged = _reflection.GeneratedProtocolMessageType('UpdatePi
 _sym_db.RegisterMessage(UpdatePinnedMessagesChanged)
 
 
-DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\342?\026\n\024im.dlg.grpc.services'))
-_MESSAGEATTRIBUTES.fields_by_name['is_mentioned'].has_options = True
-_MESSAGEATTRIBUTES.fields_by_name['is_mentioned']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_MESSAGEATTRIBUTES.fields_by_name['is_highlighted'].has_options = True
-_MESSAGEATTRIBUTES.fields_by_name['is_highlighted']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_MESSAGEATTRIBUTES.fields_by_name['is_notified'].has_options = True
-_MESSAGEATTRIBUTES.fields_by_name['is_notified']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_MESSAGEATTRIBUTES.fields_by_name['is_only_for_you'].has_options = True
-_MESSAGEATTRIBUTES.fields_by_name['is_only_for_you']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_QUOTEDMESSAGE.fields_by_name['message_id'].has_options = True
-_QUOTEDMESSAGE.fields_by_name['message_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_QUOTEDMESSAGE.fields_by_name['public_group_id'].has_options = True
-_QUOTEDMESSAGE.fields_by_name['public_group_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_QUOTEDMESSAGE.fields_by_name['sender_user_id'].has_options = True
-_QUOTEDMESSAGE.fields_by_name['sender_user_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_QUOTEDMESSAGE.fields_by_name['message_date'].has_options = True
-_QUOTEDMESSAGE.fields_by_name['message_date']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_QUOTEDMESSAGE.fields_by_name['quoted_message_content'].has_options = True
-_QUOTEDMESSAGE.fields_by_name['quoted_message_content']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_MESSAGEMEDIA.fields_by_name['webpage'].has_options = True
-_MESSAGEMEDIA.fields_by_name['webpage']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_MESSAGEMEDIA.fields_by_name['image'].has_options = True
-_MESSAGEMEDIA.fields_by_name['image']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_MESSAGEMEDIA.fields_by_name['audio'].has_options = True
-_MESSAGEMEDIA.fields_by_name['audio']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_MESSAGEMEDIA.fields_by_name['actions'].has_options = True
-_MESSAGEMEDIA.fields_by_name['actions']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_WEBPAGEMEDIA.fields_by_name['url'].has_options = True
-_WEBPAGEMEDIA.fields_by_name['url']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_WEBPAGEMEDIA.fields_by_name['title'].has_options = True
-_WEBPAGEMEDIA.fields_by_name['title']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_WEBPAGEMEDIA.fields_by_name['description'].has_options = True
-_WEBPAGEMEDIA.fields_by_name['description']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_WEBPAGEMEDIA.fields_by_name['image'].has_options = True
-_WEBPAGEMEDIA.fields_by_name['image']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_IMAGEMEDIA.fields_by_name['image'].has_options = True
-_IMAGEMEDIA.fields_by_name['image']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_AUDIOMEDIA.fields_by_name['audio'].has_options = True
-_AUDIOMEDIA.fields_by_name['audio']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_INTERACTIVEMEDIABUTTON.fields_by_name['value'].has_options = True
-_INTERACTIVEMEDIABUTTON.fields_by_name['value']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_INTERACTIVEMEDIABUTTON.fields_by_name['label'].has_options = True
-_INTERACTIVEMEDIABUTTON.fields_by_name['label']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_INTERACTIVEMEDIASELECT.fields_by_name['options'].has_options = True
-_INTERACTIVEMEDIASELECT.fields_by_name['options']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_INTERACTIVEMEDIASELECT.fields_by_name['label'].has_options = True
-_INTERACTIVEMEDIASELECT.fields_by_name['label']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_INTERACTIVEMEDIASELECT.fields_by_name['default_value'].has_options = True
-_INTERACTIVEMEDIASELECT.fields_by_name['default_value']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_INTERACTIVEMEDIASELECTOPTION.fields_by_name['value'].has_options = True
-_INTERACTIVEMEDIASELECTOPTION.fields_by_name['value']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_INTERACTIVEMEDIASELECTOPTION.fields_by_name['label'].has_options = True
-_INTERACTIVEMEDIASELECTOPTION.fields_by_name['label']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_INTERACTIVEMEDIA.fields_by_name['id'].has_options = True
-_INTERACTIVEMEDIA.fields_by_name['id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_INTERACTIVEMEDIA.fields_by_name['widget'].has_options = True
-_INTERACTIVEMEDIA.fields_by_name['widget']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_INTERACTIVEMEDIA.fields_by_name['style'].has_options = True
-_INTERACTIVEMEDIA.fields_by_name['style']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_INTERACTIVEMEDIA.fields_by_name['confirm'].has_options = True
-_INTERACTIVEMEDIA.fields_by_name['confirm']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_INTERACTIVEMEDIATRANSLATION.fields_by_name['id'].has_options = True
-_INTERACTIVEMEDIATRANSLATION.fields_by_name['id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_INTERACTIVEMEDIATRANSLATION.fields_by_name['value'].has_options = True
-_INTERACTIVEMEDIATRANSLATION.fields_by_name['value']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_INTERACTIVEMEDIATRANSLATIONGROUP.fields_by_name['language'].has_options = True
-_INTERACTIVEMEDIATRANSLATIONGROUP.fields_by_name['language']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_INTERACTIVEMEDIATRANSLATIONGROUP.fields_by_name['messages'].has_options = True
-_INTERACTIVEMEDIATRANSLATIONGROUP.fields_by_name['messages']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_INTERACTIVEMEDIAGROUP.fields_by_name['actions'].has_options = True
-_INTERACTIVEMEDIAGROUP.fields_by_name['actions']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_INTERACTIVEMEDIAGROUP.fields_by_name['title'].has_options = True
-_INTERACTIVEMEDIAGROUP.fields_by_name['title']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_INTERACTIVEMEDIAGROUP.fields_by_name['description'].has_options = True
-_INTERACTIVEMEDIAGROUP.fields_by_name['description']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_INTERACTIVEMEDIAGROUP.fields_by_name['translations'].has_options = True
-_INTERACTIVEMEDIAGROUP.fields_by_name['translations']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_INTERACTIVEMEDIACONFIRM.fields_by_name['text'].has_options = True
-_INTERACTIVEMEDIACONFIRM.fields_by_name['text']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_INTERACTIVEMEDIACONFIRM.fields_by_name['title'].has_options = True
-_INTERACTIVEMEDIACONFIRM.fields_by_name['title']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_INTERACTIVEMEDIACONFIRM.fields_by_name['ok'].has_options = True
-_INTERACTIVEMEDIACONFIRM.fields_by_name['ok']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_INTERACTIVEMEDIACONFIRM.fields_by_name['dismiss'].has_options = True
-_INTERACTIVEMEDIACONFIRM.fields_by_name['dismiss']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEINTERACTIVEMEDIAEVENT.fields_by_name['mid'].has_options = True
-_UPDATEINTERACTIVEMEDIAEVENT.fields_by_name['mid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEINTERACTIVEMEDIAEVENT.fields_by_name['id'].has_options = True
-_UPDATEINTERACTIVEMEDIAEVENT.fields_by_name['id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEINTERACTIVEMEDIAEVENT.fields_by_name['value'].has_options = True
-_UPDATEINTERACTIVEMEDIAEVENT.fields_by_name['value']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEINTERACTIVEMEDIAEVENT.fields_by_name['uid'].has_options = True
-_UPDATEINTERACTIVEMEDIAEVENT.fields_by_name['uid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTDOINTERACTIVEMEDIAACTION.fields_by_name['mid'].has_options = True
-_REQUESTDOINTERACTIVEMEDIAACTION.fields_by_name['mid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTDOINTERACTIVEMEDIAACTION.fields_by_name['id'].has_options = True
-_REQUESTDOINTERACTIVEMEDIAACTION.fields_by_name['id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTDOINTERACTIVEMEDIAACTION.fields_by_name['value'].has_options = True
-_REQUESTDOINTERACTIVEMEDIAACTION.fields_by_name['value']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTDOINTERACTIVEMEDIAACTION.has_options = True
-_REQUESTDOINTERACTIVEMEDIAACTION._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_TEXTMESSAGE.fields_by_name['text'].has_options = True
-_TEXTMESSAGE.fields_by_name['text']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_TEXTMESSAGE.fields_by_name['mentions'].has_options = True
-_TEXTMESSAGE.fields_by_name['mentions']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_TEXTMESSAGE.fields_by_name['ext'].has_options = True
-_TEXTMESSAGE.fields_by_name['ext']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_TEXTMESSAGE.fields_by_name['media'].has_options = True
-_TEXTMESSAGE.fields_by_name['media']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_TEXTMESSAGE.fields_by_name['extensions'].has_options = True
-_TEXTMESSAGE.fields_by_name['extensions']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_TEXTEXMARKDOWN.fields_by_name['markdown'].has_options = True
-_TEXTEXMARKDOWN.fields_by_name['markdown']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_TEXTMODERNMESSAGE.fields_by_name['text'].has_options = True
-_TEXTMODERNMESSAGE.fields_by_name['text']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_TEXTMODERNMESSAGE.fields_by_name['sender_name_override'].has_options = True
-_TEXTMODERNMESSAGE.fields_by_name['sender_name_override']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_TEXTMODERNMESSAGE.fields_by_name['sender_photo_override'].has_options = True
-_TEXTMODERNMESSAGE.fields_by_name['sender_photo_override']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_TEXTMODERNMESSAGE.fields_by_name['style'].has_options = True
-_TEXTMODERNMESSAGE.fields_by_name['style']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_TEXTMODERNMESSAGE.fields_by_name['attaches'].has_options = True
-_TEXTMODERNMESSAGE.fields_by_name['attaches']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_PARAGRAPHSTYLE.fields_by_name['show_paragraph'].has_options = True
-_PARAGRAPHSTYLE.fields_by_name['show_paragraph']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_PARAGRAPHSTYLE.fields_by_name['paragraph_color'].has_options = True
-_PARAGRAPHSTYLE.fields_by_name['paragraph_color']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_PARAGRAPHSTYLE.fields_by_name['bg_color'].has_options = True
-_PARAGRAPHSTYLE.fields_by_name['bg_color']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_TEXTMODERNATTACH.fields_by_name['title'].has_options = True
-_TEXTMODERNATTACH.fields_by_name['title']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_TEXTMODERNATTACH.fields_by_name['title_url'].has_options = True
-_TEXTMODERNATTACH.fields_by_name['title_url']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_TEXTMODERNATTACH.fields_by_name['title_icon'].has_options = True
-_TEXTMODERNATTACH.fields_by_name['title_icon']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_TEXTMODERNATTACH.fields_by_name['text'].has_options = True
-_TEXTMODERNATTACH.fields_by_name['text']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_TEXTMODERNATTACH.fields_by_name['style'].has_options = True
-_TEXTMODERNATTACH.fields_by_name['style']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_TEXTMODERNFIELD.fields_by_name['title'].has_options = True
-_TEXTMODERNFIELD.fields_by_name['title']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_TEXTMODERNFIELD.fields_by_name['value'].has_options = True
-_TEXTMODERNFIELD.fields_by_name['value']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_TEXTMODERNFIELD.fields_by_name['is_short'].has_options = True
-_TEXTMODERNFIELD.fields_by_name['is_short']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_TEXTCOMMAND.fields_by_name['command'].has_options = True
-_TEXTCOMMAND.fields_by_name['command']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_TEXTCOMMAND.fields_by_name['args'].has_options = True
-_TEXTCOMMAND.fields_by_name['args']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_SERVICEMESSAGE.fields_by_name['text'].has_options = True
-_SERVICEMESSAGE.fields_by_name['text']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_SERVICEMESSAGE.fields_by_name['ext'].has_options = True
-_SERVICEMESSAGE.fields_by_name['ext']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_SERVICEEXUSERINVITED.fields_by_name['invited_uid'].has_options = True
-_SERVICEEXUSERINVITED.fields_by_name['invited_uid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_SERVICEEXUSERKICKED.fields_by_name['kicked_uid'].has_options = True
-_SERVICEEXUSERKICKED.fields_by_name['kicked_uid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_SERVICEEXCHANGEDTITLE.fields_by_name['title'].has_options = True
-_SERVICEEXCHANGEDTITLE.fields_by_name['title']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_SERVICEEXCHANGEDTOPIC.fields_by_name['topic'].has_options = True
-_SERVICEEXCHANGEDTOPIC.fields_by_name['topic']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_SERVICEEXCHANGEDABOUT.fields_by_name['about'].has_options = True
-_SERVICEEXCHANGEDABOUT.fields_by_name['about']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_SERVICEEXCHANGEDAVATAR.fields_by_name['avatar'].has_options = True
-_SERVICEEXCHANGEDAVATAR.fields_by_name['avatar']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_SERVICEEXCONTACTREGISTERED.fields_by_name['uid'].has_options = True
-_SERVICEEXCONTACTREGISTERED.fields_by_name['uid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_SERVICEEXPHONECALL.fields_by_name['duration'].has_options = True
-_SERVICEEXPHONECALL.fields_by_name['duration']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_DOCUMENTMESSAGE.fields_by_name['file_id'].has_options = True
-_DOCUMENTMESSAGE.fields_by_name['file_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_DOCUMENTMESSAGE.fields_by_name['access_hash'].has_options = True
-_DOCUMENTMESSAGE.fields_by_name['access_hash']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger'))
-_DOCUMENTMESSAGE.fields_by_name['file_size'].has_options = True
-_DOCUMENTMESSAGE.fields_by_name['file_size']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_DOCUMENTMESSAGE.fields_by_name['name'].has_options = True
-_DOCUMENTMESSAGE.fields_by_name['name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_DOCUMENTMESSAGE.fields_by_name['mime_type'].has_options = True
-_DOCUMENTMESSAGE.fields_by_name['mime_type']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_DOCUMENTMESSAGE.fields_by_name['thumb'].has_options = True
-_DOCUMENTMESSAGE.fields_by_name['thumb']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_DOCUMENTMESSAGE.fields_by_name['ext'].has_options = True
-_DOCUMENTMESSAGE.fields_by_name['ext']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_DOCUMENTEXPHOTO.fields_by_name['w'].has_options = True
-_DOCUMENTEXPHOTO.fields_by_name['w']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_DOCUMENTEXPHOTO.fields_by_name['h'].has_options = True
-_DOCUMENTEXPHOTO.fields_by_name['h']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_DOCUMENTEXVIDEO.fields_by_name['w'].has_options = True
-_DOCUMENTEXVIDEO.fields_by_name['w']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_DOCUMENTEXVIDEO.fields_by_name['h'].has_options = True
-_DOCUMENTEXVIDEO.fields_by_name['h']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_DOCUMENTEXVIDEO.fields_by_name['duration'].has_options = True
-_DOCUMENTEXVIDEO.fields_by_name['duration']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_DOCUMENTEXVOICE.fields_by_name['duration'].has_options = True
-_DOCUMENTEXVOICE.fields_by_name['duration']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_JSONMESSAGE.fields_by_name['raw_json'].has_options = True
-_JSONMESSAGE.fields_by_name['raw_json']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_STICKERMESSAGE.fields_by_name['sticker_id'].has_options = True
-_STICKERMESSAGE.fields_by_name['sticker_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_STICKERMESSAGE.fields_by_name['fast_preview'].has_options = True
-_STICKERMESSAGE.fields_by_name['fast_preview']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_STICKERMESSAGE.fields_by_name['image_512'].has_options = True
-_STICKERMESSAGE.fields_by_name['image_512']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_STICKERMESSAGE.fields_by_name['image_256'].has_options = True
-_STICKERMESSAGE.fields_by_name['image_256']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_STICKERMESSAGE.fields_by_name['sticker_collection_id'].has_options = True
-_STICKERMESSAGE.fields_by_name['sticker_collection_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_STICKERMESSAGE.fields_by_name['sticker_collection_access_hash'].has_options = True
-_STICKERMESSAGE.fields_by_name['sticker_collection_access_hash']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_STICKERMESSAGE.fields_by_name['emoji'].has_options = True
-_STICKERMESSAGE.fields_by_name['emoji']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_BINARYMESSAGE.fields_by_name['content_tag'].has_options = True
-_BINARYMESSAGE.fields_by_name['content_tag']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_BINARYMESSAGE.fields_by_name['msg'].has_options = True
-_BINARYMESSAGE.fields_by_name['msg']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_DELETEDMESSAGE.fields_by_name['is_local'].has_options = True
-_DELETEDMESSAGE.fields_by_name['is_local']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_DIALOGSHORT.fields_by_name['peer'].has_options = True
-_DIALOGSHORT.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_DIALOGSHORT.fields_by_name['counter'].has_options = True
-_DIALOGSHORT.fields_by_name['counter']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_DIALOGSHORT.fields_by_name['date'].has_options = True
-_DIALOGSHORT.fields_by_name['date']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_DIALOGGROUP.fields_by_name['title'].has_options = True
-_DIALOGGROUP.fields_by_name['title']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_DIALOGGROUP.fields_by_name['key'].has_options = True
-_DIALOGGROUP.fields_by_name['key']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_DIALOGGROUP.fields_by_name['dialogs'].has_options = True
-_DIALOGGROUP.fields_by_name['dialogs']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_MESSAGEREACTION.fields_by_name['users'].has_options = True
-_MESSAGEREACTION.fields_by_name['users']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_MESSAGEREACTION.fields_by_name['code'].has_options = True
-_MESSAGEREACTION.fields_by_name['code']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSENDMESSAGE.fields_by_name['peer'].has_options = True
-_REQUESTSENDMESSAGE.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSENDMESSAGE.fields_by_name['rid'].has_options = True
-_REQUESTSENDMESSAGE.fields_by_name['rid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSENDMESSAGE.fields_by_name['message'].has_options = True
-_REQUESTSENDMESSAGE.fields_by_name['message']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSENDMESSAGE.fields_by_name['is_only_for_user'].has_options = True
-_REQUESTSENDMESSAGE.fields_by_name['is_only_for_user']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSENDMESSAGE.fields_by_name['forward'].has_options = True
-_REQUESTSENDMESSAGE.fields_by_name['forward']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSENDMESSAGE.fields_by_name['reply'].has_options = True
-_REQUESTSENDMESSAGE.fields_by_name['reply']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSENDMESSAGE.has_options = True
-_REQUESTSENDMESSAGE._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTUPDATEMESSAGE.fields_by_name['mid'].has_options = True
-_REQUESTUPDATEMESSAGE.fields_by_name['mid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTUPDATEMESSAGE.fields_by_name['updated_message'].has_options = True
-_REQUESTUPDATEMESSAGE.fields_by_name['updated_message']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTUPDATEMESSAGE.fields_by_name['last_edited_at'].has_options = True
-_REQUESTUPDATEMESSAGE.fields_by_name['last_edited_at']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTUPDATEMESSAGE.has_options = True
-_REQUESTUPDATEMESSAGE._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTMESSAGERECEIVED.fields_by_name['peer'].has_options = True
-_REQUESTMESSAGERECEIVED.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTMESSAGERECEIVED.fields_by_name['date'].has_options = True
-_REQUESTMESSAGERECEIVED.fields_by_name['date']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTMESSAGERECEIVED.has_options = True
-_REQUESTMESSAGERECEIVED._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTMESSAGEREAD.fields_by_name['peer'].has_options = True
-_REQUESTMESSAGEREAD.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTMESSAGEREAD.fields_by_name['date'].has_options = True
-_REQUESTMESSAGEREAD.fields_by_name['date']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTMESSAGEREAD.has_options = True
-_REQUESTMESSAGEREAD._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTDELETEMESSAGEOBSOLETE.fields_by_name['mids'].has_options = True
-_REQUESTDELETEMESSAGEOBSOLETE.fields_by_name['mids']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTDELETEMESSAGEOBSOLETE.has_options = True
-_REQUESTDELETEMESSAGEOBSOLETE._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTCLEARCHAT.fields_by_name['peer'].has_options = True
-_REQUESTCLEARCHAT.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTCLEARCHAT.fields_by_name['last_message_date'].has_options = True
-_REQUESTCLEARCHAT.fields_by_name['last_message_date']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTCLEARCHAT.has_options = True
-_REQUESTCLEARCHAT._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTDELETECHAT.fields_by_name['peer'].has_options = True
-_REQUESTDELETECHAT.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTDELETECHAT.fields_by_name['last_message_date'].has_options = True
-_REQUESTDELETECHAT.fields_by_name['last_message_date']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTDELETECHAT.has_options = True
-_REQUESTDELETECHAT._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTARCHIVECHAT.fields_by_name['peer'].has_options = True
-_REQUESTARCHIVECHAT.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTARCHIVECHAT.has_options = True
-_REQUESTARCHIVECHAT._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTMESSAGESETREACTION.fields_by_name['peer'].has_options = True
-_REQUESTMESSAGESETREACTION.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTMESSAGESETREACTION.fields_by_name['mid'].has_options = True
-_REQUESTMESSAGESETREACTION.fields_by_name['mid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTMESSAGESETREACTION.fields_by_name['code'].has_options = True
-_REQUESTMESSAGESETREACTION.fields_by_name['code']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTMESSAGESETREACTION.has_options = True
-_REQUESTMESSAGESETREACTION._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTMESSAGEREMOVEREACTION.fields_by_name['peer'].has_options = True
-_REQUESTMESSAGEREMOVEREACTION.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTMESSAGEREMOVEREACTION.fields_by_name['mid'].has_options = True
-_REQUESTMESSAGEREMOVEREACTION.fields_by_name['mid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTMESSAGEREMOVEREACTION.fields_by_name['code'].has_options = True
-_REQUESTMESSAGEREMOVEREACTION.fields_by_name['code']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTMESSAGEREMOVEREACTION.has_options = True
-_REQUESTMESSAGEREMOVEREACTION._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSEREACTIONSRESPONSE.has_options = True
-_RESPONSEREACTIONSRESPONSE._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_UPDATEMESSAGE.fields_by_name['peer'].has_options = True
-_UPDATEMESSAGE.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEMESSAGE.fields_by_name['sender_uid'].has_options = True
-_UPDATEMESSAGE.fields_by_name['sender_uid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEMESSAGE.fields_by_name['date'].has_options = True
-_UPDATEMESSAGE.fields_by_name['date']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEMESSAGE.fields_by_name['mid'].has_options = True
-_UPDATEMESSAGE.fields_by_name['mid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEMESSAGE.fields_by_name['message'].has_options = True
-_UPDATEMESSAGE.fields_by_name['message']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEMESSAGE.fields_by_name['attributes'].has_options = True
-_UPDATEMESSAGE.fields_by_name['attributes']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEMESSAGE.fields_by_name['forward'].has_options = True
-_UPDATEMESSAGE.fields_by_name['forward']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEMESSAGE.fields_by_name['reply'].has_options = True
-_UPDATEMESSAGE.fields_by_name['reply']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEMESSAGE.fields_by_name['previous_mid'].has_options = True
-_UPDATEMESSAGE.fields_by_name['previous_mid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEMESSAGE.fields_by_name['counter'].has_options = True
-_UPDATEMESSAGE.fields_by_name['counter']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEMESSAGECONTENTCHANGED.fields_by_name['peer'].has_options = True
-_UPDATEMESSAGECONTENTCHANGED.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEMESSAGECONTENTCHANGED.fields_by_name['mid'].has_options = True
-_UPDATEMESSAGECONTENTCHANGED.fields_by_name['mid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEMESSAGECONTENTCHANGED.fields_by_name['message'].has_options = True
-_UPDATEMESSAGECONTENTCHANGED.fields_by_name['message']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEMESSAGECONTENTCHANGED.fields_by_name['edited_at'].has_options = True
-_UPDATEMESSAGECONTENTCHANGED.fields_by_name['edited_at']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEMESSAGESENT.fields_by_name['peer'].has_options = True
-_UPDATEMESSAGESENT.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEMESSAGESENT.fields_by_name['rid'].has_options = True
-_UPDATEMESSAGESENT.fields_by_name['rid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEMESSAGESENT.fields_by_name['date'].has_options = True
-_UPDATEMESSAGESENT.fields_by_name['date']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEMESSAGESENT.fields_by_name['mid'].has_options = True
-_UPDATEMESSAGESENT.fields_by_name['mid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEMESSAGESENT.fields_by_name['prev_mid'].has_options = True
-_UPDATEMESSAGESENT.fields_by_name['prev_mid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEMESSAGESENT.fields_by_name['unread_counter'].has_options = True
-_UPDATEMESSAGESENT.fields_by_name['unread_counter']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEMESSAGERECEIVED.fields_by_name['peer'].has_options = True
-_UPDATEMESSAGERECEIVED.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEMESSAGERECEIVED.fields_by_name['start_date'].has_options = True
-_UPDATEMESSAGERECEIVED.fields_by_name['start_date']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEMESSAGERECEIVED.fields_by_name['received_date'].has_options = True
-_UPDATEMESSAGERECEIVED.fields_by_name['received_date']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEMESSAGEREAD.fields_by_name['peer'].has_options = True
-_UPDATEMESSAGEREAD.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEMESSAGEREAD.fields_by_name['start_date'].has_options = True
-_UPDATEMESSAGEREAD.fields_by_name['start_date']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEMESSAGEREAD.fields_by_name['read_date'].has_options = True
-_UPDATEMESSAGEREAD.fields_by_name['read_date']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEMESSAGEREADBYME.fields_by_name['peer'].has_options = True
-_UPDATEMESSAGEREADBYME.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEMESSAGEREADBYME.fields_by_name['start_date'].has_options = True
-_UPDATEMESSAGEREADBYME.fields_by_name['start_date']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEMESSAGEREADBYME.fields_by_name['unread_counter'].has_options = True
-_UPDATEMESSAGEREADBYME.fields_by_name['unread_counter']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEMESSAGEDELETE.fields_by_name['peer'].has_options = True
-_UPDATEMESSAGEDELETE.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEMESSAGEDELETE.fields_by_name['mids'].has_options = True
-_UPDATEMESSAGEDELETE.fields_by_name['mids']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEMESSAGEDELETE.fields_by_name['counter'].has_options = True
-_UPDATEMESSAGEDELETE.fields_by_name['counter']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEMESSAGEDELETE.fields_by_name['action_date'].has_options = True
-_UPDATEMESSAGEDELETE.fields_by_name['action_date']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATECHATCLEAR.fields_by_name['peer'].has_options = True
-_UPDATECHATCLEAR.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATECHATCLEAR.fields_by_name['action_date'].has_options = True
-_UPDATECHATCLEAR.fields_by_name['action_date']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATECHATDELETE.fields_by_name['peer'].has_options = True
-_UPDATECHATDELETE.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATECHATDELETE.fields_by_name['action_date'].has_options = True
-_UPDATECHATDELETE.fields_by_name['action_date']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATECHATARCHIVE.fields_by_name['peer'].has_options = True
-_UPDATECHATARCHIVE.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATECHATGROUPSCHANGED.fields_by_name['dialogs'].has_options = True
-_UPDATECHATGROUPSCHANGED.fields_by_name['dialogs']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEREACTIONSUPDATE.fields_by_name['peer'].has_options = True
-_UPDATEREACTIONSUPDATE.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEREACTIONSUPDATE.fields_by_name['mid'].has_options = True
-_UPDATEREACTIONSUPDATE.fields_by_name['mid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEREACTIONSUPDATE.fields_by_name['reactions'].has_options = True
-_UPDATEREACTIONSUPDATE.fields_by_name['reactions']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REFERENCEDMESSAGES.fields_by_name['mids'].has_options = True
-_REFERENCEDMESSAGES.fields_by_name['mids']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_HISTORYMESSAGE.fields_by_name['sender_uid'].has_options = True
-_HISTORYMESSAGE.fields_by_name['sender_uid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_HISTORYMESSAGE.fields_by_name['host_peer'].has_options = True
-_HISTORYMESSAGE.fields_by_name['host_peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_HISTORYMESSAGE.fields_by_name['mid'].has_options = True
-_HISTORYMESSAGE.fields_by_name['mid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_HISTORYMESSAGE.fields_by_name['date'].has_options = True
-_HISTORYMESSAGE.fields_by_name['date']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_HISTORYMESSAGE.fields_by_name['message'].has_options = True
-_HISTORYMESSAGE.fields_by_name['message']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_HISTORYMESSAGE.fields_by_name['state'].has_options = True
-_HISTORYMESSAGE.fields_by_name['state']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_HISTORYMESSAGE.fields_by_name['reactions'].has_options = True
-_HISTORYMESSAGE.fields_by_name['reactions']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_HISTORYMESSAGE.fields_by_name['attribute'].has_options = True
-_HISTORYMESSAGE.fields_by_name['attribute']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_HISTORYMESSAGE.fields_by_name['edited_at'].has_options = True
-_HISTORYMESSAGE.fields_by_name['edited_at']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTLOADHISTORY.fields_by_name['peer'].has_options = True
-_REQUESTLOADHISTORY.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTLOADHISTORY.fields_by_name['date'].has_options = True
-_REQUESTLOADHISTORY.fields_by_name['date']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTLOADHISTORY.fields_by_name['load_mode'].has_options = True
-_REQUESTLOADHISTORY.fields_by_name['load_mode']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTLOADHISTORY.fields_by_name['limit'].has_options = True
-_REQUESTLOADHISTORY.fields_by_name['limit']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTLOADHISTORY.fields_by_name['optimizations'].has_options = True
-_REQUESTLOADHISTORY.fields_by_name['optimizations']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTLOADHISTORY.has_options = True
-_REQUESTLOADHISTORY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSELOADHISTORY.has_options = True
-_RESPONSELOADHISTORY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_DIALOG.fields_by_name['peer'].has_options = True
-_DIALOG.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_DIALOG.fields_by_name['unread_count'].has_options = True
-_DIALOG.fields_by_name['unread_count']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_DIALOG.fields_by_name['sort_date'].has_options = True
-_DIALOG.fields_by_name['sort_date']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_DIALOG.fields_by_name['sender_uid'].has_options = True
-_DIALOG.fields_by_name['sender_uid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_DIALOG.fields_by_name['is_favourite'].has_options = True
-_DIALOG.fields_by_name['is_favourite']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_DIALOG.fields_by_name['mid'].has_options = True
-_DIALOG.fields_by_name['mid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_DIALOG.fields_by_name['date'].has_options = True
-_DIALOG.fields_by_name['date']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_DIALOG.fields_by_name['message'].has_options = True
-_DIALOG.fields_by_name['message']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_DIALOG.fields_by_name['first_unread_date'].has_options = True
-_DIALOG.fields_by_name['first_unread_date']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_DIALOG.fields_by_name['attributes'].has_options = True
-_DIALOG.fields_by_name['attributes']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_DIALOG.fields_by_name['pinned_messages'].has_options = True
-_DIALOG.fields_by_name['pinned_messages']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_DIALOG.fields_by_name['history_message'].has_options = True
-_DIALOG.fields_by_name['history_message']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTLOADDIALOGS.fields_by_name['min_date'].has_options = True
-_REQUESTLOADDIALOGS.fields_by_name['min_date']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTLOADDIALOGS.fields_by_name['limit'].has_options = True
-_REQUESTLOADDIALOGS.fields_by_name['limit']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTLOADDIALOGS.fields_by_name['optimizations'].has_options = True
-_REQUESTLOADDIALOGS.fields_by_name['optimizations']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTLOADDIALOGS.fields_by_name['filters'].has_options = True
-_REQUESTLOADDIALOGS.fields_by_name['filters']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTLOADDIALOGS.fields_by_name['peers_to_load'].has_options = True
-_REQUESTLOADDIALOGS.fields_by_name['peers_to_load']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTLOADDIALOGS.has_options = True
-_REQUESTLOADDIALOGS._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSELOADDIALOGS.has_options = True
-_RESPONSELOADDIALOGS._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_DIALOGINDEX.fields_by_name['peer'].has_options = True
-_DIALOGINDEX.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_DIALOGINDEX.fields_by_name['timestamp'].has_options = True
-_DIALOGINDEX.fields_by_name['timestamp']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTFETCHDIALOGINDEX.has_options = True
-_REQUESTFETCHDIALOGINDEX._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSEFETCHDIALOGINDEX.has_options = True
-_RESPONSEFETCHDIALOGINDEX._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_REQUESTLOADARCHIVED.fields_by_name['next_offset'].has_options = True
-_REQUESTLOADARCHIVED.fields_by_name['next_offset']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_REQUESTLOADARCHIVED.fields_by_name['limit'].has_options = True
-_REQUESTLOADARCHIVED.fields_by_name['limit']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTLOADARCHIVED.fields_by_name['optimizations'].has_options = True
-_REQUESTLOADARCHIVED.fields_by_name['optimizations']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTLOADARCHIVED.has_options = True
-_REQUESTLOADARCHIVED._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSELOADARCHIVED.has_options = True
-_RESPONSELOADARCHIVED._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_REQUESTLOADGROUPEDDIALOGS.has_options = True
-_REQUESTLOADGROUPEDDIALOGS._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSELOADGROUPEDDIALOGS.has_options = True
-_RESPONSELOADGROUPEDDIALOGS._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_RESPONSEDIALOGSORDER.fields_by_name['seq'].has_options = True
-_RESPONSEDIALOGSORDER.fields_by_name['seq']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_RESPONSEDIALOGSORDER.fields_by_name['state'].has_options = True
-_RESPONSEDIALOGSORDER.fields_by_name['state']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_RESPONSEDIALOGSORDER.fields_by_name['groups'].has_options = True
-_RESPONSEDIALOGSORDER.fields_by_name['groups']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_RESPONSEDIALOGSORDER.has_options = True
-_RESPONSEDIALOGSORDER._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_REQUESTHIDEDIALOG.fields_by_name['peer'].has_options = True
-_REQUESTHIDEDIALOG.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTHIDEDIALOG.has_options = True
-_REQUESTHIDEDIALOG._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTSHOWDIALOG.has_options = True
-_REQUESTSHOWDIALOG._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTFAVOURITEDIALOG.fields_by_name['peer'].has_options = True
-_REQUESTFAVOURITEDIALOG.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTFAVOURITEDIALOG.has_options = True
-_REQUESTFAVOURITEDIALOG._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTUNFAVOURITEDIALOG.fields_by_name['peer'].has_options = True
-_REQUESTUNFAVOURITEDIALOG.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTUNFAVOURITEDIALOG.has_options = True
-_REQUESTUNFAVOURITEDIALOG._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_UPDATEDIALOGFAVOURITECHANGED.fields_by_name['peer'].has_options = True
-_UPDATEDIALOGFAVOURITECHANGED.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEDIALOGFAVOURITECHANGED.fields_by_name['is_favourite'].has_options = True
-_UPDATEDIALOGFAVOURITECHANGED.fields_by_name['is_favourite']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTNOTIFYDIALOGOPENED.fields_by_name['peer'].has_options = True
-_REQUESTNOTIFYDIALOGOPENED.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTNOTIFYDIALOGOPENED.has_options = True
-_REQUESTNOTIFYDIALOGOPENED._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_PINNEDMESSAGES.fields_by_name['mids'].has_options = True
-_PINNEDMESSAGES.fields_by_name['mids']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTPINMESSAGE.fields_by_name['peer'].has_options = True
-_REQUESTPINMESSAGE.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTPINMESSAGE.fields_by_name['mid'].has_options = True
-_REQUESTPINMESSAGE.fields_by_name['mid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTPINMESSAGE.fields_by_name['last_pin_date'].has_options = True
-_REQUESTPINMESSAGE.fields_by_name['last_pin_date']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTPINMESSAGE.has_options = True
-_REQUESTPINMESSAGE._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTUNPINMESSAGE.fields_by_name['peer'].has_options = True
-_REQUESTUNPINMESSAGE.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTUNPINMESSAGE.fields_by_name['mid'].has_options = True
-_REQUESTUNPINMESSAGE.fields_by_name['mid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTUNPINMESSAGE.fields_by_name['last_pin_date'].has_options = True
-_REQUESTUNPINMESSAGE.fields_by_name['last_pin_date']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTUNPINMESSAGE.has_options = True
-_REQUESTUNPINMESSAGE._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_UPDATEPINNEDMESSAGESCHANGED.fields_by_name['peer'].has_options = True
-_UPDATEPINNEDMESSAGESCHANGED.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEPINNEDMESSAGESCHANGED.fields_by_name['pinned_messages'].has_options = True
-_UPDATEPINNEDMESSAGESCHANGED.fields_by_name['pinned_messages']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEPINNEDMESSAGESCHANGED.fields_by_name['action_date'].has_options = True
-_UPDATEPINNEDMESSAGESCHANGED.fields_by_name['action_date']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
+DESCRIPTOR._options = None
+_MESSAGEATTRIBUTES.fields_by_name['is_mentioned']._options = None
+_MESSAGEATTRIBUTES.fields_by_name['is_highlighted']._options = None
+_MESSAGEATTRIBUTES.fields_by_name['is_notified']._options = None
+_MESSAGEATTRIBUTES.fields_by_name['is_only_for_you']._options = None
+_QUOTEDMESSAGE.fields_by_name['message_id']._options = None
+_QUOTEDMESSAGE.fields_by_name['public_group_id']._options = None
+_QUOTEDMESSAGE.fields_by_name['sender_user_id']._options = None
+_QUOTEDMESSAGE.fields_by_name['message_date']._options = None
+_QUOTEDMESSAGE.fields_by_name['quoted_message_content']._options = None
+_MESSAGEMEDIA.fields_by_name['webpage']._options = None
+_MESSAGEMEDIA.fields_by_name['image']._options = None
+_MESSAGEMEDIA.fields_by_name['audio']._options = None
+_MESSAGEMEDIA.fields_by_name['actions']._options = None
+_WEBPAGEMEDIA.fields_by_name['url']._options = None
+_WEBPAGEMEDIA.fields_by_name['title']._options = None
+_WEBPAGEMEDIA.fields_by_name['description']._options = None
+_WEBPAGEMEDIA.fields_by_name['image']._options = None
+_IMAGEMEDIA.fields_by_name['image']._options = None
+_AUDIOMEDIA.fields_by_name['audio']._options = None
+_INTERACTIVEMEDIABUTTON.fields_by_name['value']._options = None
+_INTERACTIVEMEDIABUTTON.fields_by_name['label']._options = None
+_INTERACTIVEMEDIASELECT.fields_by_name['options']._options = None
+_INTERACTIVEMEDIASELECT.fields_by_name['label']._options = None
+_INTERACTIVEMEDIASELECT.fields_by_name['default_value']._options = None
+_INTERACTIVEMEDIASELECTOPTION.fields_by_name['value']._options = None
+_INTERACTIVEMEDIASELECTOPTION.fields_by_name['label']._options = None
+_INTERACTIVEMEDIA.fields_by_name['id']._options = None
+_INTERACTIVEMEDIA.fields_by_name['widget']._options = None
+_INTERACTIVEMEDIA.fields_by_name['style']._options = None
+_INTERACTIVEMEDIA.fields_by_name['confirm']._options = None
+_INTERACTIVEMEDIATRANSLATION.fields_by_name['id']._options = None
+_INTERACTIVEMEDIATRANSLATION.fields_by_name['value']._options = None
+_INTERACTIVEMEDIATRANSLATIONGROUP.fields_by_name['language']._options = None
+_INTERACTIVEMEDIATRANSLATIONGROUP.fields_by_name['messages']._options = None
+_INTERACTIVEMEDIAGROUP.fields_by_name['actions']._options = None
+_INTERACTIVEMEDIAGROUP.fields_by_name['title']._options = None
+_INTERACTIVEMEDIAGROUP.fields_by_name['description']._options = None
+_INTERACTIVEMEDIAGROUP.fields_by_name['translations']._options = None
+_INTERACTIVEMEDIACONFIRM.fields_by_name['text']._options = None
+_INTERACTIVEMEDIACONFIRM.fields_by_name['title']._options = None
+_INTERACTIVEMEDIACONFIRM.fields_by_name['ok']._options = None
+_INTERACTIVEMEDIACONFIRM.fields_by_name['dismiss']._options = None
+_UPDATEINTERACTIVEMEDIAEVENT.fields_by_name['mid']._options = None
+_UPDATEINTERACTIVEMEDIAEVENT.fields_by_name['id']._options = None
+_UPDATEINTERACTIVEMEDIAEVENT.fields_by_name['value']._options = None
+_UPDATEINTERACTIVEMEDIAEVENT.fields_by_name['uid']._options = None
+_REQUESTDOINTERACTIVEMEDIAACTION.fields_by_name['mid']._options = None
+_REQUESTDOINTERACTIVEMEDIAACTION.fields_by_name['id']._options = None
+_REQUESTDOINTERACTIVEMEDIAACTION.fields_by_name['value']._options = None
+_REQUESTDOINTERACTIVEMEDIAACTION._options = None
+_TEXTMESSAGE.fields_by_name['text']._options = None
+_TEXTMESSAGE.fields_by_name['mentions']._options = None
+_TEXTMESSAGE.fields_by_name['ext']._options = None
+_TEXTMESSAGE.fields_by_name['media']._options = None
+_TEXTMESSAGE.fields_by_name['extensions']._options = None
+_TEXTEXMARKDOWN.fields_by_name['markdown']._options = None
+_TEXTMODERNMESSAGE.fields_by_name['text']._options = None
+_TEXTMODERNMESSAGE.fields_by_name['sender_name_override']._options = None
+_TEXTMODERNMESSAGE.fields_by_name['sender_photo_override']._options = None
+_TEXTMODERNMESSAGE.fields_by_name['style']._options = None
+_TEXTMODERNMESSAGE.fields_by_name['attaches']._options = None
+_PARAGRAPHSTYLE.fields_by_name['show_paragraph']._options = None
+_PARAGRAPHSTYLE.fields_by_name['paragraph_color']._options = None
+_PARAGRAPHSTYLE.fields_by_name['bg_color']._options = None
+_TEXTMODERNATTACH.fields_by_name['title']._options = None
+_TEXTMODERNATTACH.fields_by_name['title_url']._options = None
+_TEXTMODERNATTACH.fields_by_name['title_icon']._options = None
+_TEXTMODERNATTACH.fields_by_name['text']._options = None
+_TEXTMODERNATTACH.fields_by_name['style']._options = None
+_TEXTMODERNFIELD.fields_by_name['title']._options = None
+_TEXTMODERNFIELD.fields_by_name['value']._options = None
+_TEXTMODERNFIELD.fields_by_name['is_short']._options = None
+_TEXTCOMMAND.fields_by_name['command']._options = None
+_TEXTCOMMAND.fields_by_name['args']._options = None
+_SERVICEMESSAGE.fields_by_name['text']._options = None
+_SERVICEMESSAGE.fields_by_name['ext']._options = None
+_SERVICEEXUSERINVITED.fields_by_name['invited_uid']._options = None
+_SERVICEEXUSERKICKED.fields_by_name['kicked_uid']._options = None
+_SERVICEEXCHANGEDTITLE.fields_by_name['title']._options = None
+_SERVICEEXCHANGEDTOPIC.fields_by_name['topic']._options = None
+_SERVICEEXCHANGEDABOUT.fields_by_name['about']._options = None
+_SERVICEEXCHANGEDAVATAR.fields_by_name['avatar']._options = None
+_SERVICEEXCONTACTREGISTERED.fields_by_name['uid']._options = None
+_SERVICEEXPHONECALL.fields_by_name['duration']._options = None
+_DOCUMENTMESSAGE.fields_by_name['file_id']._options = None
+_DOCUMENTMESSAGE.fields_by_name['access_hash']._options = None
+_DOCUMENTMESSAGE.fields_by_name['file_size']._options = None
+_DOCUMENTMESSAGE.fields_by_name['name']._options = None
+_DOCUMENTMESSAGE.fields_by_name['mime_type']._options = None
+_DOCUMENTMESSAGE.fields_by_name['thumb']._options = None
+_DOCUMENTMESSAGE.fields_by_name['ext']._options = None
+_DOCUMENTEXPHOTO.fields_by_name['w']._options = None
+_DOCUMENTEXPHOTO.fields_by_name['h']._options = None
+_DOCUMENTEXVIDEO.fields_by_name['w']._options = None
+_DOCUMENTEXVIDEO.fields_by_name['h']._options = None
+_DOCUMENTEXVIDEO.fields_by_name['duration']._options = None
+_DOCUMENTEXVOICE.fields_by_name['duration']._options = None
+_JSONMESSAGE.fields_by_name['raw_json']._options = None
+_STICKERMESSAGE.fields_by_name['sticker_id']._options = None
+_STICKERMESSAGE.fields_by_name['fast_preview']._options = None
+_STICKERMESSAGE.fields_by_name['image_512']._options = None
+_STICKERMESSAGE.fields_by_name['image_256']._options = None
+_STICKERMESSAGE.fields_by_name['sticker_collection_id']._options = None
+_STICKERMESSAGE.fields_by_name['sticker_collection_access_hash']._options = None
+_STICKERMESSAGE.fields_by_name['emoji']._options = None
+_BINARYMESSAGE.fields_by_name['content_tag']._options = None
+_BINARYMESSAGE.fields_by_name['msg']._options = None
+_DELETEDMESSAGE.fields_by_name['is_local']._options = None
+_DIALOGSHORT.fields_by_name['peer']._options = None
+_DIALOGSHORT.fields_by_name['counter']._options = None
+_DIALOGSHORT.fields_by_name['date']._options = None
+_DIALOGGROUP.fields_by_name['title']._options = None
+_DIALOGGROUP.fields_by_name['key']._options = None
+_DIALOGGROUP.fields_by_name['dialogs']._options = None
+_MESSAGEREACTION.fields_by_name['users']._options = None
+_MESSAGEREACTION.fields_by_name['code']._options = None
+_SEARCHPREDICATE.fields_by_name['key']._options = None
+_SEARCHPREDICATE.fields_by_name['values']._options = None
+_REQUESTSENDMESSAGE.fields_by_name['peer']._options = None
+_REQUESTSENDMESSAGE.fields_by_name['rid']._options = None
+_REQUESTSENDMESSAGE.fields_by_name['message']._options = None
+_REQUESTSENDMESSAGE.fields_by_name['is_only_for_user']._options = None
+_REQUESTSENDMESSAGE.fields_by_name['forward']._options = None
+_REQUESTSENDMESSAGE.fields_by_name['reply']._options = None
+_REQUESTSENDMESSAGE.fields_by_name['predicates']._options = None
+_REQUESTSENDMESSAGE.fields_by_name['white_list']._options = None
+_REQUESTSENDMESSAGE.fields_by_name['black_list']._options = None
+_REQUESTSENDMESSAGE._options = None
+_REQUESTUPDATEMESSAGE.fields_by_name['mid']._options = None
+_REQUESTUPDATEMESSAGE.fields_by_name['updated_message']._options = None
+_REQUESTUPDATEMESSAGE.fields_by_name['last_edited_at']._options = None
+_REQUESTUPDATEMESSAGE._options = None
+_REQUESTMESSAGERECEIVED.fields_by_name['peer']._options = None
+_REQUESTMESSAGERECEIVED.fields_by_name['date']._options = None
+_REQUESTMESSAGERECEIVED._options = None
+_REQUESTMESSAGEREAD.fields_by_name['peer']._options = None
+_REQUESTMESSAGEREAD.fields_by_name['date']._options = None
+_REQUESTMESSAGEREAD._options = None
+_REQUESTDELETEMESSAGEOBSOLETE.fields_by_name['mids']._options = None
+_REQUESTDELETEMESSAGEOBSOLETE._options = None
+_REQUESTCLEARCHAT.fields_by_name['peer']._options = None
+_REQUESTCLEARCHAT.fields_by_name['last_message_date']._options = None
+_REQUESTCLEARCHAT._options = None
+_REQUESTDELETECHAT.fields_by_name['peer']._options = None
+_REQUESTDELETECHAT.fields_by_name['last_message_date']._options = None
+_REQUESTDELETECHAT._options = None
+_REQUESTARCHIVECHAT.fields_by_name['peer']._options = None
+_REQUESTARCHIVECHAT._options = None
+_REQUESTMESSAGESETREACTION.fields_by_name['peer']._options = None
+_REQUESTMESSAGESETREACTION.fields_by_name['mid']._options = None
+_REQUESTMESSAGESETREACTION.fields_by_name['code']._options = None
+_REQUESTMESSAGESETREACTION._options = None
+_REQUESTMESSAGEREMOVEREACTION.fields_by_name['peer']._options = None
+_REQUESTMESSAGEREMOVEREACTION.fields_by_name['mid']._options = None
+_REQUESTMESSAGEREMOVEREACTION.fields_by_name['code']._options = None
+_REQUESTMESSAGEREMOVEREACTION._options = None
+_RESPONSEREACTIONSRESPONSE._options = None
+_UPDATEMESSAGE.fields_by_name['peer']._options = None
+_UPDATEMESSAGE.fields_by_name['sender_uid']._options = None
+_UPDATEMESSAGE.fields_by_name['date']._options = None
+_UPDATEMESSAGE.fields_by_name['mid']._options = None
+_UPDATEMESSAGE.fields_by_name['message']._options = None
+_UPDATEMESSAGE.fields_by_name['attributes']._options = None
+_UPDATEMESSAGE.fields_by_name['forward']._options = None
+_UPDATEMESSAGE.fields_by_name['reply']._options = None
+_UPDATEMESSAGE.fields_by_name['previous_mid']._options = None
+_UPDATEMESSAGE.fields_by_name['counter']._options = None
+_UPDATEMESSAGECONTENTCHANGED.fields_by_name['peer']._options = None
+_UPDATEMESSAGECONTENTCHANGED.fields_by_name['mid']._options = None
+_UPDATEMESSAGECONTENTCHANGED.fields_by_name['message']._options = None
+_UPDATEMESSAGECONTENTCHANGED.fields_by_name['edited_at']._options = None
+_UPDATEMESSAGESENT.fields_by_name['peer']._options = None
+_UPDATEMESSAGESENT.fields_by_name['rid']._options = None
+_UPDATEMESSAGESENT.fields_by_name['date']._options = None
+_UPDATEMESSAGESENT.fields_by_name['mid']._options = None
+_UPDATEMESSAGESENT.fields_by_name['prev_mid']._options = None
+_UPDATEMESSAGESENT.fields_by_name['unread_counter']._options = None
+_UPDATEMESSAGERECEIVED.fields_by_name['peer']._options = None
+_UPDATEMESSAGERECEIVED.fields_by_name['start_date']._options = None
+_UPDATEMESSAGERECEIVED.fields_by_name['received_date']._options = None
+_UPDATEMESSAGEREAD.fields_by_name['peer']._options = None
+_UPDATEMESSAGEREAD.fields_by_name['start_date']._options = None
+_UPDATEMESSAGEREAD.fields_by_name['read_date']._options = None
+_UPDATEMESSAGEREADBYME.fields_by_name['peer']._options = None
+_UPDATEMESSAGEREADBYME.fields_by_name['start_date']._options = None
+_UPDATEMESSAGEREADBYME.fields_by_name['unread_counter']._options = None
+_UPDATEMESSAGEDELETE.fields_by_name['peer']._options = None
+_UPDATEMESSAGEDELETE.fields_by_name['mids']._options = None
+_UPDATEMESSAGEDELETE.fields_by_name['counter']._options = None
+_UPDATEMESSAGEDELETE.fields_by_name['action_date']._options = None
+_UPDATECHATCLEAR.fields_by_name['peer']._options = None
+_UPDATECHATCLEAR.fields_by_name['action_date']._options = None
+_UPDATECHATDELETE.fields_by_name['peer']._options = None
+_UPDATECHATDELETE.fields_by_name['action_date']._options = None
+_UPDATECHATARCHIVE.fields_by_name['peer']._options = None
+_UPDATECHATGROUPSCHANGED.fields_by_name['dialogs']._options = None
+_UPDATEREACTIONSUPDATE.fields_by_name['peer']._options = None
+_UPDATEREACTIONSUPDATE.fields_by_name['mid']._options = None
+_UPDATEREACTIONSUPDATE.fields_by_name['reactions']._options = None
+_UPDATEMESSAGEREJECTEDBYHOOK.fields_by_name['peer']._options = None
+_UPDATEMESSAGEREJECTEDBYHOOK.fields_by_name['rid']._options = None
+_UPDATEMESSAGEREJECTEDBYHOOK.fields_by_name['date']._options = None
+_UPDATEMESSAGEREJECTEDBYHOOK.fields_by_name['hookId']._options = None
+_UPDATEMESSAGEREJECTEDBYHOOK.fields_by_name['reason']._options = None
+_UPDATEMESSAGEEDITREJECTEDBYHOOK.fields_by_name['peer']._options = None
+_UPDATEMESSAGEEDITREJECTEDBYHOOK.fields_by_name['mid']._options = None
+_UPDATEMESSAGEEDITREJECTEDBYHOOK.fields_by_name['date']._options = None
+_UPDATEMESSAGEEDITREJECTEDBYHOOK.fields_by_name['hookId']._options = None
+_UPDATEMESSAGEEDITREJECTEDBYHOOK.fields_by_name['reason']._options = None
+_REFERENCEDMESSAGES.fields_by_name['mids']._options = None
+_HISTORYMESSAGE.fields_by_name['sender_uid']._options = None
+_HISTORYMESSAGE.fields_by_name['host_peer']._options = None
+_HISTORYMESSAGE.fields_by_name['mid']._options = None
+_HISTORYMESSAGE.fields_by_name['date']._options = None
+_HISTORYMESSAGE.fields_by_name['message']._options = None
+_HISTORYMESSAGE.fields_by_name['state']._options = None
+_HISTORYMESSAGE.fields_by_name['reactions']._options = None
+_HISTORYMESSAGE.fields_by_name['attribute']._options = None
+_HISTORYMESSAGE.fields_by_name['edited_at']._options = None
+_REQUESTLOADHISTORY.fields_by_name['peer']._options = None
+_REQUESTLOADHISTORY.fields_by_name['date']._options = None
+_REQUESTLOADHISTORY.fields_by_name['load_mode']._options = None
+_REQUESTLOADHISTORY.fields_by_name['limit']._options = None
+_REQUESTLOADHISTORY.fields_by_name['optimizations']._options = None
+_REQUESTLOADHISTORY._options = None
+_RESPONSELOADHISTORY._options = None
+_DIALOG.fields_by_name['peer']._options = None
+_DIALOG.fields_by_name['unread_count']._options = None
+_DIALOG.fields_by_name['sort_date']._options = None
+_DIALOG.fields_by_name['sender_uid']._options = None
+_DIALOG.fields_by_name['is_favourite']._options = None
+_DIALOG.fields_by_name['mid']._options = None
+_DIALOG.fields_by_name['date']._options = None
+_DIALOG.fields_by_name['message']._options = None
+_DIALOG.fields_by_name['first_unread_date']._options = None
+_DIALOG.fields_by_name['attributes']._options = None
+_DIALOG.fields_by_name['pinned_messages']._options = None
+_DIALOG.fields_by_name['history_message']._options = None
+_REQUESTLOADDIALOGS.fields_by_name['min_date']._options = None
+_REQUESTLOADDIALOGS.fields_by_name['limit']._options = None
+_REQUESTLOADDIALOGS.fields_by_name['optimizations']._options = None
+_REQUESTLOADDIALOGS.fields_by_name['filters']._options = None
+_REQUESTLOADDIALOGS.fields_by_name['peers_to_load']._options = None
+_REQUESTLOADDIALOGS._options = None
+_RESPONSELOADDIALOGS._options = None
+_DIALOGINDEX.fields_by_name['peer']._options = None
+_DIALOGINDEX.fields_by_name['timestamp']._options = None
+_REQUESTFETCHDIALOGINDEX._options = None
+_RESPONSEFETCHDIALOGINDEX._options = None
+_REQUESTLOADARCHIVED.fields_by_name['next_offset']._options = None
+_REQUESTLOADARCHIVED.fields_by_name['limit']._options = None
+_REQUESTLOADARCHIVED.fields_by_name['optimizations']._options = None
+_REQUESTLOADARCHIVED._options = None
+_RESPONSELOADARCHIVED._options = None
+_REQUESTLOADGROUPEDDIALOGS._options = None
+_RESPONSELOADGROUPEDDIALOGS._options = None
+_RESPONSEDIALOGSORDER.fields_by_name['seq']._options = None
+_RESPONSEDIALOGSORDER.fields_by_name['state']._options = None
+_RESPONSEDIALOGSORDER.fields_by_name['groups']._options = None
+_RESPONSEDIALOGSORDER._options = None
+_REQUESTHIDEDIALOG.fields_by_name['peer']._options = None
+_REQUESTHIDEDIALOG._options = None
+_REQUESTSHOWDIALOG._options = None
+_REQUESTFAVOURITEDIALOG.fields_by_name['peer']._options = None
+_REQUESTFAVOURITEDIALOG._options = None
+_REQUESTUNFAVOURITEDIALOG.fields_by_name['peer']._options = None
+_REQUESTUNFAVOURITEDIALOG._options = None
+_UPDATEDIALOGFAVOURITECHANGED.fields_by_name['peer']._options = None
+_UPDATEDIALOGFAVOURITECHANGED.fields_by_name['is_favourite']._options = None
+_REQUESTNOTIFYDIALOGOPENED.fields_by_name['peer']._options = None
+_REQUESTNOTIFYDIALOGOPENED._options = None
+_PINNEDMESSAGES.fields_by_name['mids']._options = None
+_REQUESTPINMESSAGE.fields_by_name['peer']._options = None
+_REQUESTPINMESSAGE.fields_by_name['mid']._options = None
+_REQUESTPINMESSAGE.fields_by_name['last_pin_date']._options = None
+_REQUESTPINMESSAGE._options = None
+_REQUESTUNPINMESSAGE.fields_by_name['peer']._options = None
+_REQUESTUNPINMESSAGE.fields_by_name['mid']._options = None
+_REQUESTUNPINMESSAGE.fields_by_name['last_pin_date']._options = None
+_REQUESTUNPINMESSAGE._options = None
+_UPDATEPINNEDMESSAGESCHANGED.fields_by_name['peer']._options = None
+_UPDATEPINNEDMESSAGESCHANGED.fields_by_name['pinned_messages']._options = None
+_UPDATEPINNEDMESSAGESCHANGED.fields_by_name['action_date']._options = None
 
 _MESSAGING = _descriptor.ServiceDescriptor(
   name='Messaging',
   full_name='dialog.Messaging',
   file=DESCRIPTOR,
   index=0,
-  options=None,
-  serialized_start=18242,
-  serialized_end=21071,
+  serialized_options=None,
+  serialized_start=18921,
+  serialized_end=21750,
   methods=[
   _descriptor.MethodDescriptor(
     name='DoInteractiveMediaAction',
@@ -6585,7 +6538,7 @@ _MESSAGING = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTDOINTERACTIVEMEDIAACTION,
     output_type=miscellaneous__pb2._RESPONSEVOID,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\0020\"+/v1/grpc/Messaging/DoInteractiveMediaAction:\001*')),
+    serialized_options=_b('\202\323\344\223\0020\"+/v1/grpc/Messaging/DoInteractiveMediaAction:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='SendMessage',
@@ -6594,7 +6547,7 @@ _MESSAGING = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTSENDMESSAGE,
     output_type=miscellaneous__pb2._RESPONSESEQDATE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002#\"\036/v1/grpc/Messaging/SendMessage:\001*')),
+    serialized_options=_b('\202\323\344\223\002#\"\036/v1/grpc/Messaging/SendMessage:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='UpdateMessage',
@@ -6603,7 +6556,7 @@ _MESSAGING = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTUPDATEMESSAGE,
     output_type=miscellaneous__pb2._RESPONSESEQDATE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002%\" /v1/grpc/Messaging/UpdateMessage:\001*')),
+    serialized_options=_b('\202\323\344\223\002%\" /v1/grpc/Messaging/UpdateMessage:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='MessageReceived',
@@ -6612,7 +6565,7 @@ _MESSAGING = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTMESSAGERECEIVED,
     output_type=miscellaneous__pb2._RESPONSEVOID,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\'\"\"/v1/grpc/Messaging/MessageReceived:\001*')),
+    serialized_options=_b('\202\323\344\223\002\'\"\"/v1/grpc/Messaging/MessageReceived:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='MessageRead',
@@ -6621,7 +6574,7 @@ _MESSAGING = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTMESSAGEREAD,
     output_type=miscellaneous__pb2._RESPONSEVOID,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002#\"\036/v1/grpc/Messaging/MessageRead:\001*')),
+    serialized_options=_b('\202\323\344\223\002#\"\036/v1/grpc/Messaging/MessageRead:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='DeleteMessageObsolete',
@@ -6630,7 +6583,7 @@ _MESSAGING = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTDELETEMESSAGEOBSOLETE,
     output_type=miscellaneous__pb2._RESPONSESEQ,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002-\"(/v1/grpc/Messaging/DeleteMessageObsolete:\001*')),
+    serialized_options=_b('\202\323\344\223\002-\"(/v1/grpc/Messaging/DeleteMessageObsolete:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='ClearChat',
@@ -6639,7 +6592,7 @@ _MESSAGING = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTCLEARCHAT,
     output_type=miscellaneous__pb2._RESPONSESEQ,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002!\"\034/v1/grpc/Messaging/ClearChat:\001*')),
+    serialized_options=_b('\202\323\344\223\002!\"\034/v1/grpc/Messaging/ClearChat:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='DeleteChat',
@@ -6648,7 +6601,7 @@ _MESSAGING = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTDELETECHAT,
     output_type=miscellaneous__pb2._RESPONSESEQ,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\"\"\035/v1/grpc/Messaging/DeleteChat:\001*')),
+    serialized_options=_b('\202\323\344\223\002\"\"\035/v1/grpc/Messaging/DeleteChat:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='ArchiveChat',
@@ -6657,7 +6610,7 @@ _MESSAGING = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTARCHIVECHAT,
     output_type=miscellaneous__pb2._RESPONSESEQ,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002#\"\036/v1/grpc/Messaging/ArchiveChat:\001*')),
+    serialized_options=_b('\202\323\344\223\002#\"\036/v1/grpc/Messaging/ArchiveChat:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='MessageSetReaction',
@@ -6666,7 +6619,7 @@ _MESSAGING = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTMESSAGESETREACTION,
     output_type=_RESPONSEREACTIONSRESPONSE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002*\"%/v1/grpc/Messaging/MessageSetReaction:\001*')),
+    serialized_options=_b('\202\323\344\223\002*\"%/v1/grpc/Messaging/MessageSetReaction:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='MessageRemoveReaction',
@@ -6675,7 +6628,7 @@ _MESSAGING = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTMESSAGEREMOVEREACTION,
     output_type=_RESPONSEREACTIONSRESPONSE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002-\"(/v1/grpc/Messaging/MessageRemoveReaction:\001*')),
+    serialized_options=_b('\202\323\344\223\002-\"(/v1/grpc/Messaging/MessageRemoveReaction:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='LoadHistory',
@@ -6684,7 +6637,7 @@ _MESSAGING = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTLOADHISTORY,
     output_type=_RESPONSELOADHISTORY,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002#\"\036/v1/grpc/Messaging/LoadHistory:\001*')),
+    serialized_options=_b('\202\323\344\223\002#\"\036/v1/grpc/Messaging/LoadHistory:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='LoadDialogs',
@@ -6693,7 +6646,7 @@ _MESSAGING = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTLOADDIALOGS,
     output_type=_RESPONSELOADDIALOGS,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002#\"\036/v1/grpc/Messaging/LoadDialogs:\001*')),
+    serialized_options=_b('\202\323\344\223\002#\"\036/v1/grpc/Messaging/LoadDialogs:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='FetchDialogIndex',
@@ -6702,7 +6655,7 @@ _MESSAGING = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTFETCHDIALOGINDEX,
     output_type=_RESPONSEFETCHDIALOGINDEX,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002(\"#/v1/grpc/Messaging/FetchDialogIndex:\001*')),
+    serialized_options=_b('\202\323\344\223\002(\"#/v1/grpc/Messaging/FetchDialogIndex:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='LoadArchived',
@@ -6711,7 +6664,7 @@ _MESSAGING = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTLOADARCHIVED,
     output_type=_RESPONSELOADARCHIVED,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002$\"\037/v1/grpc/Messaging/LoadArchived:\001*')),
+    serialized_options=_b('\202\323\344\223\002$\"\037/v1/grpc/Messaging/LoadArchived:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='LoadGroupedDialogs',
@@ -6720,7 +6673,7 @@ _MESSAGING = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTLOADGROUPEDDIALOGS,
     output_type=_RESPONSELOADGROUPEDDIALOGS,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002*\"%/v1/grpc/Messaging/LoadGroupedDialogs:\001*')),
+    serialized_options=_b('\202\323\344\223\002*\"%/v1/grpc/Messaging/LoadGroupedDialogs:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='HideDialog',
@@ -6729,7 +6682,7 @@ _MESSAGING = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTHIDEDIALOG,
     output_type=_RESPONSEDIALOGSORDER,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\"\"\035/v1/grpc/Messaging/HideDialog:\001*')),
+    serialized_options=_b('\202\323\344\223\002\"\"\035/v1/grpc/Messaging/HideDialog:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='ShowDialog',
@@ -6738,7 +6691,7 @@ _MESSAGING = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTSHOWDIALOG,
     output_type=_RESPONSEDIALOGSORDER,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\"\"\035/v1/grpc/Messaging/ShowDialog:\001*')),
+    serialized_options=_b('\202\323\344\223\002\"\"\035/v1/grpc/Messaging/ShowDialog:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='FavouriteDialog',
@@ -6747,7 +6700,7 @@ _MESSAGING = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTFAVOURITEDIALOG,
     output_type=_RESPONSEDIALOGSORDER,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\'\"\"/v1/grpc/Messaging/FavouriteDialog:\001*')),
+    serialized_options=_b('\202\323\344\223\002\'\"\"/v1/grpc/Messaging/FavouriteDialog:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='UnfavouriteDialog',
@@ -6756,7 +6709,7 @@ _MESSAGING = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTUNFAVOURITEDIALOG,
     output_type=_RESPONSEDIALOGSORDER,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002)\"$/v1/grpc/Messaging/UnfavouriteDialog:\001*')),
+    serialized_options=_b('\202\323\344\223\002)\"$/v1/grpc/Messaging/UnfavouriteDialog:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='NotifyDialogOpened',
@@ -6765,7 +6718,7 @@ _MESSAGING = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTNOTIFYDIALOGOPENED,
     output_type=miscellaneous__pb2._RESPONSEVOID,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002*\"%/v1/grpc/Messaging/NotifyDialogOpened:\001*')),
+    serialized_options=_b('\202\323\344\223\002*\"%/v1/grpc/Messaging/NotifyDialogOpened:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='PinMessage',
@@ -6774,7 +6727,7 @@ _MESSAGING = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTPINMESSAGE,
     output_type=miscellaneous__pb2._RESPONSESEQDATE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\"\"\035/v1/grpc/Messaging/PinMessage:\001*')),
+    serialized_options=_b('\202\323\344\223\002\"\"\035/v1/grpc/Messaging/PinMessage:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='UnpinMessage',
@@ -6783,7 +6736,7 @@ _MESSAGING = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTUNPINMESSAGE,
     output_type=miscellaneous__pb2._RESPONSESEQDATE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002$\"\037/v1/grpc/Messaging/UnpinMessage:\001*')),
+    serialized_options=_b('\202\323\344\223\002$\"\037/v1/grpc/Messaging/UnpinMessage:\001*'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_MESSAGING)

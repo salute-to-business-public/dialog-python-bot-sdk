@@ -7,7 +7,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -24,6 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='event_bus.proto',
   package='dialog',
   syntax='proto3',
+  serialized_options=_b('\342?\026\n\024im.dlg.grpc.services'),
   serialized_pb=_b('\n\x0f\x65vent_bus.proto\x12\x06\x64ialog\x1a\x1cgoogle/api/annotations.proto\x1a\x0bpeers.proto\x1a\x11\x64\x65\x66initions.proto\x1a\x13miscellaneous.proto\x1a\x15scalapb/scalapb.proto\"n\n\x13RequestJoinEventBus\x12\x19\n\x02id\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1e\n\x07timeout\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"H\n\x14ResponseJoinEventBus\x12\x11\n\tdevice_id\x18\x01 \x01(\x03:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"s\n\x18RequestKeepAliveEventBus\x12\x19\n\x02id\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1e\n\x07timeout\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x94\x01\n\x15RequestPostToEventBus\x12\x19\n\x02id\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12#\n\x0c\x64\x65stinations\x18\x02 \x03(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1d\n\x07message\x18\x03 \x01(\x0c\x42\x0c\x8a\xea\x30\x08\n\x06hidden:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xa7\x01\n\x1dUpdateEventBusDeviceConnected\x12\x19\n\x02id\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1e\n\x07user_id\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12 \n\tdevice_id\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12)\n\x04peer\x18\x04 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\"\xaa\x01\n UpdateEventBusDeviceDisconnected\x12\x19\n\x02id\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1e\n\x07user_id\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12 \n\tdevice_id\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12)\n\x04peer\x18\x04 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\"\x9c\x01\n\x15UpdateEventBusMessage\x12\x19\n\x02id\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12 \n\tsender_id\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\'\n\x10sender_device_id\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1d\n\x07message\x18\x04 \x01(\x0c\x42\x0c\x8a\xea\x30\x08\n\x06hidden\"3\n\x16UpdateEventBusDisposed\x12\x19\n\x02id\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible2\xf1\x02\n\x08\x45ventBus\x12t\n\x0cJoinEventBus\x12\x1b.dialog.RequestJoinEventBus\x1a\x1c.dialog.ResponseJoinEventBus\")\x82\xd3\xe4\x93\x02#\"\x1e/v1/grpc/EventBus/JoinEventBus:\x01*\x12{\n\x11KeepAliveEventBus\x12 .dialog.RequestKeepAliveEventBus\x1a\x14.dialog.ResponseVoid\".\x82\xd3\xe4\x93\x02(\"#/v1/grpc/EventBus/KeepAliveEventBus:\x01*\x12r\n\x0ePostToEventBus\x12\x1d.dialog.RequestPostToEventBus\x1a\x14.dialog.ResponseVoid\"+\x82\xd3\xe4\x93\x02%\" /v1/grpc/EventBus/PostToEventBus:\x01*B\x19\xe2?\x16\n\x14im.dlg.grpc.servicesb\x06proto3')
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,peers__pb2.DESCRIPTOR,definitions__pb2.DESCRIPTOR,miscellaneous__pb2.DESCRIPTOR,scalapb_dot_scalapb__pb2.DESCRIPTOR,])
@@ -44,21 +44,21 @@ _REQUESTJOINEVENTBUS = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='timeout', full_name='dialog.RequestJoinEventBus.timeout', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -82,14 +82,14 @@ _RESPONSEJOINEVENTBUS = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -113,21 +113,21 @@ _REQUESTKEEPALIVEEVENTBUS = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='timeout', full_name='dialog.RequestKeepAliveEventBus.timeout', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -151,28 +151,28 @@ _REQUESTPOSTTOEVENTBUS = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='destinations', full_name='dialog.RequestPostToEventBus.destinations', index=1,
       number=2, type=3, cpp_type=2, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='message', full_name='dialog.RequestPostToEventBus.message', index=2,
       number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -196,35 +196,35 @@ _UPDATEEVENTBUSDEVICECONNECTED = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user_id', full_name='dialog.UpdateEventBusDeviceConnected.user_id', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='device_id', full_name='dialog.UpdateEventBusDeviceConnected.device_id', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='peer', full_name='dialog.UpdateEventBusDeviceConnected.peer', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -248,35 +248,35 @@ _UPDATEEVENTBUSDEVICEDISCONNECTED = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user_id', full_name='dialog.UpdateEventBusDeviceDisconnected.user_id', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='device_id', full_name='dialog.UpdateEventBusDeviceDisconnected.device_id', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='peer', full_name='dialog.UpdateEventBusDeviceDisconnected.peer', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -300,35 +300,35 @@ _UPDATEEVENTBUSMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sender_id', full_name='dialog.UpdateEventBusMessage.sender_id', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sender_device_id', full_name='dialog.UpdateEventBusMessage.sender_device_id', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='message', full_name='dialog.UpdateEventBusMessage.message', index=3,
       number=4, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -352,14 +352,14 @@ _UPDATEEVENTBUSDISPOSED = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -438,63 +438,38 @@ UpdateEventBusDisposed = _reflection.GeneratedProtocolMessageType('UpdateEventBu
 _sym_db.RegisterMessage(UpdateEventBusDisposed)
 
 
-DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\342?\026\n\024im.dlg.grpc.services'))
-_REQUESTJOINEVENTBUS.fields_by_name['id'].has_options = True
-_REQUESTJOINEVENTBUS.fields_by_name['id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTJOINEVENTBUS.fields_by_name['timeout'].has_options = True
-_REQUESTJOINEVENTBUS.fields_by_name['timeout']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTJOINEVENTBUS.has_options = True
-_REQUESTJOINEVENTBUS._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSEJOINEVENTBUS.has_options = True
-_RESPONSEJOINEVENTBUS._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_REQUESTKEEPALIVEEVENTBUS.fields_by_name['id'].has_options = True
-_REQUESTKEEPALIVEEVENTBUS.fields_by_name['id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTKEEPALIVEEVENTBUS.fields_by_name['timeout'].has_options = True
-_REQUESTKEEPALIVEEVENTBUS.fields_by_name['timeout']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTKEEPALIVEEVENTBUS.has_options = True
-_REQUESTKEEPALIVEEVENTBUS._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTPOSTTOEVENTBUS.fields_by_name['id'].has_options = True
-_REQUESTPOSTTOEVENTBUS.fields_by_name['id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTPOSTTOEVENTBUS.fields_by_name['destinations'].has_options = True
-_REQUESTPOSTTOEVENTBUS.fields_by_name['destinations']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTPOSTTOEVENTBUS.fields_by_name['message'].has_options = True
-_REQUESTPOSTTOEVENTBUS.fields_by_name['message']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTPOSTTOEVENTBUS.has_options = True
-_REQUESTPOSTTOEVENTBUS._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_UPDATEEVENTBUSDEVICECONNECTED.fields_by_name['id'].has_options = True
-_UPDATEEVENTBUSDEVICECONNECTED.fields_by_name['id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEEVENTBUSDEVICECONNECTED.fields_by_name['user_id'].has_options = True
-_UPDATEEVENTBUSDEVICECONNECTED.fields_by_name['user_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEEVENTBUSDEVICECONNECTED.fields_by_name['device_id'].has_options = True
-_UPDATEEVENTBUSDEVICECONNECTED.fields_by_name['device_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEEVENTBUSDEVICECONNECTED.fields_by_name['peer'].has_options = True
-_UPDATEEVENTBUSDEVICECONNECTED.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEEVENTBUSDEVICEDISCONNECTED.fields_by_name['id'].has_options = True
-_UPDATEEVENTBUSDEVICEDISCONNECTED.fields_by_name['id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEEVENTBUSDEVICEDISCONNECTED.fields_by_name['user_id'].has_options = True
-_UPDATEEVENTBUSDEVICEDISCONNECTED.fields_by_name['user_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEEVENTBUSDEVICEDISCONNECTED.fields_by_name['device_id'].has_options = True
-_UPDATEEVENTBUSDEVICEDISCONNECTED.fields_by_name['device_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEEVENTBUSDEVICEDISCONNECTED.fields_by_name['peer'].has_options = True
-_UPDATEEVENTBUSDEVICEDISCONNECTED.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEEVENTBUSMESSAGE.fields_by_name['id'].has_options = True
-_UPDATEEVENTBUSMESSAGE.fields_by_name['id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEEVENTBUSMESSAGE.fields_by_name['sender_id'].has_options = True
-_UPDATEEVENTBUSMESSAGE.fields_by_name['sender_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEEVENTBUSMESSAGE.fields_by_name['sender_device_id'].has_options = True
-_UPDATEEVENTBUSMESSAGE.fields_by_name['sender_device_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEEVENTBUSMESSAGE.fields_by_name['message'].has_options = True
-_UPDATEEVENTBUSMESSAGE.fields_by_name['message']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_UPDATEEVENTBUSDISPOSED.fields_by_name['id'].has_options = True
-_UPDATEEVENTBUSDISPOSED.fields_by_name['id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
+DESCRIPTOR._options = None
+_REQUESTJOINEVENTBUS.fields_by_name['id']._options = None
+_REQUESTJOINEVENTBUS.fields_by_name['timeout']._options = None
+_REQUESTJOINEVENTBUS._options = None
+_RESPONSEJOINEVENTBUS._options = None
+_REQUESTKEEPALIVEEVENTBUS.fields_by_name['id']._options = None
+_REQUESTKEEPALIVEEVENTBUS.fields_by_name['timeout']._options = None
+_REQUESTKEEPALIVEEVENTBUS._options = None
+_REQUESTPOSTTOEVENTBUS.fields_by_name['id']._options = None
+_REQUESTPOSTTOEVENTBUS.fields_by_name['destinations']._options = None
+_REQUESTPOSTTOEVENTBUS.fields_by_name['message']._options = None
+_REQUESTPOSTTOEVENTBUS._options = None
+_UPDATEEVENTBUSDEVICECONNECTED.fields_by_name['id']._options = None
+_UPDATEEVENTBUSDEVICECONNECTED.fields_by_name['user_id']._options = None
+_UPDATEEVENTBUSDEVICECONNECTED.fields_by_name['device_id']._options = None
+_UPDATEEVENTBUSDEVICECONNECTED.fields_by_name['peer']._options = None
+_UPDATEEVENTBUSDEVICEDISCONNECTED.fields_by_name['id']._options = None
+_UPDATEEVENTBUSDEVICEDISCONNECTED.fields_by_name['user_id']._options = None
+_UPDATEEVENTBUSDEVICEDISCONNECTED.fields_by_name['device_id']._options = None
+_UPDATEEVENTBUSDEVICEDISCONNECTED.fields_by_name['peer']._options = None
+_UPDATEEVENTBUSMESSAGE.fields_by_name['id']._options = None
+_UPDATEEVENTBUSMESSAGE.fields_by_name['sender_id']._options = None
+_UPDATEEVENTBUSMESSAGE.fields_by_name['sender_device_id']._options = None
+_UPDATEEVENTBUSMESSAGE.fields_by_name['message']._options = None
+_UPDATEEVENTBUSDISPOSED.fields_by_name['id']._options = None
 
 _EVENTBUS = _descriptor.ServiceDescriptor(
   name='EventBus',
   full_name='dialog.EventBus',
   file=DESCRIPTOR,
   index=0,
-  options=None,
+  serialized_options=None,
   serialized_start=1143,
   serialized_end=1512,
   methods=[
@@ -505,7 +480,7 @@ _EVENTBUS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTJOINEVENTBUS,
     output_type=_RESPONSEJOINEVENTBUS,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002#\"\036/v1/grpc/EventBus/JoinEventBus:\001*')),
+    serialized_options=_b('\202\323\344\223\002#\"\036/v1/grpc/EventBus/JoinEventBus:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='KeepAliveEventBus',
@@ -514,7 +489,7 @@ _EVENTBUS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTKEEPALIVEEVENTBUS,
     output_type=miscellaneous__pb2._RESPONSEVOID,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002(\"#/v1/grpc/EventBus/KeepAliveEventBus:\001*')),
+    serialized_options=_b('\202\323\344\223\002(\"#/v1/grpc/EventBus/KeepAliveEventBus:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='PostToEventBus',
@@ -523,7 +498,7 @@ _EVENTBUS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTPOSTTOEVENTBUS,
     output_type=miscellaneous__pb2._RESPONSEVOID,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002%\" /v1/grpc/EventBus/PostToEventBus:\001*')),
+    serialized_options=_b('\202\323\344\223\002%\" /v1/grpc/EventBus/PostToEventBus:\001*'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_EVENTBUS)

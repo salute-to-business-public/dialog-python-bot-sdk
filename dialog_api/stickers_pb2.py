@@ -7,7 +7,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -25,6 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='stickers.proto',
   package='dialog',
   syntax='proto3',
+  serialized_options=_b('\342?\026\n\024im.dlg.grpc.services'),
   serialized_pb=_b('\n\x0estickers.proto\x12\x06\x64ialog\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x11\x64\x65\x66initions.proto\x1a\x13miscellaneous.proto\x1a\x15media_and_files.proto\x1a\x15scalapb/scalapb.proto\"\x95\x02\n\x11StickerDescriptor\x12\x19\n\x02id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12:\n\x05\x65moji\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12\x37\n\timage_128\x18\x03 \x01(\x0b\x32\x15.dialog.ImageLocationB\r\x8a\xea\x30\t\n\x07visible\x12\x37\n\timage_512\x18\x04 \x01(\x0b\x32\x15.dialog.ImageLocationB\r\x8a\xea\x30\t\n\x07visible\x12\x37\n\timage_256\x18\x05 \x01(\x0b\x32\x15.dialog.ImageLocationB\r\x8a\xea\x30\t\n\x07visible\"\xe6\x01\n\x11StickerCollection\x12\x19\n\x02id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12:\n\x05title\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12:\n\x08stickers\x18\x03 \x03(\x0b\x32\x19.dialog.StickerDescriptorB\r\x8a\xea\x30\t\n\x07visible\x12>\n\x0bowned_by_me\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\"\xb2\x01\n\x18ResponseStickersResponse\x12=\n\x0b\x63ollections\x18\x01 \x03(\x0b\x32\x19.dialog.StickerCollectionB\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03seq\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05state\x18\x03 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07visible:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"6\n\x16RequestLoadOwnStickers:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"i\n\x17ResponseLoadOwnStickers\x12/\n\x0cown_stickers\x18\x01 \x03(\x0b\x32\x19.dialog.StickerCollection:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"=\n\x1dRequestLoadAcesssibleStickers:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"w\n\x1eResponseLoadAcesssibleStickers\x12\x36\n\x13\x61\x63\x63\x65ssible_stickers\x18\x01 \x03(\x0b\x32\x19.dialog.StickerCollection:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"j\n\x1eRequestAddStickerPackReference\x12*\n\x13source_sticker_pack\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"m\n!RequestRemoveStickerPackReference\x12*\n\x13source_sticker_pack\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"h\n\x1fUpdateStickerCollectionsChanged\x12\x45\n\x13updated_collections\x18\x01 \x03(\x0b\x32\x19.dialog.StickerCollectionB\r\x8a\xea\x30\t\n\x07visible\":\n\x18UpdateStickerPackRemoved\x12\x1e\n\x07pack_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\"P\n\x16UpdateStickerPackAdded\x12\x36\n\x04pack\x18\x01 \x01(\x0b\x32\x19.dialog.StickerCollectionB\r\x8a\xea\x30\t\n\x07visible\"Y\n\x1bRequestAddStickerCollection\x12\x1c\n\x05title\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"Y\n\x1eRequestRemoveStickerCollection\x12\x19\n\x02id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"W\n\x1cRequestLoadStickerCollection\x12\x19\n\x02id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"m\n\x1dResponseLoadStickerCollection\x12-\n\ncollection\x18\x01 \x01(\x0b\x32\x19.dialog.StickerCollection:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse2\x83\x08\n\x08Stickers\x12\x80\x01\n\x0fLoadOwnStickers\x12\x1e.dialog.RequestLoadOwnStickers\x1a\x1f.dialog.ResponseLoadOwnStickers\",\x82\xd3\xe4\x93\x02&\"!/v1/grpc/Stickers/LoadOwnStickers:\x01*\x12\x9c\x01\n\x16LoadAcesssibleStickers\x12%.dialog.RequestLoadAcesssibleStickers\x1a&.dialog.ResponseLoadAcesssibleStickers\"3\x82\xd3\xe4\x93\x02-\"(/v1/grpc/Stickers/LoadAcesssibleStickers:\x01*\x12\x8c\x01\n\x17\x41\x64\x64StickerPackReference\x12&.dialog.RequestAddStickerPackReference\x1a\x13.dialog.ResponseSeq\"4\x82\xd3\xe4\x93\x02.\")/v1/grpc/Stickers/AddStickerPackReference:\x01*\x12\x95\x01\n\x1aRemoveStickerPackReference\x12).dialog.RequestRemoveStickerPackReference\x1a\x13.dialog.ResponseSeq\"7\x82\xd3\xe4\x93\x02\x31\",/v1/grpc/Stickers/RemoveStickerPackReference:\x01*\x12\x83\x01\n\x14\x41\x64\x64StickerCollection\x12#.dialog.RequestAddStickerCollection\x1a\x13.dialog.ResponseSeq\"1\x82\xd3\xe4\x93\x02+\"&/v1/grpc/Stickers/AddStickerCollection:\x01*\x12\x8c\x01\n\x17RemoveStickerCollection\x12&.dialog.RequestRemoveStickerCollection\x1a\x13.dialog.ResponseSeq\"4\x82\xd3\xe4\x93\x02.\")/v1/grpc/Stickers/RemoveStickerCollection:\x01*\x12\x98\x01\n\x15LoadStickerCollection\x12$.dialog.RequestLoadStickerCollection\x1a%.dialog.ResponseLoadStickerCollection\"2\x82\xd3\xe4\x93\x02,\"\'/v1/grpc/Stickers/LoadStickerCollection:\x01*B\x19\xe2?\x16\n\x14im.dlg.grpc.servicesb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,definitions__pb2.DESCRIPTOR,miscellaneous__pb2.DESCRIPTOR,media__and__files__pb2.DESCRIPTOR,scalapb_dot_scalapb__pb2.DESCRIPTOR,])
@@ -45,42 +45,42 @@ _STICKERDESCRIPTOR = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='emoji', full_name='dialog.StickerDescriptor.emoji', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='image_128', full_name='dialog.StickerDescriptor.image_128', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='image_512', full_name='dialog.StickerDescriptor.image_512', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='image_256', full_name='dialog.StickerDescriptor.image_256', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -104,35 +104,35 @@ _STICKERCOLLECTION = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='title', full_name='dialog.StickerCollection.title', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='stickers', full_name='dialog.StickerCollection.stickers', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='owned_by_me', full_name='dialog.StickerCollection.owned_by_me', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -156,28 +156,28 @@ _RESPONSESTICKERSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='seq', full_name='dialog.ResponseStickersResponse.seq', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='state', full_name='dialog.ResponseStickersResponse.state', index=2,
       number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -201,7 +201,7 @@ _REQUESTLOADOWNSTICKERS = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -225,14 +225,14 @@ _RESPONSELOADOWNSTICKERS = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -256,7 +256,7 @@ _REQUESTLOADACESSSIBLESTICKERS = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -280,14 +280,14 @@ _RESPONSELOADACESSSIBLESTICKERS = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -311,14 +311,14 @@ _REQUESTADDSTICKERPACKREFERENCE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -342,14 +342,14 @@ _REQUESTREMOVESTICKERPACKREFERENCE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -373,14 +373,14 @@ _UPDATESTICKERCOLLECTIONSCHANGED = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -404,14 +404,14 @@ _UPDATESTICKERPACKREMOVED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -435,14 +435,14 @@ _UPDATESTICKERPACKADDED = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -466,14 +466,14 @@ _REQUESTADDSTICKERCOLLECTION = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -497,14 +497,14 @@ _REQUESTREMOVESTICKERCOLLECTION = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -528,14 +528,14 @@ _REQUESTLOADSTICKERCOLLECTION = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -559,14 +559,14 @@ _RESPONSELOADSTICKERCOLLECTION = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -720,77 +720,45 @@ ResponseLoadStickerCollection = _reflection.GeneratedProtocolMessageType('Respon
 _sym_db.RegisterMessage(ResponseLoadStickerCollection)
 
 
-DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\342?\026\n\024im.dlg.grpc.services'))
-_STICKERDESCRIPTOR.fields_by_name['id'].has_options = True
-_STICKERDESCRIPTOR.fields_by_name['id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_STICKERDESCRIPTOR.fields_by_name['emoji'].has_options = True
-_STICKERDESCRIPTOR.fields_by_name['emoji']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_STICKERDESCRIPTOR.fields_by_name['image_128'].has_options = True
-_STICKERDESCRIPTOR.fields_by_name['image_128']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_STICKERDESCRIPTOR.fields_by_name['image_512'].has_options = True
-_STICKERDESCRIPTOR.fields_by_name['image_512']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_STICKERDESCRIPTOR.fields_by_name['image_256'].has_options = True
-_STICKERDESCRIPTOR.fields_by_name['image_256']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_STICKERCOLLECTION.fields_by_name['id'].has_options = True
-_STICKERCOLLECTION.fields_by_name['id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_STICKERCOLLECTION.fields_by_name['title'].has_options = True
-_STICKERCOLLECTION.fields_by_name['title']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_STICKERCOLLECTION.fields_by_name['stickers'].has_options = True
-_STICKERCOLLECTION.fields_by_name['stickers']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_STICKERCOLLECTION.fields_by_name['owned_by_me'].has_options = True
-_STICKERCOLLECTION.fields_by_name['owned_by_me']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_RESPONSESTICKERSRESPONSE.fields_by_name['collections'].has_options = True
-_RESPONSESTICKERSRESPONSE.fields_by_name['collections']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_RESPONSESTICKERSRESPONSE.fields_by_name['seq'].has_options = True
-_RESPONSESTICKERSRESPONSE.fields_by_name['seq']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_RESPONSESTICKERSRESPONSE.fields_by_name['state'].has_options = True
-_RESPONSESTICKERSRESPONSE.fields_by_name['state']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_RESPONSESTICKERSRESPONSE.has_options = True
-_RESPONSESTICKERSRESPONSE._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_REQUESTLOADOWNSTICKERS.has_options = True
-_REQUESTLOADOWNSTICKERS._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSELOADOWNSTICKERS.has_options = True
-_RESPONSELOADOWNSTICKERS._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_REQUESTLOADACESSSIBLESTICKERS.has_options = True
-_REQUESTLOADACESSSIBLESTICKERS._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSELOADACESSSIBLESTICKERS.has_options = True
-_RESPONSELOADACESSSIBLESTICKERS._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_REQUESTADDSTICKERPACKREFERENCE.fields_by_name['source_sticker_pack'].has_options = True
-_REQUESTADDSTICKERPACKREFERENCE.fields_by_name['source_sticker_pack']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTADDSTICKERPACKREFERENCE.has_options = True
-_REQUESTADDSTICKERPACKREFERENCE._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTREMOVESTICKERPACKREFERENCE.fields_by_name['source_sticker_pack'].has_options = True
-_REQUESTREMOVESTICKERPACKREFERENCE.fields_by_name['source_sticker_pack']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTREMOVESTICKERPACKREFERENCE.has_options = True
-_REQUESTREMOVESTICKERPACKREFERENCE._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_UPDATESTICKERCOLLECTIONSCHANGED.fields_by_name['updated_collections'].has_options = True
-_UPDATESTICKERCOLLECTIONSCHANGED.fields_by_name['updated_collections']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATESTICKERPACKREMOVED.fields_by_name['pack_id'].has_options = True
-_UPDATESTICKERPACKREMOVED.fields_by_name['pack_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATESTICKERPACKADDED.fields_by_name['pack'].has_options = True
-_UPDATESTICKERPACKADDED.fields_by_name['pack']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTADDSTICKERCOLLECTION.fields_by_name['title'].has_options = True
-_REQUESTADDSTICKERCOLLECTION.fields_by_name['title']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTADDSTICKERCOLLECTION.has_options = True
-_REQUESTADDSTICKERCOLLECTION._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTREMOVESTICKERCOLLECTION.fields_by_name['id'].has_options = True
-_REQUESTREMOVESTICKERCOLLECTION.fields_by_name['id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTREMOVESTICKERCOLLECTION.has_options = True
-_REQUESTREMOVESTICKERCOLLECTION._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTLOADSTICKERCOLLECTION.fields_by_name['id'].has_options = True
-_REQUESTLOADSTICKERCOLLECTION.fields_by_name['id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTLOADSTICKERCOLLECTION.has_options = True
-_REQUESTLOADSTICKERCOLLECTION._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSELOADSTICKERCOLLECTION.has_options = True
-_RESPONSELOADSTICKERCOLLECTION._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
+DESCRIPTOR._options = None
+_STICKERDESCRIPTOR.fields_by_name['id']._options = None
+_STICKERDESCRIPTOR.fields_by_name['emoji']._options = None
+_STICKERDESCRIPTOR.fields_by_name['image_128']._options = None
+_STICKERDESCRIPTOR.fields_by_name['image_512']._options = None
+_STICKERDESCRIPTOR.fields_by_name['image_256']._options = None
+_STICKERCOLLECTION.fields_by_name['id']._options = None
+_STICKERCOLLECTION.fields_by_name['title']._options = None
+_STICKERCOLLECTION.fields_by_name['stickers']._options = None
+_STICKERCOLLECTION.fields_by_name['owned_by_me']._options = None
+_RESPONSESTICKERSRESPONSE.fields_by_name['collections']._options = None
+_RESPONSESTICKERSRESPONSE.fields_by_name['seq']._options = None
+_RESPONSESTICKERSRESPONSE.fields_by_name['state']._options = None
+_RESPONSESTICKERSRESPONSE._options = None
+_REQUESTLOADOWNSTICKERS._options = None
+_RESPONSELOADOWNSTICKERS._options = None
+_REQUESTLOADACESSSIBLESTICKERS._options = None
+_RESPONSELOADACESSSIBLESTICKERS._options = None
+_REQUESTADDSTICKERPACKREFERENCE.fields_by_name['source_sticker_pack']._options = None
+_REQUESTADDSTICKERPACKREFERENCE._options = None
+_REQUESTREMOVESTICKERPACKREFERENCE.fields_by_name['source_sticker_pack']._options = None
+_REQUESTREMOVESTICKERPACKREFERENCE._options = None
+_UPDATESTICKERCOLLECTIONSCHANGED.fields_by_name['updated_collections']._options = None
+_UPDATESTICKERPACKREMOVED.fields_by_name['pack_id']._options = None
+_UPDATESTICKERPACKADDED.fields_by_name['pack']._options = None
+_REQUESTADDSTICKERCOLLECTION.fields_by_name['title']._options = None
+_REQUESTADDSTICKERCOLLECTION._options = None
+_REQUESTREMOVESTICKERCOLLECTION.fields_by_name['id']._options = None
+_REQUESTREMOVESTICKERCOLLECTION._options = None
+_REQUESTLOADSTICKERCOLLECTION.fields_by_name['id']._options = None
+_REQUESTLOADSTICKERCOLLECTION._options = None
+_RESPONSELOADSTICKERCOLLECTION._options = None
 
 _STICKERS = _descriptor.ServiceDescriptor(
   name='Stickers',
   full_name='dialog.Stickers',
   file=DESCRIPTOR,
   index=0,
-  options=None,
+  serialized_options=None,
   serialized_start=2065,
   serialized_end=3092,
   methods=[
@@ -801,7 +769,7 @@ _STICKERS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTLOADOWNSTICKERS,
     output_type=_RESPONSELOADOWNSTICKERS,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002&\"!/v1/grpc/Stickers/LoadOwnStickers:\001*')),
+    serialized_options=_b('\202\323\344\223\002&\"!/v1/grpc/Stickers/LoadOwnStickers:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='LoadAcesssibleStickers',
@@ -810,7 +778,7 @@ _STICKERS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTLOADACESSSIBLESTICKERS,
     output_type=_RESPONSELOADACESSSIBLESTICKERS,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002-\"(/v1/grpc/Stickers/LoadAcesssibleStickers:\001*')),
+    serialized_options=_b('\202\323\344\223\002-\"(/v1/grpc/Stickers/LoadAcesssibleStickers:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='AddStickerPackReference',
@@ -819,7 +787,7 @@ _STICKERS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTADDSTICKERPACKREFERENCE,
     output_type=miscellaneous__pb2._RESPONSESEQ,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002.\")/v1/grpc/Stickers/AddStickerPackReference:\001*')),
+    serialized_options=_b('\202\323\344\223\002.\")/v1/grpc/Stickers/AddStickerPackReference:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='RemoveStickerPackReference',
@@ -828,7 +796,7 @@ _STICKERS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTREMOVESTICKERPACKREFERENCE,
     output_type=miscellaneous__pb2._RESPONSESEQ,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\0021\",/v1/grpc/Stickers/RemoveStickerPackReference:\001*')),
+    serialized_options=_b('\202\323\344\223\0021\",/v1/grpc/Stickers/RemoveStickerPackReference:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='AddStickerCollection',
@@ -837,7 +805,7 @@ _STICKERS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTADDSTICKERCOLLECTION,
     output_type=miscellaneous__pb2._RESPONSESEQ,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002+\"&/v1/grpc/Stickers/AddStickerCollection:\001*')),
+    serialized_options=_b('\202\323\344\223\002+\"&/v1/grpc/Stickers/AddStickerCollection:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='RemoveStickerCollection',
@@ -846,7 +814,7 @@ _STICKERS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTREMOVESTICKERCOLLECTION,
     output_type=miscellaneous__pb2._RESPONSESEQ,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002.\")/v1/grpc/Stickers/RemoveStickerCollection:\001*')),
+    serialized_options=_b('\202\323\344\223\002.\")/v1/grpc/Stickers/RemoveStickerCollection:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='LoadStickerCollection',
@@ -855,7 +823,7 @@ _STICKERS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTLOADSTICKERCOLLECTION,
     output_type=_RESPONSELOADSTICKERCOLLECTION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002,\"\'/v1/grpc/Stickers/LoadStickerCollection:\001*')),
+    serialized_options=_b('\202\323\344\223\002,\"\'/v1/grpc/Stickers/LoadStickerCollection:\001*'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_STICKERS)

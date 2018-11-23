@@ -7,7 +7,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -31,6 +30,7 @@ import privacy_pb2 as privacy__pb2
 import peers_pb2 as peers__pb2
 import messaging_pb2 as messaging__pb2
 import users_pb2 as users__pb2
+import spaces_pb2 as spaces__pb2
 from scalapb import scalapb_pb2 as scalapb_dot_scalapb__pb2
 
 
@@ -38,9 +38,10 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='sequence_and_updates.proto',
   package='dialog',
   syntax='proto3',
-  serialized_pb=_b('\n\x1asequence_and_updates.proto\x12\x06\x64ialog\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x11\x64\x65\x66initions.proto\x1a\x13miscellaneous.proto\x1a\x14\x61uthentication.proto\x1a\x0cgroups.proto\x1a\x0estickers.proto\x1a\x17typing_and_online.proto\x1a\x0f\x65vent_bus.proto\x1a\rweb_rtc.proto\x1a\x11\x63onfig_sync.proto\x1a\x0e\x63ounters.proto\x1a\x0e\x63ontacts.proto\x1a\rprivacy.proto\x1a\x0bpeers.proto\x1a\x0fmessaging.proto\x1a\x0busers.proto\x1a\x15scalapb/scalapb.proto\"\xaf/\n\x0fUpdateSeqUpdate\x12\x1a\n\x03seq\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05state\x18\x02 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07\x63ompact\x12$\n\rupdate_header\x18\x03 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12@\n\x16updateForceReloadState\x18\x04 \x01(\x0b\x32\x1e.dialog.UpdateForceReloadStateH\x00\x12\x42\n\x17updateUserAvatarChanged\x18\x05 \x01(\x0b\x32\x1f.dialog.UpdateUserAvatarChangedH\x00\x12>\n\x15updateUserNameChanged\x18\x06 \x01(\x0b\x32\x1d.dialog.UpdateUserNameChangedH\x00\x12H\n\x1aupdateUserLocalNameChanged\x18\x07 \x01(\x0b\x32\".dialog.UpdateUserLocalNameChangedH\x00\x12\x46\n\x19updateUserContactsChanged\x18\x08 \x01(\x0b\x32!.dialog.UpdateUserContactsChangedH\x00\x12>\n\x15updateUserNickChanged\x18\t \x01(\x0b\x32\x1d.dialog.UpdateUserNickChangedH\x00\x12@\n\x16updateUserAboutChanged\x18\n \x01(\x0b\x32\x1e.dialog.UpdateUserAboutChangedH\x00\x12Z\n#updateUserPreferredLanguagesChanged\x18\x0b \x01(\x0b\x32+.dialog.UpdateUserPreferredLanguagesChangedH\x00\x12\x46\n\x19updateUserTimeZoneChanged\x18\x0c \x01(\x0b\x32!.dialog.UpdateUserTimeZoneChangedH\x00\x12L\n\x1cupdateUserBotCommandsChanged\x18\r \x01(\x0b\x32$.dialog.UpdateUserBotCommandsChangedH\x00\x12<\n\x14updateUserExtChanged\x18\x0e \x01(\x0b\x32\x1c.dialog.UpdateUserExtChangedH\x00\x12\x44\n\x18updateUserFullExtChanged\x18\x0f \x01(\x0b\x32 .dialog.UpdateUserFullExtChangedH\x00\x12<\n\x14updateUserSexChanged\x18\x10 \x01(\x0b\x32\x1c.dialog.UpdateUserSexChangedH\x00\x12P\n\x1eupdateUserCustomProfileChanged\x18\x11 \x01(\x0b\x32&.dialog.UpdateUserCustomProfileChangedH\x00\x12\x42\n\x17updateUserStatusChanged\x18\x12 \x01(\x0b\x32\x1f.dialog.UpdateUserStatusChangedH\x00\x12\x42\n\x17updateContactRegistered\x18\x13 \x01(\x0b\x32\x1f.dialog.UpdateContactRegisteredH\x00\x12:\n\x13updateContactsAdded\x18\x14 \x01(\x0b\x32\x1b.dialog.UpdateContactsAddedH\x00\x12P\n\x1eupdateContactsAddTaskSuspended\x18\x15 \x01(\x0b\x32&.dialog.UpdateContactsAddTaskSuspendedH\x00\x12>\n\x15updateContactsRemoved\x18\x16 \x01(\x0b\x32\x1d.dialog.UpdateContactsRemovedH\x00\x12\x36\n\x11updateUserBlocked\x18\x17 \x01(\x0b\x32\x19.dialog.UpdateUserBlockedH\x00\x12:\n\x13updateUserUnblocked\x18\x18 \x01(\x0b\x32\x1b.dialog.UpdateUserUnblockedH\x00\x12J\n\x1bupdateInteractiveMediaEvent\x18\x19 \x01(\x0b\x32#.dialog.UpdateInteractiveMediaEventH\x00\x12.\n\rupdateMessage\x18\x1a \x01(\x0b\x32\x15.dialog.UpdateMessageH\x00\x12J\n\x1bupdateMessageContentChanged\x18\x1b \x01(\x0b\x32#.dialog.UpdateMessageContentChangedH\x00\x12\x36\n\x11updateMessageSent\x18\x1c \x01(\x0b\x32\x19.dialog.UpdateMessageSentH\x00\x12>\n\x15updateMessageReceived\x18\x1d \x01(\x0b\x32\x1d.dialog.UpdateMessageReceivedH\x00\x12\x36\n\x11updateMessageRead\x18\x1e \x01(\x0b\x32\x19.dialog.UpdateMessageReadH\x00\x12>\n\x15updateMessageReadByMe\x18\x1f \x01(\x0b\x32\x1d.dialog.UpdateMessageReadByMeH\x00\x12:\n\x13updateMessageDelete\x18  \x01(\x0b\x32\x1b.dialog.UpdateMessageDeleteH\x00\x12\x32\n\x0fupdateChatClear\x18! \x01(\x0b\x32\x17.dialog.UpdateChatClearH\x00\x12\x34\n\x10updateChatDelete\x18\" \x01(\x0b\x32\x18.dialog.UpdateChatDeleteH\x00\x12\x36\n\x11updateChatArchive\x18# \x01(\x0b\x32\x19.dialog.UpdateChatArchiveH\x00\x12\x42\n\x17updateChatGroupsChanged\x18$ \x01(\x0b\x32\x1f.dialog.UpdateChatGroupsChangedH\x00\x12>\n\x15updateReactionsUpdate\x18% \x01(\x0b\x32\x1d.dialog.UpdateReactionsUpdateH\x00\x12L\n\x1cupdateDialogFavouriteChanged\x18& \x01(\x0b\x32$.dialog.UpdateDialogFavouriteChangedH\x00\x12J\n\x1bupdatePinnedMessagesChanged\x18\' \x01(\x0b\x32#.dialog.UpdatePinnedMessagesChangedH\x00\x12\x42\n\x17updateGroupTitleChanged\x18( \x01(\x0b\x32\x1f.dialog.UpdateGroupTitleChangedH\x00\x12\x44\n\x18updateGroupAvatarChanged\x18) \x01(\x0b\x32 .dialog.UpdateGroupAvatarChangedH\x00\x12\x42\n\x17updateGroupTopicChanged\x18* \x01(\x0b\x32\x1f.dialog.UpdateGroupTopicChangedH\x00\x12\x42\n\x17updateGroupAboutChanged\x18+ \x01(\x0b\x32\x1f.dialog.UpdateGroupAboutChangedH\x00\x12\x42\n\x17updateGroupOwnerChanged\x18, \x01(\x0b\x32\x1f.dialog.UpdateGroupOwnerChangedH\x00\x12\x44\n\x18updateGroupHistoryShared\x18- \x01(\x0b\x32 .dialog.UpdateGroupHistorySharedH\x00\x12V\n!updateGroupCanSendMessagesChanged\x18. \x01(\x0b\x32).dialog.UpdateGroupCanSendMessagesChangedH\x00\x12T\n updateGroupCanViewMembersChanged\x18/ \x01(\x0b\x32(.dialog.UpdateGroupCanViewMembersChangedH\x00\x12X\n\"updateGroupCanInviteMembersChanged\x18\x30 \x01(\x0b\x32*.dialog.UpdateGroupCanInviteMembersChangedH\x00\x12\x44\n\x18updateGroupMemberChanged\x18\x31 \x01(\x0b\x32 .dialog.UpdateGroupMemberChangedH\x00\x12N\n\x1dupdateGroupMembersBecameAsync\x18\x32 \x01(\x0b\x32%.dialog.UpdateGroupMembersBecameAsyncH\x00\x12\x46\n\x19updateGroupMembersUpdated\x18\x33 \x01(\x0b\x32!.dialog.UpdateGroupMembersUpdatedH\x00\x12>\n\x15updateGroupMemberDiff\x18\x34 \x01(\x0b\x32\x1d.dialog.UpdateGroupMemberDiffH\x00\x12P\n\x1eupdateGroupMembersCountChanged\x18\x35 \x01(\x0b\x32&.dialog.UpdateGroupMembersCountChangedH\x00\x12N\n\x1dupdateGroupMemberAdminChanged\x18\x36 \x01(\x0b\x32%.dialog.UpdateGroupMemberAdminChangedH\x00\x12Z\n#updateGroupMemberPermissionsChanged\x18\x37 \x01(\x0b\x32+.dialog.UpdateGroupMemberPermissionsChangedH\x00\x12\x46\n\x19updateGroupInviteObsolete\x18\x38 \x01(\x0b\x32!.dialog.UpdateGroupInviteObsoleteH\x00\x12P\n\x1eupdateGroupUserInvitedObsolete\x18\x39 \x01(\x0b\x32&.dialog.UpdateGroupUserInvitedObsoleteH\x00\x12L\n\x1cupdateGroupUserLeaveObsolete\x18: \x01(\x0b\x32$.dialog.UpdateGroupUserLeaveObsoleteH\x00\x12J\n\x1bupdateGroupUserKickObsolete\x18; \x01(\x0b\x32#.dialog.UpdateGroupUserKickObsoleteH\x00\x12T\n updateGroupMembersUpdateObsolete\x18< \x01(\x0b\x32(.dialog.UpdateGroupMembersUpdateObsoleteH\x00\x12R\n\x1fupdateGroupTitleChangedObsolete\x18= \x01(\x0b\x32\'.dialog.UpdateGroupTitleChangedObsoleteH\x00\x12R\n\x1fupdateGroupTopicChangedObsolete\x18> \x01(\x0b\x32\'.dialog.UpdateGroupTopicChangedObsoleteH\x00\x12R\n\x1fupdateGroupAboutChangedObsolete\x18? \x01(\x0b\x32\'.dialog.UpdateGroupAboutChangedObsoleteH\x00\x12T\n updateGroupAvatarChangedObsolete\x18@ \x01(\x0b\x32(.dialog.UpdateGroupAvatarChangedObsoleteH\x00\x12J\n\x1bupdateGroupShortnameChanged\x18\x41 \x01(\x0b\x32#.dialog.UpdateGroupShortnameChangedH\x00\x12R\n\x1fupdateStickerCollectionsChanged\x18\x42 \x01(\x0b\x32\'.dialog.UpdateStickerCollectionsChangedH\x00\x12\x44\n\x18updateStickerPackRemoved\x18\x43 \x01(\x0b\x32 .dialog.UpdateStickerPackRemovedH\x00\x12@\n\x16updateStickerPackAdded\x18\x44 \x01(\x0b\x32\x1e.dialog.UpdateStickerPackAddedH\x00\x12\x44\n\x18updatePauseNotifications\x18\x45 \x01(\x0b\x32 .dialog.UpdatePauseNotificationsH\x00\x12H\n\x1aupdateRestoreNotifications\x18\x46 \x01(\x0b\x32\".dialog.UpdateRestoreNotificationsH\x00\x12,\n\x0cupdateTyping\x18G \x01(\x0b\x32\x14.dialog.UpdateTypingH\x00\x12\x34\n\x10updateTypingStop\x18H \x01(\x0b\x32\x18.dialog.UpdateTypingStopH\x00\x12\x34\n\x10updateUserOnline\x18I \x01(\x0b\x32\x18.dialog.UpdateUserOnlineH\x00\x12\x36\n\x11updateUserOffline\x18J \x01(\x0b\x32\x19.dialog.UpdateUserOfflineH\x00\x12\x38\n\x12updateUserLastSeen\x18K \x01(\x0b\x32\x1a.dialog.UpdateUserLastSeenH\x00\x12\x36\n\x11updateGroupOnline\x18L \x01(\x0b\x32\x19.dialog.UpdateGroupOnlineH\x00\x12N\n\x1dupdateEventBusDeviceConnected\x18M \x01(\x0b\x32%.dialog.UpdateEventBusDeviceConnectedH\x00\x12T\n updateEventBusDeviceDisconnected\x18N \x01(\x0b\x32(.dialog.UpdateEventBusDeviceDisconnectedH\x00\x12>\n\x15updateEventBusMessage\x18O \x01(\x0b\x32\x1d.dialog.UpdateEventBusMessageH\x00\x12@\n\x16updateEventBusDisposed\x18P \x01(\x0b\x32\x1e.dialog.UpdateEventBusDisposedH\x00\x12L\n\x1cupdateIncomingCallDeprecated\x18Q \x01(\x0b\x32$.dialog.UpdateIncomingCallDeprecatedH\x00\x12\x38\n\x12updateIncomingCall\x18R \x01(\x0b\x32\x1a.dialog.UpdateIncomingCallH\x00\x12\x36\n\x11updateCallHandled\x18S \x01(\x0b\x32\x19.dialog.UpdateCallHandledH\x00\x12\x38\n\x12updateCallDisposed\x18T \x01(\x0b\x32\x1a.dialog.UpdateCallDisposedH\x00\x12@\n\x16updateParameterChanged\x18U \x01(\x0b\x32\x1e.dialog.UpdateParameterChangedH\x00\x12\x32\n\x0fupdateRawUpdate\x18V \x01(\x0b\x32\x17.dialog.UpdateRawUpdateH\x00\x12\x36\n\x11updateEmptyUpdate\x18W \x01(\x0b\x32\x19.dialog.UpdateEmptyUpdateH\x00\x12>\n\x15updateCountersChanged\x18X \x01(\x0b\x32\x1d.dialog.UpdateCountersChangedH\x00\x12,\n\x0cupdateConfig\x18Y \x01(\x0b\x32\x14.dialog.UpdateConfigH\x00\x42\x08\n\x06update\"\xed\x01\n\x12UpdateFatSeqUpdate\x12\x1a\n\x03seq\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05state\x18\x02 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07\x63ompact\x12$\n\rupdate_header\x18\x03 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1d\n\x06update\x18\x04 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07\x63ompact\x12*\n\x05users\x18\x05 \x03(\x0b\x32\x0c.dialog.UserB\r\x8a\xea\x30\t\n\x07\x63ompact\x12,\n\x06groups\x18\x06 \x03(\x0b\x32\r.dialog.GroupB\r\x8a\xea\x30\t\n\x07\x63ompact\"t\n\x10UpdateWeakUpdate\x12\x1b\n\x04\x64\x61te\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12$\n\rupdate_header\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1d\n\x06update\x18\x03 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07\x63ompact\"\xd1\x01\n\x13UpdateWeakFatUpdate\x12\x1b\n\x04\x64\x61te\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12$\n\rupdate_header\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1d\n\x06update\x18\x03 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07visible\x12*\n\x05users\x18\x04 \x03(\x0b\x32\x0c.dialog.UserB\r\x8a\xea\x30\t\n\x07visible\x12,\n\x06groups\x18\x05 \x03(\x0b\x32\r.dialog.GroupB\r\x8a\xea\x30\t\n\x07visible\"\x18\n\x16UpdateSeqUpdateTooLong\"V\n\x0fUpdateContainer\x12$\n\rupdate_header\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1d\n\x06update\x18\x02 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07\x63ompact\"\xc2\x02\n\x14UpdateCombinedUpdate\x12 \n\tseq_start\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1e\n\x07seq_end\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05state\x18\x03 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07visible\x12*\n\x05users\x18\x04 \x03(\x0b\x32\x0c.dialog.UserB\r\x8a\xea\x30\t\n\x07\x63ompact\x12,\n\x06groups\x18\x05 \x03(\x0b\x32\r.dialog.GroupB\r\x8a\xea\x30\t\n\x07\x63ompact\x12\x37\n\x07updates\x18\x06 \x03(\x0b\x32\x17.dialog.UpdateContainerB\r\x8a\xea\x30\t\n\x07visible\x12\x37\n\x08messages\x18\x07 \x03(\x0b\x32\x16.dialog.HistoryMessageB\r\x8a\xea\x30\t\n\x07visible\"q\n\x0fRequestGetState\x12@\n\roptimizations\x18\x01 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xf1\x01\n\x14RequestGetDifference\x12\x1a\n\x03seq\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05state\x18\x02 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07\x63ompact\x12@\n\roptimizations\x18\x03 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible\x12?\n\x0b\x63onfig_hash\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x9b\x03\n\x15ResponseGetDifference\x12\x0b\n\x03seq\x18\x01 \x01(\x05\x12\r\n\x05state\x18\x02 \x01(\x0c\x12\x1b\n\x05users\x18\x03 \x03(\x0b\x32\x0c.dialog.User\x12\x1d\n\x06groups\x18\x06 \x03(\x0b\x32\r.dialog.Group\x12(\n\x07updates\x18\x04 \x03(\x0b\x32\x17.dialog.UpdateContainer\x12(\n\x08messages\x18\x07 \x03(\x0b\x32\x16.dialog.HistoryMessage\x12\x11\n\tneed_more\x18\x05 \x01(\x08\x12\'\n\nusers_refs\x18\x08 \x03(\x0b\x32\x13.dialog.UserOutPeer\x12)\n\x0bgroups_refs\x18\t \x03(\x0b\x32\x14.dialog.GroupOutPeer\x12\x1e\n\x06\x63onfig\x18\n \x01(\x0b\x32\x0e.dialog.Config\x12\x30\n\x0b\x63onfig_hash\x18\x0b \x01(\x0b\x32\x1b.google.protobuf.Int64Value:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"Y\n\x1bRequestGetDialogsDifference\x12\x1c\n\x05\x63lock\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xb2\x01\n\x1cResponseGetDialogsDifference\x12\x1f\n\x07\x64ialogs\x18\x01 \x03(\x0b\x32\x0e.dialog.Dialog\x12)\n\x0bgroup_peers\x18\x02 \x03(\x0b\x32\x14.dialog.GroupOutPeer\x12\'\n\nuser_peers\x18\x03 \x03(\x0b\x32\x13.dialog.UserOutPeer:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"p\n\x12GroupMembersSubset\x12\x37\n\ngroup_peer\x18\x01 \x01(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12!\n\nmember_ids\x18\x02 \x03(\x05\x42\r\x8a\xea\x30\t\n\x07visible\"\x97\x02\n\x1dRequestGetReferencedEntitites\x12\x31\n\x05users\x18\x01 \x03(\x0b\x32\x13.dialog.UserOutPeerB\r\x8a\xea\x30\t\n\x07\x63ompact\x12.\n\x04mids\x18\x03 \x03(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\x12@\n\rgroup_members\x18\x04 \x03(\x0b\x32\x1a.dialog.GroupMembersSubsetB\r\x8a\xea\x30\t\n\x07visible\x12\x33\n\x06groups\x18\x05 \x03(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xa5\x01\n\x1eResponseGetReferencedEntitites\x12\x1b\n\x05users\x18\x01 \x03(\x0b\x32\x0c.dialog.User\x12\x1d\n\x06groups\x18\x02 \x03(\x0b\x32\r.dialog.Group\x12(\n\x08messages\x18\x03 \x03(\x0b\x32\x16.dialog.HistoryMessage:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"j\n\x0fUpdateRawUpdate\x12\x39\n\x04type\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05\x62ytes\x18\x02 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07visible\"\x13\n\x11UpdateEmptyUpdate\"k\n\x18RequestSubscribeToOnline\x12\x31\n\x05users\x18\x01 \x03(\x0b\x32\x13.dialog.UserOutPeerB\r\x8a\xea\x30\t\n\x07\x63ompact:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"m\n\x1aRequestSubscribeFromOnline\x12\x31\n\x05users\x18\x01 \x03(\x0b\x32\x13.dialog.UserOutPeerB\r\x8a\xea\x30\t\n\x07\x63ompact:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"r\n\x1dRequestSubscribeToGroupOnline\x12\x33\n\x06groups\x18\x01 \x03(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07\x63ompact:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"t\n\x1fRequestSubscribeFromGroupOnline\x12\x33\n\x06groups\x18\x01 \x03(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07\x63ompact:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"W\n\x0cSeqUpdateBox\x12\x0b\n\x03seq\x18\x01 \x01(\x05\x12\r\n\x05state\x18\x02 \x01(\x0c\x12+\n\x06update\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.BytesValue2\x89\n\n\x12SequenceAndUpdates\x12i\n\x08GetState\x12\x17.dialog.RequestGetState\x1a\x13.dialog.ResponseSeq\"/\x82\xd3\xe4\x93\x02)\"$/v1/grpc/SequenceAndUpdates/GetState:\x01*\x12\x82\x01\n\rGetDifference\x12\x1c.dialog.RequestGetDifference\x1a\x1d.dialog.ResponseGetDifference\"4\x82\xd3\xe4\x93\x02.\")/v1/grpc/SequenceAndUpdates/GetDifference:\x01*\x12\x9e\x01\n\x14GetDialogsDifference\x12#.dialog.RequestGetDialogsDifference\x1a$.dialog.ResponseGetDialogsDifference\";\x82\xd3\xe4\x93\x02\x35\"0/v1/grpc/SequenceAndUpdates/GetDialogsDifference:\x01*\x12\xa6\x01\n\x16GetReferencedEntitites\x12%.dialog.RequestGetReferencedEntitites\x1a&.dialog.ResponseGetReferencedEntitites\"=\x82\xd3\xe4\x93\x02\x37\"2/v1/grpc/SequenceAndUpdates/GetReferencedEntitites:\x01*\x12\x85\x01\n\x11SubscribeToOnline\x12 .dialog.RequestSubscribeToOnline\x1a\x14.dialog.ResponseVoid\"8\x82\xd3\xe4\x93\x02\x32\"-/v1/grpc/SequenceAndUpdates/SubscribeToOnline:\x01*\x12\x8b\x01\n\x13SubscribeFromOnline\x12\".dialog.RequestSubscribeFromOnline\x1a\x14.dialog.ResponseVoid\":\x82\xd3\xe4\x93\x02\x34\"//v1/grpc/SequenceAndUpdates/SubscribeFromOnline:\x01*\x12\x94\x01\n\x16SubscribeToGroupOnline\x12%.dialog.RequestSubscribeToGroupOnline\x1a\x14.dialog.ResponseVoid\"=\x82\xd3\xe4\x93\x02\x37\"2/v1/grpc/SequenceAndUpdates/SubscribeToGroupOnline:\x01*\x12\x9a\x01\n\x18SubscribeFromGroupOnline\x12\'.dialog.RequestSubscribeFromGroupOnline\x1a\x14.dialog.ResponseVoid\"?\x82\xd3\xe4\x93\x02\x39\"4/v1/grpc/SequenceAndUpdates/SubscribeFromGroupOnline:\x01*\x12o\n\nSeqUpdates\x12\x16.google.protobuf.Empty\x1a\x14.dialog.SeqUpdateBox\"1\x82\xd3\xe4\x93\x02+\"&/v1/grpc/SequenceAndUpdates/SeqUpdates:\x01*0\x01\x42\x19\xe2?\x16\n\x14im.dlg.grpc.servicesb\x06proto3')
+  serialized_options=_b('\342?\026\n\024im.dlg.grpc.services'),
+  serialized_pb=_b('\n\x1asequence_and_updates.proto\x12\x06\x64ialog\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x11\x64\x65\x66initions.proto\x1a\x13miscellaneous.proto\x1a\x14\x61uthentication.proto\x1a\x0cgroups.proto\x1a\x0estickers.proto\x1a\x17typing_and_online.proto\x1a\x0f\x65vent_bus.proto\x1a\rweb_rtc.proto\x1a\x11\x63onfig_sync.proto\x1a\x0e\x63ounters.proto\x1a\x0e\x63ontacts.proto\x1a\rprivacy.proto\x1a\x0bpeers.proto\x1a\x0fmessaging.proto\x1a\x0busers.proto\x1a\x0cspaces.proto\x1a\x15scalapb/scalapb.proto\"\xd3\x31\n\x0fUpdateSeqUpdate\x12\x1a\n\x03seq\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05state\x18\x02 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07\x63ompact\x12$\n\rupdate_header\x18\x03 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12@\n\x16updateForceReloadState\x18\x04 \x01(\x0b\x32\x1e.dialog.UpdateForceReloadStateH\x00\x12\x42\n\x17updateUserAvatarChanged\x18\x05 \x01(\x0b\x32\x1f.dialog.UpdateUserAvatarChangedH\x00\x12>\n\x15updateUserNameChanged\x18\x06 \x01(\x0b\x32\x1d.dialog.UpdateUserNameChangedH\x00\x12H\n\x1aupdateUserLocalNameChanged\x18\x07 \x01(\x0b\x32\".dialog.UpdateUserLocalNameChangedH\x00\x12\x46\n\x19updateUserContactsChanged\x18\x08 \x01(\x0b\x32!.dialog.UpdateUserContactsChangedH\x00\x12>\n\x15updateUserNickChanged\x18\t \x01(\x0b\x32\x1d.dialog.UpdateUserNickChangedH\x00\x12@\n\x16updateUserAboutChanged\x18\n \x01(\x0b\x32\x1e.dialog.UpdateUserAboutChangedH\x00\x12Z\n#updateUserPreferredLanguagesChanged\x18\x0b \x01(\x0b\x32+.dialog.UpdateUserPreferredLanguagesChangedH\x00\x12\x46\n\x19updateUserTimeZoneChanged\x18\x0c \x01(\x0b\x32!.dialog.UpdateUserTimeZoneChangedH\x00\x12L\n\x1cupdateUserBotCommandsChanged\x18\r \x01(\x0b\x32$.dialog.UpdateUserBotCommandsChangedH\x00\x12<\n\x14updateUserExtChanged\x18\x0e \x01(\x0b\x32\x1c.dialog.UpdateUserExtChangedH\x00\x12\x44\n\x18updateUserFullExtChanged\x18\x0f \x01(\x0b\x32 .dialog.UpdateUserFullExtChangedH\x00\x12<\n\x14updateUserSexChanged\x18\x10 \x01(\x0b\x32\x1c.dialog.UpdateUserSexChangedH\x00\x12P\n\x1eupdateUserCustomProfileChanged\x18\x11 \x01(\x0b\x32&.dialog.UpdateUserCustomProfileChangedH\x00\x12\x42\n\x17updateUserStatusChanged\x18\x12 \x01(\x0b\x32\x1f.dialog.UpdateUserStatusChangedH\x00\x12\x42\n\x17updateContactRegistered\x18\x13 \x01(\x0b\x32\x1f.dialog.UpdateContactRegisteredH\x00\x12:\n\x13updateContactsAdded\x18\x14 \x01(\x0b\x32\x1b.dialog.UpdateContactsAddedH\x00\x12P\n\x1eupdateContactsAddTaskSuspended\x18\x15 \x01(\x0b\x32&.dialog.UpdateContactsAddTaskSuspendedH\x00\x12>\n\x15updateContactsRemoved\x18\x16 \x01(\x0b\x32\x1d.dialog.UpdateContactsRemovedH\x00\x12\x36\n\x11updateUserBlocked\x18\x17 \x01(\x0b\x32\x19.dialog.UpdateUserBlockedH\x00\x12:\n\x13updateUserUnblocked\x18\x18 \x01(\x0b\x32\x1b.dialog.UpdateUserUnblockedH\x00\x12J\n\x1bupdateInteractiveMediaEvent\x18\x19 \x01(\x0b\x32#.dialog.UpdateInteractiveMediaEventH\x00\x12.\n\rupdateMessage\x18\x1a \x01(\x0b\x32\x15.dialog.UpdateMessageH\x00\x12J\n\x1bupdateMessageContentChanged\x18\x1b \x01(\x0b\x32#.dialog.UpdateMessageContentChangedH\x00\x12\x36\n\x11updateMessageSent\x18\x1c \x01(\x0b\x32\x19.dialog.UpdateMessageSentH\x00\x12>\n\x15updateMessageReceived\x18\x1d \x01(\x0b\x32\x1d.dialog.UpdateMessageReceivedH\x00\x12\x36\n\x11updateMessageRead\x18\x1e \x01(\x0b\x32\x19.dialog.UpdateMessageReadH\x00\x12>\n\x15updateMessageReadByMe\x18\x1f \x01(\x0b\x32\x1d.dialog.UpdateMessageReadByMeH\x00\x12:\n\x13updateMessageDelete\x18  \x01(\x0b\x32\x1b.dialog.UpdateMessageDeleteH\x00\x12\x32\n\x0fupdateChatClear\x18! \x01(\x0b\x32\x17.dialog.UpdateChatClearH\x00\x12\x34\n\x10updateChatDelete\x18\" \x01(\x0b\x32\x18.dialog.UpdateChatDeleteH\x00\x12\x36\n\x11updateChatArchive\x18# \x01(\x0b\x32\x19.dialog.UpdateChatArchiveH\x00\x12\x42\n\x17updateChatGroupsChanged\x18$ \x01(\x0b\x32\x1f.dialog.UpdateChatGroupsChangedH\x00\x12>\n\x15updateReactionsUpdate\x18% \x01(\x0b\x32\x1d.dialog.UpdateReactionsUpdateH\x00\x12L\n\x1cupdateDialogFavouriteChanged\x18& \x01(\x0b\x32$.dialog.UpdateDialogFavouriteChangedH\x00\x12J\n\x1bupdatePinnedMessagesChanged\x18\' \x01(\x0b\x32#.dialog.UpdatePinnedMessagesChangedH\x00\x12\x42\n\x17updateGroupTitleChanged\x18( \x01(\x0b\x32\x1f.dialog.UpdateGroupTitleChangedH\x00\x12\x44\n\x18updateGroupAvatarChanged\x18) \x01(\x0b\x32 .dialog.UpdateGroupAvatarChangedH\x00\x12\x42\n\x17updateGroupTopicChanged\x18* \x01(\x0b\x32\x1f.dialog.UpdateGroupTopicChangedH\x00\x12\x42\n\x17updateGroupAboutChanged\x18+ \x01(\x0b\x32\x1f.dialog.UpdateGroupAboutChangedH\x00\x12\x42\n\x17updateGroupOwnerChanged\x18, \x01(\x0b\x32\x1f.dialog.UpdateGroupOwnerChangedH\x00\x12\x44\n\x18updateGroupHistoryShared\x18- \x01(\x0b\x32 .dialog.UpdateGroupHistorySharedH\x00\x12V\n!updateGroupCanSendMessagesChanged\x18. \x01(\x0b\x32).dialog.UpdateGroupCanSendMessagesChangedH\x00\x12T\n updateGroupCanViewMembersChanged\x18/ \x01(\x0b\x32(.dialog.UpdateGroupCanViewMembersChangedH\x00\x12X\n\"updateGroupCanInviteMembersChanged\x18\x30 \x01(\x0b\x32*.dialog.UpdateGroupCanInviteMembersChangedH\x00\x12\x44\n\x18updateGroupMemberChanged\x18\x31 \x01(\x0b\x32 .dialog.UpdateGroupMemberChangedH\x00\x12N\n\x1dupdateGroupMembersBecameAsync\x18\x32 \x01(\x0b\x32%.dialog.UpdateGroupMembersBecameAsyncH\x00\x12\x46\n\x19updateGroupMembersUpdated\x18\x33 \x01(\x0b\x32!.dialog.UpdateGroupMembersUpdatedH\x00\x12>\n\x15updateGroupMemberDiff\x18\x34 \x01(\x0b\x32\x1d.dialog.UpdateGroupMemberDiffH\x00\x12P\n\x1eupdateGroupMembersCountChanged\x18\x35 \x01(\x0b\x32&.dialog.UpdateGroupMembersCountChangedH\x00\x12N\n\x1dupdateGroupMemberAdminChanged\x18\x36 \x01(\x0b\x32%.dialog.UpdateGroupMemberAdminChangedH\x00\x12Z\n#updateGroupMemberPermissionsChanged\x18\x37 \x01(\x0b\x32+.dialog.UpdateGroupMemberPermissionsChangedH\x00\x12\x46\n\x19updateGroupInviteObsolete\x18\x38 \x01(\x0b\x32!.dialog.UpdateGroupInviteObsoleteH\x00\x12P\n\x1eupdateGroupUserInvitedObsolete\x18\x39 \x01(\x0b\x32&.dialog.UpdateGroupUserInvitedObsoleteH\x00\x12L\n\x1cupdateGroupUserLeaveObsolete\x18: \x01(\x0b\x32$.dialog.UpdateGroupUserLeaveObsoleteH\x00\x12J\n\x1bupdateGroupUserKickObsolete\x18; \x01(\x0b\x32#.dialog.UpdateGroupUserKickObsoleteH\x00\x12T\n updateGroupMembersUpdateObsolete\x18< \x01(\x0b\x32(.dialog.UpdateGroupMembersUpdateObsoleteH\x00\x12R\n\x1fupdateGroupTitleChangedObsolete\x18= \x01(\x0b\x32\'.dialog.UpdateGroupTitleChangedObsoleteH\x00\x12R\n\x1fupdateGroupTopicChangedObsolete\x18> \x01(\x0b\x32\'.dialog.UpdateGroupTopicChangedObsoleteH\x00\x12R\n\x1fupdateGroupAboutChangedObsolete\x18? \x01(\x0b\x32\'.dialog.UpdateGroupAboutChangedObsoleteH\x00\x12T\n updateGroupAvatarChangedObsolete\x18@ \x01(\x0b\x32(.dialog.UpdateGroupAvatarChangedObsoleteH\x00\x12J\n\x1bupdateGroupShortnameChanged\x18\x41 \x01(\x0b\x32#.dialog.UpdateGroupShortnameChangedH\x00\x12R\n\x1fupdateStickerCollectionsChanged\x18\x42 \x01(\x0b\x32\'.dialog.UpdateStickerCollectionsChangedH\x00\x12\x44\n\x18updateStickerPackRemoved\x18\x43 \x01(\x0b\x32 .dialog.UpdateStickerPackRemovedH\x00\x12@\n\x16updateStickerPackAdded\x18\x44 \x01(\x0b\x32\x1e.dialog.UpdateStickerPackAddedH\x00\x12\x44\n\x18updatePauseNotifications\x18\x45 \x01(\x0b\x32 .dialog.UpdatePauseNotificationsH\x00\x12H\n\x1aupdateRestoreNotifications\x18\x46 \x01(\x0b\x32\".dialog.UpdateRestoreNotificationsH\x00\x12,\n\x0cupdateTyping\x18G \x01(\x0b\x32\x14.dialog.UpdateTypingH\x00\x12\x34\n\x10updateTypingStop\x18H \x01(\x0b\x32\x18.dialog.UpdateTypingStopH\x00\x12\x34\n\x10updateUserOnline\x18I \x01(\x0b\x32\x18.dialog.UpdateUserOnlineH\x00\x12\x36\n\x11updateUserOffline\x18J \x01(\x0b\x32\x19.dialog.UpdateUserOfflineH\x00\x12\x38\n\x12updateUserLastSeen\x18K \x01(\x0b\x32\x1a.dialog.UpdateUserLastSeenH\x00\x12\x36\n\x11updateGroupOnline\x18L \x01(\x0b\x32\x19.dialog.UpdateGroupOnlineH\x00\x12N\n\x1dupdateEventBusDeviceConnected\x18M \x01(\x0b\x32%.dialog.UpdateEventBusDeviceConnectedH\x00\x12T\n updateEventBusDeviceDisconnected\x18N \x01(\x0b\x32(.dialog.UpdateEventBusDeviceDisconnectedH\x00\x12>\n\x15updateEventBusMessage\x18O \x01(\x0b\x32\x1d.dialog.UpdateEventBusMessageH\x00\x12@\n\x16updateEventBusDisposed\x18P \x01(\x0b\x32\x1e.dialog.UpdateEventBusDisposedH\x00\x12L\n\x1cupdateIncomingCallDeprecated\x18Q \x01(\x0b\x32$.dialog.UpdateIncomingCallDeprecatedH\x00\x12\x38\n\x12updateIncomingCall\x18R \x01(\x0b\x32\x1a.dialog.UpdateIncomingCallH\x00\x12\x36\n\x11updateCallHandled\x18S \x01(\x0b\x32\x19.dialog.UpdateCallHandledH\x00\x12\x38\n\x12updateCallDisposed\x18T \x01(\x0b\x32\x1a.dialog.UpdateCallDisposedH\x00\x12@\n\x16updateParameterChanged\x18U \x01(\x0b\x32\x1e.dialog.UpdateParameterChangedH\x00\x12\x32\n\x0fupdateRawUpdate\x18V \x01(\x0b\x32\x17.dialog.UpdateRawUpdateH\x00\x12\x36\n\x11updateEmptyUpdate\x18W \x01(\x0b\x32\x19.dialog.UpdateEmptyUpdateH\x00\x12>\n\x15updateCountersChanged\x18X \x01(\x0b\x32\x1d.dialog.UpdateCountersChangedH\x00\x12,\n\x0cupdateConfig\x18Y \x01(\x0b\x32\x14.dialog.UpdateConfigH\x00\x12:\n\x13updateSpaceModified\x18Z \x01(\x0b\x32\x1b.dialog.UpdateSpaceModifiedH\x00\x12\x46\n\x19updateSpaceMemberModified\x18[ \x01(\x0b\x32!.dialog.UpdateSpaceMemberModifiedH\x00\x12J\n\x1bupdateMessageRejectedByHook\x18\\ \x01(\x0b\x32#.dialog.UpdateMessageRejectedByHookH\x00\x12R\n\x1fupdateMessageEditRejectedByHook\x18] \x01(\x0b\x32\'.dialog.UpdateMessageEditRejectedByHookH\x00\x42\x08\n\x06update\"\xed\x01\n\x12UpdateFatSeqUpdate\x12\x1a\n\x03seq\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05state\x18\x02 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07\x63ompact\x12$\n\rupdate_header\x18\x03 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1d\n\x06update\x18\x04 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07\x63ompact\x12*\n\x05users\x18\x05 \x03(\x0b\x32\x0c.dialog.UserB\r\x8a\xea\x30\t\n\x07\x63ompact\x12,\n\x06groups\x18\x06 \x03(\x0b\x32\r.dialog.GroupB\r\x8a\xea\x30\t\n\x07\x63ompact\"t\n\x10UpdateWeakUpdate\x12\x1b\n\x04\x64\x61te\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12$\n\rupdate_header\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1d\n\x06update\x18\x03 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07\x63ompact\"\xd1\x01\n\x13UpdateWeakFatUpdate\x12\x1b\n\x04\x64\x61te\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12$\n\rupdate_header\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1d\n\x06update\x18\x03 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07visible\x12*\n\x05users\x18\x04 \x03(\x0b\x32\x0c.dialog.UserB\r\x8a\xea\x30\t\n\x07visible\x12,\n\x06groups\x18\x05 \x03(\x0b\x32\r.dialog.GroupB\r\x8a\xea\x30\t\n\x07visible\"\x18\n\x16UpdateSeqUpdateTooLong\"V\n\x0fUpdateContainer\x12$\n\rupdate_header\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1d\n\x06update\x18\x02 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07\x63ompact\"\xc2\x02\n\x14UpdateCombinedUpdate\x12 \n\tseq_start\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1e\n\x07seq_end\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05state\x18\x03 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07visible\x12*\n\x05users\x18\x04 \x03(\x0b\x32\x0c.dialog.UserB\r\x8a\xea\x30\t\n\x07\x63ompact\x12,\n\x06groups\x18\x05 \x03(\x0b\x32\r.dialog.GroupB\r\x8a\xea\x30\t\n\x07\x63ompact\x12\x37\n\x07updates\x18\x06 \x03(\x0b\x32\x17.dialog.UpdateContainerB\r\x8a\xea\x30\t\n\x07visible\x12\x37\n\x08messages\x18\x07 \x03(\x0b\x32\x16.dialog.HistoryMessageB\r\x8a\xea\x30\t\n\x07visible\"q\n\x0fRequestGetState\x12@\n\roptimizations\x18\x01 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xf1\x01\n\x14RequestGetDifference\x12\x1a\n\x03seq\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05state\x18\x02 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07\x63ompact\x12@\n\roptimizations\x18\x03 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible\x12?\n\x0b\x63onfig_hash\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x9b\x03\n\x15ResponseGetDifference\x12\x0b\n\x03seq\x18\x01 \x01(\x05\x12\r\n\x05state\x18\x02 \x01(\x0c\x12\x1b\n\x05users\x18\x03 \x03(\x0b\x32\x0c.dialog.User\x12\x1d\n\x06groups\x18\x06 \x03(\x0b\x32\r.dialog.Group\x12(\n\x07updates\x18\x04 \x03(\x0b\x32\x17.dialog.UpdateSeqUpdate\x12(\n\x08messages\x18\x07 \x03(\x0b\x32\x16.dialog.HistoryMessage\x12\x11\n\tneed_more\x18\x05 \x01(\x08\x12\'\n\nusers_refs\x18\x08 \x03(\x0b\x32\x13.dialog.UserOutPeer\x12)\n\x0bgroups_refs\x18\t \x03(\x0b\x32\x14.dialog.GroupOutPeer\x12\x1e\n\x06\x63onfig\x18\n \x01(\x0b\x32\x0e.dialog.Config\x12\x30\n\x0b\x63onfig_hash\x18\x0b \x01(\x0b\x32\x1b.google.protobuf.Int64Value:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"Y\n\x1bRequestGetDialogsDifference\x12\x1c\n\x05\x63lock\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xb2\x01\n\x1cResponseGetDialogsDifference\x12\x1f\n\x07\x64ialogs\x18\x01 \x03(\x0b\x32\x0e.dialog.Dialog\x12)\n\x0bgroup_peers\x18\x02 \x03(\x0b\x32\x14.dialog.GroupOutPeer\x12\'\n\nuser_peers\x18\x03 \x03(\x0b\x32\x13.dialog.UserOutPeer:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"p\n\x12GroupMembersSubset\x12\x37\n\ngroup_peer\x18\x01 \x01(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12!\n\nmember_ids\x18\x02 \x03(\x05\x42\r\x8a\xea\x30\t\n\x07visible\"\x97\x02\n\x1dRequestGetReferencedEntitites\x12\x31\n\x05users\x18\x01 \x03(\x0b\x32\x13.dialog.UserOutPeerB\r\x8a\xea\x30\t\n\x07\x63ompact\x12.\n\x04mids\x18\x03 \x03(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\x12@\n\rgroup_members\x18\x04 \x03(\x0b\x32\x1a.dialog.GroupMembersSubsetB\r\x8a\xea\x30\t\n\x07visible\x12\x33\n\x06groups\x18\x05 \x03(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xa5\x01\n\x1eResponseGetReferencedEntitites\x12\x1b\n\x05users\x18\x01 \x03(\x0b\x32\x0c.dialog.User\x12\x1d\n\x06groups\x18\x02 \x03(\x0b\x32\r.dialog.Group\x12(\n\x08messages\x18\x03 \x03(\x0b\x32\x16.dialog.HistoryMessage:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"j\n\x0fUpdateRawUpdate\x12\x39\n\x04type\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05\x62ytes\x18\x02 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07visible\"\x13\n\x11UpdateEmptyUpdate\"k\n\x18RequestSubscribeToOnline\x12\x31\n\x05users\x18\x01 \x03(\x0b\x32\x13.dialog.UserOutPeerB\r\x8a\xea\x30\t\n\x07\x63ompact:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"m\n\x1aRequestSubscribeFromOnline\x12\x31\n\x05users\x18\x01 \x03(\x0b\x32\x13.dialog.UserOutPeerB\r\x8a\xea\x30\t\n\x07\x63ompact:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"r\n\x1dRequestSubscribeToGroupOnline\x12\x33\n\x06groups\x18\x01 \x03(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07\x63ompact:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"t\n\x1fRequestSubscribeFromGroupOnline\x12\x33\n\x06groups\x18\x01 \x03(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07\x63ompact:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x88\x01\n\x0cSeqUpdateBox\x12\x0b\n\x03seq\x18\x01 \x01(\x05\x12\r\n\x05state\x18\x02 \x01(\x0c\x12+\n\x06update\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.BytesValue\x12/\n\x0eunboxed_update\x18\x04 \x01(\x0b\x32\x17.dialog.UpdateSeqUpdate2\x89\n\n\x12SequenceAndUpdates\x12i\n\x08GetState\x12\x17.dialog.RequestGetState\x1a\x13.dialog.ResponseSeq\"/\x82\xd3\xe4\x93\x02)\"$/v1/grpc/SequenceAndUpdates/GetState:\x01*\x12\x82\x01\n\rGetDifference\x12\x1c.dialog.RequestGetDifference\x1a\x1d.dialog.ResponseGetDifference\"4\x82\xd3\xe4\x93\x02.\")/v1/grpc/SequenceAndUpdates/GetDifference:\x01*\x12\x9e\x01\n\x14GetDialogsDifference\x12#.dialog.RequestGetDialogsDifference\x1a$.dialog.ResponseGetDialogsDifference\";\x82\xd3\xe4\x93\x02\x35\"0/v1/grpc/SequenceAndUpdates/GetDialogsDifference:\x01*\x12\xa6\x01\n\x16GetReferencedEntitites\x12%.dialog.RequestGetReferencedEntitites\x1a&.dialog.ResponseGetReferencedEntitites\"=\x82\xd3\xe4\x93\x02\x37\"2/v1/grpc/SequenceAndUpdates/GetReferencedEntitites:\x01*\x12\x85\x01\n\x11SubscribeToOnline\x12 .dialog.RequestSubscribeToOnline\x1a\x14.dialog.ResponseVoid\"8\x82\xd3\xe4\x93\x02\x32\"-/v1/grpc/SequenceAndUpdates/SubscribeToOnline:\x01*\x12\x8b\x01\n\x13SubscribeFromOnline\x12\".dialog.RequestSubscribeFromOnline\x1a\x14.dialog.ResponseVoid\":\x82\xd3\xe4\x93\x02\x34\"//v1/grpc/SequenceAndUpdates/SubscribeFromOnline:\x01*\x12\x94\x01\n\x16SubscribeToGroupOnline\x12%.dialog.RequestSubscribeToGroupOnline\x1a\x14.dialog.ResponseVoid\"=\x82\xd3\xe4\x93\x02\x37\"2/v1/grpc/SequenceAndUpdates/SubscribeToGroupOnline:\x01*\x12\x9a\x01\n\x18SubscribeFromGroupOnline\x12\'.dialog.RequestSubscribeFromGroupOnline\x1a\x14.dialog.ResponseVoid\"?\x82\xd3\xe4\x93\x02\x39\"4/v1/grpc/SequenceAndUpdates/SubscribeFromGroupOnline:\x01*\x12o\n\nSeqUpdates\x12\x16.google.protobuf.Empty\x1a\x14.dialog.SeqUpdateBox\"1\x82\xd3\xe4\x93\x02+\"&/v1/grpc/SequenceAndUpdates/SeqUpdates:\x01*0\x01\x42\x19\xe2?\x16\n\x14im.dlg.grpc.servicesb\x06proto3')
   ,
-  dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,definitions__pb2.DESCRIPTOR,miscellaneous__pb2.DESCRIPTOR,authentication__pb2.DESCRIPTOR,groups__pb2.DESCRIPTOR,stickers__pb2.DESCRIPTOR,typing__and__online__pb2.DESCRIPTOR,event__bus__pb2.DESCRIPTOR,web__rtc__pb2.DESCRIPTOR,config__sync__pb2.DESCRIPTOR,counters__pb2.DESCRIPTOR,contacts__pb2.DESCRIPTOR,privacy__pb2.DESCRIPTOR,peers__pb2.DESCRIPTOR,messaging__pb2.DESCRIPTOR,users__pb2.DESCRIPTOR,scalapb_dot_scalapb__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,definitions__pb2.DESCRIPTOR,miscellaneous__pb2.DESCRIPTOR,authentication__pb2.DESCRIPTOR,groups__pb2.DESCRIPTOR,stickers__pb2.DESCRIPTOR,typing__and__online__pb2.DESCRIPTOR,event__bus__pb2.DESCRIPTOR,web__rtc__pb2.DESCRIPTOR,config__sync__pb2.DESCRIPTOR,counters__pb2.DESCRIPTOR,contacts__pb2.DESCRIPTOR,privacy__pb2.DESCRIPTOR,peers__pb2.DESCRIPTOR,messaging__pb2.DESCRIPTOR,users__pb2.DESCRIPTOR,spaces__pb2.DESCRIPTOR,scalapb_dot_scalapb__pb2.DESCRIPTOR,])
 
 
 
@@ -58,630 +59,658 @@ _UPDATESEQUPDATE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='state', full_name='dialog.UpdateSeqUpdate.state', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='update_header', full_name='dialog.UpdateSeqUpdate.update_header', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateForceReloadState', full_name='dialog.UpdateSeqUpdate.updateForceReloadState', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateUserAvatarChanged', full_name='dialog.UpdateSeqUpdate.updateUserAvatarChanged', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateUserNameChanged', full_name='dialog.UpdateSeqUpdate.updateUserNameChanged', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateUserLocalNameChanged', full_name='dialog.UpdateSeqUpdate.updateUserLocalNameChanged', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateUserContactsChanged', full_name='dialog.UpdateSeqUpdate.updateUserContactsChanged', index=7,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateUserNickChanged', full_name='dialog.UpdateSeqUpdate.updateUserNickChanged', index=8,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateUserAboutChanged', full_name='dialog.UpdateSeqUpdate.updateUserAboutChanged', index=9,
       number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateUserPreferredLanguagesChanged', full_name='dialog.UpdateSeqUpdate.updateUserPreferredLanguagesChanged', index=10,
       number=11, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateUserTimeZoneChanged', full_name='dialog.UpdateSeqUpdate.updateUserTimeZoneChanged', index=11,
       number=12, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateUserBotCommandsChanged', full_name='dialog.UpdateSeqUpdate.updateUserBotCommandsChanged', index=12,
       number=13, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateUserExtChanged', full_name='dialog.UpdateSeqUpdate.updateUserExtChanged', index=13,
       number=14, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateUserFullExtChanged', full_name='dialog.UpdateSeqUpdate.updateUserFullExtChanged', index=14,
       number=15, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateUserSexChanged', full_name='dialog.UpdateSeqUpdate.updateUserSexChanged', index=15,
       number=16, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateUserCustomProfileChanged', full_name='dialog.UpdateSeqUpdate.updateUserCustomProfileChanged', index=16,
       number=17, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateUserStatusChanged', full_name='dialog.UpdateSeqUpdate.updateUserStatusChanged', index=17,
       number=18, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateContactRegistered', full_name='dialog.UpdateSeqUpdate.updateContactRegistered', index=18,
       number=19, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateContactsAdded', full_name='dialog.UpdateSeqUpdate.updateContactsAdded', index=19,
       number=20, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateContactsAddTaskSuspended', full_name='dialog.UpdateSeqUpdate.updateContactsAddTaskSuspended', index=20,
       number=21, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateContactsRemoved', full_name='dialog.UpdateSeqUpdate.updateContactsRemoved', index=21,
       number=22, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateUserBlocked', full_name='dialog.UpdateSeqUpdate.updateUserBlocked', index=22,
       number=23, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateUserUnblocked', full_name='dialog.UpdateSeqUpdate.updateUserUnblocked', index=23,
       number=24, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateInteractiveMediaEvent', full_name='dialog.UpdateSeqUpdate.updateInteractiveMediaEvent', index=24,
       number=25, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateMessage', full_name='dialog.UpdateSeqUpdate.updateMessage', index=25,
       number=26, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateMessageContentChanged', full_name='dialog.UpdateSeqUpdate.updateMessageContentChanged', index=26,
       number=27, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateMessageSent', full_name='dialog.UpdateSeqUpdate.updateMessageSent', index=27,
       number=28, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateMessageReceived', full_name='dialog.UpdateSeqUpdate.updateMessageReceived', index=28,
       number=29, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateMessageRead', full_name='dialog.UpdateSeqUpdate.updateMessageRead', index=29,
       number=30, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateMessageReadByMe', full_name='dialog.UpdateSeqUpdate.updateMessageReadByMe', index=30,
       number=31, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateMessageDelete', full_name='dialog.UpdateSeqUpdate.updateMessageDelete', index=31,
       number=32, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateChatClear', full_name='dialog.UpdateSeqUpdate.updateChatClear', index=32,
       number=33, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateChatDelete', full_name='dialog.UpdateSeqUpdate.updateChatDelete', index=33,
       number=34, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateChatArchive', full_name='dialog.UpdateSeqUpdate.updateChatArchive', index=34,
       number=35, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateChatGroupsChanged', full_name='dialog.UpdateSeqUpdate.updateChatGroupsChanged', index=35,
       number=36, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateReactionsUpdate', full_name='dialog.UpdateSeqUpdate.updateReactionsUpdate', index=36,
       number=37, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateDialogFavouriteChanged', full_name='dialog.UpdateSeqUpdate.updateDialogFavouriteChanged', index=37,
       number=38, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updatePinnedMessagesChanged', full_name='dialog.UpdateSeqUpdate.updatePinnedMessagesChanged', index=38,
       number=39, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateGroupTitleChanged', full_name='dialog.UpdateSeqUpdate.updateGroupTitleChanged', index=39,
       number=40, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateGroupAvatarChanged', full_name='dialog.UpdateSeqUpdate.updateGroupAvatarChanged', index=40,
       number=41, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateGroupTopicChanged', full_name='dialog.UpdateSeqUpdate.updateGroupTopicChanged', index=41,
       number=42, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateGroupAboutChanged', full_name='dialog.UpdateSeqUpdate.updateGroupAboutChanged', index=42,
       number=43, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateGroupOwnerChanged', full_name='dialog.UpdateSeqUpdate.updateGroupOwnerChanged', index=43,
       number=44, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateGroupHistoryShared', full_name='dialog.UpdateSeqUpdate.updateGroupHistoryShared', index=44,
       number=45, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateGroupCanSendMessagesChanged', full_name='dialog.UpdateSeqUpdate.updateGroupCanSendMessagesChanged', index=45,
       number=46, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateGroupCanViewMembersChanged', full_name='dialog.UpdateSeqUpdate.updateGroupCanViewMembersChanged', index=46,
       number=47, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateGroupCanInviteMembersChanged', full_name='dialog.UpdateSeqUpdate.updateGroupCanInviteMembersChanged', index=47,
       number=48, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateGroupMemberChanged', full_name='dialog.UpdateSeqUpdate.updateGroupMemberChanged', index=48,
       number=49, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateGroupMembersBecameAsync', full_name='dialog.UpdateSeqUpdate.updateGroupMembersBecameAsync', index=49,
       number=50, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateGroupMembersUpdated', full_name='dialog.UpdateSeqUpdate.updateGroupMembersUpdated', index=50,
       number=51, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateGroupMemberDiff', full_name='dialog.UpdateSeqUpdate.updateGroupMemberDiff', index=51,
       number=52, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateGroupMembersCountChanged', full_name='dialog.UpdateSeqUpdate.updateGroupMembersCountChanged', index=52,
       number=53, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateGroupMemberAdminChanged', full_name='dialog.UpdateSeqUpdate.updateGroupMemberAdminChanged', index=53,
       number=54, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateGroupMemberPermissionsChanged', full_name='dialog.UpdateSeqUpdate.updateGroupMemberPermissionsChanged', index=54,
       number=55, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateGroupInviteObsolete', full_name='dialog.UpdateSeqUpdate.updateGroupInviteObsolete', index=55,
       number=56, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateGroupUserInvitedObsolete', full_name='dialog.UpdateSeqUpdate.updateGroupUserInvitedObsolete', index=56,
       number=57, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateGroupUserLeaveObsolete', full_name='dialog.UpdateSeqUpdate.updateGroupUserLeaveObsolete', index=57,
       number=58, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateGroupUserKickObsolete', full_name='dialog.UpdateSeqUpdate.updateGroupUserKickObsolete', index=58,
       number=59, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateGroupMembersUpdateObsolete', full_name='dialog.UpdateSeqUpdate.updateGroupMembersUpdateObsolete', index=59,
       number=60, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateGroupTitleChangedObsolete', full_name='dialog.UpdateSeqUpdate.updateGroupTitleChangedObsolete', index=60,
       number=61, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateGroupTopicChangedObsolete', full_name='dialog.UpdateSeqUpdate.updateGroupTopicChangedObsolete', index=61,
       number=62, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateGroupAboutChangedObsolete', full_name='dialog.UpdateSeqUpdate.updateGroupAboutChangedObsolete', index=62,
       number=63, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateGroupAvatarChangedObsolete', full_name='dialog.UpdateSeqUpdate.updateGroupAvatarChangedObsolete', index=63,
       number=64, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateGroupShortnameChanged', full_name='dialog.UpdateSeqUpdate.updateGroupShortnameChanged', index=64,
       number=65, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateStickerCollectionsChanged', full_name='dialog.UpdateSeqUpdate.updateStickerCollectionsChanged', index=65,
       number=66, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateStickerPackRemoved', full_name='dialog.UpdateSeqUpdate.updateStickerPackRemoved', index=66,
       number=67, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateStickerPackAdded', full_name='dialog.UpdateSeqUpdate.updateStickerPackAdded', index=67,
       number=68, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updatePauseNotifications', full_name='dialog.UpdateSeqUpdate.updatePauseNotifications', index=68,
       number=69, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateRestoreNotifications', full_name='dialog.UpdateSeqUpdate.updateRestoreNotifications', index=69,
       number=70, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateTyping', full_name='dialog.UpdateSeqUpdate.updateTyping', index=70,
       number=71, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateTypingStop', full_name='dialog.UpdateSeqUpdate.updateTypingStop', index=71,
       number=72, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateUserOnline', full_name='dialog.UpdateSeqUpdate.updateUserOnline', index=72,
       number=73, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateUserOffline', full_name='dialog.UpdateSeqUpdate.updateUserOffline', index=73,
       number=74, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateUserLastSeen', full_name='dialog.UpdateSeqUpdate.updateUserLastSeen', index=74,
       number=75, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateGroupOnline', full_name='dialog.UpdateSeqUpdate.updateGroupOnline', index=75,
       number=76, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateEventBusDeviceConnected', full_name='dialog.UpdateSeqUpdate.updateEventBusDeviceConnected', index=76,
       number=77, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateEventBusDeviceDisconnected', full_name='dialog.UpdateSeqUpdate.updateEventBusDeviceDisconnected', index=77,
       number=78, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateEventBusMessage', full_name='dialog.UpdateSeqUpdate.updateEventBusMessage', index=78,
       number=79, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateEventBusDisposed', full_name='dialog.UpdateSeqUpdate.updateEventBusDisposed', index=79,
       number=80, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateIncomingCallDeprecated', full_name='dialog.UpdateSeqUpdate.updateIncomingCallDeprecated', index=80,
       number=81, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateIncomingCall', full_name='dialog.UpdateSeqUpdate.updateIncomingCall', index=81,
       number=82, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateCallHandled', full_name='dialog.UpdateSeqUpdate.updateCallHandled', index=82,
       number=83, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateCallDisposed', full_name='dialog.UpdateSeqUpdate.updateCallDisposed', index=83,
       number=84, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateParameterChanged', full_name='dialog.UpdateSeqUpdate.updateParameterChanged', index=84,
       number=85, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateRawUpdate', full_name='dialog.UpdateSeqUpdate.updateRawUpdate', index=85,
       number=86, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateEmptyUpdate', full_name='dialog.UpdateSeqUpdate.updateEmptyUpdate', index=86,
       number=87, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateCountersChanged', full_name='dialog.UpdateSeqUpdate.updateCountersChanged', index=87,
       number=88, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updateConfig', full_name='dialog.UpdateSeqUpdate.updateConfig', index=88,
       number=89, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='updateSpaceModified', full_name='dialog.UpdateSeqUpdate.updateSpaceModified', index=89,
+      number=90, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='updateSpaceMemberModified', full_name='dialog.UpdateSeqUpdate.updateSpaceMemberModified', index=90,
+      number=91, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='updateMessageRejectedByHook', full_name='dialog.UpdateSeqUpdate.updateMessageRejectedByHook', index=91,
+      number=92, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='updateMessageEditRejectedByHook', full_name='dialog.UpdateSeqUpdate.updateMessageEditRejectedByHook', index=92,
+      number=93, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -690,8 +719,8 @@ _UPDATESEQUPDATE = _descriptor.Descriptor(
       name='update', full_name='dialog.UpdateSeqUpdate.update',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=411,
-  serialized_end=6474,
+  serialized_start=425,
+  serialized_end=6780,
 )
 
 
@@ -708,56 +737,56 @@ _UPDATEFATSEQUPDATE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='state', full_name='dialog.UpdateFatSeqUpdate.state', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='update_header', full_name='dialog.UpdateFatSeqUpdate.update_header', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='update', full_name='dialog.UpdateFatSeqUpdate.update', index=3,
       number=4, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='users', full_name='dialog.UpdateFatSeqUpdate.users', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='groups', full_name='dialog.UpdateFatSeqUpdate.groups', index=5,
       number=6, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6477,
-  serialized_end=6714,
+  serialized_start=6783,
+  serialized_end=7020,
 )
 
 
@@ -774,35 +803,35 @@ _UPDATEWEAKUPDATE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='update_header', full_name='dialog.UpdateWeakUpdate.update_header', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='update', full_name='dialog.UpdateWeakUpdate.update', index=2,
       number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6716,
-  serialized_end=6832,
+  serialized_start=7022,
+  serialized_end=7138,
 )
 
 
@@ -819,49 +848,49 @@ _UPDATEWEAKFATUPDATE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='update_header', full_name='dialog.UpdateWeakFatUpdate.update_header', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='update', full_name='dialog.UpdateWeakFatUpdate.update', index=2,
       number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='users', full_name='dialog.UpdateWeakFatUpdate.users', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='groups', full_name='dialog.UpdateWeakFatUpdate.groups', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6835,
-  serialized_end=7044,
+  serialized_start=7141,
+  serialized_end=7350,
 )
 
 
@@ -878,14 +907,14 @@ _UPDATESEQUPDATETOOLONG = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7046,
-  serialized_end=7070,
+  serialized_start=7352,
+  serialized_end=7376,
 )
 
 
@@ -902,28 +931,28 @@ _UPDATECONTAINER = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='update', full_name='dialog.UpdateContainer.update', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7072,
-  serialized_end=7158,
+  serialized_start=7378,
+  serialized_end=7464,
 )
 
 
@@ -940,63 +969,63 @@ _UPDATECOMBINEDUPDATE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='seq_end', full_name='dialog.UpdateCombinedUpdate.seq_end', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='state', full_name='dialog.UpdateCombinedUpdate.state', index=2,
       number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='users', full_name='dialog.UpdateCombinedUpdate.users', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='groups', full_name='dialog.UpdateCombinedUpdate.groups', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updates', full_name='dialog.UpdateCombinedUpdate.updates', index=5,
       number=6, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='messages', full_name='dialog.UpdateCombinedUpdate.messages', index=6,
       number=7, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7161,
-  serialized_end=7483,
+  serialized_start=7467,
+  serialized_end=7789,
 )
 
 
@@ -1013,21 +1042,21 @@ _REQUESTGETSTATE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7485,
-  serialized_end=7598,
+  serialized_start=7791,
+  serialized_end=7904,
 )
 
 
@@ -1044,42 +1073,42 @@ _REQUESTGETDIFFERENCE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='state', full_name='dialog.RequestGetDifference.state', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optimizations', full_name='dialog.RequestGetDifference.optimizations', index=2,
       number=3, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='config_hash', full_name='dialog.RequestGetDifference.config_hash', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7601,
-  serialized_end=7842,
+  serialized_start=7907,
+  serialized_end=8148,
 )
 
 
@@ -1096,91 +1125,91 @@ _RESPONSEGETDIFFERENCE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='state', full_name='dialog.ResponseGetDifference.state', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='users', full_name='dialog.ResponseGetDifference.users', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='groups', full_name='dialog.ResponseGetDifference.groups', index=3,
       number=6, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updates', full_name='dialog.ResponseGetDifference.updates', index=4,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='messages', full_name='dialog.ResponseGetDifference.messages', index=5,
       number=7, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='need_more', full_name='dialog.ResponseGetDifference.need_more', index=6,
       number=5, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='users_refs', full_name='dialog.ResponseGetDifference.users_refs', index=7,
       number=8, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='groups_refs', full_name='dialog.ResponseGetDifference.groups_refs', index=8,
       number=9, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='config', full_name='dialog.ResponseGetDifference.config', index=9,
       number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='config_hash', full_name='dialog.ResponseGetDifference.config_hash', index=10,
       number=11, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7845,
-  serialized_end=8256,
+  serialized_start=8151,
+  serialized_end=8562,
 )
 
 
@@ -1197,21 +1226,21 @@ _REQUESTGETDIALOGSDIFFERENCE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8258,
-  serialized_end=8347,
+  serialized_start=8564,
+  serialized_end=8653,
 )
 
 
@@ -1228,35 +1257,35 @@ _RESPONSEGETDIALOGSDIFFERENCE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='group_peers', full_name='dialog.ResponseGetDialogsDifference.group_peers', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user_peers', full_name='dialog.ResponseGetDialogsDifference.user_peers', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8350,
-  serialized_end=8528,
+  serialized_start=8656,
+  serialized_end=8834,
 )
 
 
@@ -1273,28 +1302,28 @@ _GROUPMEMBERSSUBSET = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='member_ids', full_name='dialog.GroupMembersSubset.member_ids', index=1,
       number=2, type=5, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8530,
-  serialized_end=8642,
+  serialized_start=8836,
+  serialized_end=8948,
 )
 
 
@@ -1311,42 +1340,42 @@ _REQUESTGETREFERENCEDENTITITES = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='mids', full_name='dialog.RequestGetReferencedEntitites.mids', index=1,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='group_members', full_name='dialog.RequestGetReferencedEntitites.group_members', index=2,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='groups', full_name='dialog.RequestGetReferencedEntitites.groups', index=3,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8645,
-  serialized_end=8924,
+  serialized_start=8951,
+  serialized_end=9230,
 )
 
 
@@ -1363,35 +1392,35 @@ _RESPONSEGETREFERENCEDENTITITES = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='groups', full_name='dialog.ResponseGetReferencedEntitites.groups', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='messages', full_name='dialog.ResponseGetReferencedEntitites.messages', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8927,
-  serialized_end=9092,
+  serialized_start=9233,
+  serialized_end=9398,
 )
 
 
@@ -1408,28 +1437,28 @@ _UPDATERAWUPDATE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='bytes', full_name='dialog.UpdateRawUpdate.bytes', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9094,
-  serialized_end=9200,
+  serialized_start=9400,
+  serialized_end=9506,
 )
 
 
@@ -1446,14 +1475,14 @@ _UPDATEEMPTYUPDATE = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9202,
-  serialized_end=9221,
+  serialized_start=9508,
+  serialized_end=9527,
 )
 
 
@@ -1470,21 +1499,21 @@ _REQUESTSUBSCRIBETOONLINE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9223,
-  serialized_end=9330,
+  serialized_start=9529,
+  serialized_end=9636,
 )
 
 
@@ -1501,21 +1530,21 @@ _REQUESTSUBSCRIBEFROMONLINE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9332,
-  serialized_end=9441,
+  serialized_start=9638,
+  serialized_end=9747,
 )
 
 
@@ -1532,21 +1561,21 @@ _REQUESTSUBSCRIBETOGROUPONLINE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9443,
-  serialized_end=9557,
+  serialized_start=9749,
+  serialized_end=9863,
 )
 
 
@@ -1563,21 +1592,21 @@ _REQUESTSUBSCRIBEFROMGROUPONLINE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9559,
-  serialized_end=9675,
+  serialized_start=9865,
+  serialized_end=9981,
 )
 
 
@@ -1594,35 +1623,42 @@ _SEQUPDATEBOX = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='state', full_name='dialog.SeqUpdateBox.state', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='update', full_name='dialog.SeqUpdateBox.update', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='unboxed_update', full_name='dialog.SeqUpdateBox.unboxed_update', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9677,
-  serialized_end=9764,
+  serialized_start=9984,
+  serialized_end=10120,
 )
 
 _UPDATESEQUPDATE.fields_by_name['updateForceReloadState'].message_type = authentication__pb2._UPDATEFORCERELOADSTATE
@@ -1711,6 +1747,10 @@ _UPDATESEQUPDATE.fields_by_name['updateRawUpdate'].message_type = _UPDATERAWUPDA
 _UPDATESEQUPDATE.fields_by_name['updateEmptyUpdate'].message_type = _UPDATEEMPTYUPDATE
 _UPDATESEQUPDATE.fields_by_name['updateCountersChanged'].message_type = counters__pb2._UPDATECOUNTERSCHANGED
 _UPDATESEQUPDATE.fields_by_name['updateConfig'].message_type = miscellaneous__pb2._UPDATECONFIG
+_UPDATESEQUPDATE.fields_by_name['updateSpaceModified'].message_type = spaces__pb2._UPDATESPACEMODIFIED
+_UPDATESEQUPDATE.fields_by_name['updateSpaceMemberModified'].message_type = spaces__pb2._UPDATESPACEMEMBERMODIFIED
+_UPDATESEQUPDATE.fields_by_name['updateMessageRejectedByHook'].message_type = messaging__pb2._UPDATEMESSAGEREJECTEDBYHOOK
+_UPDATESEQUPDATE.fields_by_name['updateMessageEditRejectedByHook'].message_type = messaging__pb2._UPDATEMESSAGEEDITREJECTEDBYHOOK
 _UPDATESEQUPDATE.oneofs_by_name['update'].fields.append(
   _UPDATESEQUPDATE.fields_by_name['updateForceReloadState'])
 _UPDATESEQUPDATE.fields_by_name['updateForceReloadState'].containing_oneof = _UPDATESEQUPDATE.oneofs_by_name['update']
@@ -1969,6 +2009,18 @@ _UPDATESEQUPDATE.fields_by_name['updateCountersChanged'].containing_oneof = _UPD
 _UPDATESEQUPDATE.oneofs_by_name['update'].fields.append(
   _UPDATESEQUPDATE.fields_by_name['updateConfig'])
 _UPDATESEQUPDATE.fields_by_name['updateConfig'].containing_oneof = _UPDATESEQUPDATE.oneofs_by_name['update']
+_UPDATESEQUPDATE.oneofs_by_name['update'].fields.append(
+  _UPDATESEQUPDATE.fields_by_name['updateSpaceModified'])
+_UPDATESEQUPDATE.fields_by_name['updateSpaceModified'].containing_oneof = _UPDATESEQUPDATE.oneofs_by_name['update']
+_UPDATESEQUPDATE.oneofs_by_name['update'].fields.append(
+  _UPDATESEQUPDATE.fields_by_name['updateSpaceMemberModified'])
+_UPDATESEQUPDATE.fields_by_name['updateSpaceMemberModified'].containing_oneof = _UPDATESEQUPDATE.oneofs_by_name['update']
+_UPDATESEQUPDATE.oneofs_by_name['update'].fields.append(
+  _UPDATESEQUPDATE.fields_by_name['updateMessageRejectedByHook'])
+_UPDATESEQUPDATE.fields_by_name['updateMessageRejectedByHook'].containing_oneof = _UPDATESEQUPDATE.oneofs_by_name['update']
+_UPDATESEQUPDATE.oneofs_by_name['update'].fields.append(
+  _UPDATESEQUPDATE.fields_by_name['updateMessageEditRejectedByHook'])
+_UPDATESEQUPDATE.fields_by_name['updateMessageEditRejectedByHook'].containing_oneof = _UPDATESEQUPDATE.oneofs_by_name['update']
 _UPDATEFATSEQUPDATE.fields_by_name['users'].message_type = users__pb2._USER
 _UPDATEFATSEQUPDATE.fields_by_name['groups'].message_type = groups__pb2._GROUP
 _UPDATEWEAKFATUPDATE.fields_by_name['users'].message_type = users__pb2._USER
@@ -1982,7 +2034,7 @@ _REQUESTGETDIFFERENCE.fields_by_name['optimizations'].enum_type = miscellaneous_
 _REQUESTGETDIFFERENCE.fields_by_name['config_hash'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
 _RESPONSEGETDIFFERENCE.fields_by_name['users'].message_type = users__pb2._USER
 _RESPONSEGETDIFFERENCE.fields_by_name['groups'].message_type = groups__pb2._GROUP
-_RESPONSEGETDIFFERENCE.fields_by_name['updates'].message_type = _UPDATECONTAINER
+_RESPONSEGETDIFFERENCE.fields_by_name['updates'].message_type = _UPDATESEQUPDATE
 _RESPONSEGETDIFFERENCE.fields_by_name['messages'].message_type = messaging__pb2._HISTORYMESSAGE
 _RESPONSEGETDIFFERENCE.fields_by_name['users_refs'].message_type = peers__pb2._USEROUTPEER
 _RESPONSEGETDIFFERENCE.fields_by_name['groups_refs'].message_type = peers__pb2._GROUPOUTPEER
@@ -2005,6 +2057,7 @@ _REQUESTSUBSCRIBEFROMONLINE.fields_by_name['users'].message_type = peers__pb2._U
 _REQUESTSUBSCRIBETOGROUPONLINE.fields_by_name['groups'].message_type = peers__pb2._GROUPOUTPEER
 _REQUESTSUBSCRIBEFROMGROUPONLINE.fields_by_name['groups'].message_type = peers__pb2._GROUPOUTPEER
 _SEQUPDATEBOX.fields_by_name['update'].message_type = google_dot_protobuf_dot_wrappers__pb2._BYTESVALUE
+_SEQUPDATEBOX.fields_by_name['unboxed_update'].message_type = _UPDATESEQUPDATE
 DESCRIPTOR.message_types_by_name['UpdateSeqUpdate'] = _UPDATESEQUPDATE
 DESCRIPTOR.message_types_by_name['UpdateFatSeqUpdate'] = _UPDATEFATSEQUPDATE
 DESCRIPTOR.message_types_by_name['UpdateWeakUpdate'] = _UPDATEWEAKUPDATE
@@ -2184,127 +2237,71 @@ SeqUpdateBox = _reflection.GeneratedProtocolMessageType('SeqUpdateBox', (_messag
 _sym_db.RegisterMessage(SeqUpdateBox)
 
 
-DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\342?\026\n\024im.dlg.grpc.services'))
-_UPDATESEQUPDATE.fields_by_name['seq'].has_options = True
-_UPDATESEQUPDATE.fields_by_name['seq']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATESEQUPDATE.fields_by_name['state'].has_options = True
-_UPDATESEQUPDATE.fields_by_name['state']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_UPDATESEQUPDATE.fields_by_name['update_header'].has_options = True
-_UPDATESEQUPDATE.fields_by_name['update_header']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEFATSEQUPDATE.fields_by_name['seq'].has_options = True
-_UPDATEFATSEQUPDATE.fields_by_name['seq']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEFATSEQUPDATE.fields_by_name['state'].has_options = True
-_UPDATEFATSEQUPDATE.fields_by_name['state']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_UPDATEFATSEQUPDATE.fields_by_name['update_header'].has_options = True
-_UPDATEFATSEQUPDATE.fields_by_name['update_header']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEFATSEQUPDATE.fields_by_name['update'].has_options = True
-_UPDATEFATSEQUPDATE.fields_by_name['update']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_UPDATEFATSEQUPDATE.fields_by_name['users'].has_options = True
-_UPDATEFATSEQUPDATE.fields_by_name['users']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_UPDATEFATSEQUPDATE.fields_by_name['groups'].has_options = True
-_UPDATEFATSEQUPDATE.fields_by_name['groups']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_UPDATEWEAKUPDATE.fields_by_name['date'].has_options = True
-_UPDATEWEAKUPDATE.fields_by_name['date']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEWEAKUPDATE.fields_by_name['update_header'].has_options = True
-_UPDATEWEAKUPDATE.fields_by_name['update_header']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEWEAKUPDATE.fields_by_name['update'].has_options = True
-_UPDATEWEAKUPDATE.fields_by_name['update']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_UPDATEWEAKFATUPDATE.fields_by_name['date'].has_options = True
-_UPDATEWEAKFATUPDATE.fields_by_name['date']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEWEAKFATUPDATE.fields_by_name['update_header'].has_options = True
-_UPDATEWEAKFATUPDATE.fields_by_name['update_header']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEWEAKFATUPDATE.fields_by_name['update'].has_options = True
-_UPDATEWEAKFATUPDATE.fields_by_name['update']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEWEAKFATUPDATE.fields_by_name['users'].has_options = True
-_UPDATEWEAKFATUPDATE.fields_by_name['users']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEWEAKFATUPDATE.fields_by_name['groups'].has_options = True
-_UPDATEWEAKFATUPDATE.fields_by_name['groups']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATECONTAINER.fields_by_name['update_header'].has_options = True
-_UPDATECONTAINER.fields_by_name['update_header']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATECONTAINER.fields_by_name['update'].has_options = True
-_UPDATECONTAINER.fields_by_name['update']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_UPDATECOMBINEDUPDATE.fields_by_name['seq_start'].has_options = True
-_UPDATECOMBINEDUPDATE.fields_by_name['seq_start']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATECOMBINEDUPDATE.fields_by_name['seq_end'].has_options = True
-_UPDATECOMBINEDUPDATE.fields_by_name['seq_end']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATECOMBINEDUPDATE.fields_by_name['state'].has_options = True
-_UPDATECOMBINEDUPDATE.fields_by_name['state']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATECOMBINEDUPDATE.fields_by_name['users'].has_options = True
-_UPDATECOMBINEDUPDATE.fields_by_name['users']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_UPDATECOMBINEDUPDATE.fields_by_name['groups'].has_options = True
-_UPDATECOMBINEDUPDATE.fields_by_name['groups']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_UPDATECOMBINEDUPDATE.fields_by_name['updates'].has_options = True
-_UPDATECOMBINEDUPDATE.fields_by_name['updates']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATECOMBINEDUPDATE.fields_by_name['messages'].has_options = True
-_UPDATECOMBINEDUPDATE.fields_by_name['messages']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTGETSTATE.fields_by_name['optimizations'].has_options = True
-_REQUESTGETSTATE.fields_by_name['optimizations']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTGETSTATE.has_options = True
-_REQUESTGETSTATE._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTGETDIFFERENCE.fields_by_name['seq'].has_options = True
-_REQUESTGETDIFFERENCE.fields_by_name['seq']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTGETDIFFERENCE.fields_by_name['state'].has_options = True
-_REQUESTGETDIFFERENCE.fields_by_name['state']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_REQUESTGETDIFFERENCE.fields_by_name['optimizations'].has_options = True
-_REQUESTGETDIFFERENCE.fields_by_name['optimizations']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTGETDIFFERENCE.fields_by_name['config_hash'].has_options = True
-_REQUESTGETDIFFERENCE.fields_by_name['config_hash']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTGETDIFFERENCE.has_options = True
-_REQUESTGETDIFFERENCE._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSEGETDIFFERENCE.has_options = True
-_RESPONSEGETDIFFERENCE._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_REQUESTGETDIALOGSDIFFERENCE.fields_by_name['clock'].has_options = True
-_REQUESTGETDIALOGSDIFFERENCE.fields_by_name['clock']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTGETDIALOGSDIFFERENCE.has_options = True
-_REQUESTGETDIALOGSDIFFERENCE._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSEGETDIALOGSDIFFERENCE.has_options = True
-_RESPONSEGETDIALOGSDIFFERENCE._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_GROUPMEMBERSSUBSET.fields_by_name['group_peer'].has_options = True
-_GROUPMEMBERSSUBSET.fields_by_name['group_peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_GROUPMEMBERSSUBSET.fields_by_name['member_ids'].has_options = True
-_GROUPMEMBERSSUBSET.fields_by_name['member_ids']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTGETREFERENCEDENTITITES.fields_by_name['users'].has_options = True
-_REQUESTGETREFERENCEDENTITITES.fields_by_name['users']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_REQUESTGETREFERENCEDENTITITES.fields_by_name['mids'].has_options = True
-_REQUESTGETREFERENCEDENTITITES.fields_by_name['mids']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTGETREFERENCEDENTITITES.fields_by_name['group_members'].has_options = True
-_REQUESTGETREFERENCEDENTITITES.fields_by_name['group_members']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTGETREFERENCEDENTITITES.fields_by_name['groups'].has_options = True
-_REQUESTGETREFERENCEDENTITITES.fields_by_name['groups']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTGETREFERENCEDENTITITES.has_options = True
-_REQUESTGETREFERENCEDENTITITES._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSEGETREFERENCEDENTITITES.has_options = True
-_RESPONSEGETREFERENCEDENTITITES._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_UPDATERAWUPDATE.fields_by_name['type'].has_options = True
-_UPDATERAWUPDATE.fields_by_name['type']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATERAWUPDATE.fields_by_name['bytes'].has_options = True
-_UPDATERAWUPDATE.fields_by_name['bytes']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSUBSCRIBETOONLINE.fields_by_name['users'].has_options = True
-_REQUESTSUBSCRIBETOONLINE.fields_by_name['users']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_REQUESTSUBSCRIBETOONLINE.has_options = True
-_REQUESTSUBSCRIBETOONLINE._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTSUBSCRIBEFROMONLINE.fields_by_name['users'].has_options = True
-_REQUESTSUBSCRIBEFROMONLINE.fields_by_name['users']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_REQUESTSUBSCRIBEFROMONLINE.has_options = True
-_REQUESTSUBSCRIBEFROMONLINE._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTSUBSCRIBETOGROUPONLINE.fields_by_name['groups'].has_options = True
-_REQUESTSUBSCRIBETOGROUPONLINE.fields_by_name['groups']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_REQUESTSUBSCRIBETOGROUPONLINE.has_options = True
-_REQUESTSUBSCRIBETOGROUPONLINE._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTSUBSCRIBEFROMGROUPONLINE.fields_by_name['groups'].has_options = True
-_REQUESTSUBSCRIBEFROMGROUPONLINE.fields_by_name['groups']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_REQUESTSUBSCRIBEFROMGROUPONLINE.has_options = True
-_REQUESTSUBSCRIBEFROMGROUPONLINE._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
+DESCRIPTOR._options = None
+_UPDATESEQUPDATE.fields_by_name['seq']._options = None
+_UPDATESEQUPDATE.fields_by_name['state']._options = None
+_UPDATESEQUPDATE.fields_by_name['update_header']._options = None
+_UPDATEFATSEQUPDATE.fields_by_name['seq']._options = None
+_UPDATEFATSEQUPDATE.fields_by_name['state']._options = None
+_UPDATEFATSEQUPDATE.fields_by_name['update_header']._options = None
+_UPDATEFATSEQUPDATE.fields_by_name['update']._options = None
+_UPDATEFATSEQUPDATE.fields_by_name['users']._options = None
+_UPDATEFATSEQUPDATE.fields_by_name['groups']._options = None
+_UPDATEWEAKUPDATE.fields_by_name['date']._options = None
+_UPDATEWEAKUPDATE.fields_by_name['update_header']._options = None
+_UPDATEWEAKUPDATE.fields_by_name['update']._options = None
+_UPDATEWEAKFATUPDATE.fields_by_name['date']._options = None
+_UPDATEWEAKFATUPDATE.fields_by_name['update_header']._options = None
+_UPDATEWEAKFATUPDATE.fields_by_name['update']._options = None
+_UPDATEWEAKFATUPDATE.fields_by_name['users']._options = None
+_UPDATEWEAKFATUPDATE.fields_by_name['groups']._options = None
+_UPDATECONTAINER.fields_by_name['update_header']._options = None
+_UPDATECONTAINER.fields_by_name['update']._options = None
+_UPDATECOMBINEDUPDATE.fields_by_name['seq_start']._options = None
+_UPDATECOMBINEDUPDATE.fields_by_name['seq_end']._options = None
+_UPDATECOMBINEDUPDATE.fields_by_name['state']._options = None
+_UPDATECOMBINEDUPDATE.fields_by_name['users']._options = None
+_UPDATECOMBINEDUPDATE.fields_by_name['groups']._options = None
+_UPDATECOMBINEDUPDATE.fields_by_name['updates']._options = None
+_UPDATECOMBINEDUPDATE.fields_by_name['messages']._options = None
+_REQUESTGETSTATE.fields_by_name['optimizations']._options = None
+_REQUESTGETSTATE._options = None
+_REQUESTGETDIFFERENCE.fields_by_name['seq']._options = None
+_REQUESTGETDIFFERENCE.fields_by_name['state']._options = None
+_REQUESTGETDIFFERENCE.fields_by_name['optimizations']._options = None
+_REQUESTGETDIFFERENCE.fields_by_name['config_hash']._options = None
+_REQUESTGETDIFFERENCE._options = None
+_RESPONSEGETDIFFERENCE._options = None
+_REQUESTGETDIALOGSDIFFERENCE.fields_by_name['clock']._options = None
+_REQUESTGETDIALOGSDIFFERENCE._options = None
+_RESPONSEGETDIALOGSDIFFERENCE._options = None
+_GROUPMEMBERSSUBSET.fields_by_name['group_peer']._options = None
+_GROUPMEMBERSSUBSET.fields_by_name['member_ids']._options = None
+_REQUESTGETREFERENCEDENTITITES.fields_by_name['users']._options = None
+_REQUESTGETREFERENCEDENTITITES.fields_by_name['mids']._options = None
+_REQUESTGETREFERENCEDENTITITES.fields_by_name['group_members']._options = None
+_REQUESTGETREFERENCEDENTITITES.fields_by_name['groups']._options = None
+_REQUESTGETREFERENCEDENTITITES._options = None
+_RESPONSEGETREFERENCEDENTITITES._options = None
+_UPDATERAWUPDATE.fields_by_name['type']._options = None
+_UPDATERAWUPDATE.fields_by_name['bytes']._options = None
+_REQUESTSUBSCRIBETOONLINE.fields_by_name['users']._options = None
+_REQUESTSUBSCRIBETOONLINE._options = None
+_REQUESTSUBSCRIBEFROMONLINE.fields_by_name['users']._options = None
+_REQUESTSUBSCRIBEFROMONLINE._options = None
+_REQUESTSUBSCRIBETOGROUPONLINE.fields_by_name['groups']._options = None
+_REQUESTSUBSCRIBETOGROUPONLINE._options = None
+_REQUESTSUBSCRIBEFROMGROUPONLINE.fields_by_name['groups']._options = None
+_REQUESTSUBSCRIBEFROMGROUPONLINE._options = None
 
 _SEQUENCEANDUPDATES = _descriptor.ServiceDescriptor(
   name='SequenceAndUpdates',
   full_name='dialog.SequenceAndUpdates',
   file=DESCRIPTOR,
   index=0,
-  options=None,
-  serialized_start=9767,
-  serialized_end=11056,
+  serialized_options=None,
+  serialized_start=10123,
+  serialized_end=11412,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetState',
@@ -2313,7 +2310,7 @@ _SEQUENCEANDUPDATES = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTGETSTATE,
     output_type=miscellaneous__pb2._RESPONSESEQ,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002)\"$/v1/grpc/SequenceAndUpdates/GetState:\001*')),
+    serialized_options=_b('\202\323\344\223\002)\"$/v1/grpc/SequenceAndUpdates/GetState:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='GetDifference',
@@ -2322,7 +2319,7 @@ _SEQUENCEANDUPDATES = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTGETDIFFERENCE,
     output_type=_RESPONSEGETDIFFERENCE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002.\")/v1/grpc/SequenceAndUpdates/GetDifference:\001*')),
+    serialized_options=_b('\202\323\344\223\002.\")/v1/grpc/SequenceAndUpdates/GetDifference:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='GetDialogsDifference',
@@ -2331,7 +2328,7 @@ _SEQUENCEANDUPDATES = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTGETDIALOGSDIFFERENCE,
     output_type=_RESPONSEGETDIALOGSDIFFERENCE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\0025\"0/v1/grpc/SequenceAndUpdates/GetDialogsDifference:\001*')),
+    serialized_options=_b('\202\323\344\223\0025\"0/v1/grpc/SequenceAndUpdates/GetDialogsDifference:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='GetReferencedEntitites',
@@ -2340,7 +2337,7 @@ _SEQUENCEANDUPDATES = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTGETREFERENCEDENTITITES,
     output_type=_RESPONSEGETREFERENCEDENTITITES,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\0027\"2/v1/grpc/SequenceAndUpdates/GetReferencedEntitites:\001*')),
+    serialized_options=_b('\202\323\344\223\0027\"2/v1/grpc/SequenceAndUpdates/GetReferencedEntitites:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='SubscribeToOnline',
@@ -2349,7 +2346,7 @@ _SEQUENCEANDUPDATES = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTSUBSCRIBETOONLINE,
     output_type=miscellaneous__pb2._RESPONSEVOID,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\0022\"-/v1/grpc/SequenceAndUpdates/SubscribeToOnline:\001*')),
+    serialized_options=_b('\202\323\344\223\0022\"-/v1/grpc/SequenceAndUpdates/SubscribeToOnline:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='SubscribeFromOnline',
@@ -2358,7 +2355,7 @@ _SEQUENCEANDUPDATES = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTSUBSCRIBEFROMONLINE,
     output_type=miscellaneous__pb2._RESPONSEVOID,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\0024\"//v1/grpc/SequenceAndUpdates/SubscribeFromOnline:\001*')),
+    serialized_options=_b('\202\323\344\223\0024\"//v1/grpc/SequenceAndUpdates/SubscribeFromOnline:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='SubscribeToGroupOnline',
@@ -2367,7 +2364,7 @@ _SEQUENCEANDUPDATES = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTSUBSCRIBETOGROUPONLINE,
     output_type=miscellaneous__pb2._RESPONSEVOID,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\0027\"2/v1/grpc/SequenceAndUpdates/SubscribeToGroupOnline:\001*')),
+    serialized_options=_b('\202\323\344\223\0027\"2/v1/grpc/SequenceAndUpdates/SubscribeToGroupOnline:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='SubscribeFromGroupOnline',
@@ -2376,7 +2373,7 @@ _SEQUENCEANDUPDATES = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTSUBSCRIBEFROMGROUPONLINE,
     output_type=miscellaneous__pb2._RESPONSEVOID,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\0029\"4/v1/grpc/SequenceAndUpdates/SubscribeFromGroupOnline:\001*')),
+    serialized_options=_b('\202\323\344\223\0029\"4/v1/grpc/SequenceAndUpdates/SubscribeFromGroupOnline:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='SeqUpdates',
@@ -2385,7 +2382,7 @@ _SEQUENCEANDUPDATES = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     output_type=_SEQUPDATEBOX,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002+\"&/v1/grpc/SequenceAndUpdates/SeqUpdates:\001*')),
+    serialized_options=_b('\202\323\344\223\002+\"&/v1/grpc/SequenceAndUpdates/SeqUpdates:\001*'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_SEQUENCEANDUPDATES)

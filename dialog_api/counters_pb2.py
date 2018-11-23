@@ -7,7 +7,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -24,6 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='counters.proto',
   package='dialog',
   syntax='proto3',
+  serialized_options=_b('\342?\026\n\024im.dlg.grpc.services'),
   serialized_pb=_b('\n\x0e\x63ounters.proto\x12\x06\x64ialog\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x11\x64\x65\x66initions.proto\x1a\x0bpeers.proto\x1a\x15scalapb/scalapb.proto\"Y\n\x0cUnreadDialog\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1e\n\x07\x63ounter\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\"\xda\x01\n\x0b\x41ppCounters\x12\x42\n\x0eglobal_counter\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\r\x8a\xea\x30\t\n\x07visible\x12J\n\x16global_dialogs_counter\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\r\x8a\xea\x30\t\n\x07visible\x12;\n\x0eunread_dialogs\x18\x03 \x03(\x0b\x32\x14.dialog.UnreadDialogB\r\x8a\xea\x30\t\n\x07visible\"\x85\x01\n\x15UpdateCountersChanged\x12\x34\n\x08\x63ounters\x18\x01 \x01(\x0b\x32\x13.dialog.AppCountersB\r\x8a\xea\x30\t\n\x07visible\x12\x36\n\x02ts\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\r\x8a\xea\x30\t\n\x07visibleB\x19\xe2?\x16\n\x14im.dlg.grpc.servicesb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,definitions__pb2.DESCRIPTOR,peers__pb2.DESCRIPTOR,scalapb_dot_scalapb__pb2.DESCRIPTOR,])
@@ -44,21 +44,21 @@ _UNREADDIALOG = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='counter', full_name='dialog.UnreadDialog.counter', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -82,28 +82,28 @@ _APPCOUNTERS = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='global_dialogs_counter', full_name='dialog.AppCounters.global_dialogs_counter', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='unread_dialogs', full_name='dialog.AppCounters.unread_dialogs', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -127,21 +127,21 @@ _UPDATECOUNTERSCHANGED = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='ts', full_name='dialog.UpdateCountersChanged.ts', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -184,20 +184,12 @@ UpdateCountersChanged = _reflection.GeneratedProtocolMessageType('UpdateCounters
 _sym_db.RegisterMessage(UpdateCountersChanged)
 
 
-DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\342?\026\n\024im.dlg.grpc.services'))
-_UNREADDIALOG.fields_by_name['peer'].has_options = True
-_UNREADDIALOG.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UNREADDIALOG.fields_by_name['counter'].has_options = True
-_UNREADDIALOG.fields_by_name['counter']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_APPCOUNTERS.fields_by_name['global_counter'].has_options = True
-_APPCOUNTERS.fields_by_name['global_counter']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_APPCOUNTERS.fields_by_name['global_dialogs_counter'].has_options = True
-_APPCOUNTERS.fields_by_name['global_dialogs_counter']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_APPCOUNTERS.fields_by_name['unread_dialogs'].has_options = True
-_APPCOUNTERS.fields_by_name['unread_dialogs']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATECOUNTERSCHANGED.fields_by_name['counters'].has_options = True
-_UPDATECOUNTERSCHANGED.fields_by_name['counters']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATECOUNTERSCHANGED.fields_by_name['ts'].has_options = True
-_UPDATECOUNTERSCHANGED.fields_by_name['ts']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
+DESCRIPTOR._options = None
+_UNREADDIALOG.fields_by_name['peer']._options = None
+_UNREADDIALOG.fields_by_name['counter']._options = None
+_APPCOUNTERS.fields_by_name['global_counter']._options = None
+_APPCOUNTERS.fields_by_name['global_dialogs_counter']._options = None
+_APPCOUNTERS.fields_by_name['unread_dialogs']._options = None
+_UPDATECOUNTERSCHANGED.fields_by_name['counters']._options = None
+_UPDATECOUNTERSCHANGED.fields_by_name['ts']._options = None
 # @@protoc_insertion_point(module_scope)

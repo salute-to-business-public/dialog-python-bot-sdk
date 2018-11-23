@@ -8,7 +8,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -27,6 +26,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='web_rtc.proto',
   package='dialog',
   syntax='proto3',
+  serialized_options=_b('\342?\026\n\024im.dlg.grpc.services'),
   serialized_pb=_b('\n\rweb_rtc.proto\x12\x06\x64ialog\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x11\x64\x65\x66initions.proto\x1a\x13miscellaneous.proto\x1a\x0bpeers.proto\x1a\x11\x64\x65vice_info.proto\x1a\x15scalapb/scalapb.proto\"\x81\x01\n\x1cUpdateIncomingCallDeprecated\x12\x1e\n\x07\x63\x61ll_id\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x41\n\rattempt_index\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\r\x8a\xea\x30\t\n\x07visible\"\xca\x02\n\x12UpdateIncomingCall\x12\x1e\n\x07\x63\x61ll_id\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12#\n\x0c\x65vent_bus_id\x18\x02 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x04peer\x18\x03 \x01(\x0b\x32\x0c.dialog.Peer\x12@\n\x0c\x64isplay_name\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x41\n\rattempt_index\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\r\x8a\xea\x30\t\n\x07visible\x12\x30\n\x08out_peer\x18\x06 \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05video\x18\x07 \x01(\x08\x42\r\x8a\xea\x30\t\n\x07visible\"v\n\x11UpdateCallHandled\x12\x1e\n\x07\x63\x61ll_id\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x41\n\rattempt_index\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\r\x8a\xea\x30\t\n\x07visible\"\xa3\x01\n\x12UpdateCallDisposed\x12\x1e\n\x07\x63\x61ll_id\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x41\n\rattempt_index\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\r\x8a\xea\x30\t\n\x07visible\x12*\n\x06reason\x18\x03 \x01(\x0e\x32\x1a.dialog.CallDisposedReason\"R\n\x12RequestGetCallInfo\x12\x1e\n\x07\x63\x61ll_id\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xe4\x01\n\x13ResponseGetCallInfo\x12\x1a\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.Peer\x12$\n\x06groups\x18\x02 \x03(\x0b\x32\x14.dialog.GroupOutPeer\x12\"\n\x05users\x18\x03 \x03(\x0b\x32\x13.dialog.UserOutPeer\x12\x14\n\x0c\x65vent_bus_id\x18\x04 \x01(\t\x12\x32\n\x0c\x64isplay_name\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.StringValue:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\xca\x03\n\x0c\x43\x61llLogEntry\x12\x19\n\x02id\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12 \n\tcall_date\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x31\n\tinitiator\x18\x03 \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible\x12\x31\n\trecipient\x18\x04 \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible\x12<\n\x08\x64uration\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\r\x8a\xea\x30\t\n\x07visible\x12;\n\x08\x61nswered\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12,\n\x08\x66inished\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12@\n\x0c\x64isplay_name\x18\x08 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12,\n\x08rejected\x18\t \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"\x8f\x01\n\x10RequestLoadCalls\x12?\n\x0bnext_offset\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.BytesValueB\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05limit\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xd3\x01\n\x11ResponseLoadCalls\x12#\n\x05\x63\x61lls\x18\x01 \x03(\x0b\x32\x14.dialog.CallLogEntry\x12\"\n\x05users\x18\x02 \x03(\x0b\x32\x13.dialog.UserOutPeer\x12$\n\x06groups\x18\x03 \x03(\x0b\x32\x14.dialog.GroupOutPeer\x12\x30\n\x0bnext_offset\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.BytesValue:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"l\n\rRequestDoCall\x12,\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible\x12\x0f\n\x07timeout\x18\x02 \x01(\x03:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"i\n\x0eResponseDoCall\x12\x0f\n\x07\x63\x61ll_id\x18\x01 \x01(\x03\x12\x14\n\x0c\x65vent_bus_id\x18\x02 \x01(\t\x12\x11\n\tdevice_id\x18\x03 \x01(\x03:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"O\n\x0fRequestJoinCall\x12\x1e\n\x07\x63\x61ll_id\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"{\n\x11RequestRejectCall\x12\x1e\n\x07\x63\x61ll_id\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12(\n\x06reason\x18\x02 \x01(\x0e\x32\x18.dialog.RejectCallReason:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"Q\n\x11RequestDeleteCall\x12\x1e\n\x07\x63\x61ll_id\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x9e\x01\n\x1cRequestChangeCallDisplayName\x12\x1e\n\x07\x63\x61ll_id\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12@\n\x0c\x64isplay_name\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xa5\x01\n\tICEServer\x12\x1a\n\x03url\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12<\n\x08username\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06\x64\x61nger\x12>\n\ncredential\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06\x64\x61nger\"F\n\x0cICECandidate\x12\x18\n\x10sdp_m_line_index\x18\x01 \x01(\x05\x12\x0f\n\x07sdp_mid\x18\x02 \x01(\t\x12\x0b\n\x03sdp\x18\x03 \x01(\t\"\xc3\x06\n\x0fWebRTCSignaling\x12.\n\radvertiseSelf\x18\x01 \x01(\x0b\x32\x15.dialog.AdvertiseSelfH\x00\x12\x32\n\x0f\x61\x64vertiseMaster\x18\x02 \x01(\x0b\x32\x17.dialog.AdvertiseMasterH\x00\x12.\n\radvertisePeer\x18\x03 \x01(\x0b\x32\x15.dialog.AdvertisePeerH\x00\x12&\n\tcandidate\x18\x04 \x01(\x0b\x32\x11.dialog.CandidateH\x00\x12\x32\n\x0fgotICECandidate\x18\x05 \x01(\x0b\x32\x17.dialog.GotICECandidateH\x00\x12<\n\x14removedICECandidates\x18\x06 \x01(\x0b\x32\x1c.dialog.RemovedICECandidatesH\x00\x12\x1e\n\x05offer\x18\x07 \x01(\x0b\x32\r.dialog.OfferH\x00\x12 \n\x06\x61nswer\x18\x08 \x01(\x0b\x32\x0e.dialog.AnswerH\x00\x12&\n\tneedOffer\x18\t \x01(\x0b\x32\x11.dialog.NeedOfferH\x00\x12@\n\x16negotinationSuccessful\x18\n \x01(\x0b\x32\x1e.dialog.NegotinationSuccessfulH\x00\x12\x34\n\x10\x65nableConnection\x18\x0b \x01(\x0b\x32\x18.dialog.EnableConnectionH\x00\x12>\n\x15onRenegotiationNeeded\x18\x0c \x01(\x0b\x32\x1d.dialog.OnRenegotiationNeededH\x00\x12,\n\x0c\x63loseSession\x18\r \x01(\x0b\x32\x14.dialog.CloseSessionH\x00\x12\x30\n\x0eneedDisconnect\x18\x0e \x01(\x0b\x32\x16.dialog.NeedDisconnectH\x00\x12\x1c\n\x04\x64TMF\x18\x0f \x01(\x0b\x32\x0c.dialog.DTMFH\x00\x12&\n\tcallStats\x18\x10 \x01(\x0b\x32\x11.dialog.CallStatsH\x00\x12\x32\n\x0f\x63\x61llNameChanged\x18\x11 \x01(\x0b\x32\x17.dialog.CallNameChangedH\x00\x42\x06\n\x04\x62ody\"K\n\rAdvertiseSelf\x12:\n\rpeer_settings\x18\x01 \x01(\x0b\x32\x14.dialog.PeerSettingsB\r\x8a\xea\x30\t\n\x07visible\"\xba\x01\n\x0f\x41\x64vertiseMaster\x12\x30\n\x06server\x18\x01 \x03(\x0b\x32\x11.dialog.ICEServerB\r\x8a\xea\x30\t\n\x07visible\x12\x44\n\x10\x63\x61ll_api_version\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\r\x8a\xea\x30\t\n\x07visible\x12/\n\tcall_name\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValue\"\xa4\x01\n\rAdvertisePeer\x12 \n\tdevice_id\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12:\n\rpeer_settings\x18\x02 \x01(\x0b\x32\x14.dialog.PeerSettingsB\r\x8a\xea\x30\t\n\x07visible\x12\x35\n\x0bice_servers\x18\x03 \x03(\x0b\x32\x11.dialog.ICEServerB\r\x8a\xea\x30\t\n\x07visible\"\x83\x01\n\tCandidate\x12!\n\nsession_id\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05index\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x19\n\x02id\x18\x03 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03sdp\x18\x04 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\"N\n\x0fGotICECandidate\x12\x12\n\nsession_id\x18\x01 \x01(\x03\x12\'\n\tcandidate\x18\x02 \x01(\x0b\x32\x14.dialog.ICECandidate\"S\n\x14RemovedICECandidates\x12\x12\n\nsession_id\x18\x01 \x01(\x03\x12\'\n\tcandidate\x18\x02 \x03(\x0b\x32\x14.dialog.ICECandidate\"\x82\x01\n\x05Offer\x12!\n\nsession_id\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03sdp\x18\x02 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12:\n\rpeer_settings\x18\x03 \x01(\x0b\x32\x14.dialog.PeerSettingsB\r\x8a\xea\x30\t\n\x07visible\"G\n\x06\x41nswer\x12!\n\nsession_id\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03sdp\x18\x02 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\"\x89\x01\n\tNeedOffer\x12\x1d\n\x06\x64\x65vice\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12!\n\nsession_id\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12:\n\rpeer_settings\x18\x03 \x01(\x0b\x32\x14.dialog.PeerSettingsB\r\x8a\xea\x30\t\n\x07visible\"Z\n\x16NegotinationSuccessful\x12\x1d\n\x06\x64\x65vice\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12!\n\nsession_id\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\"T\n\x10\x45nableConnection\x12\x1d\n\x06\x64\x65vice\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12!\n\nsession_id\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\"Y\n\x15OnRenegotiationNeeded\x12\x1d\n\x06\x64\x65vice\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12!\n\nsession_id\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\"P\n\x0c\x43loseSession\x12\x1d\n\x06\x64\x65vice\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12!\n\nsession_id\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\".\n\x0eNeedDisconnect\x12\x1c\n\x06\x64\x65vice\x18\x01 \x01(\x03\x42\x0c\x8a\xea\x30\x08\n\x06hidden\"V\n\x04\x44TMF\x12-\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x10.dialog.DTMFCodeB\r\x8a\xea\x30\t\n\x07visible\x12\x1f\n\x08\x64uration\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\"]\n\tCallStats\x12\x32\n\x04type\x18\x01 \x01(\x0e\x32\x15.dialog.CallStatsTypeB\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05value\x18\x02 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\"B\n\x0f\x43\x61llNameChanged\x12/\n\tcall_name\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.StringValue\"\x90\x01\n\nActiveCall\x12\x1e\n\x07\x63\x61ll_id\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12)\n\x04peer\x18\x02 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12\x37\n\x0c\x63\x61ll_members\x18\x03 \x03(\x0b\x32\x12.dialog.CallMemberB\r\x8a\xea\x30\t\n\x07visible\"\xc1\x03\n\x15\x43\x61llMemberStateHolder\x12\x35\n\x05state\x18\x01 \x01(\x0e\x32\x17.dialog.CallMemberStateB\r\x8a\xea\x30\t\n\x07visible\x12\x46\n\x13\x66\x61llback_is_ringing\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12H\n\x15\x66\x61llback_is_connected\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12I\n\x16\x66\x61llback_is_connecting\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12N\n\x1b\x66\x61llback_is_ringing_reached\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12\x44\n\x11\x66\x61llback_is_ended\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\"i\n\nCallMember\x12\x1e\n\x07user_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12;\n\x05state\x18\x03 \x01(\x0b\x32\x1d.dialog.CallMemberStateHolderB\r\x8a\xea\x30\t\n\x07visible\"\x92\x02\n\x0cPeerSettings\x12\x42\n\x0f\x63\x61n_pre_connect\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12>\n\x0bsends_offer\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12\x46\n\x13wait_for_candidates\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12\x36\n\x0b\x63lient_info\x18\x07 \x01(\x0b\x32\x12.dialog.ClientInfoB\r\x8a\xea\x30\t\n\x07visible*\xb7\x01\n\x12\x43\x61llDisposedReason\x12\x1e\n\x1a\x43\x41LLDISPOSEDREASON_UNKNOWN\x10\x00\x12\x1f\n\x1b\x43\x41LLDISPOSEDREASON_REJECTED\x10\x01\x12\x1b\n\x17\x43\x41LLDISPOSEDREASON_BUSY\x10\x02\x12\x1c\n\x18\x43\x41LLDISPOSEDREASON_ENDED\x10\x03\x12%\n!CALLDISPOSEDREASON_ANSWER_TIMEOUT\x10\x04*i\n\x10RejectCallReason\x12\x1c\n\x18REJECTCALLREASON_UNKNOWN\x10\x00\x12\x1c\n\x18REJECTCALLREASON_DECLINE\x10\x01\x12\x19\n\x15REJECTCALLREASON_BUSY\x10\x02*\xc9\x02\n\x08\x44TMFCode\x12\x14\n\x10\x44TMFCODE_UNKNOWN\x10\x00\x12\x11\n\rDTMFCODE_ZERO\x10\x01\x12\x10\n\x0c\x44TMFCODE_ONE\x10\x02\x12\x10\n\x0c\x44TMFCODE_TWO\x10\x03\x12\x12\n\x0e\x44TMFCODE_THREE\x10\x04\x12\x11\n\rDTMFCODE_FOUR\x10\x05\x12\x11\n\rDTMFCODE_FIVE\x10\x06\x12\x10\n\x0c\x44TMFCODE_SIX\x10\x07\x12\x12\n\x0e\x44TMFCODE_SEVEN\x10\x08\x12\x12\n\x0e\x44TMFCODE_EIGHT\x10\t\x12\x11\n\rDTMFCODE_NINE\x10\n\x12\x15\n\x11\x44TMFCODE_ASTERISK\x10\x0b\x12\x12\n\x0e\x44TMFCODE_POUND\x10\x0c\x12\x0e\n\nDTMFCODE_A\x10\r\x12\x0e\n\nDTMFCODE_B\x10\x0e\x12\x0e\n\nDTMFCODE_C\x10\x0f\x12\x0e\n\nDTMFCODE_D\x10\x10*\x81\x04\n\rCallStatsType\x12\x19\n\x15\x43\x41LLSTATSTYPE_UNKNOWN\x10\x00\x12-\n)CALLSTATSTYPE_TURN_SERVER_ROUND_TRIP_TIME\x10\x01\x12\'\n#CALLSTATSTYPE_ICE_CONNECTION_FAILED\x10\x02\x12*\n&CALLSTATSTYPE_ICE_CONNECTION_CONNECTED\x10\x03\x12\x30\n,CALLSTATSTYPE_ICE_CONNECTION_DID_NOT_CONNECT\x10\x04\x12/\n+CALLSTATSTYPE_ICE_CONNECTION_CONNECTED_TIME\x10\x05\x12\x36\n2CALLSTATSTYPE_PEER_CONNECTION_CREATE_ANSWER_FAILED\x10\x06\x12\x35\n1CALLSTATSTYPE_PEER_CONNECTION_CREATE_OFFER_FAILED\x10\x07\x12?\n;CALLSTATSTYPE_PEER_CONNECTION_SET_REMOTE_DESCRIPTION_FAILED\x10\x08\x12>\n:CALLSTATSTYPE_PEER_CONNECTION_SET_LOCAL_DESCRIPTION_FAILED\x10\t*\xca\x01\n\x0f\x43\x61llMemberState\x12\x1b\n\x17\x43\x41LLMEMBERSTATE_UNKNOWN\x10\x00\x12\x1b\n\x17\x43\x41LLMEMBERSTATE_RINGING\x10\x01\x12#\n\x1f\x43\x41LLMEMBERSTATE_RINGING_REACHED\x10\x04\x12\x1e\n\x1a\x43\x41LLMEMBERSTATE_CONNECTING\x10\x02\x12\x1d\n\x19\x43\x41LLMEMBERSTATE_CONNECTED\x10\x03\x12\x19\n\x15\x43\x41LLMEMBERSTATE_ENDED\x10\x05\x32\xf0\x05\n\x06WebRTC\x12n\n\x0bGetCallInfo\x12\x1a.dialog.RequestGetCallInfo\x1a\x1b.dialog.ResponseGetCallInfo\"&\x82\xd3\xe4\x93\x02 \"\x1b/v1/grpc/WebRTC/GetCallInfo:\x01*\x12\x66\n\tLoadCalls\x12\x18.dialog.RequestLoadCalls\x1a\x19.dialog.ResponseLoadCalls\"$\x82\xd3\xe4\x93\x02\x1e\"\x19/v1/grpc/WebRTC/LoadCalls:\x01*\x12Z\n\x06\x44oCall\x12\x15.dialog.RequestDoCall\x1a\x16.dialog.ResponseDoCall\"!\x82\xd3\xe4\x93\x02\x1b\"\x16/v1/grpc/WebRTC/DoCall:\x01*\x12^\n\x08JoinCall\x12\x17.dialog.RequestJoinCall\x1a\x14.dialog.ResponseVoid\"#\x82\xd3\xe4\x93\x02\x1d\"\x18/v1/grpc/WebRTC/JoinCall:\x01*\x12\x64\n\nRejectCall\x12\x19.dialog.RequestRejectCall\x1a\x14.dialog.ResponseVoid\"%\x82\xd3\xe4\x93\x02\x1f\"\x1a/v1/grpc/WebRTC/RejectCall:\x01*\x12\x85\x01\n\x15\x43hangeCallDisplayName\x12$.dialog.RequestChangeCallDisplayName\x1a\x14.dialog.ResponseVoid\"0\x82\xd3\xe4\x93\x02*\"%/v1/grpc/WebRTC/ChangeCallDisplayName:\x01*\x12\x64\n\nDeleteCall\x12\x19.dialog.RequestDeleteCall\x1a\x14.dialog.ResponseVoid\"%\x82\xd3\xe4\x93\x02\x1f\"\x1a/v1/grpc/WebRTC/DeleteCall:\x01*B\x19\xe2?\x16\n\x14im.dlg.grpc.servicesb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,definitions__pb2.DESCRIPTOR,miscellaneous__pb2.DESCRIPTOR,peers__pb2.DESCRIPTOR,device__info__pb2.DESCRIPTOR,scalapb_dot_scalapb__pb2.DESCRIPTOR,])
@@ -39,27 +39,27 @@ _CALLDISPOSEDREASON = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='CALLDISPOSEDREASON_UNKNOWN', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='CALLDISPOSEDREASON_REJECTED', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='CALLDISPOSEDREASON_BUSY', index=2, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='CALLDISPOSEDREASON_ENDED', index=3, number=3,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='CALLDISPOSEDREASON_ANSWER_TIMEOUT', index=4, number=4,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
+  serialized_options=None,
   serialized_start=6526,
   serialized_end=6709,
 )
@@ -74,19 +74,19 @@ _REJECTCALLREASON = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='REJECTCALLREASON_UNKNOWN', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='REJECTCALLREASON_DECLINE', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='REJECTCALLREASON_BUSY', index=2, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
+  serialized_options=None,
   serialized_start=6711,
   serialized_end=6816,
 )
@@ -101,75 +101,75 @@ _DTMFCODE = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='DTMFCODE_UNKNOWN', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='DTMFCODE_ZERO', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='DTMFCODE_ONE', index=2, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='DTMFCODE_TWO', index=3, number=3,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='DTMFCODE_THREE', index=4, number=4,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='DTMFCODE_FOUR', index=5, number=5,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='DTMFCODE_FIVE', index=6, number=6,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='DTMFCODE_SIX', index=7, number=7,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='DTMFCODE_SEVEN', index=8, number=8,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='DTMFCODE_EIGHT', index=9, number=9,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='DTMFCODE_NINE', index=10, number=10,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='DTMFCODE_ASTERISK', index=11, number=11,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='DTMFCODE_POUND', index=12, number=12,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='DTMFCODE_A', index=13, number=13,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='DTMFCODE_B', index=14, number=14,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='DTMFCODE_C', index=15, number=15,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='DTMFCODE_D', index=16, number=16,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
+  serialized_options=None,
   serialized_start=6819,
   serialized_end=7148,
 )
@@ -184,47 +184,47 @@ _CALLSTATSTYPE = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='CALLSTATSTYPE_UNKNOWN', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='CALLSTATSTYPE_TURN_SERVER_ROUND_TRIP_TIME', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='CALLSTATSTYPE_ICE_CONNECTION_FAILED', index=2, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='CALLSTATSTYPE_ICE_CONNECTION_CONNECTED', index=3, number=3,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='CALLSTATSTYPE_ICE_CONNECTION_DID_NOT_CONNECT', index=4, number=4,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='CALLSTATSTYPE_ICE_CONNECTION_CONNECTED_TIME', index=5, number=5,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='CALLSTATSTYPE_PEER_CONNECTION_CREATE_ANSWER_FAILED', index=6, number=6,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='CALLSTATSTYPE_PEER_CONNECTION_CREATE_OFFER_FAILED', index=7, number=7,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='CALLSTATSTYPE_PEER_CONNECTION_SET_REMOTE_DESCRIPTION_FAILED', index=8, number=8,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='CALLSTATSTYPE_PEER_CONNECTION_SET_LOCAL_DESCRIPTION_FAILED', index=9, number=9,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
+  serialized_options=None,
   serialized_start=7151,
   serialized_end=7664,
 )
@@ -239,31 +239,31 @@ _CALLMEMBERSTATE = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='CALLMEMBERSTATE_UNKNOWN', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='CALLMEMBERSTATE_RINGING', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='CALLMEMBERSTATE_RINGING_REACHED', index=2, number=4,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='CALLMEMBERSTATE_CONNECTING', index=3, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='CALLMEMBERSTATE_CONNECTED', index=4, number=3,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='CALLMEMBERSTATE_ENDED', index=5, number=5,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
+  serialized_options=None,
   serialized_start=7667,
   serialized_end=7869,
 )
@@ -327,21 +327,21 @@ _UPDATEINCOMINGCALLDEPRECATED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='attempt_index', full_name='dialog.UpdateIncomingCallDeprecated.attempt_index', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -365,56 +365,56 @@ _UPDATEINCOMINGCALL = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='event_bus_id', full_name='dialog.UpdateIncomingCall.event_bus_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='peer', full_name='dialog.UpdateIncomingCall.peer', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='display_name', full_name='dialog.UpdateIncomingCall.display_name', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='attempt_index', full_name='dialog.UpdateIncomingCall.attempt_index', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='out_peer', full_name='dialog.UpdateIncomingCall.out_peer', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='video', full_name='dialog.UpdateIncomingCall.video', index=6,
       number=7, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -438,21 +438,21 @@ _UPDATECALLHANDLED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='attempt_index', full_name='dialog.UpdateCallHandled.attempt_index', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -476,28 +476,28 @@ _UPDATECALLDISPOSED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='attempt_index', full_name='dialog.UpdateCallDisposed.attempt_index', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='reason', full_name='dialog.UpdateCallDisposed.reason', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -521,14 +521,14 @@ _REQUESTGETCALLINFO = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -552,42 +552,42 @@ _RESPONSEGETCALLINFO = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='groups', full_name='dialog.ResponseGetCallInfo.groups', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='users', full_name='dialog.ResponseGetCallInfo.users', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='event_bus_id', full_name='dialog.ResponseGetCallInfo.event_bus_id', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='display_name', full_name='dialog.ResponseGetCallInfo.display_name', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -611,70 +611,70 @@ _CALLLOGENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='call_date', full_name='dialog.CallLogEntry.call_date', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='initiator', full_name='dialog.CallLogEntry.initiator', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='recipient', full_name='dialog.CallLogEntry.recipient', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='duration', full_name='dialog.CallLogEntry.duration', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='answered', full_name='dialog.CallLogEntry.answered', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='finished', full_name='dialog.CallLogEntry.finished', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='display_name', full_name='dialog.CallLogEntry.display_name', index=7,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rejected', full_name='dialog.CallLogEntry.rejected', index=8,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -698,21 +698,21 @@ _REQUESTLOADCALLS = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='limit', full_name='dialog.RequestLoadCalls.limit', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -736,35 +736,35 @@ _RESPONSELOADCALLS = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='users', full_name='dialog.ResponseLoadCalls.users', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='groups', full_name='dialog.ResponseLoadCalls.groups', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='next_offset', full_name='dialog.ResponseLoadCalls.next_offset', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -788,21 +788,21 @@ _REQUESTDOCALL = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='timeout', full_name='dialog.RequestDoCall.timeout', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -826,28 +826,28 @@ _RESPONSEDOCALL = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='event_bus_id', full_name='dialog.ResponseDoCall.event_bus_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='device_id', full_name='dialog.ResponseDoCall.device_id', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -871,14 +871,14 @@ _REQUESTJOINCALL = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -902,21 +902,21 @@ _REQUESTREJECTCALL = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='reason', full_name='dialog.RequestRejectCall.reason', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -940,14 +940,14 @@ _REQUESTDELETECALL = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -971,21 +971,21 @@ _REQUESTCHANGECALLDISPLAYNAME = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='display_name', full_name='dialog.RequestChangeCallDisplayName.display_name', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1009,28 +1009,28 @@ _ICESERVER = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='username', full_name='dialog.ICEServer.username', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006danger'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='credential', full_name='dialog.ICEServer.credential', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006danger'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1054,28 +1054,28 @@ _ICECANDIDATE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sdp_mid', full_name='dialog.ICECandidate.sdp_mid', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sdp', full_name='dialog.ICECandidate.sdp', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1099,126 +1099,126 @@ _WEBRTCSIGNALING = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='advertiseMaster', full_name='dialog.WebRTCSignaling.advertiseMaster', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='advertisePeer', full_name='dialog.WebRTCSignaling.advertisePeer', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='candidate', full_name='dialog.WebRTCSignaling.candidate', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='gotICECandidate', full_name='dialog.WebRTCSignaling.gotICECandidate', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='removedICECandidates', full_name='dialog.WebRTCSignaling.removedICECandidates', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='offer', full_name='dialog.WebRTCSignaling.offer', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='answer', full_name='dialog.WebRTCSignaling.answer', index=7,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='needOffer', full_name='dialog.WebRTCSignaling.needOffer', index=8,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='negotinationSuccessful', full_name='dialog.WebRTCSignaling.negotinationSuccessful', index=9,
       number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='enableConnection', full_name='dialog.WebRTCSignaling.enableConnection', index=10,
       number=11, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='onRenegotiationNeeded', full_name='dialog.WebRTCSignaling.onRenegotiationNeeded', index=11,
       number=12, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='closeSession', full_name='dialog.WebRTCSignaling.closeSession', index=12,
       number=13, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='needDisconnect', full_name='dialog.WebRTCSignaling.needDisconnect', index=13,
       number=14, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dTMF', full_name='dialog.WebRTCSignaling.dTMF', index=14,
       number=15, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='callStats', full_name='dialog.WebRTCSignaling.callStats', index=15,
       number=16, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='callNameChanged', full_name='dialog.WebRTCSignaling.callNameChanged', index=16,
       number=17, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1245,14 +1245,14 @@ _ADVERTISESELF = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1276,28 +1276,28 @@ _ADVERTISEMASTER = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='call_api_version', full_name='dialog.AdvertiseMaster.call_api_version', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='call_name', full_name='dialog.AdvertiseMaster.call_name', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1321,28 +1321,28 @@ _ADVERTISEPEER = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='peer_settings', full_name='dialog.AdvertisePeer.peer_settings', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='ice_servers', full_name='dialog.AdvertisePeer.ice_servers', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1366,35 +1366,35 @@ _CANDIDATE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='index', full_name='dialog.Candidate.index', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='id', full_name='dialog.Candidate.id', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sdp', full_name='dialog.Candidate.sdp', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1418,21 +1418,21 @@ _GOTICECANDIDATE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='candidate', full_name='dialog.GotICECandidate.candidate', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1456,21 +1456,21 @@ _REMOVEDICECANDIDATES = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='candidate', full_name='dialog.RemovedICECandidates.candidate', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1494,28 +1494,28 @@ _OFFER = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sdp', full_name='dialog.Offer.sdp', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='peer_settings', full_name='dialog.Offer.peer_settings', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1539,21 +1539,21 @@ _ANSWER = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sdp', full_name='dialog.Answer.sdp', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1577,28 +1577,28 @@ _NEEDOFFER = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='session_id', full_name='dialog.NeedOffer.session_id', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='peer_settings', full_name='dialog.NeedOffer.peer_settings', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1622,21 +1622,21 @@ _NEGOTINATIONSUCCESSFUL = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='session_id', full_name='dialog.NegotinationSuccessful.session_id', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1660,21 +1660,21 @@ _ENABLECONNECTION = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='session_id', full_name='dialog.EnableConnection.session_id', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1698,21 +1698,21 @@ _ONRENEGOTIATIONNEEDED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='session_id', full_name='dialog.OnRenegotiationNeeded.session_id', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1736,21 +1736,21 @@ _CLOSESESSION = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='session_id', full_name='dialog.CloseSession.session_id', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1774,14 +1774,14 @@ _NEEDDISCONNECT = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1805,21 +1805,21 @@ _DTMF = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='duration', full_name='dialog.DTMF.duration', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1843,21 +1843,21 @@ _CALLSTATS = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='dialog.CallStats.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1881,14 +1881,14 @@ _CALLNAMECHANGED = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1912,28 +1912,28 @@ _ACTIVECALL = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='peer', full_name='dialog.ActiveCall.peer', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='call_members', full_name='dialog.ActiveCall.call_members', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1957,49 +1957,49 @@ _CALLMEMBERSTATEHOLDER = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='fallback_is_ringing', full_name='dialog.CallMemberStateHolder.fallback_is_ringing', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='fallback_is_connected', full_name='dialog.CallMemberStateHolder.fallback_is_connected', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='fallback_is_connecting', full_name='dialog.CallMemberStateHolder.fallback_is_connecting', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='fallback_is_ringing_reached', full_name='dialog.CallMemberStateHolder.fallback_is_ringing_reached', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='fallback_is_ended', full_name='dialog.CallMemberStateHolder.fallback_is_ended', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -2023,21 +2023,21 @@ _CALLMEMBER = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='state', full_name='dialog.CallMember.state', index=1,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -2061,35 +2061,35 @@ _PEERSETTINGS = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sends_offer', full_name='dialog.PeerSettings.sends_offer', index=1,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='wait_for_candidates', full_name='dialog.PeerSettings.wait_for_candidates', index=2,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='client_info', full_name='dialog.PeerSettings.client_info', index=3,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -2542,189 +2542,101 @@ PeerSettings = _reflection.GeneratedProtocolMessageType('PeerSettings', (_messag
 _sym_db.RegisterMessage(PeerSettings)
 
 
-DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\342?\026\n\024im.dlg.grpc.services'))
-_UPDATEINCOMINGCALLDEPRECATED.fields_by_name['call_id'].has_options = True
-_UPDATEINCOMINGCALLDEPRECATED.fields_by_name['call_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEINCOMINGCALLDEPRECATED.fields_by_name['attempt_index'].has_options = True
-_UPDATEINCOMINGCALLDEPRECATED.fields_by_name['attempt_index']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEINCOMINGCALL.fields_by_name['call_id'].has_options = True
-_UPDATEINCOMINGCALL.fields_by_name['call_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEINCOMINGCALL.fields_by_name['event_bus_id'].has_options = True
-_UPDATEINCOMINGCALL.fields_by_name['event_bus_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEINCOMINGCALL.fields_by_name['display_name'].has_options = True
-_UPDATEINCOMINGCALL.fields_by_name['display_name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_UPDATEINCOMINGCALL.fields_by_name['attempt_index'].has_options = True
-_UPDATEINCOMINGCALL.fields_by_name['attempt_index']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEINCOMINGCALL.fields_by_name['out_peer'].has_options = True
-_UPDATEINCOMINGCALL.fields_by_name['out_peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEINCOMINGCALL.fields_by_name['video'].has_options = True
-_UPDATEINCOMINGCALL.fields_by_name['video']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATECALLHANDLED.fields_by_name['call_id'].has_options = True
-_UPDATECALLHANDLED.fields_by_name['call_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATECALLHANDLED.fields_by_name['attempt_index'].has_options = True
-_UPDATECALLHANDLED.fields_by_name['attempt_index']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATECALLDISPOSED.fields_by_name['call_id'].has_options = True
-_UPDATECALLDISPOSED.fields_by_name['call_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATECALLDISPOSED.fields_by_name['attempt_index'].has_options = True
-_UPDATECALLDISPOSED.fields_by_name['attempt_index']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTGETCALLINFO.fields_by_name['call_id'].has_options = True
-_REQUESTGETCALLINFO.fields_by_name['call_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTGETCALLINFO.has_options = True
-_REQUESTGETCALLINFO._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSEGETCALLINFO.has_options = True
-_RESPONSEGETCALLINFO._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_CALLLOGENTRY.fields_by_name['id'].has_options = True
-_CALLLOGENTRY.fields_by_name['id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_CALLLOGENTRY.fields_by_name['call_date'].has_options = True
-_CALLLOGENTRY.fields_by_name['call_date']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_CALLLOGENTRY.fields_by_name['initiator'].has_options = True
-_CALLLOGENTRY.fields_by_name['initiator']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_CALLLOGENTRY.fields_by_name['recipient'].has_options = True
-_CALLLOGENTRY.fields_by_name['recipient']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_CALLLOGENTRY.fields_by_name['duration'].has_options = True
-_CALLLOGENTRY.fields_by_name['duration']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_CALLLOGENTRY.fields_by_name['answered'].has_options = True
-_CALLLOGENTRY.fields_by_name['answered']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_CALLLOGENTRY.fields_by_name['display_name'].has_options = True
-_CALLLOGENTRY.fields_by_name['display_name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTLOADCALLS.fields_by_name['next_offset'].has_options = True
-_REQUESTLOADCALLS.fields_by_name['next_offset']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTLOADCALLS.fields_by_name['limit'].has_options = True
-_REQUESTLOADCALLS.fields_by_name['limit']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTLOADCALLS.has_options = True
-_REQUESTLOADCALLS._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSELOADCALLS.has_options = True
-_RESPONSELOADCALLS._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_REQUESTDOCALL.fields_by_name['peer'].has_options = True
-_REQUESTDOCALL.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTDOCALL.has_options = True
-_REQUESTDOCALL._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSEDOCALL.has_options = True
-_RESPONSEDOCALL._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_REQUESTJOINCALL.fields_by_name['call_id'].has_options = True
-_REQUESTJOINCALL.fields_by_name['call_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTJOINCALL.has_options = True
-_REQUESTJOINCALL._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTREJECTCALL.fields_by_name['call_id'].has_options = True
-_REQUESTREJECTCALL.fields_by_name['call_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTREJECTCALL.has_options = True
-_REQUESTREJECTCALL._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTDELETECALL.fields_by_name['call_id'].has_options = True
-_REQUESTDELETECALL.fields_by_name['call_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTDELETECALL.has_options = True
-_REQUESTDELETECALL._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTCHANGECALLDISPLAYNAME.fields_by_name['call_id'].has_options = True
-_REQUESTCHANGECALLDISPLAYNAME.fields_by_name['call_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTCHANGECALLDISPLAYNAME.fields_by_name['display_name'].has_options = True
-_REQUESTCHANGECALLDISPLAYNAME.fields_by_name['display_name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTCHANGECALLDISPLAYNAME.has_options = True
-_REQUESTCHANGECALLDISPLAYNAME._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_ICESERVER.fields_by_name['url'].has_options = True
-_ICESERVER.fields_by_name['url']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_ICESERVER.fields_by_name['username'].has_options = True
-_ICESERVER.fields_by_name['username']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger'))
-_ICESERVER.fields_by_name['credential'].has_options = True
-_ICESERVER.fields_by_name['credential']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger'))
-_ADVERTISESELF.fields_by_name['peer_settings'].has_options = True
-_ADVERTISESELF.fields_by_name['peer_settings']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_ADVERTISEMASTER.fields_by_name['server'].has_options = True
-_ADVERTISEMASTER.fields_by_name['server']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_ADVERTISEMASTER.fields_by_name['call_api_version'].has_options = True
-_ADVERTISEMASTER.fields_by_name['call_api_version']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_ADVERTISEPEER.fields_by_name['device_id'].has_options = True
-_ADVERTISEPEER.fields_by_name['device_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_ADVERTISEPEER.fields_by_name['peer_settings'].has_options = True
-_ADVERTISEPEER.fields_by_name['peer_settings']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_ADVERTISEPEER.fields_by_name['ice_servers'].has_options = True
-_ADVERTISEPEER.fields_by_name['ice_servers']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_CANDIDATE.fields_by_name['session_id'].has_options = True
-_CANDIDATE.fields_by_name['session_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_CANDIDATE.fields_by_name['index'].has_options = True
-_CANDIDATE.fields_by_name['index']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_CANDIDATE.fields_by_name['id'].has_options = True
-_CANDIDATE.fields_by_name['id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_CANDIDATE.fields_by_name['sdp'].has_options = True
-_CANDIDATE.fields_by_name['sdp']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_OFFER.fields_by_name['session_id'].has_options = True
-_OFFER.fields_by_name['session_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_OFFER.fields_by_name['sdp'].has_options = True
-_OFFER.fields_by_name['sdp']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_OFFER.fields_by_name['peer_settings'].has_options = True
-_OFFER.fields_by_name['peer_settings']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_ANSWER.fields_by_name['session_id'].has_options = True
-_ANSWER.fields_by_name['session_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_ANSWER.fields_by_name['sdp'].has_options = True
-_ANSWER.fields_by_name['sdp']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_NEEDOFFER.fields_by_name['device'].has_options = True
-_NEEDOFFER.fields_by_name['device']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_NEEDOFFER.fields_by_name['session_id'].has_options = True
-_NEEDOFFER.fields_by_name['session_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_NEEDOFFER.fields_by_name['peer_settings'].has_options = True
-_NEEDOFFER.fields_by_name['peer_settings']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_NEGOTINATIONSUCCESSFUL.fields_by_name['device'].has_options = True
-_NEGOTINATIONSUCCESSFUL.fields_by_name['device']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_NEGOTINATIONSUCCESSFUL.fields_by_name['session_id'].has_options = True
-_NEGOTINATIONSUCCESSFUL.fields_by_name['session_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_ENABLECONNECTION.fields_by_name['device'].has_options = True
-_ENABLECONNECTION.fields_by_name['device']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_ENABLECONNECTION.fields_by_name['session_id'].has_options = True
-_ENABLECONNECTION.fields_by_name['session_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_ONRENEGOTIATIONNEEDED.fields_by_name['device'].has_options = True
-_ONRENEGOTIATIONNEEDED.fields_by_name['device']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_ONRENEGOTIATIONNEEDED.fields_by_name['session_id'].has_options = True
-_ONRENEGOTIATIONNEEDED.fields_by_name['session_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_CLOSESESSION.fields_by_name['device'].has_options = True
-_CLOSESESSION.fields_by_name['device']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_CLOSESESSION.fields_by_name['session_id'].has_options = True
-_CLOSESESSION.fields_by_name['session_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_NEEDDISCONNECT.fields_by_name['device'].has_options = True
-_NEEDDISCONNECT.fields_by_name['device']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_DTMF.fields_by_name['code'].has_options = True
-_DTMF.fields_by_name['code']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_DTMF.fields_by_name['duration'].has_options = True
-_DTMF.fields_by_name['duration']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_CALLSTATS.fields_by_name['type'].has_options = True
-_CALLSTATS.fields_by_name['type']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_CALLSTATS.fields_by_name['value'].has_options = True
-_CALLSTATS.fields_by_name['value']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_ACTIVECALL.fields_by_name['call_id'].has_options = True
-_ACTIVECALL.fields_by_name['call_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_ACTIVECALL.fields_by_name['peer'].has_options = True
-_ACTIVECALL.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_ACTIVECALL.fields_by_name['call_members'].has_options = True
-_ACTIVECALL.fields_by_name['call_members']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_CALLMEMBERSTATEHOLDER.fields_by_name['state'].has_options = True
-_CALLMEMBERSTATEHOLDER.fields_by_name['state']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_CALLMEMBERSTATEHOLDER.fields_by_name['fallback_is_ringing'].has_options = True
-_CALLMEMBERSTATEHOLDER.fields_by_name['fallback_is_ringing']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_CALLMEMBERSTATEHOLDER.fields_by_name['fallback_is_connected'].has_options = True
-_CALLMEMBERSTATEHOLDER.fields_by_name['fallback_is_connected']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_CALLMEMBERSTATEHOLDER.fields_by_name['fallback_is_connecting'].has_options = True
-_CALLMEMBERSTATEHOLDER.fields_by_name['fallback_is_connecting']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_CALLMEMBERSTATEHOLDER.fields_by_name['fallback_is_ringing_reached'].has_options = True
-_CALLMEMBERSTATEHOLDER.fields_by_name['fallback_is_ringing_reached']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_CALLMEMBERSTATEHOLDER.fields_by_name['fallback_is_ended'].has_options = True
-_CALLMEMBERSTATEHOLDER.fields_by_name['fallback_is_ended']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_CALLMEMBER.fields_by_name['user_id'].has_options = True
-_CALLMEMBER.fields_by_name['user_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_CALLMEMBER.fields_by_name['state'].has_options = True
-_CALLMEMBER.fields_by_name['state']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_PEERSETTINGS.fields_by_name['can_pre_connect'].has_options = True
-_PEERSETTINGS.fields_by_name['can_pre_connect']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_PEERSETTINGS.fields_by_name['sends_offer'].has_options = True
-_PEERSETTINGS.fields_by_name['sends_offer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_PEERSETTINGS.fields_by_name['wait_for_candidates'].has_options = True
-_PEERSETTINGS.fields_by_name['wait_for_candidates']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_PEERSETTINGS.fields_by_name['client_info'].has_options = True
-_PEERSETTINGS.fields_by_name['client_info']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
+DESCRIPTOR._options = None
+_UPDATEINCOMINGCALLDEPRECATED.fields_by_name['call_id']._options = None
+_UPDATEINCOMINGCALLDEPRECATED.fields_by_name['attempt_index']._options = None
+_UPDATEINCOMINGCALL.fields_by_name['call_id']._options = None
+_UPDATEINCOMINGCALL.fields_by_name['event_bus_id']._options = None
+_UPDATEINCOMINGCALL.fields_by_name['display_name']._options = None
+_UPDATEINCOMINGCALL.fields_by_name['attempt_index']._options = None
+_UPDATEINCOMINGCALL.fields_by_name['out_peer']._options = None
+_UPDATEINCOMINGCALL.fields_by_name['video']._options = None
+_UPDATECALLHANDLED.fields_by_name['call_id']._options = None
+_UPDATECALLHANDLED.fields_by_name['attempt_index']._options = None
+_UPDATECALLDISPOSED.fields_by_name['call_id']._options = None
+_UPDATECALLDISPOSED.fields_by_name['attempt_index']._options = None
+_REQUESTGETCALLINFO.fields_by_name['call_id']._options = None
+_REQUESTGETCALLINFO._options = None
+_RESPONSEGETCALLINFO._options = None
+_CALLLOGENTRY.fields_by_name['id']._options = None
+_CALLLOGENTRY.fields_by_name['call_date']._options = None
+_CALLLOGENTRY.fields_by_name['initiator']._options = None
+_CALLLOGENTRY.fields_by_name['recipient']._options = None
+_CALLLOGENTRY.fields_by_name['duration']._options = None
+_CALLLOGENTRY.fields_by_name['answered']._options = None
+_CALLLOGENTRY.fields_by_name['display_name']._options = None
+_REQUESTLOADCALLS.fields_by_name['next_offset']._options = None
+_REQUESTLOADCALLS.fields_by_name['limit']._options = None
+_REQUESTLOADCALLS._options = None
+_RESPONSELOADCALLS._options = None
+_REQUESTDOCALL.fields_by_name['peer']._options = None
+_REQUESTDOCALL._options = None
+_RESPONSEDOCALL._options = None
+_REQUESTJOINCALL.fields_by_name['call_id']._options = None
+_REQUESTJOINCALL._options = None
+_REQUESTREJECTCALL.fields_by_name['call_id']._options = None
+_REQUESTREJECTCALL._options = None
+_REQUESTDELETECALL.fields_by_name['call_id']._options = None
+_REQUESTDELETECALL._options = None
+_REQUESTCHANGECALLDISPLAYNAME.fields_by_name['call_id']._options = None
+_REQUESTCHANGECALLDISPLAYNAME.fields_by_name['display_name']._options = None
+_REQUESTCHANGECALLDISPLAYNAME._options = None
+_ICESERVER.fields_by_name['url']._options = None
+_ICESERVER.fields_by_name['username']._options = None
+_ICESERVER.fields_by_name['credential']._options = None
+_ADVERTISESELF.fields_by_name['peer_settings']._options = None
+_ADVERTISEMASTER.fields_by_name['server']._options = None
+_ADVERTISEMASTER.fields_by_name['call_api_version']._options = None
+_ADVERTISEPEER.fields_by_name['device_id']._options = None
+_ADVERTISEPEER.fields_by_name['peer_settings']._options = None
+_ADVERTISEPEER.fields_by_name['ice_servers']._options = None
+_CANDIDATE.fields_by_name['session_id']._options = None
+_CANDIDATE.fields_by_name['index']._options = None
+_CANDIDATE.fields_by_name['id']._options = None
+_CANDIDATE.fields_by_name['sdp']._options = None
+_OFFER.fields_by_name['session_id']._options = None
+_OFFER.fields_by_name['sdp']._options = None
+_OFFER.fields_by_name['peer_settings']._options = None
+_ANSWER.fields_by_name['session_id']._options = None
+_ANSWER.fields_by_name['sdp']._options = None
+_NEEDOFFER.fields_by_name['device']._options = None
+_NEEDOFFER.fields_by_name['session_id']._options = None
+_NEEDOFFER.fields_by_name['peer_settings']._options = None
+_NEGOTINATIONSUCCESSFUL.fields_by_name['device']._options = None
+_NEGOTINATIONSUCCESSFUL.fields_by_name['session_id']._options = None
+_ENABLECONNECTION.fields_by_name['device']._options = None
+_ENABLECONNECTION.fields_by_name['session_id']._options = None
+_ONRENEGOTIATIONNEEDED.fields_by_name['device']._options = None
+_ONRENEGOTIATIONNEEDED.fields_by_name['session_id']._options = None
+_CLOSESESSION.fields_by_name['device']._options = None
+_CLOSESESSION.fields_by_name['session_id']._options = None
+_NEEDDISCONNECT.fields_by_name['device']._options = None
+_DTMF.fields_by_name['code']._options = None
+_DTMF.fields_by_name['duration']._options = None
+_CALLSTATS.fields_by_name['type']._options = None
+_CALLSTATS.fields_by_name['value']._options = None
+_ACTIVECALL.fields_by_name['call_id']._options = None
+_ACTIVECALL.fields_by_name['peer']._options = None
+_ACTIVECALL.fields_by_name['call_members']._options = None
+_CALLMEMBERSTATEHOLDER.fields_by_name['state']._options = None
+_CALLMEMBERSTATEHOLDER.fields_by_name['fallback_is_ringing']._options = None
+_CALLMEMBERSTATEHOLDER.fields_by_name['fallback_is_connected']._options = None
+_CALLMEMBERSTATEHOLDER.fields_by_name['fallback_is_connecting']._options = None
+_CALLMEMBERSTATEHOLDER.fields_by_name['fallback_is_ringing_reached']._options = None
+_CALLMEMBERSTATEHOLDER.fields_by_name['fallback_is_ended']._options = None
+_CALLMEMBER.fields_by_name['user_id']._options = None
+_CALLMEMBER.fields_by_name['state']._options = None
+_PEERSETTINGS.fields_by_name['can_pre_connect']._options = None
+_PEERSETTINGS.fields_by_name['sends_offer']._options = None
+_PEERSETTINGS.fields_by_name['wait_for_candidates']._options = None
+_PEERSETTINGS.fields_by_name['client_info']._options = None
 
 _WEBRTC = _descriptor.ServiceDescriptor(
   name='WebRTC',
   full_name='dialog.WebRTC',
   file=DESCRIPTOR,
   index=0,
-  options=None,
+  serialized_options=None,
   serialized_start=7872,
   serialized_end=8624,
   methods=[
@@ -2735,7 +2647,7 @@ _WEBRTC = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTGETCALLINFO,
     output_type=_RESPONSEGETCALLINFO,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002 \"\033/v1/grpc/WebRTC/GetCallInfo:\001*')),
+    serialized_options=_b('\202\323\344\223\002 \"\033/v1/grpc/WebRTC/GetCallInfo:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='LoadCalls',
@@ -2744,7 +2656,7 @@ _WEBRTC = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTLOADCALLS,
     output_type=_RESPONSELOADCALLS,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\036\"\031/v1/grpc/WebRTC/LoadCalls:\001*')),
+    serialized_options=_b('\202\323\344\223\002\036\"\031/v1/grpc/WebRTC/LoadCalls:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='DoCall',
@@ -2753,7 +2665,7 @@ _WEBRTC = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTDOCALL,
     output_type=_RESPONSEDOCALL,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\033\"\026/v1/grpc/WebRTC/DoCall:\001*')),
+    serialized_options=_b('\202\323\344\223\002\033\"\026/v1/grpc/WebRTC/DoCall:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='JoinCall',
@@ -2762,7 +2674,7 @@ _WEBRTC = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTJOINCALL,
     output_type=miscellaneous__pb2._RESPONSEVOID,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\035\"\030/v1/grpc/WebRTC/JoinCall:\001*')),
+    serialized_options=_b('\202\323\344\223\002\035\"\030/v1/grpc/WebRTC/JoinCall:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='RejectCall',
@@ -2771,7 +2683,7 @@ _WEBRTC = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTREJECTCALL,
     output_type=miscellaneous__pb2._RESPONSEVOID,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\037\"\032/v1/grpc/WebRTC/RejectCall:\001*')),
+    serialized_options=_b('\202\323\344\223\002\037\"\032/v1/grpc/WebRTC/RejectCall:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='ChangeCallDisplayName',
@@ -2780,7 +2692,7 @@ _WEBRTC = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTCHANGECALLDISPLAYNAME,
     output_type=miscellaneous__pb2._RESPONSEVOID,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002*\"%/v1/grpc/WebRTC/ChangeCallDisplayName:\001*')),
+    serialized_options=_b('\202\323\344\223\002*\"%/v1/grpc/WebRTC/ChangeCallDisplayName:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='DeleteCall',
@@ -2789,7 +2701,7 @@ _WEBRTC = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTDELETECALL,
     output_type=miscellaneous__pb2._RESPONSEVOID,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\037\"\032/v1/grpc/WebRTC/DeleteCall:\001*')),
+    serialized_options=_b('\202\323\344\223\002\037\"\032/v1/grpc/WebRTC/DeleteCall:\001*'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_WEBRTC)

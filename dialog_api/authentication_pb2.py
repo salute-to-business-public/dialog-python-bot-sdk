@@ -8,7 +8,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -27,6 +26,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='authentication.proto',
   package='dialog',
   syntax='proto3',
+  serialized_options=_b('\342?\026\n\024im.dlg.grpc.services'),
   serialized_pb=_b('\n\x14\x61uthentication.proto\x12\x06\x64ialog\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x11\x64\x65\x66initions.proto\x1a\x13miscellaneous.proto\x1a\x0bpeers.proto\x1a\x0busers.proto\x1a\x15scalapb/scalapb.proto\"\xcc\x02\n\x15RequestStartPhoneAuth\x12#\n\x0cphone_number\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x06\x61pp_id\x18\x02 \x01(\x05\x42\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x1d\n\x07\x61pi_key\x18\x03 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\x12\"\n\x0b\x64\x65vice_hash\x18\x04 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07visible\x12#\n\x0c\x64\x65vice_title\x18\x05 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12>\n\ttime_zone\x18\x06 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12*\n\x13preferred_languages\x18\x07 \x03(\tB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x9e\x01\n\x16ResponseStartPhoneAuth\x12\x18\n\x10transaction_hash\x18\x01 \x01(\t\x12\x15\n\ris_registered\x18\x02 \x01(\x08\x12\x34\n\x0f\x61\x63tivation_type\x18\x03 \x01(\x0e\x32\x1b.dialog.PhoneActivationType:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"b\n\x1aRequestSendCodeByPhoneCall\x12&\n\x10transaction_hash\x18\x01 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06\x64\x61nger:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xc5\x02\n\x15RequestStartEmailAuth\x12\x1c\n\x05\x65mail\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x06\x61pp_id\x18\x02 \x01(\x05\x42\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x1d\n\x07\x61pi_key\x18\x03 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\x12\"\n\x0b\x64\x65vice_hash\x18\x04 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07visible\x12#\n\x0c\x64\x65vice_title\x18\x05 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12>\n\ttime_zone\x18\x06 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12*\n\x13preferred_languages\x18\x07 \x03(\tB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x9e\x01\n\x16ResponseStartEmailAuth\x12\x18\n\x10transaction_hash\x18\x01 \x01(\t\x12\x15\n\ris_registered\x18\x02 \x01(\x08\x12\x34\n\x0f\x61\x63tivation_type\x18\x03 \x01(\x0e\x32\x1b.dialog.EmailActivationType:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\xc8\x02\n\x19RequestStartAnonymousAuth\x12\x1b\n\x04name\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x06\x61pp_id\x18\x02 \x01(\x05\x42\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x1d\n\x07\x61pi_key\x18\x03 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\x12\"\n\x0b\x64\x65vice_hash\x18\x04 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07visible\x12#\n\x0c\x64\x65vice_title\x18\x05 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12>\n\ttime_zone\x18\x06 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12*\n\x13preferred_languages\x18\x07 \x03(\tB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xc5\x02\n\x15RequestStartTokenAuth\x12\x1c\n\x05token\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x06\x61pp_id\x18\x02 \x01(\x05\x42\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x1d\n\x07\x61pi_key\x18\x03 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\x12\"\n\x0b\x64\x65vice_hash\x18\x04 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07visible\x12#\n\x0c\x64\x65vice_title\x18\x05 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12>\n\ttime_zone\x18\x06 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12*\n\x13preferred_languages\x18\x07 \x03(\tB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xcb\x02\n\x18RequestStartUsernameAuth\x12\x1f\n\x08username\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x06\x61pp_id\x18\x02 \x01(\x05\x42\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x1d\n\x07\x61pi_key\x18\x03 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\x12\"\n\x0b\x64\x65vice_hash\x18\x04 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07visible\x12#\n\x0c\x64\x65vice_title\x18\x05 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12>\n\ttime_zone\x18\x06 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12*\n\x13preferred_languages\x18\x07 \x03(\tB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"k\n\x19ResponseStartUsernameAuth\x12\x18\n\x10transaction_hash\x18\x01 \x01(\t\x12\x15\n\ris_registered\x18\x02 \x01(\x08:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"w\n\x13RequestValidateCode\x12&\n\x10transaction_hash\x18\x01 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06\x64\x61nger\x12\x1a\n\x04\x63ode\x18\x02 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"Y\n\x11RequestResendCode\x12&\n\x10transaction_hash\x18\x01 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06\x64\x61nger:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x7f\n\x17RequestValidatePassword\x12&\n\x10transaction_hash\x18\x01 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06\x64\x61nger\x12\x1e\n\x08password\x18\x02 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06\x64\x61nger:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x83\x01\n\x16RequestGetOAuth2Params\x12&\n\x10transaction_hash\x18\x01 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06\x64\x61nger\x12#\n\x0credirect_url\x18\x02 \x01(\tB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"J\n\x17ResponseGetOAuth2Params\x12\x10\n\x08\x61uth_url\x18\x01 \x01(\t:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"y\n\x15RequestCompleteOAuth2\x12&\n\x10transaction_hash\x18\x01 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06\x64\x61nger\x12\x1a\n\x04\x63ode\x18\x02 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06\x64\x61nger:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xd9\x01\n\rRequestSignUp\x12&\n\x10transaction_hash\x18\x01 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06\x64\x61nger\x12\x1b\n\x04name\x18\x02 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\'\n\x03sex\x18\x03 \x01(\x0e\x32\x0b.dialog.SexB\r\x8a\xea\x30\t\n\x07visible\x12<\n\x08password\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xc8\x01\n\x0cResponseAuth\x12)\n\x04user\x18\x02 \x01(\x0b\x32\x0c.dialog.UserB\r\x8a\xea\x30\t\n\x07\x63ompact\x12-\n\x06\x63onfig\x18\x03 \x01(\x0b\x32\x0e.dialog.ConfigB\r\x8a\xea\x30\t\n\x07visible\x12?\n\x0b\x63onfig_hash\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\r\x8a\xea\x30\t\n\x07visible:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\x8a\x03\n\x0b\x41uthSession\x12\x19\n\x02id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x36\n\x0b\x61uth_holder\x18\x02 \x01(\x0e\x32\x12.dialog.AuthHolderB\r\x8a\xea\x30\t\n\x07visible\x12\x1d\n\x06\x61pp_id\x18\x03 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12 \n\tapp_title\x18\x04 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12#\n\x0c\x64\x65vice_title\x18\x05 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12 \n\tauth_time\x18\x06 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12#\n\rauth_location\x18\x07 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\x12<\n\x08latitude\x18\x08 \x01(\x0b\x32\x1c.google.protobuf.DoubleValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12=\n\tlongitude\x18\t \x01(\x0b\x32\x1c.google.protobuf.DoubleValueB\x0c\x8a\xea\x30\x08\n\x06hidden\"6\n\x16RequestGetAuthSessions:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"a\n\x17ResponseGetAuthSessions\x12\'\n\nuser_auths\x18\x01 \x03(\x0b\x32\x13.dialog.AuthSession:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"R\n\x17RequestTerminateSession\x12\x19\n\x02id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\";\n\x1bRequestTerminateAllSessions:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\".\n\x0eRequestSignOut:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xca\x01\n\x10\x46orceReloadField\x12\x38\n\x12\x66orceReloadDialogs\x18\x01 \x01(\x0b\x32\x1a.dialog.ForceReloadDialogsH\x00\x12:\n\x13\x66orceReloadContacts\x18\x02 \x01(\x0b\x32\x1b.dialog.ForceReloadContactsH\x00\x12\x38\n\x12\x66orceReloadHistory\x18\x03 \x01(\x0b\x32\x1a.dialog.ForceReloadHistoryH\x00\x42\x06\n\x04\x62ody\"\x14\n\x12\x46orceReloadDialogs\"\x15\n\x13\x46orceReloadContacts\"?\n\x12\x46orceReloadHistory\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\"Q\n\x16UpdateForceReloadState\x12\x37\n\x06\x66ields\x18\x01 \x03(\x0b\x32\x18.dialog.ForceReloadFieldB\r\x8a\xea\x30\t\n\x07visible\"\x9f\x02\n\x15RequestSignInObsolete\x12\"\n\x0cphone_number\x18\x01 \x01(\x03\x42\x0c\x8a\xea\x30\x08\n\x06\x64\x61nger\x12\x1e\n\x08sms_hash\x18\x02 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06\x64\x61nger\x12\x1e\n\x08sms_code\x18\x03 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06\x64\x61nger\x12\"\n\x0b\x64\x65vice_hash\x18\x05 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07visible\x12#\n\x0c\x64\x65vice_title\x18\x06 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x06\x61pp_id\x18\x07 \x01(\x05\x42\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x1d\n\x07\x61pp_key\x18\x08 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xcf\x02\n\x15RequestSignUpObsolete\x12\"\n\x0cphone_number\x18\x01 \x01(\x03\x42\x0c\x8a\xea\x30\x08\n\x06\x64\x61nger\x12\x1e\n\x08sms_hash\x18\x02 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06\x64\x61nger\x12\x1e\n\x08sms_code\x18\x03 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06\x64\x61nger\x12\x1b\n\x04name\x18\x04 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\"\n\x0b\x64\x65vice_hash\x18\x07 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07visible\x12#\n\x0c\x64\x65vice_title\x18\x08 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x06\x61pp_id\x18\t \x01(\x05\x42\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x1d\n\x07\x61pp_key\x18\n \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x11\n\tis_silent\x18\x0b \x01(\x08:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x9d\x01\n\x1bRequestSendAuthCodeObsolete\x12#\n\x0cphone_number\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x06\x61pp_id\x18\x02 \x01(\x05\x42\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x1d\n\x07\x61pi_key\x18\x03 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"f\n\x1cResponseSendAuthCodeObsolete\x12\x10\n\x08sms_hash\x18\x01 \x01(\t\x12\x15\n\ris_registered\x18\x02 \x01(\x08:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\xbd\x01\n\x1bRequestSendAuthCallObsolete\x12#\n\x0cphone_number\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1e\n\x08sms_hash\x18\x02 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06\x64\x61nger\x12\x1c\n\x06\x61pp_id\x18\x03 \x01(\x05\x42\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x1d\n\x07\x61pi_key\x18\x04 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest*v\n\x13PhoneActivationType\x12\x1f\n\x1bPHONEACTIVATIONTYPE_UNKNOWN\x10\x00\x12\x1c\n\x18PHONEACTIVATIONTYPE_CODE\x10\x01\x12 \n\x1cPHONEACTIVATIONTYPE_PASSWORD\x10\x02*\x96\x01\n\x13\x45mailActivationType\x12\x1f\n\x1b\x45MAILACTIVATIONTYPE_UNKNOWN\x10\x00\x12\x1c\n\x18\x45MAILACTIVATIONTYPE_CODE\x10\x01\x12\x1e\n\x1a\x45MAILACTIVATIONTYPE_OAUTH2\x10\x02\x12 \n\x1c\x45MAILACTIVATIONTYPE_PASSWORD\x10\x03*[\n\nAuthHolder\x12\x16\n\x12\x41UTHHOLDER_UNKNOWN\x10\x00\x12\x19\n\x15\x41UTHHOLDER_THISDEVICE\x10\x01\x12\x1a\n\x16\x41UTHHOLDER_OTHERDEVICE\x10\x02\x32\x96\x14\n\x0e\x41uthentication\x12\x82\x01\n\x0eStartPhoneAuth\x12\x1d.dialog.RequestStartPhoneAuth\x1a\x1e.dialog.ResponseStartPhoneAuth\"1\x82\xd3\xe4\x93\x02+\"&/v1/grpc/Authentication/StartPhoneAuth:\x01*\x12\x87\x01\n\x13SendCodeByPhoneCall\x12\".dialog.RequestSendCodeByPhoneCall\x1a\x14.dialog.ResponseVoid\"6\x82\xd3\xe4\x93\x02\x30\"+/v1/grpc/Authentication/SendCodeByPhoneCall:\x01*\x12\x82\x01\n\x0eStartEmailAuth\x12\x1d.dialog.RequestStartEmailAuth\x1a\x1e.dialog.ResponseStartEmailAuth\"1\x82\xd3\xe4\x93\x02+\"&/v1/grpc/Authentication/StartEmailAuth:\x01*\x12\x84\x01\n\x12StartAnonymousAuth\x12!.dialog.RequestStartAnonymousAuth\x1a\x14.dialog.ResponseAuth\"5\x82\xd3\xe4\x93\x02/\"*/v1/grpc/Authentication/StartAnonymousAuth:\x01*\x12x\n\x0eStartTokenAuth\x12\x1d.dialog.RequestStartTokenAuth\x1a\x14.dialog.ResponseAuth\"1\x82\xd3\xe4\x93\x02+\"&/v1/grpc/Authentication/StartTokenAuth:\x01*\x12\x8e\x01\n\x11StartUsernameAuth\x12 .dialog.RequestStartUsernameAuth\x1a!.dialog.ResponseStartUsernameAuth\"4\x82\xd3\xe4\x93\x02.\")/v1/grpc/Authentication/StartUsernameAuth:\x01*\x12r\n\x0cValidateCode\x12\x1b.dialog.RequestValidateCode\x1a\x14.dialog.ResponseAuth\"/\x82\xd3\xe4\x93\x02)\"$/v1/grpc/Authentication/ValidateCode:\x01*\x12l\n\nResendCode\x12\x19.dialog.RequestResendCode\x1a\x14.dialog.ResponseVoid\"-\x82\xd3\xe4\x93\x02\'\"\"/v1/grpc/Authentication/ResendCode:\x01*\x12~\n\x10ValidatePassword\x12\x1f.dialog.RequestValidatePassword\x1a\x14.dialog.ResponseAuth\"3\x82\xd3\xe4\x93\x02-\"(/v1/grpc/Authentication/ValidatePassword:\x01*\x12\x86\x01\n\x0fGetOAuth2Params\x12\x1e.dialog.RequestGetOAuth2Params\x1a\x1f.dialog.ResponseGetOAuth2Params\"2\x82\xd3\xe4\x93\x02,\"\'/v1/grpc/Authentication/GetOAuth2Params:\x01*\x12x\n\x0e\x43ompleteOAuth2\x12\x1d.dialog.RequestCompleteOAuth2\x1a\x14.dialog.ResponseAuth\"1\x82\xd3\xe4\x93\x02+\"&/v1/grpc/Authentication/CompleteOAuth2:\x01*\x12`\n\x06SignUp\x12\x15.dialog.RequestSignUp\x1a\x14.dialog.ResponseAuth\")\x82\xd3\xe4\x93\x02#\"\x1e/v1/grpc/Authentication/SignUp:\x01*\x12\x86\x01\n\x0fGetAuthSessions\x12\x1e.dialog.RequestGetAuthSessions\x1a\x1f.dialog.ResponseGetAuthSessions\"2\x82\xd3\xe4\x93\x02,\"\'/v1/grpc/Authentication/GetAuthSessions:\x01*\x12~\n\x10TerminateSession\x12\x1f.dialog.RequestTerminateSession\x1a\x14.dialog.ResponseVoid\"3\x82\xd3\xe4\x93\x02-\"(/v1/grpc/Authentication/TerminateSession:\x01*\x12\x8a\x01\n\x14TerminateAllSessions\x12#.dialog.RequestTerminateAllSessions\x1a\x14.dialog.ResponseVoid\"7\x82\xd3\xe4\x93\x02\x31\",/v1/grpc/Authentication/TerminateAllSessions:\x01*\x12\x63\n\x07SignOut\x12\x16.dialog.RequestSignOut\x1a\x14.dialog.ResponseVoid\"*\x82\xd3\xe4\x93\x02$\"\x1f/v1/grpc/Authentication/SignOut:\x01*\x12x\n\x0eSignInObsolete\x12\x1d.dialog.RequestSignInObsolete\x1a\x14.dialog.ResponseAuth\"1\x82\xd3\xe4\x93\x02+\"&/v1/grpc/Authentication/SignInObsolete:\x01*\x12x\n\x0eSignUpObsolete\x12\x1d.dialog.RequestSignUpObsolete\x1a\x14.dialog.ResponseAuth\"1\x82\xd3\xe4\x93\x02+\"&/v1/grpc/Authentication/SignUpObsolete:\x01*\x12\x9a\x01\n\x14SendAuthCodeObsolete\x12#.dialog.RequestSendAuthCodeObsolete\x1a$.dialog.ResponseSendAuthCodeObsolete\"7\x82\xd3\xe4\x93\x02\x31\",/v1/grpc/Authentication/SendAuthCodeObsolete:\x01*\x12\x8a\x01\n\x14SendAuthCallObsolete\x12#.dialog.RequestSendAuthCallObsolete\x1a\x14.dialog.ResponseVoid\"7\x82\xd3\xe4\x93\x02\x31\",/v1/grpc/Authentication/SendAuthCallObsolete:\x01*B\x19\xe2?\x16\n\x14im.dlg.grpc.servicesb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,definitions__pb2.DESCRIPTOR,miscellaneous__pb2.DESCRIPTOR,peers__pb2.DESCRIPTOR,users__pb2.DESCRIPTOR,scalapb_dot_scalapb__pb2.DESCRIPTOR,])
@@ -39,19 +39,19 @@ _PHONEACTIVATIONTYPE = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='PHONEACTIVATIONTYPE_UNKNOWN', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='PHONEACTIVATIONTYPE_CODE', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='PHONEACTIVATIONTYPE_PASSWORD', index=2, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
+  serialized_options=None,
   serialized_start=5694,
   serialized_end=5812,
 )
@@ -66,23 +66,23 @@ _EMAILACTIVATIONTYPE = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='EMAILACTIVATIONTYPE_UNKNOWN', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='EMAILACTIVATIONTYPE_CODE', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='EMAILACTIVATIONTYPE_OAUTH2', index=2, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='EMAILACTIVATIONTYPE_PASSWORD', index=3, number=3,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
+  serialized_options=None,
   serialized_start=5815,
   serialized_end=5965,
 )
@@ -97,19 +97,19 @@ _AUTHHOLDER = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='AUTHHOLDER_UNKNOWN', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='AUTHHOLDER_THISDEVICE', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='AUTHHOLDER_OTHERDEVICE', index=2, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
+  serialized_options=None,
   serialized_start=5967,
   serialized_end=6058,
 )
@@ -142,56 +142,56 @@ _REQUESTSTARTPHONEAUTH = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='app_id', full_name='dialog.RequestStartPhoneAuth.app_id', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='api_key', full_name='dialog.RequestStartPhoneAuth.api_key', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='device_hash', full_name='dialog.RequestStartPhoneAuth.device_hash', index=3,
       number=4, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='device_title', full_name='dialog.RequestStartPhoneAuth.device_title', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='time_zone', full_name='dialog.RequestStartPhoneAuth.time_zone', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='preferred_languages', full_name='dialog.RequestStartPhoneAuth.preferred_languages', index=6,
       number=7, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -215,28 +215,28 @@ _RESPONSESTARTPHONEAUTH = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='is_registered', full_name='dialog.ResponseStartPhoneAuth.is_registered', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='activation_type', full_name='dialog.ResponseStartPhoneAuth.activation_type', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -260,14 +260,14 @@ _REQUESTSENDCODEBYPHONECALL = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006danger'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -291,56 +291,56 @@ _REQUESTSTARTEMAILAUTH = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='app_id', full_name='dialog.RequestStartEmailAuth.app_id', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='api_key', full_name='dialog.RequestStartEmailAuth.api_key', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='device_hash', full_name='dialog.RequestStartEmailAuth.device_hash', index=3,
       number=4, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='device_title', full_name='dialog.RequestStartEmailAuth.device_title', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='time_zone', full_name='dialog.RequestStartEmailAuth.time_zone', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='preferred_languages', full_name='dialog.RequestStartEmailAuth.preferred_languages', index=6,
       number=7, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -364,28 +364,28 @@ _RESPONSESTARTEMAILAUTH = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='is_registered', full_name='dialog.ResponseStartEmailAuth.is_registered', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='activation_type', full_name='dialog.ResponseStartEmailAuth.activation_type', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -409,56 +409,56 @@ _REQUESTSTARTANONYMOUSAUTH = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='app_id', full_name='dialog.RequestStartAnonymousAuth.app_id', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='api_key', full_name='dialog.RequestStartAnonymousAuth.api_key', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='device_hash', full_name='dialog.RequestStartAnonymousAuth.device_hash', index=3,
       number=4, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='device_title', full_name='dialog.RequestStartAnonymousAuth.device_title', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='time_zone', full_name='dialog.RequestStartAnonymousAuth.time_zone', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='preferred_languages', full_name='dialog.RequestStartAnonymousAuth.preferred_languages', index=6,
       number=7, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -482,56 +482,56 @@ _REQUESTSTARTTOKENAUTH = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='app_id', full_name='dialog.RequestStartTokenAuth.app_id', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='api_key', full_name='dialog.RequestStartTokenAuth.api_key', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='device_hash', full_name='dialog.RequestStartTokenAuth.device_hash', index=3,
       number=4, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='device_title', full_name='dialog.RequestStartTokenAuth.device_title', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='time_zone', full_name='dialog.RequestStartTokenAuth.time_zone', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='preferred_languages', full_name='dialog.RequestStartTokenAuth.preferred_languages', index=6,
       number=7, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -555,56 +555,56 @@ _REQUESTSTARTUSERNAMEAUTH = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='app_id', full_name='dialog.RequestStartUsernameAuth.app_id', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='api_key', full_name='dialog.RequestStartUsernameAuth.api_key', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='device_hash', full_name='dialog.RequestStartUsernameAuth.device_hash', index=3,
       number=4, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='device_title', full_name='dialog.RequestStartUsernameAuth.device_title', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='time_zone', full_name='dialog.RequestStartUsernameAuth.time_zone', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='preferred_languages', full_name='dialog.RequestStartUsernameAuth.preferred_languages', index=6,
       number=7, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -628,21 +628,21 @@ _RESPONSESTARTUSERNAMEAUTH = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='is_registered', full_name='dialog.ResponseStartUsernameAuth.is_registered', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -666,21 +666,21 @@ _REQUESTVALIDATECODE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006danger'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='code', full_name='dialog.RequestValidateCode.code', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -704,14 +704,14 @@ _REQUESTRESENDCODE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006danger'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -735,21 +735,21 @@ _REQUESTVALIDATEPASSWORD = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006danger'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='password', full_name='dialog.RequestValidatePassword.password', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006danger'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -773,21 +773,21 @@ _REQUESTGETOAUTH2PARAMS = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006danger'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='redirect_url', full_name='dialog.RequestGetOAuth2Params.redirect_url', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -811,14 +811,14 @@ _RESPONSEGETOAUTH2PARAMS = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -842,21 +842,21 @@ _REQUESTCOMPLETEOAUTH2 = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006danger'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='code', full_name='dialog.RequestCompleteOAuth2.code', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006danger'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -880,35 +880,35 @@ _REQUESTSIGNUP = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006danger'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='name', full_name='dialog.RequestSignUp.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sex', full_name='dialog.RequestSignUp.sex', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='password', full_name='dialog.RequestSignUp.password', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -932,28 +932,28 @@ _RESPONSEAUTH = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='config', full_name='dialog.ResponseAuth.config', index=1,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='config_hash', full_name='dialog.ResponseAuth.config_hash', index=2,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -977,70 +977,70 @@ _AUTHSESSION = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='auth_holder', full_name='dialog.AuthSession.auth_holder', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='app_id', full_name='dialog.AuthSession.app_id', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='app_title', full_name='dialog.AuthSession.app_title', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='device_title', full_name='dialog.AuthSession.device_title', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='auth_time', full_name='dialog.AuthSession.auth_time', index=5,
       number=6, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='auth_location', full_name='dialog.AuthSession.auth_location', index=6,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='latitude', full_name='dialog.AuthSession.latitude', index=7,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='longitude', full_name='dialog.AuthSession.longitude', index=8,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1064,7 +1064,7 @@ _REQUESTGETAUTHSESSIONS = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1088,14 +1088,14 @@ _RESPONSEGETAUTHSESSIONS = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1119,14 +1119,14 @@ _REQUESTTERMINATESESSION = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1150,7 +1150,7 @@ _REQUESTTERMINATEALLSESSIONS = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1174,7 +1174,7 @@ _REQUESTSIGNOUT = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1198,28 +1198,28 @@ _FORCERELOADFIELD = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='forceReloadContacts', full_name='dialog.ForceReloadField.forceReloadContacts', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='forceReloadHistory', full_name='dialog.ForceReloadField.forceReloadHistory', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1246,7 +1246,7 @@ _FORCERELOADDIALOGS = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1270,7 +1270,7 @@ _FORCERELOADCONTACTS = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1294,14 +1294,14 @@ _FORCERELOADHISTORY = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1325,14 +1325,14 @@ _UPDATEFORCERELOADSTATE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1356,56 +1356,56 @@ _REQUESTSIGNINOBSOLETE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006danger'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sms_hash', full_name='dialog.RequestSignInObsolete.sms_hash', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006danger'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sms_code', full_name='dialog.RequestSignInObsolete.sms_code', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006danger'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='device_hash', full_name='dialog.RequestSignInObsolete.device_hash', index=3,
       number=5, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='device_title', full_name='dialog.RequestSignInObsolete.device_title', index=4,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='app_id', full_name='dialog.RequestSignInObsolete.app_id', index=5,
       number=7, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='app_key', full_name='dialog.RequestSignInObsolete.app_key', index=6,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1429,70 +1429,70 @@ _REQUESTSIGNUPOBSOLETE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006danger'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sms_hash', full_name='dialog.RequestSignUpObsolete.sms_hash', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006danger'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sms_code', full_name='dialog.RequestSignUpObsolete.sms_code', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006danger'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='name', full_name='dialog.RequestSignUpObsolete.name', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='device_hash', full_name='dialog.RequestSignUpObsolete.device_hash', index=4,
       number=7, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='device_title', full_name='dialog.RequestSignUpObsolete.device_title', index=5,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='app_id', full_name='dialog.RequestSignUpObsolete.app_id', index=6,
       number=9, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='app_key', full_name='dialog.RequestSignUpObsolete.app_key', index=7,
       number=10, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='is_silent', full_name='dialog.RequestSignUpObsolete.is_silent', index=8,
       number=11, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1516,28 +1516,28 @@ _REQUESTSENDAUTHCODEOBSOLETE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='app_id', full_name='dialog.RequestSendAuthCodeObsolete.app_id', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='api_key', full_name='dialog.RequestSendAuthCodeObsolete.api_key', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1561,21 +1561,21 @@ _RESPONSESENDAUTHCODEOBSOLETE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='is_registered', full_name='dialog.ResponseSendAuthCodeObsolete.is_registered', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1599,35 +1599,35 @@ _REQUESTSENDAUTHCALLOBSOLETE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sms_hash', full_name='dialog.RequestSendAuthCallObsolete.sms_hash', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006danger'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='app_id', full_name='dialog.RequestSendAuthCallObsolete.app_id', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='api_key', full_name='dialog.RequestSendAuthCallObsolete.api_key', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1937,241 +1937,127 @@ RequestSendAuthCallObsolete = _reflection.GeneratedProtocolMessageType('RequestS
 _sym_db.RegisterMessage(RequestSendAuthCallObsolete)
 
 
-DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\342?\026\n\024im.dlg.grpc.services'))
-_REQUESTSTARTPHONEAUTH.fields_by_name['phone_number'].has_options = True
-_REQUESTSTARTPHONEAUTH.fields_by_name['phone_number']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSTARTPHONEAUTH.fields_by_name['app_id'].has_options = True
-_REQUESTSTARTPHONEAUTH.fields_by_name['app_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTSTARTPHONEAUTH.fields_by_name['api_key'].has_options = True
-_REQUESTSTARTPHONEAUTH.fields_by_name['api_key']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTSTARTPHONEAUTH.fields_by_name['device_hash'].has_options = True
-_REQUESTSTARTPHONEAUTH.fields_by_name['device_hash']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSTARTPHONEAUTH.fields_by_name['device_title'].has_options = True
-_REQUESTSTARTPHONEAUTH.fields_by_name['device_title']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSTARTPHONEAUTH.fields_by_name['time_zone'].has_options = True
-_REQUESTSTARTPHONEAUTH.fields_by_name['time_zone']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSTARTPHONEAUTH.fields_by_name['preferred_languages'].has_options = True
-_REQUESTSTARTPHONEAUTH.fields_by_name['preferred_languages']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSTARTPHONEAUTH.has_options = True
-_REQUESTSTARTPHONEAUTH._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSESTARTPHONEAUTH.has_options = True
-_RESPONSESTARTPHONEAUTH._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_REQUESTSENDCODEBYPHONECALL.fields_by_name['transaction_hash'].has_options = True
-_REQUESTSENDCODEBYPHONECALL.fields_by_name['transaction_hash']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger'))
-_REQUESTSENDCODEBYPHONECALL.has_options = True
-_REQUESTSENDCODEBYPHONECALL._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTSTARTEMAILAUTH.fields_by_name['email'].has_options = True
-_REQUESTSTARTEMAILAUTH.fields_by_name['email']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSTARTEMAILAUTH.fields_by_name['app_id'].has_options = True
-_REQUESTSTARTEMAILAUTH.fields_by_name['app_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTSTARTEMAILAUTH.fields_by_name['api_key'].has_options = True
-_REQUESTSTARTEMAILAUTH.fields_by_name['api_key']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTSTARTEMAILAUTH.fields_by_name['device_hash'].has_options = True
-_REQUESTSTARTEMAILAUTH.fields_by_name['device_hash']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSTARTEMAILAUTH.fields_by_name['device_title'].has_options = True
-_REQUESTSTARTEMAILAUTH.fields_by_name['device_title']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSTARTEMAILAUTH.fields_by_name['time_zone'].has_options = True
-_REQUESTSTARTEMAILAUTH.fields_by_name['time_zone']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSTARTEMAILAUTH.fields_by_name['preferred_languages'].has_options = True
-_REQUESTSTARTEMAILAUTH.fields_by_name['preferred_languages']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSTARTEMAILAUTH.has_options = True
-_REQUESTSTARTEMAILAUTH._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSESTARTEMAILAUTH.has_options = True
-_RESPONSESTARTEMAILAUTH._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_REQUESTSTARTANONYMOUSAUTH.fields_by_name['name'].has_options = True
-_REQUESTSTARTANONYMOUSAUTH.fields_by_name['name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSTARTANONYMOUSAUTH.fields_by_name['app_id'].has_options = True
-_REQUESTSTARTANONYMOUSAUTH.fields_by_name['app_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTSTARTANONYMOUSAUTH.fields_by_name['api_key'].has_options = True
-_REQUESTSTARTANONYMOUSAUTH.fields_by_name['api_key']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTSTARTANONYMOUSAUTH.fields_by_name['device_hash'].has_options = True
-_REQUESTSTARTANONYMOUSAUTH.fields_by_name['device_hash']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSTARTANONYMOUSAUTH.fields_by_name['device_title'].has_options = True
-_REQUESTSTARTANONYMOUSAUTH.fields_by_name['device_title']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSTARTANONYMOUSAUTH.fields_by_name['time_zone'].has_options = True
-_REQUESTSTARTANONYMOUSAUTH.fields_by_name['time_zone']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSTARTANONYMOUSAUTH.fields_by_name['preferred_languages'].has_options = True
-_REQUESTSTARTANONYMOUSAUTH.fields_by_name['preferred_languages']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSTARTANONYMOUSAUTH.has_options = True
-_REQUESTSTARTANONYMOUSAUTH._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTSTARTTOKENAUTH.fields_by_name['token'].has_options = True
-_REQUESTSTARTTOKENAUTH.fields_by_name['token']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSTARTTOKENAUTH.fields_by_name['app_id'].has_options = True
-_REQUESTSTARTTOKENAUTH.fields_by_name['app_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTSTARTTOKENAUTH.fields_by_name['api_key'].has_options = True
-_REQUESTSTARTTOKENAUTH.fields_by_name['api_key']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTSTARTTOKENAUTH.fields_by_name['device_hash'].has_options = True
-_REQUESTSTARTTOKENAUTH.fields_by_name['device_hash']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSTARTTOKENAUTH.fields_by_name['device_title'].has_options = True
-_REQUESTSTARTTOKENAUTH.fields_by_name['device_title']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSTARTTOKENAUTH.fields_by_name['time_zone'].has_options = True
-_REQUESTSTARTTOKENAUTH.fields_by_name['time_zone']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSTARTTOKENAUTH.fields_by_name['preferred_languages'].has_options = True
-_REQUESTSTARTTOKENAUTH.fields_by_name['preferred_languages']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSTARTTOKENAUTH.has_options = True
-_REQUESTSTARTTOKENAUTH._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTSTARTUSERNAMEAUTH.fields_by_name['username'].has_options = True
-_REQUESTSTARTUSERNAMEAUTH.fields_by_name['username']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSTARTUSERNAMEAUTH.fields_by_name['app_id'].has_options = True
-_REQUESTSTARTUSERNAMEAUTH.fields_by_name['app_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTSTARTUSERNAMEAUTH.fields_by_name['api_key'].has_options = True
-_REQUESTSTARTUSERNAMEAUTH.fields_by_name['api_key']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTSTARTUSERNAMEAUTH.fields_by_name['device_hash'].has_options = True
-_REQUESTSTARTUSERNAMEAUTH.fields_by_name['device_hash']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSTARTUSERNAMEAUTH.fields_by_name['device_title'].has_options = True
-_REQUESTSTARTUSERNAMEAUTH.fields_by_name['device_title']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSTARTUSERNAMEAUTH.fields_by_name['time_zone'].has_options = True
-_REQUESTSTARTUSERNAMEAUTH.fields_by_name['time_zone']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSTARTUSERNAMEAUTH.fields_by_name['preferred_languages'].has_options = True
-_REQUESTSTARTUSERNAMEAUTH.fields_by_name['preferred_languages']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSTARTUSERNAMEAUTH.has_options = True
-_REQUESTSTARTUSERNAMEAUTH._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSESTARTUSERNAMEAUTH.has_options = True
-_RESPONSESTARTUSERNAMEAUTH._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_REQUESTVALIDATECODE.fields_by_name['transaction_hash'].has_options = True
-_REQUESTVALIDATECODE.fields_by_name['transaction_hash']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger'))
-_REQUESTVALIDATECODE.fields_by_name['code'].has_options = True
-_REQUESTVALIDATECODE.fields_by_name['code']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTVALIDATECODE.has_options = True
-_REQUESTVALIDATECODE._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTRESENDCODE.fields_by_name['transaction_hash'].has_options = True
-_REQUESTRESENDCODE.fields_by_name['transaction_hash']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger'))
-_REQUESTRESENDCODE.has_options = True
-_REQUESTRESENDCODE._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTVALIDATEPASSWORD.fields_by_name['transaction_hash'].has_options = True
-_REQUESTVALIDATEPASSWORD.fields_by_name['transaction_hash']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger'))
-_REQUESTVALIDATEPASSWORD.fields_by_name['password'].has_options = True
-_REQUESTVALIDATEPASSWORD.fields_by_name['password']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger'))
-_REQUESTVALIDATEPASSWORD.has_options = True
-_REQUESTVALIDATEPASSWORD._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTGETOAUTH2PARAMS.fields_by_name['transaction_hash'].has_options = True
-_REQUESTGETOAUTH2PARAMS.fields_by_name['transaction_hash']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger'))
-_REQUESTGETOAUTH2PARAMS.fields_by_name['redirect_url'].has_options = True
-_REQUESTGETOAUTH2PARAMS.fields_by_name['redirect_url']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTGETOAUTH2PARAMS.has_options = True
-_REQUESTGETOAUTH2PARAMS._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSEGETOAUTH2PARAMS.has_options = True
-_RESPONSEGETOAUTH2PARAMS._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_REQUESTCOMPLETEOAUTH2.fields_by_name['transaction_hash'].has_options = True
-_REQUESTCOMPLETEOAUTH2.fields_by_name['transaction_hash']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger'))
-_REQUESTCOMPLETEOAUTH2.fields_by_name['code'].has_options = True
-_REQUESTCOMPLETEOAUTH2.fields_by_name['code']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger'))
-_REQUESTCOMPLETEOAUTH2.has_options = True
-_REQUESTCOMPLETEOAUTH2._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTSIGNUP.fields_by_name['transaction_hash'].has_options = True
-_REQUESTSIGNUP.fields_by_name['transaction_hash']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger'))
-_REQUESTSIGNUP.fields_by_name['name'].has_options = True
-_REQUESTSIGNUP.fields_by_name['name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSIGNUP.fields_by_name['sex'].has_options = True
-_REQUESTSIGNUP.fields_by_name['sex']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSIGNUP.fields_by_name['password'].has_options = True
-_REQUESTSIGNUP.fields_by_name['password']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTSIGNUP.has_options = True
-_REQUESTSIGNUP._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSEAUTH.fields_by_name['user'].has_options = True
-_RESPONSEAUTH.fields_by_name['user']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_RESPONSEAUTH.fields_by_name['config'].has_options = True
-_RESPONSEAUTH.fields_by_name['config']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_RESPONSEAUTH.fields_by_name['config_hash'].has_options = True
-_RESPONSEAUTH.fields_by_name['config_hash']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_RESPONSEAUTH.has_options = True
-_RESPONSEAUTH._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_AUTHSESSION.fields_by_name['id'].has_options = True
-_AUTHSESSION.fields_by_name['id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_AUTHSESSION.fields_by_name['auth_holder'].has_options = True
-_AUTHSESSION.fields_by_name['auth_holder']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_AUTHSESSION.fields_by_name['app_id'].has_options = True
-_AUTHSESSION.fields_by_name['app_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_AUTHSESSION.fields_by_name['app_title'].has_options = True
-_AUTHSESSION.fields_by_name['app_title']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_AUTHSESSION.fields_by_name['device_title'].has_options = True
-_AUTHSESSION.fields_by_name['device_title']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_AUTHSESSION.fields_by_name['auth_time'].has_options = True
-_AUTHSESSION.fields_by_name['auth_time']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_AUTHSESSION.fields_by_name['auth_location'].has_options = True
-_AUTHSESSION.fields_by_name['auth_location']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_AUTHSESSION.fields_by_name['latitude'].has_options = True
-_AUTHSESSION.fields_by_name['latitude']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_AUTHSESSION.fields_by_name['longitude'].has_options = True
-_AUTHSESSION.fields_by_name['longitude']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTGETAUTHSESSIONS.has_options = True
-_REQUESTGETAUTHSESSIONS._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSEGETAUTHSESSIONS.has_options = True
-_RESPONSEGETAUTHSESSIONS._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_REQUESTTERMINATESESSION.fields_by_name['id'].has_options = True
-_REQUESTTERMINATESESSION.fields_by_name['id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTTERMINATESESSION.has_options = True
-_REQUESTTERMINATESESSION._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTTERMINATEALLSESSIONS.has_options = True
-_REQUESTTERMINATEALLSESSIONS._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTSIGNOUT.has_options = True
-_REQUESTSIGNOUT._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_FORCERELOADHISTORY.fields_by_name['peer'].has_options = True
-_FORCERELOADHISTORY.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEFORCERELOADSTATE.fields_by_name['fields'].has_options = True
-_UPDATEFORCERELOADSTATE.fields_by_name['fields']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSIGNINOBSOLETE.fields_by_name['phone_number'].has_options = True
-_REQUESTSIGNINOBSOLETE.fields_by_name['phone_number']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger'))
-_REQUESTSIGNINOBSOLETE.fields_by_name['sms_hash'].has_options = True
-_REQUESTSIGNINOBSOLETE.fields_by_name['sms_hash']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger'))
-_REQUESTSIGNINOBSOLETE.fields_by_name['sms_code'].has_options = True
-_REQUESTSIGNINOBSOLETE.fields_by_name['sms_code']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger'))
-_REQUESTSIGNINOBSOLETE.fields_by_name['device_hash'].has_options = True
-_REQUESTSIGNINOBSOLETE.fields_by_name['device_hash']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSIGNINOBSOLETE.fields_by_name['device_title'].has_options = True
-_REQUESTSIGNINOBSOLETE.fields_by_name['device_title']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSIGNINOBSOLETE.fields_by_name['app_id'].has_options = True
-_REQUESTSIGNINOBSOLETE.fields_by_name['app_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTSIGNINOBSOLETE.fields_by_name['app_key'].has_options = True
-_REQUESTSIGNINOBSOLETE.fields_by_name['app_key']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTSIGNINOBSOLETE.has_options = True
-_REQUESTSIGNINOBSOLETE._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTSIGNUPOBSOLETE.fields_by_name['phone_number'].has_options = True
-_REQUESTSIGNUPOBSOLETE.fields_by_name['phone_number']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger'))
-_REQUESTSIGNUPOBSOLETE.fields_by_name['sms_hash'].has_options = True
-_REQUESTSIGNUPOBSOLETE.fields_by_name['sms_hash']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger'))
-_REQUESTSIGNUPOBSOLETE.fields_by_name['sms_code'].has_options = True
-_REQUESTSIGNUPOBSOLETE.fields_by_name['sms_code']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger'))
-_REQUESTSIGNUPOBSOLETE.fields_by_name['name'].has_options = True
-_REQUESTSIGNUPOBSOLETE.fields_by_name['name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSIGNUPOBSOLETE.fields_by_name['device_hash'].has_options = True
-_REQUESTSIGNUPOBSOLETE.fields_by_name['device_hash']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSIGNUPOBSOLETE.fields_by_name['device_title'].has_options = True
-_REQUESTSIGNUPOBSOLETE.fields_by_name['device_title']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSIGNUPOBSOLETE.fields_by_name['app_id'].has_options = True
-_REQUESTSIGNUPOBSOLETE.fields_by_name['app_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTSIGNUPOBSOLETE.fields_by_name['app_key'].has_options = True
-_REQUESTSIGNUPOBSOLETE.fields_by_name['app_key']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTSIGNUPOBSOLETE.has_options = True
-_REQUESTSIGNUPOBSOLETE._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTSENDAUTHCODEOBSOLETE.fields_by_name['phone_number'].has_options = True
-_REQUESTSENDAUTHCODEOBSOLETE.fields_by_name['phone_number']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSENDAUTHCODEOBSOLETE.fields_by_name['app_id'].has_options = True
-_REQUESTSENDAUTHCODEOBSOLETE.fields_by_name['app_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTSENDAUTHCODEOBSOLETE.fields_by_name['api_key'].has_options = True
-_REQUESTSENDAUTHCODEOBSOLETE.fields_by_name['api_key']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTSENDAUTHCODEOBSOLETE.has_options = True
-_REQUESTSENDAUTHCODEOBSOLETE._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSESENDAUTHCODEOBSOLETE.has_options = True
-_RESPONSESENDAUTHCODEOBSOLETE._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_REQUESTSENDAUTHCALLOBSOLETE.fields_by_name['phone_number'].has_options = True
-_REQUESTSENDAUTHCALLOBSOLETE.fields_by_name['phone_number']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSENDAUTHCALLOBSOLETE.fields_by_name['sms_hash'].has_options = True
-_REQUESTSENDAUTHCALLOBSOLETE.fields_by_name['sms_hash']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger'))
-_REQUESTSENDAUTHCALLOBSOLETE.fields_by_name['app_id'].has_options = True
-_REQUESTSENDAUTHCALLOBSOLETE.fields_by_name['app_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTSENDAUTHCALLOBSOLETE.fields_by_name['api_key'].has_options = True
-_REQUESTSENDAUTHCALLOBSOLETE.fields_by_name['api_key']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTSENDAUTHCALLOBSOLETE.has_options = True
-_REQUESTSENDAUTHCALLOBSOLETE._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
+DESCRIPTOR._options = None
+_REQUESTSTARTPHONEAUTH.fields_by_name['phone_number']._options = None
+_REQUESTSTARTPHONEAUTH.fields_by_name['app_id']._options = None
+_REQUESTSTARTPHONEAUTH.fields_by_name['api_key']._options = None
+_REQUESTSTARTPHONEAUTH.fields_by_name['device_hash']._options = None
+_REQUESTSTARTPHONEAUTH.fields_by_name['device_title']._options = None
+_REQUESTSTARTPHONEAUTH.fields_by_name['time_zone']._options = None
+_REQUESTSTARTPHONEAUTH.fields_by_name['preferred_languages']._options = None
+_REQUESTSTARTPHONEAUTH._options = None
+_RESPONSESTARTPHONEAUTH._options = None
+_REQUESTSENDCODEBYPHONECALL.fields_by_name['transaction_hash']._options = None
+_REQUESTSENDCODEBYPHONECALL._options = None
+_REQUESTSTARTEMAILAUTH.fields_by_name['email']._options = None
+_REQUESTSTARTEMAILAUTH.fields_by_name['app_id']._options = None
+_REQUESTSTARTEMAILAUTH.fields_by_name['api_key']._options = None
+_REQUESTSTARTEMAILAUTH.fields_by_name['device_hash']._options = None
+_REQUESTSTARTEMAILAUTH.fields_by_name['device_title']._options = None
+_REQUESTSTARTEMAILAUTH.fields_by_name['time_zone']._options = None
+_REQUESTSTARTEMAILAUTH.fields_by_name['preferred_languages']._options = None
+_REQUESTSTARTEMAILAUTH._options = None
+_RESPONSESTARTEMAILAUTH._options = None
+_REQUESTSTARTANONYMOUSAUTH.fields_by_name['name']._options = None
+_REQUESTSTARTANONYMOUSAUTH.fields_by_name['app_id']._options = None
+_REQUESTSTARTANONYMOUSAUTH.fields_by_name['api_key']._options = None
+_REQUESTSTARTANONYMOUSAUTH.fields_by_name['device_hash']._options = None
+_REQUESTSTARTANONYMOUSAUTH.fields_by_name['device_title']._options = None
+_REQUESTSTARTANONYMOUSAUTH.fields_by_name['time_zone']._options = None
+_REQUESTSTARTANONYMOUSAUTH.fields_by_name['preferred_languages']._options = None
+_REQUESTSTARTANONYMOUSAUTH._options = None
+_REQUESTSTARTTOKENAUTH.fields_by_name['token']._options = None
+_REQUESTSTARTTOKENAUTH.fields_by_name['app_id']._options = None
+_REQUESTSTARTTOKENAUTH.fields_by_name['api_key']._options = None
+_REQUESTSTARTTOKENAUTH.fields_by_name['device_hash']._options = None
+_REQUESTSTARTTOKENAUTH.fields_by_name['device_title']._options = None
+_REQUESTSTARTTOKENAUTH.fields_by_name['time_zone']._options = None
+_REQUESTSTARTTOKENAUTH.fields_by_name['preferred_languages']._options = None
+_REQUESTSTARTTOKENAUTH._options = None
+_REQUESTSTARTUSERNAMEAUTH.fields_by_name['username']._options = None
+_REQUESTSTARTUSERNAMEAUTH.fields_by_name['app_id']._options = None
+_REQUESTSTARTUSERNAMEAUTH.fields_by_name['api_key']._options = None
+_REQUESTSTARTUSERNAMEAUTH.fields_by_name['device_hash']._options = None
+_REQUESTSTARTUSERNAMEAUTH.fields_by_name['device_title']._options = None
+_REQUESTSTARTUSERNAMEAUTH.fields_by_name['time_zone']._options = None
+_REQUESTSTARTUSERNAMEAUTH.fields_by_name['preferred_languages']._options = None
+_REQUESTSTARTUSERNAMEAUTH._options = None
+_RESPONSESTARTUSERNAMEAUTH._options = None
+_REQUESTVALIDATECODE.fields_by_name['transaction_hash']._options = None
+_REQUESTVALIDATECODE.fields_by_name['code']._options = None
+_REQUESTVALIDATECODE._options = None
+_REQUESTRESENDCODE.fields_by_name['transaction_hash']._options = None
+_REQUESTRESENDCODE._options = None
+_REQUESTVALIDATEPASSWORD.fields_by_name['transaction_hash']._options = None
+_REQUESTVALIDATEPASSWORD.fields_by_name['password']._options = None
+_REQUESTVALIDATEPASSWORD._options = None
+_REQUESTGETOAUTH2PARAMS.fields_by_name['transaction_hash']._options = None
+_REQUESTGETOAUTH2PARAMS.fields_by_name['redirect_url']._options = None
+_REQUESTGETOAUTH2PARAMS._options = None
+_RESPONSEGETOAUTH2PARAMS._options = None
+_REQUESTCOMPLETEOAUTH2.fields_by_name['transaction_hash']._options = None
+_REQUESTCOMPLETEOAUTH2.fields_by_name['code']._options = None
+_REQUESTCOMPLETEOAUTH2._options = None
+_REQUESTSIGNUP.fields_by_name['transaction_hash']._options = None
+_REQUESTSIGNUP.fields_by_name['name']._options = None
+_REQUESTSIGNUP.fields_by_name['sex']._options = None
+_REQUESTSIGNUP.fields_by_name['password']._options = None
+_REQUESTSIGNUP._options = None
+_RESPONSEAUTH.fields_by_name['user']._options = None
+_RESPONSEAUTH.fields_by_name['config']._options = None
+_RESPONSEAUTH.fields_by_name['config_hash']._options = None
+_RESPONSEAUTH._options = None
+_AUTHSESSION.fields_by_name['id']._options = None
+_AUTHSESSION.fields_by_name['auth_holder']._options = None
+_AUTHSESSION.fields_by_name['app_id']._options = None
+_AUTHSESSION.fields_by_name['app_title']._options = None
+_AUTHSESSION.fields_by_name['device_title']._options = None
+_AUTHSESSION.fields_by_name['auth_time']._options = None
+_AUTHSESSION.fields_by_name['auth_location']._options = None
+_AUTHSESSION.fields_by_name['latitude']._options = None
+_AUTHSESSION.fields_by_name['longitude']._options = None
+_REQUESTGETAUTHSESSIONS._options = None
+_RESPONSEGETAUTHSESSIONS._options = None
+_REQUESTTERMINATESESSION.fields_by_name['id']._options = None
+_REQUESTTERMINATESESSION._options = None
+_REQUESTTERMINATEALLSESSIONS._options = None
+_REQUESTSIGNOUT._options = None
+_FORCERELOADHISTORY.fields_by_name['peer']._options = None
+_UPDATEFORCERELOADSTATE.fields_by_name['fields']._options = None
+_REQUESTSIGNINOBSOLETE.fields_by_name['phone_number']._options = None
+_REQUESTSIGNINOBSOLETE.fields_by_name['sms_hash']._options = None
+_REQUESTSIGNINOBSOLETE.fields_by_name['sms_code']._options = None
+_REQUESTSIGNINOBSOLETE.fields_by_name['device_hash']._options = None
+_REQUESTSIGNINOBSOLETE.fields_by_name['device_title']._options = None
+_REQUESTSIGNINOBSOLETE.fields_by_name['app_id']._options = None
+_REQUESTSIGNINOBSOLETE.fields_by_name['app_key']._options = None
+_REQUESTSIGNINOBSOLETE._options = None
+_REQUESTSIGNUPOBSOLETE.fields_by_name['phone_number']._options = None
+_REQUESTSIGNUPOBSOLETE.fields_by_name['sms_hash']._options = None
+_REQUESTSIGNUPOBSOLETE.fields_by_name['sms_code']._options = None
+_REQUESTSIGNUPOBSOLETE.fields_by_name['name']._options = None
+_REQUESTSIGNUPOBSOLETE.fields_by_name['device_hash']._options = None
+_REQUESTSIGNUPOBSOLETE.fields_by_name['device_title']._options = None
+_REQUESTSIGNUPOBSOLETE.fields_by_name['app_id']._options = None
+_REQUESTSIGNUPOBSOLETE.fields_by_name['app_key']._options = None
+_REQUESTSIGNUPOBSOLETE._options = None
+_REQUESTSENDAUTHCODEOBSOLETE.fields_by_name['phone_number']._options = None
+_REQUESTSENDAUTHCODEOBSOLETE.fields_by_name['app_id']._options = None
+_REQUESTSENDAUTHCODEOBSOLETE.fields_by_name['api_key']._options = None
+_REQUESTSENDAUTHCODEOBSOLETE._options = None
+_RESPONSESENDAUTHCODEOBSOLETE._options = None
+_REQUESTSENDAUTHCALLOBSOLETE.fields_by_name['phone_number']._options = None
+_REQUESTSENDAUTHCALLOBSOLETE.fields_by_name['sms_hash']._options = None
+_REQUESTSENDAUTHCALLOBSOLETE.fields_by_name['app_id']._options = None
+_REQUESTSENDAUTHCALLOBSOLETE.fields_by_name['api_key']._options = None
+_REQUESTSENDAUTHCALLOBSOLETE._options = None
 
 _AUTHENTICATION = _descriptor.ServiceDescriptor(
   name='Authentication',
   full_name='dialog.Authentication',
   file=DESCRIPTOR,
   index=0,
-  options=None,
+  serialized_options=None,
   serialized_start=6061,
   serialized_end=8643,
   methods=[
@@ -2182,7 +2068,7 @@ _AUTHENTICATION = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTSTARTPHONEAUTH,
     output_type=_RESPONSESTARTPHONEAUTH,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002+\"&/v1/grpc/Authentication/StartPhoneAuth:\001*')),
+    serialized_options=_b('\202\323\344\223\002+\"&/v1/grpc/Authentication/StartPhoneAuth:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='SendCodeByPhoneCall',
@@ -2191,7 +2077,7 @@ _AUTHENTICATION = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTSENDCODEBYPHONECALL,
     output_type=miscellaneous__pb2._RESPONSEVOID,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\0020\"+/v1/grpc/Authentication/SendCodeByPhoneCall:\001*')),
+    serialized_options=_b('\202\323\344\223\0020\"+/v1/grpc/Authentication/SendCodeByPhoneCall:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='StartEmailAuth',
@@ -2200,7 +2086,7 @@ _AUTHENTICATION = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTSTARTEMAILAUTH,
     output_type=_RESPONSESTARTEMAILAUTH,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002+\"&/v1/grpc/Authentication/StartEmailAuth:\001*')),
+    serialized_options=_b('\202\323\344\223\002+\"&/v1/grpc/Authentication/StartEmailAuth:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='StartAnonymousAuth',
@@ -2209,7 +2095,7 @@ _AUTHENTICATION = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTSTARTANONYMOUSAUTH,
     output_type=_RESPONSEAUTH,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002/\"*/v1/grpc/Authentication/StartAnonymousAuth:\001*')),
+    serialized_options=_b('\202\323\344\223\002/\"*/v1/grpc/Authentication/StartAnonymousAuth:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='StartTokenAuth',
@@ -2218,7 +2104,7 @@ _AUTHENTICATION = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTSTARTTOKENAUTH,
     output_type=_RESPONSEAUTH,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002+\"&/v1/grpc/Authentication/StartTokenAuth:\001*')),
+    serialized_options=_b('\202\323\344\223\002+\"&/v1/grpc/Authentication/StartTokenAuth:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='StartUsernameAuth',
@@ -2227,7 +2113,7 @@ _AUTHENTICATION = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTSTARTUSERNAMEAUTH,
     output_type=_RESPONSESTARTUSERNAMEAUTH,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002.\")/v1/grpc/Authentication/StartUsernameAuth:\001*')),
+    serialized_options=_b('\202\323\344\223\002.\")/v1/grpc/Authentication/StartUsernameAuth:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='ValidateCode',
@@ -2236,7 +2122,7 @@ _AUTHENTICATION = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTVALIDATECODE,
     output_type=_RESPONSEAUTH,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002)\"$/v1/grpc/Authentication/ValidateCode:\001*')),
+    serialized_options=_b('\202\323\344\223\002)\"$/v1/grpc/Authentication/ValidateCode:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='ResendCode',
@@ -2245,7 +2131,7 @@ _AUTHENTICATION = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTRESENDCODE,
     output_type=miscellaneous__pb2._RESPONSEVOID,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\'\"\"/v1/grpc/Authentication/ResendCode:\001*')),
+    serialized_options=_b('\202\323\344\223\002\'\"\"/v1/grpc/Authentication/ResendCode:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='ValidatePassword',
@@ -2254,7 +2140,7 @@ _AUTHENTICATION = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTVALIDATEPASSWORD,
     output_type=_RESPONSEAUTH,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002-\"(/v1/grpc/Authentication/ValidatePassword:\001*')),
+    serialized_options=_b('\202\323\344\223\002-\"(/v1/grpc/Authentication/ValidatePassword:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='GetOAuth2Params',
@@ -2263,7 +2149,7 @@ _AUTHENTICATION = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTGETOAUTH2PARAMS,
     output_type=_RESPONSEGETOAUTH2PARAMS,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002,\"\'/v1/grpc/Authentication/GetOAuth2Params:\001*')),
+    serialized_options=_b('\202\323\344\223\002,\"\'/v1/grpc/Authentication/GetOAuth2Params:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='CompleteOAuth2',
@@ -2272,7 +2158,7 @@ _AUTHENTICATION = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTCOMPLETEOAUTH2,
     output_type=_RESPONSEAUTH,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002+\"&/v1/grpc/Authentication/CompleteOAuth2:\001*')),
+    serialized_options=_b('\202\323\344\223\002+\"&/v1/grpc/Authentication/CompleteOAuth2:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='SignUp',
@@ -2281,7 +2167,7 @@ _AUTHENTICATION = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTSIGNUP,
     output_type=_RESPONSEAUTH,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002#\"\036/v1/grpc/Authentication/SignUp:\001*')),
+    serialized_options=_b('\202\323\344\223\002#\"\036/v1/grpc/Authentication/SignUp:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='GetAuthSessions',
@@ -2290,7 +2176,7 @@ _AUTHENTICATION = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTGETAUTHSESSIONS,
     output_type=_RESPONSEGETAUTHSESSIONS,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002,\"\'/v1/grpc/Authentication/GetAuthSessions:\001*')),
+    serialized_options=_b('\202\323\344\223\002,\"\'/v1/grpc/Authentication/GetAuthSessions:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='TerminateSession',
@@ -2299,7 +2185,7 @@ _AUTHENTICATION = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTTERMINATESESSION,
     output_type=miscellaneous__pb2._RESPONSEVOID,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002-\"(/v1/grpc/Authentication/TerminateSession:\001*')),
+    serialized_options=_b('\202\323\344\223\002-\"(/v1/grpc/Authentication/TerminateSession:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='TerminateAllSessions',
@@ -2308,7 +2194,7 @@ _AUTHENTICATION = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTTERMINATEALLSESSIONS,
     output_type=miscellaneous__pb2._RESPONSEVOID,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\0021\",/v1/grpc/Authentication/TerminateAllSessions:\001*')),
+    serialized_options=_b('\202\323\344\223\0021\",/v1/grpc/Authentication/TerminateAllSessions:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='SignOut',
@@ -2317,7 +2203,7 @@ _AUTHENTICATION = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTSIGNOUT,
     output_type=miscellaneous__pb2._RESPONSEVOID,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002$\"\037/v1/grpc/Authentication/SignOut:\001*')),
+    serialized_options=_b('\202\323\344\223\002$\"\037/v1/grpc/Authentication/SignOut:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='SignInObsolete',
@@ -2326,7 +2212,7 @@ _AUTHENTICATION = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTSIGNINOBSOLETE,
     output_type=_RESPONSEAUTH,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002+\"&/v1/grpc/Authentication/SignInObsolete:\001*')),
+    serialized_options=_b('\202\323\344\223\002+\"&/v1/grpc/Authentication/SignInObsolete:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='SignUpObsolete',
@@ -2335,7 +2221,7 @@ _AUTHENTICATION = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTSIGNUPOBSOLETE,
     output_type=_RESPONSEAUTH,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002+\"&/v1/grpc/Authentication/SignUpObsolete:\001*')),
+    serialized_options=_b('\202\323\344\223\002+\"&/v1/grpc/Authentication/SignUpObsolete:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='SendAuthCodeObsolete',
@@ -2344,7 +2230,7 @@ _AUTHENTICATION = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTSENDAUTHCODEOBSOLETE,
     output_type=_RESPONSESENDAUTHCODEOBSOLETE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\0021\",/v1/grpc/Authentication/SendAuthCodeObsolete:\001*')),
+    serialized_options=_b('\202\323\344\223\0021\",/v1/grpc/Authentication/SendAuthCodeObsolete:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='SendAuthCallObsolete',
@@ -2353,7 +2239,7 @@ _AUTHENTICATION = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTSENDAUTHCALLOBSOLETE,
     output_type=miscellaneous__pb2._RESPONSEVOID,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\0021\",/v1/grpc/Authentication/SendAuthCallObsolete:\001*')),
+    serialized_options=_b('\202\323\344\223\0021\",/v1/grpc/Authentication/SendAuthCallObsolete:\001*'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_AUTHENTICATION)

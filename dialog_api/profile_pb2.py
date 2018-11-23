@@ -7,7 +7,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -26,6 +25,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='profile.proto',
   package='dialog',
   syntax='proto3',
+  serialized_options=_b('\342?\026\n\024im.dlg.grpc.services'),
   serialized_pb=_b('\n\rprofile.proto\x12\x06\x64ialog\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x11\x64\x65\x66initions.proto\x1a\x13miscellaneous.proto\x1a\x15media_and_files.proto\x1a\x0busers.proto\x1a\x15scalapb/scalapb.proto\"K\n\x0fRequestEditName\x12\x1a\n\x04name\x18\x01 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"r\n\x13RequestEditNickName\x12=\n\x08nickname\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"U\n\x14RequestCheckNickName\x12\x1f\n\x08nickname\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"k\n\x10RequestEditAbout\x12\x39\n\x05\x61\x62out\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"m\n\x11RequestEditAvatar\x12:\n\rfile_location\x18\x01 \x01(\x0b\x32\x14.dialog.FileLocationB\r\x8a\xea\x30\t\n\x07\x63ompact:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"o\n\x12ResponseEditAvatar\x12\x1e\n\x06\x61vatar\x18\x01 \x01(\x0b\x32\x0e.dialog.Avatar\x12\x0b\n\x03seq\x18\x02 \x01(\x05\x12\r\n\x05state\x18\x03 \x01(\x0c:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"3\n\x13RequestRemoveAvatar:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"P\n\x15RequestEditMyTimeZone\x12\x19\n\x02tz\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"k\n\x1fRequestEditMyPreferredLanguages\x12*\n\x13preferred_languages\x18\x01 \x03(\tB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"V\n\x0eRequestEditSex\x12&\n\x03sex\x18\x01 \x01(\x0e\x32\x0b.dialog.SexB\x0c\x8a\xea\x30\x08\n\x06hidden:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"_\n\x18RequestEditCustomProfile\x12%\n\x0e\x63ustom_profile\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"j\n\x17RequestChangeUserStatus\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32\x12.dialog.UserStatusB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest2\xd4\t\n\x07Profile\x12^\n\x08\x45\x64itName\x12\x17.dialog.RequestEditName\x1a\x13.dialog.ResponseSeq\"$\x82\xd3\xe4\x93\x02\x1e\"\x19/v1/grpc/Profile/EditName:\x01*\x12j\n\x0c\x45\x64itNickName\x12\x1b.dialog.RequestEditNickName\x1a\x13.dialog.ResponseSeq\"(\x82\xd3\xe4\x93\x02\"\"\x1d/v1/grpc/Profile/EditNickName:\x01*\x12n\n\rCheckNickName\x12\x1c.dialog.RequestCheckNickName\x1a\x14.dialog.ResponseBool\")\x82\xd3\xe4\x93\x02#\"\x1e/v1/grpc/Profile/CheckNickName:\x01*\x12\x61\n\tEditAbout\x12\x18.dialog.RequestEditAbout\x1a\x13.dialog.ResponseSeq\"%\x82\xd3\xe4\x93\x02\x1f\"\x1a/v1/grpc/Profile/EditAbout:\x01*\x12k\n\nEditAvatar\x12\x19.dialog.RequestEditAvatar\x1a\x1a.dialog.ResponseEditAvatar\"&\x82\xd3\xe4\x93\x02 \"\x1b/v1/grpc/Profile/EditAvatar:\x01*\x12j\n\x0cRemoveAvatar\x12\x1b.dialog.RequestRemoveAvatar\x1a\x13.dialog.ResponseSeq\"(\x82\xd3\xe4\x93\x02\"\"\x1d/v1/grpc/Profile/RemoveAvatar:\x01*\x12p\n\x0e\x45\x64itMyTimeZone\x12\x1d.dialog.RequestEditMyTimeZone\x1a\x13.dialog.ResponseSeq\"*\x82\xd3\xe4\x93\x02$\"\x1f/v1/grpc/Profile/EditMyTimeZone:\x01*\x12\x8e\x01\n\x18\x45\x64itMyPreferredLanguages\x12\'.dialog.RequestEditMyPreferredLanguages\x1a\x13.dialog.ResponseSeq\"4\x82\xd3\xe4\x93\x02.\")/v1/grpc/Profile/EditMyPreferredLanguages:\x01*\x12[\n\x07\x45\x64itSex\x12\x16.dialog.RequestEditSex\x1a\x13.dialog.ResponseSeq\"#\x82\xd3\xe4\x93\x02\x1d\"\x18/v1/grpc/Profile/EditSex:\x01*\x12y\n\x11\x45\x64itCustomProfile\x12 .dialog.RequestEditCustomProfile\x1a\x13.dialog.ResponseSeq\"-\x82\xd3\xe4\x93\x02\'\"\"/v1/grpc/Profile/EditCustomProfile:\x01*\x12v\n\x10\x43hangeUserStatus\x12\x1f.dialog.RequestChangeUserStatus\x1a\x13.dialog.ResponseSeq\",\x82\xd3\xe4\x93\x02&\"!/v1/grpc/Profile/ChangeUserStatus:\x01*B\x19\xe2?\x16\n\x14im.dlg.grpc.servicesb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,definitions__pb2.DESCRIPTOR,miscellaneous__pb2.DESCRIPTOR,media__and__files__pb2.DESCRIPTOR,users__pb2.DESCRIPTOR,scalapb_dot_scalapb__pb2.DESCRIPTOR,])
@@ -46,14 +46,14 @@ _REQUESTEDITNAME = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -77,14 +77,14 @@ _REQUESTEDITNICKNAME = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -108,14 +108,14 @@ _REQUESTCHECKNICKNAME = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -139,14 +139,14 @@ _REQUESTEDITABOUT = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -170,14 +170,14 @@ _REQUESTEDITAVATAR = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -201,28 +201,28 @@ _RESPONSEEDITAVATAR = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='seq', full_name='dialog.ResponseEditAvatar.seq', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='state', full_name='dialog.ResponseEditAvatar.state', index=2,
       number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -246,7 +246,7 @@ _REQUESTREMOVEAVATAR = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -270,14 +270,14 @@ _REQUESTEDITMYTIMEZONE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -301,14 +301,14 @@ _REQUESTEDITMYPREFERREDLANGUAGES = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -332,14 +332,14 @@ _REQUESTEDITSEX = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -363,14 +363,14 @@ _REQUESTEDITCUSTOMPROFILE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -394,14 +394,14 @@ _REQUESTCHANGEUSERSTATUS = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -516,59 +516,36 @@ RequestChangeUserStatus = _reflection.GeneratedProtocolMessageType('RequestChang
 _sym_db.RegisterMessage(RequestChangeUserStatus)
 
 
-DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\342?\026\n\024im.dlg.grpc.services'))
-_REQUESTEDITNAME.fields_by_name['name'].has_options = True
-_REQUESTEDITNAME.fields_by_name['name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTEDITNAME.has_options = True
-_REQUESTEDITNAME._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTEDITNICKNAME.fields_by_name['nickname'].has_options = True
-_REQUESTEDITNICKNAME.fields_by_name['nickname']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTEDITNICKNAME.has_options = True
-_REQUESTEDITNICKNAME._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTCHECKNICKNAME.fields_by_name['nickname'].has_options = True
-_REQUESTCHECKNICKNAME.fields_by_name['nickname']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTCHECKNICKNAME.has_options = True
-_REQUESTCHECKNICKNAME._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTEDITABOUT.fields_by_name['about'].has_options = True
-_REQUESTEDITABOUT.fields_by_name['about']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTEDITABOUT.has_options = True
-_REQUESTEDITABOUT._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTEDITAVATAR.fields_by_name['file_location'].has_options = True
-_REQUESTEDITAVATAR.fields_by_name['file_location']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_REQUESTEDITAVATAR.has_options = True
-_REQUESTEDITAVATAR._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSEEDITAVATAR.has_options = True
-_RESPONSEEDITAVATAR._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_REQUESTREMOVEAVATAR.has_options = True
-_REQUESTREMOVEAVATAR._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTEDITMYTIMEZONE.fields_by_name['tz'].has_options = True
-_REQUESTEDITMYTIMEZONE.fields_by_name['tz']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTEDITMYTIMEZONE.has_options = True
-_REQUESTEDITMYTIMEZONE._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTEDITMYPREFERREDLANGUAGES.fields_by_name['preferred_languages'].has_options = True
-_REQUESTEDITMYPREFERREDLANGUAGES.fields_by_name['preferred_languages']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTEDITMYPREFERREDLANGUAGES.has_options = True
-_REQUESTEDITMYPREFERREDLANGUAGES._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTEDITSEX.fields_by_name['sex'].has_options = True
-_REQUESTEDITSEX.fields_by_name['sex']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTEDITSEX.has_options = True
-_REQUESTEDITSEX._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTEDITCUSTOMPROFILE.fields_by_name['custom_profile'].has_options = True
-_REQUESTEDITCUSTOMPROFILE.fields_by_name['custom_profile']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTEDITCUSTOMPROFILE.has_options = True
-_REQUESTEDITCUSTOMPROFILE._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTCHANGEUSERSTATUS.fields_by_name['status'].has_options = True
-_REQUESTCHANGEUSERSTATUS.fields_by_name['status']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTCHANGEUSERSTATUS.has_options = True
-_REQUESTCHANGEUSERSTATUS._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
+DESCRIPTOR._options = None
+_REQUESTEDITNAME.fields_by_name['name']._options = None
+_REQUESTEDITNAME._options = None
+_REQUESTEDITNICKNAME.fields_by_name['nickname']._options = None
+_REQUESTEDITNICKNAME._options = None
+_REQUESTCHECKNICKNAME.fields_by_name['nickname']._options = None
+_REQUESTCHECKNICKNAME._options = None
+_REQUESTEDITABOUT.fields_by_name['about']._options = None
+_REQUESTEDITABOUT._options = None
+_REQUESTEDITAVATAR.fields_by_name['file_location']._options = None
+_REQUESTEDITAVATAR._options = None
+_RESPONSEEDITAVATAR._options = None
+_REQUESTREMOVEAVATAR._options = None
+_REQUESTEDITMYTIMEZONE.fields_by_name['tz']._options = None
+_REQUESTEDITMYTIMEZONE._options = None
+_REQUESTEDITMYPREFERREDLANGUAGES.fields_by_name['preferred_languages']._options = None
+_REQUESTEDITMYPREFERREDLANGUAGES._options = None
+_REQUESTEDITSEX.fields_by_name['sex']._options = None
+_REQUESTEDITSEX._options = None
+_REQUESTEDITCUSTOMPROFILE.fields_by_name['custom_profile']._options = None
+_REQUESTEDITCUSTOMPROFILE._options = None
+_REQUESTCHANGEUSERSTATUS.fields_by_name['status']._options = None
+_REQUESTCHANGEUSERSTATUS._options = None
 
 _PROFILE = _descriptor.ServiceDescriptor(
   name='Profile',
   full_name='dialog.Profile',
   file=DESCRIPTOR,
   index=0,
-  options=None,
+  serialized_options=None,
   serialized_start=1337,
   serialized_end=2573,
   methods=[
@@ -579,7 +556,7 @@ _PROFILE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTEDITNAME,
     output_type=miscellaneous__pb2._RESPONSESEQ,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\036\"\031/v1/grpc/Profile/EditName:\001*')),
+    serialized_options=_b('\202\323\344\223\002\036\"\031/v1/grpc/Profile/EditName:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='EditNickName',
@@ -588,7 +565,7 @@ _PROFILE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTEDITNICKNAME,
     output_type=miscellaneous__pb2._RESPONSESEQ,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\"\"\035/v1/grpc/Profile/EditNickName:\001*')),
+    serialized_options=_b('\202\323\344\223\002\"\"\035/v1/grpc/Profile/EditNickName:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='CheckNickName',
@@ -597,7 +574,7 @@ _PROFILE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTCHECKNICKNAME,
     output_type=miscellaneous__pb2._RESPONSEBOOL,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002#\"\036/v1/grpc/Profile/CheckNickName:\001*')),
+    serialized_options=_b('\202\323\344\223\002#\"\036/v1/grpc/Profile/CheckNickName:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='EditAbout',
@@ -606,7 +583,7 @@ _PROFILE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTEDITABOUT,
     output_type=miscellaneous__pb2._RESPONSESEQ,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\037\"\032/v1/grpc/Profile/EditAbout:\001*')),
+    serialized_options=_b('\202\323\344\223\002\037\"\032/v1/grpc/Profile/EditAbout:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='EditAvatar',
@@ -615,7 +592,7 @@ _PROFILE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTEDITAVATAR,
     output_type=_RESPONSEEDITAVATAR,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002 \"\033/v1/grpc/Profile/EditAvatar:\001*')),
+    serialized_options=_b('\202\323\344\223\002 \"\033/v1/grpc/Profile/EditAvatar:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='RemoveAvatar',
@@ -624,7 +601,7 @@ _PROFILE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTREMOVEAVATAR,
     output_type=miscellaneous__pb2._RESPONSESEQ,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\"\"\035/v1/grpc/Profile/RemoveAvatar:\001*')),
+    serialized_options=_b('\202\323\344\223\002\"\"\035/v1/grpc/Profile/RemoveAvatar:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='EditMyTimeZone',
@@ -633,7 +610,7 @@ _PROFILE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTEDITMYTIMEZONE,
     output_type=miscellaneous__pb2._RESPONSESEQ,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002$\"\037/v1/grpc/Profile/EditMyTimeZone:\001*')),
+    serialized_options=_b('\202\323\344\223\002$\"\037/v1/grpc/Profile/EditMyTimeZone:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='EditMyPreferredLanguages',
@@ -642,7 +619,7 @@ _PROFILE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTEDITMYPREFERREDLANGUAGES,
     output_type=miscellaneous__pb2._RESPONSESEQ,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002.\")/v1/grpc/Profile/EditMyPreferredLanguages:\001*')),
+    serialized_options=_b('\202\323\344\223\002.\")/v1/grpc/Profile/EditMyPreferredLanguages:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='EditSex',
@@ -651,7 +628,7 @@ _PROFILE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTEDITSEX,
     output_type=miscellaneous__pb2._RESPONSESEQ,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\035\"\030/v1/grpc/Profile/EditSex:\001*')),
+    serialized_options=_b('\202\323\344\223\002\035\"\030/v1/grpc/Profile/EditSex:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='EditCustomProfile',
@@ -660,7 +637,7 @@ _PROFILE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTEDITCUSTOMPROFILE,
     output_type=miscellaneous__pb2._RESPONSESEQ,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\'\"\"/v1/grpc/Profile/EditCustomProfile:\001*')),
+    serialized_options=_b('\202\323\344\223\002\'\"\"/v1/grpc/Profile/EditCustomProfile:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='ChangeUserStatus',
@@ -669,7 +646,7 @@ _PROFILE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTCHANGEUSERSTATUS,
     output_type=miscellaneous__pb2._RESPONSESEQ,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002&\"!/v1/grpc/Profile/ChangeUserStatus:\001*')),
+    serialized_options=_b('\202\323\344\223\002&\"!/v1/grpc/Profile/ChangeUserStatus:\001*'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_PROFILE)

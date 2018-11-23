@@ -8,7 +8,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -29,7 +28,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='search.proto',
   package='dialog',
   syntax='proto3',
-  serialized_pb=_b('\n\x0csearch.proto\x12\x06\x64ialog\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x11\x64\x65\x66initions.proto\x1a\x0cgroups.proto\x1a\x0bpeers.proto\x1a\x0fmessaging.proto\x1a\x0busers.proto\x1a\x13miscellaneous.proto\x1a\x15scalapb/scalapb.proto\",\n\x1cSimpleContactSearchCondition\x12\x0c\n\x04text\x18\x01 \x01(\t\"y\n\x1cSimpleMessageSearchCondition\x12\x1a\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.Peer\x12\x0c\n\x04text\x18\x02 \x01(\t\x12/\n\x0c\x63ontent_type\x18\x03 \x01(\x0e\x32\x19.dialog.SearchContentType\"r\n\x19SimplePeerSearchCondition\x12)\n\tpeer_type\x18\x01 \x01(\x0e\x32\x16.dialog.SearchPeerType\x12*\n\x04text\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValue\"8\n SimpleUserProfileSearchCondition\x12\x14\n\x0cquery_string\x18\x01 \x01(\t\"\x0b\n\tcriterion\"\x8a\x02\n\x15SimpleSearchCondition\x12\x37\n\x07\x63ontact\x18\x01 \x01(\x0b\x32$.dialog.SimpleContactSearchConditionH\x00\x12\x37\n\x07message\x18\x02 \x01(\x0b\x32$.dialog.SimpleMessageSearchConditionH\x00\x12\x31\n\x04peer\x18\x03 \x01(\x0b\x32!.dialog.SimplePeerSearchConditionH\x00\x12?\n\x0buserProfile\x18\x04 \x01(\x0b\x32(.dialog.SimpleUserProfileSearchConditionH\x00\x42\x0b\n\tcriterion\"\xc3\x03\n\x0fSearchCondition\x12\x42\n\x17searchPeerTypeCondition\x18\x01 \x01(\x0b\x32\x1f.dialog.SearchPeerTypeConditionH\x00\x12\x32\n\x0fsearchPieceText\x18\x02 \x01(\x0b\x32\x17.dialog.SearchPieceTextH\x00\x12\x38\n\x12searchAndCondition\x18\x03 \x01(\x0b\x32\x1a.dialog.SearchAndConditionH\x00\x12\x36\n\x11searchOrCondition\x18\x04 \x01(\x0b\x32\x19.dialog.SearchOrConditionH\x00\x12:\n\x13searchPeerCondition\x18\x05 \x01(\x0b\x32\x1b.dialog.SearchPeerConditionH\x00\x12>\n\x15searchPeerContentType\x18\x06 \x01(\x0b\x32\x1d.dialog.SearchPeerContentTypeH\x00\x12\x42\n\x17searchSenderIdConfition\x18\x07 \x01(\x0b\x32\x1f.dialog.SearchSenderIdConfitionH\x00\x42\x06\n\x04\x62ody\"R\n\x17SearchPeerTypeCondition\x12\x37\n\tpeer_type\x18\x01 \x01(\x0e\x32\x16.dialog.SearchPeerTypeB\x0c\x8a\xea\x30\x08\n\x06hidden\".\n\x0fSearchPieceText\x12\x1b\n\x05query\x18\x01 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\"O\n\x12SearchAndCondition\x12\x39\n\tand_query\x18\x01 \x03(\x0b\x32\x17.dialog.SearchConditionB\r\x8a\xea\x30\t\n\x07visible\"M\n\x11SearchOrCondition\x12\x38\n\x08or_query\x18\x02 \x03(\x0b\x32\x17.dialog.SearchConditionB\r\x8a\xea\x30\t\n\x07visible\"C\n\x13SearchPeerCondition\x12,\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible\"W\n\x15SearchPeerContentType\x12>\n\x0c\x63ontent_type\x18\x01 \x01(\x0e\x32\x19.dialog.SearchContentTypeB\r\x8a\xea\x30\t\n\x07visible\";\n\x17SearchSenderIdConfition\x12 \n\tsender_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\"\xde\x03\n\x10PeerSearchResult\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x05title\x18\x02 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\x12/\n\tshortname\x18\t \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12?\n\x0b\x64\x65scription\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x41\n\rmembers_count\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\r\x8a\xea\x30\t\n\x07visible\x12#\n\x0c\x64\x61te_created\x18\x05 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12;\n\x07\x63reator\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\r\x8a\xea\x30\t\n\x07visible\x12<\n\tis_public\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12-\n\tis_joined\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"\xa9\x01\n\x11RequestPeerSearch\x12\x34\n\x05query\x18\x01 \x03(\x0b\x32\x17.dialog.SearchConditionB\x0c\x8a\xea\x30\x08\n\x06hidden\x12@\n\roptimizations\x18\x02 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xf5\x01\n\x12ResponsePeerSearch\x12\x30\n\x0esearch_results\x18\x01 \x03(\x0b\x32\x18.dialog.PeerSearchResult\x12\x1b\n\x05users\x18\x02 \x03(\x0b\x32\x0c.dialog.User\x12\x1d\n\x06groups\x18\x03 \x03(\x0b\x32\r.dialog.Group\x12\'\n\nuser_peers\x18\x04 \x03(\x0b\x32\x13.dialog.UserOutPeer\x12)\n\x0bgroup_peers\x18\x05 \x03(\x0b\x32\x14.dialog.GroupOutPeer:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"T\n\x12RequestResolvePeer\x12 \n\tshortname\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"S\n\x13ResponseResolvePeer\x12\x1d\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeer:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\xd3\x01\n\x13MessageSearchResult\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03rid\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x64\x61te\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12 \n\tsender_id\x18\x04 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x36\n\x07\x63ontent\x18\x05 \x01(\x0b\x32\x16.dialog.MessageContentB\r\x8a\xea\x30\t\n\x07visible\"@\n\x11MessageSearchItem\x12+\n\x06result\x18\x01 \x01(\x0b\x32\x1b.dialog.MessageSearchResult\"\x98\x03\n\x1dResponseMessageSearchResponse\x12@\n\x0esearch_results\x18\x01 \x03(\x0b\x32\x19.dialog.MessageSearchItemB\r\x8a\xea\x30\t\n\x07visible\x12*\n\x05users\x18\x02 \x03(\x0b\x32\x0c.dialog.UserB\r\x8a\xea\x30\t\n\x07visible\x12,\n\x06groups\x18\x03 \x03(\x0b\x32\r.dialog.GroupB\r\x8a\xea\x30\t\n\x07visible\x12\x42\n\x0fload_more_state\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.BytesValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12:\n\x0euser_out_peers\x18\x05 \x03(\x0b\x32\x13.dialog.UserOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12<\n\x0fgroup_out_peers\x18\x06 \x03(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\xac\x01\n\x14RequestMessageSearch\x12\x34\n\x05query\x18\x01 \x01(\x0b\x32\x17.dialog.SearchConditionB\x0c\x8a\xea\x30\x08\n\x06hidden\x12@\n\roptimizations\x18\x02 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xa1\x01\n\x18RequestMessageSearchMore\x12%\n\x0fload_more_state\x18\x01 \x01(\x0c\x42\x0c\x8a\xea\x30\x08\n\x06hidden\x12@\n\roptimizations\x18\x02 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x97\x01\n\x13RequestSimpleSearch\x12/\n\x08\x63riteria\x18\x01 \x03(\x0b\x32\x1d.dialog.SimpleSearchCondition\x12\x31\n\roptimizations\x18\x02 \x03(\x0e\x32\x1a.dialog.UpdateOptimization:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x83\x01\n\x17RequestSimpleSearchMore\x12\x17\n\x0fload_more_state\x18\x01 \x01(\x0c\x12\x31\n\roptimizations\x18\x02 \x03(\x0e\x32\x1a.dialog.UpdateOptimization:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest*\x7f\n\x0eSearchPeerType\x12\x1a\n\x16SEARCHPEERTYPE_UNKNOWN\x10\x00\x12\x19\n\x15SEARCHPEERTYPE_GROUPS\x10\x01\x12\x1b\n\x17SEARCHPEERTYPE_CONTACTS\x10\x02\x12\x19\n\x15SEARCHPEERTYPE_PUBLIC\x10\x03*\xc5\x01\n\x11SearchContentType\x12\x1d\n\x19SEARCHCONTENTTYPE_UNKNOWN\x10\x00\x12\x19\n\x15SEARCHCONTENTTYPE_ANY\x10\x01\x12\x1a\n\x16SEARCHCONTENTTYPE_TEXT\x10\x02\x12\x1b\n\x17SEARCHCONTENTTYPE_LINKS\x10\x03\x12\x1f\n\x1bSEARCHCONTENTTYPE_DOCUMENTS\x10\x04\x12\x1c\n\x18SEARCHCONTENTTYPE_PHOTOS\x10\x05\x32\xf8\x05\n\x06Search\x12j\n\nPeerSearch\x12\x19.dialog.RequestPeerSearch\x1a\x1a.dialog.ResponsePeerSearch\"%\x82\xd3\xe4\x93\x02\x1f\"\x1a/v1/grpc/Search/PeerSearch:\x01*\x12n\n\x0bResolvePeer\x12\x1a.dialog.RequestResolvePeer\x1a\x1b.dialog.ResponseResolvePeer\"&\x82\xd3\xe4\x93\x02 \"\x1b/v1/grpc/Search/ResolvePeer:\x01*\x12~\n\rMessageSearch\x12\x1c.dialog.RequestMessageSearch\x1a%.dialog.ResponseMessageSearchResponse\"(\x82\xd3\xe4\x93\x02\"\"\x1d/v1/grpc/Search/MessageSearch:\x01*\x12\x8a\x01\n\x11MessageSearchMore\x12 .dialog.RequestMessageSearchMore\x1a%.dialog.ResponseMessageSearchResponse\",\x82\xd3\xe4\x93\x02&\"!/v1/grpc/Search/MessageSearchMore:\x01*\x12{\n\x0cSimpleSearch\x12\x1b.dialog.RequestSimpleSearch\x1a%.dialog.ResponseMessageSearchResponse\"\'\x82\xd3\xe4\x93\x02!\"\x1c/v1/grpc/Search/SimpleSearch:\x01*\x12\x87\x01\n\x10SimpleSearchMore\x12\x1f.dialog.RequestSimpleSearchMore\x1a%.dialog.ResponseMessageSearchResponse\"+\x82\xd3\xe4\x93\x02%\" /v1/grpc/Search/SimpleSearchMore:\x01*B\x19\xe2?\x16\n\x14im.dlg.grpc.servicesb\x06proto3')
+  serialized_options=_b('\342?\026\n\024im.dlg.grpc.services'),
+  serialized_pb=_b('\n\x0csearch.proto\x12\x06\x64ialog\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x11\x64\x65\x66initions.proto\x1a\x0cgroups.proto\x1a\x0bpeers.proto\x1a\x0fmessaging.proto\x1a\x0busers.proto\x1a\x13miscellaneous.proto\x1a\x15scalapb/scalapb.proto\",\n\x1cSimpleContactSearchCondition\x12\x0c\n\x04text\x18\x01 \x01(\t\"y\n\x1cSimpleMessageSearchCondition\x12\x1a\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.Peer\x12\x0c\n\x04text\x18\x02 \x01(\t\x12/\n\x0c\x63ontent_type\x18\x03 \x01(\x0e\x32\x19.dialog.SearchContentType\"r\n\x19SimplePeerSearchCondition\x12)\n\tpeer_type\x18\x01 \x01(\x0e\x32\x16.dialog.SearchPeerType\x12*\n\x04text\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValue\"8\n SimpleUserProfileSearchCondition\x12\x14\n\x0cquery_string\x18\x01 \x01(\t\"\x0b\n\tcriterion\"\x8a\x02\n\x15SimpleSearchCondition\x12\x37\n\x07\x63ontact\x18\x01 \x01(\x0b\x32$.dialog.SimpleContactSearchConditionH\x00\x12\x37\n\x07message\x18\x02 \x01(\x0b\x32$.dialog.SimpleMessageSearchConditionH\x00\x12\x31\n\x04peer\x18\x03 \x01(\x0b\x32!.dialog.SimplePeerSearchConditionH\x00\x12?\n\x0buserProfile\x18\x04 \x01(\x0b\x32(.dialog.SimpleUserProfileSearchConditionH\x00\x42\x0b\n\tcriterion\"\xc3\x03\n\x0fSearchCondition\x12\x42\n\x17searchPeerTypeCondition\x18\x01 \x01(\x0b\x32\x1f.dialog.SearchPeerTypeConditionH\x00\x12\x32\n\x0fsearchPieceText\x18\x02 \x01(\x0b\x32\x17.dialog.SearchPieceTextH\x00\x12\x38\n\x12searchAndCondition\x18\x03 \x01(\x0b\x32\x1a.dialog.SearchAndConditionH\x00\x12\x36\n\x11searchOrCondition\x18\x04 \x01(\x0b\x32\x19.dialog.SearchOrConditionH\x00\x12:\n\x13searchPeerCondition\x18\x05 \x01(\x0b\x32\x1b.dialog.SearchPeerConditionH\x00\x12>\n\x15searchPeerContentType\x18\x06 \x01(\x0b\x32\x1d.dialog.SearchPeerContentTypeH\x00\x12\x42\n\x17searchSenderIdConfition\x18\x07 \x01(\x0b\x32\x1f.dialog.SearchSenderIdConfitionH\x00\x42\x06\n\x04\x62ody\"R\n\x17SearchPeerTypeCondition\x12\x37\n\tpeer_type\x18\x01 \x01(\x0e\x32\x16.dialog.SearchPeerTypeB\x0c\x8a\xea\x30\x08\n\x06hidden\".\n\x0fSearchPieceText\x12\x1b\n\x05query\x18\x01 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\"O\n\x12SearchAndCondition\x12\x39\n\tand_query\x18\x01 \x03(\x0b\x32\x17.dialog.SearchConditionB\r\x8a\xea\x30\t\n\x07visible\"M\n\x11SearchOrCondition\x12\x38\n\x08or_query\x18\x02 \x03(\x0b\x32\x17.dialog.SearchConditionB\r\x8a\xea\x30\t\n\x07visible\"C\n\x13SearchPeerCondition\x12,\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible\"W\n\x15SearchPeerContentType\x12>\n\x0c\x63ontent_type\x18\x01 \x01(\x0e\x32\x19.dialog.SearchContentTypeB\r\x8a\xea\x30\t\n\x07visible\";\n\x17SearchSenderIdConfition\x12 \n\tsender_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\"\xde\x03\n\x10PeerSearchResult\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x05title\x18\x02 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\x12/\n\tshortname\x18\t \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12?\n\x0b\x64\x65scription\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x41\n\rmembers_count\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\r\x8a\xea\x30\t\n\x07visible\x12#\n\x0c\x64\x61te_created\x18\x05 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12;\n\x07\x63reator\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\r\x8a\xea\x30\t\n\x07visible\x12<\n\tis_public\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12-\n\tis_joined\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"\xa9\x01\n\x11RequestPeerSearch\x12\x34\n\x05query\x18\x01 \x03(\x0b\x32\x17.dialog.SearchConditionB\x0c\x8a\xea\x30\x08\n\x06hidden\x12@\n\roptimizations\x18\x02 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xf5\x01\n\x12ResponsePeerSearch\x12\x30\n\x0esearch_results\x18\x01 \x03(\x0b\x32\x18.dialog.PeerSearchResult\x12\x1b\n\x05users\x18\x02 \x03(\x0b\x32\x0c.dialog.User\x12\x1d\n\x06groups\x18\x03 \x03(\x0b\x32\r.dialog.Group\x12\'\n\nuser_peers\x18\x04 \x03(\x0b\x32\x13.dialog.UserOutPeer\x12)\n\x0bgroup_peers\x18\x05 \x03(\x0b\x32\x14.dialog.GroupOutPeer:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"T\n\x12RequestResolvePeer\x12 \n\tshortname\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"S\n\x13ResponseResolvePeer\x12\x1d\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeer:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\xd3\x01\n\x13MessageSearchResult\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03rid\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x64\x61te\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12 \n\tsender_id\x18\x04 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x36\n\x07\x63ontent\x18\x05 \x01(\x0b\x32\x16.dialog.MessageContentB\r\x8a\xea\x30\t\n\x07visible\"@\n\x11MessageSearchItem\x12+\n\x06result\x18\x01 \x01(\x0b\x32\x1b.dialog.MessageSearchResult\"\x98\x03\n\x1dResponseMessageSearchResponse\x12@\n\x0esearch_results\x18\x01 \x03(\x0b\x32\x19.dialog.MessageSearchItemB\r\x8a\xea\x30\t\n\x07visible\x12*\n\x05users\x18\x02 \x03(\x0b\x32\x0c.dialog.UserB\r\x8a\xea\x30\t\n\x07visible\x12,\n\x06groups\x18\x03 \x03(\x0b\x32\r.dialog.GroupB\r\x8a\xea\x30\t\n\x07visible\x12\x42\n\x0fload_more_state\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.BytesValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12:\n\x0euser_out_peers\x18\x05 \x03(\x0b\x32\x13.dialog.UserOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12<\n\x0fgroup_out_peers\x18\x06 \x03(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\xac\x01\n\x14RequestMessageSearch\x12\x34\n\x05query\x18\x01 \x01(\x0b\x32\x17.dialog.SearchConditionB\x0c\x8a\xea\x30\x08\n\x06hidden\x12@\n\roptimizations\x18\x02 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xa1\x01\n\x18RequestMessageSearchMore\x12%\n\x0fload_more_state\x18\x01 \x01(\x0c\x42\x0c\x8a\xea\x30\x08\n\x06hidden\x12@\n\roptimizations\x18\x02 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x97\x01\n\x13RequestSimpleSearch\x12/\n\x08\x63riteria\x18\x01 \x03(\x0b\x32\x1d.dialog.SimpleSearchCondition\x12\x31\n\roptimizations\x18\x02 \x03(\x0e\x32\x1a.dialog.UpdateOptimization:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x83\x01\n\x17RequestSimpleSearchMore\x12\x17\n\x0fload_more_state\x18\x01 \x01(\x0c\x12\x31\n\roptimizations\x18\x02 \x03(\x0e\x32\x1a.dialog.UpdateOptimization:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x7f\n\x18RequestFieldAutocomplete\x12!\n\nfield_name\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\"\n\x0b\x66ield_value\x18\x02 \x01(\tB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x81\x01\n\x19ResponseFieldAutocomplete\x12!\n\nfield_name\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\"\n\x0b\x66ield_value\x18\x02 \x03(\tB\r\x8a\xea\x30\t\n\x07visible:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\x9e\x02\n(RequestLoadUserSearchByPredicatesResults\x12:\n\npredicates\x18\x01 \x03(\x0b\x32\x17.dialog.SearchPredicateB\r\x8a\xea\x30\t\n\x07visible\x12\x1f\n\x08group_id\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12:\n\x05query\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12\x1d\n\x06offset\x18\x04 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05limit\x18\x05 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xd4\x01\n)ResponseLoadUserSearchByPredicatesResults\x12Z\n\x05users\x18\x01 \x03(\x0b\x32<.dialog.ResponseLoadUserSearchByPredicatesResults.UsersEntryB\r\x8a\xea\x30\t\n\x07visible\x1a,\n\nUsersEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\r\n\x05value\x18\x02 \x01(\x08:\x02\x38\x01:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse*\x7f\n\x0eSearchPeerType\x12\x1a\n\x16SEARCHPEERTYPE_UNKNOWN\x10\x00\x12\x19\n\x15SEARCHPEERTYPE_GROUPS\x10\x01\x12\x1b\n\x17SEARCHPEERTYPE_CONTACTS\x10\x02\x12\x19\n\x15SEARCHPEERTYPE_PUBLIC\x10\x03*\xc5\x01\n\x11SearchContentType\x12\x1d\n\x19SEARCHCONTENTTYPE_UNKNOWN\x10\x00\x12\x19\n\x15SEARCHCONTENTTYPE_ANY\x10\x01\x12\x1a\n\x16SEARCHCONTENTTYPE_TEXT\x10\x02\x12\x1b\n\x17SEARCHCONTENTTYPE_LINKS\x10\x03\x12\x1f\n\x1bSEARCHCONTENTTYPE_DOCUMENTS\x10\x04\x12\x1c\n\x18SEARCHCONTENTTYPE_PHOTOS\x10\x05\x32\xd6\x08\n\x06Search\x12j\n\nPeerSearch\x12\x19.dialog.RequestPeerSearch\x1a\x1a.dialog.ResponsePeerSearch\"%\x82\xd3\xe4\x93\x02\x1f\"\x1a/v1/grpc/Search/PeerSearch:\x01*\x12n\n\x0bResolvePeer\x12\x1a.dialog.RequestResolvePeer\x1a\x1b.dialog.ResponseResolvePeer\"&\x82\xd3\xe4\x93\x02 \"\x1b/v1/grpc/Search/ResolvePeer:\x01*\x12~\n\rMessageSearch\x12\x1c.dialog.RequestMessageSearch\x1a%.dialog.ResponseMessageSearchResponse\"(\x82\xd3\xe4\x93\x02\"\"\x1d/v1/grpc/Search/MessageSearch:\x01*\x12\x8a\x01\n\x11MessageSearchMore\x12 .dialog.RequestMessageSearchMore\x1a%.dialog.ResponseMessageSearchResponse\",\x82\xd3\xe4\x93\x02&\"!/v1/grpc/Search/MessageSearchMore:\x01*\x12{\n\x0cSimpleSearch\x12\x1b.dialog.RequestSimpleSearch\x1a%.dialog.ResponseMessageSearchResponse\"\'\x82\xd3\xe4\x93\x02!\"\x1c/v1/grpc/Search/SimpleSearch:\x01*\x12\x87\x01\n\x10SimpleSearchMore\x12\x1f.dialog.RequestSimpleSearchMore\x1a%.dialog.ResponseMessageSearchResponse\"+\x82\xd3\xe4\x93\x02%\" /v1/grpc/Search/SimpleSearchMore:\x01*\x12\x92\x01\n\x17\x41utocompleteSuggestions\x12 .dialog.RequestFieldAutocomplete\x1a!.dialog.ResponseFieldAutocomplete\"2\x82\xd3\xe4\x93\x02,\"\'/v1/grpc/Search/AutocompleteSuggestions:\x01*\x12\xc6\x01\n!LoadUserSearchByPredicatesResults\x12\x30.dialog.RequestLoadUserSearchByPredicatesResults\x1a\x31.dialog.ResponseLoadUserSearchByPredicatesResults\"<\x82\xd3\xe4\x93\x02\x36\"1/v1/grpc/Search/LoadUserSearchByPredicatesResults:\x01*B\x19\xe2?\x16\n\x14im.dlg.grpc.servicesb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,definitions__pb2.DESCRIPTOR,groups__pb2.DESCRIPTOR,peers__pb2.DESCRIPTOR,messaging__pb2.DESCRIPTOR,users__pb2.DESCRIPTOR,miscellaneous__pb2.DESCRIPTOR,scalapb_dot_scalapb__pb2.DESCRIPTOR,])
 
@@ -41,25 +41,25 @@ _SEARCHPEERTYPE = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='SEARCHPEERTYPE_UNKNOWN', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='SEARCHPEERTYPE_GROUPS', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='SEARCHPEERTYPE_CONTACTS', index=2, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='SEARCHPEERTYPE_PUBLIC', index=3, number=3,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
-  serialized_start=4186,
-  serialized_end=4313,
+  serialized_options=None,
+  serialized_start=4951,
+  serialized_end=5078,
 )
 _sym_db.RegisterEnumDescriptor(_SEARCHPEERTYPE)
 
@@ -72,33 +72,33 @@ _SEARCHCONTENTTYPE = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='SEARCHCONTENTTYPE_UNKNOWN', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='SEARCHCONTENTTYPE_ANY', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='SEARCHCONTENTTYPE_TEXT', index=2, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='SEARCHCONTENTTYPE_LINKS', index=3, number=3,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='SEARCHCONTENTTYPE_DOCUMENTS', index=4, number=4,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='SEARCHCONTENTTYPE_PHOTOS', index=5, number=5,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
-  serialized_start=4316,
-  serialized_end=4513,
+  serialized_options=None,
+  serialized_start=5081,
+  serialized_end=5278,
 )
 _sym_db.RegisterEnumDescriptor(_SEARCHCONTENTTYPE)
 
@@ -129,14 +129,14 @@ _SIMPLECONTACTSEARCHCONDITION = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -160,28 +160,28 @@ _SIMPLEMESSAGESEARCHCONDITION = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='text', full_name='dialog.SimpleMessageSearchCondition.text', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='content_type', full_name='dialog.SimpleMessageSearchCondition.content_type', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -205,21 +205,21 @@ _SIMPLEPEERSEARCHCONDITION = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='text', full_name='dialog.SimplePeerSearchCondition.text', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -243,14 +243,14 @@ _SIMPLEUSERPROFILESEARCHCONDITION = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -274,7 +274,7 @@ _CRITERION = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -298,35 +298,35 @@ _SIMPLESEARCHCONDITION = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='message', full_name='dialog.SimpleSearchCondition.message', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='peer', full_name='dialog.SimpleSearchCondition.peer', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='userProfile', full_name='dialog.SimpleSearchCondition.userProfile', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -353,56 +353,56 @@ _SEARCHCONDITION = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='searchPieceText', full_name='dialog.SearchCondition.searchPieceText', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='searchAndCondition', full_name='dialog.SearchCondition.searchAndCondition', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='searchOrCondition', full_name='dialog.SearchCondition.searchOrCondition', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='searchPeerCondition', full_name='dialog.SearchCondition.searchPeerCondition', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='searchPeerContentType', full_name='dialog.SearchCondition.searchPeerContentType', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='searchSenderIdConfition', full_name='dialog.SearchCondition.searchSenderIdConfition', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -429,14 +429,14 @@ _SEARCHPEERTYPECONDITION = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -460,14 +460,14 @@ _SEARCHPIECETEXT = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -491,14 +491,14 @@ _SEARCHANDCONDITION = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -522,14 +522,14 @@ _SEARCHORCONDITION = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -553,14 +553,14 @@ _SEARCHPEERCONDITION = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -584,14 +584,14 @@ _SEARCHPEERCONTENTTYPE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -615,14 +615,14 @@ _SEARCHSENDERIDCONFITION = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -646,70 +646,70 @@ _PEERSEARCHRESULT = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='title', full_name='dialog.PeerSearchResult.title', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='shortname', full_name='dialog.PeerSearchResult.shortname', index=2,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='description', full_name='dialog.PeerSearchResult.description', index=3,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='members_count', full_name='dialog.PeerSearchResult.members_count', index=4,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='date_created', full_name='dialog.PeerSearchResult.date_created', index=5,
       number=5, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='creator', full_name='dialog.PeerSearchResult.creator', index=6,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='is_public', full_name='dialog.PeerSearchResult.is_public', index=7,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='is_joined', full_name='dialog.PeerSearchResult.is_joined', index=8,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -733,21 +733,21 @@ _REQUESTPEERSEARCH = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optimizations', full_name='dialog.RequestPeerSearch.optimizations', index=1,
       number=2, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -771,42 +771,42 @@ _RESPONSEPEERSEARCH = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='users', full_name='dialog.ResponsePeerSearch.users', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='groups', full_name='dialog.ResponsePeerSearch.groups', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user_peers', full_name='dialog.ResponsePeerSearch.user_peers', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='group_peers', full_name='dialog.ResponsePeerSearch.group_peers', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -830,14 +830,14 @@ _REQUESTRESOLVEPEER = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -861,14 +861,14 @@ _RESPONSERESOLVEPEER = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -892,42 +892,42 @@ _MESSAGESEARCHRESULT = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rid', full_name='dialog.MessageSearchResult.rid', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='date', full_name='dialog.MessageSearchResult.date', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sender_id', full_name='dialog.MessageSearchResult.sender_id', index=3,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='content', full_name='dialog.MessageSearchResult.content', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -951,14 +951,14 @@ _MESSAGESEARCHITEM = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -982,49 +982,49 @@ _RESPONSEMESSAGESEARCHRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='users', full_name='dialog.ResponseMessageSearchResponse.users', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='groups', full_name='dialog.ResponseMessageSearchResponse.groups', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='load_more_state', full_name='dialog.ResponseMessageSearchResponse.load_more_state', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user_out_peers', full_name='dialog.ResponseMessageSearchResponse.user_out_peers', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='group_out_peers', full_name='dialog.ResponseMessageSearchResponse.group_out_peers', index=5,
       number=6, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1048,21 +1048,21 @@ _REQUESTMESSAGESEARCH = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optimizations', full_name='dialog.RequestMessageSearch.optimizations', index=1,
       number=2, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1086,21 +1086,21 @@ _REQUESTMESSAGESEARCHMORE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optimizations', full_name='dialog.RequestMessageSearchMore.optimizations', index=1,
       number=2, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1124,21 +1124,21 @@ _REQUESTSIMPLESEARCH = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optimizations', full_name='dialog.RequestSimpleSearch.optimizations', index=1,
       number=2, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1162,21 +1162,21 @@ _REQUESTSIMPLESEARCHMORE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optimizations', full_name='dialog.RequestSimpleSearchMore.optimizations', index=1,
       number=2, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1184,6 +1184,209 @@ _REQUESTSIMPLESEARCHMORE = _descriptor.Descriptor(
   ],
   serialized_start=4053,
   serialized_end=4184,
+)
+
+
+_REQUESTFIELDAUTOCOMPLETE = _descriptor.Descriptor(
+  name='RequestFieldAutocomplete',
+  full_name='dialog.RequestFieldAutocomplete',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='field_name', full_name='dialog.RequestFieldAutocomplete.field_name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='field_value', full_name='dialog.RequestFieldAutocomplete.field_value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4186,
+  serialized_end=4313,
+)
+
+
+_RESPONSEFIELDAUTOCOMPLETE = _descriptor.Descriptor(
+  name='ResponseFieldAutocomplete',
+  full_name='dialog.ResponseFieldAutocomplete',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='field_name', full_name='dialog.ResponseFieldAutocomplete.field_name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='field_value', full_name='dialog.ResponseFieldAutocomplete.field_value', index=1,
+      number=2, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4316,
+  serialized_end=4445,
+)
+
+
+_REQUESTLOADUSERSEARCHBYPREDICATESRESULTS = _descriptor.Descriptor(
+  name='RequestLoadUserSearchByPredicatesResults',
+  full_name='dialog.RequestLoadUserSearchByPredicatesResults',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='predicates', full_name='dialog.RequestLoadUserSearchByPredicatesResults.predicates', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='group_id', full_name='dialog.RequestLoadUserSearchByPredicatesResults.group_id', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='query', full_name='dialog.RequestLoadUserSearchByPredicatesResults.query', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='offset', full_name='dialog.RequestLoadUserSearchByPredicatesResults.offset', index=3,
+      number=4, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='limit', full_name='dialog.RequestLoadUserSearchByPredicatesResults.limit', index=4,
+      number=5, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4448,
+  serialized_end=4734,
+)
+
+
+_RESPONSELOADUSERSEARCHBYPREDICATESRESULTS_USERSENTRY = _descriptor.Descriptor(
+  name='UsersEntry',
+  full_name='dialog.ResponseLoadUserSearchByPredicatesResults.UsersEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='dialog.ResponseLoadUserSearchByPredicatesResults.UsersEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='dialog.ResponseLoadUserSearchByPredicatesResults.UsersEntry.value', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=_b('8\001'),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4874,
+  serialized_end=4918,
+)
+
+_RESPONSELOADUSERSEARCHBYPREDICATESRESULTS = _descriptor.Descriptor(
+  name='ResponseLoadUserSearchByPredicatesResults',
+  full_name='dialog.ResponseLoadUserSearchByPredicatesResults',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='users', full_name='dialog.ResponseLoadUserSearchByPredicatesResults.users', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[_RESPONSELOADUSERSEARCHBYPREDICATESRESULTS_USERSENTRY, ],
+  enum_types=[
+  ],
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4737,
+  serialized_end=4949,
 )
 
 _SIMPLEMESSAGESEARCHCONDITION.fields_by_name['peer'].message_type = peers__pb2._PEER
@@ -1269,6 +1472,10 @@ _REQUESTMESSAGESEARCHMORE.fields_by_name['optimizations'].enum_type = miscellane
 _REQUESTSIMPLESEARCH.fields_by_name['criteria'].message_type = _SIMPLESEARCHCONDITION
 _REQUESTSIMPLESEARCH.fields_by_name['optimizations'].enum_type = miscellaneous__pb2._UPDATEOPTIMIZATION
 _REQUESTSIMPLESEARCHMORE.fields_by_name['optimizations'].enum_type = miscellaneous__pb2._UPDATEOPTIMIZATION
+_REQUESTLOADUSERSEARCHBYPREDICATESRESULTS.fields_by_name['predicates'].message_type = messaging__pb2._SEARCHPREDICATE
+_REQUESTLOADUSERSEARCHBYPREDICATESRESULTS.fields_by_name['query'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
+_RESPONSELOADUSERSEARCHBYPREDICATESRESULTS_USERSENTRY.containing_type = _RESPONSELOADUSERSEARCHBYPREDICATESRESULTS
+_RESPONSELOADUSERSEARCHBYPREDICATESRESULTS.fields_by_name['users'].message_type = _RESPONSELOADUSERSEARCHBYPREDICATESRESULTS_USERSENTRY
 DESCRIPTOR.message_types_by_name['SimpleContactSearchCondition'] = _SIMPLECONTACTSEARCHCONDITION
 DESCRIPTOR.message_types_by_name['SimpleMessageSearchCondition'] = _SIMPLEMESSAGESEARCHCONDITION
 DESCRIPTOR.message_types_by_name['SimplePeerSearchCondition'] = _SIMPLEPEERSEARCHCONDITION
@@ -1295,6 +1502,10 @@ DESCRIPTOR.message_types_by_name['RequestMessageSearch'] = _REQUESTMESSAGESEARCH
 DESCRIPTOR.message_types_by_name['RequestMessageSearchMore'] = _REQUESTMESSAGESEARCHMORE
 DESCRIPTOR.message_types_by_name['RequestSimpleSearch'] = _REQUESTSIMPLESEARCH
 DESCRIPTOR.message_types_by_name['RequestSimpleSearchMore'] = _REQUESTSIMPLESEARCHMORE
+DESCRIPTOR.message_types_by_name['RequestFieldAutocomplete'] = _REQUESTFIELDAUTOCOMPLETE
+DESCRIPTOR.message_types_by_name['ResponseFieldAutocomplete'] = _RESPONSEFIELDAUTOCOMPLETE
+DESCRIPTOR.message_types_by_name['RequestLoadUserSearchByPredicatesResults'] = _REQUESTLOADUSERSEARCHBYPREDICATESRESULTS
+DESCRIPTOR.message_types_by_name['ResponseLoadUserSearchByPredicatesResults'] = _RESPONSELOADUSERSEARCHBYPREDICATESRESULTS
 DESCRIPTOR.enum_types_by_name['SearchPeerType'] = _SEARCHPEERTYPE
 DESCRIPTOR.enum_types_by_name['SearchContentType'] = _SEARCHCONTENTTYPE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -1481,100 +1692,109 @@ RequestSimpleSearchMore = _reflection.GeneratedProtocolMessageType('RequestSimpl
   ))
 _sym_db.RegisterMessage(RequestSimpleSearchMore)
 
+RequestFieldAutocomplete = _reflection.GeneratedProtocolMessageType('RequestFieldAutocomplete', (_message.Message,), dict(
+  DESCRIPTOR = _REQUESTFIELDAUTOCOMPLETE,
+  __module__ = 'search_pb2'
+  # @@protoc_insertion_point(class_scope:dialog.RequestFieldAutocomplete)
+  ))
+_sym_db.RegisterMessage(RequestFieldAutocomplete)
 
-DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\342?\026\n\024im.dlg.grpc.services'))
-_SEARCHPEERTYPECONDITION.fields_by_name['peer_type'].has_options = True
-_SEARCHPEERTYPECONDITION.fields_by_name['peer_type']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_SEARCHPIECETEXT.fields_by_name['query'].has_options = True
-_SEARCHPIECETEXT.fields_by_name['query']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_SEARCHANDCONDITION.fields_by_name['and_query'].has_options = True
-_SEARCHANDCONDITION.fields_by_name['and_query']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_SEARCHORCONDITION.fields_by_name['or_query'].has_options = True
-_SEARCHORCONDITION.fields_by_name['or_query']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_SEARCHPEERCONDITION.fields_by_name['peer'].has_options = True
-_SEARCHPEERCONDITION.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_SEARCHPEERCONTENTTYPE.fields_by_name['content_type'].has_options = True
-_SEARCHPEERCONTENTTYPE.fields_by_name['content_type']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_SEARCHSENDERIDCONFITION.fields_by_name['sender_id'].has_options = True
-_SEARCHSENDERIDCONFITION.fields_by_name['sender_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_PEERSEARCHRESULT.fields_by_name['peer'].has_options = True
-_PEERSEARCHRESULT.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_PEERSEARCHRESULT.fields_by_name['title'].has_options = True
-_PEERSEARCHRESULT.fields_by_name['title']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_PEERSEARCHRESULT.fields_by_name['description'].has_options = True
-_PEERSEARCHRESULT.fields_by_name['description']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_PEERSEARCHRESULT.fields_by_name['members_count'].has_options = True
-_PEERSEARCHRESULT.fields_by_name['members_count']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_PEERSEARCHRESULT.fields_by_name['date_created'].has_options = True
-_PEERSEARCHRESULT.fields_by_name['date_created']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_PEERSEARCHRESULT.fields_by_name['creator'].has_options = True
-_PEERSEARCHRESULT.fields_by_name['creator']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_PEERSEARCHRESULT.fields_by_name['is_public'].has_options = True
-_PEERSEARCHRESULT.fields_by_name['is_public']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTPEERSEARCH.fields_by_name['query'].has_options = True
-_REQUESTPEERSEARCH.fields_by_name['query']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTPEERSEARCH.fields_by_name['optimizations'].has_options = True
-_REQUESTPEERSEARCH.fields_by_name['optimizations']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTPEERSEARCH.has_options = True
-_REQUESTPEERSEARCH._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSEPEERSEARCH.has_options = True
-_RESPONSEPEERSEARCH._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_REQUESTRESOLVEPEER.fields_by_name['shortname'].has_options = True
-_REQUESTRESOLVEPEER.fields_by_name['shortname']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTRESOLVEPEER.has_options = True
-_REQUESTRESOLVEPEER._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSERESOLVEPEER.has_options = True
-_RESPONSERESOLVEPEER._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_MESSAGESEARCHRESULT.fields_by_name['peer'].has_options = True
-_MESSAGESEARCHRESULT.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_MESSAGESEARCHRESULT.fields_by_name['rid'].has_options = True
-_MESSAGESEARCHRESULT.fields_by_name['rid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_MESSAGESEARCHRESULT.fields_by_name['date'].has_options = True
-_MESSAGESEARCHRESULT.fields_by_name['date']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_MESSAGESEARCHRESULT.fields_by_name['sender_id'].has_options = True
-_MESSAGESEARCHRESULT.fields_by_name['sender_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_MESSAGESEARCHRESULT.fields_by_name['content'].has_options = True
-_MESSAGESEARCHRESULT.fields_by_name['content']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_RESPONSEMESSAGESEARCHRESPONSE.fields_by_name['search_results'].has_options = True
-_RESPONSEMESSAGESEARCHRESPONSE.fields_by_name['search_results']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_RESPONSEMESSAGESEARCHRESPONSE.fields_by_name['users'].has_options = True
-_RESPONSEMESSAGESEARCHRESPONSE.fields_by_name['users']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_RESPONSEMESSAGESEARCHRESPONSE.fields_by_name['groups'].has_options = True
-_RESPONSEMESSAGESEARCHRESPONSE.fields_by_name['groups']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_RESPONSEMESSAGESEARCHRESPONSE.fields_by_name['load_more_state'].has_options = True
-_RESPONSEMESSAGESEARCHRESPONSE.fields_by_name['load_more_state']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_RESPONSEMESSAGESEARCHRESPONSE.fields_by_name['user_out_peers'].has_options = True
-_RESPONSEMESSAGESEARCHRESPONSE.fields_by_name['user_out_peers']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_RESPONSEMESSAGESEARCHRESPONSE.fields_by_name['group_out_peers'].has_options = True
-_RESPONSEMESSAGESEARCHRESPONSE.fields_by_name['group_out_peers']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_RESPONSEMESSAGESEARCHRESPONSE.has_options = True
-_RESPONSEMESSAGESEARCHRESPONSE._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_REQUESTMESSAGESEARCH.fields_by_name['query'].has_options = True
-_REQUESTMESSAGESEARCH.fields_by_name['query']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTMESSAGESEARCH.fields_by_name['optimizations'].has_options = True
-_REQUESTMESSAGESEARCH.fields_by_name['optimizations']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTMESSAGESEARCH.has_options = True
-_REQUESTMESSAGESEARCH._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTMESSAGESEARCHMORE.fields_by_name['load_more_state'].has_options = True
-_REQUESTMESSAGESEARCHMORE.fields_by_name['load_more_state']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTMESSAGESEARCHMORE.fields_by_name['optimizations'].has_options = True
-_REQUESTMESSAGESEARCHMORE.fields_by_name['optimizations']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTMESSAGESEARCHMORE.has_options = True
-_REQUESTMESSAGESEARCHMORE._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTSIMPLESEARCH.has_options = True
-_REQUESTSIMPLESEARCH._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTSIMPLESEARCHMORE.has_options = True
-_REQUESTSIMPLESEARCHMORE._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
+ResponseFieldAutocomplete = _reflection.GeneratedProtocolMessageType('ResponseFieldAutocomplete', (_message.Message,), dict(
+  DESCRIPTOR = _RESPONSEFIELDAUTOCOMPLETE,
+  __module__ = 'search_pb2'
+  # @@protoc_insertion_point(class_scope:dialog.ResponseFieldAutocomplete)
+  ))
+_sym_db.RegisterMessage(ResponseFieldAutocomplete)
+
+RequestLoadUserSearchByPredicatesResults = _reflection.GeneratedProtocolMessageType('RequestLoadUserSearchByPredicatesResults', (_message.Message,), dict(
+  DESCRIPTOR = _REQUESTLOADUSERSEARCHBYPREDICATESRESULTS,
+  __module__ = 'search_pb2'
+  # @@protoc_insertion_point(class_scope:dialog.RequestLoadUserSearchByPredicatesResults)
+  ))
+_sym_db.RegisterMessage(RequestLoadUserSearchByPredicatesResults)
+
+ResponseLoadUserSearchByPredicatesResults = _reflection.GeneratedProtocolMessageType('ResponseLoadUserSearchByPredicatesResults', (_message.Message,), dict(
+
+  UsersEntry = _reflection.GeneratedProtocolMessageType('UsersEntry', (_message.Message,), dict(
+    DESCRIPTOR = _RESPONSELOADUSERSEARCHBYPREDICATESRESULTS_USERSENTRY,
+    __module__ = 'search_pb2'
+    # @@protoc_insertion_point(class_scope:dialog.ResponseLoadUserSearchByPredicatesResults.UsersEntry)
+    ))
+  ,
+  DESCRIPTOR = _RESPONSELOADUSERSEARCHBYPREDICATESRESULTS,
+  __module__ = 'search_pb2'
+  # @@protoc_insertion_point(class_scope:dialog.ResponseLoadUserSearchByPredicatesResults)
+  ))
+_sym_db.RegisterMessage(ResponseLoadUserSearchByPredicatesResults)
+_sym_db.RegisterMessage(ResponseLoadUserSearchByPredicatesResults.UsersEntry)
+
+
+DESCRIPTOR._options = None
+_SEARCHPEERTYPECONDITION.fields_by_name['peer_type']._options = None
+_SEARCHPIECETEXT.fields_by_name['query']._options = None
+_SEARCHANDCONDITION.fields_by_name['and_query']._options = None
+_SEARCHORCONDITION.fields_by_name['or_query']._options = None
+_SEARCHPEERCONDITION.fields_by_name['peer']._options = None
+_SEARCHPEERCONTENTTYPE.fields_by_name['content_type']._options = None
+_SEARCHSENDERIDCONFITION.fields_by_name['sender_id']._options = None
+_PEERSEARCHRESULT.fields_by_name['peer']._options = None
+_PEERSEARCHRESULT.fields_by_name['title']._options = None
+_PEERSEARCHRESULT.fields_by_name['description']._options = None
+_PEERSEARCHRESULT.fields_by_name['members_count']._options = None
+_PEERSEARCHRESULT.fields_by_name['date_created']._options = None
+_PEERSEARCHRESULT.fields_by_name['creator']._options = None
+_PEERSEARCHRESULT.fields_by_name['is_public']._options = None
+_REQUESTPEERSEARCH.fields_by_name['query']._options = None
+_REQUESTPEERSEARCH.fields_by_name['optimizations']._options = None
+_REQUESTPEERSEARCH._options = None
+_RESPONSEPEERSEARCH._options = None
+_REQUESTRESOLVEPEER.fields_by_name['shortname']._options = None
+_REQUESTRESOLVEPEER._options = None
+_RESPONSERESOLVEPEER._options = None
+_MESSAGESEARCHRESULT.fields_by_name['peer']._options = None
+_MESSAGESEARCHRESULT.fields_by_name['rid']._options = None
+_MESSAGESEARCHRESULT.fields_by_name['date']._options = None
+_MESSAGESEARCHRESULT.fields_by_name['sender_id']._options = None
+_MESSAGESEARCHRESULT.fields_by_name['content']._options = None
+_RESPONSEMESSAGESEARCHRESPONSE.fields_by_name['search_results']._options = None
+_RESPONSEMESSAGESEARCHRESPONSE.fields_by_name['users']._options = None
+_RESPONSEMESSAGESEARCHRESPONSE.fields_by_name['groups']._options = None
+_RESPONSEMESSAGESEARCHRESPONSE.fields_by_name['load_more_state']._options = None
+_RESPONSEMESSAGESEARCHRESPONSE.fields_by_name['user_out_peers']._options = None
+_RESPONSEMESSAGESEARCHRESPONSE.fields_by_name['group_out_peers']._options = None
+_RESPONSEMESSAGESEARCHRESPONSE._options = None
+_REQUESTMESSAGESEARCH.fields_by_name['query']._options = None
+_REQUESTMESSAGESEARCH.fields_by_name['optimizations']._options = None
+_REQUESTMESSAGESEARCH._options = None
+_REQUESTMESSAGESEARCHMORE.fields_by_name['load_more_state']._options = None
+_REQUESTMESSAGESEARCHMORE.fields_by_name['optimizations']._options = None
+_REQUESTMESSAGESEARCHMORE._options = None
+_REQUESTSIMPLESEARCH._options = None
+_REQUESTSIMPLESEARCHMORE._options = None
+_REQUESTFIELDAUTOCOMPLETE.fields_by_name['field_name']._options = None
+_REQUESTFIELDAUTOCOMPLETE.fields_by_name['field_value']._options = None
+_REQUESTFIELDAUTOCOMPLETE._options = None
+_RESPONSEFIELDAUTOCOMPLETE.fields_by_name['field_name']._options = None
+_RESPONSEFIELDAUTOCOMPLETE.fields_by_name['field_value']._options = None
+_RESPONSEFIELDAUTOCOMPLETE._options = None
+_REQUESTLOADUSERSEARCHBYPREDICATESRESULTS.fields_by_name['predicates']._options = None
+_REQUESTLOADUSERSEARCHBYPREDICATESRESULTS.fields_by_name['group_id']._options = None
+_REQUESTLOADUSERSEARCHBYPREDICATESRESULTS.fields_by_name['query']._options = None
+_REQUESTLOADUSERSEARCHBYPREDICATESRESULTS.fields_by_name['offset']._options = None
+_REQUESTLOADUSERSEARCHBYPREDICATESRESULTS.fields_by_name['limit']._options = None
+_REQUESTLOADUSERSEARCHBYPREDICATESRESULTS._options = None
+_RESPONSELOADUSERSEARCHBYPREDICATESRESULTS_USERSENTRY._options = None
+_RESPONSELOADUSERSEARCHBYPREDICATESRESULTS.fields_by_name['users']._options = None
+_RESPONSELOADUSERSEARCHBYPREDICATESRESULTS._options = None
 
 _SEARCH = _descriptor.ServiceDescriptor(
   name='Search',
   full_name='dialog.Search',
   file=DESCRIPTOR,
   index=0,
-  options=None,
-  serialized_start=4516,
-  serialized_end=5276,
+  serialized_options=None,
+  serialized_start=5281,
+  serialized_end=6391,
   methods=[
   _descriptor.MethodDescriptor(
     name='PeerSearch',
@@ -1583,7 +1803,7 @@ _SEARCH = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTPEERSEARCH,
     output_type=_RESPONSEPEERSEARCH,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\037\"\032/v1/grpc/Search/PeerSearch:\001*')),
+    serialized_options=_b('\202\323\344\223\002\037\"\032/v1/grpc/Search/PeerSearch:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='ResolvePeer',
@@ -1592,7 +1812,7 @@ _SEARCH = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTRESOLVEPEER,
     output_type=_RESPONSERESOLVEPEER,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002 \"\033/v1/grpc/Search/ResolvePeer:\001*')),
+    serialized_options=_b('\202\323\344\223\002 \"\033/v1/grpc/Search/ResolvePeer:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='MessageSearch',
@@ -1601,7 +1821,7 @@ _SEARCH = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTMESSAGESEARCH,
     output_type=_RESPONSEMESSAGESEARCHRESPONSE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\"\"\035/v1/grpc/Search/MessageSearch:\001*')),
+    serialized_options=_b('\202\323\344\223\002\"\"\035/v1/grpc/Search/MessageSearch:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='MessageSearchMore',
@@ -1610,7 +1830,7 @@ _SEARCH = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTMESSAGESEARCHMORE,
     output_type=_RESPONSEMESSAGESEARCHRESPONSE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002&\"!/v1/grpc/Search/MessageSearchMore:\001*')),
+    serialized_options=_b('\202\323\344\223\002&\"!/v1/grpc/Search/MessageSearchMore:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='SimpleSearch',
@@ -1619,7 +1839,7 @@ _SEARCH = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTSIMPLESEARCH,
     output_type=_RESPONSEMESSAGESEARCHRESPONSE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002!\"\034/v1/grpc/Search/SimpleSearch:\001*')),
+    serialized_options=_b('\202\323\344\223\002!\"\034/v1/grpc/Search/SimpleSearch:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='SimpleSearchMore',
@@ -1628,7 +1848,25 @@ _SEARCH = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTSIMPLESEARCHMORE,
     output_type=_RESPONSEMESSAGESEARCHRESPONSE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002%\" /v1/grpc/Search/SimpleSearchMore:\001*')),
+    serialized_options=_b('\202\323\344\223\002%\" /v1/grpc/Search/SimpleSearchMore:\001*'),
+  ),
+  _descriptor.MethodDescriptor(
+    name='AutocompleteSuggestions',
+    full_name='dialog.Search.AutocompleteSuggestions',
+    index=6,
+    containing_service=None,
+    input_type=_REQUESTFIELDAUTOCOMPLETE,
+    output_type=_RESPONSEFIELDAUTOCOMPLETE,
+    serialized_options=_b('\202\323\344\223\002,\"\'/v1/grpc/Search/AutocompleteSuggestions:\001*'),
+  ),
+  _descriptor.MethodDescriptor(
+    name='LoadUserSearchByPredicatesResults',
+    full_name='dialog.Search.LoadUserSearchByPredicatesResults',
+    index=7,
+    containing_service=None,
+    input_type=_REQUESTLOADUSERSEARCHBYPREDICATESRESULTS,
+    output_type=_RESPONSELOADUSERSEARCHBYPREDICATESRESULTS,
+    serialized_options=_b('\202\323\344\223\0026\"1/v1/grpc/Search/LoadUserSearchByPredicatesResults:\001*'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_SEARCH)

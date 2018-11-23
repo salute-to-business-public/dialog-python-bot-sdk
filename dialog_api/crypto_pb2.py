@@ -7,7 +7,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -23,6 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='crypto.proto',
   package='dialog',
   syntax='proto3',
+  serialized_options=_b('\342?\026\n\024im.dlg.grpc.services'),
   serialized_pb=_b('\n\x0c\x63rypto.proto\x12\x06\x64ialog\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x11\x64\x65\x66initions.proto\x1a\x15scalapb/scalapb.proto\"r\n\x12RequestKeyExchange\x12>\n\nclient_key\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.BytesValueB\r\x8a\xea\x30\t\n\x07\x63ompact:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"e\n\x13ResponseKeyExchange\x12/\n\nserver_key\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.BytesValue:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse2x\n\x06\x43rypto\x12n\n\x0bKeyExchange\x12\x1a.dialog.RequestKeyExchange\x1a\x1b.dialog.ResponseKeyExchange\"&\x82\xd3\xe4\x93\x02 \"\x1b/v1/grpc/Crypto/KeyExchange:\x01*B\x19\xe2?\x16\n\x14im.dlg.grpc.servicesb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,definitions__pb2.DESCRIPTOR,scalapb_dot_scalapb__pb2.DESCRIPTOR,])
@@ -43,14 +43,14 @@ _REQUESTKEYEXCHANGE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -74,14 +74,14 @@ _RESPONSEKEYEXCHANGE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -112,21 +112,17 @@ ResponseKeyExchange = _reflection.GeneratedProtocolMessageType('ResponseKeyExcha
 _sym_db.RegisterMessage(ResponseKeyExchange)
 
 
-DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\342?\026\n\024im.dlg.grpc.services'))
-_REQUESTKEYEXCHANGE.fields_by_name['client_key'].has_options = True
-_REQUESTKEYEXCHANGE.fields_by_name['client_key']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_REQUESTKEYEXCHANGE.has_options = True
-_REQUESTKEYEXCHANGE._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSEKEYEXCHANGE.has_options = True
-_RESPONSEKEYEXCHANGE._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
+DESCRIPTOR._options = None
+_REQUESTKEYEXCHANGE.fields_by_name['client_key']._options = None
+_REQUESTKEYEXCHANGE._options = None
+_RESPONSEKEYEXCHANGE._options = None
 
 _CRYPTO = _descriptor.ServiceDescriptor(
   name='Crypto',
   full_name='dialog.Crypto',
   file=DESCRIPTOR,
   index=0,
-  options=None,
+  serialized_options=None,
   serialized_start=347,
   serialized_end=467,
   methods=[
@@ -137,7 +133,7 @@ _CRYPTO = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTKEYEXCHANGE,
     output_type=_RESPONSEKEYEXCHANGE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002 \"\033/v1/grpc/Crypto/KeyExchange:\001*')),
+    serialized_options=_b('\202\323\344\223\002 \"\033/v1/grpc/Crypto/KeyExchange:\001*'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_CRYPTO)
