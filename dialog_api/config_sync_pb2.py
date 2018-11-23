@@ -7,7 +7,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -24,6 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='config_sync.proto',
   package='dialog',
   syntax='proto3',
+  serialized_options=_b('\342?\026\n\024im.dlg.grpc.services'),
   serialized_pb=_b('\n\x11\x63onfig_sync.proto\x12\x06\x64ialog\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x11\x64\x65\x66initions.proto\x1a\x13miscellaneous.proto\x1a\x15scalapb/scalapb.proto\"D\n\tParameter\x12\x1a\n\x03key\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x05value\x18\x02 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\"4\n\x14RequestGetParameters:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"]\n\x15ResponseGetParameters\x12%\n\nparameters\x18\x01 \x03(\x0b\x32\x11.dialog.Parameter:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\x8b\x01\n\x14RequestEditParameter\x12\x1a\n\x03key\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x39\n\x05value\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"o\n\x16UpdateParameterChanged\x12\x1a\n\x03key\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x39\n\x05value\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden2\xfa\x01\n\nConfigSync\x12z\n\rGetParameters\x12\x1c.dialog.RequestGetParameters\x1a\x1d.dialog.ResponseGetParameters\",\x82\xd3\xe4\x93\x02&\"!/v1/grpc/ConfigSync/GetParameters:\x01*\x12p\n\rEditParameter\x12\x1c.dialog.RequestEditParameter\x1a\x13.dialog.ResponseSeq\",\x82\xd3\xe4\x93\x02&\"!/v1/grpc/ConfigSync/EditParameter:\x01*B\x19\xe2?\x16\n\x14im.dlg.grpc.servicesb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,definitions__pb2.DESCRIPTOR,miscellaneous__pb2.DESCRIPTOR,scalapb_dot_scalapb__pb2.DESCRIPTOR,])
@@ -44,21 +44,21 @@ _PARAMETER = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='dialog.Parameter.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -82,7 +82,7 @@ _REQUESTGETPARAMETERS = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -106,14 +106,14 @@ _RESPONSEGETPARAMETERS = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -137,21 +137,21 @@ _REQUESTEDITPARAMETER = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='dialog.RequestEditParameter.value', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -175,21 +175,21 @@ _UPDATEPARAMETERCHANGED = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='dialog.UpdateParameterChanged.value', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -245,33 +245,23 @@ UpdateParameterChanged = _reflection.GeneratedProtocolMessageType('UpdateParamet
 _sym_db.RegisterMessage(UpdateParameterChanged)
 
 
-DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\342?\026\n\024im.dlg.grpc.services'))
-_PARAMETER.fields_by_name['key'].has_options = True
-_PARAMETER.fields_by_name['key']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_PARAMETER.fields_by_name['value'].has_options = True
-_PARAMETER.fields_by_name['value']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTGETPARAMETERS.has_options = True
-_REQUESTGETPARAMETERS._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSEGETPARAMETERS.has_options = True
-_RESPONSEGETPARAMETERS._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_REQUESTEDITPARAMETER.fields_by_name['key'].has_options = True
-_REQUESTEDITPARAMETER.fields_by_name['key']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTEDITPARAMETER.fields_by_name['value'].has_options = True
-_REQUESTEDITPARAMETER.fields_by_name['value']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTEDITPARAMETER.has_options = True
-_REQUESTEDITPARAMETER._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_UPDATEPARAMETERCHANGED.fields_by_name['key'].has_options = True
-_UPDATEPARAMETERCHANGED.fields_by_name['key']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEPARAMETERCHANGED.fields_by_name['value'].has_options = True
-_UPDATEPARAMETERCHANGED.fields_by_name['value']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
+DESCRIPTOR._options = None
+_PARAMETER.fields_by_name['key']._options = None
+_PARAMETER.fields_by_name['value']._options = None
+_REQUESTGETPARAMETERS._options = None
+_RESPONSEGETPARAMETERS._options = None
+_REQUESTEDITPARAMETER.fields_by_name['key']._options = None
+_REQUESTEDITPARAMETER.fields_by_name['value']._options = None
+_REQUESTEDITPARAMETER._options = None
+_UPDATEPARAMETERCHANGED.fields_by_name['key']._options = None
+_UPDATEPARAMETERCHANGED.fields_by_name['value']._options = None
 
 _CONFIGSYNC = _descriptor.ServiceDescriptor(
   name='ConfigSync',
   full_name='dialog.ConfigSync',
   file=DESCRIPTOR,
   index=0,
-  options=None,
+  serialized_options=None,
   serialized_start=629,
   serialized_end=879,
   methods=[
@@ -282,7 +272,7 @@ _CONFIGSYNC = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTGETPARAMETERS,
     output_type=_RESPONSEGETPARAMETERS,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002&\"!/v1/grpc/ConfigSync/GetParameters:\001*')),
+    serialized_options=_b('\202\323\344\223\002&\"!/v1/grpc/ConfigSync/GetParameters:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='EditParameter',
@@ -291,7 +281,7 @@ _CONFIGSYNC = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTEDITPARAMETER,
     output_type=miscellaneous__pb2._RESPONSESEQ,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002&\"!/v1/grpc/ConfigSync/EditParameter:\001*')),
+    serialized_options=_b('\202\323\344\223\002&\"!/v1/grpc/ConfigSync/EditParameter:\001*'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_CONFIGSYNC)

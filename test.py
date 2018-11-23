@@ -2,15 +2,21 @@
 from dialog_bot_sdk.internal.peers import private_peer
 from dialog_bot_sdk.bot import DialogBot
 from threading import Thread, Timer
+from dialog_api import sequence_and_updates_pb2
 from dialog_bot_sdk import interactive_media
 import time
 
 
 def on_msg(*params):
     print('on msg', params[0].message.textMessage.text)
-    # d.messaging.send_message(params[0].peer, 'Reply to: ' + str(params[0].message.textMessage.text))
+    d.messaging.send_message(params[0].peer, 'Reply to: ' + str(params[0].message.textMessage.text))
     # d.updates.get_difference(5272)
-    d.messaging.send_photo(params[0].peer, 'image.png')
+    # d.messaging.send_photo(params[0].peer, 'image.png')
+    # diff = d.updates.get_difference(9593)
+    #
+    # diff = diff.updates[0]
+    #
+    # print(diff.WhichOneof('update'))
 
 
 if __name__ == '__main__':

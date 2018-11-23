@@ -44,6 +44,16 @@ class SearchStub(object):
         request_serializer=search__pb2.RequestSimpleSearchMore.SerializeToString,
         response_deserializer=search__pb2.ResponseMessageSearchResponse.FromString,
         )
+    self.AutocompleteSuggestions = channel.unary_unary(
+        '/dialog.Search/AutocompleteSuggestions',
+        request_serializer=search__pb2.RequestFieldAutocomplete.SerializeToString,
+        response_deserializer=search__pb2.ResponseFieldAutocomplete.FromString,
+        )
+    self.LoadUserSearchByPredicatesResults = channel.unary_unary(
+        '/dialog.Search/LoadUserSearchByPredicatesResults',
+        request_serializer=search__pb2.RequestLoadUserSearchByPredicatesResults.SerializeToString,
+        response_deserializer=search__pb2.ResponseLoadUserSearchByPredicatesResults.FromString,
+        )
 
 
 class SearchServicer(object):
@@ -92,6 +102,20 @@ class SearchServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def AutocompleteSuggestions(self, request, context):
+    """/ Search for autocomplete suggestions among custom user profile
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def LoadUserSearchByPredicatesResults(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_SearchServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -124,6 +148,16 @@ def add_SearchServicer_to_server(servicer, server):
           servicer.SimpleSearchMore,
           request_deserializer=search__pb2.RequestSimpleSearchMore.FromString,
           response_serializer=search__pb2.ResponseMessageSearchResponse.SerializeToString,
+      ),
+      'AutocompleteSuggestions': grpc.unary_unary_rpc_method_handler(
+          servicer.AutocompleteSuggestions,
+          request_deserializer=search__pb2.RequestFieldAutocomplete.FromString,
+          response_serializer=search__pb2.ResponseFieldAutocomplete.SerializeToString,
+      ),
+      'LoadUserSearchByPredicatesResults': grpc.unary_unary_rpc_method_handler(
+          servicer.LoadUserSearchByPredicatesResults,
+          request_deserializer=search__pb2.RequestLoadUserSearchByPredicatesResults.FromString,
+          response_serializer=search__pb2.ResponseLoadUserSearchByPredicatesResults.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

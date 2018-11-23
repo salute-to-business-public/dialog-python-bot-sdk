@@ -7,7 +7,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -21,7 +20,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='definitions.proto',
   package='dialog',
   syntax='proto3',
-  serialized_pb=_b('\n\x11\x64\x65\x66initions.proto\x12\x06\x64ialog\x1a\x15scalapb/scalapb.proto\x1a google/protobuf/descriptor.proto\"\x1a\n\tUUIDValue\x12\r\n\x05value\x18\x01 \x01(\x0c\"\x1c\n\rDialogOptions\x12\x0b\n\x03log\x18\x01 \x01(\t:C\n\x03\x64lg\x12\x1d.google.protobuf.FieldOptions\x18\xa1\x8d\x06 \x01(\x0b\x32\x15.dialog.DialogOptionsB\x19\xe2?\x16\n\x14im.dlg.grpc.servicesb\x06proto3')
+  serialized_options=_b('\342?\026\n\024im.dlg.grpc.services'),
+  serialized_pb=_b('\n\x11\x64\x65\x66initions.proto\x12\x06\x64ialog\x1a\x15scalapb/scalapb.proto\x1a google/protobuf/descriptor.proto\"%\n\tUUIDValue\x12\x0b\n\x03msb\x18\x01 \x01(\x03\x12\x0b\n\x03lsb\x18\x02 \x01(\x03\"\x1c\n\rDialogOptions\x12\x0b\n\x03log\x18\x01 \x01(\t\"\x1a\n\tDataClock\x12\r\n\x05\x63lock\x18\x01 \x01(\x03:C\n\x03\x64lg\x12\x1d.google.protobuf.FieldOptions\x18\xa1\x8d\x06 \x01(\x0b\x32\x15.dialog.DialogOptionsB\x19\xe2?\x16\n\x14im.dlg.grpc.servicesb\x06proto3')
   ,
   dependencies=[scalapb_dot_scalapb__pb2.DESCRIPTOR,google_dot_protobuf_dot_descriptor__pb2.DESCRIPTOR,])
 
@@ -33,7 +33,7 @@ dlg = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=None,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None, file=DESCRIPTOR)
+  serialized_options=None, file=DESCRIPTOR)
 
 
 _UUIDVALUE = _descriptor.Descriptor(
@@ -44,26 +44,33 @@ _UUIDVALUE = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='dialog.UUIDValue.value', index=0,
-      number=1, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b(""),
+      name='msb', full_name='dialog.UUIDValue.msb', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='lsb', full_name='dialog.UUIDValue.lsb', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
   serialized_start=86,
-  serialized_end=112,
+  serialized_end=123,
 )
 
 
@@ -80,25 +87,57 @@ _DIALOGOPTIONS = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=114,
-  serialized_end=142,
+  serialized_start=125,
+  serialized_end=153,
+)
+
+
+_DATACLOCK = _descriptor.Descriptor(
+  name='DataClock',
+  full_name='dialog.DataClock',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='clock', full_name='dialog.DataClock.clock', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=155,
+  serialized_end=181,
 )
 
 DESCRIPTOR.message_types_by_name['UUIDValue'] = _UUIDVALUE
 DESCRIPTOR.message_types_by_name['DialogOptions'] = _DIALOGOPTIONS
+DESCRIPTOR.message_types_by_name['DataClock'] = _DATACLOCK
 DESCRIPTOR.extensions_by_name['dlg'] = dlg
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -116,9 +155,15 @@ DialogOptions = _reflection.GeneratedProtocolMessageType('DialogOptions', (_mess
   ))
 _sym_db.RegisterMessage(DialogOptions)
 
+DataClock = _reflection.GeneratedProtocolMessageType('DataClock', (_message.Message,), dict(
+  DESCRIPTOR = _DATACLOCK,
+  __module__ = 'definitions_pb2'
+  # @@protoc_insertion_point(class_scope:dialog.DataClock)
+  ))
+_sym_db.RegisterMessage(DataClock)
+
 dlg.message_type = _DIALOGOPTIONS
 google_dot_protobuf_dot_descriptor__pb2.FieldOptions.RegisterExtension(dlg)
 
-DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\342?\026\n\024im.dlg.grpc.services'))
+DESCRIPTOR._options = None
 # @@protoc_insertion_point(module_scope)

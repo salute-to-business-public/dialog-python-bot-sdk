@@ -8,7 +8,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -24,6 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='media_and_files.proto',
   package='dialog',
   syntax='proto3',
+  serialized_options=_b('\342?\026\n\024im.dlg.grpc.services'),
   serialized_pb=_b('\n\x15media_and_files.proto\x12\x06\x64ialog\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x11\x64\x65\x66initions.proto\x1a\x15scalapb/scalapb.proto\"Q\n\x0c\x46ileLocation\x12\x1e\n\x07\x66ile_id\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12!\n\x0b\x61\x63\x63\x65ss_hash\x18\x02 \x01(\x03\x42\x0c\x8a\xea\x30\x08\n\x06\x64\x61nger\"\xaa\x01\n\rImageLocation\x12:\n\rfile_location\x18\x01 \x01(\x0b\x32\x14.dialog.FileLocationB\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05width\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1d\n\x06height\x18\x03 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12 \n\tfile_size\x18\x04 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\"\xb0\x01\n\rAudioLocation\x12:\n\rfile_location\x18\x01 \x01(\x0b\x32\x14.dialog.FileLocationB\r\x8a\xea\x30\t\n\x07visible\x12\x1f\n\x08\x64uration\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12 \n\tmime_type\x18\x03 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12 \n\tfile_size\x18\x04 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\"\xa8\x01\n\x0b\x41vatarImage\x12:\n\rfile_location\x18\x01 \x01(\x0b\x32\x14.dialog.FileLocationB\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05width\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1d\n\x06height\x18\x03 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12 \n\tfile_size\x18\x04 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\"\xb2\x01\n\x06\x41vatar\x12\x37\n\x0bsmall_image\x18\x01 \x01(\x0b\x32\x13.dialog.AvatarImageB\r\x8a\xea\x30\t\n\x07\x63ompact\x12\x37\n\x0blarge_image\x18\x02 \x01(\x0b\x32\x13.dialog.AvatarImageB\r\x8a\xea\x30\t\n\x07\x63ompact\x12\x36\n\nfull_image\x18\x03 \x01(\x0b\x32\x13.dialog.AvatarImageB\r\x8a\xea\x30\t\n\x07\x63ompact\"]\n\tFastThumb\x12\x18\n\x01w\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x18\n\x01h\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05thumb\x18\x03 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07\x63ompact\"_\n\x05\x43olor\x12\x1f\n\x03rgb\x18\x01 \x01(\x0b\x32\x10.dialog.RgbColorH\x00\x12-\n\npredefined\x18\x02 \x01(\x0b\x32\x17.dialog.PredefinedColorH\x00\x42\x06\n\x04\x62ody\"&\n\x08RgbColor\x12\x1a\n\x03rgb\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\">\n\x0fPredefinedColor\x12+\n\x05\x63olor\x18\x01 \x01(\x0e\x32\x0e.dialog.ColorsB\x0c\x8a\xea\x30\x08\n\x06hidden\"F\n\nHTTPHeader\x12\x1a\n\x03key\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05value\x18\x02 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\"\xf2\x01\n\x12\x46ileUrlDescription\x12\x1e\n\x07\x66ile_id\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03url\x18\x02 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1e\n\x07timeout\x18\x03 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12@\n\x0cunsigned_url\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12>\n\x14unsigned_url_headers\x18\x05 \x03(\x0b\x32\x12.dialog.HTTPHeaderB\x0c\x8a\xea\x30\x08\n\x06hidden\"d\n\x11RequestGetFileUrl\x12\x31\n\x04\x66ile\x18\x01 \x01(\x0b\x32\x14.dialog.FileLocationB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xb7\x01\n\x12ResponseGetFileUrl\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x0f\n\x07timeout\x18\x02 \x01(\x05\x12\x32\n\x0cunsigned_url\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x30\n\x14unsigned_url_headers\x18\x04 \x03(\x0b\x32\x12.dialog.HTTPHeader:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"e\n\x12RequestGetFileUrls\x12\x31\n\x05\x66iles\x18\x01 \x03(\x0b\x32\x14.dialog.FileLocationB\x0c\x8a\xea\x30\x08\n\x06hidden:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"c\n\x13ResponseGetFileUrls\x12-\n\tfile_urls\x18\x01 \x03(\x0b\x32\x1a.dialog.FileUrlDescription:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"n\n\x18RequestGetFileUrlBuilder\x12\x34\n\x1esupported_signature_algorithms\x18\x01 \x03(\tB\x0c\x8a\xea\x30\x08\n\x06hidden:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x93\x01\n\x19ResponseGetFileUrlBuilder\x12\x10\n\x08\x62\x61se_url\x18\x01 \x01(\t\x12\x0c\n\x04\x61lgo\x18\x02 \x01(\t\x12\x0c\n\x04seed\x18\x05 \x01(\t\x12\x18\n\x10signature_secret\x18\x03 \x01(\x0c\x12\x0f\n\x07timeout\x18\x04 \x01(\x05:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"]\n\x17RequestGetFileUploadUrl\x12$\n\rexpected_size\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"Z\n\x18ResponseGetFileUploadUrl\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x12\n\nupload_key\x18\x02 \x01(\x0c:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"^\n\x17RequestCommitFileUpload\x12\x12\n\nupload_key\x18\x01 \x01(\x0c\x12\x11\n\tfile_name\x18\x02 \x01(\t:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"o\n\x18ResponseCommitFileUpload\x12\x34\n\x16uploaded_file_location\x18\x01 \x01(\x0b\x32\x14.dialog.FileLocation:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\x86\x01\n\x1bRequestGetFileUploadPartUrl\x12\x13\n\x0bpart_number\x18\x01 \x01(\x05\x12\x11\n\tpart_size\x18\x02 \x01(\x05\x12!\n\nupload_key\x18\x03 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07\x63ompact:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"J\n\x1cResponseGetFileUploadPartUrl\x12\x0b\n\x03url\x18\x01 \x01(\t:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse*Q\n\x06\x43olors\x12\x12\n\x0e\x43OLORS_UNKNOWN\x10\x00\x12\x0e\n\nCOLORS_RED\x10\x01\x12\x11\n\rCOLORS_YELLOW\x10\x02\x12\x10\n\x0c\x43OLORS_GREEN\x10\x03\x32\xbd\x06\n\rMediaAndFiles\x12q\n\nGetFileUrl\x12\x19.dialog.RequestGetFileUrl\x1a\x1a.dialog.ResponseGetFileUrl\",\x82\xd3\xe4\x93\x02&\"!/v1/grpc/MediaAndFiles/GetFileUrl:\x01*\x12u\n\x0bGetFileUrls\x12\x1a.dialog.RequestGetFileUrls\x1a\x1b.dialog.ResponseGetFileUrls\"-\x82\xd3\xe4\x93\x02\'\"\"/v1/grpc/MediaAndFiles/GetFileUrls:\x01*\x12\x8d\x01\n\x11GetFileUrlBuilder\x12 .dialog.RequestGetFileUrlBuilder\x1a!.dialog.ResponseGetFileUrlBuilder\"3\x82\xd3\xe4\x93\x02-\"(/v1/grpc/MediaAndFiles/GetFileUrlBuilder:\x01*\x12\x89\x01\n\x10GetFileUploadUrl\x12\x1f.dialog.RequestGetFileUploadUrl\x1a .dialog.ResponseGetFileUploadUrl\"2\x82\xd3\xe4\x93\x02,\"\'/v1/grpc/MediaAndFiles/GetFileUploadUrl:\x01*\x12\x89\x01\n\x10\x43ommitFileUpload\x12\x1f.dialog.RequestCommitFileUpload\x1a .dialog.ResponseCommitFileUpload\"2\x82\xd3\xe4\x93\x02,\"\'/v1/grpc/MediaAndFiles/CommitFileUpload:\x01*\x12\x99\x01\n\x14GetFileUploadPartUrl\x12#.dialog.RequestGetFileUploadPartUrl\x1a$.dialog.ResponseGetFileUploadPartUrl\"6\x82\xd3\xe4\x93\x02\x30\"+/v1/grpc/MediaAndFiles/GetFileUploadPartUrl:\x01*B\x19\xe2?\x16\n\x14im.dlg.grpc.servicesb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,definitions__pb2.DESCRIPTOR,scalapb_dot_scalapb__pb2.DESCRIPTOR,])
@@ -36,23 +36,23 @@ _COLORS = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='COLORS_UNKNOWN', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='COLORS_RED', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='COLORS_YELLOW', index=2, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='COLORS_GREEN', index=3, number=3,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
+  serialized_options=None,
   serialized_start=2900,
   serialized_end=2981,
 )
@@ -79,21 +79,21 @@ _FILELOCATION = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='access_hash', full_name='dialog.FileLocation.access_hash', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006danger'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -117,35 +117,35 @@ _IMAGELOCATION = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='width', full_name='dialog.ImageLocation.width', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='height', full_name='dialog.ImageLocation.height', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='file_size', full_name='dialog.ImageLocation.file_size', index=3,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -169,35 +169,35 @@ _AUDIOLOCATION = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='duration', full_name='dialog.AudioLocation.duration', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='mime_type', full_name='dialog.AudioLocation.mime_type', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='file_size', full_name='dialog.AudioLocation.file_size', index=3,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -221,35 +221,35 @@ _AVATARIMAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='width', full_name='dialog.AvatarImage.width', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='height', full_name='dialog.AvatarImage.height', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='file_size', full_name='dialog.AvatarImage.file_size', index=3,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -273,28 +273,28 @@ _AVATAR = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='large_image', full_name='dialog.Avatar.large_image', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='full_image', full_name='dialog.Avatar.full_image', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -318,28 +318,28 @@ _FASTTHUMB = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='h', full_name='dialog.FastThumb.h', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='thumb', full_name='dialog.FastThumb.thumb', index=2,
       number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -363,21 +363,21 @@ _COLOR = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='predefined', full_name='dialog.Color.predefined', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -404,14 +404,14 @@ _RGBCOLOR = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -435,14 +435,14 @@ _PREDEFINEDCOLOR = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -466,21 +466,21 @@ _HTTPHEADER = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='dialog.HTTPHeader.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -504,42 +504,42 @@ _FILEURLDESCRIPTION = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='url', full_name='dialog.FileUrlDescription.url', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='timeout', full_name='dialog.FileUrlDescription.timeout', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='unsigned_url', full_name='dialog.FileUrlDescription.unsigned_url', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='unsigned_url_headers', full_name='dialog.FileUrlDescription.unsigned_url_headers', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -563,14 +563,14 @@ _REQUESTGETFILEURL = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -594,35 +594,35 @@ _RESPONSEGETFILEURL = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='timeout', full_name='dialog.ResponseGetFileUrl.timeout', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='unsigned_url', full_name='dialog.ResponseGetFileUrl.unsigned_url', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='unsigned_url_headers', full_name='dialog.ResponseGetFileUrl.unsigned_url_headers', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -646,14 +646,14 @@ _REQUESTGETFILEURLS = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -677,14 +677,14 @@ _RESPONSEGETFILEURLS = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -708,14 +708,14 @@ _REQUESTGETFILEURLBUILDER = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -739,42 +739,42 @@ _RESPONSEGETFILEURLBUILDER = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='algo', full_name='dialog.ResponseGetFileUrlBuilder.algo', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='seed', full_name='dialog.ResponseGetFileUrlBuilder.seed', index=2,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='signature_secret', full_name='dialog.ResponseGetFileUrlBuilder.signature_secret', index=3,
       number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='timeout', full_name='dialog.ResponseGetFileUrlBuilder.timeout', index=4,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -798,14 +798,14 @@ _REQUESTGETFILEUPLOADURL = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -829,21 +829,21 @@ _RESPONSEGETFILEUPLOADURL = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='upload_key', full_name='dialog.ResponseGetFileUploadUrl.upload_key', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -867,21 +867,21 @@ _REQUESTCOMMITFILEUPLOAD = _descriptor.Descriptor(
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='file_name', full_name='dialog.RequestCommitFileUpload.file_name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -905,14 +905,14 @@ _RESPONSECOMMITFILEUPLOAD = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -936,28 +936,28 @@ _REQUESTGETFILEUPLOADPARTURL = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='part_size', full_name='dialog.RequestGetFileUploadPartUrl.part_size', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='upload_key', full_name='dialog.RequestGetFileUploadPartUrl.upload_key', index=2,
       number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -981,14 +981,14 @@ _RESPONSEGETFILEUPLOADPARTURL = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1209,107 +1209,60 @@ ResponseGetFileUploadPartUrl = _reflection.GeneratedProtocolMessageType('Respons
 _sym_db.RegisterMessage(ResponseGetFileUploadPartUrl)
 
 
-DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\342?\026\n\024im.dlg.grpc.services'))
-_FILELOCATION.fields_by_name['file_id'].has_options = True
-_FILELOCATION.fields_by_name['file_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_FILELOCATION.fields_by_name['access_hash'].has_options = True
-_FILELOCATION.fields_by_name['access_hash']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger'))
-_IMAGELOCATION.fields_by_name['file_location'].has_options = True
-_IMAGELOCATION.fields_by_name['file_location']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_IMAGELOCATION.fields_by_name['width'].has_options = True
-_IMAGELOCATION.fields_by_name['width']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_IMAGELOCATION.fields_by_name['height'].has_options = True
-_IMAGELOCATION.fields_by_name['height']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_IMAGELOCATION.fields_by_name['file_size'].has_options = True
-_IMAGELOCATION.fields_by_name['file_size']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_AUDIOLOCATION.fields_by_name['file_location'].has_options = True
-_AUDIOLOCATION.fields_by_name['file_location']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_AUDIOLOCATION.fields_by_name['duration'].has_options = True
-_AUDIOLOCATION.fields_by_name['duration']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_AUDIOLOCATION.fields_by_name['mime_type'].has_options = True
-_AUDIOLOCATION.fields_by_name['mime_type']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_AUDIOLOCATION.fields_by_name['file_size'].has_options = True
-_AUDIOLOCATION.fields_by_name['file_size']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_AVATARIMAGE.fields_by_name['file_location'].has_options = True
-_AVATARIMAGE.fields_by_name['file_location']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_AVATARIMAGE.fields_by_name['width'].has_options = True
-_AVATARIMAGE.fields_by_name['width']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_AVATARIMAGE.fields_by_name['height'].has_options = True
-_AVATARIMAGE.fields_by_name['height']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_AVATARIMAGE.fields_by_name['file_size'].has_options = True
-_AVATARIMAGE.fields_by_name['file_size']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_AVATAR.fields_by_name['small_image'].has_options = True
-_AVATAR.fields_by_name['small_image']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_AVATAR.fields_by_name['large_image'].has_options = True
-_AVATAR.fields_by_name['large_image']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_AVATAR.fields_by_name['full_image'].has_options = True
-_AVATAR.fields_by_name['full_image']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_FASTTHUMB.fields_by_name['w'].has_options = True
-_FASTTHUMB.fields_by_name['w']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_FASTTHUMB.fields_by_name['h'].has_options = True
-_FASTTHUMB.fields_by_name['h']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_FASTTHUMB.fields_by_name['thumb'].has_options = True
-_FASTTHUMB.fields_by_name['thumb']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_RGBCOLOR.fields_by_name['rgb'].has_options = True
-_RGBCOLOR.fields_by_name['rgb']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_PREDEFINEDCOLOR.fields_by_name['color'].has_options = True
-_PREDEFINEDCOLOR.fields_by_name['color']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_HTTPHEADER.fields_by_name['key'].has_options = True
-_HTTPHEADER.fields_by_name['key']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_HTTPHEADER.fields_by_name['value'].has_options = True
-_HTTPHEADER.fields_by_name['value']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_FILEURLDESCRIPTION.fields_by_name['file_id'].has_options = True
-_FILEURLDESCRIPTION.fields_by_name['file_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_FILEURLDESCRIPTION.fields_by_name['url'].has_options = True
-_FILEURLDESCRIPTION.fields_by_name['url']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_FILEURLDESCRIPTION.fields_by_name['timeout'].has_options = True
-_FILEURLDESCRIPTION.fields_by_name['timeout']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_FILEURLDESCRIPTION.fields_by_name['unsigned_url'].has_options = True
-_FILEURLDESCRIPTION.fields_by_name['unsigned_url']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_FILEURLDESCRIPTION.fields_by_name['unsigned_url_headers'].has_options = True
-_FILEURLDESCRIPTION.fields_by_name['unsigned_url_headers']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTGETFILEURL.fields_by_name['file'].has_options = True
-_REQUESTGETFILEURL.fields_by_name['file']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTGETFILEURL.has_options = True
-_REQUESTGETFILEURL._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSEGETFILEURL.has_options = True
-_RESPONSEGETFILEURL._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_REQUESTGETFILEURLS.fields_by_name['files'].has_options = True
-_REQUESTGETFILEURLS.fields_by_name['files']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTGETFILEURLS.has_options = True
-_REQUESTGETFILEURLS._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSEGETFILEURLS.has_options = True
-_RESPONSEGETFILEURLS._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_REQUESTGETFILEURLBUILDER.fields_by_name['supported_signature_algorithms'].has_options = True
-_REQUESTGETFILEURLBUILDER.fields_by_name['supported_signature_algorithms']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTGETFILEURLBUILDER.has_options = True
-_REQUESTGETFILEURLBUILDER._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSEGETFILEURLBUILDER.has_options = True
-_RESPONSEGETFILEURLBUILDER._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_REQUESTGETFILEUPLOADURL.fields_by_name['expected_size'].has_options = True
-_REQUESTGETFILEUPLOADURL.fields_by_name['expected_size']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTGETFILEUPLOADURL.has_options = True
-_REQUESTGETFILEUPLOADURL._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSEGETFILEUPLOADURL.has_options = True
-_RESPONSEGETFILEUPLOADURL._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_REQUESTCOMMITFILEUPLOAD.has_options = True
-_REQUESTCOMMITFILEUPLOAD._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSECOMMITFILEUPLOAD.has_options = True
-_RESPONSECOMMITFILEUPLOAD._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_REQUESTGETFILEUPLOADPARTURL.fields_by_name['upload_key'].has_options = True
-_REQUESTGETFILEUPLOADPARTURL.fields_by_name['upload_key']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_REQUESTGETFILEUPLOADPARTURL.has_options = True
-_REQUESTGETFILEUPLOADPARTURL._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSEGETFILEUPLOADPARTURL.has_options = True
-_RESPONSEGETFILEUPLOADPARTURL._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
+DESCRIPTOR._options = None
+_FILELOCATION.fields_by_name['file_id']._options = None
+_FILELOCATION.fields_by_name['access_hash']._options = None
+_IMAGELOCATION.fields_by_name['file_location']._options = None
+_IMAGELOCATION.fields_by_name['width']._options = None
+_IMAGELOCATION.fields_by_name['height']._options = None
+_IMAGELOCATION.fields_by_name['file_size']._options = None
+_AUDIOLOCATION.fields_by_name['file_location']._options = None
+_AUDIOLOCATION.fields_by_name['duration']._options = None
+_AUDIOLOCATION.fields_by_name['mime_type']._options = None
+_AUDIOLOCATION.fields_by_name['file_size']._options = None
+_AVATARIMAGE.fields_by_name['file_location']._options = None
+_AVATARIMAGE.fields_by_name['width']._options = None
+_AVATARIMAGE.fields_by_name['height']._options = None
+_AVATARIMAGE.fields_by_name['file_size']._options = None
+_AVATAR.fields_by_name['small_image']._options = None
+_AVATAR.fields_by_name['large_image']._options = None
+_AVATAR.fields_by_name['full_image']._options = None
+_FASTTHUMB.fields_by_name['w']._options = None
+_FASTTHUMB.fields_by_name['h']._options = None
+_FASTTHUMB.fields_by_name['thumb']._options = None
+_RGBCOLOR.fields_by_name['rgb']._options = None
+_PREDEFINEDCOLOR.fields_by_name['color']._options = None
+_HTTPHEADER.fields_by_name['key']._options = None
+_HTTPHEADER.fields_by_name['value']._options = None
+_FILEURLDESCRIPTION.fields_by_name['file_id']._options = None
+_FILEURLDESCRIPTION.fields_by_name['url']._options = None
+_FILEURLDESCRIPTION.fields_by_name['timeout']._options = None
+_FILEURLDESCRIPTION.fields_by_name['unsigned_url']._options = None
+_FILEURLDESCRIPTION.fields_by_name['unsigned_url_headers']._options = None
+_REQUESTGETFILEURL.fields_by_name['file']._options = None
+_REQUESTGETFILEURL._options = None
+_RESPONSEGETFILEURL._options = None
+_REQUESTGETFILEURLS.fields_by_name['files']._options = None
+_REQUESTGETFILEURLS._options = None
+_RESPONSEGETFILEURLS._options = None
+_REQUESTGETFILEURLBUILDER.fields_by_name['supported_signature_algorithms']._options = None
+_REQUESTGETFILEURLBUILDER._options = None
+_RESPONSEGETFILEURLBUILDER._options = None
+_REQUESTGETFILEUPLOADURL.fields_by_name['expected_size']._options = None
+_REQUESTGETFILEUPLOADURL._options = None
+_RESPONSEGETFILEUPLOADURL._options = None
+_REQUESTCOMMITFILEUPLOAD._options = None
+_RESPONSECOMMITFILEUPLOAD._options = None
+_REQUESTGETFILEUPLOADPARTURL.fields_by_name['upload_key']._options = None
+_REQUESTGETFILEUPLOADPARTURL._options = None
+_RESPONSEGETFILEUPLOADPARTURL._options = None
 
 _MEDIAANDFILES = _descriptor.ServiceDescriptor(
   name='MediaAndFiles',
   full_name='dialog.MediaAndFiles',
   file=DESCRIPTOR,
   index=0,
-  options=None,
+  serialized_options=None,
   serialized_start=2984,
   serialized_end=3813,
   methods=[
@@ -1320,7 +1273,7 @@ _MEDIAANDFILES = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTGETFILEURL,
     output_type=_RESPONSEGETFILEURL,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002&\"!/v1/grpc/MediaAndFiles/GetFileUrl:\001*')),
+    serialized_options=_b('\202\323\344\223\002&\"!/v1/grpc/MediaAndFiles/GetFileUrl:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='GetFileUrls',
@@ -1329,7 +1282,7 @@ _MEDIAANDFILES = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTGETFILEURLS,
     output_type=_RESPONSEGETFILEURLS,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\'\"\"/v1/grpc/MediaAndFiles/GetFileUrls:\001*')),
+    serialized_options=_b('\202\323\344\223\002\'\"\"/v1/grpc/MediaAndFiles/GetFileUrls:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='GetFileUrlBuilder',
@@ -1338,7 +1291,7 @@ _MEDIAANDFILES = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTGETFILEURLBUILDER,
     output_type=_RESPONSEGETFILEURLBUILDER,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002-\"(/v1/grpc/MediaAndFiles/GetFileUrlBuilder:\001*')),
+    serialized_options=_b('\202\323\344\223\002-\"(/v1/grpc/MediaAndFiles/GetFileUrlBuilder:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='GetFileUploadUrl',
@@ -1347,7 +1300,7 @@ _MEDIAANDFILES = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTGETFILEUPLOADURL,
     output_type=_RESPONSEGETFILEUPLOADURL,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002,\"\'/v1/grpc/MediaAndFiles/GetFileUploadUrl:\001*')),
+    serialized_options=_b('\202\323\344\223\002,\"\'/v1/grpc/MediaAndFiles/GetFileUploadUrl:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='CommitFileUpload',
@@ -1356,7 +1309,7 @@ _MEDIAANDFILES = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTCOMMITFILEUPLOAD,
     output_type=_RESPONSECOMMITFILEUPLOAD,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002,\"\'/v1/grpc/MediaAndFiles/CommitFileUpload:\001*')),
+    serialized_options=_b('\202\323\344\223\002,\"\'/v1/grpc/MediaAndFiles/CommitFileUpload:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='GetFileUploadPartUrl',
@@ -1365,7 +1318,7 @@ _MEDIAANDFILES = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTGETFILEUPLOADPARTURL,
     output_type=_RESPONSEGETFILEUPLOADPARTURL,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\0020\"+/v1/grpc/MediaAndFiles/GetFileUploadPartUrl:\001*')),
+    serialized_options=_b('\202\323\344\223\0020\"+/v1/grpc/MediaAndFiles/GetFileUploadPartUrl:\001*'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_MEDIAANDFILES)

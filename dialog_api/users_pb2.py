@@ -8,7 +8,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -27,6 +26,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='users.proto',
   package='dialog',
   syntax='proto3',
+  serialized_options=_b('\342?\026\n\024im.dlg.grpc.services'),
   serialized_pb=_b('\n\x0busers.proto\x12\x06\x64ialog\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x11\x64\x65\x66initions.proto\x1a\x13miscellaneous.proto\x1a\x0bpeers.proto\x1a\x15media_and_files.proto\x1a\x15scalapb/scalapb.proto\"\xfd\x02\n\rContactRecord\x12\x30\n\x04type\x18\x01 \x01(\x0e\x32\x13.dialog.ContactTypeB\r\x8a\xea\x30\t\n\x07visible\x12=\n\ttype_spec\x18\x06 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x41\n\x0cstring_value\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12>\n\nlong_value\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\r\x8a\xea\x30\t\n\x07visible\x12:\n\x05title\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12<\n\x08subtitle\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\"|\n\nUserStatus\x12\x33\n\x04type\x18\x01 \x01(\x0e\x32\x16.dialog.UserStatusTypeB\r\x8a\xea\x30\t\n\x07visible\x12\x39\n\x04text\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\"\xed\x02\n\x04User\x12\x19\n\x02id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12!\n\x0b\x61\x63\x63\x65ss_hash\x18\x02 \x01(\x03\x42\x0c\x8a\xea\x30\x08\n\x06\x64\x61nger\x12\x1a\n\x04name\x18\x03 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\x12>\n\nlocal_name\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x39\n\x04nick\x18\r \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12&\n\x03sex\x18\x05 \x01(\x0e\x32\x0b.dialog.SexB\x0c\x8a\xea\x30\x08\n\x06hidden\x12-\n\x06\x61vatar\x18\x08 \x01(\x0b\x32\x0e.dialog.AvatarB\r\x8a\xea\x30\t\n\x07\x63ompact\x12\x39\n\x06is_bot\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\"\x84\x04\n\x08\x46ullUser\x12\x19\n\x02id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12:\n\x0c\x63ontact_info\x18\x02 \x03(\x0b\x32\x15.dialog.ContactRecordB\r\x8a\xea\x30\t\n\x07\x63ompact\x12\x39\n\x05\x61\x62out\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12*\n\x13preferred_languages\x18\x04 \x03(\tB\r\x8a\xea\x30\t\n\x07visible\x12>\n\ttime_zone\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12\x37\n\x0c\x62ot_commands\x18\x06 \x03(\x0b\x32\x12.dialog.BotCommandB\r\x8a\xea\x30\t\n\x07visible\x12=\n\nis_blocked\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12\x16\n\x0e\x63ustom_profile\x18\t \x01(\t\x12\x37\n\x11integration_token\x18\n \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x31\n\x06status\x18\x0b \x01(\x0b\x32\x12.dialog.UserStatusB\r\x8a\xea\x30\t\n\x07visible\"\x94\x01\n\nBotCommand\x12$\n\rslash_command\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\"\n\x0b\x64\x65scription\x18\x02 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12<\n\x07loc_key\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\"\x93\x01\n\x18RequestEditUserLocalName\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12!\n\x0b\x61\x63\x63\x65ss_hash\x18\x02 \x01(\x03\x42\x0c\x8a\xea\x30\x08\n\x06\x64\x61nger\x12\x1a\n\x04name\x18\x03 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"d\n\x17UpdateUserAvatarChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12-\n\x06\x61vatar\x18\x02 \x01(\x0b\x32\x0e.dialog.AvatarB\r\x8a\xea\x30\t\n\x07\x63ompact\"O\n\x15UpdateUserNameChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x04name\x18\x02 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\"x\n\x1aUpdateUserLocalNameChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12>\n\nlocal_name\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\"v\n\x19UpdateUserContactsChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12=\n\x0f\x63ontact_records\x18\x04 \x03(\x0b\x32\x15.dialog.ContactRecordB\r\x8a\xea\x30\t\n\x07\x63ompact\"r\n\x15UpdateUserNickChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12=\n\x08nickname\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\"o\n\x16UpdateUserAboutChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x39\n\x05\x61\x62out\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\"m\n#UpdateUserPreferredLanguagesChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12*\n\x13preferred_languages\x18\x02 \x03(\tB\r\x8a\xea\x30\t\n\x07visible\"w\n\x19UpdateUserTimeZoneChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12>\n\ttime_zone\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\"o\n\x1cUpdateUserBotCommandsChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x33\n\x08\x63ommands\x18\x02 \x03(\x0b\x32\x12.dialog.BotCommandB\r\x8a\xea\x30\t\n\x07visible\"Z\n\x14UpdateUserSexChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12&\n\x03sex\x18\x02 \x01(\x0e\x32\x0b.dialog.SexB\x0c\x8a\xea\x30\x08\n\x06hidden\"c\n\x1eUpdateUserCustomProfileChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12%\n\x0e\x63ustom_profile\x18\x02 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\"h\n\x17UpdateUserStatusChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x31\n\x06status\x18\x02 \x01(\x0b\x32\x12.dialog.UserStatusB\r\x8a\xea\x30\t\n\x07visible\"i\n\x14UpdateUserExtChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x35\n\x03\x65xt\x18\x02 \x01(\x0b\x32\x19.dialog.RecursiveMapValueB\r\x8a\xea\x30\t\n\x07visible\"m\n\x18UpdateUserFullExtChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x35\n\x03\x65xt\x18\x02 \x01(\x0b\x32\x19.dialog.RecursiveMapValueB\r\x8a\xea\x30\t\n\x07visible\"l\n\x14RequestLoadFullUsers\x12\x36\n\nuser_peers\x18\x01 \x03(\x0b\x32\x13.dialog.UserOutPeerB\r\x8a\xea\x30\t\n\x07\x63ompact:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\\\n\x15ResponseLoadFullUsers\x12$\n\nfull_users\x18\x01 \x03(\x0b\x32\x10.dialog.FullUser:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse*4\n\x03Sex\x12\x0f\n\x0bSEX_UNKNOWN\x10\x00\x12\x0c\n\x08SEX_MALE\x10\x02\x12\x0e\n\nSEX_FEMALE\x10\x03*\x81\x01\n\x0b\x43ontactType\x12\x17\n\x13\x43ONTACTTYPE_UNKNOWN\x10\x00\x12\x15\n\x11\x43ONTACTTYPE_PHONE\x10\x01\x12\x15\n\x11\x43ONTACTTYPE_EMAIL\x10\x02\x12\x13\n\x0f\x43ONTACTTYPE_WEB\x10\x03\x12\x16\n\x12\x43ONTACTTYPE_SOCIAL\x10\x04*\x9e\x01\n\x0eUserStatusType\x12\x1a\n\x16USERSTATUSTYPE_UNKNOWN\x10\x00\x12\x18\n\x14USERSTATUSTYPE_UNSET\x10\x01\x12\x17\n\x13USERSTATUSTYPE_AWAY\x10\x02\x12\x1f\n\x1bUSERSTATUSTYPE_DONOTDISTURB\x10\x03\x12\x1c\n\x18USERSTATUSTYPE_INVISIBLE\x10\x04\x32\xf7\x01\n\x05Users\x12w\n\x11\x45\x64itUserLocalName\x12 .dialog.RequestEditUserLocalName\x1a\x13.dialog.ResponseSeq\"+\x82\xd3\xe4\x93\x02%\" /v1/grpc/Users/EditUserLocalName:\x01*\x12u\n\rLoadFullUsers\x12\x1c.dialog.RequestLoadFullUsers\x1a\x1d.dialog.ResponseLoadFullUsers\"\'\x82\xd3\xe4\x93\x02!\"\x1c/v1/grpc/Users/LoadFullUsers:\x01*B\x19\xe2?\x16\n\x14im.dlg.grpc.servicesb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,definitions__pb2.DESCRIPTOR,miscellaneous__pb2.DESCRIPTOR,peers__pb2.DESCRIPTOR,media__and__files__pb2.DESCRIPTOR,scalapb_dot_scalapb__pb2.DESCRIPTOR,])
@@ -39,19 +39,19 @@ _SEX = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='SEX_UNKNOWN', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='SEX_MALE', index=1, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='SEX_FEMALE', index=2, number=3,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
+  serialized_options=None,
   serialized_start=3602,
   serialized_end=3654,
 )
@@ -66,27 +66,27 @@ _CONTACTTYPE = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='CONTACTTYPE_UNKNOWN', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='CONTACTTYPE_PHONE', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='CONTACTTYPE_EMAIL', index=2, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='CONTACTTYPE_WEB', index=3, number=3,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='CONTACTTYPE_SOCIAL', index=4, number=4,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
+  serialized_options=None,
   serialized_start=3657,
   serialized_end=3786,
 )
@@ -101,27 +101,27 @@ _USERSTATUSTYPE = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='USERSTATUSTYPE_UNKNOWN', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='USERSTATUSTYPE_UNSET', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='USERSTATUSTYPE_AWAY', index=2, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='USERSTATUSTYPE_DONOTDISTURB', index=3, number=3,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='USERSTATUSTYPE_INVISIBLE', index=4, number=4,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
+  serialized_options=None,
   serialized_start=3789,
   serialized_end=3947,
 )
@@ -157,49 +157,49 @@ _CONTACTRECORD = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='type_spec', full_name='dialog.ContactRecord.type_spec', index=1,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='string_value', full_name='dialog.ContactRecord.string_value', index=2,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='long_value', full_name='dialog.ContactRecord.long_value', index=3,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='title', full_name='dialog.ContactRecord.title', index=4,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='subtitle', full_name='dialog.ContactRecord.subtitle', index=5,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -223,21 +223,21 @@ _USERSTATUS = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='text', full_name='dialog.UserStatus.text', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -261,63 +261,63 @@ _USER = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='access_hash', full_name='dialog.User.access_hash', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006danger'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='name', full_name='dialog.User.name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='local_name', full_name='dialog.User.local_name', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='nick', full_name='dialog.User.nick', index=4,
       number=13, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sex', full_name='dialog.User.sex', index=5,
       number=5, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='avatar', full_name='dialog.User.avatar', index=6,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='is_bot', full_name='dialog.User.is_bot', index=7,
       number=11, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -341,77 +341,77 @@ _FULLUSER = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='contact_info', full_name='dialog.FullUser.contact_info', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='about', full_name='dialog.FullUser.about', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='preferred_languages', full_name='dialog.FullUser.preferred_languages', index=3,
       number=4, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='time_zone', full_name='dialog.FullUser.time_zone', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='bot_commands', full_name='dialog.FullUser.bot_commands', index=5,
       number=6, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='is_blocked', full_name='dialog.FullUser.is_blocked', index=6,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='custom_profile', full_name='dialog.FullUser.custom_profile', index=7,
       number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='integration_token', full_name='dialog.FullUser.integration_token', index=8,
       number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='status', full_name='dialog.FullUser.status', index=9,
       number=11, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -435,28 +435,28 @@ _BOTCOMMAND = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='description', full_name='dialog.BotCommand.description', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='loc_key', full_name='dialog.BotCommand.loc_key', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -480,28 +480,28 @@ _REQUESTEDITUSERLOCALNAME = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='access_hash', full_name='dialog.RequestEditUserLocalName.access_hash', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006danger'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='name', full_name='dialog.RequestEditUserLocalName.name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -525,21 +525,21 @@ _UPDATEUSERAVATARCHANGED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='avatar', full_name='dialog.UpdateUserAvatarChanged.avatar', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -563,21 +563,21 @@ _UPDATEUSERNAMECHANGED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='name', full_name='dialog.UpdateUserNameChanged.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -601,21 +601,21 @@ _UPDATEUSERLOCALNAMECHANGED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='local_name', full_name='dialog.UpdateUserLocalNameChanged.local_name', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -639,21 +639,21 @@ _UPDATEUSERCONTACTSCHANGED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='contact_records', full_name='dialog.UpdateUserContactsChanged.contact_records', index=1,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -677,21 +677,21 @@ _UPDATEUSERNICKCHANGED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='nickname', full_name='dialog.UpdateUserNickChanged.nickname', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -715,21 +715,21 @@ _UPDATEUSERABOUTCHANGED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='about', full_name='dialog.UpdateUserAboutChanged.about', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -753,21 +753,21 @@ _UPDATEUSERPREFERREDLANGUAGESCHANGED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='preferred_languages', full_name='dialog.UpdateUserPreferredLanguagesChanged.preferred_languages', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -791,21 +791,21 @@ _UPDATEUSERTIMEZONECHANGED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='time_zone', full_name='dialog.UpdateUserTimeZoneChanged.time_zone', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -829,21 +829,21 @@ _UPDATEUSERBOTCOMMANDSCHANGED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='commands', full_name='dialog.UpdateUserBotCommandsChanged.commands', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -867,21 +867,21 @@ _UPDATEUSERSEXCHANGED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sex', full_name='dialog.UpdateUserSexChanged.sex', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -905,21 +905,21 @@ _UPDATEUSERCUSTOMPROFILECHANGED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='custom_profile', full_name='dialog.UpdateUserCustomProfileChanged.custom_profile', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -943,21 +943,21 @@ _UPDATEUSERSTATUSCHANGED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='status', full_name='dialog.UpdateUserStatusChanged.status', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -981,21 +981,21 @@ _UPDATEUSEREXTCHANGED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='ext', full_name='dialog.UpdateUserExtChanged.ext', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1019,21 +1019,21 @@ _UPDATEUSERFULLEXTCHANGED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='ext', full_name='dialog.UpdateUserFullExtChanged.ext', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1057,14 +1057,14 @@ _REQUESTLOADFULLUSERS = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1088,14 +1088,14 @@ _RESPONSELOADFULLUSERS = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1321,139 +1321,76 @@ ResponseLoadFullUsers = _reflection.GeneratedProtocolMessageType('ResponseLoadFu
 _sym_db.RegisterMessage(ResponseLoadFullUsers)
 
 
-DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\342?\026\n\024im.dlg.grpc.services'))
-_CONTACTRECORD.fields_by_name['type'].has_options = True
-_CONTACTRECORD.fields_by_name['type']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_CONTACTRECORD.fields_by_name['type_spec'].has_options = True
-_CONTACTRECORD.fields_by_name['type_spec']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_CONTACTRECORD.fields_by_name['string_value'].has_options = True
-_CONTACTRECORD.fields_by_name['string_value']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_CONTACTRECORD.fields_by_name['long_value'].has_options = True
-_CONTACTRECORD.fields_by_name['long_value']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_CONTACTRECORD.fields_by_name['title'].has_options = True
-_CONTACTRECORD.fields_by_name['title']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_CONTACTRECORD.fields_by_name['subtitle'].has_options = True
-_CONTACTRECORD.fields_by_name['subtitle']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_USERSTATUS.fields_by_name['type'].has_options = True
-_USERSTATUS.fields_by_name['type']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_USERSTATUS.fields_by_name['text'].has_options = True
-_USERSTATUS.fields_by_name['text']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_USER.fields_by_name['id'].has_options = True
-_USER.fields_by_name['id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_USER.fields_by_name['access_hash'].has_options = True
-_USER.fields_by_name['access_hash']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger'))
-_USER.fields_by_name['name'].has_options = True
-_USER.fields_by_name['name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_USER.fields_by_name['local_name'].has_options = True
-_USER.fields_by_name['local_name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_USER.fields_by_name['nick'].has_options = True
-_USER.fields_by_name['nick']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_USER.fields_by_name['sex'].has_options = True
-_USER.fields_by_name['sex']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_USER.fields_by_name['avatar'].has_options = True
-_USER.fields_by_name['avatar']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_USER.fields_by_name['is_bot'].has_options = True
-_USER.fields_by_name['is_bot']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_FULLUSER.fields_by_name['id'].has_options = True
-_FULLUSER.fields_by_name['id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_FULLUSER.fields_by_name['contact_info'].has_options = True
-_FULLUSER.fields_by_name['contact_info']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_FULLUSER.fields_by_name['about'].has_options = True
-_FULLUSER.fields_by_name['about']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_FULLUSER.fields_by_name['preferred_languages'].has_options = True
-_FULLUSER.fields_by_name['preferred_languages']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_FULLUSER.fields_by_name['time_zone'].has_options = True
-_FULLUSER.fields_by_name['time_zone']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_FULLUSER.fields_by_name['bot_commands'].has_options = True
-_FULLUSER.fields_by_name['bot_commands']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_FULLUSER.fields_by_name['is_blocked'].has_options = True
-_FULLUSER.fields_by_name['is_blocked']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_FULLUSER.fields_by_name['status'].has_options = True
-_FULLUSER.fields_by_name['status']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_BOTCOMMAND.fields_by_name['slash_command'].has_options = True
-_BOTCOMMAND.fields_by_name['slash_command']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_BOTCOMMAND.fields_by_name['description'].has_options = True
-_BOTCOMMAND.fields_by_name['description']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_BOTCOMMAND.fields_by_name['loc_key'].has_options = True
-_BOTCOMMAND.fields_by_name['loc_key']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTEDITUSERLOCALNAME.fields_by_name['uid'].has_options = True
-_REQUESTEDITUSERLOCALNAME.fields_by_name['uid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTEDITUSERLOCALNAME.fields_by_name['access_hash'].has_options = True
-_REQUESTEDITUSERLOCALNAME.fields_by_name['access_hash']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger'))
-_REQUESTEDITUSERLOCALNAME.fields_by_name['name'].has_options = True
-_REQUESTEDITUSERLOCALNAME.fields_by_name['name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTEDITUSERLOCALNAME.has_options = True
-_REQUESTEDITUSERLOCALNAME._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_UPDATEUSERAVATARCHANGED.fields_by_name['uid'].has_options = True
-_UPDATEUSERAVATARCHANGED.fields_by_name['uid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEUSERAVATARCHANGED.fields_by_name['avatar'].has_options = True
-_UPDATEUSERAVATARCHANGED.fields_by_name['avatar']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_UPDATEUSERNAMECHANGED.fields_by_name['uid'].has_options = True
-_UPDATEUSERNAMECHANGED.fields_by_name['uid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEUSERNAMECHANGED.fields_by_name['name'].has_options = True
-_UPDATEUSERNAMECHANGED.fields_by_name['name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_UPDATEUSERLOCALNAMECHANGED.fields_by_name['uid'].has_options = True
-_UPDATEUSERLOCALNAMECHANGED.fields_by_name['uid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEUSERLOCALNAMECHANGED.fields_by_name['local_name'].has_options = True
-_UPDATEUSERLOCALNAMECHANGED.fields_by_name['local_name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_UPDATEUSERCONTACTSCHANGED.fields_by_name['uid'].has_options = True
-_UPDATEUSERCONTACTSCHANGED.fields_by_name['uid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEUSERCONTACTSCHANGED.fields_by_name['contact_records'].has_options = True
-_UPDATEUSERCONTACTSCHANGED.fields_by_name['contact_records']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_UPDATEUSERNICKCHANGED.fields_by_name['uid'].has_options = True
-_UPDATEUSERNICKCHANGED.fields_by_name['uid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEUSERNICKCHANGED.fields_by_name['nickname'].has_options = True
-_UPDATEUSERNICKCHANGED.fields_by_name['nickname']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEUSERABOUTCHANGED.fields_by_name['uid'].has_options = True
-_UPDATEUSERABOUTCHANGED.fields_by_name['uid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEUSERABOUTCHANGED.fields_by_name['about'].has_options = True
-_UPDATEUSERABOUTCHANGED.fields_by_name['about']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_UPDATEUSERPREFERREDLANGUAGESCHANGED.fields_by_name['uid'].has_options = True
-_UPDATEUSERPREFERREDLANGUAGESCHANGED.fields_by_name['uid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEUSERPREFERREDLANGUAGESCHANGED.fields_by_name['preferred_languages'].has_options = True
-_UPDATEUSERPREFERREDLANGUAGESCHANGED.fields_by_name['preferred_languages']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEUSERTIMEZONECHANGED.fields_by_name['uid'].has_options = True
-_UPDATEUSERTIMEZONECHANGED.fields_by_name['uid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEUSERTIMEZONECHANGED.fields_by_name['time_zone'].has_options = True
-_UPDATEUSERTIMEZONECHANGED.fields_by_name['time_zone']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEUSERBOTCOMMANDSCHANGED.fields_by_name['uid'].has_options = True
-_UPDATEUSERBOTCOMMANDSCHANGED.fields_by_name['uid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEUSERBOTCOMMANDSCHANGED.fields_by_name['commands'].has_options = True
-_UPDATEUSERBOTCOMMANDSCHANGED.fields_by_name['commands']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEUSERSEXCHANGED.fields_by_name['uid'].has_options = True
-_UPDATEUSERSEXCHANGED.fields_by_name['uid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEUSERSEXCHANGED.fields_by_name['sex'].has_options = True
-_UPDATEUSERSEXCHANGED.fields_by_name['sex']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_UPDATEUSERCUSTOMPROFILECHANGED.fields_by_name['uid'].has_options = True
-_UPDATEUSERCUSTOMPROFILECHANGED.fields_by_name['uid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEUSERCUSTOMPROFILECHANGED.fields_by_name['custom_profile'].has_options = True
-_UPDATEUSERCUSTOMPROFILECHANGED.fields_by_name['custom_profile']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEUSERSTATUSCHANGED.fields_by_name['uid'].has_options = True
-_UPDATEUSERSTATUSCHANGED.fields_by_name['uid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEUSERSTATUSCHANGED.fields_by_name['status'].has_options = True
-_UPDATEUSERSTATUSCHANGED.fields_by_name['status']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEUSEREXTCHANGED.fields_by_name['uid'].has_options = True
-_UPDATEUSEREXTCHANGED.fields_by_name['uid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEUSEREXTCHANGED.fields_by_name['ext'].has_options = True
-_UPDATEUSEREXTCHANGED.fields_by_name['ext']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEUSERFULLEXTCHANGED.fields_by_name['uid'].has_options = True
-_UPDATEUSERFULLEXTCHANGED.fields_by_name['uid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEUSERFULLEXTCHANGED.fields_by_name['ext'].has_options = True
-_UPDATEUSERFULLEXTCHANGED.fields_by_name['ext']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTLOADFULLUSERS.fields_by_name['user_peers'].has_options = True
-_REQUESTLOADFULLUSERS.fields_by_name['user_peers']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_REQUESTLOADFULLUSERS.has_options = True
-_REQUESTLOADFULLUSERS._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSELOADFULLUSERS.has_options = True
-_RESPONSELOADFULLUSERS._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
+DESCRIPTOR._options = None
+_CONTACTRECORD.fields_by_name['type']._options = None
+_CONTACTRECORD.fields_by_name['type_spec']._options = None
+_CONTACTRECORD.fields_by_name['string_value']._options = None
+_CONTACTRECORD.fields_by_name['long_value']._options = None
+_CONTACTRECORD.fields_by_name['title']._options = None
+_CONTACTRECORD.fields_by_name['subtitle']._options = None
+_USERSTATUS.fields_by_name['type']._options = None
+_USERSTATUS.fields_by_name['text']._options = None
+_USER.fields_by_name['id']._options = None
+_USER.fields_by_name['access_hash']._options = None
+_USER.fields_by_name['name']._options = None
+_USER.fields_by_name['local_name']._options = None
+_USER.fields_by_name['nick']._options = None
+_USER.fields_by_name['sex']._options = None
+_USER.fields_by_name['avatar']._options = None
+_USER.fields_by_name['is_bot']._options = None
+_FULLUSER.fields_by_name['id']._options = None
+_FULLUSER.fields_by_name['contact_info']._options = None
+_FULLUSER.fields_by_name['about']._options = None
+_FULLUSER.fields_by_name['preferred_languages']._options = None
+_FULLUSER.fields_by_name['time_zone']._options = None
+_FULLUSER.fields_by_name['bot_commands']._options = None
+_FULLUSER.fields_by_name['is_blocked']._options = None
+_FULLUSER.fields_by_name['status']._options = None
+_BOTCOMMAND.fields_by_name['slash_command']._options = None
+_BOTCOMMAND.fields_by_name['description']._options = None
+_BOTCOMMAND.fields_by_name['loc_key']._options = None
+_REQUESTEDITUSERLOCALNAME.fields_by_name['uid']._options = None
+_REQUESTEDITUSERLOCALNAME.fields_by_name['access_hash']._options = None
+_REQUESTEDITUSERLOCALNAME.fields_by_name['name']._options = None
+_REQUESTEDITUSERLOCALNAME._options = None
+_UPDATEUSERAVATARCHANGED.fields_by_name['uid']._options = None
+_UPDATEUSERAVATARCHANGED.fields_by_name['avatar']._options = None
+_UPDATEUSERNAMECHANGED.fields_by_name['uid']._options = None
+_UPDATEUSERNAMECHANGED.fields_by_name['name']._options = None
+_UPDATEUSERLOCALNAMECHANGED.fields_by_name['uid']._options = None
+_UPDATEUSERLOCALNAMECHANGED.fields_by_name['local_name']._options = None
+_UPDATEUSERCONTACTSCHANGED.fields_by_name['uid']._options = None
+_UPDATEUSERCONTACTSCHANGED.fields_by_name['contact_records']._options = None
+_UPDATEUSERNICKCHANGED.fields_by_name['uid']._options = None
+_UPDATEUSERNICKCHANGED.fields_by_name['nickname']._options = None
+_UPDATEUSERABOUTCHANGED.fields_by_name['uid']._options = None
+_UPDATEUSERABOUTCHANGED.fields_by_name['about']._options = None
+_UPDATEUSERPREFERREDLANGUAGESCHANGED.fields_by_name['uid']._options = None
+_UPDATEUSERPREFERREDLANGUAGESCHANGED.fields_by_name['preferred_languages']._options = None
+_UPDATEUSERTIMEZONECHANGED.fields_by_name['uid']._options = None
+_UPDATEUSERTIMEZONECHANGED.fields_by_name['time_zone']._options = None
+_UPDATEUSERBOTCOMMANDSCHANGED.fields_by_name['uid']._options = None
+_UPDATEUSERBOTCOMMANDSCHANGED.fields_by_name['commands']._options = None
+_UPDATEUSERSEXCHANGED.fields_by_name['uid']._options = None
+_UPDATEUSERSEXCHANGED.fields_by_name['sex']._options = None
+_UPDATEUSERCUSTOMPROFILECHANGED.fields_by_name['uid']._options = None
+_UPDATEUSERCUSTOMPROFILECHANGED.fields_by_name['custom_profile']._options = None
+_UPDATEUSERSTATUSCHANGED.fields_by_name['uid']._options = None
+_UPDATEUSERSTATUSCHANGED.fields_by_name['status']._options = None
+_UPDATEUSEREXTCHANGED.fields_by_name['uid']._options = None
+_UPDATEUSEREXTCHANGED.fields_by_name['ext']._options = None
+_UPDATEUSERFULLEXTCHANGED.fields_by_name['uid']._options = None
+_UPDATEUSERFULLEXTCHANGED.fields_by_name['ext']._options = None
+_REQUESTLOADFULLUSERS.fields_by_name['user_peers']._options = None
+_REQUESTLOADFULLUSERS._options = None
+_RESPONSELOADFULLUSERS._options = None
 
 _USERS = _descriptor.ServiceDescriptor(
   name='Users',
   full_name='dialog.Users',
   file=DESCRIPTOR,
   index=0,
-  options=None,
+  serialized_options=None,
   serialized_start=3950,
   serialized_end=4197,
   methods=[
@@ -1464,7 +1401,7 @@ _USERS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTEDITUSERLOCALNAME,
     output_type=miscellaneous__pb2._RESPONSESEQ,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002%\" /v1/grpc/Users/EditUserLocalName:\001*')),
+    serialized_options=_b('\202\323\344\223\002%\" /v1/grpc/Users/EditUserLocalName:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='LoadFullUsers',
@@ -1473,7 +1410,7 @@ _USERS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTLOADFULLUSERS,
     output_type=_RESPONSELOADFULLUSERS,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002!\"\034/v1/grpc/Users/LoadFullUsers:\001*')),
+    serialized_options=_b('\202\323\344\223\002!\"\034/v1/grpc/Users/LoadFullUsers:\001*'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_USERS)

@@ -7,7 +7,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -24,6 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='privacy.proto',
   package='dialog',
   syntax='proto3',
+  serialized_options=_b('\342?\026\n\024im.dlg.grpc.services'),
   serialized_pb=_b('\n\rprivacy.proto\x12\x06\x64ialog\x1a\x1cgoogle/api/annotations.proto\x1a\x11\x64\x65\x66initions.proto\x1a\x13miscellaneous.proto\x1a\x0bpeers.proto\x1a\x15scalapb/scalapb.proto\"b\n\x10RequestBlockUser\x12\x30\n\x04peer\x18\x01 \x01(\x0b\x32\x13.dialog.UserOutPeerB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"d\n\x12RequestUnblockUser\x12\x30\n\x04peer\x18\x01 \x01(\x0b\x32\x13.dialog.UserOutPeerB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"T\n\x17RequestLoadBlockedUsers:9\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"b\n\x18ResponseLoadBlockedUsers\x12\'\n\nuser_peers\x18\x01 \x03(\x0b\x32\x13.dialog.UserOutPeer:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"/\n\x11UpdateUserBlocked\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\"1\n\x13UpdateUserUnblocked\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible2\xdb\x02\n\x07Privacy\x12\x61\n\tBlockUser\x12\x18.dialog.RequestBlockUser\x1a\x13.dialog.ResponseSeq\"%\x82\xd3\xe4\x93\x02\x1f\"\x1a/v1/grpc/Privacy/BlockUser:\x01*\x12g\n\x0bUnblockUser\x12\x1a.dialog.RequestUnblockUser\x1a\x13.dialog.ResponseSeq\"\'\x82\xd3\xe4\x93\x02!\"\x1c/v1/grpc/Privacy/UnblockUser:\x01*\x12\x83\x01\n\x10LoadBlockedUsers\x12\x1f.dialog.RequestLoadBlockedUsers\x1a .dialog.ResponseLoadBlockedUsers\",\x82\xd3\xe4\x93\x02&\"!/v1/grpc/Privacy/LoadBlockedUsers:\x01*B\x19\xe2?\x16\n\x14im.dlg.grpc.servicesb\x06proto3')
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,definitions__pb2.DESCRIPTOR,miscellaneous__pb2.DESCRIPTOR,peers__pb2.DESCRIPTOR,scalapb_dot_scalapb__pb2.DESCRIPTOR,])
@@ -44,14 +44,14 @@ _REQUESTBLOCKUSER = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -75,14 +75,14 @@ _REQUESTUNBLOCKUSER = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -106,7 +106,7 @@ _REQUESTLOADBLOCKEDUSERS = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -130,14 +130,14 @@ _RESPONSELOADBLOCKEDUSERS = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -161,14 +161,14 @@ _UPDATEUSERBLOCKED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -192,14 +192,14 @@ _UPDATEUSERUNBLOCKED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -263,31 +263,22 @@ UpdateUserUnblocked = _reflection.GeneratedProtocolMessageType('UpdateUserUnbloc
 _sym_db.RegisterMessage(UpdateUserUnblocked)
 
 
-DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\342?\026\n\024im.dlg.grpc.services'))
-_REQUESTBLOCKUSER.fields_by_name['peer'].has_options = True
-_REQUESTBLOCKUSER.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTBLOCKUSER.has_options = True
-_REQUESTBLOCKUSER._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTUNBLOCKUSER.fields_by_name['peer'].has_options = True
-_REQUESTUNBLOCKUSER.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTUNBLOCKUSER.has_options = True
-_REQUESTUNBLOCKUSER._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTLOADBLOCKEDUSERS.has_options = True
-_REQUESTLOADBLOCKEDUSERS._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_RESPONSELOADBLOCKEDUSERS.has_options = True
-_RESPONSELOADBLOCKEDUSERS._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_UPDATEUSERBLOCKED.fields_by_name['uid'].has_options = True
-_UPDATEUSERBLOCKED.fields_by_name['uid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEUSERUNBLOCKED.fields_by_name['uid'].has_options = True
-_UPDATEUSERUNBLOCKED.fields_by_name['uid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
+DESCRIPTOR._options = None
+_REQUESTBLOCKUSER.fields_by_name['peer']._options = None
+_REQUESTBLOCKUSER._options = None
+_REQUESTUNBLOCKUSER.fields_by_name['peer']._options = None
+_REQUESTUNBLOCKUSER._options = None
+_REQUESTLOADBLOCKEDUSERS._options = None
+_RESPONSELOADBLOCKEDUSERS._options = None
+_UPDATEUSERBLOCKED.fields_by_name['uid']._options = None
+_UPDATEUSERUNBLOCKED.fields_by_name['uid']._options = None
 
 _PRIVACY = _descriptor.ServiceDescriptor(
   name='Privacy',
   full_name='dialog.Privacy',
   file=DESCRIPTOR,
   index=0,
-  options=None,
+  serialized_options=None,
   serialized_start=620,
   serialized_end=967,
   methods=[
@@ -298,7 +289,7 @@ _PRIVACY = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTBLOCKUSER,
     output_type=miscellaneous__pb2._RESPONSESEQ,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\037\"\032/v1/grpc/Privacy/BlockUser:\001*')),
+    serialized_options=_b('\202\323\344\223\002\037\"\032/v1/grpc/Privacy/BlockUser:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='UnblockUser',
@@ -307,7 +298,7 @@ _PRIVACY = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTUNBLOCKUSER,
     output_type=miscellaneous__pb2._RESPONSESEQ,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002!\"\034/v1/grpc/Privacy/UnblockUser:\001*')),
+    serialized_options=_b('\202\323\344\223\002!\"\034/v1/grpc/Privacy/UnblockUser:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='LoadBlockedUsers',
@@ -316,7 +307,7 @@ _PRIVACY = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTLOADBLOCKEDUSERS,
     output_type=_RESPONSELOADBLOCKEDUSERS,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002&\"!/v1/grpc/Privacy/LoadBlockedUsers:\001*')),
+    serialized_options=_b('\202\323\344\223\002&\"!/v1/grpc/Privacy/LoadBlockedUsers:\001*'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_PRIVACY)

@@ -8,7 +8,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -28,7 +27,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='groups.proto',
   package='dialog',
   syntax='proto3',
-  serialized_pb=_b('\n\x0cgroups.proto\x12\x06\x64ialog\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x11\x64\x65\x66initions.proto\x1a\x13miscellaneous.proto\x1a\x0bpeers.proto\x1a\x15media_and_files.proto\x1a\x0busers.proto\x1a\x15scalapb/scalapb.proto\"\xe4\x01\n\x06Member\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\"\n\x0binviter_uid\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x64\x61te\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12;\n\x08is_admin\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12@\n\x0bpermissions\x18\x05 \x03(\x0e\x32\x1c.dialog.GroupAdminPermissionB\r\x8a\xea\x30\t\n\x07visible\"\xb7\x06\n\x05Group\x12\x19\n\x02id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12!\n\x0b\x61\x63\x63\x65ss_hash\x18\x02 \x01(\x03\x42\x0c\x8a\xea\x30\x08\n\x06\x64\x61nger\x12\x1b\n\x05title\x18\x03 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\x12-\n\x06\x61vatar\x18\x04 \x01(\x0b\x32\x0e.dialog.AvatarB\r\x8a\xea\x30\t\n\x07\x63ompact\x12\x42\n\x0emembers_amount\x18\x18 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\r\x8a\xea\x30\t\n\x07visible\x12<\n\tis_member\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12<\n\tis_hidden\x18\x14 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12\x34\n\ngroup_type\x18\x19 \x01(\x0e\x32\x11.dialog.GroupTypeB\r\x8a\xea\x30\t\n\x07visible\x12\x43\n\x10\x63\x61n_send_message\x18\x1a \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12;\n\x08is_admin\x18\x10 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12\"\n\x0b\x63reator_uid\x18\x08 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12.\n\x07members\x18\t \x03(\x0b\x32\x0e.dialog.MemberB\r\x8a\xea\x30\t\n\x07\x63ompact\x12\"\n\x0b\x63reate_date\x18\n \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x39\n\x05theme\x18\x11 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x39\n\x05\x61\x62out\x18\x12 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12>\n\tshortname\x18\x13 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\"\xa8\x04\n\tGroupFull\x12\x19\n\x02id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\"\n\x0b\x63reate_date\x18\x06 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12 \n\towner_uid\x18\x05 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12.\n\x07members\x18\x0c \x03(\x0b\x32\x0e.dialog.MemberB\r\x8a\xea\x30\t\n\x07visible\x12\x39\n\x05theme\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x39\n\x05\x61\x62out\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x43\n\x10is_async_members\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12\x43\n\x10\x63\x61n_view_members\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12\x44\n\x11\x63\x61n_invite_people\x18\t \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12\x44\n\x11is_shared_history\x18\n \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\"j\n\x15RequestLoadFullGroups\x12\x33\n\x06groups\x18\x01 \x03(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07\x63ompact:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"Z\n\x16ResponseLoadFullGroups\x12!\n\x06groups\x18\x01 \x03(\x0b\x32\x11.dialog.GroupFull:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\xbe\x01\n\x12RequestLoadMembers\x12\x32\n\x05group\x18\x01 \x01(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05limit\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x38\n\x04next\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.BytesValueB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x85\x01\n\x13ResponseLoadMembers\x12$\n\x07members\x18\x01 \x03(\x0b\x32\x13.dialog.UserOutPeer\x12)\n\x04next\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.BytesValue:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"W\n\x17UpdateGroupTitleChanged\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x05title\x18\x02 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\"j\n\x18UpdateGroupAvatarChanged\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12-\n\x06\x61vatar\x18\x02 \x01(\x0b\x32\x0e.dialog.AvatarB\r\x8a\xea\x30\t\n\x07visible\"u\n\x17UpdateGroupTopicChanged\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x39\n\x05topic\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\"u\n\x17UpdateGroupAboutChanged\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x39\n\x05\x61\x62out\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\"Z\n\x17UpdateGroupOwnerChanged\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1e\n\x07user_id\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\";\n\x18UpdateGroupHistoryShared\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\"n\n!UpdateGroupCanSendMessagesChanged\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12(\n\x11\x63\x61n_send_messages\x18\x02 \x01(\x08\x42\r\x8a\xea\x30\t\n\x07visible\"l\n UpdateGroupCanViewMembersChanged\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\'\n\x10\x63\x61n_view_members\x18\x02 \x01(\x08\x42\r\x8a\xea\x30\t\n\x07visible\"p\n\"UpdateGroupCanInviteMembersChanged\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12)\n\x12\x63\x61n_invite_members\x18\x02 \x01(\x08\x42\r\x8a\xea\x30\t\n\x07visible\"]\n\x18UpdateGroupMemberChanged\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12 \n\tis_member\x18\x02 \x01(\x08\x42\r\x8a\xea\x30\t\n\x07visible\"@\n\x1dUpdateGroupMembersBecameAsync\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\"l\n\x19UpdateGroupMembersUpdated\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12.\n\x07members\x18\x02 \x03(\x0b\x32\x0e.dialog.MemberB\r\x8a\xea\x30\t\n\x07visible\"\x99\x01\n\x15UpdateGroupMemberDiff\x12$\n\rremoved_users\x18\x01 \x03(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x34\n\radded_members\x18\x02 \x03(\x0b\x32\x0e.dialog.MemberB\r\x8a\xea\x30\t\n\x07visible\x12$\n\rmembers_count\x18\x03 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\"g\n\x1eUpdateGroupMembersCountChanged\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12$\n\rmembers_count\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\"\x81\x01\n\x1dUpdateGroupMemberAdminChanged\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1e\n\x07user_id\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1f\n\x08is_admin\x18\x03 \x01(\x08\x42\r\x8a\xea\x30\t\n\x07visible\"\xd5\x02\n\x12RequestCreateGroup\x12\x1a\n\x03rid\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x05title\x18\x02 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x31\n\x05users\x18\x03 \x03(\x0b\x32\x13.dialog.UserOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12\x34\n\ngroup_type\x18\x06 \x01(\x0e\x32\x11.dialog.GroupTypeB\r\x8a\xea\x30\t\n\x07visible\x12=\n\x08username\x18\x08 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12@\n\roptimizations\x18\x07 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xb4\x01\n\x13ResponseCreateGroup\x12\x0b\n\x03seq\x18\x01 \x01(\x05\x12\r\n\x05state\x18\x02 \x01(\x0c\x12\x1c\n\x05group\x18\x03 \x01(\x0b\x32\r.dialog.Group\x12\x1b\n\x05users\x18\x04 \x03(\x0b\x32\x0c.dialog.User\x12\'\n\nuser_peers\x18\x05 \x03(\x0b\x32\x13.dialog.UserOutPeer:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\xe9\x01\n\x15RequestEditGroupTitle\x12\x37\n\ngroup_peer\x18\x01 \x01(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03rid\x18\x04 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x05title\x18\x03 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\x12@\n\roptimizations\x18\x05 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x8d\x01\n\x18RequestSetGroupShortname\x12\x31\n\x04peer\x18\x01 \x01(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12 \n\tshortname\x18\x02 \x01(\tB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x89\x02\n\x16RequestEditGroupAvatar\x12\x37\n\ngroup_peer\x18\x01 \x01(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03rid\x18\x04 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12:\n\rfile_location\x18\x03 \x01(\x0b\x32\x14.dialog.FileLocationB\r\x8a\xea\x30\t\n\x07\x63ompact\x12@\n\roptimizations\x18\x05 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xa2\x01\n\x17ResponseEditGroupAvatar\x12\x1e\n\x06\x61vatar\x18\x01 \x01(\x0b\x32\x0e.dialog.Avatar\x12\x0b\n\x03seq\x18\x02 \x01(\x05\x12\r\n\x05state\x18\x03 \x01(\x0c\x12\x0c\n\x04\x64\x61te\x18\x04 \x01(\x03\x12\x1e\n\x03mid\x18\x05 \x01(\x0b\x32\x11.dialog.UUIDValue:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\xcf\x01\n\x18RequestRemoveGroupAvatar\x12\x37\n\ngroup_peer\x18\x01 \x01(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03rid\x18\x04 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12@\n\roptimizations\x18\x05 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x87\x02\n\x15RequestEditGroupTopic\x12\x37\n\ngroup_peer\x18\x01 \x01(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03rid\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x39\n\x05topic\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12@\n\roptimizations\x18\x04 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x87\x02\n\x15RequestEditGroupAbout\x12\x37\n\ngroup_peer\x18\x01 \x01(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03rid\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x39\n\x05\x61\x62out\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12@\n\roptimizations\x18\x05 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xfa\x01\n\x11RequestInviteUser\x12\x37\n\ngroup_peer\x18\x01 \x01(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03rid\x18\x04 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x30\n\x04user\x18\x03 \x01(\x0b\x32\x13.dialog.UserOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12@\n\roptimizations\x18\x05 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xc8\x01\n\x11RequestLeaveGroup\x12\x37\n\ngroup_peer\x18\x01 \x01(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03rid\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12@\n\roptimizations\x18\x03 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xf8\x01\n\x0fRequestKickUser\x12\x37\n\ngroup_peer\x18\x01 \x01(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03rid\x18\x04 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x30\n\x04user\x18\x03 \x01(\x0b\x32\x13.dialog.UserOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12@\n\roptimizations\x18\x05 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xe6\x01\n\x14RequestMakeUserAdmin\x12\x37\n\ngroup_peer\x18\x01 \x01(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12\x35\n\tuser_peer\x18\x02 \x01(\x0b\x32\x13.dialog.UserOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12@\n\x0bpermissions\x18\x03 \x03(\x0e\x32\x1c.dialog.GroupAdminPermissionB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"x\n\x15GroupMemberPermission\x12\x1e\n\x07user_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12?\n\x0bpermissions\x18\x02 \x03(\x0e\x32\x1c.dialog.GroupAdminPermissionB\x0c\x8a\xea\x30\x08\n\x06hidden\"\x82\x01\n RequestGetGroupMemberPermissions\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1f\n\x08user_ids\x18\x02 \x03(\x05\x42\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"v\n!ResponseGetGroupMemberPermissions\x12\x32\n\x0bpermissions\x18\x01 \x03(\x0b\x32\x1d.dialog.GroupMemberPermission:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\xa8\x01\n#UpdateGroupMemberPermissionsChanged\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1e\n\x07user_id\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12@\n\x0bpermissions\x18\x03 \x03(\x0e\x32\x1c.dialog.GroupAdminPermissionB\r\x8a\xea\x30\t\n\x07visible\"\x93\x01\n\x18RequestTransferOwnership\x12\x37\n\ngroup_peer\x18\x01 \x01(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12 \n\tnew_owner\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"?\n\x11ResponseInviteUrl\x12\x0b\n\x03url\x18\x01 \x01(\t:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"q\n\x18RequestGetGroupInviteUrl\x12\x37\n\ngroup_peer\x18\x01 \x01(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"<\n\x1cRequestGetGroupInviteUrlBase:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"K\n\x1dResponseGetGroupInviteUrlBase\x12\x0b\n\x03url\x18\x01 \x01(\t:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"o\n\x16RequestRevokeInviteUrl\x12\x37\n\ngroup_peer\x18\x01 \x01(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x8f\x01\n\x10RequestJoinGroup\x12\x1c\n\x05token\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12?\n\roptimizations\x18\x02 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\x0c\x8a\xea\x30\x08\n\x06hidden:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xe0\x01\n\x11ResponseJoinGroup\x12\x1c\n\x05group\x18\x01 \x01(\x0b\x32\r.dialog.Group\x12\x1b\n\x05users\x18\x05 \x03(\x0b\x32\x0c.dialog.User\x12\'\n\nuser_peers\x18\x07 \x03(\x0b\x32\x13.dialog.UserOutPeer\x12\x1e\n\x03mid\x18\x08 \x01(\x0b\x32\x11.dialog.UUIDValue\x12\x0b\n\x03seq\x18\x02 \x01(\x05\x12\r\n\x05state\x18\x03 \x01(\x0c\x12\x0c\n\x04\x64\x61te\x18\x04 \x01(\x03:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"i\n\x16RequestJoinGroupByPeer\x12\x31\n\x04peer\x18\x01 \x01(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xac\x01\n\x1cRequestMakeUserAdminObsolete\x12\x37\n\ngroup_peer\x18\x01 \x01(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12\x35\n\tuser_peer\x18\x02 \x01(\x0b\x32\x13.dialog.UserOutPeerB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"{\n\x1dResponseMakeUserAdminObsolete\x12\x1f\n\x07members\x18\x01 \x03(\x0b\x32\x0e.dialog.Member\x12\x0b\n\x03seq\x18\x02 \x01(\x05\x12\r\n\x05state\x18\x03 \x01(\x0c:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\xb8\x01\n\x19UpdateGroupInviteObsolete\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03rid\x18\t \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1e\n\x03mid\x18\n \x01(\x0b\x32\x11.dialog.UUIDValue\x12!\n\ninvite_uid\x18\x05 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x64\x61te\x18\x08 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\"\xe9\x01\n\x1eUpdateGroupUserInvitedObsolete\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03rid\x18\x05 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12-\n\x03mid\x18\x06 \x01(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03uid\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\"\n\x0binviter_uid\x18\x03 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x64\x61te\x18\x04 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\"\x98\x01\n\x1cUpdateGroupUserLeaveObsolete\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1e\n\x03mid\x18\x05 \x01(\x0b\x32\x11.dialog.UUIDValue\x12\x1a\n\x03uid\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x64\x61te\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\"\xba\x01\n\x1bUpdateGroupUserKickObsolete\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1e\n\x03mid\x18\x06 \x01(\x0b\x32\x11.dialog.UUIDValue\x12\x1a\n\x03uid\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12!\n\nkicker_uid\x18\x03 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x64\x61te\x18\x04 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\"s\n UpdateGroupMembersUpdateObsolete\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12.\n\x07members\x18\x02 \x03(\x0b\x32\x0e.dialog.MemberB\r\x8a\xea\x30\t\n\x07visible\"\xb8\x01\n\x1fUpdateGroupTitleChangedObsolete\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1e\n\x03mid\x18\x06 \x01(\x0b\x32\x11.dialog.UUIDValue\x12\x1a\n\x03uid\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x05title\x18\x03 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x1b\n\x04\x64\x61te\x18\x04 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\"\xd2\x01\n\x1fUpdateGroupTopicChangedObsolete\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03rid\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03uid\x18\x03 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x39\n\x05topic\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x1b\n\x04\x64\x61te\x18\x05 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\"}\n\x1fUpdateGroupAboutChangedObsolete\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x39\n\x05\x61\x62out\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\"\xcb\x01\n UpdateGroupAvatarChangedObsolete\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1e\n\x03mid\x18\x06 \x01(\x0b\x32\x11.dialog.UUIDValue\x12\x1a\n\x03uid\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12-\n\x06\x61vatar\x18\x03 \x01(\x0b\x32\x0e.dialog.AvatarB\r\x8a\xea\x30\t\n\x07\x63ompact\x12\x1b\n\x04\x64\x61te\x18\x04 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\"|\n\x1bUpdateGroupShortnameChanged\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12 \n\tshortname\x18\x02 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03uid\x18\x03 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible*N\n\tGroupType\x12\x15\n\x11GROUPTYPE_UNKNOWN\x10\x00\x12\x13\n\x0fGROUPTYPE_GROUP\x10\x01\x12\x15\n\x11GROUPTYPE_CHANNEL\x10\x02*\xb5\x03\n\x14GroupAdminPermission\x12 \n\x1cGROUPADMINPERMISSION_UNKNOWN\x10\x00\x12&\n\"GROUPADMINPERMISSION_EDITSHORTNAME\x10\x01\x12\x1f\n\x1bGROUPADMINPERMISSION_INVITE\x10\x02\x12\x1d\n\x19GROUPADMINPERMISSION_KICK\x10\x03\x12#\n\x1fGROUPADMINPERMISSION_UPDATEINFO\x10\x04\x12\'\n#GROUPADMINPERMISSION_SETPERMISSIONS\x10\x05\x12$\n GROUPADMINPERMISSION_EDITMESSAGE\x10\x06\x12&\n\"GROUPADMINPERMISSION_DELETEMESSAGE\x10\x07\x12,\n(GROUPADMINPERMISSION_GETINTEGRATIONTOKEN\x10\x08\x12$\n GROUPADMINPERMISSION_SENDMESSAGE\x10\t\x12#\n\x1fGROUPADMINPERMISSION_PINMESSAGE\x10\n2\xa1\x14\n\x06Groups\x12z\n\x0eLoadFullGroups\x12\x1d.dialog.RequestLoadFullGroups\x1a\x1e.dialog.ResponseLoadFullGroups\")\x82\xd3\xe4\x93\x02#\"\x1e/v1/grpc/Groups/LoadFullGroups:\x01*\x12n\n\x0bLoadMembers\x12\x1a.dialog.RequestLoadMembers\x1a\x1b.dialog.ResponseLoadMembers\"&\x82\xd3\xe4\x93\x02 \"\x1b/v1/grpc/Groups/LoadMembers:\x01*\x12n\n\x0b\x43reateGroup\x12\x1a.dialog.RequestCreateGroup\x1a\x1b.dialog.ResponseCreateGroup\"&\x82\xd3\xe4\x93\x02 \"\x1b/v1/grpc/Groups/CreateGroup:\x01*\x12v\n\x0e\x45\x64itGroupTitle\x12\x1d.dialog.RequestEditGroupTitle\x1a\x1a.dialog.ResponseSeqDateMid\")\x82\xd3\xe4\x93\x02#\"\x1e/v1/grpc/Groups/EditGroupTitle:\x01*\x12x\n\x11SetGroupShortname\x12 .dialog.RequestSetGroupShortname\x1a\x13.dialog.ResponseSeq\",\x82\xd3\xe4\x93\x02&\"!/v1/grpc/Groups/SetGroupShortname:\x01*\x12~\n\x0f\x45\x64itGroupAvatar\x12\x1e.dialog.RequestEditGroupAvatar\x1a\x1f.dialog.ResponseEditGroupAvatar\"*\x82\xd3\xe4\x93\x02$\"\x1f/v1/grpc/Groups/EditGroupAvatar:\x01*\x12\x7f\n\x11RemoveGroupAvatar\x12 .dialog.RequestRemoveGroupAvatar\x1a\x1a.dialog.ResponseSeqDateMid\",\x82\xd3\xe4\x93\x02&\"!/v1/grpc/Groups/RemoveGroupAvatar:\x01*\x12s\n\x0e\x45\x64itGroupTopic\x12\x1d.dialog.RequestEditGroupTopic\x1a\x17.dialog.ResponseSeqDate\")\x82\xd3\xe4\x93\x02#\"\x1e/v1/grpc/Groups/EditGroupTopic:\x01*\x12s\n\x0e\x45\x64itGroupAbout\x12\x1d.dialog.RequestEditGroupAbout\x1a\x17.dialog.ResponseSeqDate\")\x82\xd3\xe4\x93\x02#\"\x1e/v1/grpc/Groups/EditGroupAbout:\x01*\x12j\n\nInviteUser\x12\x19.dialog.RequestInviteUser\x1a\x1a.dialog.ResponseSeqDateMid\"%\x82\xd3\xe4\x93\x02\x1f\"\x1a/v1/grpc/Groups/InviteUser:\x01*\x12j\n\nLeaveGroup\x12\x19.dialog.RequestLeaveGroup\x1a\x1a.dialog.ResponseSeqDateMid\"%\x82\xd3\xe4\x93\x02\x1f\"\x1a/v1/grpc/Groups/LeaveGroup:\x01*\x12\x64\n\x08KickUser\x12\x17.dialog.RequestKickUser\x1a\x1a.dialog.ResponseSeqDateMid\"#\x82\xd3\xe4\x93\x02\x1d\"\x18/v1/grpc/Groups/KickUser:\x01*\x12p\n\rMakeUserAdmin\x12\x1c.dialog.RequestMakeUserAdmin\x1a\x17.dialog.ResponseSeqDate\"(\x82\xd3\xe4\x93\x02\"\"\x1d/v1/grpc/Groups/MakeUserAdmin:\x01*\x12\xa6\x01\n\x19GetGroupMemberPermissions\x12(.dialog.RequestGetGroupMemberPermissions\x1a).dialog.ResponseGetGroupMemberPermissions\"4\x82\xd3\xe4\x93\x02.\")/v1/grpc/Groups/GetGroupMemberPermissions:\x01*\x12|\n\x11TransferOwnership\x12 .dialog.RequestTransferOwnership\x1a\x17.dialog.ResponseSeqDate\",\x82\xd3\xe4\x93\x02&\"!/v1/grpc/Groups/TransferOwnership:\x01*\x12~\n\x11GetGroupInviteUrl\x12 .dialog.RequestGetGroupInviteUrl\x1a\x19.dialog.ResponseInviteUrl\",\x82\xd3\xe4\x93\x02&\"!/v1/grpc/Groups/GetGroupInviteUrl:\x01*\x12\x96\x01\n\x15GetGroupInviteUrlBase\x12$.dialog.RequestGetGroupInviteUrlBase\x1a%.dialog.ResponseGetGroupInviteUrlBase\"0\x82\xd3\xe4\x93\x02*\"%/v1/grpc/Groups/GetGroupInviteUrlBase:\x01*\x12x\n\x0fRevokeInviteUrl\x12\x1e.dialog.RequestRevokeInviteUrl\x1a\x19.dialog.ResponseInviteUrl\"*\x82\xd3\xe4\x93\x02$\"\x1f/v1/grpc/Groups/RevokeInviteUrl:\x01*\x12\x66\n\tJoinGroup\x12\x18.dialog.RequestJoinGroup\x1a\x19.dialog.ResponseJoinGroup\"$\x82\xd3\xe4\x93\x02\x1e\"\x19/v1/grpc/Groups/JoinGroup:\x01*\x12s\n\x0fJoinGroupByPeer\x12\x1e.dialog.RequestJoinGroupByPeer\x1a\x14.dialog.ResponseVoid\"*\x82\xd3\xe4\x93\x02$\"\x1f/v1/grpc/Groups/JoinGroupByPeer:\x01*\x12\x96\x01\n\x15MakeUserAdminObsolete\x12$.dialog.RequestMakeUserAdminObsolete\x1a%.dialog.ResponseMakeUserAdminObsolete\"0\x82\xd3\xe4\x93\x02*\"%/v1/grpc/Groups/MakeUserAdminObsolete:\x01*B\x19\xe2?\x16\n\x14im.dlg.grpc.servicesb\x06proto3')
+  serialized_options=_b('\342?\026\n\024im.dlg.grpc.services'),
+  serialized_pb=_b('\n\x0cgroups.proto\x12\x06\x64ialog\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x11\x64\x65\x66initions.proto\x1a\x13miscellaneous.proto\x1a\x0bpeers.proto\x1a\x15media_and_files.proto\x1a\x0busers.proto\x1a\x15scalapb/scalapb.proto\"\xe4\x01\n\x06Member\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\"\n\x0binviter_uid\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x64\x61te\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12;\n\x08is_admin\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12@\n\x0bpermissions\x18\x05 \x03(\x0e\x32\x1c.dialog.GroupAdminPermissionB\r\x8a\xea\x30\t\n\x07visible\"\xdc\x06\n\x05Group\x12\x19\n\x02id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12#\n\x08space_id\x18\x1b \x01(\x0b\x32\x11.dialog.UUIDValue\x12!\n\x0b\x61\x63\x63\x65ss_hash\x18\x02 \x01(\x03\x42\x0c\x8a\xea\x30\x08\n\x06\x64\x61nger\x12\x1b\n\x05title\x18\x03 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\x12-\n\x06\x61vatar\x18\x04 \x01(\x0b\x32\x0e.dialog.AvatarB\r\x8a\xea\x30\t\n\x07\x63ompact\x12\x42\n\x0emembers_amount\x18\x18 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\r\x8a\xea\x30\t\n\x07visible\x12<\n\tis_member\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12<\n\tis_hidden\x18\x14 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12\x34\n\ngroup_type\x18\x19 \x01(\x0e\x32\x11.dialog.GroupTypeB\r\x8a\xea\x30\t\n\x07visible\x12\x43\n\x10\x63\x61n_send_message\x18\x1a \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12;\n\x08is_admin\x18\x10 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12\"\n\x0b\x63reator_uid\x18\x08 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12.\n\x07members\x18\t \x03(\x0b\x32\x0e.dialog.MemberB\r\x8a\xea\x30\t\n\x07\x63ompact\x12\"\n\x0b\x63reate_date\x18\n \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x39\n\x05theme\x18\x11 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x39\n\x05\x61\x62out\x18\x12 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12>\n\tshortname\x18\x13 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\"\xa8\x04\n\tGroupFull\x12\x19\n\x02id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\"\n\x0b\x63reate_date\x18\x06 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12 \n\towner_uid\x18\x05 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12.\n\x07members\x18\x0c \x03(\x0b\x32\x0e.dialog.MemberB\r\x8a\xea\x30\t\n\x07visible\x12\x39\n\x05theme\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x39\n\x05\x61\x62out\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x43\n\x10is_async_members\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12\x43\n\x10\x63\x61n_view_members\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12\x44\n\x11\x63\x61n_invite_people\x18\t \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12\x44\n\x11is_shared_history\x18\n \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\"j\n\x15RequestLoadFullGroups\x12\x33\n\x06groups\x18\x01 \x03(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07\x63ompact:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"Z\n\x16ResponseLoadFullGroups\x12!\n\x06groups\x18\x01 \x03(\x0b\x32\x11.dialog.GroupFull:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\xbe\x01\n\x12RequestLoadMembers\x12\x32\n\x05group\x18\x01 \x01(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05limit\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x38\n\x04next\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.BytesValueB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x85\x01\n\x13ResponseLoadMembers\x12$\n\x07members\x18\x01 \x03(\x0b\x32\x13.dialog.UserOutPeer\x12)\n\x04next\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.BytesValue:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"W\n\x17UpdateGroupTitleChanged\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x05title\x18\x02 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\"j\n\x18UpdateGroupAvatarChanged\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12-\n\x06\x61vatar\x18\x02 \x01(\x0b\x32\x0e.dialog.AvatarB\r\x8a\xea\x30\t\n\x07visible\"u\n\x17UpdateGroupTopicChanged\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x39\n\x05topic\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\"u\n\x17UpdateGroupAboutChanged\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x39\n\x05\x61\x62out\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\"Z\n\x17UpdateGroupOwnerChanged\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1e\n\x07user_id\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\";\n\x18UpdateGroupHistoryShared\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\"n\n!UpdateGroupCanSendMessagesChanged\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12(\n\x11\x63\x61n_send_messages\x18\x02 \x01(\x08\x42\r\x8a\xea\x30\t\n\x07visible\"l\n UpdateGroupCanViewMembersChanged\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\'\n\x10\x63\x61n_view_members\x18\x02 \x01(\x08\x42\r\x8a\xea\x30\t\n\x07visible\"p\n\"UpdateGroupCanInviteMembersChanged\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12)\n\x12\x63\x61n_invite_members\x18\x02 \x01(\x08\x42\r\x8a\xea\x30\t\n\x07visible\"]\n\x18UpdateGroupMemberChanged\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12 \n\tis_member\x18\x02 \x01(\x08\x42\r\x8a\xea\x30\t\n\x07visible\"@\n\x1dUpdateGroupMembersBecameAsync\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\"l\n\x19UpdateGroupMembersUpdated\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12.\n\x07members\x18\x02 \x03(\x0b\x32\x0e.dialog.MemberB\r\x8a\xea\x30\t\n\x07visible\"\x99\x01\n\x15UpdateGroupMemberDiff\x12$\n\rremoved_users\x18\x01 \x03(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x34\n\radded_members\x18\x02 \x03(\x0b\x32\x0e.dialog.MemberB\r\x8a\xea\x30\t\n\x07visible\x12$\n\rmembers_count\x18\x03 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\"g\n\x1eUpdateGroupMembersCountChanged\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12$\n\rmembers_count\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\"\x81\x01\n\x1dUpdateGroupMemberAdminChanged\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1e\n\x07user_id\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1f\n\x08is_admin\x18\x03 \x01(\x08\x42\r\x8a\xea\x30\t\n\x07visible\"\xfa\x02\n\x12RequestCreateGroup\x12\x1a\n\x03rid\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12#\n\x08space_id\x18\t \x01(\x0b\x32\x11.dialog.UUIDValue\x12\x1b\n\x05title\x18\x02 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x31\n\x05users\x18\x03 \x03(\x0b\x32\x13.dialog.UserOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12\x34\n\ngroup_type\x18\x06 \x01(\x0e\x32\x11.dialog.GroupTypeB\r\x8a\xea\x30\t\n\x07visible\x12=\n\x08username\x18\x08 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12@\n\roptimizations\x18\x07 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xb4\x01\n\x13ResponseCreateGroup\x12\x0b\n\x03seq\x18\x01 \x01(\x05\x12\r\n\x05state\x18\x02 \x01(\x0c\x12\x1c\n\x05group\x18\x03 \x01(\x0b\x32\r.dialog.Group\x12\x1b\n\x05users\x18\x04 \x03(\x0b\x32\x0c.dialog.User\x12\'\n\nuser_peers\x18\x05 \x03(\x0b\x32\x13.dialog.UserOutPeer:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\xe9\x01\n\x15RequestEditGroupTitle\x12\x37\n\ngroup_peer\x18\x01 \x01(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03rid\x18\x04 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x05title\x18\x03 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\x12@\n\roptimizations\x18\x05 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x8d\x01\n\x18RequestSetGroupShortname\x12\x31\n\x04peer\x18\x01 \x01(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12 \n\tshortname\x18\x02 \x01(\tB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x89\x02\n\x16RequestEditGroupAvatar\x12\x37\n\ngroup_peer\x18\x01 \x01(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03rid\x18\x04 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12:\n\rfile_location\x18\x03 \x01(\x0b\x32\x14.dialog.FileLocationB\r\x8a\xea\x30\t\n\x07\x63ompact\x12@\n\roptimizations\x18\x05 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xa2\x01\n\x17ResponseEditGroupAvatar\x12\x1e\n\x06\x61vatar\x18\x01 \x01(\x0b\x32\x0e.dialog.Avatar\x12\x0b\n\x03seq\x18\x02 \x01(\x05\x12\r\n\x05state\x18\x03 \x01(\x0c\x12\x0c\n\x04\x64\x61te\x18\x04 \x01(\x03\x12\x1e\n\x03mid\x18\x05 \x01(\x0b\x32\x11.dialog.UUIDValue:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\xcf\x01\n\x18RequestRemoveGroupAvatar\x12\x37\n\ngroup_peer\x18\x01 \x01(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03rid\x18\x04 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12@\n\roptimizations\x18\x05 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x87\x02\n\x15RequestEditGroupTopic\x12\x37\n\ngroup_peer\x18\x01 \x01(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03rid\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x39\n\x05topic\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12@\n\roptimizations\x18\x04 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x87\x02\n\x15RequestEditGroupAbout\x12\x37\n\ngroup_peer\x18\x01 \x01(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03rid\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x39\n\x05\x61\x62out\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12@\n\roptimizations\x18\x05 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xfa\x01\n\x11RequestInviteUser\x12\x37\n\ngroup_peer\x18\x01 \x01(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03rid\x18\x04 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x30\n\x04user\x18\x03 \x01(\x0b\x32\x13.dialog.UserOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12@\n\roptimizations\x18\x05 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xc8\x01\n\x11RequestLeaveGroup\x12\x37\n\ngroup_peer\x18\x01 \x01(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03rid\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12@\n\roptimizations\x18\x03 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xf8\x01\n\x0fRequestKickUser\x12\x37\n\ngroup_peer\x18\x01 \x01(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03rid\x18\x04 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x30\n\x04user\x18\x03 \x01(\x0b\x32\x13.dialog.UserOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12@\n\roptimizations\x18\x05 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xe6\x01\n\x14RequestMakeUserAdmin\x12\x37\n\ngroup_peer\x18\x01 \x01(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12\x35\n\tuser_peer\x18\x02 \x01(\x0b\x32\x13.dialog.UserOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12@\n\x0bpermissions\x18\x03 \x03(\x0e\x32\x1c.dialog.GroupAdminPermissionB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"x\n\x15GroupMemberPermission\x12\x1e\n\x07user_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12?\n\x0bpermissions\x18\x02 \x03(\x0e\x32\x1c.dialog.GroupAdminPermissionB\x0c\x8a\xea\x30\x08\n\x06hidden\"\x82\x01\n RequestGetGroupMemberPermissions\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1f\n\x08user_ids\x18\x02 \x03(\x05\x42\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"v\n!ResponseGetGroupMemberPermissions\x12\x32\n\x0bpermissions\x18\x01 \x03(\x0b\x32\x1d.dialog.GroupMemberPermission:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\xa8\x01\n#UpdateGroupMemberPermissionsChanged\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1e\n\x07user_id\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12@\n\x0bpermissions\x18\x03 \x03(\x0e\x32\x1c.dialog.GroupAdminPermissionB\r\x8a\xea\x30\t\n\x07visible\"\x93\x01\n\x18RequestTransferOwnership\x12\x37\n\ngroup_peer\x18\x01 \x01(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12 \n\tnew_owner\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"?\n\x11ResponseInviteUrl\x12\x0b\n\x03url\x18\x01 \x01(\t:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"q\n\x18RequestGetGroupInviteUrl\x12\x37\n\ngroup_peer\x18\x01 \x01(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"<\n\x1cRequestGetGroupInviteUrlBase:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"K\n\x1dResponseGetGroupInviteUrlBase\x12\x0b\n\x03url\x18\x01 \x01(\t:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"o\n\x16RequestRevokeInviteUrl\x12\x37\n\ngroup_peer\x18\x01 \x01(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x8f\x01\n\x10RequestJoinGroup\x12\x1c\n\x05token\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12?\n\roptimizations\x18\x02 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\x0c\x8a\xea\x30\x08\n\x06hidden:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xe0\x01\n\x11ResponseJoinGroup\x12\x1c\n\x05group\x18\x01 \x01(\x0b\x32\r.dialog.Group\x12\x1b\n\x05users\x18\x05 \x03(\x0b\x32\x0c.dialog.User\x12\'\n\nuser_peers\x18\x07 \x03(\x0b\x32\x13.dialog.UserOutPeer\x12\x1e\n\x03mid\x18\x08 \x01(\x0b\x32\x11.dialog.UUIDValue\x12\x0b\n\x03seq\x18\x02 \x01(\x05\x12\r\n\x05state\x18\x03 \x01(\x0c\x12\x0c\n\x04\x64\x61te\x18\x04 \x01(\x03:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"i\n\x16RequestJoinGroupByPeer\x12\x31\n\x04peer\x18\x01 \x01(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xac\x01\n\x1cRequestMakeUserAdminObsolete\x12\x37\n\ngroup_peer\x18\x01 \x01(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12\x35\n\tuser_peer\x18\x02 \x01(\x0b\x32\x13.dialog.UserOutPeerB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"{\n\x1dResponseMakeUserAdminObsolete\x12\x1f\n\x07members\x18\x01 \x03(\x0b\x32\x0e.dialog.Member\x12\x0b\n\x03seq\x18\x02 \x01(\x05\x12\r\n\x05state\x18\x03 \x01(\x0c:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\xb8\x01\n\x19UpdateGroupInviteObsolete\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03rid\x18\t \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1e\n\x03mid\x18\n \x01(\x0b\x32\x11.dialog.UUIDValue\x12!\n\ninvite_uid\x18\x05 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x64\x61te\x18\x08 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\"\xe9\x01\n\x1eUpdateGroupUserInvitedObsolete\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03rid\x18\x05 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12-\n\x03mid\x18\x06 \x01(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03uid\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\"\n\x0binviter_uid\x18\x03 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x64\x61te\x18\x04 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\"\x98\x01\n\x1cUpdateGroupUserLeaveObsolete\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1e\n\x03mid\x18\x05 \x01(\x0b\x32\x11.dialog.UUIDValue\x12\x1a\n\x03uid\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x64\x61te\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\"\xba\x01\n\x1bUpdateGroupUserKickObsolete\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1e\n\x03mid\x18\x06 \x01(\x0b\x32\x11.dialog.UUIDValue\x12\x1a\n\x03uid\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12!\n\nkicker_uid\x18\x03 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x64\x61te\x18\x04 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\"s\n UpdateGroupMembersUpdateObsolete\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12.\n\x07members\x18\x02 \x03(\x0b\x32\x0e.dialog.MemberB\r\x8a\xea\x30\t\n\x07visible\"\xb8\x01\n\x1fUpdateGroupTitleChangedObsolete\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1e\n\x03mid\x18\x06 \x01(\x0b\x32\x11.dialog.UUIDValue\x12\x1a\n\x03uid\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x05title\x18\x03 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x1b\n\x04\x64\x61te\x18\x04 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\"\xd2\x01\n\x1fUpdateGroupTopicChangedObsolete\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03rid\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03uid\x18\x03 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x39\n\x05topic\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x1b\n\x04\x64\x61te\x18\x05 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\"}\n\x1fUpdateGroupAboutChangedObsolete\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x39\n\x05\x61\x62out\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\"\xcb\x01\n UpdateGroupAvatarChangedObsolete\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1e\n\x03mid\x18\x06 \x01(\x0b\x32\x11.dialog.UUIDValue\x12\x1a\n\x03uid\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12-\n\x06\x61vatar\x18\x03 \x01(\x0b\x32\x0e.dialog.AvatarB\r\x8a\xea\x30\t\n\x07\x63ompact\x12\x1b\n\x04\x64\x61te\x18\x04 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\"|\n\x1bUpdateGroupShortnameChanged\x12\x1f\n\x08group_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12 \n\tshortname\x18\x02 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03uid\x18\x03 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible*N\n\tGroupType\x12\x15\n\x11GROUPTYPE_UNKNOWN\x10\x00\x12\x13\n\x0fGROUPTYPE_GROUP\x10\x01\x12\x15\n\x11GROUPTYPE_CHANNEL\x10\x02*\xb5\x03\n\x14GroupAdminPermission\x12 \n\x1cGROUPADMINPERMISSION_UNKNOWN\x10\x00\x12&\n\"GROUPADMINPERMISSION_EDITSHORTNAME\x10\x01\x12\x1f\n\x1bGROUPADMINPERMISSION_INVITE\x10\x02\x12\x1d\n\x19GROUPADMINPERMISSION_KICK\x10\x03\x12#\n\x1fGROUPADMINPERMISSION_UPDATEINFO\x10\x04\x12\'\n#GROUPADMINPERMISSION_SETPERMISSIONS\x10\x05\x12$\n GROUPADMINPERMISSION_EDITMESSAGE\x10\x06\x12&\n\"GROUPADMINPERMISSION_DELETEMESSAGE\x10\x07\x12,\n(GROUPADMINPERMISSION_GETINTEGRATIONTOKEN\x10\x08\x12$\n GROUPADMINPERMISSION_SENDMESSAGE\x10\t\x12#\n\x1fGROUPADMINPERMISSION_PINMESSAGE\x10\n2\xa1\x14\n\x06Groups\x12z\n\x0eLoadFullGroups\x12\x1d.dialog.RequestLoadFullGroups\x1a\x1e.dialog.ResponseLoadFullGroups\")\x82\xd3\xe4\x93\x02#\"\x1e/v1/grpc/Groups/LoadFullGroups:\x01*\x12n\n\x0bLoadMembers\x12\x1a.dialog.RequestLoadMembers\x1a\x1b.dialog.ResponseLoadMembers\"&\x82\xd3\xe4\x93\x02 \"\x1b/v1/grpc/Groups/LoadMembers:\x01*\x12n\n\x0b\x43reateGroup\x12\x1a.dialog.RequestCreateGroup\x1a\x1b.dialog.ResponseCreateGroup\"&\x82\xd3\xe4\x93\x02 \"\x1b/v1/grpc/Groups/CreateGroup:\x01*\x12v\n\x0e\x45\x64itGroupTitle\x12\x1d.dialog.RequestEditGroupTitle\x1a\x1a.dialog.ResponseSeqDateMid\")\x82\xd3\xe4\x93\x02#\"\x1e/v1/grpc/Groups/EditGroupTitle:\x01*\x12x\n\x11SetGroupShortname\x12 .dialog.RequestSetGroupShortname\x1a\x13.dialog.ResponseSeq\",\x82\xd3\xe4\x93\x02&\"!/v1/grpc/Groups/SetGroupShortname:\x01*\x12~\n\x0f\x45\x64itGroupAvatar\x12\x1e.dialog.RequestEditGroupAvatar\x1a\x1f.dialog.ResponseEditGroupAvatar\"*\x82\xd3\xe4\x93\x02$\"\x1f/v1/grpc/Groups/EditGroupAvatar:\x01*\x12\x7f\n\x11RemoveGroupAvatar\x12 .dialog.RequestRemoveGroupAvatar\x1a\x1a.dialog.ResponseSeqDateMid\",\x82\xd3\xe4\x93\x02&\"!/v1/grpc/Groups/RemoveGroupAvatar:\x01*\x12s\n\x0e\x45\x64itGroupTopic\x12\x1d.dialog.RequestEditGroupTopic\x1a\x17.dialog.ResponseSeqDate\")\x82\xd3\xe4\x93\x02#\"\x1e/v1/grpc/Groups/EditGroupTopic:\x01*\x12s\n\x0e\x45\x64itGroupAbout\x12\x1d.dialog.RequestEditGroupAbout\x1a\x17.dialog.ResponseSeqDate\")\x82\xd3\xe4\x93\x02#\"\x1e/v1/grpc/Groups/EditGroupAbout:\x01*\x12j\n\nInviteUser\x12\x19.dialog.RequestInviteUser\x1a\x1a.dialog.ResponseSeqDateMid\"%\x82\xd3\xe4\x93\x02\x1f\"\x1a/v1/grpc/Groups/InviteUser:\x01*\x12j\n\nLeaveGroup\x12\x19.dialog.RequestLeaveGroup\x1a\x1a.dialog.ResponseSeqDateMid\"%\x82\xd3\xe4\x93\x02\x1f\"\x1a/v1/grpc/Groups/LeaveGroup:\x01*\x12\x64\n\x08KickUser\x12\x17.dialog.RequestKickUser\x1a\x1a.dialog.ResponseSeqDateMid\"#\x82\xd3\xe4\x93\x02\x1d\"\x18/v1/grpc/Groups/KickUser:\x01*\x12p\n\rMakeUserAdmin\x12\x1c.dialog.RequestMakeUserAdmin\x1a\x17.dialog.ResponseSeqDate\"(\x82\xd3\xe4\x93\x02\"\"\x1d/v1/grpc/Groups/MakeUserAdmin:\x01*\x12\xa6\x01\n\x19GetGroupMemberPermissions\x12(.dialog.RequestGetGroupMemberPermissions\x1a).dialog.ResponseGetGroupMemberPermissions\"4\x82\xd3\xe4\x93\x02.\")/v1/grpc/Groups/GetGroupMemberPermissions:\x01*\x12|\n\x11TransferOwnership\x12 .dialog.RequestTransferOwnership\x1a\x17.dialog.ResponseSeqDate\",\x82\xd3\xe4\x93\x02&\"!/v1/grpc/Groups/TransferOwnership:\x01*\x12~\n\x11GetGroupInviteUrl\x12 .dialog.RequestGetGroupInviteUrl\x1a\x19.dialog.ResponseInviteUrl\",\x82\xd3\xe4\x93\x02&\"!/v1/grpc/Groups/GetGroupInviteUrl:\x01*\x12\x96\x01\n\x15GetGroupInviteUrlBase\x12$.dialog.RequestGetGroupInviteUrlBase\x1a%.dialog.ResponseGetGroupInviteUrlBase\"0\x82\xd3\xe4\x93\x02*\"%/v1/grpc/Groups/GetGroupInviteUrlBase:\x01*\x12x\n\x0fRevokeInviteUrl\x12\x1e.dialog.RequestRevokeInviteUrl\x1a\x19.dialog.ResponseInviteUrl\"*\x82\xd3\xe4\x93\x02$\"\x1f/v1/grpc/Groups/RevokeInviteUrl:\x01*\x12\x66\n\tJoinGroup\x12\x18.dialog.RequestJoinGroup\x1a\x19.dialog.ResponseJoinGroup\"$\x82\xd3\xe4\x93\x02\x1e\"\x19/v1/grpc/Groups/JoinGroup:\x01*\x12s\n\x0fJoinGroupByPeer\x12\x1e.dialog.RequestJoinGroupByPeer\x1a\x14.dialog.ResponseVoid\"*\x82\xd3\xe4\x93\x02$\"\x1f/v1/grpc/Groups/JoinGroupByPeer:\x01*\x12\x96\x01\n\x15MakeUserAdminObsolete\x12$.dialog.RequestMakeUserAdminObsolete\x1a%.dialog.ResponseMakeUserAdminObsolete\"0\x82\xd3\xe4\x93\x02*\"%/v1/grpc/Groups/MakeUserAdminObsolete:\x01*B\x19\xe2?\x16\n\x14im.dlg.grpc.servicesb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,definitions__pb2.DESCRIPTOR,miscellaneous__pb2.DESCRIPTOR,peers__pb2.DESCRIPTOR,media__and__files__pb2.DESCRIPTOR,users__pb2.DESCRIPTOR,scalapb_dot_scalapb__pb2.DESCRIPTOR,])
 
@@ -40,21 +40,21 @@ _GROUPTYPE = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='GROUPTYPE_UNKNOWN', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='GROUPTYPE_GROUP', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='GROUPTYPE_CHANNEL', index=2, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
-  serialized_start=10600,
-  serialized_end=10678,
+  serialized_options=None,
+  serialized_start=10674,
+  serialized_end=10752,
 )
 _sym_db.RegisterEnumDescriptor(_GROUPTYPE)
 
@@ -67,53 +67,53 @@ _GROUPADMINPERMISSION = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='GROUPADMINPERMISSION_UNKNOWN', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='GROUPADMINPERMISSION_EDITSHORTNAME', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='GROUPADMINPERMISSION_INVITE', index=2, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='GROUPADMINPERMISSION_KICK', index=3, number=3,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='GROUPADMINPERMISSION_UPDATEINFO', index=4, number=4,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='GROUPADMINPERMISSION_SETPERMISSIONS', index=5, number=5,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='GROUPADMINPERMISSION_EDITMESSAGE', index=6, number=6,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='GROUPADMINPERMISSION_DELETEMESSAGE', index=7, number=7,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='GROUPADMINPERMISSION_GETINTEGRATIONTOKEN', index=8, number=8,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='GROUPADMINPERMISSION_SENDMESSAGE', index=9, number=9,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='GROUPADMINPERMISSION_PINMESSAGE', index=10, number=10,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
-  serialized_start=10681,
-  serialized_end=11118,
+  serialized_options=None,
+  serialized_start=10755,
+  serialized_end=11192,
 )
 _sym_db.RegisterEnumDescriptor(_GROUPADMINPERMISSION)
 
@@ -148,42 +148,42 @@ _MEMBER = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='inviter_uid', full_name='dialog.Member.inviter_uid', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='date', full_name='dialog.Member.date', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='is_admin', full_name='dialog.Member.is_admin', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='permissions', full_name='dialog.Member.permissions', index=4,
       number=5, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -207,126 +207,133 @@ _GROUP = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='access_hash', full_name='dialog.Group.access_hash', index=1,
+      name='space_id', full_name='dialog.Group.space_id', index=1,
+      number=27, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='access_hash', full_name='dialog.Group.access_hash', index=2,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006danger'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='title', full_name='dialog.Group.title', index=2,
+      name='title', full_name='dialog.Group.title', index=3,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='avatar', full_name='dialog.Group.avatar', index=3,
+      name='avatar', full_name='dialog.Group.avatar', index=4,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='members_amount', full_name='dialog.Group.members_amount', index=4,
+      name='members_amount', full_name='dialog.Group.members_amount', index=5,
       number=24, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='is_member', full_name='dialog.Group.is_member', index=5,
+      name='is_member', full_name='dialog.Group.is_member', index=6,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='is_hidden', full_name='dialog.Group.is_hidden', index=6,
+      name='is_hidden', full_name='dialog.Group.is_hidden', index=7,
       number=20, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='group_type', full_name='dialog.Group.group_type', index=7,
+      name='group_type', full_name='dialog.Group.group_type', index=8,
       number=25, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='can_send_message', full_name='dialog.Group.can_send_message', index=8,
+      name='can_send_message', full_name='dialog.Group.can_send_message', index=9,
       number=26, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='is_admin', full_name='dialog.Group.is_admin', index=9,
+      name='is_admin', full_name='dialog.Group.is_admin', index=10,
       number=16, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='creator_uid', full_name='dialog.Group.creator_uid', index=10,
+      name='creator_uid', full_name='dialog.Group.creator_uid', index=11,
       number=8, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='members', full_name='dialog.Group.members', index=11,
+      name='members', full_name='dialog.Group.members', index=12,
       number=9, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='create_date', full_name='dialog.Group.create_date', index=12,
+      name='create_date', full_name='dialog.Group.create_date', index=13,
       number=10, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='theme', full_name='dialog.Group.theme', index=13,
+      name='theme', full_name='dialog.Group.theme', index=14,
       number=17, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='about', full_name='dialog.Group.about', index=14,
+      name='about', full_name='dialog.Group.about', index=15,
       number=18, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='shortname', full_name='dialog.Group.shortname', index=15,
+      name='shortname', full_name='dialog.Group.shortname', index=16,
       number=19, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
   serialized_start=430,
-  serialized_end=1253,
+  serialized_end=1290,
 )
 
 
@@ -343,84 +350,84 @@ _GROUPFULL = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='create_date', full_name='dialog.GroupFull.create_date', index=1,
       number=6, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='owner_uid', full_name='dialog.GroupFull.owner_uid', index=2,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='members', full_name='dialog.GroupFull.members', index=3,
       number=12, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='theme', full_name='dialog.GroupFull.theme', index=4,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='about', full_name='dialog.GroupFull.about', index=5,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='is_async_members', full_name='dialog.GroupFull.is_async_members', index=6,
       number=11, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='can_view_members', full_name='dialog.GroupFull.can_view_members', index=7,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='can_invite_people', full_name='dialog.GroupFull.can_invite_people', index=8,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='is_shared_history', full_name='dialog.GroupFull.is_shared_history', index=9,
       number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1256,
-  serialized_end=1808,
+  serialized_start=1293,
+  serialized_end=1845,
 )
 
 
@@ -437,21 +444,21 @@ _REQUESTLOADFULLGROUPS = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1810,
-  serialized_end=1916,
+  serialized_start=1847,
+  serialized_end=1953,
 )
 
 
@@ -468,21 +475,21 @@ _RESPONSELOADFULLGROUPS = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1918,
-  serialized_end=2008,
+  serialized_start=1955,
+  serialized_end=2045,
 )
 
 
@@ -499,35 +506,35 @@ _REQUESTLOADMEMBERS = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='limit', full_name='dialog.RequestLoadMembers.limit', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='next', full_name='dialog.RequestLoadMembers.next', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2011,
-  serialized_end=2201,
+  serialized_start=2048,
+  serialized_end=2238,
 )
 
 
@@ -544,28 +551,28 @@ _RESPONSELOADMEMBERS = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='next', full_name='dialog.ResponseLoadMembers.next', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2204,
-  serialized_end=2337,
+  serialized_start=2241,
+  serialized_end=2374,
 )
 
 
@@ -582,28 +589,28 @@ _UPDATEGROUPTITLECHANGED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='title', full_name='dialog.UpdateGroupTitleChanged.title', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2339,
-  serialized_end=2426,
+  serialized_start=2376,
+  serialized_end=2463,
 )
 
 
@@ -620,28 +627,28 @@ _UPDATEGROUPAVATARCHANGED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='avatar', full_name='dialog.UpdateGroupAvatarChanged.avatar', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2428,
-  serialized_end=2534,
+  serialized_start=2465,
+  serialized_end=2571,
 )
 
 
@@ -658,28 +665,28 @@ _UPDATEGROUPTOPICCHANGED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='topic', full_name='dialog.UpdateGroupTopicChanged.topic', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2536,
-  serialized_end=2653,
+  serialized_start=2573,
+  serialized_end=2690,
 )
 
 
@@ -696,28 +703,28 @@ _UPDATEGROUPABOUTCHANGED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='about', full_name='dialog.UpdateGroupAboutChanged.about', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2655,
-  serialized_end=2772,
+  serialized_start=2692,
+  serialized_end=2809,
 )
 
 
@@ -734,28 +741,28 @@ _UPDATEGROUPOWNERCHANGED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user_id', full_name='dialog.UpdateGroupOwnerChanged.user_id', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2774,
-  serialized_end=2864,
+  serialized_start=2811,
+  serialized_end=2901,
 )
 
 
@@ -772,21 +779,21 @@ _UPDATEGROUPHISTORYSHARED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2866,
-  serialized_end=2925,
+  serialized_start=2903,
+  serialized_end=2962,
 )
 
 
@@ -803,28 +810,28 @@ _UPDATEGROUPCANSENDMESSAGESCHANGED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='can_send_messages', full_name='dialog.UpdateGroupCanSendMessagesChanged.can_send_messages', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2927,
-  serialized_end=3037,
+  serialized_start=2964,
+  serialized_end=3074,
 )
 
 
@@ -841,28 +848,28 @@ _UPDATEGROUPCANVIEWMEMBERSCHANGED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='can_view_members', full_name='dialog.UpdateGroupCanViewMembersChanged.can_view_members', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3039,
-  serialized_end=3147,
+  serialized_start=3076,
+  serialized_end=3184,
 )
 
 
@@ -879,28 +886,28 @@ _UPDATEGROUPCANINVITEMEMBERSCHANGED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='can_invite_members', full_name='dialog.UpdateGroupCanInviteMembersChanged.can_invite_members', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3149,
-  serialized_end=3261,
+  serialized_start=3186,
+  serialized_end=3298,
 )
 
 
@@ -917,28 +924,28 @@ _UPDATEGROUPMEMBERCHANGED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='is_member', full_name='dialog.UpdateGroupMemberChanged.is_member', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3263,
-  serialized_end=3356,
+  serialized_start=3300,
+  serialized_end=3393,
 )
 
 
@@ -955,21 +962,21 @@ _UPDATEGROUPMEMBERSBECAMEASYNC = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3358,
-  serialized_end=3422,
+  serialized_start=3395,
+  serialized_end=3459,
 )
 
 
@@ -986,28 +993,28 @@ _UPDATEGROUPMEMBERSUPDATED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='members', full_name='dialog.UpdateGroupMembersUpdated.members', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3424,
-  serialized_end=3532,
+  serialized_start=3461,
+  serialized_end=3569,
 )
 
 
@@ -1024,35 +1031,35 @@ _UPDATEGROUPMEMBERDIFF = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='added_members', full_name='dialog.UpdateGroupMemberDiff.added_members', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='members_count', full_name='dialog.UpdateGroupMemberDiff.members_count', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3535,
-  serialized_end=3688,
+  serialized_start=3572,
+  serialized_end=3725,
 )
 
 
@@ -1069,28 +1076,28 @@ _UPDATEGROUPMEMBERSCOUNTCHANGED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='members_count', full_name='dialog.UpdateGroupMembersCountChanged.members_count', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3690,
-  serialized_end=3793,
+  serialized_start=3727,
+  serialized_end=3830,
 )
 
 
@@ -1107,35 +1114,35 @@ _UPDATEGROUPMEMBERADMINCHANGED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user_id', full_name='dialog.UpdateGroupMemberAdminChanged.user_id', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='is_admin', full_name='dialog.UpdateGroupMemberAdminChanged.is_admin', index=2,
       number=3, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3796,
-  serialized_end=3925,
+  serialized_start=3833,
+  serialized_end=3962,
 )
 
 
@@ -1152,56 +1159,63 @@ _REQUESTCREATEGROUP = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='title', full_name='dialog.RequestCreateGroup.title', index=1,
+      name='space_id', full_name='dialog.RequestCreateGroup.space_id', index=1,
+      number=9, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='title', full_name='dialog.RequestCreateGroup.title', index=2,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='users', full_name='dialog.RequestCreateGroup.users', index=2,
+      name='users', full_name='dialog.RequestCreateGroup.users', index=3,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='group_type', full_name='dialog.RequestCreateGroup.group_type', index=3,
+      name='group_type', full_name='dialog.RequestCreateGroup.group_type', index=4,
       number=6, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='username', full_name='dialog.RequestCreateGroup.username', index=4,
+      name='username', full_name='dialog.RequestCreateGroup.username', index=5,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='optimizations', full_name='dialog.RequestCreateGroup.optimizations', index=5,
+      name='optimizations', full_name='dialog.RequestCreateGroup.optimizations', index=6,
       number=7, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3928,
-  serialized_end=4269,
+  serialized_start=3965,
+  serialized_end=4343,
 )
 
 
@@ -1218,49 +1232,49 @@ _RESPONSECREATEGROUP = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='state', full_name='dialog.ResponseCreateGroup.state', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='group', full_name='dialog.ResponseCreateGroup.group', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='users', full_name='dialog.ResponseCreateGroup.users', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user_peers', full_name='dialog.ResponseCreateGroup.user_peers', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4272,
-  serialized_end=4452,
+  serialized_start=4346,
+  serialized_end=4526,
 )
 
 
@@ -1277,42 +1291,42 @@ _REQUESTEDITGROUPTITLE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rid', full_name='dialog.RequestEditGroupTitle.rid', index=1,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='title', full_name='dialog.RequestEditGroupTitle.title', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optimizations', full_name='dialog.RequestEditGroupTitle.optimizations', index=3,
       number=5, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4455,
-  serialized_end=4688,
+  serialized_start=4529,
+  serialized_end=4762,
 )
 
 
@@ -1329,28 +1343,28 @@ _REQUESTSETGROUPSHORTNAME = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='shortname', full_name='dialog.RequestSetGroupShortname.shortname', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4691,
-  serialized_end=4832,
+  serialized_start=4765,
+  serialized_end=4906,
 )
 
 
@@ -1367,42 +1381,42 @@ _REQUESTEDITGROUPAVATAR = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rid', full_name='dialog.RequestEditGroupAvatar.rid', index=1,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='file_location', full_name='dialog.RequestEditGroupAvatar.file_location', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optimizations', full_name='dialog.RequestEditGroupAvatar.optimizations', index=3,
       number=5, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4835,
-  serialized_end=5100,
+  serialized_start=4909,
+  serialized_end=5174,
 )
 
 
@@ -1419,49 +1433,49 @@ _RESPONSEEDITGROUPAVATAR = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='seq', full_name='dialog.ResponseEditGroupAvatar.seq', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='state', full_name='dialog.ResponseEditGroupAvatar.state', index=2,
       number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='date', full_name='dialog.ResponseEditGroupAvatar.date', index=3,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='mid', full_name='dialog.ResponseEditGroupAvatar.mid', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5103,
-  serialized_end=5265,
+  serialized_start=5177,
+  serialized_end=5339,
 )
 
 
@@ -1478,35 +1492,35 @@ _REQUESTREMOVEGROUPAVATAR = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rid', full_name='dialog.RequestRemoveGroupAvatar.rid', index=1,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optimizations', full_name='dialog.RequestRemoveGroupAvatar.optimizations', index=2,
       number=5, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5268,
-  serialized_end=5475,
+  serialized_start=5342,
+  serialized_end=5549,
 )
 
 
@@ -1523,42 +1537,42 @@ _REQUESTEDITGROUPTOPIC = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rid', full_name='dialog.RequestEditGroupTopic.rid', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='topic', full_name='dialog.RequestEditGroupTopic.topic', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optimizations', full_name='dialog.RequestEditGroupTopic.optimizations', index=3,
       number=4, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5478,
-  serialized_end=5741,
+  serialized_start=5552,
+  serialized_end=5815,
 )
 
 
@@ -1575,42 +1589,42 @@ _REQUESTEDITGROUPABOUT = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rid', full_name='dialog.RequestEditGroupAbout.rid', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='about', full_name='dialog.RequestEditGroupAbout.about', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optimizations', full_name='dialog.RequestEditGroupAbout.optimizations', index=3,
       number=5, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5744,
-  serialized_end=6007,
+  serialized_start=5818,
+  serialized_end=6081,
 )
 
 
@@ -1627,42 +1641,42 @@ _REQUESTINVITEUSER = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rid', full_name='dialog.RequestInviteUser.rid', index=1,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user', full_name='dialog.RequestInviteUser.user', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optimizations', full_name='dialog.RequestInviteUser.optimizations', index=3,
       number=5, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6010,
-  serialized_end=6260,
+  serialized_start=6084,
+  serialized_end=6334,
 )
 
 
@@ -1679,35 +1693,35 @@ _REQUESTLEAVEGROUP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rid', full_name='dialog.RequestLeaveGroup.rid', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optimizations', full_name='dialog.RequestLeaveGroup.optimizations', index=2,
       number=3, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6263,
-  serialized_end=6463,
+  serialized_start=6337,
+  serialized_end=6537,
 )
 
 
@@ -1724,42 +1738,42 @@ _REQUESTKICKUSER = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rid', full_name='dialog.RequestKickUser.rid', index=1,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user', full_name='dialog.RequestKickUser.user', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optimizations', full_name='dialog.RequestKickUser.optimizations', index=3,
       number=5, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6466,
-  serialized_end=6714,
+  serialized_start=6540,
+  serialized_end=6788,
 )
 
 
@@ -1776,35 +1790,35 @@ _REQUESTMAKEUSERADMIN = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user_peer', full_name='dialog.RequestMakeUserAdmin.user_peer', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='permissions', full_name='dialog.RequestMakeUserAdmin.permissions', index=2,
       number=3, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6717,
-  serialized_end=6947,
+  serialized_start=6791,
+  serialized_end=7021,
 )
 
 
@@ -1821,28 +1835,28 @@ _GROUPMEMBERPERMISSION = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='permissions', full_name='dialog.GroupMemberPermission.permissions', index=1,
       number=2, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6949,
-  serialized_end=7069,
+  serialized_start=7023,
+  serialized_end=7143,
 )
 
 
@@ -1859,28 +1873,28 @@ _REQUESTGETGROUPMEMBERPERMISSIONS = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user_ids', full_name='dialog.RequestGetGroupMemberPermissions.user_ids', index=1,
       number=2, type=5, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7072,
-  serialized_end=7202,
+  serialized_start=7146,
+  serialized_end=7276,
 )
 
 
@@ -1897,21 +1911,21 @@ _RESPONSEGETGROUPMEMBERPERMISSIONS = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7204,
-  serialized_end=7322,
+  serialized_start=7278,
+  serialized_end=7396,
 )
 
 
@@ -1928,35 +1942,35 @@ _UPDATEGROUPMEMBERPERMISSIONSCHANGED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user_id', full_name='dialog.UpdateGroupMemberPermissionsChanged.user_id', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='permissions', full_name='dialog.UpdateGroupMemberPermissionsChanged.permissions', index=2,
       number=3, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7325,
-  serialized_end=7493,
+  serialized_start=7399,
+  serialized_end=7567,
 )
 
 
@@ -1973,28 +1987,28 @@ _REQUESTTRANSFEROWNERSHIP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='new_owner', full_name='dialog.RequestTransferOwnership.new_owner', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7496,
-  serialized_end=7643,
+  serialized_start=7570,
+  serialized_end=7717,
 )
 
 
@@ -2011,21 +2025,21 @@ _RESPONSEINVITEURL = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7645,
-  serialized_end=7708,
+  serialized_start=7719,
+  serialized_end=7782,
 )
 
 
@@ -2042,21 +2056,21 @@ _REQUESTGETGROUPINVITEURL = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7710,
-  serialized_end=7823,
+  serialized_start=7784,
+  serialized_end=7897,
 )
 
 
@@ -2073,14 +2087,14 @@ _REQUESTGETGROUPINVITEURLBASE = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7825,
-  serialized_end=7885,
+  serialized_start=7899,
+  serialized_end=7959,
 )
 
 
@@ -2097,21 +2111,21 @@ _RESPONSEGETGROUPINVITEURLBASE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7887,
-  serialized_end=7962,
+  serialized_start=7961,
+  serialized_end=8036,
 )
 
 
@@ -2128,21 +2142,21 @@ _REQUESTREVOKEINVITEURL = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7964,
-  serialized_end=8075,
+  serialized_start=8038,
+  serialized_end=8149,
 )
 
 
@@ -2159,28 +2173,28 @@ _REQUESTJOINGROUP = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optimizations', full_name='dialog.RequestJoinGroup.optimizations', index=1,
       number=2, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8078,
-  serialized_end=8221,
+  serialized_start=8152,
+  serialized_end=8295,
 )
 
 
@@ -2197,63 +2211,63 @@ _RESPONSEJOINGROUP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='users', full_name='dialog.ResponseJoinGroup.users', index=1,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user_peers', full_name='dialog.ResponseJoinGroup.user_peers', index=2,
       number=7, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='mid', full_name='dialog.ResponseJoinGroup.mid', index=3,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='seq', full_name='dialog.ResponseJoinGroup.seq', index=4,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='state', full_name='dialog.ResponseJoinGroup.state', index=5,
       number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='date', full_name='dialog.ResponseJoinGroup.date', index=6,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8224,
-  serialized_end=8448,
+  serialized_start=8298,
+  serialized_end=8522,
 )
 
 
@@ -2270,21 +2284,21 @@ _REQUESTJOINGROUPBYPEER = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8450,
-  serialized_end=8555,
+  serialized_start=8524,
+  serialized_end=8629,
 )
 
 
@@ -2301,28 +2315,28 @@ _REQUESTMAKEUSERADMINOBSOLETE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user_peer', full_name='dialog.RequestMakeUserAdminObsolete.user_peer', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest')),
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8558,
-  serialized_end=8730,
+  serialized_start=8632,
+  serialized_end=8804,
 )
 
 
@@ -2339,35 +2353,35 @@ _RESPONSEMAKEUSERADMINOBSOLETE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='seq', full_name='dialog.ResponseMakeUserAdminObsolete.seq', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='state', full_name='dialog.ResponseMakeUserAdminObsolete.state', index=2,
       number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse')),
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8732,
-  serialized_end=8855,
+  serialized_start=8806,
+  serialized_end=8929,
 )
 
 
@@ -2384,49 +2398,49 @@ _UPDATEGROUPINVITEOBSOLETE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rid', full_name='dialog.UpdateGroupInviteObsolete.rid', index=1,
       number=9, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='mid', full_name='dialog.UpdateGroupInviteObsolete.mid', index=2,
       number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='invite_uid', full_name='dialog.UpdateGroupInviteObsolete.invite_uid', index=3,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='date', full_name='dialog.UpdateGroupInviteObsolete.date', index=4,
       number=8, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8858,
-  serialized_end=9042,
+  serialized_start=8932,
+  serialized_end=9116,
 )
 
 
@@ -2443,56 +2457,56 @@ _UPDATEGROUPUSERINVITEDOBSOLETE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rid', full_name='dialog.UpdateGroupUserInvitedObsolete.rid', index=1,
       number=5, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='mid', full_name='dialog.UpdateGroupUserInvitedObsolete.mid', index=2,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='uid', full_name='dialog.UpdateGroupUserInvitedObsolete.uid', index=3,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='inviter_uid', full_name='dialog.UpdateGroupUserInvitedObsolete.inviter_uid', index=4,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='date', full_name='dialog.UpdateGroupUserInvitedObsolete.date', index=5,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9045,
-  serialized_end=9278,
+  serialized_start=9119,
+  serialized_end=9352,
 )
 
 
@@ -2509,42 +2523,42 @@ _UPDATEGROUPUSERLEAVEOBSOLETE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='mid', full_name='dialog.UpdateGroupUserLeaveObsolete.mid', index=1,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='uid', full_name='dialog.UpdateGroupUserLeaveObsolete.uid', index=2,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='date', full_name='dialog.UpdateGroupUserLeaveObsolete.date', index=3,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9281,
-  serialized_end=9433,
+  serialized_start=9355,
+  serialized_end=9507,
 )
 
 
@@ -2561,49 +2575,49 @@ _UPDATEGROUPUSERKICKOBSOLETE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='mid', full_name='dialog.UpdateGroupUserKickObsolete.mid', index=1,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='uid', full_name='dialog.UpdateGroupUserKickObsolete.uid', index=2,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='kicker_uid', full_name='dialog.UpdateGroupUserKickObsolete.kicker_uid', index=3,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='date', full_name='dialog.UpdateGroupUserKickObsolete.date', index=4,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9436,
-  serialized_end=9622,
+  serialized_start=9510,
+  serialized_end=9696,
 )
 
 
@@ -2620,28 +2634,28 @@ _UPDATEGROUPMEMBERSUPDATEOBSOLETE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='members', full_name='dialog.UpdateGroupMembersUpdateObsolete.members', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9624,
-  serialized_end=9739,
+  serialized_start=9698,
+  serialized_end=9813,
 )
 
 
@@ -2658,49 +2672,49 @@ _UPDATEGROUPTITLECHANGEDOBSOLETE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='mid', full_name='dialog.UpdateGroupTitleChangedObsolete.mid', index=1,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='uid', full_name='dialog.UpdateGroupTitleChangedObsolete.uid', index=2,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='title', full_name='dialog.UpdateGroupTitleChangedObsolete.title', index=3,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='date', full_name='dialog.UpdateGroupTitleChangedObsolete.date', index=4,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9742,
-  serialized_end=9926,
+  serialized_start=9816,
+  serialized_end=10000,
 )
 
 
@@ -2717,49 +2731,49 @@ _UPDATEGROUPTOPICCHANGEDOBSOLETE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rid', full_name='dialog.UpdateGroupTopicChangedObsolete.rid', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='uid', full_name='dialog.UpdateGroupTopicChangedObsolete.uid', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='topic', full_name='dialog.UpdateGroupTopicChangedObsolete.topic', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='date', full_name='dialog.UpdateGroupTopicChangedObsolete.date', index=4,
       number=5, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9929,
-  serialized_end=10139,
+  serialized_start=10003,
+  serialized_end=10213,
 )
 
 
@@ -2776,28 +2790,28 @@ _UPDATEGROUPABOUTCHANGEDOBSOLETE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='about', full_name='dialog.UpdateGroupAboutChangedObsolete.about', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10141,
-  serialized_end=10266,
+  serialized_start=10215,
+  serialized_end=10340,
 )
 
 
@@ -2814,49 +2828,49 @@ _UPDATEGROUPAVATARCHANGEDOBSOLETE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='mid', full_name='dialog.UpdateGroupAvatarChangedObsolete.mid', index=1,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='uid', full_name='dialog.UpdateGroupAvatarChangedObsolete.uid', index=2,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='avatar', full_name='dialog.UpdateGroupAvatarChangedObsolete.avatar', index=3,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='date', full_name='dialog.UpdateGroupAvatarChangedObsolete.date', index=4,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10269,
-  serialized_end=10472,
+  serialized_start=10343,
+  serialized_end=10546,
 )
 
 
@@ -2873,39 +2887,40 @@ _UPDATEGROUPSHORTNAMECHANGED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='shortname', full_name='dialog.UpdateGroupShortnameChanged.shortname', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='uid', full_name='dialog.UpdateGroupShortnameChanged.uid', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10474,
-  serialized_end=10598,
+  serialized_start=10548,
+  serialized_end=10672,
 )
 
 _MEMBER.fields_by_name['is_admin'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
 _MEMBER.fields_by_name['permissions'].enum_type = _GROUPADMINPERMISSION
+_GROUP.fields_by_name['space_id'].message_type = definitions__pb2._UUIDVALUE
 _GROUP.fields_by_name['avatar'].message_type = media__and__files__pb2._AVATAR
 _GROUP.fields_by_name['members_amount'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT32VALUE
 _GROUP.fields_by_name['is_member'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
@@ -2935,6 +2950,7 @@ _UPDATEGROUPTOPICCHANGED.fields_by_name['topic'].message_type = google_dot_proto
 _UPDATEGROUPABOUTCHANGED.fields_by_name['about'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
 _UPDATEGROUPMEMBERSUPDATED.fields_by_name['members'].message_type = _MEMBER
 _UPDATEGROUPMEMBERDIFF.fields_by_name['added_members'].message_type = _MEMBER
+_REQUESTCREATEGROUP.fields_by_name['space_id'].message_type = definitions__pb2._UUIDVALUE
 _REQUESTCREATEGROUP.fields_by_name['users'].message_type = peers__pb2._USEROUTPEER
 _REQUESTCREATEGROUP.fields_by_name['group_type'].enum_type = _GROUPTYPE
 _REQUESTCREATEGROUP.fields_by_name['username'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
@@ -3479,395 +3495,205 @@ UpdateGroupShortnameChanged = _reflection.GeneratedProtocolMessageType('UpdateGr
 _sym_db.RegisterMessage(UpdateGroupShortnameChanged)
 
 
-DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\342?\026\n\024im.dlg.grpc.services'))
-_MEMBER.fields_by_name['uid'].has_options = True
-_MEMBER.fields_by_name['uid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_MEMBER.fields_by_name['inviter_uid'].has_options = True
-_MEMBER.fields_by_name['inviter_uid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_MEMBER.fields_by_name['date'].has_options = True
-_MEMBER.fields_by_name['date']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_MEMBER.fields_by_name['is_admin'].has_options = True
-_MEMBER.fields_by_name['is_admin']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_MEMBER.fields_by_name['permissions'].has_options = True
-_MEMBER.fields_by_name['permissions']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_GROUP.fields_by_name['id'].has_options = True
-_GROUP.fields_by_name['id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_GROUP.fields_by_name['access_hash'].has_options = True
-_GROUP.fields_by_name['access_hash']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006danger'))
-_GROUP.fields_by_name['title'].has_options = True
-_GROUP.fields_by_name['title']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_GROUP.fields_by_name['avatar'].has_options = True
-_GROUP.fields_by_name['avatar']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_GROUP.fields_by_name['members_amount'].has_options = True
-_GROUP.fields_by_name['members_amount']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_GROUP.fields_by_name['is_member'].has_options = True
-_GROUP.fields_by_name['is_member']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_GROUP.fields_by_name['is_hidden'].has_options = True
-_GROUP.fields_by_name['is_hidden']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_GROUP.fields_by_name['group_type'].has_options = True
-_GROUP.fields_by_name['group_type']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_GROUP.fields_by_name['can_send_message'].has_options = True
-_GROUP.fields_by_name['can_send_message']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_GROUP.fields_by_name['is_admin'].has_options = True
-_GROUP.fields_by_name['is_admin']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_GROUP.fields_by_name['creator_uid'].has_options = True
-_GROUP.fields_by_name['creator_uid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_GROUP.fields_by_name['members'].has_options = True
-_GROUP.fields_by_name['members']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_GROUP.fields_by_name['create_date'].has_options = True
-_GROUP.fields_by_name['create_date']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_GROUP.fields_by_name['theme'].has_options = True
-_GROUP.fields_by_name['theme']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_GROUP.fields_by_name['about'].has_options = True
-_GROUP.fields_by_name['about']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_GROUP.fields_by_name['shortname'].has_options = True
-_GROUP.fields_by_name['shortname']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_GROUPFULL.fields_by_name['id'].has_options = True
-_GROUPFULL.fields_by_name['id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_GROUPFULL.fields_by_name['create_date'].has_options = True
-_GROUPFULL.fields_by_name['create_date']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_GROUPFULL.fields_by_name['owner_uid'].has_options = True
-_GROUPFULL.fields_by_name['owner_uid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_GROUPFULL.fields_by_name['members'].has_options = True
-_GROUPFULL.fields_by_name['members']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_GROUPFULL.fields_by_name['theme'].has_options = True
-_GROUPFULL.fields_by_name['theme']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_GROUPFULL.fields_by_name['about'].has_options = True
-_GROUPFULL.fields_by_name['about']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_GROUPFULL.fields_by_name['is_async_members'].has_options = True
-_GROUPFULL.fields_by_name['is_async_members']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_GROUPFULL.fields_by_name['can_view_members'].has_options = True
-_GROUPFULL.fields_by_name['can_view_members']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_GROUPFULL.fields_by_name['can_invite_people'].has_options = True
-_GROUPFULL.fields_by_name['can_invite_people']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_GROUPFULL.fields_by_name['is_shared_history'].has_options = True
-_GROUPFULL.fields_by_name['is_shared_history']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTLOADFULLGROUPS.fields_by_name['groups'].has_options = True
-_REQUESTLOADFULLGROUPS.fields_by_name['groups']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_REQUESTLOADFULLGROUPS.has_options = True
-_REQUESTLOADFULLGROUPS._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSELOADFULLGROUPS.has_options = True
-_RESPONSELOADFULLGROUPS._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_REQUESTLOADMEMBERS.fields_by_name['group'].has_options = True
-_REQUESTLOADMEMBERS.fields_by_name['group']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTLOADMEMBERS.fields_by_name['limit'].has_options = True
-_REQUESTLOADMEMBERS.fields_by_name['limit']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTLOADMEMBERS.fields_by_name['next'].has_options = True
-_REQUESTLOADMEMBERS.fields_by_name['next']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTLOADMEMBERS.has_options = True
-_REQUESTLOADMEMBERS._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSELOADMEMBERS.has_options = True
-_RESPONSELOADMEMBERS._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_UPDATEGROUPTITLECHANGED.fields_by_name['group_id'].has_options = True
-_UPDATEGROUPTITLECHANGED.fields_by_name['group_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPTITLECHANGED.fields_by_name['title'].has_options = True
-_UPDATEGROUPTITLECHANGED.fields_by_name['title']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_UPDATEGROUPAVATARCHANGED.fields_by_name['group_id'].has_options = True
-_UPDATEGROUPAVATARCHANGED.fields_by_name['group_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPAVATARCHANGED.fields_by_name['avatar'].has_options = True
-_UPDATEGROUPAVATARCHANGED.fields_by_name['avatar']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPTOPICCHANGED.fields_by_name['group_id'].has_options = True
-_UPDATEGROUPTOPICCHANGED.fields_by_name['group_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPTOPICCHANGED.fields_by_name['topic'].has_options = True
-_UPDATEGROUPTOPICCHANGED.fields_by_name['topic']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_UPDATEGROUPABOUTCHANGED.fields_by_name['group_id'].has_options = True
-_UPDATEGROUPABOUTCHANGED.fields_by_name['group_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPABOUTCHANGED.fields_by_name['about'].has_options = True
-_UPDATEGROUPABOUTCHANGED.fields_by_name['about']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_UPDATEGROUPOWNERCHANGED.fields_by_name['group_id'].has_options = True
-_UPDATEGROUPOWNERCHANGED.fields_by_name['group_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPOWNERCHANGED.fields_by_name['user_id'].has_options = True
-_UPDATEGROUPOWNERCHANGED.fields_by_name['user_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPHISTORYSHARED.fields_by_name['group_id'].has_options = True
-_UPDATEGROUPHISTORYSHARED.fields_by_name['group_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPCANSENDMESSAGESCHANGED.fields_by_name['group_id'].has_options = True
-_UPDATEGROUPCANSENDMESSAGESCHANGED.fields_by_name['group_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPCANSENDMESSAGESCHANGED.fields_by_name['can_send_messages'].has_options = True
-_UPDATEGROUPCANSENDMESSAGESCHANGED.fields_by_name['can_send_messages']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPCANVIEWMEMBERSCHANGED.fields_by_name['group_id'].has_options = True
-_UPDATEGROUPCANVIEWMEMBERSCHANGED.fields_by_name['group_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPCANVIEWMEMBERSCHANGED.fields_by_name['can_view_members'].has_options = True
-_UPDATEGROUPCANVIEWMEMBERSCHANGED.fields_by_name['can_view_members']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPCANINVITEMEMBERSCHANGED.fields_by_name['group_id'].has_options = True
-_UPDATEGROUPCANINVITEMEMBERSCHANGED.fields_by_name['group_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPCANINVITEMEMBERSCHANGED.fields_by_name['can_invite_members'].has_options = True
-_UPDATEGROUPCANINVITEMEMBERSCHANGED.fields_by_name['can_invite_members']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPMEMBERCHANGED.fields_by_name['group_id'].has_options = True
-_UPDATEGROUPMEMBERCHANGED.fields_by_name['group_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPMEMBERCHANGED.fields_by_name['is_member'].has_options = True
-_UPDATEGROUPMEMBERCHANGED.fields_by_name['is_member']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPMEMBERSBECAMEASYNC.fields_by_name['group_id'].has_options = True
-_UPDATEGROUPMEMBERSBECAMEASYNC.fields_by_name['group_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPMEMBERSUPDATED.fields_by_name['group_id'].has_options = True
-_UPDATEGROUPMEMBERSUPDATED.fields_by_name['group_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPMEMBERSUPDATED.fields_by_name['members'].has_options = True
-_UPDATEGROUPMEMBERSUPDATED.fields_by_name['members']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPMEMBERDIFF.fields_by_name['removed_users'].has_options = True
-_UPDATEGROUPMEMBERDIFF.fields_by_name['removed_users']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPMEMBERDIFF.fields_by_name['added_members'].has_options = True
-_UPDATEGROUPMEMBERDIFF.fields_by_name['added_members']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPMEMBERDIFF.fields_by_name['members_count'].has_options = True
-_UPDATEGROUPMEMBERDIFF.fields_by_name['members_count']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPMEMBERSCOUNTCHANGED.fields_by_name['group_id'].has_options = True
-_UPDATEGROUPMEMBERSCOUNTCHANGED.fields_by_name['group_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPMEMBERSCOUNTCHANGED.fields_by_name['members_count'].has_options = True
-_UPDATEGROUPMEMBERSCOUNTCHANGED.fields_by_name['members_count']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPMEMBERADMINCHANGED.fields_by_name['group_id'].has_options = True
-_UPDATEGROUPMEMBERADMINCHANGED.fields_by_name['group_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPMEMBERADMINCHANGED.fields_by_name['user_id'].has_options = True
-_UPDATEGROUPMEMBERADMINCHANGED.fields_by_name['user_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPMEMBERADMINCHANGED.fields_by_name['is_admin'].has_options = True
-_UPDATEGROUPMEMBERADMINCHANGED.fields_by_name['is_admin']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTCREATEGROUP.fields_by_name['rid'].has_options = True
-_REQUESTCREATEGROUP.fields_by_name['rid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTCREATEGROUP.fields_by_name['title'].has_options = True
-_REQUESTCREATEGROUP.fields_by_name['title']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTCREATEGROUP.fields_by_name['users'].has_options = True
-_REQUESTCREATEGROUP.fields_by_name['users']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTCREATEGROUP.fields_by_name['group_type'].has_options = True
-_REQUESTCREATEGROUP.fields_by_name['group_type']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTCREATEGROUP.fields_by_name['username'].has_options = True
-_REQUESTCREATEGROUP.fields_by_name['username']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTCREATEGROUP.fields_by_name['optimizations'].has_options = True
-_REQUESTCREATEGROUP.fields_by_name['optimizations']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTCREATEGROUP.has_options = True
-_REQUESTCREATEGROUP._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSECREATEGROUP.has_options = True
-_RESPONSECREATEGROUP._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_REQUESTEDITGROUPTITLE.fields_by_name['group_peer'].has_options = True
-_REQUESTEDITGROUPTITLE.fields_by_name['group_peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTEDITGROUPTITLE.fields_by_name['rid'].has_options = True
-_REQUESTEDITGROUPTITLE.fields_by_name['rid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTEDITGROUPTITLE.fields_by_name['title'].has_options = True
-_REQUESTEDITGROUPTITLE.fields_by_name['title']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTEDITGROUPTITLE.fields_by_name['optimizations'].has_options = True
-_REQUESTEDITGROUPTITLE.fields_by_name['optimizations']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTEDITGROUPTITLE.has_options = True
-_REQUESTEDITGROUPTITLE._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTSETGROUPSHORTNAME.fields_by_name['peer'].has_options = True
-_REQUESTSETGROUPSHORTNAME.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSETGROUPSHORTNAME.fields_by_name['shortname'].has_options = True
-_REQUESTSETGROUPSHORTNAME.fields_by_name['shortname']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTSETGROUPSHORTNAME.has_options = True
-_REQUESTSETGROUPSHORTNAME._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTEDITGROUPAVATAR.fields_by_name['group_peer'].has_options = True
-_REQUESTEDITGROUPAVATAR.fields_by_name['group_peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTEDITGROUPAVATAR.fields_by_name['rid'].has_options = True
-_REQUESTEDITGROUPAVATAR.fields_by_name['rid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTEDITGROUPAVATAR.fields_by_name['file_location'].has_options = True
-_REQUESTEDITGROUPAVATAR.fields_by_name['file_location']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_REQUESTEDITGROUPAVATAR.fields_by_name['optimizations'].has_options = True
-_REQUESTEDITGROUPAVATAR.fields_by_name['optimizations']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTEDITGROUPAVATAR.has_options = True
-_REQUESTEDITGROUPAVATAR._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSEEDITGROUPAVATAR.has_options = True
-_RESPONSEEDITGROUPAVATAR._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_REQUESTREMOVEGROUPAVATAR.fields_by_name['group_peer'].has_options = True
-_REQUESTREMOVEGROUPAVATAR.fields_by_name['group_peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTREMOVEGROUPAVATAR.fields_by_name['rid'].has_options = True
-_REQUESTREMOVEGROUPAVATAR.fields_by_name['rid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTREMOVEGROUPAVATAR.fields_by_name['optimizations'].has_options = True
-_REQUESTREMOVEGROUPAVATAR.fields_by_name['optimizations']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTREMOVEGROUPAVATAR.has_options = True
-_REQUESTREMOVEGROUPAVATAR._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTEDITGROUPTOPIC.fields_by_name['group_peer'].has_options = True
-_REQUESTEDITGROUPTOPIC.fields_by_name['group_peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTEDITGROUPTOPIC.fields_by_name['rid'].has_options = True
-_REQUESTEDITGROUPTOPIC.fields_by_name['rid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTEDITGROUPTOPIC.fields_by_name['topic'].has_options = True
-_REQUESTEDITGROUPTOPIC.fields_by_name['topic']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTEDITGROUPTOPIC.fields_by_name['optimizations'].has_options = True
-_REQUESTEDITGROUPTOPIC.fields_by_name['optimizations']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTEDITGROUPTOPIC.has_options = True
-_REQUESTEDITGROUPTOPIC._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTEDITGROUPABOUT.fields_by_name['group_peer'].has_options = True
-_REQUESTEDITGROUPABOUT.fields_by_name['group_peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTEDITGROUPABOUT.fields_by_name['rid'].has_options = True
-_REQUESTEDITGROUPABOUT.fields_by_name['rid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTEDITGROUPABOUT.fields_by_name['about'].has_options = True
-_REQUESTEDITGROUPABOUT.fields_by_name['about']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTEDITGROUPABOUT.fields_by_name['optimizations'].has_options = True
-_REQUESTEDITGROUPABOUT.fields_by_name['optimizations']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTEDITGROUPABOUT.has_options = True
-_REQUESTEDITGROUPABOUT._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTINVITEUSER.fields_by_name['group_peer'].has_options = True
-_REQUESTINVITEUSER.fields_by_name['group_peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTINVITEUSER.fields_by_name['rid'].has_options = True
-_REQUESTINVITEUSER.fields_by_name['rid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTINVITEUSER.fields_by_name['user'].has_options = True
-_REQUESTINVITEUSER.fields_by_name['user']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTINVITEUSER.fields_by_name['optimizations'].has_options = True
-_REQUESTINVITEUSER.fields_by_name['optimizations']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTINVITEUSER.has_options = True
-_REQUESTINVITEUSER._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTLEAVEGROUP.fields_by_name['group_peer'].has_options = True
-_REQUESTLEAVEGROUP.fields_by_name['group_peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTLEAVEGROUP.fields_by_name['rid'].has_options = True
-_REQUESTLEAVEGROUP.fields_by_name['rid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTLEAVEGROUP.fields_by_name['optimizations'].has_options = True
-_REQUESTLEAVEGROUP.fields_by_name['optimizations']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTLEAVEGROUP.has_options = True
-_REQUESTLEAVEGROUP._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTKICKUSER.fields_by_name['group_peer'].has_options = True
-_REQUESTKICKUSER.fields_by_name['group_peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTKICKUSER.fields_by_name['rid'].has_options = True
-_REQUESTKICKUSER.fields_by_name['rid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTKICKUSER.fields_by_name['user'].has_options = True
-_REQUESTKICKUSER.fields_by_name['user']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTKICKUSER.fields_by_name['optimizations'].has_options = True
-_REQUESTKICKUSER.fields_by_name['optimizations']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTKICKUSER.has_options = True
-_REQUESTKICKUSER._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTMAKEUSERADMIN.fields_by_name['group_peer'].has_options = True
-_REQUESTMAKEUSERADMIN.fields_by_name['group_peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTMAKEUSERADMIN.fields_by_name['user_peer'].has_options = True
-_REQUESTMAKEUSERADMIN.fields_by_name['user_peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTMAKEUSERADMIN.fields_by_name['permissions'].has_options = True
-_REQUESTMAKEUSERADMIN.fields_by_name['permissions']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTMAKEUSERADMIN.has_options = True
-_REQUESTMAKEUSERADMIN._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_GROUPMEMBERPERMISSION.fields_by_name['user_id'].has_options = True
-_GROUPMEMBERPERMISSION.fields_by_name['user_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_GROUPMEMBERPERMISSION.fields_by_name['permissions'].has_options = True
-_GROUPMEMBERPERMISSION.fields_by_name['permissions']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTGETGROUPMEMBERPERMISSIONS.fields_by_name['group_id'].has_options = True
-_REQUESTGETGROUPMEMBERPERMISSIONS.fields_by_name['group_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTGETGROUPMEMBERPERMISSIONS.fields_by_name['user_ids'].has_options = True
-_REQUESTGETGROUPMEMBERPERMISSIONS.fields_by_name['user_ids']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTGETGROUPMEMBERPERMISSIONS.has_options = True
-_REQUESTGETGROUPMEMBERPERMISSIONS._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSEGETGROUPMEMBERPERMISSIONS.has_options = True
-_RESPONSEGETGROUPMEMBERPERMISSIONS._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_UPDATEGROUPMEMBERPERMISSIONSCHANGED.fields_by_name['group_id'].has_options = True
-_UPDATEGROUPMEMBERPERMISSIONSCHANGED.fields_by_name['group_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPMEMBERPERMISSIONSCHANGED.fields_by_name['user_id'].has_options = True
-_UPDATEGROUPMEMBERPERMISSIONSCHANGED.fields_by_name['user_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPMEMBERPERMISSIONSCHANGED.fields_by_name['permissions'].has_options = True
-_UPDATEGROUPMEMBERPERMISSIONSCHANGED.fields_by_name['permissions']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTTRANSFEROWNERSHIP.fields_by_name['group_peer'].has_options = True
-_REQUESTTRANSFEROWNERSHIP.fields_by_name['group_peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTTRANSFEROWNERSHIP.fields_by_name['new_owner'].has_options = True
-_REQUESTTRANSFEROWNERSHIP.fields_by_name['new_owner']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTTRANSFEROWNERSHIP.has_options = True
-_REQUESTTRANSFEROWNERSHIP._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSEINVITEURL.has_options = True
-_RESPONSEINVITEURL._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_REQUESTGETGROUPINVITEURL.fields_by_name['group_peer'].has_options = True
-_REQUESTGETGROUPINVITEURL.fields_by_name['group_peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTGETGROUPINVITEURL.has_options = True
-_REQUESTGETGROUPINVITEURL._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTGETGROUPINVITEURLBASE.has_options = True
-_REQUESTGETGROUPINVITEURLBASE._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSEGETGROUPINVITEURLBASE.has_options = True
-_RESPONSEGETGROUPINVITEURLBASE._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_REQUESTREVOKEINVITEURL.fields_by_name['group_peer'].has_options = True
-_REQUESTREVOKEINVITEURL.fields_by_name['group_peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTREVOKEINVITEURL.has_options = True
-_REQUESTREVOKEINVITEURL._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTJOINGROUP.fields_by_name['token'].has_options = True
-_REQUESTJOINGROUP.fields_by_name['token']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTJOINGROUP.fields_by_name['optimizations'].has_options = True
-_REQUESTJOINGROUP.fields_by_name['optimizations']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_REQUESTJOINGROUP.has_options = True
-_REQUESTJOINGROUP._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSEJOINGROUP.has_options = True
-_RESPONSEJOINGROUP._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_REQUESTJOINGROUPBYPEER.fields_by_name['peer'].has_options = True
-_REQUESTJOINGROUPBYPEER.fields_by_name['peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTJOINGROUPBYPEER.has_options = True
-_REQUESTJOINGROUPBYPEER._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_REQUESTMAKEUSERADMINOBSOLETE.fields_by_name['group_peer'].has_options = True
-_REQUESTMAKEUSERADMINOBSOLETE.fields_by_name['group_peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTMAKEUSERADMINOBSOLETE.fields_by_name['user_peer'].has_options = True
-_REQUESTMAKEUSERADMINOBSOLETE.fields_by_name['user_peer']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_REQUESTMAKEUSERADMINOBSOLETE.has_options = True
-_REQUESTMAKEUSERADMINOBSOLETE._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\031\n\027im.dlg.grpc.GrpcRequest'))
-_RESPONSEMAKEUSERADMINOBSOLETE.has_options = True
-_RESPONSEMAKEUSERADMINOBSOLETE._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\342?\032\n\030im.dlg.grpc.GrpcResponse'))
-_UPDATEGROUPINVITEOBSOLETE.fields_by_name['group_id'].has_options = True
-_UPDATEGROUPINVITEOBSOLETE.fields_by_name['group_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPINVITEOBSOLETE.fields_by_name['rid'].has_options = True
-_UPDATEGROUPINVITEOBSOLETE.fields_by_name['rid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPINVITEOBSOLETE.fields_by_name['invite_uid'].has_options = True
-_UPDATEGROUPINVITEOBSOLETE.fields_by_name['invite_uid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPINVITEOBSOLETE.fields_by_name['date'].has_options = True
-_UPDATEGROUPINVITEOBSOLETE.fields_by_name['date']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPUSERINVITEDOBSOLETE.fields_by_name['group_id'].has_options = True
-_UPDATEGROUPUSERINVITEDOBSOLETE.fields_by_name['group_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPUSERINVITEDOBSOLETE.fields_by_name['rid'].has_options = True
-_UPDATEGROUPUSERINVITEDOBSOLETE.fields_by_name['rid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPUSERINVITEDOBSOLETE.fields_by_name['mid'].has_options = True
-_UPDATEGROUPUSERINVITEDOBSOLETE.fields_by_name['mid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPUSERINVITEDOBSOLETE.fields_by_name['uid'].has_options = True
-_UPDATEGROUPUSERINVITEDOBSOLETE.fields_by_name['uid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPUSERINVITEDOBSOLETE.fields_by_name['inviter_uid'].has_options = True
-_UPDATEGROUPUSERINVITEDOBSOLETE.fields_by_name['inviter_uid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPUSERINVITEDOBSOLETE.fields_by_name['date'].has_options = True
-_UPDATEGROUPUSERINVITEDOBSOLETE.fields_by_name['date']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPUSERLEAVEOBSOLETE.fields_by_name['group_id'].has_options = True
-_UPDATEGROUPUSERLEAVEOBSOLETE.fields_by_name['group_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPUSERLEAVEOBSOLETE.fields_by_name['uid'].has_options = True
-_UPDATEGROUPUSERLEAVEOBSOLETE.fields_by_name['uid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPUSERLEAVEOBSOLETE.fields_by_name['date'].has_options = True
-_UPDATEGROUPUSERLEAVEOBSOLETE.fields_by_name['date']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPUSERKICKOBSOLETE.fields_by_name['group_id'].has_options = True
-_UPDATEGROUPUSERKICKOBSOLETE.fields_by_name['group_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPUSERKICKOBSOLETE.fields_by_name['uid'].has_options = True
-_UPDATEGROUPUSERKICKOBSOLETE.fields_by_name['uid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPUSERKICKOBSOLETE.fields_by_name['kicker_uid'].has_options = True
-_UPDATEGROUPUSERKICKOBSOLETE.fields_by_name['kicker_uid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPUSERKICKOBSOLETE.fields_by_name['date'].has_options = True
-_UPDATEGROUPUSERKICKOBSOLETE.fields_by_name['date']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPMEMBERSUPDATEOBSOLETE.fields_by_name['group_id'].has_options = True
-_UPDATEGROUPMEMBERSUPDATEOBSOLETE.fields_by_name['group_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPMEMBERSUPDATEOBSOLETE.fields_by_name['members'].has_options = True
-_UPDATEGROUPMEMBERSUPDATEOBSOLETE.fields_by_name['members']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPTITLECHANGEDOBSOLETE.fields_by_name['group_id'].has_options = True
-_UPDATEGROUPTITLECHANGEDOBSOLETE.fields_by_name['group_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPTITLECHANGEDOBSOLETE.fields_by_name['uid'].has_options = True
-_UPDATEGROUPTITLECHANGEDOBSOLETE.fields_by_name['uid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPTITLECHANGEDOBSOLETE.fields_by_name['title'].has_options = True
-_UPDATEGROUPTITLECHANGEDOBSOLETE.fields_by_name['title']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_UPDATEGROUPTITLECHANGEDOBSOLETE.fields_by_name['date'].has_options = True
-_UPDATEGROUPTITLECHANGEDOBSOLETE.fields_by_name['date']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPTOPICCHANGEDOBSOLETE.fields_by_name['group_id'].has_options = True
-_UPDATEGROUPTOPICCHANGEDOBSOLETE.fields_by_name['group_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPTOPICCHANGEDOBSOLETE.fields_by_name['rid'].has_options = True
-_UPDATEGROUPTOPICCHANGEDOBSOLETE.fields_by_name['rid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPTOPICCHANGEDOBSOLETE.fields_by_name['uid'].has_options = True
-_UPDATEGROUPTOPICCHANGEDOBSOLETE.fields_by_name['uid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPTOPICCHANGEDOBSOLETE.fields_by_name['topic'].has_options = True
-_UPDATEGROUPTOPICCHANGEDOBSOLETE.fields_by_name['topic']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_UPDATEGROUPTOPICCHANGEDOBSOLETE.fields_by_name['date'].has_options = True
-_UPDATEGROUPTOPICCHANGEDOBSOLETE.fields_by_name['date']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPABOUTCHANGEDOBSOLETE.fields_by_name['group_id'].has_options = True
-_UPDATEGROUPABOUTCHANGEDOBSOLETE.fields_by_name['group_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPABOUTCHANGEDOBSOLETE.fields_by_name['about'].has_options = True
-_UPDATEGROUPABOUTCHANGEDOBSOLETE.fields_by_name['about']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\010\n\006hidden'))
-_UPDATEGROUPAVATARCHANGEDOBSOLETE.fields_by_name['group_id'].has_options = True
-_UPDATEGROUPAVATARCHANGEDOBSOLETE.fields_by_name['group_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPAVATARCHANGEDOBSOLETE.fields_by_name['uid'].has_options = True
-_UPDATEGROUPAVATARCHANGEDOBSOLETE.fields_by_name['uid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPAVATARCHANGEDOBSOLETE.fields_by_name['avatar'].has_options = True
-_UPDATEGROUPAVATARCHANGEDOBSOLETE.fields_by_name['avatar']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007compact'))
-_UPDATEGROUPAVATARCHANGEDOBSOLETE.fields_by_name['date'].has_options = True
-_UPDATEGROUPAVATARCHANGEDOBSOLETE.fields_by_name['date']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPSHORTNAMECHANGED.fields_by_name['group_id'].has_options = True
-_UPDATEGROUPSHORTNAMECHANGED.fields_by_name['group_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPSHORTNAMECHANGED.fields_by_name['shortname'].has_options = True
-_UPDATEGROUPSHORTNAMECHANGED.fields_by_name['shortname']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
-_UPDATEGROUPSHORTNAMECHANGED.fields_by_name['uid'].has_options = True
-_UPDATEGROUPSHORTNAMECHANGED.fields_by_name['uid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3520\t\n\007visible'))
+DESCRIPTOR._options = None
+_MEMBER.fields_by_name['uid']._options = None
+_MEMBER.fields_by_name['inviter_uid']._options = None
+_MEMBER.fields_by_name['date']._options = None
+_MEMBER.fields_by_name['is_admin']._options = None
+_MEMBER.fields_by_name['permissions']._options = None
+_GROUP.fields_by_name['id']._options = None
+_GROUP.fields_by_name['access_hash']._options = None
+_GROUP.fields_by_name['title']._options = None
+_GROUP.fields_by_name['avatar']._options = None
+_GROUP.fields_by_name['members_amount']._options = None
+_GROUP.fields_by_name['is_member']._options = None
+_GROUP.fields_by_name['is_hidden']._options = None
+_GROUP.fields_by_name['group_type']._options = None
+_GROUP.fields_by_name['can_send_message']._options = None
+_GROUP.fields_by_name['is_admin']._options = None
+_GROUP.fields_by_name['creator_uid']._options = None
+_GROUP.fields_by_name['members']._options = None
+_GROUP.fields_by_name['create_date']._options = None
+_GROUP.fields_by_name['theme']._options = None
+_GROUP.fields_by_name['about']._options = None
+_GROUP.fields_by_name['shortname']._options = None
+_GROUPFULL.fields_by_name['id']._options = None
+_GROUPFULL.fields_by_name['create_date']._options = None
+_GROUPFULL.fields_by_name['owner_uid']._options = None
+_GROUPFULL.fields_by_name['members']._options = None
+_GROUPFULL.fields_by_name['theme']._options = None
+_GROUPFULL.fields_by_name['about']._options = None
+_GROUPFULL.fields_by_name['is_async_members']._options = None
+_GROUPFULL.fields_by_name['can_view_members']._options = None
+_GROUPFULL.fields_by_name['can_invite_people']._options = None
+_GROUPFULL.fields_by_name['is_shared_history']._options = None
+_REQUESTLOADFULLGROUPS.fields_by_name['groups']._options = None
+_REQUESTLOADFULLGROUPS._options = None
+_RESPONSELOADFULLGROUPS._options = None
+_REQUESTLOADMEMBERS.fields_by_name['group']._options = None
+_REQUESTLOADMEMBERS.fields_by_name['limit']._options = None
+_REQUESTLOADMEMBERS.fields_by_name['next']._options = None
+_REQUESTLOADMEMBERS._options = None
+_RESPONSELOADMEMBERS._options = None
+_UPDATEGROUPTITLECHANGED.fields_by_name['group_id']._options = None
+_UPDATEGROUPTITLECHANGED.fields_by_name['title']._options = None
+_UPDATEGROUPAVATARCHANGED.fields_by_name['group_id']._options = None
+_UPDATEGROUPAVATARCHANGED.fields_by_name['avatar']._options = None
+_UPDATEGROUPTOPICCHANGED.fields_by_name['group_id']._options = None
+_UPDATEGROUPTOPICCHANGED.fields_by_name['topic']._options = None
+_UPDATEGROUPABOUTCHANGED.fields_by_name['group_id']._options = None
+_UPDATEGROUPABOUTCHANGED.fields_by_name['about']._options = None
+_UPDATEGROUPOWNERCHANGED.fields_by_name['group_id']._options = None
+_UPDATEGROUPOWNERCHANGED.fields_by_name['user_id']._options = None
+_UPDATEGROUPHISTORYSHARED.fields_by_name['group_id']._options = None
+_UPDATEGROUPCANSENDMESSAGESCHANGED.fields_by_name['group_id']._options = None
+_UPDATEGROUPCANSENDMESSAGESCHANGED.fields_by_name['can_send_messages']._options = None
+_UPDATEGROUPCANVIEWMEMBERSCHANGED.fields_by_name['group_id']._options = None
+_UPDATEGROUPCANVIEWMEMBERSCHANGED.fields_by_name['can_view_members']._options = None
+_UPDATEGROUPCANINVITEMEMBERSCHANGED.fields_by_name['group_id']._options = None
+_UPDATEGROUPCANINVITEMEMBERSCHANGED.fields_by_name['can_invite_members']._options = None
+_UPDATEGROUPMEMBERCHANGED.fields_by_name['group_id']._options = None
+_UPDATEGROUPMEMBERCHANGED.fields_by_name['is_member']._options = None
+_UPDATEGROUPMEMBERSBECAMEASYNC.fields_by_name['group_id']._options = None
+_UPDATEGROUPMEMBERSUPDATED.fields_by_name['group_id']._options = None
+_UPDATEGROUPMEMBERSUPDATED.fields_by_name['members']._options = None
+_UPDATEGROUPMEMBERDIFF.fields_by_name['removed_users']._options = None
+_UPDATEGROUPMEMBERDIFF.fields_by_name['added_members']._options = None
+_UPDATEGROUPMEMBERDIFF.fields_by_name['members_count']._options = None
+_UPDATEGROUPMEMBERSCOUNTCHANGED.fields_by_name['group_id']._options = None
+_UPDATEGROUPMEMBERSCOUNTCHANGED.fields_by_name['members_count']._options = None
+_UPDATEGROUPMEMBERADMINCHANGED.fields_by_name['group_id']._options = None
+_UPDATEGROUPMEMBERADMINCHANGED.fields_by_name['user_id']._options = None
+_UPDATEGROUPMEMBERADMINCHANGED.fields_by_name['is_admin']._options = None
+_REQUESTCREATEGROUP.fields_by_name['rid']._options = None
+_REQUESTCREATEGROUP.fields_by_name['title']._options = None
+_REQUESTCREATEGROUP.fields_by_name['users']._options = None
+_REQUESTCREATEGROUP.fields_by_name['group_type']._options = None
+_REQUESTCREATEGROUP.fields_by_name['username']._options = None
+_REQUESTCREATEGROUP.fields_by_name['optimizations']._options = None
+_REQUESTCREATEGROUP._options = None
+_RESPONSECREATEGROUP._options = None
+_REQUESTEDITGROUPTITLE.fields_by_name['group_peer']._options = None
+_REQUESTEDITGROUPTITLE.fields_by_name['rid']._options = None
+_REQUESTEDITGROUPTITLE.fields_by_name['title']._options = None
+_REQUESTEDITGROUPTITLE.fields_by_name['optimizations']._options = None
+_REQUESTEDITGROUPTITLE._options = None
+_REQUESTSETGROUPSHORTNAME.fields_by_name['peer']._options = None
+_REQUESTSETGROUPSHORTNAME.fields_by_name['shortname']._options = None
+_REQUESTSETGROUPSHORTNAME._options = None
+_REQUESTEDITGROUPAVATAR.fields_by_name['group_peer']._options = None
+_REQUESTEDITGROUPAVATAR.fields_by_name['rid']._options = None
+_REQUESTEDITGROUPAVATAR.fields_by_name['file_location']._options = None
+_REQUESTEDITGROUPAVATAR.fields_by_name['optimizations']._options = None
+_REQUESTEDITGROUPAVATAR._options = None
+_RESPONSEEDITGROUPAVATAR._options = None
+_REQUESTREMOVEGROUPAVATAR.fields_by_name['group_peer']._options = None
+_REQUESTREMOVEGROUPAVATAR.fields_by_name['rid']._options = None
+_REQUESTREMOVEGROUPAVATAR.fields_by_name['optimizations']._options = None
+_REQUESTREMOVEGROUPAVATAR._options = None
+_REQUESTEDITGROUPTOPIC.fields_by_name['group_peer']._options = None
+_REQUESTEDITGROUPTOPIC.fields_by_name['rid']._options = None
+_REQUESTEDITGROUPTOPIC.fields_by_name['topic']._options = None
+_REQUESTEDITGROUPTOPIC.fields_by_name['optimizations']._options = None
+_REQUESTEDITGROUPTOPIC._options = None
+_REQUESTEDITGROUPABOUT.fields_by_name['group_peer']._options = None
+_REQUESTEDITGROUPABOUT.fields_by_name['rid']._options = None
+_REQUESTEDITGROUPABOUT.fields_by_name['about']._options = None
+_REQUESTEDITGROUPABOUT.fields_by_name['optimizations']._options = None
+_REQUESTEDITGROUPABOUT._options = None
+_REQUESTINVITEUSER.fields_by_name['group_peer']._options = None
+_REQUESTINVITEUSER.fields_by_name['rid']._options = None
+_REQUESTINVITEUSER.fields_by_name['user']._options = None
+_REQUESTINVITEUSER.fields_by_name['optimizations']._options = None
+_REQUESTINVITEUSER._options = None
+_REQUESTLEAVEGROUP.fields_by_name['group_peer']._options = None
+_REQUESTLEAVEGROUP.fields_by_name['rid']._options = None
+_REQUESTLEAVEGROUP.fields_by_name['optimizations']._options = None
+_REQUESTLEAVEGROUP._options = None
+_REQUESTKICKUSER.fields_by_name['group_peer']._options = None
+_REQUESTKICKUSER.fields_by_name['rid']._options = None
+_REQUESTKICKUSER.fields_by_name['user']._options = None
+_REQUESTKICKUSER.fields_by_name['optimizations']._options = None
+_REQUESTKICKUSER._options = None
+_REQUESTMAKEUSERADMIN.fields_by_name['group_peer']._options = None
+_REQUESTMAKEUSERADMIN.fields_by_name['user_peer']._options = None
+_REQUESTMAKEUSERADMIN.fields_by_name['permissions']._options = None
+_REQUESTMAKEUSERADMIN._options = None
+_GROUPMEMBERPERMISSION.fields_by_name['user_id']._options = None
+_GROUPMEMBERPERMISSION.fields_by_name['permissions']._options = None
+_REQUESTGETGROUPMEMBERPERMISSIONS.fields_by_name['group_id']._options = None
+_REQUESTGETGROUPMEMBERPERMISSIONS.fields_by_name['user_ids']._options = None
+_REQUESTGETGROUPMEMBERPERMISSIONS._options = None
+_RESPONSEGETGROUPMEMBERPERMISSIONS._options = None
+_UPDATEGROUPMEMBERPERMISSIONSCHANGED.fields_by_name['group_id']._options = None
+_UPDATEGROUPMEMBERPERMISSIONSCHANGED.fields_by_name['user_id']._options = None
+_UPDATEGROUPMEMBERPERMISSIONSCHANGED.fields_by_name['permissions']._options = None
+_REQUESTTRANSFEROWNERSHIP.fields_by_name['group_peer']._options = None
+_REQUESTTRANSFEROWNERSHIP.fields_by_name['new_owner']._options = None
+_REQUESTTRANSFEROWNERSHIP._options = None
+_RESPONSEINVITEURL._options = None
+_REQUESTGETGROUPINVITEURL.fields_by_name['group_peer']._options = None
+_REQUESTGETGROUPINVITEURL._options = None
+_REQUESTGETGROUPINVITEURLBASE._options = None
+_RESPONSEGETGROUPINVITEURLBASE._options = None
+_REQUESTREVOKEINVITEURL.fields_by_name['group_peer']._options = None
+_REQUESTREVOKEINVITEURL._options = None
+_REQUESTJOINGROUP.fields_by_name['token']._options = None
+_REQUESTJOINGROUP.fields_by_name['optimizations']._options = None
+_REQUESTJOINGROUP._options = None
+_RESPONSEJOINGROUP._options = None
+_REQUESTJOINGROUPBYPEER.fields_by_name['peer']._options = None
+_REQUESTJOINGROUPBYPEER._options = None
+_REQUESTMAKEUSERADMINOBSOLETE.fields_by_name['group_peer']._options = None
+_REQUESTMAKEUSERADMINOBSOLETE.fields_by_name['user_peer']._options = None
+_REQUESTMAKEUSERADMINOBSOLETE._options = None
+_RESPONSEMAKEUSERADMINOBSOLETE._options = None
+_UPDATEGROUPINVITEOBSOLETE.fields_by_name['group_id']._options = None
+_UPDATEGROUPINVITEOBSOLETE.fields_by_name['rid']._options = None
+_UPDATEGROUPINVITEOBSOLETE.fields_by_name['invite_uid']._options = None
+_UPDATEGROUPINVITEOBSOLETE.fields_by_name['date']._options = None
+_UPDATEGROUPUSERINVITEDOBSOLETE.fields_by_name['group_id']._options = None
+_UPDATEGROUPUSERINVITEDOBSOLETE.fields_by_name['rid']._options = None
+_UPDATEGROUPUSERINVITEDOBSOLETE.fields_by_name['mid']._options = None
+_UPDATEGROUPUSERINVITEDOBSOLETE.fields_by_name['uid']._options = None
+_UPDATEGROUPUSERINVITEDOBSOLETE.fields_by_name['inviter_uid']._options = None
+_UPDATEGROUPUSERINVITEDOBSOLETE.fields_by_name['date']._options = None
+_UPDATEGROUPUSERLEAVEOBSOLETE.fields_by_name['group_id']._options = None
+_UPDATEGROUPUSERLEAVEOBSOLETE.fields_by_name['uid']._options = None
+_UPDATEGROUPUSERLEAVEOBSOLETE.fields_by_name['date']._options = None
+_UPDATEGROUPUSERKICKOBSOLETE.fields_by_name['group_id']._options = None
+_UPDATEGROUPUSERKICKOBSOLETE.fields_by_name['uid']._options = None
+_UPDATEGROUPUSERKICKOBSOLETE.fields_by_name['kicker_uid']._options = None
+_UPDATEGROUPUSERKICKOBSOLETE.fields_by_name['date']._options = None
+_UPDATEGROUPMEMBERSUPDATEOBSOLETE.fields_by_name['group_id']._options = None
+_UPDATEGROUPMEMBERSUPDATEOBSOLETE.fields_by_name['members']._options = None
+_UPDATEGROUPTITLECHANGEDOBSOLETE.fields_by_name['group_id']._options = None
+_UPDATEGROUPTITLECHANGEDOBSOLETE.fields_by_name['uid']._options = None
+_UPDATEGROUPTITLECHANGEDOBSOLETE.fields_by_name['title']._options = None
+_UPDATEGROUPTITLECHANGEDOBSOLETE.fields_by_name['date']._options = None
+_UPDATEGROUPTOPICCHANGEDOBSOLETE.fields_by_name['group_id']._options = None
+_UPDATEGROUPTOPICCHANGEDOBSOLETE.fields_by_name['rid']._options = None
+_UPDATEGROUPTOPICCHANGEDOBSOLETE.fields_by_name['uid']._options = None
+_UPDATEGROUPTOPICCHANGEDOBSOLETE.fields_by_name['topic']._options = None
+_UPDATEGROUPTOPICCHANGEDOBSOLETE.fields_by_name['date']._options = None
+_UPDATEGROUPABOUTCHANGEDOBSOLETE.fields_by_name['group_id']._options = None
+_UPDATEGROUPABOUTCHANGEDOBSOLETE.fields_by_name['about']._options = None
+_UPDATEGROUPAVATARCHANGEDOBSOLETE.fields_by_name['group_id']._options = None
+_UPDATEGROUPAVATARCHANGEDOBSOLETE.fields_by_name['uid']._options = None
+_UPDATEGROUPAVATARCHANGEDOBSOLETE.fields_by_name['avatar']._options = None
+_UPDATEGROUPAVATARCHANGEDOBSOLETE.fields_by_name['date']._options = None
+_UPDATEGROUPSHORTNAMECHANGED.fields_by_name['group_id']._options = None
+_UPDATEGROUPSHORTNAMECHANGED.fields_by_name['shortname']._options = None
+_UPDATEGROUPSHORTNAMECHANGED.fields_by_name['uid']._options = None
 
 _GROUPS = _descriptor.ServiceDescriptor(
   name='Groups',
   full_name='dialog.Groups',
   file=DESCRIPTOR,
   index=0,
-  options=None,
-  serialized_start=11121,
-  serialized_end=13714,
+  serialized_options=None,
+  serialized_start=11195,
+  serialized_end=13788,
   methods=[
   _descriptor.MethodDescriptor(
     name='LoadFullGroups',
@@ -3876,7 +3702,7 @@ _GROUPS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTLOADFULLGROUPS,
     output_type=_RESPONSELOADFULLGROUPS,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002#\"\036/v1/grpc/Groups/LoadFullGroups:\001*')),
+    serialized_options=_b('\202\323\344\223\002#\"\036/v1/grpc/Groups/LoadFullGroups:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='LoadMembers',
@@ -3885,7 +3711,7 @@ _GROUPS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTLOADMEMBERS,
     output_type=_RESPONSELOADMEMBERS,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002 \"\033/v1/grpc/Groups/LoadMembers:\001*')),
+    serialized_options=_b('\202\323\344\223\002 \"\033/v1/grpc/Groups/LoadMembers:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='CreateGroup',
@@ -3894,7 +3720,7 @@ _GROUPS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTCREATEGROUP,
     output_type=_RESPONSECREATEGROUP,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002 \"\033/v1/grpc/Groups/CreateGroup:\001*')),
+    serialized_options=_b('\202\323\344\223\002 \"\033/v1/grpc/Groups/CreateGroup:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='EditGroupTitle',
@@ -3903,7 +3729,7 @@ _GROUPS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTEDITGROUPTITLE,
     output_type=miscellaneous__pb2._RESPONSESEQDATEMID,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002#\"\036/v1/grpc/Groups/EditGroupTitle:\001*')),
+    serialized_options=_b('\202\323\344\223\002#\"\036/v1/grpc/Groups/EditGroupTitle:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='SetGroupShortname',
@@ -3912,7 +3738,7 @@ _GROUPS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTSETGROUPSHORTNAME,
     output_type=miscellaneous__pb2._RESPONSESEQ,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002&\"!/v1/grpc/Groups/SetGroupShortname:\001*')),
+    serialized_options=_b('\202\323\344\223\002&\"!/v1/grpc/Groups/SetGroupShortname:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='EditGroupAvatar',
@@ -3921,7 +3747,7 @@ _GROUPS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTEDITGROUPAVATAR,
     output_type=_RESPONSEEDITGROUPAVATAR,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002$\"\037/v1/grpc/Groups/EditGroupAvatar:\001*')),
+    serialized_options=_b('\202\323\344\223\002$\"\037/v1/grpc/Groups/EditGroupAvatar:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='RemoveGroupAvatar',
@@ -3930,7 +3756,7 @@ _GROUPS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTREMOVEGROUPAVATAR,
     output_type=miscellaneous__pb2._RESPONSESEQDATEMID,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002&\"!/v1/grpc/Groups/RemoveGroupAvatar:\001*')),
+    serialized_options=_b('\202\323\344\223\002&\"!/v1/grpc/Groups/RemoveGroupAvatar:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='EditGroupTopic',
@@ -3939,7 +3765,7 @@ _GROUPS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTEDITGROUPTOPIC,
     output_type=miscellaneous__pb2._RESPONSESEQDATE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002#\"\036/v1/grpc/Groups/EditGroupTopic:\001*')),
+    serialized_options=_b('\202\323\344\223\002#\"\036/v1/grpc/Groups/EditGroupTopic:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='EditGroupAbout',
@@ -3948,7 +3774,7 @@ _GROUPS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTEDITGROUPABOUT,
     output_type=miscellaneous__pb2._RESPONSESEQDATE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002#\"\036/v1/grpc/Groups/EditGroupAbout:\001*')),
+    serialized_options=_b('\202\323\344\223\002#\"\036/v1/grpc/Groups/EditGroupAbout:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='InviteUser',
@@ -3957,7 +3783,7 @@ _GROUPS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTINVITEUSER,
     output_type=miscellaneous__pb2._RESPONSESEQDATEMID,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\037\"\032/v1/grpc/Groups/InviteUser:\001*')),
+    serialized_options=_b('\202\323\344\223\002\037\"\032/v1/grpc/Groups/InviteUser:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='LeaveGroup',
@@ -3966,7 +3792,7 @@ _GROUPS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTLEAVEGROUP,
     output_type=miscellaneous__pb2._RESPONSESEQDATEMID,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\037\"\032/v1/grpc/Groups/LeaveGroup:\001*')),
+    serialized_options=_b('\202\323\344\223\002\037\"\032/v1/grpc/Groups/LeaveGroup:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='KickUser',
@@ -3975,7 +3801,7 @@ _GROUPS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTKICKUSER,
     output_type=miscellaneous__pb2._RESPONSESEQDATEMID,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\035\"\030/v1/grpc/Groups/KickUser:\001*')),
+    serialized_options=_b('\202\323\344\223\002\035\"\030/v1/grpc/Groups/KickUser:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='MakeUserAdmin',
@@ -3984,7 +3810,7 @@ _GROUPS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTMAKEUSERADMIN,
     output_type=miscellaneous__pb2._RESPONSESEQDATE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\"\"\035/v1/grpc/Groups/MakeUserAdmin:\001*')),
+    serialized_options=_b('\202\323\344\223\002\"\"\035/v1/grpc/Groups/MakeUserAdmin:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='GetGroupMemberPermissions',
@@ -3993,7 +3819,7 @@ _GROUPS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTGETGROUPMEMBERPERMISSIONS,
     output_type=_RESPONSEGETGROUPMEMBERPERMISSIONS,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002.\")/v1/grpc/Groups/GetGroupMemberPermissions:\001*')),
+    serialized_options=_b('\202\323\344\223\002.\")/v1/grpc/Groups/GetGroupMemberPermissions:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='TransferOwnership',
@@ -4002,7 +3828,7 @@ _GROUPS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTTRANSFEROWNERSHIP,
     output_type=miscellaneous__pb2._RESPONSESEQDATE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002&\"!/v1/grpc/Groups/TransferOwnership:\001*')),
+    serialized_options=_b('\202\323\344\223\002&\"!/v1/grpc/Groups/TransferOwnership:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='GetGroupInviteUrl',
@@ -4011,7 +3837,7 @@ _GROUPS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTGETGROUPINVITEURL,
     output_type=_RESPONSEINVITEURL,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002&\"!/v1/grpc/Groups/GetGroupInviteUrl:\001*')),
+    serialized_options=_b('\202\323\344\223\002&\"!/v1/grpc/Groups/GetGroupInviteUrl:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='GetGroupInviteUrlBase',
@@ -4020,7 +3846,7 @@ _GROUPS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTGETGROUPINVITEURLBASE,
     output_type=_RESPONSEGETGROUPINVITEURLBASE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002*\"%/v1/grpc/Groups/GetGroupInviteUrlBase:\001*')),
+    serialized_options=_b('\202\323\344\223\002*\"%/v1/grpc/Groups/GetGroupInviteUrlBase:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='RevokeInviteUrl',
@@ -4029,7 +3855,7 @@ _GROUPS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTREVOKEINVITEURL,
     output_type=_RESPONSEINVITEURL,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002$\"\037/v1/grpc/Groups/RevokeInviteUrl:\001*')),
+    serialized_options=_b('\202\323\344\223\002$\"\037/v1/grpc/Groups/RevokeInviteUrl:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='JoinGroup',
@@ -4038,7 +3864,7 @@ _GROUPS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTJOINGROUP,
     output_type=_RESPONSEJOINGROUP,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\036\"\031/v1/grpc/Groups/JoinGroup:\001*')),
+    serialized_options=_b('\202\323\344\223\002\036\"\031/v1/grpc/Groups/JoinGroup:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='JoinGroupByPeer',
@@ -4047,7 +3873,7 @@ _GROUPS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTJOINGROUPBYPEER,
     output_type=miscellaneous__pb2._RESPONSEVOID,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002$\"\037/v1/grpc/Groups/JoinGroupByPeer:\001*')),
+    serialized_options=_b('\202\323\344\223\002$\"\037/v1/grpc/Groups/JoinGroupByPeer:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='MakeUserAdminObsolete',
@@ -4056,7 +3882,7 @@ _GROUPS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REQUESTMAKEUSERADMINOBSOLETE,
     output_type=_RESPONSEMAKEUSERADMINOBSOLETE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002*\"%/v1/grpc/Groups/MakeUserAdminObsolete:\001*')),
+    serialized_options=_b('\202\323\344\223\002*\"%/v1/grpc/Groups/MakeUserAdminObsolete:\001*'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_GROUPS)
