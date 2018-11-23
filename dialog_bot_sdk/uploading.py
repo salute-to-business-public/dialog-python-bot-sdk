@@ -47,8 +47,8 @@ class Uploading(object):
         """Upload file for sending.
 
         :param file: path to file
-        :param max_chunk_size: maximum size of one chunk
-        :param parallelism: number of uploading threads
+        :param max_chunk_size: maximum size of one chunk (default 1024 * 1024)
+        :param parallelism: number of uploading threads (default: 10)
         :return: FileLocation object if success or None otherwise
         """
 

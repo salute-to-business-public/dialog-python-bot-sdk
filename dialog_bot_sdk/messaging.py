@@ -15,7 +15,7 @@ class Messaging(ManagedService):
         """Send text message to current peer. Message can contain interactive media groups (buttons, selects etc.).
 
         :param peer: receiver's peer
-        :param text: message text
+        :param text: message text (not null)
         :param interactive_media_groups: groups of interactive media components (buttons etc.)
         :return: mid value of SendMessage response object
         """
