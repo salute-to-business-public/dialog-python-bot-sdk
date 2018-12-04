@@ -5,6 +5,7 @@ from dialog_api import registration_pb2, registration_pb2_grpc,\
                        authentication_pb2, authentication_pb2_grpc,\
                        contacts_pb2_grpc, search_pb2_grpc, messaging_pb2_grpc,\
                        media_and_files_pb2_grpc
+from dialog_bot_sdk.uploading import Uploading
 
 
 class InternalBot(object):
@@ -25,6 +26,7 @@ class InternalBot(object):
         self.search = self.wrap_service(search_pb2_grpc.SearchStub)
         self.token = self.get_session_token()
         self.thread_pool_executor = ThreadPoolExecutor(max_workers=10)
+        self.uploading = Uploading(self)
 
     def authorize(self, bot_token):
         """Authorization function for Internal bot instance.

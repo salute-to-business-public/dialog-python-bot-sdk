@@ -22,7 +22,7 @@ def on_msg(*params):
 if __name__ == '__main__':
     d = DialogBot.get_insecure_bot(
         "grpc-test.transmit.im:8080",
-        "6075cd040cb5a43a1362c06612b026f7d58538d5"
+        "2fefa24bdf86cf7cd39ebeac1a41249cb3af8197"
     )
 
     def sender(count=10):
