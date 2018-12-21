@@ -1,13 +1,10 @@
-from .service import ManagedService
-from .utils.read_file_in_chunks import read_file_in_chunks
-from .utils.get_photo_metadata import get_photo_w_h, get_photo_thumb_bytes
-from dialog_api import messaging_pb2, sequence_and_updates_pb2, media_and_files_pb2
 from google.protobuf import empty_pb2
 import time
-import os
-import requests
-import mimetypes
-from concurrent.futures import ThreadPoolExecutor
+import imghdr
+
+from .service import ManagedService
+from dialog_api import messaging_pb2, sequence_and_updates_pb2
+from dialog_bot_sdk.content import content
 
 
 class Messaging(ManagedService):
@@ -15,13 +12,17 @@ class Messaging(ManagedService):
 
     """
     def send_message(self, peer, text, interactive_media_groups=None):
-        """Send message to current peer.
+        """Send text message to current peer. Message can contain interactive media groups (buttons, selects etc.).
 
         :param peer: receiver's peer
-        :param text: message text
+        :param text: message text (not null)
         :param interactive_media_groups: groups of interactive media components (buttons etc.)
         :return: mid value of SendMessage response object
         """
+
+        if text == '' or text is None:
+            raise AttributeError('Text message must contain some text.')
+
         outpeer = self.manager.get_outpeer(peer)
         msg = messaging_pb2.MessageContent()
         msg.textMessage.text = text
@@ -42,16 +43,14 @@ class Messaging(ManagedService):
         :param file: path to file
         :return: mid value of SendMessage response object
         """
-        location = self.upload_file(file)
+
+        location = self.internal.uploading.upload_file(file)
         outpeer = self.manager.get_outpeer(peer)
         msg = messaging_pb2.MessageContent()
 
-        content = messaging_pb2.DocumentMessage()
-        content.file_id = location.file_id
-        content.access_hash = location.access_hash
-        content.name = os.path.basename(file)
-        content.file_size = os.path.getsize(file)
-        msg.documentMessage.CopyFrom(content)
+        msg.documentMessage.CopyFrom(
+            content.get_document_content(file, location)
+        )
 
         return self.internal.messaging.SendMessage(messaging_pb2.RequestSendMessage(
             peer=outpeer,
@@ -59,108 +58,30 @@ class Messaging(ManagedService):
             message=msg
         )).mid
 
-    def send_photo(self, peer, file):
-        """Send photo as photo (not as file) to current peer.
+    def send_image(self, peer, file):
+        """Send image as image (not as file) to current peer.
 
         :param peer: receiver's peer
-        :param file: path to photo file
+        :param file: path to image file
         :return: mid value of SendMessage response object
         """
 
-        location = self.upload_file(file)
+        if imghdr.what(file) not in ['gif', 'jpeg', 'png', 'bmp']:
+            raise IOError('File is not an image.')
+
+        location = self.internal.uploading.upload_file(file)
         outpeer = self.manager.get_outpeer(peer)
         msg = messaging_pb2.MessageContent()
 
-        content = messaging_pb2.DocumentMessage()
-
-        content.file_id = location.file_id
-        content.access_hash = location.access_hash
-        content.name = os.path.basename(file)
-        content.file_size = os.path.getsize(file)
-        content.mime_type = mimetypes.guess_type(file)[0]
-
-        content.thumb.w, content.thumb.h, content.thumb.thumb = get_photo_thumb_bytes(file)
-
-        ext = messaging_pb2.DocumentEx()
-
-        photo = messaging_pb2.DocumentExPhoto()
-        photo.w, photo.h = get_photo_w_h(file)
-        ext.photo.CopyFrom(photo)
-        content.ext.CopyFrom(ext)
-        msg.documentMessage.CopyFrom(content)
+        msg.documentMessage.CopyFrom(
+            content.get_image_content(file, location)
+        )
 
         return self.internal.messaging.SendMessage(messaging_pb2.RequestSendMessage(
             peer=outpeer,
             rid=int(time.time()),
             message=msg
         )).mid
-
-    def upload_file_chunk(self, part_number, chunk, upload_key):
-        """Upload file chunk.
-
-        :param part_number: number of chunk
-        :param chunk: chunk content
-        :param upload_key: upload key (need to be received from RequestGetFileUploadUrl request before uploading)
-        :return: Response of HTTP PUT request if success or None otherwise
-        """
-
-        url = self.internal.media_and_files.GetFileUploadPartUrl(
-            media_and_files_pb2.RequestGetFileUploadPartUrl(
-                part_number=part_number,
-                part_size=len(chunk),
-                upload_key=upload_key
-            )
-        ).url
-
-        put_response = requests.put(
-            url,
-            data=chunk,
-            headers={'Content-Type': 'application/octet-stream'}
-        )
-
-        if put_response.status_code != 200:
-            print('Can\'t upload file chunk #{}' % part_number)
-            return None
-
-        return put_response
-
-    def upload_file(self, file, max_chunk_size=1024*1024, parallelism=10):
-        """Upload file for sending.
-
-        :param file: path to file
-        :param max_chunk_size: maximum size of one chunk
-        :param parallelism: number of uploading threads
-        :return: FileLocation object if success or None otherwise
-        """
-
-        upload_key = self.internal.media_and_files.GetFileUploadUrl(
-            media_and_files_pb2.RequestGetFileUploadUrl(
-                expected_size=os.path.getsize(file)
-            )
-        ).upload_key
-
-        with ThreadPoolExecutor(max_workers=parallelism) as executor:
-            result = list(
-                executor.map(
-                    lambda x: self.upload_file_chunk(*x),
-                    (
-                        (part_number, chunk, upload_key) for part_number, chunk in enumerate(
-                            read_file_in_chunks(file, max_chunk_size)
-                        )
-                    )
-
-                )
-            )
-
-            if not all(result):
-                return None
-
-        return self.internal.media_and_files.CommitFileUpload(
-            media_and_files_pb2.RequestCommitFileUpload(
-                upload_key=upload_key,
-                file_name=os.path.basename(file)
-            )
-        ).uploaded_file_location
 
     def on_message(self, callback):
         """Message receiving event handler.

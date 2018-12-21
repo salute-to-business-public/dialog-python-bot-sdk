@@ -10,7 +10,16 @@ DEFAULT_OPTIMIZATIONS = [
 
 
 class Updates(ManagedService):
+    """Class for handling grpc's server updates.
+
+    """
     def get_difference(self, seq):
+        """Raw implementation of API schema GetDifference method, which returns updates between attribute 'seq' and
+        current seq at server side.
+
+        :param seq: seq value
+        :return: GetDifferenceResponse object
+        """
         diff = self.internal.updates.GetDifference(
             sequence_and_updates_pb2.RequestGetDifference(
                 seq=seq,
