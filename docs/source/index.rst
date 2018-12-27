@@ -13,6 +13,10 @@ Full documentation of **Dialog API Schema** is available here_.
 
 .. _here: https://dialogs.github.io/api-schema/
 
+You can download package via link_.
+
+.. _link: https://github.com/dialogs/python-bot-sdk
+
 Usage:
 ``````
 .. literalinclude:: echobot.py

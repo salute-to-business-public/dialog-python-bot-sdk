@@ -1,4 +1,5 @@
 from dialog_bot_sdk.bot import DialogBot
+import grpc
 import os
 
 
@@ -10,11 +11,10 @@ def on_msg(*params):
 
 
 if __name__ == '__main__':
-    d = DialogBot.get_insecure_bot(
-        "grpc-test.transmit.im:8080", os.environ.get('BOT_TOKEN')
+    d = DialogBot.get_secure_bot(
+        'grpc-test.transmit.im:8080',  # bot endpoint
+        grpc.ssl_channel_credentials(),  # SSL credentials
+        os.environ.get('BOT_TOKEN')  # bot token
     )
 
-    def receiver():
-        d.messaging.on_message(on_msg)
-
-    receiver()
+    d.messaging.on_message(on_msg)
