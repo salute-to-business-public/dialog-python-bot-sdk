@@ -15,10 +15,10 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
-import definitions_pb2 as definitions__pb2
-import peers_pb2 as peers__pb2
-import media_and_files_pb2 as media__and__files__pb2
-from scalapb import scalapb_pb2 as scalapb_dot_scalapb__pb2
+from . import definitions_pb2 as definitions__pb2
+from . import peers_pb2 as peers__pb2
+from . import media_and_files_pb2 as media__and__files__pb2
+from .scalapb import scalapb_pb2 as scalapb_dot_scalapb__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(

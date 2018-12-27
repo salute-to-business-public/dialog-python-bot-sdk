@@ -15,13 +15,13 @@ _sym_db = _symbol_database.Default()
 
 from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
-import definitions_pb2 as definitions__pb2
-import groups_pb2 as groups__pb2
-import peers_pb2 as peers__pb2
-import messaging_pb2 as messaging__pb2
-import users_pb2 as users__pb2
-import miscellaneous_pb2 as miscellaneous__pb2
-from scalapb import scalapb_pb2 as scalapb_dot_scalapb__pb2
+from . import definitions_pb2 as definitions__pb2
+from . import groups_pb2 as groups__pb2
+from . import peers_pb2 as peers__pb2
+from . import messaging_pb2 as messaging__pb2
+from . import users_pb2 as users__pb2
+from . import miscellaneous_pb2 as miscellaneous__pb2
+from .scalapb import scalapb_pb2 as scalapb_dot_scalapb__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -29,7 +29,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='dialog',
   syntax='proto3',
   serialized_options=_b('\342?\026\n\024im.dlg.grpc.services'),
-  serialized_pb=_b('\n\x0csearch.proto\x12\x06\x64ialog\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x11\x64\x65\x66initions.proto\x1a\x0cgroups.proto\x1a\x0bpeers.proto\x1a\x0fmessaging.proto\x1a\x0busers.proto\x1a\x13miscellaneous.proto\x1a\x15scalapb/scalapb.proto\",\n\x1cSimpleContactSearchCondition\x12\x0c\n\x04text\x18\x01 \x01(\t\"y\n\x1cSimpleMessageSearchCondition\x12\x1a\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.Peer\x12\x0c\n\x04text\x18\x02 \x01(\t\x12/\n\x0c\x63ontent_type\x18\x03 \x01(\x0e\x32\x19.dialog.SearchContentType\"r\n\x19SimplePeerSearchCondition\x12)\n\tpeer_type\x18\x01 \x01(\x0e\x32\x16.dialog.SearchPeerType\x12*\n\x04text\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValue\"8\n SimpleUserProfileSearchCondition\x12\x14\n\x0cquery_string\x18\x01 \x01(\t\"\x0b\n\tcriterion\"\x8a\x02\n\x15SimpleSearchCondition\x12\x37\n\x07\x63ontact\x18\x01 \x01(\x0b\x32$.dialog.SimpleContactSearchConditionH\x00\x12\x37\n\x07message\x18\x02 \x01(\x0b\x32$.dialog.SimpleMessageSearchConditionH\x00\x12\x31\n\x04peer\x18\x03 \x01(\x0b\x32!.dialog.SimplePeerSearchConditionH\x00\x12?\n\x0buserProfile\x18\x04 \x01(\x0b\x32(.dialog.SimpleUserProfileSearchConditionH\x00\x42\x0b\n\tcriterion\"\xc3\x03\n\x0fSearchCondition\x12\x42\n\x17searchPeerTypeCondition\x18\x01 \x01(\x0b\x32\x1f.dialog.SearchPeerTypeConditionH\x00\x12\x32\n\x0fsearchPieceText\x18\x02 \x01(\x0b\x32\x17.dialog.SearchPieceTextH\x00\x12\x38\n\x12searchAndCondition\x18\x03 \x01(\x0b\x32\x1a.dialog.SearchAndConditionH\x00\x12\x36\n\x11searchOrCondition\x18\x04 \x01(\x0b\x32\x19.dialog.SearchOrConditionH\x00\x12:\n\x13searchPeerCondition\x18\x05 \x01(\x0b\x32\x1b.dialog.SearchPeerConditionH\x00\x12>\n\x15searchPeerContentType\x18\x06 \x01(\x0b\x32\x1d.dialog.SearchPeerContentTypeH\x00\x12\x42\n\x17searchSenderIdConfition\x18\x07 \x01(\x0b\x32\x1f.dialog.SearchSenderIdConfitionH\x00\x42\x06\n\x04\x62ody\"R\n\x17SearchPeerTypeCondition\x12\x37\n\tpeer_type\x18\x01 \x01(\x0e\x32\x16.dialog.SearchPeerTypeB\x0c\x8a\xea\x30\x08\n\x06hidden\".\n\x0fSearchPieceText\x12\x1b\n\x05query\x18\x01 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\"O\n\x12SearchAndCondition\x12\x39\n\tand_query\x18\x01 \x03(\x0b\x32\x17.dialog.SearchConditionB\r\x8a\xea\x30\t\n\x07visible\"M\n\x11SearchOrCondition\x12\x38\n\x08or_query\x18\x02 \x03(\x0b\x32\x17.dialog.SearchConditionB\r\x8a\xea\x30\t\n\x07visible\"C\n\x13SearchPeerCondition\x12,\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible\"W\n\x15SearchPeerContentType\x12>\n\x0c\x63ontent_type\x18\x01 \x01(\x0e\x32\x19.dialog.SearchContentTypeB\r\x8a\xea\x30\t\n\x07visible\";\n\x17SearchSenderIdConfition\x12 \n\tsender_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\"\xde\x03\n\x10PeerSearchResult\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x05title\x18\x02 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\x12/\n\tshortname\x18\t \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12?\n\x0b\x64\x65scription\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x41\n\rmembers_count\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\r\x8a\xea\x30\t\n\x07visible\x12#\n\x0c\x64\x61te_created\x18\x05 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12;\n\x07\x63reator\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\r\x8a\xea\x30\t\n\x07visible\x12<\n\tis_public\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12-\n\tis_joined\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"\xa9\x01\n\x11RequestPeerSearch\x12\x34\n\x05query\x18\x01 \x03(\x0b\x32\x17.dialog.SearchConditionB\x0c\x8a\xea\x30\x08\n\x06hidden\x12@\n\roptimizations\x18\x02 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xf5\x01\n\x12ResponsePeerSearch\x12\x30\n\x0esearch_results\x18\x01 \x03(\x0b\x32\x18.dialog.PeerSearchResult\x12\x1b\n\x05users\x18\x02 \x03(\x0b\x32\x0c.dialog.User\x12\x1d\n\x06groups\x18\x03 \x03(\x0b\x32\r.dialog.Group\x12\'\n\nuser_peers\x18\x04 \x03(\x0b\x32\x13.dialog.UserOutPeer\x12)\n\x0bgroup_peers\x18\x05 \x03(\x0b\x32\x14.dialog.GroupOutPeer:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"T\n\x12RequestResolvePeer\x12 \n\tshortname\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"S\n\x13ResponseResolvePeer\x12\x1d\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeer:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\xd3\x01\n\x13MessageSearchResult\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03rid\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x64\x61te\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12 \n\tsender_id\x18\x04 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x36\n\x07\x63ontent\x18\x05 \x01(\x0b\x32\x16.dialog.MessageContentB\r\x8a\xea\x30\t\n\x07visible\"@\n\x11MessageSearchItem\x12+\n\x06result\x18\x01 \x01(\x0b\x32\x1b.dialog.MessageSearchResult\"\x98\x03\n\x1dResponseMessageSearchResponse\x12@\n\x0esearch_results\x18\x01 \x03(\x0b\x32\x19.dialog.MessageSearchItemB\r\x8a\xea\x30\t\n\x07visible\x12*\n\x05users\x18\x02 \x03(\x0b\x32\x0c.dialog.UserB\r\x8a\xea\x30\t\n\x07visible\x12,\n\x06groups\x18\x03 \x03(\x0b\x32\r.dialog.GroupB\r\x8a\xea\x30\t\n\x07visible\x12\x42\n\x0fload_more_state\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.BytesValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12:\n\x0euser_out_peers\x18\x05 \x03(\x0b\x32\x13.dialog.UserOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12<\n\x0fgroup_out_peers\x18\x06 \x03(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\xac\x01\n\x14RequestMessageSearch\x12\x34\n\x05query\x18\x01 \x01(\x0b\x32\x17.dialog.SearchConditionB\x0c\x8a\xea\x30\x08\n\x06hidden\x12@\n\roptimizations\x18\x02 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xa1\x01\n\x18RequestMessageSearchMore\x12%\n\x0fload_more_state\x18\x01 \x01(\x0c\x42\x0c\x8a\xea\x30\x08\n\x06hidden\x12@\n\roptimizations\x18\x02 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x97\x01\n\x13RequestSimpleSearch\x12/\n\x08\x63riteria\x18\x01 \x03(\x0b\x32\x1d.dialog.SimpleSearchCondition\x12\x31\n\roptimizations\x18\x02 \x03(\x0e\x32\x1a.dialog.UpdateOptimization:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x83\x01\n\x17RequestSimpleSearchMore\x12\x17\n\x0fload_more_state\x18\x01 \x01(\x0c\x12\x31\n\roptimizations\x18\x02 \x03(\x0e\x32\x1a.dialog.UpdateOptimization:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x7f\n\x18RequestFieldAutocomplete\x12!\n\nfield_name\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\"\n\x0b\x66ield_value\x18\x02 \x01(\tB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x81\x01\n\x19ResponseFieldAutocomplete\x12!\n\nfield_name\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\"\n\x0b\x66ield_value\x18\x02 \x03(\tB\r\x8a\xea\x30\t\n\x07visible:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\x9e\x02\n(RequestLoadUserSearchByPredicatesResults\x12:\n\npredicates\x18\x01 \x03(\x0b\x32\x17.dialog.SearchPredicateB\r\x8a\xea\x30\t\n\x07visible\x12\x1f\n\x08group_id\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12:\n\x05query\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12\x1d\n\x06offset\x18\x04 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05limit\x18\x05 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xd4\x01\n)ResponseLoadUserSearchByPredicatesResults\x12Z\n\x05users\x18\x01 \x03(\x0b\x32<.dialog.ResponseLoadUserSearchByPredicatesResults.UsersEntryB\r\x8a\xea\x30\t\n\x07visible\x1a,\n\nUsersEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\r\n\x05value\x18\x02 \x01(\x08:\x02\x38\x01:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse*\x7f\n\x0eSearchPeerType\x12\x1a\n\x16SEARCHPEERTYPE_UNKNOWN\x10\x00\x12\x19\n\x15SEARCHPEERTYPE_GROUPS\x10\x01\x12\x1b\n\x17SEARCHPEERTYPE_CONTACTS\x10\x02\x12\x19\n\x15SEARCHPEERTYPE_PUBLIC\x10\x03*\xc5\x01\n\x11SearchContentType\x12\x1d\n\x19SEARCHCONTENTTYPE_UNKNOWN\x10\x00\x12\x19\n\x15SEARCHCONTENTTYPE_ANY\x10\x01\x12\x1a\n\x16SEARCHCONTENTTYPE_TEXT\x10\x02\x12\x1b\n\x17SEARCHCONTENTTYPE_LINKS\x10\x03\x12\x1f\n\x1bSEARCHCONTENTTYPE_DOCUMENTS\x10\x04\x12\x1c\n\x18SEARCHCONTENTTYPE_PHOTOS\x10\x05\x32\xd6\x08\n\x06Search\x12j\n\nPeerSearch\x12\x19.dialog.RequestPeerSearch\x1a\x1a.dialog.ResponsePeerSearch\"%\x82\xd3\xe4\x93\x02\x1f\"\x1a/v1/grpc/Search/PeerSearch:\x01*\x12n\n\x0bResolvePeer\x12\x1a.dialog.RequestResolvePeer\x1a\x1b.dialog.ResponseResolvePeer\"&\x82\xd3\xe4\x93\x02 \"\x1b/v1/grpc/Search/ResolvePeer:\x01*\x12~\n\rMessageSearch\x12\x1c.dialog.RequestMessageSearch\x1a%.dialog.ResponseMessageSearchResponse\"(\x82\xd3\xe4\x93\x02\"\"\x1d/v1/grpc/Search/MessageSearch:\x01*\x12\x8a\x01\n\x11MessageSearchMore\x12 .dialog.RequestMessageSearchMore\x1a%.dialog.ResponseMessageSearchResponse\",\x82\xd3\xe4\x93\x02&\"!/v1/grpc/Search/MessageSearchMore:\x01*\x12{\n\x0cSimpleSearch\x12\x1b.dialog.RequestSimpleSearch\x1a%.dialog.ResponseMessageSearchResponse\"\'\x82\xd3\xe4\x93\x02!\"\x1c/v1/grpc/Search/SimpleSearch:\x01*\x12\x87\x01\n\x10SimpleSearchMore\x12\x1f.dialog.RequestSimpleSearchMore\x1a%.dialog.ResponseMessageSearchResponse\"+\x82\xd3\xe4\x93\x02%\" /v1/grpc/Search/SimpleSearchMore:\x01*\x12\x92\x01\n\x17\x41utocompleteSuggestions\x12 .dialog.RequestFieldAutocomplete\x1a!.dialog.ResponseFieldAutocomplete\"2\x82\xd3\xe4\x93\x02,\"\'/v1/grpc/Search/AutocompleteSuggestions:\x01*\x12\xc6\x01\n!LoadUserSearchByPredicatesResults\x12\x30.dialog.RequestLoadUserSearchByPredicatesResults\x1a\x31.dialog.ResponseLoadUserSearchByPredicatesResults\"<\x82\xd3\xe4\x93\x02\x36\"1/v1/grpc/Search/LoadUserSearchByPredicatesResults:\x01*B\x19\xe2?\x16\n\x14im.dlg.grpc.servicesb\x06proto3')
+  serialized_pb=_b('\n\x0csearch.proto\x12\x06\x64ialog\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x11\x64\x65\x66initions.proto\x1a\x0cgroups.proto\x1a\x0bpeers.proto\x1a\x0fmessaging.proto\x1a\x0busers.proto\x1a\x13miscellaneous.proto\x1a\x15scalapb/scalapb.proto\",\n\x1cSimpleContactSearchCondition\x12\x0c\n\x04text\x18\x01 \x01(\t\"y\n\x1cSimpleMessageSearchCondition\x12\x1a\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.Peer\x12\x0c\n\x04text\x18\x02 \x01(\t\x12/\n\x0c\x63ontent_type\x18\x03 \x01(\x0e\x32\x19.dialog.SearchContentType\"r\n\x19SimplePeerSearchCondition\x12)\n\tpeer_type\x18\x01 \x01(\x0e\x32\x16.dialog.SearchPeerType\x12*\n\x04text\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValue\"8\n SimpleUserProfileSearchCondition\x12\x14\n\x0cquery_string\x18\x01 \x01(\t\"\x0b\n\tcriterion\"\x8a\x02\n\x15SimpleSearchCondition\x12\x37\n\x07\x63ontact\x18\x01 \x01(\x0b\x32$.dialog.SimpleContactSearchConditionH\x00\x12\x37\n\x07message\x18\x02 \x01(\x0b\x32$.dialog.SimpleMessageSearchConditionH\x00\x12\x31\n\x04peer\x18\x03 \x01(\x0b\x32!.dialog.SimplePeerSearchConditionH\x00\x12?\n\x0buserProfile\x18\x04 \x01(\x0b\x32(.dialog.SimpleUserProfileSearchConditionH\x00\x42\x0b\n\tcriterion\"\xc3\x03\n\x0fSearchCondition\x12\x42\n\x17searchPeerTypeCondition\x18\x01 \x01(\x0b\x32\x1f.dialog.SearchPeerTypeConditionH\x00\x12\x32\n\x0fsearchPieceText\x18\x02 \x01(\x0b\x32\x17.dialog.SearchPieceTextH\x00\x12\x38\n\x12searchAndCondition\x18\x03 \x01(\x0b\x32\x1a.dialog.SearchAndConditionH\x00\x12\x36\n\x11searchOrCondition\x18\x04 \x01(\x0b\x32\x19.dialog.SearchOrConditionH\x00\x12:\n\x13searchPeerCondition\x18\x05 \x01(\x0b\x32\x1b.dialog.SearchPeerConditionH\x00\x12>\n\x15searchPeerContentType\x18\x06 \x01(\x0b\x32\x1d.dialog.SearchPeerContentTypeH\x00\x12\x42\n\x17searchSenderIdConfition\x18\x07 \x01(\x0b\x32\x1f.dialog.SearchSenderIdConfitionH\x00\x42\x06\n\x04\x62ody\"R\n\x17SearchPeerTypeCondition\x12\x37\n\tpeer_type\x18\x01 \x01(\x0e\x32\x16.dialog.SearchPeerTypeB\x0c\x8a\xea\x30\x08\n\x06hidden\".\n\x0fSearchPieceText\x12\x1b\n\x05query\x18\x01 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\"O\n\x12SearchAndCondition\x12\x39\n\tand_query\x18\x01 \x03(\x0b\x32\x17.dialog.SearchConditionB\r\x8a\xea\x30\t\n\x07visible\"M\n\x11SearchOrCondition\x12\x38\n\x08or_query\x18\x02 \x03(\x0b\x32\x17.dialog.SearchConditionB\r\x8a\xea\x30\t\n\x07visible\"C\n\x13SearchPeerCondition\x12,\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible\"W\n\x15SearchPeerContentType\x12>\n\x0c\x63ontent_type\x18\x01 \x01(\x0e\x32\x19.dialog.SearchContentTypeB\r\x8a\xea\x30\t\n\x07visible\";\n\x17SearchSenderIdConfition\x12 \n\tsender_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\"\xde\x03\n\x10PeerSearchResult\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x05title\x18\x02 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\x12/\n\tshortname\x18\t \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12?\n\x0b\x64\x65scription\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x41\n\rmembers_count\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\r\x8a\xea\x30\t\n\x07visible\x12#\n\x0c\x64\x61te_created\x18\x05 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12;\n\x07\x63reator\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\r\x8a\xea\x30\t\n\x07visible\x12<\n\tis_public\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12-\n\tis_joined\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"\xa9\x01\n\x11RequestPeerSearch\x12\x34\n\x05query\x18\x01 \x03(\x0b\x32\x17.dialog.SearchConditionB\x0c\x8a\xea\x30\x08\n\x06hidden\x12@\n\roptimizations\x18\x02 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xf5\x01\n\x12ResponsePeerSearch\x12\x30\n\x0esearch_results\x18\x01 \x03(\x0b\x32\x18.dialog.PeerSearchResult\x12\x1b\n\x05users\x18\x02 \x03(\x0b\x32\x0c.dialog.User\x12\x1d\n\x06groups\x18\x03 \x03(\x0b\x32\r.dialog.Group\x12\'\n\nuser_peers\x18\x04 \x03(\x0b\x32\x13.dialog.UserOutPeer\x12)\n\x0bgroup_peers\x18\x05 \x03(\x0b\x32\x14.dialog.GroupOutPeer:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"T\n\x12RequestResolvePeer\x12 \n\tshortname\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"S\n\x13ResponseResolvePeer\x12\x1d\n\x04peer\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeer:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\xd3\x01\n\x13MessageSearchResult\x12)\n\x04peer\x18\x01 \x01(\x0b\x32\x0c.dialog.PeerB\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x03rid\x18\x02 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x64\x61te\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12 \n\tsender_id\x18\x04 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x36\n\x07\x63ontent\x18\x05 \x01(\x0b\x32\x16.dialog.MessageContentB\r\x8a\xea\x30\t\n\x07visible\"@\n\x11MessageSearchItem\x12+\n\x06result\x18\x01 \x01(\x0b\x32\x1b.dialog.MessageSearchResult\"\x98\x03\n\x1dResponseMessageSearchResponse\x12@\n\x0esearch_results\x18\x01 \x03(\x0b\x32\x19.dialog.MessageSearchItemB\r\x8a\xea\x30\t\n\x07visible\x12*\n\x05users\x18\x02 \x03(\x0b\x32\x0c.dialog.UserB\r\x8a\xea\x30\t\n\x07visible\x12,\n\x06groups\x18\x03 \x03(\x0b\x32\r.dialog.GroupB\r\x8a\xea\x30\t\n\x07visible\x12\x42\n\x0fload_more_state\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.BytesValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12:\n\x0euser_out_peers\x18\x05 \x03(\x0b\x32\x13.dialog.UserOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12<\n\x0fgroup_out_peers\x18\x06 \x03(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\xac\x01\n\x14RequestMessageSearch\x12\x34\n\x05query\x18\x01 \x01(\x0b\x32\x17.dialog.SearchConditionB\x0c\x8a\xea\x30\x08\n\x06hidden\x12@\n\roptimizations\x18\x02 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xa1\x01\n\x18RequestMessageSearchMore\x12%\n\x0fload_more_state\x18\x01 \x01(\x0c\x42\x0c\x8a\xea\x30\x08\n\x06hidden\x12@\n\roptimizations\x18\x02 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x97\x01\n\x13RequestSimpleSearch\x12/\n\x08\x63riteria\x18\x01 \x03(\x0b\x32\x1d.dialog.SimpleSearchCondition\x12\x31\n\roptimizations\x18\x02 \x03(\x0e\x32\x1a.dialog.UpdateOptimization:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x83\x01\n\x17RequestSimpleSearchMore\x12\x17\n\x0fload_more_state\x18\x01 \x01(\x0c\x12\x31\n\roptimizations\x18\x02 \x03(\x0e\x32\x1a.dialog.UpdateOptimization:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x7f\n\x18RequestFieldAutocomplete\x12!\n\nfield_name\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\"\n\x0b\x66ield_value\x18\x02 \x01(\tB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x81\x01\n\x19ResponseFieldAutocomplete\x12!\n\nfield_name\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\"\n\x0b\x66ield_value\x18\x02 \x03(\tB\r\x8a\xea\x30\t\n\x07visible:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\xff\x01\n(RequestLoadUserSearchByPredicatesResults\x12:\n\npredicates\x18\x01 \x03(\x0b\x32\x17.dialog.SearchPredicateB\r\x8a\xea\x30\t\n\x07visible\x12\x1f\n\x08group_id\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12:\n\x05query\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05limit\x18\x04 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"T\n\tUserMatch\x12\x1e\n\x07user_id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\'\n\x10match_predicates\x18\x02 \x01(\x08\x42\r\x8a\xea\x30\t\n\x07visible\"\xa0\x01\n)ResponseLoadUserSearchByPredicatesResults\x12/\n\x05users\x18\x01 \x03(\x0b\x32\x11.dialog.UserMatchB\r\x8a\xea\x30\t\n\x07visible\x12#\n\x0cresult_count\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\xa3\x01\n&RequestLoadUserSearchByPredicatesCount\x12:\n\npredicates\x18\x01 \x03(\x0b\x32\x17.dialog.SearchPredicateB\r\x8a\xea\x30\t\n\x07visible\x12\x1f\n\x08group_id\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"m\n\'ResponseLoadUserSearchByPredicatesCount\x12#\n\x0cresult_count\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse*\x7f\n\x0eSearchPeerType\x12\x1a\n\x16SEARCHPEERTYPE_UNKNOWN\x10\x00\x12\x19\n\x15SEARCHPEERTYPE_GROUPS\x10\x01\x12\x1b\n\x17SEARCHPEERTYPE_CONTACTS\x10\x02\x12\x19\n\x15SEARCHPEERTYPE_PUBLIC\x10\x03*\xc5\x01\n\x11SearchContentType\x12\x1d\n\x19SEARCHCONTENTTYPE_UNKNOWN\x10\x00\x12\x19\n\x15SEARCHCONTENTTYPE_ANY\x10\x01\x12\x1a\n\x16SEARCHCONTENTTYPE_TEXT\x10\x02\x12\x1b\n\x17SEARCHCONTENTTYPE_LINKS\x10\x03\x12\x1f\n\x1bSEARCHCONTENTTYPE_DOCUMENTS\x10\x04\x12\x1c\n\x18SEARCHCONTENTTYPE_PHOTOS\x10\x05\x32\x97\n\n\x06Search\x12j\n\nPeerSearch\x12\x19.dialog.RequestPeerSearch\x1a\x1a.dialog.ResponsePeerSearch\"%\x82\xd3\xe4\x93\x02\x1f\"\x1a/v1/grpc/Search/PeerSearch:\x01*\x12n\n\x0bResolvePeer\x12\x1a.dialog.RequestResolvePeer\x1a\x1b.dialog.ResponseResolvePeer\"&\x82\xd3\xe4\x93\x02 \"\x1b/v1/grpc/Search/ResolvePeer:\x01*\x12~\n\rMessageSearch\x12\x1c.dialog.RequestMessageSearch\x1a%.dialog.ResponseMessageSearchResponse\"(\x82\xd3\xe4\x93\x02\"\"\x1d/v1/grpc/Search/MessageSearch:\x01*\x12\x8a\x01\n\x11MessageSearchMore\x12 .dialog.RequestMessageSearchMore\x1a%.dialog.ResponseMessageSearchResponse\",\x82\xd3\xe4\x93\x02&\"!/v1/grpc/Search/MessageSearchMore:\x01*\x12{\n\x0cSimpleSearch\x12\x1b.dialog.RequestSimpleSearch\x1a%.dialog.ResponseMessageSearchResponse\"\'\x82\xd3\xe4\x93\x02!\"\x1c/v1/grpc/Search/SimpleSearch:\x01*\x12\x87\x01\n\x10SimpleSearchMore\x12\x1f.dialog.RequestSimpleSearchMore\x1a%.dialog.ResponseMessageSearchResponse\"+\x82\xd3\xe4\x93\x02%\" /v1/grpc/Search/SimpleSearchMore:\x01*\x12\x92\x01\n\x17\x41utocompleteSuggestions\x12 .dialog.RequestFieldAutocomplete\x1a!.dialog.ResponseFieldAutocomplete\"2\x82\xd3\xe4\x93\x02,\"\'/v1/grpc/Search/AutocompleteSuggestions:\x01*\x12\xc6\x01\n!LoadUserSearchByPredicatesResults\x12\x30.dialog.RequestLoadUserSearchByPredicatesResults\x1a\x31.dialog.ResponseLoadUserSearchByPredicatesResults\"<\x82\xd3\xe4\x93\x02\x36\"1/v1/grpc/Search/LoadUserSearchByPredicatesResults:\x01*\x12\xbe\x01\n\x1fLoadUserSearchByPredicatesCount\x12..dialog.RequestLoadUserSearchByPredicatesCount\x1a/.dialog.ResponseLoadUserSearchByPredicatesCount\":\x82\xd3\xe4\x93\x02\x34\"//v1/grpc/Search/LoadUserSearchByPredicatesCount:\x01*B\x19\xe2?\x16\n\x14im.dlg.grpc.servicesb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,definitions__pb2.DESCRIPTOR,groups__pb2.DESCRIPTOR,peers__pb2.DESCRIPTOR,messaging__pb2.DESCRIPTOR,users__pb2.DESCRIPTOR,miscellaneous__pb2.DESCRIPTOR,scalapb_dot_scalapb__pb2.DESCRIPTOR,])
 
@@ -58,8 +58,8 @@ _SEARCHPEERTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4951,
-  serialized_end=5078,
+  serialized_start=5231,
+  serialized_end=5358,
 )
 _sym_db.RegisterEnumDescriptor(_SEARCHPEERTYPE)
 
@@ -97,8 +97,8 @@ _SEARCHCONTENTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5081,
-  serialized_end=5278,
+  serialized_start=5361,
+  serialized_end=5558,
 )
 _sym_db.RegisterEnumDescriptor(_SEARCHCONTENTTYPE)
 
@@ -1292,15 +1292,8 @@ _REQUESTLOADUSERSEARCHBYPREDICATESRESULTS = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='offset', full_name='dialog.RequestLoadUserSearchByPredicatesResults.offset', index=3,
-      number=4, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='limit', full_name='dialog.RequestLoadUserSearchByPredicatesResults.limit', index=4,
-      number=5, type=3, cpp_type=2, label=1,
+      name='limit', full_name='dialog.RequestLoadUserSearchByPredicatesResults.limit', index=3,
+      number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -1318,46 +1311,47 @@ _REQUESTLOADUSERSEARCHBYPREDICATESRESULTS = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=4448,
-  serialized_end=4734,
+  serialized_end=4703,
 )
 
 
-_RESPONSELOADUSERSEARCHBYPREDICATESRESULTS_USERSENTRY = _descriptor.Descriptor(
-  name='UsersEntry',
-  full_name='dialog.ResponseLoadUserSearchByPredicatesResults.UsersEntry',
+_USERMATCH = _descriptor.Descriptor(
+  name='UserMatch',
+  full_name='dialog.UserMatch',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='dialog.ResponseLoadUserSearchByPredicatesResults.UsersEntry.key', index=0,
+      name='user_id', full_name='dialog.UserMatch.user_id', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='value', full_name='dialog.ResponseLoadUserSearchByPredicatesResults.UsersEntry.value', index=1,
+      name='match_predicates', full_name='dialog.UserMatch.match_predicates', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=_b('8\001'),
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4874,
-  serialized_end=4918,
+  serialized_start=4705,
+  serialized_end=4789,
 )
+
 
 _RESPONSELOADUSERSEARCHBYPREDICATESRESULTS = _descriptor.Descriptor(
   name='ResponseLoadUserSearchByPredicatesResults',
@@ -1373,10 +1367,17 @@ _RESPONSELOADUSERSEARCHBYPREDICATESRESULTS = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='result_count', full_name='dialog.ResponseLoadUserSearchByPredicatesResults.result_count', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
-  nested_types=[_RESPONSELOADUSERSEARCHBYPREDICATESRESULTS_USERSENTRY, ],
+  nested_types=[],
   enum_types=[
   ],
   serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
@@ -1385,8 +1386,77 @@ _RESPONSELOADUSERSEARCHBYPREDICATESRESULTS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4737,
-  serialized_end=4949,
+  serialized_start=4792,
+  serialized_end=4952,
+)
+
+
+_REQUESTLOADUSERSEARCHBYPREDICATESCOUNT = _descriptor.Descriptor(
+  name='RequestLoadUserSearchByPredicatesCount',
+  full_name='dialog.RequestLoadUserSearchByPredicatesCount',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='predicates', full_name='dialog.RequestLoadUserSearchByPredicatesCount.predicates', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='group_id', full_name='dialog.RequestLoadUserSearchByPredicatesCount.group_id', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4955,
+  serialized_end=5118,
+)
+
+
+_RESPONSELOADUSERSEARCHBYPREDICATESCOUNT = _descriptor.Descriptor(
+  name='ResponseLoadUserSearchByPredicatesCount',
+  full_name='dialog.ResponseLoadUserSearchByPredicatesCount',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='result_count', full_name='dialog.ResponseLoadUserSearchByPredicatesCount.result_count', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5120,
+  serialized_end=5229,
 )
 
 _SIMPLEMESSAGESEARCHCONDITION.fields_by_name['peer'].message_type = peers__pb2._PEER
@@ -1474,8 +1544,8 @@ _REQUESTSIMPLESEARCH.fields_by_name['optimizations'].enum_type = miscellaneous__
 _REQUESTSIMPLESEARCHMORE.fields_by_name['optimizations'].enum_type = miscellaneous__pb2._UPDATEOPTIMIZATION
 _REQUESTLOADUSERSEARCHBYPREDICATESRESULTS.fields_by_name['predicates'].message_type = messaging__pb2._SEARCHPREDICATE
 _REQUESTLOADUSERSEARCHBYPREDICATESRESULTS.fields_by_name['query'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
-_RESPONSELOADUSERSEARCHBYPREDICATESRESULTS_USERSENTRY.containing_type = _RESPONSELOADUSERSEARCHBYPREDICATESRESULTS
-_RESPONSELOADUSERSEARCHBYPREDICATESRESULTS.fields_by_name['users'].message_type = _RESPONSELOADUSERSEARCHBYPREDICATESRESULTS_USERSENTRY
+_RESPONSELOADUSERSEARCHBYPREDICATESRESULTS.fields_by_name['users'].message_type = _USERMATCH
+_REQUESTLOADUSERSEARCHBYPREDICATESCOUNT.fields_by_name['predicates'].message_type = messaging__pb2._SEARCHPREDICATE
 DESCRIPTOR.message_types_by_name['SimpleContactSearchCondition'] = _SIMPLECONTACTSEARCHCONDITION
 DESCRIPTOR.message_types_by_name['SimpleMessageSearchCondition'] = _SIMPLEMESSAGESEARCHCONDITION
 DESCRIPTOR.message_types_by_name['SimplePeerSearchCondition'] = _SIMPLEPEERSEARCHCONDITION
@@ -1505,7 +1575,10 @@ DESCRIPTOR.message_types_by_name['RequestSimpleSearchMore'] = _REQUESTSIMPLESEAR
 DESCRIPTOR.message_types_by_name['RequestFieldAutocomplete'] = _REQUESTFIELDAUTOCOMPLETE
 DESCRIPTOR.message_types_by_name['ResponseFieldAutocomplete'] = _RESPONSEFIELDAUTOCOMPLETE
 DESCRIPTOR.message_types_by_name['RequestLoadUserSearchByPredicatesResults'] = _REQUESTLOADUSERSEARCHBYPREDICATESRESULTS
+DESCRIPTOR.message_types_by_name['UserMatch'] = _USERMATCH
 DESCRIPTOR.message_types_by_name['ResponseLoadUserSearchByPredicatesResults'] = _RESPONSELOADUSERSEARCHBYPREDICATESRESULTS
+DESCRIPTOR.message_types_by_name['RequestLoadUserSearchByPredicatesCount'] = _REQUESTLOADUSERSEARCHBYPREDICATESCOUNT
+DESCRIPTOR.message_types_by_name['ResponseLoadUserSearchByPredicatesCount'] = _RESPONSELOADUSERSEARCHBYPREDICATESCOUNT
 DESCRIPTOR.enum_types_by_name['SearchPeerType'] = _SEARCHPEERTYPE
 DESCRIPTOR.enum_types_by_name['SearchContentType'] = _SEARCHCONTENTTYPE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -1713,20 +1786,33 @@ RequestLoadUserSearchByPredicatesResults = _reflection.GeneratedProtocolMessageT
   ))
 _sym_db.RegisterMessage(RequestLoadUserSearchByPredicatesResults)
 
-ResponseLoadUserSearchByPredicatesResults = _reflection.GeneratedProtocolMessageType('ResponseLoadUserSearchByPredicatesResults', (_message.Message,), dict(
+UserMatch = _reflection.GeneratedProtocolMessageType('UserMatch', (_message.Message,), dict(
+  DESCRIPTOR = _USERMATCH,
+  __module__ = 'search_pb2'
+  # @@protoc_insertion_point(class_scope:dialog.UserMatch)
+  ))
+_sym_db.RegisterMessage(UserMatch)
 
-  UsersEntry = _reflection.GeneratedProtocolMessageType('UsersEntry', (_message.Message,), dict(
-    DESCRIPTOR = _RESPONSELOADUSERSEARCHBYPREDICATESRESULTS_USERSENTRY,
-    __module__ = 'search_pb2'
-    # @@protoc_insertion_point(class_scope:dialog.ResponseLoadUserSearchByPredicatesResults.UsersEntry)
-    ))
-  ,
+ResponseLoadUserSearchByPredicatesResults = _reflection.GeneratedProtocolMessageType('ResponseLoadUserSearchByPredicatesResults', (_message.Message,), dict(
   DESCRIPTOR = _RESPONSELOADUSERSEARCHBYPREDICATESRESULTS,
   __module__ = 'search_pb2'
   # @@protoc_insertion_point(class_scope:dialog.ResponseLoadUserSearchByPredicatesResults)
   ))
 _sym_db.RegisterMessage(ResponseLoadUserSearchByPredicatesResults)
-_sym_db.RegisterMessage(ResponseLoadUserSearchByPredicatesResults.UsersEntry)
+
+RequestLoadUserSearchByPredicatesCount = _reflection.GeneratedProtocolMessageType('RequestLoadUserSearchByPredicatesCount', (_message.Message,), dict(
+  DESCRIPTOR = _REQUESTLOADUSERSEARCHBYPREDICATESCOUNT,
+  __module__ = 'search_pb2'
+  # @@protoc_insertion_point(class_scope:dialog.RequestLoadUserSearchByPredicatesCount)
+  ))
+_sym_db.RegisterMessage(RequestLoadUserSearchByPredicatesCount)
+
+ResponseLoadUserSearchByPredicatesCount = _reflection.GeneratedProtocolMessageType('ResponseLoadUserSearchByPredicatesCount', (_message.Message,), dict(
+  DESCRIPTOR = _RESPONSELOADUSERSEARCHBYPREDICATESCOUNT,
+  __module__ = 'search_pb2'
+  # @@protoc_insertion_point(class_scope:dialog.ResponseLoadUserSearchByPredicatesCount)
+  ))
+_sym_db.RegisterMessage(ResponseLoadUserSearchByPredicatesCount)
 
 
 DESCRIPTOR._options = None
@@ -1780,12 +1866,18 @@ _RESPONSEFIELDAUTOCOMPLETE._options = None
 _REQUESTLOADUSERSEARCHBYPREDICATESRESULTS.fields_by_name['predicates']._options = None
 _REQUESTLOADUSERSEARCHBYPREDICATESRESULTS.fields_by_name['group_id']._options = None
 _REQUESTLOADUSERSEARCHBYPREDICATESRESULTS.fields_by_name['query']._options = None
-_REQUESTLOADUSERSEARCHBYPREDICATESRESULTS.fields_by_name['offset']._options = None
 _REQUESTLOADUSERSEARCHBYPREDICATESRESULTS.fields_by_name['limit']._options = None
 _REQUESTLOADUSERSEARCHBYPREDICATESRESULTS._options = None
-_RESPONSELOADUSERSEARCHBYPREDICATESRESULTS_USERSENTRY._options = None
+_USERMATCH.fields_by_name['user_id']._options = None
+_USERMATCH.fields_by_name['match_predicates']._options = None
 _RESPONSELOADUSERSEARCHBYPREDICATESRESULTS.fields_by_name['users']._options = None
+_RESPONSELOADUSERSEARCHBYPREDICATESRESULTS.fields_by_name['result_count']._options = None
 _RESPONSELOADUSERSEARCHBYPREDICATESRESULTS._options = None
+_REQUESTLOADUSERSEARCHBYPREDICATESCOUNT.fields_by_name['predicates']._options = None
+_REQUESTLOADUSERSEARCHBYPREDICATESCOUNT.fields_by_name['group_id']._options = None
+_REQUESTLOADUSERSEARCHBYPREDICATESCOUNT._options = None
+_RESPONSELOADUSERSEARCHBYPREDICATESCOUNT.fields_by_name['result_count']._options = None
+_RESPONSELOADUSERSEARCHBYPREDICATESCOUNT._options = None
 
 _SEARCH = _descriptor.ServiceDescriptor(
   name='Search',
@@ -1793,8 +1885,8 @@ _SEARCH = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=5281,
-  serialized_end=6391,
+  serialized_start=5561,
+  serialized_end=6864,
   methods=[
   _descriptor.MethodDescriptor(
     name='PeerSearch',
@@ -1867,6 +1959,15 @@ _SEARCH = _descriptor.ServiceDescriptor(
     input_type=_REQUESTLOADUSERSEARCHBYPREDICATESRESULTS,
     output_type=_RESPONSELOADUSERSEARCHBYPREDICATESRESULTS,
     serialized_options=_b('\202\323\344\223\0026\"1/v1/grpc/Search/LoadUserSearchByPredicatesResults:\001*'),
+  ),
+  _descriptor.MethodDescriptor(
+    name='LoadUserSearchByPredicatesCount',
+    full_name='dialog.Search.LoadUserSearchByPredicatesCount',
+    index=8,
+    containing_service=None,
+    input_type=_REQUESTLOADUSERSEARCHBYPREDICATESCOUNT,
+    output_type=_RESPONSELOADUSERSEARCHBYPREDICATESCOUNT,
+    serialized_options=_b('\202\323\344\223\0024\"//v1/grpc/Search/LoadUserSearchByPredicatesCount:\001*'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_SEARCH)

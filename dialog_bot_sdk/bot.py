@@ -28,3 +28,15 @@ class DialogBot(object):
         """
         channel = grpc.insecure_channel(endpoint)
         return DialogBot(channel, bot_token)
+
+    @staticmethod
+    def get_secure_bot(endpoint, credentials, bot_token):
+        """Returns Dialog bot with established gRPC insecure channel.
+
+        :param endpoint: bot's endpoint address
+        :param credentials: SSL credentials
+        :param bot_token: bot's token
+        :return: Dialog bot instance
+        """
+        channel = grpc.secure_channel(endpoint, credentials)
+        return DialogBot(channel, bot_token)

@@ -2,8 +2,8 @@
 import grpc
 
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
-import miscellaneous_pb2 as miscellaneous__pb2
-import sequence_and_updates_pb2 as sequence__and__updates__pb2
+from . import miscellaneous_pb2 as miscellaneous__pb2
+from . import sequence_and_updates_pb2 as sequence__and__updates__pb2
 
 
 class SequenceAndUpdatesStub(object):

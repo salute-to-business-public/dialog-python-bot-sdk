@@ -136,8 +136,9 @@ class InteractiveMediaGroup(object):
             media.title.value = self.title
         if self.description is not None:
             media.description.value = self.description
-        for lang, trans in self.translations.items():
-            group = messaging_pb2.InteractiveMediaTranslationGroup(lang=lang)
-            for idx, value in trans.items():
-                group.messages.append(messaging_pb2.InteractiveMediaTranslation(id=idx, value=value))
-            media.translations.append(group)
+        if self.translations:
+            for lang, trans in self.translations.items():
+                group = messaging_pb2.InteractiveMediaTranslationGroup(lang=lang)
+                for idx, value in trans.items():
+                    group.messages.append(messaging_pb2.InteractiveMediaTranslation(id=idx, value=value))
+                media.translations.append(group)

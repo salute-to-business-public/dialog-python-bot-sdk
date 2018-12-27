@@ -97,3 +97,5 @@ class Messaging(ManagedService):
                 self.internal.thread_pool_executor.submit(
                     callback(up.updateMessage)
                 )
+            if up.WhichOneof('update') == 'updateInteractiveMediaEvent':
+                callback(up)

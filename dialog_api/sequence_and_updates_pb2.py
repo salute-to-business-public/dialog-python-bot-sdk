@@ -15,23 +15,23 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
-import definitions_pb2 as definitions__pb2
-import miscellaneous_pb2 as miscellaneous__pb2
-import authentication_pb2 as authentication__pb2
-import groups_pb2 as groups__pb2
-import stickers_pb2 as stickers__pb2
-import typing_and_online_pb2 as typing__and__online__pb2
-import event_bus_pb2 as event__bus__pb2
-import web_rtc_pb2 as web__rtc__pb2
-import config_sync_pb2 as config__sync__pb2
-import counters_pb2 as counters__pb2
-import contacts_pb2 as contacts__pb2
-import privacy_pb2 as privacy__pb2
-import peers_pb2 as peers__pb2
-import messaging_pb2 as messaging__pb2
-import users_pb2 as users__pb2
-import spaces_pb2 as spaces__pb2
-from scalapb import scalapb_pb2 as scalapb_dot_scalapb__pb2
+from . import definitions_pb2 as definitions__pb2
+from . import miscellaneous_pb2 as miscellaneous__pb2
+from . import authentication_pb2 as authentication__pb2
+from . import groups_pb2 as groups__pb2
+from . import stickers_pb2 as stickers__pb2
+from . import typing_and_online_pb2 as typing__and__online__pb2
+from . import event_bus_pb2 as event__bus__pb2
+from . import web_rtc_pb2 as web__rtc__pb2
+from . import config_sync_pb2 as config__sync__pb2
+from . import counters_pb2 as counters__pb2
+from . import contacts_pb2 as contacts__pb2
+from . import privacy_pb2 as privacy__pb2
+from . import peers_pb2 as peers__pb2
+from . import messaging_pb2 as messaging__pb2
+from . import users_pb2 as users__pb2
+from . import spaces_pb2 as spaces__pb2
+from .scalapb import scalapb_pb2 as scalapb_dot_scalapb__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
