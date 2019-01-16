@@ -1,3 +1,5 @@
+:orphan:
+
 gRPC API Schema Reference (``dialog_api`` package)
 ==================================================
 

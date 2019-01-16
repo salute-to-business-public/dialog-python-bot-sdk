@@ -16,7 +16,6 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('../../'))
 
-
 # -- Project information -----------------------------------------------------
 
 project = 'Dialog Python Bot SDK'
@@ -94,7 +93,6 @@ html_theme_options = {
     'navbar_links': [
         ("Bot SDK Reference", "dialog_bot_sdk"),
         ("Dialog gRPC API Schema Reference", "dialog_api"),
-        ("Examples", "dialog_bot_sdk_examples"),
     ],
 
     # Render the next and previous page links in navbar. (Default: true)
@@ -238,6 +236,3 @@ epub_title = project
 # A list of files that should not be packed into the epub file.
 epub_exclude_files = ['search.html']
 
-html_theme = 'bootstrap'
-import sphinx_bootstrap_theme
-html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
