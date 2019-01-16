@@ -39,6 +39,11 @@ class InternalBot(object):
             app_id=self.app_id
         ))
 
+    def anonymous_authorize(self, name='dumb'):
+        return self.auth.StartAnonymousAuth(authentication_pb2.RequestStartAnonymousAuth(
+            name=name
+        ))
+
     def get_session_token(self):
         """Requests for sessions token for device.
 

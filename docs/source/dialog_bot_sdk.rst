@@ -1,3 +1,5 @@
+:orphan:
+
 Bot SDK Reference (``dialog_bot_sdk`` package)
 ==============================================
 
