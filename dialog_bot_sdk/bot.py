@@ -7,6 +7,7 @@ from .entity_manager import EntityManager
 from .messaging import Messaging
 from .updates import Updates
 from .uploading import Uploading
+from .users import Users
 
 
 class DialogBot(object):
@@ -23,6 +24,7 @@ class DialogBot(object):
         self.messaging = Messaging(self.manager, self.internal)
         self.uploading = Uploading(self.internal)
         self.updates = Updates(self.manager, self.internal)
+        self.users = Users(self.manager, self.internal)
 
     @staticmethod
     def get_insecure_bot(endpoint, bot_token):
