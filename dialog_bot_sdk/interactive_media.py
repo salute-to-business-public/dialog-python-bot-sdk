@@ -41,7 +41,7 @@ class InteractiveMediaSelect(object):
             target.label.value = self.label
         if self.default_value is not None:
             target.default_value.value = self.default_value
-        for value, label in self.options.iteritems():
+        for value, label in self.options.items():
             opt = target.options.add()
             opt.value = value
             opt.label = label
