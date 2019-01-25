@@ -6,4 +6,5 @@ gevent
 grpcio
 grpcio-tools
 requests
+pyopenssl
 Pillow
