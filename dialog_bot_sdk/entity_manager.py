@@ -48,6 +48,9 @@ class EntityManager(object):
         :param peer: Peer object
         :return: OutPeer object
         """
+        if isinstance(peer, peers_pb2.OutPeer):
+            return peer
+
         peer_hash = peer_hasher(peer)
         result = self.peers_to_outpeers.get(peer_hash)
         if result is None:
