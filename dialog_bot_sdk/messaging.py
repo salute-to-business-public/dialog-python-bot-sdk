@@ -83,10 +83,11 @@ class Messaging(ManagedService):
             message=msg
         )).mid
 
-    def on_message(self, callback):
+    def on_message(self, callback, interactive_media_callback=None):
         """Message receiving event handler.
 
         :param callback: function that will be called when message received
+        :param interactive_media_callback: function that will be called when interactive media action is performed
         :return: None
         """
 
@@ -96,4 +97,8 @@ class Messaging(ManagedService):
             if up.WhichOneof('update') == 'updateMessage':
                 self.internal.thread_pool_executor.submit(
                     callback(up.updateMessage)
+                )
+            if up.WhichOneof('update') == 'updateInteractiveMediaEvent' and callable(interactive_media_callback):
+                self.internal.thread_pool_executor.submit(
+                    interactive_media_callback(up.updateInteractiveMediaEvent)
                 )

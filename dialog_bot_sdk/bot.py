@@ -25,6 +25,7 @@ class DialogBot(object):
         self.uploading = Uploading(self.internal)
         self.updates = Updates(self.manager, self.internal)
         self.users = Users(self.manager, self.internal)
+        print('Bot is ready.')
 
     @staticmethod
     def get_insecure_bot(endpoint, bot_token):
