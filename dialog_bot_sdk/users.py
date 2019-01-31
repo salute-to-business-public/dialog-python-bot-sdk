@@ -31,7 +31,7 @@ class Users(ManagedService):
             if user.nick.value == nick:
                 return user
 
-    def get_user_full_profile(self, nick):
+    def get_user_full_profile_by_nick(self, nick):
         user = self.find_user_outpeer_by_nick(nick)
         full_profile = self.internal.users.LoadFullUsers(
             users_pb2.RequestLoadFullUsers(
@@ -49,8 +49,28 @@ class Users(ManagedService):
                 if len(full_profile.full_users) > 0:
                     return full_profile.full_users[0]
 
-    def get_user_custom_profile(self, nick):
-        full_profile = self.get_user_full_profile(nick)
+    def get_user_custom_profile_by_nick(self, nick):
+        full_profile = self.get_user_full_profile_by_nick(nick)
 
         if hasattr(full_profile, 'custom_profile'):
             return str(full_profile.custom_profile)
+
+    def get_user_custom_profile_by_peer(self, peer):
+        outpeer = self.manager.get_outpeer(peer)
+
+        full_profile = self.internal.users.LoadFullUsers(
+            users_pb2.RequestLoadFullUsers(
+                user_peers=[
+                    peers_pb2.UserOutPeer(
+                        uid=outpeer.id,
+                        access_hash=outpeer.access_hash
+                    )
+                ]
+            )
+        )
+
+        if full_profile:
+            if hasattr(full_profile, 'full_users'):
+                if len(full_profile.full_users) > 0:
+                    if hasattr(full_profile.full_users[0], 'custom_profile'):
+                        return str(full_profile.full_users[0].custom_profile)
