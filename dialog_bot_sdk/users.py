@@ -3,7 +3,15 @@ from dialog_api import contacts_pb2, peers_pb2, users_pb2
 
 
 class Users(ManagedService):
+    """Class for handling users
+
+    """
     def find_user_outpeer_by_nick(self, nick):
+        """Returns user's Outpeer object by nickname for direct messaging
+
+        :param nick: user's nickname
+        :return: Outpeer object of user
+        """
         users = self.internal.contacts.SearchContacts(
             contacts_pb2.RequestSearchContacts(
                 request=nick
@@ -21,6 +29,11 @@ class Users(ManagedService):
         return None
 
     def get_user_by_nick(self, nick):
+        """Returns User object by nickname
+
+        :param nick: user's nickname
+        :return: User object
+        """
         users = self.internal.contacts.SearchContacts(
             contacts_pb2.RequestSearchContacts(
                 request=nick
@@ -32,6 +45,11 @@ class Users(ManagedService):
                 return user
 
     def get_user_full_profile_by_nick(self, nick):
+        """Returns FullUser object by nickname
+
+        :param nick: user's nickname
+        :return: FullUser object
+        """
         user = self.find_user_outpeer_by_nick(nick)
         full_profile = self.internal.users.LoadFullUsers(
             users_pb2.RequestLoadFullUsers(
@@ -50,12 +68,22 @@ class Users(ManagedService):
                     return full_profile.full_users[0]
 
     def get_user_custom_profile_by_nick(self, nick):
+        """Returns custom_profile field of FullUser object by nickname
+
+        :param nick: user's nickname
+        :return: user's custom profile string
+        """
         full_profile = self.get_user_full_profile_by_nick(nick)
 
         if hasattr(full_profile, 'custom_profile'):
             return str(full_profile.custom_profile)
 
     def get_user_custom_profile_by_peer(self, peer):
+        """Returns custom_profile field of FullUser object by Peer object
+
+        :param peer: user's Peer object
+        :return: user's custom profile string
+        """
         outpeer = self.manager.get_outpeer(peer)
 
         full_profile = self.internal.users.LoadFullUsers(
