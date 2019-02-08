@@ -1,11 +1,28 @@
 from .service import ManagedService
-from dialog_api import contacts_pb2, peers_pb2, users_pb2
+from dialog_api import contacts_pb2, peers_pb2, users_pb2, messaging_pb2
 
 
 class Users(ManagedService):
     """Class for handling users
 
     """
+
+    def get_user_outpeer_by_id(self, uid):
+        req = messaging_pb2.RequestLoadDialogs(
+            min_date=0,
+            limit=1,
+            peers_to_load=[peers_pb2.Peer(type=peers_pb2.PEERTYPE_PRIVATE, id=uid)]
+        )
+        result = self.internal.messaging.LoadDialogs(req)
+
+        for outpeer in result.user_peers:
+            if outpeer.uid == uid:
+                return peers_pb2.OutPeer(
+                    type=peers_pb2.PEERTYPE_PRIVATE,
+                    id=outpeer.uid,
+                    access_hash=outpeer.access_hash
+                )
+
     def find_user_outpeer_by_nick(self, nick):
         """Returns user's Outpeer object by nickname for direct messaging
 
