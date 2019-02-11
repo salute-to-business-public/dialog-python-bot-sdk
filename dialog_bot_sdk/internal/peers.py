@@ -1,4 +1,4 @@
-from dialog_api import peers_pb2
+from dialog_bot_sdk.dialog_api import peers_pb2
 
 
 def private_peer(user_id):

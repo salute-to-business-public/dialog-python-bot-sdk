@@ -2,8 +2,8 @@ import os
 import requests
 from concurrent.futures import ThreadPoolExecutor
 
-from dialog_bot_sdk.utils.read_file_in_chunks import read_file_in_chunks
-from dialog_api import media_and_files_pb2
+from .utils.read_file_in_chunks import read_file_in_chunks
+from .dialog_api import media_and_files_pb2
 
 
 class Uploading(object):

@@ -3,8 +3,8 @@ import time
 import imghdr
 
 from .service import ManagedService
-from dialog_api import messaging_pb2, sequence_and_updates_pb2
-from dialog_bot_sdk.content import content
+from .dialog_api import messaging_pb2, sequence_and_updates_pb2
+from .content import content
 
 
 class Messaging(ManagedService):

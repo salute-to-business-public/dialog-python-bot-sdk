@@ -1,36 +1,32 @@
 Dialog Python Bot SDK
 =================
 
-Bot SDK for [Dialog](https://dlg.im) messenger.
+Python Bot SDK for [Dialog](https://dlg.im) messenger.
 
-Full documentation is available [here](https://dialogs.github.io/python-bot-sdk/).
-
-**Work in progress**
+Full documentation is available [here](https://dialogs.github.io/bots-docs/).
 
 Usage
 -----
 
 ```python
 from dialog_bot_sdk.bot import DialogBot
-import os
+import grpc
 
 
 def on_msg(*params):
-    print('on msg', params)
-    d.messaging.send_message(
-        params[0].peer, str(params[0].message.textMessage.text)
+    bot.messaging.send_message(
+        params[0].peer, 'Reply to : ' + str(params[0].message.textMessage.text)
     )
 
 
 if __name__ == '__main__':
-    d = DialogBot.get_insecure_bot(
-        "grpc-test.transmit.im:8080", os.environ.get('BOT_TOKEN')
+    bot = DialogBot.get_secure_bot(
+        'grpc-test.transmit.im:9443',  # bot endpoint
+        grpc.ssl_channel_credentials(), # SSL credentials (empty by default!)
+        'cbb4994cabfa8d2a5bce0b5f7a44c23da943f767'  # bot token
     )
 
-    def receiver():
-        d.messaging.on_message(on_msg)
-
-    receiver()
+    bot.messaging.on_message(on_msg)
 ```
 
 License

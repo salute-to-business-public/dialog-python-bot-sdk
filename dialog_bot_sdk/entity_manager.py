@@ -1,5 +1,5 @@
 from .internal.peers import private_peer, group_peer, peer_hasher
-from dialog_api import peers_pb2, messaging_pb2, miscellaneous_pb2, contacts_pb2
+from .dialog_api import peers_pb2, messaging_pb2, miscellaneous_pb2, contacts_pb2
 
 DEFAULT_OPTIMIZATIONS = [
     miscellaneous_pb2.UPDATEOPTIMIZATION_STRIP_ENTITIES,
