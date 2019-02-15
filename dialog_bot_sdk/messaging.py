@@ -23,6 +23,10 @@ class Messaging(ManagedService):
         if text == '' or text is None:
             raise AttributeError('Text message must contain some text.')
 
+        if not peer:
+            print('Peer can\'t be None!')
+            return None
+
         outpeer = self.manager.get_outpeer(peer)
         msg = messaging_pb2.MessageContent()
         msg.textMessage.text = text
@@ -64,6 +68,9 @@ class Messaging(ManagedService):
         :param file: path to file
         :return: value of SendMessage response object
         """
+        if not peer:
+            print('Peer can\'t be None!')
+            return None
 
         location = self.internal.uploading.upload_file(file)
         outpeer = self.manager.get_outpeer(peer)
@@ -86,6 +93,9 @@ class Messaging(ManagedService):
         :param file: path to image file
         :return: value of SendMessage response object
         """
+        if not peer:
+            print('Peer can\'t be None!')
+            return None
 
         if imghdr.what(file) not in ['gif', 'jpeg', 'png', 'bmp']:
             raise IOError('File is not an image.')
@@ -103,6 +113,20 @@ class Messaging(ManagedService):
             rid=int(time.time()),
             message=msg
         ))
+
+    def load_message_history(self, outpeer, date=0, direction=messaging_pb2.LISTLOADMODE_FORWARD, limit=2):
+        if not outpeer:
+            print('Outpeer can\'t be None!')
+            return None
+
+        return self.internal.messaging.LoadHistory(
+            messaging_pb2.RequestLoadHistory(
+                peer=outpeer,
+                date=date,
+                load_mode=direction,
+                limit=limit
+            )
+        )
 
     def on_message(self, callback, interactive_media_callback=None):
         """Message receiving event handler.

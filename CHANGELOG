@@ -1,0 +1,4 @@
+Version 1.1.0
+    + high-level handling of LoadHistory API method
+    + checking of peer instance in send_message method
+    + echobot example
