@@ -12,7 +12,7 @@ def on_msg(*params):
 
 if __name__ == '__main__':
     bot = DialogBot.get_secure_bot(
-        'grpc-test.transmit.im:9443',  # bot endpoint
+        os.environ.get('BOT_ENDPOINT'),  # bot endpoint
         grpc.ssl_channel_credentials(),  # SSL credentials (empty by default!)
         os.environ.get('BOT_TOKEN')  # bot token
     )

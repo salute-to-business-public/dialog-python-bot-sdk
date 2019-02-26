@@ -14,8 +14,8 @@ class DialogBot(object):
     """Main Dialog Bot class.
 
     """
-    def __init__(self, channel, bot_token=None):
-        self.internal = InternalBot(channel)
+    def __init__(self, channel, bot_token=None, verbose=False):
+        self.internal = InternalBot(channel, verbose=verbose)
         self.user_info = None
         if bot_token:
             self.user_info = self.internal.authorize(bot_token)
@@ -29,30 +29,32 @@ class DialogBot(object):
         print('Bot is ready.')
 
     @staticmethod
-    def get_insecure_bot(endpoint, bot_token):
+    def get_insecure_bot(endpoint, bot_token, verbose=False):
         """Returns Dialog bot with established gRPC insecure channel.
 
         :param endpoint: bot's endpoint address
         :param bot_token: bot's token
+        :param verbose: verbosity level of functions calling
         :return: Dialog bot instance
         """
         channel = grpc.insecure_channel(endpoint)
-        return DialogBot(channel, bot_token)
+        return DialogBot(channel, bot_token, verbose=verbose)
 
     @staticmethod
-    def get_secure_bot(endpoint, credentials, bot_token):
+    def get_secure_bot(endpoint, credentials, bot_token, verbose=False):
         """Returns Dialog bot with established gRPC insecure channel.
 
         :param endpoint: bot's endpoint address
         :param credentials: SSL credentials
         :param bot_token: bot's token
+        :param verbose: verbosity level of functions calling
         :return: Dialog bot instance
         """
         channel = grpc.secure_channel(endpoint, credentials)
-        return DialogBot(channel, bot_token)
+        return DialogBot(channel, bot_token, verbose=verbose)
 
     @staticmethod
-    def get_secure_bot_with_pfx_certificate(endpoint, pfx_certificate, pfx_password):
+    def get_secure_bot_with_pfx_certificate(endpoint, pfx_certificate, pfx_password, verbose=False):
         pfx1 = open(pfx_certificate, 'rb').read()
         p12 = OpenSSL.crypto.load_pkcs12(pfx1, pfx_password)
 
@@ -74,4 +76,4 @@ class DialogBot(object):
             )
         )
 
-        return DialogBot(channel)
+        return DialogBot(channel, verbose=verbose)

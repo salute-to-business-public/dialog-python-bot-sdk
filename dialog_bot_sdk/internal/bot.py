@@ -13,18 +13,18 @@ class InternalBot(object):
 
     """
 
-    def __init__(self, channel):
+    def __init__(self, channel, verbose=False):
         self.app_id = 10
         self.app_title = "PythonBotSDK/1.0"
         self.channel = channel
-        self.registration = self.wrap_service(registration_pb2_grpc.RegistrationStub)
-        self.messaging = self.wrap_service(messaging_pb2_grpc.MessagingStub)
-        self.media_and_files = self.wrap_service(media_and_files_pb2_grpc.MediaAndFilesStub)
-        self.updates = self.wrap_service(sequence_and_updates_pb2_grpc.SequenceAndUpdatesStub)
-        self.auth = self.wrap_service(authentication_pb2_grpc.AuthenticationStub)
-        self.contacts = self.wrap_service(contacts_pb2_grpc.ContactsStub)
-        self.search = self.wrap_service(search_pb2_grpc.SearchStub)
-        self.users = self.wrap_service(users_pb2_grpc.UsersStub)
+        self.registration = self.wrap_service(registration_pb2_grpc.RegistrationStub, verbose=verbose)
+        self.messaging = self.wrap_service(messaging_pb2_grpc.MessagingStub, verbose=verbose)
+        self.media_and_files = self.wrap_service(media_and_files_pb2_grpc.MediaAndFilesStub, verbose=verbose)
+        self.updates = self.wrap_service(sequence_and_updates_pb2_grpc.SequenceAndUpdatesStub, verbose=verbose)
+        self.auth = self.wrap_service(authentication_pb2_grpc.AuthenticationStub, verbose=verbose)
+        self.contacts = self.wrap_service(contacts_pb2_grpc.ContactsStub, verbose=verbose)
+        self.search = self.wrap_service(search_pb2_grpc.SearchStub, verbose=verbose)
+        self.users = self.wrap_service(users_pb2_grpc.UsersStub, verbose=verbose)
         self.token = self.get_session_token()
         self.thread_pool_executor = ThreadPoolExecutor(max_workers=10)
         self.uploading = Uploading(self)
@@ -59,10 +59,15 @@ class InternalBot(object):
         )
         return registration_response.token
 
-    def wrap_service(self, stub_func):
+    def wrap_service(self, stub_func, verbose=False):
         """Wrapper for authenticating of gRPC service calls.
 
         :param stub_func: name of gRPC service
+        :param verbose: verbosity level of functions calling
         :return: wrapped gRPC service
         """
-        return AuthenticatedService(lambda: self.token if hasattr(self, 'token') else None, stub_func(self.channel))
+        return AuthenticatedService(
+            lambda: self.token if hasattr(self, 'token') else None,
+            stub_func(self.channel),
+            verbose=verbose
+        )
