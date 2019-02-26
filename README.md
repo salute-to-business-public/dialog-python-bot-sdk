@@ -1,6 +1,6 @@
 Dialog Python Bot SDK
 =================
-![PyPI](https://img.shields.io/pypi/v/dialog-bot-sdk.svg)
+![PyPI](https://img.shields.io/pypi/v/dialog-bot-sdk.svg) ![PyPI - License](https://img.shields.io/pypi/l/dialog-bot-sdk.svg)
 
 Python Bot SDK for [Dialog](https://dlg.im) messenger.
 
@@ -30,7 +30,3 @@ if __name__ == '__main__':
 
     bot.messaging.on_message(on_msg)
 ```
-
-License
--------
-[Apache 2.0](LICENSE)
