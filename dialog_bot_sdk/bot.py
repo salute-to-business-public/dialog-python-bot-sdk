@@ -16,10 +16,11 @@ class DialogBot(object):
     """
     def __init__(self, channel, bot_token=None):
         self.internal = InternalBot(channel)
+        self.user_info = None
         if bot_token:
-            self.internal.authorize(bot_token)
+            self.user_info = self.internal.authorize(bot_token)
         else:
-            self.internal.anonymous_authorize()
+            self.user_info = self.internal.anonymous_authorize()
         self.manager = EntityManager(self.internal)
         self.messaging = Messaging(self.manager, self.internal)
         self.uploading = Uploading(self.internal)
