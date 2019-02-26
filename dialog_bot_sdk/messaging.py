@@ -1,6 +1,7 @@
 from google.protobuf import empty_pb2
 import time
 import imghdr
+import threading
 
 from .service import ManagedService
 from .dialog_api import messaging_pb2, sequence_and_updates_pb2
@@ -127,6 +128,10 @@ class Messaging(ManagedService):
                 limit=limit
             )
         )
+
+    def on_message_async(self, callback, interactive_media_callback=None):
+        updates_thread = threading.Thread(target=self.on_message, args=(callback, interactive_media_callback))
+        updates_thread.start()
 
     def on_message(self, callback, interactive_media_callback=None):
         """Message receiving event handler.
