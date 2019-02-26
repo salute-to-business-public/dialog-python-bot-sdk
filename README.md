@@ -1,6 +1,6 @@
 Dialog Python Bot SDK
 =================
-
+[![PyPI version](https://badge.fury.io/py/dialog-bot-sdk.svg)](https://badge.fury.io/py/dialog-bot-sdk)
 
 Python Bot SDK for [Dialog](https://dlg.im) messenger.
 
