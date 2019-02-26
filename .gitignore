@@ -1,6 +1,0 @@
-*.pyc
-.idea
-.DS_Store
-build
-dist
-dialog_bot_sdk.egg-info

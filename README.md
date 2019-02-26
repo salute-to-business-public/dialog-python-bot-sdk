@@ -11,6 +11,7 @@ Usage
 ```python
 from dialog_bot_sdk.bot import DialogBot
 import grpc
+import os
 
 
 def on_msg(*params):
@@ -21,9 +22,9 @@ def on_msg(*params):
 
 if __name__ == '__main__':
     bot = DialogBot.get_secure_bot(
-        'grpc-test.transmit.im:9443',  # bot endpoint
+        os.environ.get('BOT_ENDPOINT'),  # bot endpoint from environment
         grpc.ssl_channel_credentials(), # SSL credentials (empty by default!)
-        'cbb4994cabfa8d2a5bce0b5f7a44c23da943f767'  # bot token
+        os.environ.get('BOT_TOKEN')  # bot token from environment
     )
 
     bot.messaging.on_message(on_msg)

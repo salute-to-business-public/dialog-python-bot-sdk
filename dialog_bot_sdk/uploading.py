@@ -38,12 +38,12 @@ class Uploading(object):
         )
 
         if put_response.status_code != 200:
-            print('Can\'t upload file chunk #{}' % part_number)
+            print('Can\'t upload file chunk #{}'.format(part_number))
             return None
 
         return put_response
 
-    def upload_file(self, file, max_chunk_size=1024 * 1024, parallelism=10):
+    def upload_file(self, file, max_chunk_size=1024*1024, parallelism=10):
         """Upload file for sending.
 
         :param file: path to file
@@ -67,7 +67,6 @@ class Uploading(object):
                             read_file_in_chunks(file, max_chunk_size)
                         )
                     )
-
                 )
             )
 
