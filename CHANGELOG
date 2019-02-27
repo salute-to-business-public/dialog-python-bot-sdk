@@ -1,3 +1,9 @@
+Version 1.2.0
+    + non-blocking message handling
+    + bot's user_info field (id, nickname etc.)
+    + bot's verbosity level settings
+    + file upload fixes
+
 Version 1.1.0
     + high-level handling of LoadHistory API method
     + checking of peer instance in send_message method
