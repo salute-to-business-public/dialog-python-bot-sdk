@@ -37,7 +37,7 @@ class Messaging(ManagedService):
                 g.render(media)
         return self.internal.messaging.SendMessage(messaging_pb2.RequestSendMessage(
             peer=outpeer,
-            rid=int(time.time()),
+            deduplication_id=int(time.time()),
             message=msg
         ))
 
@@ -83,7 +83,7 @@ class Messaging(ManagedService):
 
         return self.internal.messaging.SendMessage(messaging_pb2.RequestSendMessage(
             peer=outpeer,
-            rid=int(time.time()),
+            deduplication_id=int(time.time()),
             message=msg
         ))
 
@@ -111,7 +111,7 @@ class Messaging(ManagedService):
 
         return self.internal.messaging.SendMessage(messaging_pb2.RequestSendMessage(
             peer=outpeer,
-            rid=int(time.time()),
+            deduplication_id=int(time.time()),
             message=msg
         ))
 
