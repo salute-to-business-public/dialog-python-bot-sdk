@@ -39,7 +39,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='dialog',
   syntax='proto3',
   serialized_options=_b('\342?\026\n\024im.dlg.grpc.services'),
-  serialized_pb=_b('\n\x1asequence_and_updates.proto\x12\x06\x64ialog\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x11\x64\x65\x66initions.proto\x1a\x13miscellaneous.proto\x1a\x14\x61uthentication.proto\x1a\x0cgroups.proto\x1a\x0estickers.proto\x1a\x17typing_and_online.proto\x1a\x0f\x65vent_bus.proto\x1a\rweb_rtc.proto\x1a\x11\x63onfig_sync.proto\x1a\x0e\x63ounters.proto\x1a\x0e\x63ontacts.proto\x1a\rprivacy.proto\x1a\x0bpeers.proto\x1a\x0fmessaging.proto\x1a\x0busers.proto\x1a\x0cspaces.proto\x1a\x15scalapb/scalapb.proto\"\xc3\x32\n\x0fUpdateSeqUpdate\x12\x1a\n\x03seq\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05state\x18\x02 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07\x63ompact\x12$\n\rupdate_header\x18\x03 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12@\n\x16updateForceReloadState\x18\x04 \x01(\x0b\x32\x1e.dialog.UpdateForceReloadStateH\x00\x12\x42\n\x17updateUserAvatarChanged\x18\x05 \x01(\x0b\x32\x1f.dialog.UpdateUserAvatarChangedH\x00\x12>\n\x15updateUserNameChanged\x18\x06 \x01(\x0b\x32\x1d.dialog.UpdateUserNameChangedH\x00\x12H\n\x1aupdateUserLocalNameChanged\x18\x07 \x01(\x0b\x32\".dialog.UpdateUserLocalNameChangedH\x00\x12\x46\n\x19updateUserContactsChanged\x18\x08 \x01(\x0b\x32!.dialog.UpdateUserContactsChangedH\x00\x12>\n\x15updateUserNickChanged\x18\t \x01(\x0b\x32\x1d.dialog.UpdateUserNickChangedH\x00\x12@\n\x16updateUserAboutChanged\x18\n \x01(\x0b\x32\x1e.dialog.UpdateUserAboutChangedH\x00\x12Z\n#updateUserPreferredLanguagesChanged\x18\x0b \x01(\x0b\x32+.dialog.UpdateUserPreferredLanguagesChangedH\x00\x12\x46\n\x19updateUserTimeZoneChanged\x18\x0c \x01(\x0b\x32!.dialog.UpdateUserTimeZoneChangedH\x00\x12L\n\x1cupdateUserBotCommandsChanged\x18\r \x01(\x0b\x32$.dialog.UpdateUserBotCommandsChangedH\x00\x12<\n\x14updateUserExtChanged\x18\x0e \x01(\x0b\x32\x1c.dialog.UpdateUserExtChangedH\x00\x12\x44\n\x18updateUserFullExtChanged\x18\x0f \x01(\x0b\x32 .dialog.UpdateUserFullExtChangedH\x00\x12<\n\x14updateUserSexChanged\x18\x10 \x01(\x0b\x32\x1c.dialog.UpdateUserSexChangedH\x00\x12P\n\x1eupdateUserCustomProfileChanged\x18\x11 \x01(\x0b\x32&.dialog.UpdateUserCustomProfileChangedH\x00\x12\x42\n\x17updateUserStatusChanged\x18\x12 \x01(\x0b\x32\x1f.dialog.UpdateUserStatusChangedH\x00\x12\x42\n\x17updateContactRegistered\x18\x13 \x01(\x0b\x32\x1f.dialog.UpdateContactRegisteredH\x00\x12:\n\x13updateContactsAdded\x18\x14 \x01(\x0b\x32\x1b.dialog.UpdateContactsAddedH\x00\x12P\n\x1eupdateContactsAddTaskSuspended\x18\x15 \x01(\x0b\x32&.dialog.UpdateContactsAddTaskSuspendedH\x00\x12>\n\x15updateContactsRemoved\x18\x16 \x01(\x0b\x32\x1d.dialog.UpdateContactsRemovedH\x00\x12\x36\n\x11updateUserBlocked\x18\x17 \x01(\x0b\x32\x19.dialog.UpdateUserBlockedH\x00\x12:\n\x13updateUserUnblocked\x18\x18 \x01(\x0b\x32\x1b.dialog.UpdateUserUnblockedH\x00\x12J\n\x1bupdateInteractiveMediaEvent\x18\x19 \x01(\x0b\x32#.dialog.UpdateInteractiveMediaEventH\x00\x12.\n\rupdateMessage\x18\x1a \x01(\x0b\x32\x15.dialog.UpdateMessageH\x00\x12J\n\x1bupdateMessageContentChanged\x18\x1b \x01(\x0b\x32#.dialog.UpdateMessageContentChangedH\x00\x12\x36\n\x11updateMessageSent\x18\x1c \x01(\x0b\x32\x19.dialog.UpdateMessageSentH\x00\x12>\n\x15updateMessageReceived\x18\x1d \x01(\x0b\x32\x1d.dialog.UpdateMessageReceivedH\x00\x12\x36\n\x11updateMessageRead\x18\x1e \x01(\x0b\x32\x19.dialog.UpdateMessageReadH\x00\x12>\n\x15updateMessageReadByMe\x18\x1f \x01(\x0b\x32\x1d.dialog.UpdateMessageReadByMeH\x00\x12:\n\x13updateMessageDelete\x18  \x01(\x0b\x32\x1b.dialog.UpdateMessageDeleteH\x00\x12\x32\n\x0fupdateChatClear\x18! \x01(\x0b\x32\x17.dialog.UpdateChatClearH\x00\x12\x34\n\x10updateChatDelete\x18\" \x01(\x0b\x32\x18.dialog.UpdateChatDeleteH\x00\x12\x36\n\x11updateChatArchive\x18# \x01(\x0b\x32\x19.dialog.UpdateChatArchiveH\x00\x12\x42\n\x17updateChatGroupsChanged\x18$ \x01(\x0b\x32\x1f.dialog.UpdateChatGroupsChangedH\x00\x12>\n\x15updateReactionsUpdate\x18% \x01(\x0b\x32\x1d.dialog.UpdateReactionsUpdateH\x00\x12L\n\x1cupdateDialogFavouriteChanged\x18& \x01(\x0b\x32$.dialog.UpdateDialogFavouriteChangedH\x00\x12J\n\x1bupdatePinnedMessagesChanged\x18\' \x01(\x0b\x32#.dialog.UpdatePinnedMessagesChangedH\x00\x12\x42\n\x17updateGroupTitleChanged\x18( \x01(\x0b\x32\x1f.dialog.UpdateGroupTitleChangedH\x00\x12\x44\n\x18updateGroupAvatarChanged\x18) \x01(\x0b\x32 .dialog.UpdateGroupAvatarChangedH\x00\x12\x42\n\x17updateGroupTopicChanged\x18* \x01(\x0b\x32\x1f.dialog.UpdateGroupTopicChangedH\x00\x12\x42\n\x17updateGroupAboutChanged\x18+ \x01(\x0b\x32\x1f.dialog.UpdateGroupAboutChangedH\x00\x12\x42\n\x17updateGroupOwnerChanged\x18, \x01(\x0b\x32\x1f.dialog.UpdateGroupOwnerChangedH\x00\x12\x44\n\x18updateGroupHistoryShared\x18- \x01(\x0b\x32 .dialog.UpdateGroupHistorySharedH\x00\x12V\n!updateGroupCanSendMessagesChanged\x18. \x01(\x0b\x32).dialog.UpdateGroupCanSendMessagesChangedH\x00\x12T\n updateGroupCanViewMembersChanged\x18/ \x01(\x0b\x32(.dialog.UpdateGroupCanViewMembersChangedH\x00\x12X\n\"updateGroupCanInviteMembersChanged\x18\x30 \x01(\x0b\x32*.dialog.UpdateGroupCanInviteMembersChangedH\x00\x12\x44\n\x18updateGroupMemberChanged\x18\x31 \x01(\x0b\x32 .dialog.UpdateGroupMemberChangedH\x00\x12N\n\x1dupdateGroupMembersBecameAsync\x18\x32 \x01(\x0b\x32%.dialog.UpdateGroupMembersBecameAsyncH\x00\x12\x46\n\x19updateGroupMembersUpdated\x18\x33 \x01(\x0b\x32!.dialog.UpdateGroupMembersUpdatedH\x00\x12>\n\x15updateGroupMemberDiff\x18\x34 \x01(\x0b\x32\x1d.dialog.UpdateGroupMemberDiffH\x00\x12P\n\x1eupdateGroupMembersCountChanged\x18\x35 \x01(\x0b\x32&.dialog.UpdateGroupMembersCountChangedH\x00\x12N\n\x1dupdateGroupMemberAdminChanged\x18\x36 \x01(\x0b\x32%.dialog.UpdateGroupMemberAdminChangedH\x00\x12Z\n#updateGroupMemberPermissionsChanged\x18\x37 \x01(\x0b\x32+.dialog.UpdateGroupMemberPermissionsChangedH\x00\x12\x46\n\x19updateGroupInviteObsolete\x18\x38 \x01(\x0b\x32!.dialog.UpdateGroupInviteObsoleteH\x00\x12P\n\x1eupdateGroupUserInvitedObsolete\x18\x39 \x01(\x0b\x32&.dialog.UpdateGroupUserInvitedObsoleteH\x00\x12L\n\x1cupdateGroupUserLeaveObsolete\x18: \x01(\x0b\x32$.dialog.UpdateGroupUserLeaveObsoleteH\x00\x12J\n\x1bupdateGroupUserKickObsolete\x18; \x01(\x0b\x32#.dialog.UpdateGroupUserKickObsoleteH\x00\x12T\n updateGroupMembersUpdateObsolete\x18< \x01(\x0b\x32(.dialog.UpdateGroupMembersUpdateObsoleteH\x00\x12R\n\x1fupdateGroupTitleChangedObsolete\x18= \x01(\x0b\x32\'.dialog.UpdateGroupTitleChangedObsoleteH\x00\x12R\n\x1fupdateGroupTopicChangedObsolete\x18> \x01(\x0b\x32\'.dialog.UpdateGroupTopicChangedObsoleteH\x00\x12R\n\x1fupdateGroupAboutChangedObsolete\x18? \x01(\x0b\x32\'.dialog.UpdateGroupAboutChangedObsoleteH\x00\x12T\n updateGroupAvatarChangedObsolete\x18@ \x01(\x0b\x32(.dialog.UpdateGroupAvatarChangedObsoleteH\x00\x12J\n\x1bupdateGroupShortnameChanged\x18\x41 \x01(\x0b\x32#.dialog.UpdateGroupShortnameChangedH\x00\x12R\n\x1fupdateStickerCollectionsChanged\x18\x42 \x01(\x0b\x32\'.dialog.UpdateStickerCollectionsChangedH\x00\x12\x44\n\x18updateStickerPackRemoved\x18\x43 \x01(\x0b\x32 .dialog.UpdateStickerPackRemovedH\x00\x12@\n\x16updateStickerPackAdded\x18\x44 \x01(\x0b\x32\x1e.dialog.UpdateStickerPackAddedH\x00\x12\x44\n\x18updatePauseNotifications\x18\x45 \x01(\x0b\x32 .dialog.UpdatePauseNotificationsH\x00\x12H\n\x1aupdateRestoreNotifications\x18\x46 \x01(\x0b\x32\".dialog.UpdateRestoreNotificationsH\x00\x12,\n\x0cupdateTyping\x18G \x01(\x0b\x32\x14.dialog.UpdateTypingH\x00\x12\x34\n\x10updateTypingStop\x18H \x01(\x0b\x32\x18.dialog.UpdateTypingStopH\x00\x12\x34\n\x10updateUserOnline\x18I \x01(\x0b\x32\x18.dialog.UpdateUserOnlineH\x00\x12\x36\n\x11updateUserOffline\x18J \x01(\x0b\x32\x19.dialog.UpdateUserOfflineH\x00\x12\x38\n\x12updateUserLastSeen\x18K \x01(\x0b\x32\x1a.dialog.UpdateUserLastSeenH\x00\x12\x36\n\x11updateGroupOnline\x18L \x01(\x0b\x32\x19.dialog.UpdateGroupOnlineH\x00\x12N\n\x1dupdateEventBusDeviceConnected\x18M \x01(\x0b\x32%.dialog.UpdateEventBusDeviceConnectedH\x00\x12T\n updateEventBusDeviceDisconnected\x18N \x01(\x0b\x32(.dialog.UpdateEventBusDeviceDisconnectedH\x00\x12>\n\x15updateEventBusMessage\x18O \x01(\x0b\x32\x1d.dialog.UpdateEventBusMessageH\x00\x12@\n\x16updateEventBusDisposed\x18P \x01(\x0b\x32\x1e.dialog.UpdateEventBusDisposedH\x00\x12L\n\x1cupdateIncomingCallDeprecated\x18Q \x01(\x0b\x32$.dialog.UpdateIncomingCallDeprecatedH\x00\x12\x38\n\x12updateIncomingCall\x18R \x01(\x0b\x32\x1a.dialog.UpdateIncomingCallH\x00\x12\x36\n\x11updateCallHandled\x18S \x01(\x0b\x32\x19.dialog.UpdateCallHandledH\x00\x12\x38\n\x12updateCallDisposed\x18T \x01(\x0b\x32\x1a.dialog.UpdateCallDisposedH\x00\x12@\n\x16updateParameterChanged\x18U \x01(\x0b\x32\x1e.dialog.UpdateParameterChangedH\x00\x12\x32\n\x0fupdateRawUpdate\x18V \x01(\x0b\x32\x17.dialog.UpdateRawUpdateH\x00\x12\x36\n\x11updateEmptyUpdate\x18W \x01(\x0b\x32\x19.dialog.UpdateEmptyUpdateH\x00\x12>\n\x15updateCountersChanged\x18X \x01(\x0b\x32\x1d.dialog.UpdateCountersChangedH\x00\x12,\n\x0cupdateConfig\x18Y \x01(\x0b\x32\x14.dialog.UpdateConfigH\x00\x12:\n\x13updateSpaceModified\x18Z \x01(\x0b\x32\x1b.dialog.UpdateSpaceModifiedH\x00\x12\x46\n\x19updateSpaceMemberModified\x18[ \x01(\x0b\x32!.dialog.UpdateSpaceMemberModifiedH\x00\x12J\n\x1bupdateMessageRejectedByHook\x18\\ \x01(\x0b\x32#.dialog.UpdateMessageRejectedByHookH\x00\x12R\n\x1fupdateMessageEditRejectedByHook\x18] \x01(\x0b\x32\'.dialog.UpdateMessageEditRejectedByHookH\x00\x12(\n\nupdateUser\x18^ \x01(\x0b\x32\x12.dialog.UpdateUserH\x00\x12\x44\n\x18updateFeatureFlagChanged\x18_ \x01(\x0b\x32 .dialog.UpdateFeatureFlagChangedH\x00\x42\x08\n\x06update\"\xed\x01\n\x12UpdateFatSeqUpdate\x12\x1a\n\x03seq\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05state\x18\x02 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07\x63ompact\x12$\n\rupdate_header\x18\x03 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1d\n\x06update\x18\x04 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07\x63ompact\x12*\n\x05users\x18\x05 \x03(\x0b\x32\x0c.dialog.UserB\r\x8a\xea\x30\t\n\x07\x63ompact\x12,\n\x06groups\x18\x06 \x03(\x0b\x32\r.dialog.GroupB\r\x8a\xea\x30\t\n\x07\x63ompact\"t\n\x10UpdateWeakUpdate\x12\x1b\n\x04\x64\x61te\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12$\n\rupdate_header\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1d\n\x06update\x18\x03 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07\x63ompact\"\xd1\x01\n\x13UpdateWeakFatUpdate\x12\x1b\n\x04\x64\x61te\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12$\n\rupdate_header\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1d\n\x06update\x18\x03 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07visible\x12*\n\x05users\x18\x04 \x03(\x0b\x32\x0c.dialog.UserB\r\x8a\xea\x30\t\n\x07visible\x12,\n\x06groups\x18\x05 \x03(\x0b\x32\r.dialog.GroupB\r\x8a\xea\x30\t\n\x07visible\"\x18\n\x16UpdateSeqUpdateTooLong\"V\n\x0fUpdateContainer\x12$\n\rupdate_header\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1d\n\x06update\x18\x02 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07\x63ompact\"\xc2\x02\n\x14UpdateCombinedUpdate\x12 \n\tseq_start\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1e\n\x07seq_end\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05state\x18\x03 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07visible\x12*\n\x05users\x18\x04 \x03(\x0b\x32\x0c.dialog.UserB\r\x8a\xea\x30\t\n\x07\x63ompact\x12,\n\x06groups\x18\x05 \x03(\x0b\x32\r.dialog.GroupB\r\x8a\xea\x30\t\n\x07\x63ompact\x12\x37\n\x07updates\x18\x06 \x03(\x0b\x32\x17.dialog.UpdateContainerB\r\x8a\xea\x30\t\n\x07visible\x12\x37\n\x08messages\x18\x07 \x03(\x0b\x32\x16.dialog.HistoryMessageB\r\x8a\xea\x30\t\n\x07visible\"q\n\x0fRequestGetState\x12@\n\roptimizations\x18\x01 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xf1\x01\n\x14RequestGetDifference\x12\x1a\n\x03seq\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05state\x18\x02 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07\x63ompact\x12@\n\roptimizations\x18\x03 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible\x12?\n\x0b\x63onfig_hash\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x9b\x03\n\x15ResponseGetDifference\x12\x0b\n\x03seq\x18\x01 \x01(\x05\x12\r\n\x05state\x18\x02 \x01(\x0c\x12\x1b\n\x05users\x18\x03 \x03(\x0b\x32\x0c.dialog.User\x12\x1d\n\x06groups\x18\x06 \x03(\x0b\x32\r.dialog.Group\x12(\n\x07updates\x18\x04 \x03(\x0b\x32\x17.dialog.UpdateSeqUpdate\x12(\n\x08messages\x18\x07 \x03(\x0b\x32\x16.dialog.HistoryMessage\x12\x11\n\tneed_more\x18\x05 \x01(\x08\x12\'\n\nusers_refs\x18\x08 \x03(\x0b\x32\x13.dialog.UserOutPeer\x12)\n\x0bgroups_refs\x18\t \x03(\x0b\x32\x14.dialog.GroupOutPeer\x12\x1e\n\x06\x63onfig\x18\n \x01(\x0b\x32\x0e.dialog.Config\x12\x30\n\x0b\x63onfig_hash\x18\x0b \x01(\x0b\x32\x1b.google.protobuf.Int64Value:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"Y\n\x1bRequestGetDialogsDifference\x12\x1c\n\x05\x63lock\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xb2\x01\n\x1cResponseGetDialogsDifference\x12\x1f\n\x07\x64ialogs\x18\x01 \x03(\x0b\x32\x0e.dialog.Dialog\x12)\n\x0bgroup_peers\x18\x02 \x03(\x0b\x32\x14.dialog.GroupOutPeer\x12\'\n\nuser_peers\x18\x03 \x03(\x0b\x32\x13.dialog.UserOutPeer:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"p\n\x12GroupMembersSubset\x12\x37\n\ngroup_peer\x18\x01 \x01(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12!\n\nmember_ids\x18\x02 \x03(\x05\x42\r\x8a\xea\x30\t\n\x07visible\"\x97\x02\n\x1dRequestGetReferencedEntitites\x12\x31\n\x05users\x18\x01 \x03(\x0b\x32\x13.dialog.UserOutPeerB\r\x8a\xea\x30\t\n\x07\x63ompact\x12.\n\x04mids\x18\x03 \x03(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\x12@\n\rgroup_members\x18\x04 \x03(\x0b\x32\x1a.dialog.GroupMembersSubsetB\r\x8a\xea\x30\t\n\x07visible\x12\x33\n\x06groups\x18\x05 \x03(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xa5\x01\n\x1eResponseGetReferencedEntitites\x12\x1b\n\x05users\x18\x01 \x03(\x0b\x32\x0c.dialog.User\x12\x1d\n\x06groups\x18\x02 \x03(\x0b\x32\r.dialog.Group\x12(\n\x08messages\x18\x03 \x03(\x0b\x32\x16.dialog.HistoryMessage:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"j\n\x0fUpdateRawUpdate\x12\x39\n\x04type\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05\x62ytes\x18\x02 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07visible\"\x13\n\x11UpdateEmptyUpdate\"k\n\x18RequestSubscribeToOnline\x12\x31\n\x05users\x18\x01 \x03(\x0b\x32\x13.dialog.UserOutPeerB\r\x8a\xea\x30\t\n\x07\x63ompact:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"m\n\x1aRequestSubscribeFromOnline\x12\x31\n\x05users\x18\x01 \x03(\x0b\x32\x13.dialog.UserOutPeerB\r\x8a\xea\x30\t\n\x07\x63ompact:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"r\n\x1dRequestSubscribeToGroupOnline\x12\x33\n\x06groups\x18\x01 \x03(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07\x63ompact:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"t\n\x1fRequestSubscribeFromGroupOnline\x12\x33\n\x06groups\x18\x01 \x03(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07\x63ompact:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x88\x01\n\x0cSeqUpdateBox\x12\x0b\n\x03seq\x18\x01 \x01(\x05\x12\r\n\x05state\x18\x02 \x01(\x0c\x12+\n\x06update\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.BytesValue\x12/\n\x0eunboxed_update\x18\x04 \x01(\x0b\x32\x17.dialog.UpdateSeqUpdate2\x89\n\n\x12SequenceAndUpdates\x12i\n\x08GetState\x12\x17.dialog.RequestGetState\x1a\x13.dialog.ResponseSeq\"/\x82\xd3\xe4\x93\x02)\"$/v1/grpc/SequenceAndUpdates/GetState:\x01*\x12\x82\x01\n\rGetDifference\x12\x1c.dialog.RequestGetDifference\x1a\x1d.dialog.ResponseGetDifference\"4\x82\xd3\xe4\x93\x02.\")/v1/grpc/SequenceAndUpdates/GetDifference:\x01*\x12\x9e\x01\n\x14GetDialogsDifference\x12#.dialog.RequestGetDialogsDifference\x1a$.dialog.ResponseGetDialogsDifference\";\x82\xd3\xe4\x93\x02\x35\"0/v1/grpc/SequenceAndUpdates/GetDialogsDifference:\x01*\x12\xa6\x01\n\x16GetReferencedEntitites\x12%.dialog.RequestGetReferencedEntitites\x1a&.dialog.ResponseGetReferencedEntitites\"=\x82\xd3\xe4\x93\x02\x37\"2/v1/grpc/SequenceAndUpdates/GetReferencedEntitites:\x01*\x12\x85\x01\n\x11SubscribeToOnline\x12 .dialog.RequestSubscribeToOnline\x1a\x14.dialog.ResponseVoid\"8\x82\xd3\xe4\x93\x02\x32\"-/v1/grpc/SequenceAndUpdates/SubscribeToOnline:\x01*\x12\x8b\x01\n\x13SubscribeFromOnline\x12\".dialog.RequestSubscribeFromOnline\x1a\x14.dialog.ResponseVoid\":\x82\xd3\xe4\x93\x02\x34\"//v1/grpc/SequenceAndUpdates/SubscribeFromOnline:\x01*\x12\x94\x01\n\x16SubscribeToGroupOnline\x12%.dialog.RequestSubscribeToGroupOnline\x1a\x14.dialog.ResponseVoid\"=\x82\xd3\xe4\x93\x02\x37\"2/v1/grpc/SequenceAndUpdates/SubscribeToGroupOnline:\x01*\x12\x9a\x01\n\x18SubscribeFromGroupOnline\x12\'.dialog.RequestSubscribeFromGroupOnline\x1a\x14.dialog.ResponseVoid\"?\x82\xd3\xe4\x93\x02\x39\"4/v1/grpc/SequenceAndUpdates/SubscribeFromGroupOnline:\x01*\x12o\n\nSeqUpdates\x12\x16.google.protobuf.Empty\x1a\x14.dialog.SeqUpdateBox\"1\x82\xd3\xe4\x93\x02+\"&/v1/grpc/SequenceAndUpdates/SeqUpdates:\x01*0\x01\x42\x19\xe2?\x16\n\x14im.dlg.grpc.servicesb\x06proto3')
+  serialized_pb=_b('\n\x1asequence_and_updates.proto\x12\x06\x64ialog\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x11\x64\x65\x66initions.proto\x1a\x13miscellaneous.proto\x1a\x14\x61uthentication.proto\x1a\x0cgroups.proto\x1a\x0estickers.proto\x1a\x17typing_and_online.proto\x1a\x0f\x65vent_bus.proto\x1a\rweb_rtc.proto\x1a\x11\x63onfig_sync.proto\x1a\x0e\x63ounters.proto\x1a\x0e\x63ontacts.proto\x1a\rprivacy.proto\x1a\x0bpeers.proto\x1a\x0fmessaging.proto\x1a\x0busers.proto\x1a\x0cspaces.proto\x1a\x15scalapb/scalapb.proto\"\xfd\x31\n\x0fUpdateSeqUpdate\x12\x1a\n\x03seq\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05state\x18\x02 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07\x63ompact\x12$\n\rupdate_header\x18\x03 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12@\n\x16updateForceReloadState\x18\x04 \x01(\x0b\x32\x1e.dialog.UpdateForceReloadStateH\x00\x12\x42\n\x17updateUserAvatarChanged\x18\x05 \x01(\x0b\x32\x1f.dialog.UpdateUserAvatarChangedH\x00\x12>\n\x15updateUserNameChanged\x18\x06 \x01(\x0b\x32\x1d.dialog.UpdateUserNameChangedH\x00\x12H\n\x1aupdateUserLocalNameChanged\x18\x07 \x01(\x0b\x32\".dialog.UpdateUserLocalNameChangedH\x00\x12\x46\n\x19updateUserContactsChanged\x18\x08 \x01(\x0b\x32!.dialog.UpdateUserContactsChangedH\x00\x12>\n\x15updateUserNickChanged\x18\t \x01(\x0b\x32\x1d.dialog.UpdateUserNickChangedH\x00\x12@\n\x16updateUserAboutChanged\x18\n \x01(\x0b\x32\x1e.dialog.UpdateUserAboutChangedH\x00\x12Z\n#updateUserPreferredLanguagesChanged\x18\x0b \x01(\x0b\x32+.dialog.UpdateUserPreferredLanguagesChangedH\x00\x12\x46\n\x19updateUserTimeZoneChanged\x18\x0c \x01(\x0b\x32!.dialog.UpdateUserTimeZoneChangedH\x00\x12L\n\x1cupdateUserBotCommandsChanged\x18\r \x01(\x0b\x32$.dialog.UpdateUserBotCommandsChangedH\x00\x12<\n\x14updateUserExtChanged\x18\x0e \x01(\x0b\x32\x1c.dialog.UpdateUserExtChangedH\x00\x12\x44\n\x18updateUserFullExtChanged\x18\x0f \x01(\x0b\x32 .dialog.UpdateUserFullExtChangedH\x00\x12<\n\x14updateUserSexChanged\x18\x10 \x01(\x0b\x32\x1c.dialog.UpdateUserSexChangedH\x00\x12P\n\x1eupdateUserCustomProfileChanged\x18\x11 \x01(\x0b\x32&.dialog.UpdateUserCustomProfileChangedH\x00\x12\x42\n\x17updateUserStatusChanged\x18\x12 \x01(\x0b\x32\x1f.dialog.UpdateUserStatusChangedH\x00\x12\x42\n\x17updateContactRegistered\x18\x13 \x01(\x0b\x32\x1f.dialog.UpdateContactRegisteredH\x00\x12:\n\x13updateContactsAdded\x18\x14 \x01(\x0b\x32\x1b.dialog.UpdateContactsAddedH\x00\x12P\n\x1eupdateContactsAddTaskSuspended\x18\x15 \x01(\x0b\x32&.dialog.UpdateContactsAddTaskSuspendedH\x00\x12>\n\x15updateContactsRemoved\x18\x16 \x01(\x0b\x32\x1d.dialog.UpdateContactsRemovedH\x00\x12\x36\n\x11updateUserBlocked\x18\x17 \x01(\x0b\x32\x19.dialog.UpdateUserBlockedH\x00\x12:\n\x13updateUserUnblocked\x18\x18 \x01(\x0b\x32\x1b.dialog.UpdateUserUnblockedH\x00\x12J\n\x1bupdateInteractiveMediaEvent\x18\x19 \x01(\x0b\x32#.dialog.UpdateInteractiveMediaEventH\x00\x12.\n\rupdateMessage\x18\x1a \x01(\x0b\x32\x15.dialog.UpdateMessageH\x00\x12J\n\x1bupdateMessageContentChanged\x18\x1b \x01(\x0b\x32#.dialog.UpdateMessageContentChangedH\x00\x12\x36\n\x11updateMessageSent\x18\x1c \x01(\x0b\x32\x19.dialog.UpdateMessageSentH\x00\x12>\n\x15updateMessageReceived\x18\x1d \x01(\x0b\x32\x1d.dialog.UpdateMessageReceivedH\x00\x12\x36\n\x11updateMessageRead\x18\x1e \x01(\x0b\x32\x19.dialog.UpdateMessageReadH\x00\x12>\n\x15updateMessageReadByMe\x18\x1f \x01(\x0b\x32\x1d.dialog.UpdateMessageReadByMeH\x00\x12:\n\x13updateMessageDelete\x18  \x01(\x0b\x32\x1b.dialog.UpdateMessageDeleteH\x00\x12\x32\n\x0fupdateChatClear\x18! \x01(\x0b\x32\x17.dialog.UpdateChatClearH\x00\x12\x34\n\x10updateChatDelete\x18\" \x01(\x0b\x32\x18.dialog.UpdateChatDeleteH\x00\x12\x36\n\x11updateChatArchive\x18# \x01(\x0b\x32\x19.dialog.UpdateChatArchiveH\x00\x12\x42\n\x17updateChatGroupsChanged\x18$ \x01(\x0b\x32\x1f.dialog.UpdateChatGroupsChangedH\x00\x12>\n\x15updateReactionsUpdate\x18% \x01(\x0b\x32\x1d.dialog.UpdateReactionsUpdateH\x00\x12L\n\x1cupdateDialogFavouriteChanged\x18& \x01(\x0b\x32$.dialog.UpdateDialogFavouriteChangedH\x00\x12J\n\x1bupdatePinnedMessagesChanged\x18\' \x01(\x0b\x32#.dialog.UpdatePinnedMessagesChangedH\x00\x12\x42\n\x17updateGroupTitleChanged\x18( \x01(\x0b\x32\x1f.dialog.UpdateGroupTitleChangedH\x00\x12\x44\n\x18updateGroupAvatarChanged\x18) \x01(\x0b\x32 .dialog.UpdateGroupAvatarChangedH\x00\x12\x42\n\x17updateGroupTopicChanged\x18* \x01(\x0b\x32\x1f.dialog.UpdateGroupTopicChangedH\x00\x12\x42\n\x17updateGroupAboutChanged\x18+ \x01(\x0b\x32\x1f.dialog.UpdateGroupAboutChangedH\x00\x12\x42\n\x17updateGroupOwnerChanged\x18, \x01(\x0b\x32\x1f.dialog.UpdateGroupOwnerChangedH\x00\x12\x44\n\x18updateGroupHistoryShared\x18- \x01(\x0b\x32 .dialog.UpdateGroupHistorySharedH\x00\x12V\n!updateGroupCanSendMessagesChanged\x18. \x01(\x0b\x32).dialog.UpdateGroupCanSendMessagesChangedH\x00\x12T\n updateGroupCanViewMembersChanged\x18/ \x01(\x0b\x32(.dialog.UpdateGroupCanViewMembersChangedH\x00\x12X\n\"updateGroupCanInviteMembersChanged\x18\x30 \x01(\x0b\x32*.dialog.UpdateGroupCanInviteMembersChangedH\x00\x12\x44\n\x18updateGroupMemberChanged\x18\x31 \x01(\x0b\x32 .dialog.UpdateGroupMemberChangedH\x00\x12N\n\x1dupdateGroupMembersBecameAsync\x18\x32 \x01(\x0b\x32%.dialog.UpdateGroupMembersBecameAsyncH\x00\x12\x46\n\x19updateGroupMembersUpdated\x18\x33 \x01(\x0b\x32!.dialog.UpdateGroupMembersUpdatedH\x00\x12>\n\x15updateGroupMemberDiff\x18\x34 \x01(\x0b\x32\x1d.dialog.UpdateGroupMemberDiffH\x00\x12P\n\x1eupdateGroupMembersCountChanged\x18\x35 \x01(\x0b\x32&.dialog.UpdateGroupMembersCountChangedH\x00\x12N\n\x1dupdateGroupMemberAdminChanged\x18\x36 \x01(\x0b\x32%.dialog.UpdateGroupMemberAdminChangedH\x00\x12Z\n#updateGroupMemberPermissionsChanged\x18\x37 \x01(\x0b\x32+.dialog.UpdateGroupMemberPermissionsChangedH\x00\x12\x46\n\x19updateGroupInviteObsolete\x18\x38 \x01(\x0b\x32!.dialog.UpdateGroupInviteObsoleteH\x00\x12P\n\x1eupdateGroupUserInvitedObsolete\x18\x39 \x01(\x0b\x32&.dialog.UpdateGroupUserInvitedObsoleteH\x00\x12L\n\x1cupdateGroupUserLeaveObsolete\x18: \x01(\x0b\x32$.dialog.UpdateGroupUserLeaveObsoleteH\x00\x12J\n\x1bupdateGroupUserKickObsolete\x18; \x01(\x0b\x32#.dialog.UpdateGroupUserKickObsoleteH\x00\x12T\n updateGroupMembersUpdateObsolete\x18< \x01(\x0b\x32(.dialog.UpdateGroupMembersUpdateObsoleteH\x00\x12R\n\x1fupdateGroupTitleChangedObsolete\x18= \x01(\x0b\x32\'.dialog.UpdateGroupTitleChangedObsoleteH\x00\x12R\n\x1fupdateGroupTopicChangedObsolete\x18> \x01(\x0b\x32\'.dialog.UpdateGroupTopicChangedObsoleteH\x00\x12R\n\x1fupdateGroupAboutChangedObsolete\x18? \x01(\x0b\x32\'.dialog.UpdateGroupAboutChangedObsoleteH\x00\x12T\n updateGroupAvatarChangedObsolete\x18@ \x01(\x0b\x32(.dialog.UpdateGroupAvatarChangedObsoleteH\x00\x12J\n\x1bupdateGroupShortnameChanged\x18\x41 \x01(\x0b\x32#.dialog.UpdateGroupShortnameChangedH\x00\x12R\n\x1fupdateStickerCollectionsChanged\x18\x42 \x01(\x0b\x32\'.dialog.UpdateStickerCollectionsChangedH\x00\x12\x44\n\x18updateStickerPackRemoved\x18\x43 \x01(\x0b\x32 .dialog.UpdateStickerPackRemovedH\x00\x12@\n\x16updateStickerPackAdded\x18\x44 \x01(\x0b\x32\x1e.dialog.UpdateStickerPackAddedH\x00\x12\x44\n\x18updatePauseNotifications\x18\x45 \x01(\x0b\x32 .dialog.UpdatePauseNotificationsH\x00\x12H\n\x1aupdateRestoreNotifications\x18\x46 \x01(\x0b\x32\".dialog.UpdateRestoreNotificationsH\x00\x12,\n\x0cupdateTyping\x18G \x01(\x0b\x32\x14.dialog.UpdateTypingH\x00\x12\x34\n\x10updateTypingStop\x18H \x01(\x0b\x32\x18.dialog.UpdateTypingStopH\x00\x12\x34\n\x10updateUserOnline\x18I \x01(\x0b\x32\x18.dialog.UpdateUserOnlineH\x00\x12\x36\n\x11updateUserOffline\x18J \x01(\x0b\x32\x19.dialog.UpdateUserOfflineH\x00\x12\x38\n\x12updateUserLastSeen\x18K \x01(\x0b\x32\x1a.dialog.UpdateUserLastSeenH\x00\x12\x36\n\x11updateGroupOnline\x18L \x01(\x0b\x32\x19.dialog.UpdateGroupOnlineH\x00\x12N\n\x1dupdateEventBusDeviceConnected\x18M \x01(\x0b\x32%.dialog.UpdateEventBusDeviceConnectedH\x00\x12T\n updateEventBusDeviceDisconnected\x18N \x01(\x0b\x32(.dialog.UpdateEventBusDeviceDisconnectedH\x00\x12>\n\x15updateEventBusMessage\x18O \x01(\x0b\x32\x1d.dialog.UpdateEventBusMessageH\x00\x12@\n\x16updateEventBusDisposed\x18P \x01(\x0b\x32\x1e.dialog.UpdateEventBusDisposedH\x00\x12L\n\x1cupdateIncomingCallDeprecated\x18Q \x01(\x0b\x32$.dialog.UpdateIncomingCallDeprecatedH\x00\x12\x38\n\x12updateIncomingCall\x18R \x01(\x0b\x32\x1a.dialog.UpdateIncomingCallH\x00\x12\x36\n\x11updateCallHandled\x18S \x01(\x0b\x32\x19.dialog.UpdateCallHandledH\x00\x12\x38\n\x12updateCallDisposed\x18T \x01(\x0b\x32\x1a.dialog.UpdateCallDisposedH\x00\x12@\n\x16updateParameterChanged\x18U \x01(\x0b\x32\x1e.dialog.UpdateParameterChangedH\x00\x12\x32\n\x0fupdateRawUpdate\x18V \x01(\x0b\x32\x17.dialog.UpdateRawUpdateH\x00\x12\x36\n\x11updateEmptyUpdate\x18W \x01(\x0b\x32\x19.dialog.UpdateEmptyUpdateH\x00\x12>\n\x15updateCountersChanged\x18X \x01(\x0b\x32\x1d.dialog.UpdateCountersChangedH\x00\x12,\n\x0cupdateConfig\x18Y \x01(\x0b\x32\x14.dialog.UpdateConfigH\x00\x12:\n\x13updateSpaceModified\x18Z \x01(\x0b\x32\x1b.dialog.UpdateSpaceModifiedH\x00\x12\x46\n\x19updateSpaceMemberModified\x18[ \x01(\x0b\x32!.dialog.UpdateSpaceMemberModifiedH\x00\x12J\n\x1bupdateMessageRejectedByHook\x18\\ \x01(\x0b\x32#.dialog.UpdateMessageRejectedByHookH\x00\x12R\n\x1fupdateMessageEditRejectedByHook\x18] \x01(\x0b\x32\'.dialog.UpdateMessageEditRejectedByHookH\x00\x12(\n\nupdateUser\x18^ \x01(\x0b\x32\x12.dialog.UpdateUserH\x00\x42\x08\n\x06update\"\xed\x01\n\x12UpdateFatSeqUpdate\x12\x1a\n\x03seq\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05state\x18\x02 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07\x63ompact\x12$\n\rupdate_header\x18\x03 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1d\n\x06update\x18\x04 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07\x63ompact\x12*\n\x05users\x18\x05 \x03(\x0b\x32\x0c.dialog.UserB\r\x8a\xea\x30\t\n\x07\x63ompact\x12,\n\x06groups\x18\x06 \x03(\x0b\x32\r.dialog.GroupB\r\x8a\xea\x30\t\n\x07\x63ompact\"t\n\x10UpdateWeakUpdate\x12\x1b\n\x04\x64\x61te\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12$\n\rupdate_header\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1d\n\x06update\x18\x03 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07\x63ompact\"\xd1\x01\n\x13UpdateWeakFatUpdate\x12\x1b\n\x04\x64\x61te\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12$\n\rupdate_header\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1d\n\x06update\x18\x03 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07visible\x12*\n\x05users\x18\x04 \x03(\x0b\x32\x0c.dialog.UserB\r\x8a\xea\x30\t\n\x07visible\x12,\n\x06groups\x18\x05 \x03(\x0b\x32\r.dialog.GroupB\r\x8a\xea\x30\t\n\x07visible\"\x18\n\x16UpdateSeqUpdateTooLong\"V\n\x0fUpdateContainer\x12$\n\rupdate_header\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1d\n\x06update\x18\x02 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07\x63ompact\"\xc2\x02\n\x14UpdateCombinedUpdate\x12 \n\tseq_start\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1e\n\x07seq_end\x18\x02 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05state\x18\x03 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07visible\x12*\n\x05users\x18\x04 \x03(\x0b\x32\x0c.dialog.UserB\r\x8a\xea\x30\t\n\x07\x63ompact\x12,\n\x06groups\x18\x05 \x03(\x0b\x32\r.dialog.GroupB\r\x8a\xea\x30\t\n\x07\x63ompact\x12\x37\n\x07updates\x18\x06 \x03(\x0b\x32\x17.dialog.UpdateContainerB\r\x8a\xea\x30\t\n\x07visible\x12\x37\n\x08messages\x18\x07 \x03(\x0b\x32\x16.dialog.HistoryMessageB\r\x8a\xea\x30\t\n\x07visible\"q\n\x0fRequestGetState\x12@\n\roptimizations\x18\x01 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xf1\x01\n\x14RequestGetDifference\x12\x1a\n\x03seq\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05state\x18\x02 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07\x63ompact\x12@\n\roptimizations\x18\x03 \x03(\x0e\x32\x1a.dialog.UpdateOptimizationB\r\x8a\xea\x30\t\n\x07visible\x12?\n\x0b\x63onfig_hash\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x9b\x03\n\x15ResponseGetDifference\x12\x0b\n\x03seq\x18\x01 \x01(\x05\x12\r\n\x05state\x18\x02 \x01(\x0c\x12\x1b\n\x05users\x18\x03 \x03(\x0b\x32\x0c.dialog.User\x12\x1d\n\x06groups\x18\x06 \x03(\x0b\x32\r.dialog.Group\x12(\n\x07updates\x18\x04 \x03(\x0b\x32\x17.dialog.UpdateSeqUpdate\x12(\n\x08messages\x18\x07 \x03(\x0b\x32\x16.dialog.HistoryMessage\x12\x11\n\tneed_more\x18\x05 \x01(\x08\x12\'\n\nusers_refs\x18\x08 \x03(\x0b\x32\x13.dialog.UserOutPeer\x12)\n\x0bgroups_refs\x18\t \x03(\x0b\x32\x14.dialog.GroupOutPeer\x12\x1e\n\x06\x63onfig\x18\n \x01(\x0b\x32\x0e.dialog.Config\x12\x30\n\x0b\x63onfig_hash\x18\x0b \x01(\x0b\x32\x1b.google.protobuf.Int64Value:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"Y\n\x1bRequestGetDialogsDifference\x12\x1c\n\x05\x63lock\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xb2\x01\n\x1cResponseGetDialogsDifference\x12\x1f\n\x07\x64ialogs\x18\x01 \x03(\x0b\x32\x0e.dialog.Dialog\x12)\n\x0bgroup_peers\x18\x02 \x03(\x0b\x32\x14.dialog.GroupOutPeer\x12\'\n\nuser_peers\x18\x03 \x03(\x0b\x32\x13.dialog.UserOutPeer:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"p\n\x12GroupMembersSubset\x12\x37\n\ngroup_peer\x18\x01 \x01(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible\x12!\n\nmember_ids\x18\x02 \x03(\x05\x42\r\x8a\xea\x30\t\n\x07visible\"\x97\x02\n\x1dRequestGetReferencedEntitites\x12\x31\n\x05users\x18\x01 \x03(\x0b\x32\x13.dialog.UserOutPeerB\r\x8a\xea\x30\t\n\x07\x63ompact\x12.\n\x04mids\x18\x03 \x03(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible\x12@\n\rgroup_members\x18\x04 \x03(\x0b\x32\x1a.dialog.GroupMembersSubsetB\r\x8a\xea\x30\t\n\x07visible\x12\x33\n\x06groups\x18\x05 \x03(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07visible:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\xa5\x01\n\x1eResponseGetReferencedEntitites\x12\x1b\n\x05users\x18\x01 \x03(\x0b\x32\x0c.dialog.User\x12\x1d\n\x06groups\x18\x02 \x03(\x0b\x32\r.dialog.Group\x12(\n\x08messages\x18\x03 \x03(\x0b\x32\x16.dialog.HistoryMessage:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"j\n\x0fUpdateRawUpdate\x12\x39\n\x04type\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05\x62ytes\x18\x02 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07visible\"\x13\n\x11UpdateEmptyUpdate\"k\n\x18RequestSubscribeToOnline\x12\x31\n\x05users\x18\x01 \x03(\x0b\x32\x13.dialog.UserOutPeerB\r\x8a\xea\x30\t\n\x07\x63ompact:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"m\n\x1aRequestSubscribeFromOnline\x12\x31\n\x05users\x18\x01 \x03(\x0b\x32\x13.dialog.UserOutPeerB\r\x8a\xea\x30\t\n\x07\x63ompact:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"r\n\x1dRequestSubscribeToGroupOnline\x12\x33\n\x06groups\x18\x01 \x03(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07\x63ompact:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"t\n\x1fRequestSubscribeFromGroupOnline\x12\x33\n\x06groups\x18\x01 \x03(\x0b\x32\x14.dialog.GroupOutPeerB\r\x8a\xea\x30\t\n\x07\x63ompact:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\x88\x01\n\x0cSeqUpdateBox\x12\x0b\n\x03seq\x18\x01 \x01(\x05\x12\r\n\x05state\x18\x02 \x01(\x0c\x12+\n\x06update\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.BytesValue\x12/\n\x0eunboxed_update\x18\x04 \x01(\x0b\x32\x17.dialog.UpdateSeqUpdate2\x89\n\n\x12SequenceAndUpdates\x12i\n\x08GetState\x12\x17.dialog.RequestGetState\x1a\x13.dialog.ResponseSeq\"/\x82\xd3\xe4\x93\x02)\"$/v1/grpc/SequenceAndUpdates/GetState:\x01*\x12\x82\x01\n\rGetDifference\x12\x1c.dialog.RequestGetDifference\x1a\x1d.dialog.ResponseGetDifference\"4\x82\xd3\xe4\x93\x02.\")/v1/grpc/SequenceAndUpdates/GetDifference:\x01*\x12\x9e\x01\n\x14GetDialogsDifference\x12#.dialog.RequestGetDialogsDifference\x1a$.dialog.ResponseGetDialogsDifference\";\x82\xd3\xe4\x93\x02\x35\"0/v1/grpc/SequenceAndUpdates/GetDialogsDifference:\x01*\x12\xa6\x01\n\x16GetReferencedEntitites\x12%.dialog.RequestGetReferencedEntitites\x1a&.dialog.ResponseGetReferencedEntitites\"=\x82\xd3\xe4\x93\x02\x37\"2/v1/grpc/SequenceAndUpdates/GetReferencedEntitites:\x01*\x12\x85\x01\n\x11SubscribeToOnline\x12 .dialog.RequestSubscribeToOnline\x1a\x14.dialog.ResponseVoid\"8\x82\xd3\xe4\x93\x02\x32\"-/v1/grpc/SequenceAndUpdates/SubscribeToOnline:\x01*\x12\x8b\x01\n\x13SubscribeFromOnline\x12\".dialog.RequestSubscribeFromOnline\x1a\x14.dialog.ResponseVoid\":\x82\xd3\xe4\x93\x02\x34\"//v1/grpc/SequenceAndUpdates/SubscribeFromOnline:\x01*\x12\x94\x01\n\x16SubscribeToGroupOnline\x12%.dialog.RequestSubscribeToGroupOnline\x1a\x14.dialog.ResponseVoid\"=\x82\xd3\xe4\x93\x02\x37\"2/v1/grpc/SequenceAndUpdates/SubscribeToGroupOnline:\x01*\x12\x9a\x01\n\x18SubscribeFromGroupOnline\x12\'.dialog.RequestSubscribeFromGroupOnline\x1a\x14.dialog.ResponseVoid\"?\x82\xd3\xe4\x93\x02\x39\"4/v1/grpc/SequenceAndUpdates/SubscribeFromGroupOnline:\x01*\x12o\n\nSeqUpdates\x12\x16.google.protobuf.Empty\x1a\x14.dialog.SeqUpdateBox\"1\x82\xd3\xe4\x93\x02+\"&/v1/grpc/SequenceAndUpdates/SeqUpdates:\x01*0\x01\x42\x19\xe2?\x16\n\x14im.dlg.grpc.servicesb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,definitions__pb2.DESCRIPTOR,miscellaneous__pb2.DESCRIPTOR,authentication__pb2.DESCRIPTOR,groups__pb2.DESCRIPTOR,stickers__pb2.DESCRIPTOR,typing__and__online__pb2.DESCRIPTOR,event__bus__pb2.DESCRIPTOR,web__rtc__pb2.DESCRIPTOR,config__sync__pb2.DESCRIPTOR,counters__pb2.DESCRIPTOR,contacts__pb2.DESCRIPTOR,privacy__pb2.DESCRIPTOR,peers__pb2.DESCRIPTOR,messaging__pb2.DESCRIPTOR,users__pb2.DESCRIPTOR,spaces__pb2.DESCRIPTOR,scalapb_dot_scalapb__pb2.DESCRIPTOR,])
 
@@ -711,13 +711,6 @@ _UPDATESEQUPDATE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='updateFeatureFlagChanged', full_name='dialog.UpdateSeqUpdate.updateFeatureFlagChanged', index=94,
-      number=95, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -734,7 +727,7 @@ _UPDATESEQUPDATE = _descriptor.Descriptor(
       index=0, containing_type=None, fields=[]),
   ],
   serialized_start=425,
-  serialized_end=6892,
+  serialized_end=6822,
 )
 
 
@@ -799,8 +792,8 @@ _UPDATEFATSEQUPDATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6895,
-  serialized_end=7132,
+  serialized_start=6825,
+  serialized_end=7062,
 )
 
 
@@ -844,8 +837,8 @@ _UPDATEWEAKUPDATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7134,
-  serialized_end=7250,
+  serialized_start=7064,
+  serialized_end=7180,
 )
 
 
@@ -903,8 +896,8 @@ _UPDATEWEAKFATUPDATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7253,
-  serialized_end=7462,
+  serialized_start=7183,
+  serialized_end=7392,
 )
 
 
@@ -927,8 +920,8 @@ _UPDATESEQUPDATETOOLONG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7464,
-  serialized_end=7488,
+  serialized_start=7394,
+  serialized_end=7418,
 )
 
 
@@ -965,8 +958,8 @@ _UPDATECONTAINER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7490,
-  serialized_end=7576,
+  serialized_start=7420,
+  serialized_end=7506,
 )
 
 
@@ -1038,8 +1031,8 @@ _UPDATECOMBINEDUPDATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7579,
-  serialized_end=7901,
+  serialized_start=7509,
+  serialized_end=7831,
 )
 
 
@@ -1069,8 +1062,8 @@ _REQUESTGETSTATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7903,
-  serialized_end=8016,
+  serialized_start=7833,
+  serialized_end=7946,
 )
 
 
@@ -1121,8 +1114,8 @@ _REQUESTGETDIFFERENCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8019,
-  serialized_end=8260,
+  serialized_start=7949,
+  serialized_end=8190,
 )
 
 
@@ -1222,8 +1215,8 @@ _RESPONSEGETDIFFERENCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8263,
-  serialized_end=8674,
+  serialized_start=8193,
+  serialized_end=8604,
 )
 
 
@@ -1253,8 +1246,8 @@ _REQUESTGETDIALOGSDIFFERENCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8676,
-  serialized_end=8765,
+  serialized_start=8606,
+  serialized_end=8695,
 )
 
 
@@ -1298,8 +1291,8 @@ _RESPONSEGETDIALOGSDIFFERENCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8768,
-  serialized_end=8946,
+  serialized_start=8698,
+  serialized_end=8876,
 )
 
 
@@ -1336,8 +1329,8 @@ _GROUPMEMBERSSUBSET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8948,
-  serialized_end=9060,
+  serialized_start=8878,
+  serialized_end=8990,
 )
 
 
@@ -1388,8 +1381,8 @@ _REQUESTGETREFERENCEDENTITITES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9063,
-  serialized_end=9342,
+  serialized_start=8993,
+  serialized_end=9272,
 )
 
 
@@ -1433,8 +1426,8 @@ _RESPONSEGETREFERENCEDENTITITES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9345,
-  serialized_end=9510,
+  serialized_start=9275,
+  serialized_end=9440,
 )
 
 
@@ -1471,8 +1464,8 @@ _UPDATERAWUPDATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9512,
-  serialized_end=9618,
+  serialized_start=9442,
+  serialized_end=9548,
 )
 
 
@@ -1495,8 +1488,8 @@ _UPDATEEMPTYUPDATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9620,
-  serialized_end=9639,
+  serialized_start=9550,
+  serialized_end=9569,
 )
 
 
@@ -1526,8 +1519,8 @@ _REQUESTSUBSCRIBETOONLINE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9641,
-  serialized_end=9748,
+  serialized_start=9571,
+  serialized_end=9678,
 )
 
 
@@ -1557,8 +1550,8 @@ _REQUESTSUBSCRIBEFROMONLINE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9750,
-  serialized_end=9859,
+  serialized_start=9680,
+  serialized_end=9789,
 )
 
 
@@ -1588,8 +1581,8 @@ _REQUESTSUBSCRIBETOGROUPONLINE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9861,
-  serialized_end=9975,
+  serialized_start=9791,
+  serialized_end=9905,
 )
 
 
@@ -1619,8 +1612,8 @@ _REQUESTSUBSCRIBEFROMGROUPONLINE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9977,
-  serialized_end=10093,
+  serialized_start=9907,
+  serialized_end=10023,
 )
 
 
@@ -1671,8 +1664,8 @@ _SEQUPDATEBOX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10096,
-  serialized_end=10232,
+  serialized_start=10026,
+  serialized_end=10162,
 )
 
 _UPDATESEQUPDATE.fields_by_name['updateForceReloadState'].message_type = authentication__pb2._UPDATEFORCERELOADSTATE
@@ -1766,7 +1759,6 @@ _UPDATESEQUPDATE.fields_by_name['updateSpaceMemberModified'].message_type = spac
 _UPDATESEQUPDATE.fields_by_name['updateMessageRejectedByHook'].message_type = messaging__pb2._UPDATEMESSAGEREJECTEDBYHOOK
 _UPDATESEQUPDATE.fields_by_name['updateMessageEditRejectedByHook'].message_type = messaging__pb2._UPDATEMESSAGEEDITREJECTEDBYHOOK
 _UPDATESEQUPDATE.fields_by_name['updateUser'].message_type = users__pb2._UPDATEUSER
-_UPDATESEQUPDATE.fields_by_name['updateFeatureFlagChanged'].message_type = config__sync__pb2._UPDATEFEATUREFLAGCHANGED
 _UPDATESEQUPDATE.oneofs_by_name['update'].fields.append(
   _UPDATESEQUPDATE.fields_by_name['updateForceReloadState'])
 _UPDATESEQUPDATE.fields_by_name['updateForceReloadState'].containing_oneof = _UPDATESEQUPDATE.oneofs_by_name['update']
@@ -2040,9 +2032,6 @@ _UPDATESEQUPDATE.fields_by_name['updateMessageEditRejectedByHook'].containing_on
 _UPDATESEQUPDATE.oneofs_by_name['update'].fields.append(
   _UPDATESEQUPDATE.fields_by_name['updateUser'])
 _UPDATESEQUPDATE.fields_by_name['updateUser'].containing_oneof = _UPDATESEQUPDATE.oneofs_by_name['update']
-_UPDATESEQUPDATE.oneofs_by_name['update'].fields.append(
-  _UPDATESEQUPDATE.fields_by_name['updateFeatureFlagChanged'])
-_UPDATESEQUPDATE.fields_by_name['updateFeatureFlagChanged'].containing_oneof = _UPDATESEQUPDATE.oneofs_by_name['update']
 _UPDATEFATSEQUPDATE.fields_by_name['users'].message_type = users__pb2._USER
 _UPDATEFATSEQUPDATE.fields_by_name['groups'].message_type = groups__pb2._GROUP
 _UPDATEWEAKFATUPDATE.fields_by_name['users'].message_type = users__pb2._USER
@@ -2322,8 +2311,8 @@ _SEQUENCEANDUPDATES = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=10235,
-  serialized_end=11524,
+  serialized_start=10165,
+  serialized_end=11454,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetState',

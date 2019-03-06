@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="dialog-bot-sdk",
-    version="2.0.0",
+    version="2.0.1",
     author="Andrey Skiba, Dialog LLC",
     author_email="a.skiba@dlg.im",
     description="Python Bot SDK for Dialog Messenger",
