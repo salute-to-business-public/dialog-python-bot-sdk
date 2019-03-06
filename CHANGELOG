@@ -1,3 +1,6 @@
+Version 1.2.1
+    + fix on sending files with pfx cert
+
 Version 1.2.0
     + non-blocking message handling
     + bot's user_info field (id, nickname etc.)

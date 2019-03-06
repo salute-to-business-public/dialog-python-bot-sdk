@@ -2,6 +2,7 @@ from google.protobuf import empty_pb2
 import time
 import imghdr
 import threading
+import random
 
 from .service import ManagedService
 from .dialog_api import messaging_pb2, sequence_and_updates_pb2
@@ -37,7 +38,7 @@ class Messaging(ManagedService):
                 g.render(media)
         return self.internal.messaging.SendMessage(messaging_pb2.RequestSendMessage(
             peer=outpeer,
-            rid=int(time.time()),
+            rid=random.randint(0, 100000000),
             message=msg
         ))
 
@@ -62,7 +63,7 @@ class Messaging(ManagedService):
             last_edited_at=message.date
         ))
 
-    def send_file(self, peer, file):
+    def send_file(self, peer, file, cert=None, private_key=None):
         """Send file to current peer.
 
         :param peer: receiver's peer
@@ -73,7 +74,7 @@ class Messaging(ManagedService):
             print('Peer can\'t be None!')
             return None
 
-        location = self.internal.uploading.upload_file(file)
+        location = self.internal.uploading.upload_file(file, cert=cert, private_key=private_key)
         outpeer = self.manager.get_outpeer(peer)
         msg = messaging_pb2.MessageContent()
 
@@ -83,7 +84,7 @@ class Messaging(ManagedService):
 
         return self.internal.messaging.SendMessage(messaging_pb2.RequestSendMessage(
             peer=outpeer,
-            rid=int(time.time()),
+            rid=random.randint(0, 100000000),
             message=msg
         ))
 
@@ -111,7 +112,7 @@ class Messaging(ManagedService):
 
         return self.internal.messaging.SendMessage(messaging_pb2.RequestSendMessage(
             peer=outpeer,
-            rid=int(time.time()),
+            rid=random.randint(0, 100000000),
             message=msg
         ))
 

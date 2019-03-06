@@ -1,6 +1,7 @@
 import os
 import requests
 from concurrent.futures import ThreadPoolExecutor
+from tempfile import NamedTemporaryFile
 
 from .utils.read_file_in_chunks import read_file_in_chunks
 from .dialog_api import media_and_files_pb2
@@ -11,8 +12,10 @@ class Uploading(object):
 
     """
 
-    def __init__(self, internal):
+    def __init__(self, internal, cert, private_key):
         self.internal = internal
+        self.cert = cert
+        self.private_key = private_key
 
     def upload_file_chunk(self, part_number, chunk, upload_key):
         """Upload file chunk.
@@ -31,11 +34,27 @@ class Uploading(object):
             )
         ).url
 
-        put_response = requests.put(
-            url,
-            data=chunk,
-            headers={'Content-Type': 'application/octet-stream'}
-        )
+        if self.cert and self.private_key:
+            with NamedTemporaryFile() as cert_file:
+                with NamedTemporaryFile() as private_key_file:
+                    cert_file.write(self.cert)
+                    private_key_file.write(self.private_key)
+                    cert_file.flush()
+                    private_key_file.flush()
+                    put_response = requests.put(
+                        url,
+                        data=chunk,
+                        headers={'Content-Type': 'application/octet-stream'},
+                        cert=(cert_file.name, private_key_file.name)
+                    )
+                    print(put_response)
+
+        else:
+            put_response = requests.put(
+                url,
+                data=chunk,
+                headers={'Content-Type': 'application/octet-stream'},
+            )
 
         if put_response.status_code != 200:
             print('Can\'t upload file chunk #{}'.format(part_number))
@@ -43,7 +62,7 @@ class Uploading(object):
 
         return put_response
 
-    def upload_file(self, file, max_chunk_size=1024*1024, parallelism=10):
+    def upload_file(self, file, max_chunk_size=1024*1024, parallelism=10, cert=None, private_key=None):
         """Upload file for sending.
 
         :param file: path to file
