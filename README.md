@@ -1,6 +1,6 @@
 Dialog Python Bot SDK
 =================
-![PyPI](https://img.shields.io/pypi/v/dialog-bot-sdk.svg) ![PyPI - License](https://img.shields.io/pypi/l/dialog-bot-sdk.svg) ![PyPI - Downloads](https://img.shields.io/pypi/dm/dialog-bot-sdk.svg)
+![PyPI](https://img.shields.io/pypi/v/dialog-bot-sdk.svg) ![PyPI - Downloads](https://img.shields.io/pypi/dm/dialog-bot-sdk.svg) ![PyPI - License](https://img.shields.io/pypi/l/dialog-bot-sdk.svg) 
 
 Python Bot SDK for [Dialog](https://dlg.im) messenger.
 
