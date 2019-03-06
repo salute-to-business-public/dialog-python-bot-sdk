@@ -27,7 +27,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='dialog',
   syntax='proto3',
   serialized_options=_b('\342?\026\n\024im.dlg.grpc.services'),
-  serialized_pb=_b('\n\x0busers.proto\x12\x06\x64ialog\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x11\x64\x65\x66initions.proto\x1a\x13miscellaneous.proto\x1a\x0bpeers.proto\x1a\x15media_and_files.proto\x1a\x15scalapb/scalapb.proto\"\xfd\x02\n\rContactRecord\x12\x30\n\x04type\x18\x01 \x01(\x0e\x32\x13.dialog.ContactTypeB\r\x8a\xea\x30\t\n\x07visible\x12=\n\ttype_spec\x18\x06 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x41\n\x0cstring_value\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12>\n\nlong_value\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\r\x8a\xea\x30\t\n\x07visible\x12:\n\x05title\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12<\n\x08subtitle\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\"|\n\nUserStatus\x12\x33\n\x04type\x18\x01 \x01(\x0e\x32\x16.dialog.UserStatusTypeB\r\x8a\xea\x30\t\n\x07visible\x12\x39\n\x04text\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\"\xed\x02\n\x04User\x12\x19\n\x02id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12!\n\x0b\x61\x63\x63\x65ss_hash\x18\x02 \x01(\x03\x42\x0c\x8a\xea\x30\x08\n\x06\x64\x61nger\x12\x1a\n\x04name\x18\x03 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\x12>\n\nlocal_name\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x39\n\x04nick\x18\r \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12&\n\x03sex\x18\x05 \x01(\x0e\x32\x0b.dialog.SexB\x0c\x8a\xea\x30\x08\n\x06hidden\x12-\n\x06\x61vatar\x18\x08 \x01(\x0b\x32\x0e.dialog.AvatarB\r\x8a\xea\x30\t\n\x07\x63ompact\x12\x39\n\x06is_bot\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\"\x84\x04\n\x08\x46ullUser\x12\x19\n\x02id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12:\n\x0c\x63ontact_info\x18\x02 \x03(\x0b\x32\x15.dialog.ContactRecordB\r\x8a\xea\x30\t\n\x07\x63ompact\x12\x39\n\x05\x61\x62out\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12*\n\x13preferred_languages\x18\x04 \x03(\tB\r\x8a\xea\x30\t\n\x07visible\x12>\n\ttime_zone\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12\x37\n\x0c\x62ot_commands\x18\x06 \x03(\x0b\x32\x12.dialog.BotCommandB\r\x8a\xea\x30\t\n\x07visible\x12=\n\nis_blocked\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12\x16\n\x0e\x63ustom_profile\x18\t \x01(\t\x12\x37\n\x11integration_token\x18\n \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x31\n\x06status\x18\x0b \x01(\x0b\x32\x12.dialog.UserStatusB\r\x8a\xea\x30\t\n\x07visible\"\x94\x01\n\nBotCommand\x12$\n\rslash_command\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\"\n\x0b\x64\x65scription\x18\x02 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12<\n\x07loc_key\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\"\x93\x01\n\x18RequestEditUserLocalName\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12!\n\x0b\x61\x63\x63\x65ss_hash\x18\x02 \x01(\x03\x42\x0c\x8a\xea\x30\x08\n\x06\x64\x61nger\x12\x1a\n\x04name\x18\x03 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"d\n\x17UpdateUserAvatarChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12-\n\x06\x61vatar\x18\x02 \x01(\x0b\x32\x0e.dialog.AvatarB\r\x8a\xea\x30\t\n\x07\x63ompact\"O\n\x15UpdateUserNameChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x04name\x18\x02 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\"x\n\x1aUpdateUserLocalNameChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12>\n\nlocal_name\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\"v\n\x19UpdateUserContactsChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12=\n\x0f\x63ontact_records\x18\x04 \x03(\x0b\x32\x15.dialog.ContactRecordB\r\x8a\xea\x30\t\n\x07\x63ompact\"r\n\x15UpdateUserNickChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12=\n\x08nickname\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\"o\n\x16UpdateUserAboutChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x39\n\x05\x61\x62out\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\"m\n#UpdateUserPreferredLanguagesChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12*\n\x13preferred_languages\x18\x02 \x03(\tB\r\x8a\xea\x30\t\n\x07visible\"w\n\x19UpdateUserTimeZoneChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12>\n\ttime_zone\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\"o\n\x1cUpdateUserBotCommandsChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x33\n\x08\x63ommands\x18\x02 \x03(\x0b\x32\x12.dialog.BotCommandB\r\x8a\xea\x30\t\n\x07visible\"Z\n\x14UpdateUserSexChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12&\n\x03sex\x18\x02 \x01(\x0e\x32\x0b.dialog.SexB\x0c\x8a\xea\x30\x08\n\x06hidden\"c\n\x1eUpdateUserCustomProfileChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12%\n\x0e\x63ustom_profile\x18\x02 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\"h\n\x17UpdateUserStatusChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x31\n\x06status\x18\x02 \x01(\x0b\x32\x12.dialog.UserStatusB\r\x8a\xea\x30\t\n\x07visible\"i\n\x14UpdateUserExtChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x35\n\x03\x65xt\x18\x02 \x01(\x0b\x32\x19.dialog.RecursiveMapValueB\r\x8a\xea\x30\t\n\x07visible\"m\n\x18UpdateUserFullExtChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x35\n\x03\x65xt\x18\x02 \x01(\x0b\x32\x19.dialog.RecursiveMapValueB\r\x8a\xea\x30\t\n\x07visible\"l\n\x14RequestLoadFullUsers\x12\x36\n\nuser_peers\x18\x01 \x03(\x0b\x32\x13.dialog.UserOutPeerB\r\x8a\xea\x30\t\n\x07\x63ompact:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\\\n\x15ResponseLoadFullUsers\x12$\n\nfull_users\x18\x01 \x03(\x0b\x32\x10.dialog.FullUser:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse*4\n\x03Sex\x12\x0f\n\x0bSEX_UNKNOWN\x10\x00\x12\x0c\n\x08SEX_MALE\x10\x02\x12\x0e\n\nSEX_FEMALE\x10\x03*\x81\x01\n\x0b\x43ontactType\x12\x17\n\x13\x43ONTACTTYPE_UNKNOWN\x10\x00\x12\x15\n\x11\x43ONTACTTYPE_PHONE\x10\x01\x12\x15\n\x11\x43ONTACTTYPE_EMAIL\x10\x02\x12\x13\n\x0f\x43ONTACTTYPE_WEB\x10\x03\x12\x16\n\x12\x43ONTACTTYPE_SOCIAL\x10\x04*\x9e\x01\n\x0eUserStatusType\x12\x1a\n\x16USERSTATUSTYPE_UNKNOWN\x10\x00\x12\x18\n\x14USERSTATUSTYPE_UNSET\x10\x01\x12\x17\n\x13USERSTATUSTYPE_AWAY\x10\x02\x12\x1f\n\x1bUSERSTATUSTYPE_DONOTDISTURB\x10\x03\x12\x1c\n\x18USERSTATUSTYPE_INVISIBLE\x10\x04\x32\xf7\x01\n\x05Users\x12w\n\x11\x45\x64itUserLocalName\x12 .dialog.RequestEditUserLocalName\x1a\x13.dialog.ResponseSeq\"+\x82\xd3\xe4\x93\x02%\" /v1/grpc/Users/EditUserLocalName:\x01*\x12u\n\rLoadFullUsers\x12\x1c.dialog.RequestLoadFullUsers\x1a\x1d.dialog.ResponseLoadFullUsers\"\'\x82\xd3\xe4\x93\x02!\"\x1c/v1/grpc/Users/LoadFullUsers:\x01*B\x19\xe2?\x16\n\x14im.dlg.grpc.servicesb\x06proto3')
+  serialized_pb=_b('\n\x0busers.proto\x12\x06\x64ialog\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x11\x64\x65\x66initions.proto\x1a\x13miscellaneous.proto\x1a\x0bpeers.proto\x1a\x15media_and_files.proto\x1a\x15scalapb/scalapb.proto\"\xfd\x02\n\rContactRecord\x12\x30\n\x04type\x18\x01 \x01(\x0e\x32\x13.dialog.ContactTypeB\r\x8a\xea\x30\t\n\x07visible\x12=\n\ttype_spec\x18\x06 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x41\n\x0cstring_value\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12>\n\nlong_value\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\r\x8a\xea\x30\t\n\x07visible\x12:\n\x05title\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12<\n\x08subtitle\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\"|\n\nUserStatus\x12\x33\n\x04type\x18\x01 \x01(\x0e\x32\x16.dialog.UserStatusTypeB\r\x8a\xea\x30\t\n\x07visible\x12\x39\n\x04text\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\"\xbb\x04\n\x08UserData\x12\x1a\n\x04name\x18\x01 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\x12\x39\n\x04nick\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12&\n\x03sex\x18\x03 \x01(\x0e\x32\x0b.dialog.SexB\x0c\x8a\xea\x30\x08\n\x06hidden\x12-\n\x06\x61vatar\x18\x04 \x01(\x0b\x32\x0e.dialog.AvatarB\r\x8a\xea\x30\t\n\x07\x63ompact\x12\x39\n\x06is_bot\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12*\n\x06status\x18\x06 \x01(\x0e\x32\x1a.dialog.UserData.Lifecycle\x12\x36\n\x0buser_status\x18\x07 \x01(\x0b\x32\x12.dialog.UserStatusB\r\x8a\xea\x30\t\n\x07visible\x12\x11\n\ttime_zone\x18\x08 \x01(\t\x12\"\n\x04\x65xts\x18\t \x03(\x0b\x32\x14.dialog.UserData.Ext\x12 \n\x05\x63lock\x18\n \x01(\x0b\x32\x11.dialog.DataClock\x1a\x31\n\x03\x45xt\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0b\n\x01s\x18\x02 \x01(\tH\x00\x12\x0b\n\x01\x62\x18\x03 \x01(\x08H\x00\x42\x03\n\x01v\"V\n\tLifecycle\x12\n\n\x06MISSED\x10\x00\x12\n\n\x06\x41\x43TIVE\x10\x01\x12\x0b\n\x07\x44\x45LETED\x10\x02\x12\x0b\n\x07\x42LOCKED\x10\x03\x12\x17\n\x13\x42LOCKED_AND_DELETED\x10\x04\"d\n\x04User\x12\x19\n\x02id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12!\n\x0b\x61\x63\x63\x65ss_hash\x18\x02 \x01(\x03\x42\x0c\x8a\xea\x30\x08\n\x06\x64\x61nger\x12\x1e\n\x04\x64\x61ta\x18\x03 \x01(\x0b\x32\x10.dialog.UserData\"\xa5\x03\n\x0bUserProfile\x12)\n\x04user\x18\x01 \x01(\x0b\x32\x0c.dialog.UserB\r\x8a\xea\x30\t\n\x07visible\x12:\n\x0c\x63ontact_info\x18\x02 \x03(\x0b\x32\x15.dialog.ContactRecordB\r\x8a\xea\x30\t\n\x07\x63ompact\x12\x39\n\x05\x61\x62out\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12*\n\x13preferred_languages\x18\x04 \x03(\tB\r\x8a\xea\x30\t\n\x07visible\x12>\n\ttime_zone\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12\x37\n\x0c\x62ot_commands\x18\x06 \x03(\x0b\x32\x12.dialog.BotCommandB\r\x8a\xea\x30\t\n\x07visible\x12\x16\n\x0e\x63ustom_profile\x18\t \x01(\t\x12\x37\n\x11integration_token\x18\n \x01(\x0b\x32\x1c.google.protobuf.StringValue\"\x84\x04\n\x08\x46ullUser\x12\x19\n\x02id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12:\n\x0c\x63ontact_info\x18\x02 \x03(\x0b\x32\x15.dialog.ContactRecordB\r\x8a\xea\x30\t\n\x07\x63ompact\x12\x39\n\x05\x61\x62out\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\x12*\n\x13preferred_languages\x18\x04 \x03(\tB\r\x8a\xea\x30\t\n\x07visible\x12>\n\ttime_zone\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12\x37\n\x0c\x62ot_commands\x18\x06 \x03(\x0b\x32\x12.dialog.BotCommandB\r\x8a\xea\x30\t\n\x07visible\x12=\n\nis_blocked\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12\x16\n\x0e\x63ustom_profile\x18\t \x01(\t\x12\x37\n\x11integration_token\x18\n \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x31\n\x06status\x18\x0b \x01(\x0b\x32\x12.dialog.UserStatusB\r\x8a\xea\x30\t\n\x07visible\"\x94\x01\n\nBotCommand\x12$\n\rslash_command\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\"\n\x0b\x64\x65scription\x18\x02 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12<\n\x07loc_key\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\"\x93\x01\n\x18RequestEditUserLocalName\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12!\n\x0b\x61\x63\x63\x65ss_hash\x18\x02 \x01(\x03\x42\x0c\x8a\xea\x30\x08\n\x06\x64\x61nger\x12\x1a\n\x04name\x18\x03 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"8\n\nUpdateUser\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x1e\n\x04\x64\x61ta\x18\x02 \x01(\x0b\x32\x10.dialog.UserData\"d\n\x17UpdateUserAvatarChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12-\n\x06\x61vatar\x18\x02 \x01(\x0b\x32\x0e.dialog.AvatarB\r\x8a\xea\x30\t\n\x07\x63ompact\"O\n\x15UpdateUserNameChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x04name\x18\x02 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\"x\n\x1aUpdateUserLocalNameChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12>\n\nlocal_name\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\"v\n\x19UpdateUserContactsChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12=\n\x0f\x63ontact_records\x18\x04 \x03(\x0b\x32\x15.dialog.ContactRecordB\r\x8a\xea\x30\t\n\x07\x63ompact\"r\n\x15UpdateUserNickChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12=\n\x08nickname\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\"o\n\x16UpdateUserAboutChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x39\n\x05\x61\x62out\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden\"m\n#UpdateUserPreferredLanguagesChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12*\n\x13preferred_languages\x18\x02 \x03(\tB\r\x8a\xea\x30\t\n\x07visible\"w\n\x19UpdateUserTimeZoneChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12>\n\ttime_zone\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\"o\n\x1cUpdateUserBotCommandsChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x33\n\x08\x63ommands\x18\x02 \x03(\x0b\x32\x12.dialog.BotCommandB\r\x8a\xea\x30\t\n\x07visible\"Z\n\x14UpdateUserSexChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12&\n\x03sex\x18\x02 \x01(\x0e\x32\x0b.dialog.SexB\x0c\x8a\xea\x30\x08\n\x06hidden\"c\n\x1eUpdateUserCustomProfileChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12%\n\x0e\x63ustom_profile\x18\x02 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\"h\n\x17UpdateUserStatusChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x31\n\x06status\x18\x02 \x01(\x0b\x32\x12.dialog.UserStatusB\r\x8a\xea\x30\t\n\x07visible\"i\n\x14UpdateUserExtChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x35\n\x03\x65xt\x18\x02 \x01(\x0b\x32\x19.dialog.RecursiveMapValueB\r\x8a\xea\x30\t\n\x07visible\"m\n\x18UpdateUserFullExtChanged\x12\x1a\n\x03uid\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x35\n\x03\x65xt\x18\x02 \x01(\x0b\x32\x19.dialog.RecursiveMapValueB\r\x8a\xea\x30\t\n\x07visible\"l\n\x14RequestLoadFullUsers\x12\x36\n\nuser_peers\x18\x01 \x03(\x0b\x32\x13.dialog.UserOutPeerB\r\x8a\xea\x30\t\n\x07\x63ompact:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"\\\n\x15ResponseLoadFullUsers\x12$\n\nfull_users\x18\x01 \x03(\x0b\x32\x10.dialog.FullUser:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse*4\n\x03Sex\x12\x0f\n\x0bSEX_UNKNOWN\x10\x00\x12\x0c\n\x08SEX_MALE\x10\x02\x12\x0e\n\nSEX_FEMALE\x10\x03*\x81\x01\n\x0b\x43ontactType\x12\x17\n\x13\x43ONTACTTYPE_UNKNOWN\x10\x00\x12\x15\n\x11\x43ONTACTTYPE_PHONE\x10\x01\x12\x15\n\x11\x43ONTACTTYPE_EMAIL\x10\x02\x12\x13\n\x0f\x43ONTACTTYPE_WEB\x10\x03\x12\x16\n\x12\x43ONTACTTYPE_SOCIAL\x10\x04*\x9e\x01\n\x0eUserStatusType\x12\x1a\n\x16USERSTATUSTYPE_UNKNOWN\x10\x00\x12\x18\n\x14USERSTATUSTYPE_UNSET\x10\x01\x12\x17\n\x13USERSTATUSTYPE_AWAY\x10\x02\x12\x1f\n\x1bUSERSTATUSTYPE_DONOTDISTURB\x10\x03\x12\x1c\n\x18USERSTATUSTYPE_INVISIBLE\x10\x04\x32\xf7\x01\n\x05Users\x12w\n\x11\x45\x64itUserLocalName\x12 .dialog.RequestEditUserLocalName\x1a\x13.dialog.ResponseSeq\"+\x82\xd3\xe4\x93\x02%\" /v1/grpc/Users/EditUserLocalName:\x01*\x12u\n\rLoadFullUsers\x12\x1c.dialog.RequestLoadFullUsers\x1a\x1d.dialog.ResponseLoadFullUsers\"\'\x82\xd3\xe4\x93\x02!\"\x1c/v1/grpc/Users/LoadFullUsers:\x01*B\x19\xe2?\x16\n\x14im.dlg.grpc.servicesb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,definitions__pb2.DESCRIPTOR,miscellaneous__pb2.DESCRIPTOR,peers__pb2.DESCRIPTOR,media__and__files__pb2.DESCRIPTOR,scalapb_dot_scalapb__pb2.DESCRIPTOR,])
 
@@ -52,8 +52,8 @@ _SEX = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3602,
-  serialized_end=3654,
+  serialized_start=4392,
+  serialized_end=4444,
 )
 _sym_db.RegisterEnumDescriptor(_SEX)
 
@@ -87,8 +87,8 @@ _CONTACTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3657,
-  serialized_end=3786,
+  serialized_start=4447,
+  serialized_end=4576,
 )
 _sym_db.RegisterEnumDescriptor(_CONTACTTYPE)
 
@@ -122,8 +122,8 @@ _USERSTATUSTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3789,
-  serialized_end=3947,
+  serialized_start=4579,
+  serialized_end=4737,
 )
 _sym_db.RegisterEnumDescriptor(_USERSTATUSTYPE)
 
@@ -142,6 +142,40 @@ USERSTATUSTYPE_AWAY = 2
 USERSTATUSTYPE_DONOTDISTURB = 3
 USERSTATUSTYPE_INVISIBLE = 4
 
+
+_USERDATA_LIFECYCLE = _descriptor.EnumDescriptor(
+  name='Lifecycle',
+  full_name='dialog.UserData.Lifecycle',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='MISSED', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ACTIVE', index=1, number=1,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='DELETED', index=2, number=2,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BLOCKED', index=3, number=3,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BLOCKED_AND_DELETED', index=4, number=4,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=1180,
+  serialized_end=1266,
+)
+_sym_db.RegisterEnumDescriptor(_USERDATA_LIFECYCLE)
 
 
 _CONTACTRECORD = _descriptor.Descriptor(
@@ -248,6 +282,148 @@ _USERSTATUS = _descriptor.Descriptor(
 )
 
 
+_USERDATA_EXT = _descriptor.Descriptor(
+  name='Ext',
+  full_name='dialog.UserData.Ext',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='dialog.UserData.Ext.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='s', full_name='dialog.UserData.Ext.s', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='b', full_name='dialog.UserData.Ext.b', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='v', full_name='dialog.UserData.Ext.v',
+      index=0, containing_type=None, fields=[]),
+  ],
+  serialized_start=1129,
+  serialized_end=1178,
+)
+
+_USERDATA = _descriptor.Descriptor(
+  name='UserData',
+  full_name='dialog.UserData',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='name', full_name='dialog.UserData.name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='nick', full_name='dialog.UserData.nick', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='sex', full_name='dialog.UserData.sex', index=2,
+      number=3, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='avatar', full_name='dialog.UserData.avatar', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='is_bot', full_name='dialog.UserData.is_bot', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='dialog.UserData.status', index=5,
+      number=6, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='user_status', full_name='dialog.UserData.user_status', index=6,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='time_zone', full_name='dialog.UserData.time_zone', index=7,
+      number=8, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='exts', full_name='dialog.UserData.exts', index=8,
+      number=9, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='clock', full_name='dialog.UserData.clock', index=9,
+      number=10, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[_USERDATA_EXT, ],
+  enum_types=[
+    _USERDATA_LIFECYCLE,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=695,
+  serialized_end=1266,
+)
+
+
 _USER = _descriptor.Descriptor(
   name='User',
   full_name='dialog.User',
@@ -270,47 +446,12 @@ _USER = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=_b('\212\3520\010\n\006danger'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='name', full_name='dialog.User.name', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='local_name', full_name='dialog.User.local_name', index=3,
-      number=4, type=11, cpp_type=10, label=1,
+      name='data', full_name='dialog.User.data', index=2,
+      number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='nick', full_name='dialog.User.nick', index=4,
-      number=13, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='sex', full_name='dialog.User.sex', index=5,
-      number=5, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='avatar', full_name='dialog.User.avatar', index=6,
-      number=8, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='is_bot', full_name='dialog.User.is_bot', index=7,
-      number=11, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -323,8 +464,88 @@ _USER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=695,
-  serialized_end=1060,
+  serialized_start=1268,
+  serialized_end=1368,
+)
+
+
+_USERPROFILE = _descriptor.Descriptor(
+  name='UserProfile',
+  full_name='dialog.UserProfile',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='user', full_name='dialog.UserProfile.user', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='contact_info', full_name='dialog.UserProfile.contact_info', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007compact'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='about', full_name='dialog.UserProfile.about', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\010\n\006hidden'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='preferred_languages', full_name='dialog.UserProfile.preferred_languages', index=3,
+      number=4, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='time_zone', full_name='dialog.UserProfile.time_zone', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='bot_commands', full_name='dialog.UserProfile.bot_commands', index=5,
+      number=6, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='custom_profile', full_name='dialog.UserProfile.custom_profile', index=6,
+      number=9, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='integration_token', full_name='dialog.UserProfile.integration_token', index=7,
+      number=10, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1371,
+  serialized_end=1792,
 )
 
 
@@ -417,8 +638,8 @@ _FULLUSER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1063,
-  serialized_end=1579,
+  serialized_start=1795,
+  serialized_end=2311,
 )
 
 
@@ -462,8 +683,8 @@ _BOTCOMMAND = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1582,
-  serialized_end=1730,
+  serialized_start=2314,
+  serialized_end=2462,
 )
 
 
@@ -507,8 +728,46 @@ _REQUESTEDITUSERLOCALNAME = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1733,
-  serialized_end=1880,
+  serialized_start=2465,
+  serialized_end=2612,
+)
+
+
+_UPDATEUSER = _descriptor.Descriptor(
+  name='UpdateUser',
+  full_name='dialog.UpdateUser',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='dialog.UpdateUser.id', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='data', full_name='dialog.UpdateUser.data', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2614,
+  serialized_end=2670,
 )
 
 
@@ -545,8 +804,8 @@ _UPDATEUSERAVATARCHANGED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1882,
-  serialized_end=1982,
+  serialized_start=2672,
+  serialized_end=2772,
 )
 
 
@@ -583,8 +842,8 @@ _UPDATEUSERNAMECHANGED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1984,
-  serialized_end=2063,
+  serialized_start=2774,
+  serialized_end=2853,
 )
 
 
@@ -621,8 +880,8 @@ _UPDATEUSERLOCALNAMECHANGED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2065,
-  serialized_end=2185,
+  serialized_start=2855,
+  serialized_end=2975,
 )
 
 
@@ -659,8 +918,8 @@ _UPDATEUSERCONTACTSCHANGED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2187,
-  serialized_end=2305,
+  serialized_start=2977,
+  serialized_end=3095,
 )
 
 
@@ -697,8 +956,8 @@ _UPDATEUSERNICKCHANGED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2307,
-  serialized_end=2421,
+  serialized_start=3097,
+  serialized_end=3211,
 )
 
 
@@ -735,8 +994,8 @@ _UPDATEUSERABOUTCHANGED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2423,
-  serialized_end=2534,
+  serialized_start=3213,
+  serialized_end=3324,
 )
 
 
@@ -773,8 +1032,8 @@ _UPDATEUSERPREFERREDLANGUAGESCHANGED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2536,
-  serialized_end=2645,
+  serialized_start=3326,
+  serialized_end=3435,
 )
 
 
@@ -811,8 +1070,8 @@ _UPDATEUSERTIMEZONECHANGED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2647,
-  serialized_end=2766,
+  serialized_start=3437,
+  serialized_end=3556,
 )
 
 
@@ -849,8 +1108,8 @@ _UPDATEUSERBOTCOMMANDSCHANGED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2768,
-  serialized_end=2879,
+  serialized_start=3558,
+  serialized_end=3669,
 )
 
 
@@ -887,8 +1146,8 @@ _UPDATEUSERSEXCHANGED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2881,
-  serialized_end=2971,
+  serialized_start=3671,
+  serialized_end=3761,
 )
 
 
@@ -925,8 +1184,8 @@ _UPDATEUSERCUSTOMPROFILECHANGED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2973,
-  serialized_end=3072,
+  serialized_start=3763,
+  serialized_end=3862,
 )
 
 
@@ -963,8 +1222,8 @@ _UPDATEUSERSTATUSCHANGED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3074,
-  serialized_end=3178,
+  serialized_start=3864,
+  serialized_end=3968,
 )
 
 
@@ -1001,8 +1260,8 @@ _UPDATEUSEREXTCHANGED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3180,
-  serialized_end=3285,
+  serialized_start=3970,
+  serialized_end=4075,
 )
 
 
@@ -1039,8 +1298,8 @@ _UPDATEUSERFULLEXTCHANGED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3287,
-  serialized_end=3396,
+  serialized_start=4077,
+  serialized_end=4186,
 )
 
 
@@ -1070,8 +1329,8 @@ _REQUESTLOADFULLUSERS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3398,
-  serialized_end=3506,
+  serialized_start=4188,
+  serialized_end=4296,
 )
 
 
@@ -1101,8 +1360,8 @@ _RESPONSELOADFULLUSERS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3508,
-  serialized_end=3600,
+  serialized_start=4298,
+  serialized_end=4390,
 )
 
 _CONTACTRECORD.fields_by_name['type'].enum_type = _CONTACTTYPE
@@ -1113,11 +1372,29 @@ _CONTACTRECORD.fields_by_name['title'].message_type = google_dot_protobuf_dot_wr
 _CONTACTRECORD.fields_by_name['subtitle'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
 _USERSTATUS.fields_by_name['type'].enum_type = _USERSTATUSTYPE
 _USERSTATUS.fields_by_name['text'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
-_USER.fields_by_name['local_name'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
-_USER.fields_by_name['nick'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
-_USER.fields_by_name['sex'].enum_type = _SEX
-_USER.fields_by_name['avatar'].message_type = media__and__files__pb2._AVATAR
-_USER.fields_by_name['is_bot'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
+_USERDATA_EXT.containing_type = _USERDATA
+_USERDATA_EXT.oneofs_by_name['v'].fields.append(
+  _USERDATA_EXT.fields_by_name['s'])
+_USERDATA_EXT.fields_by_name['s'].containing_oneof = _USERDATA_EXT.oneofs_by_name['v']
+_USERDATA_EXT.oneofs_by_name['v'].fields.append(
+  _USERDATA_EXT.fields_by_name['b'])
+_USERDATA_EXT.fields_by_name['b'].containing_oneof = _USERDATA_EXT.oneofs_by_name['v']
+_USERDATA.fields_by_name['nick'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
+_USERDATA.fields_by_name['sex'].enum_type = _SEX
+_USERDATA.fields_by_name['avatar'].message_type = media__and__files__pb2._AVATAR
+_USERDATA.fields_by_name['is_bot'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
+_USERDATA.fields_by_name['status'].enum_type = _USERDATA_LIFECYCLE
+_USERDATA.fields_by_name['user_status'].message_type = _USERSTATUS
+_USERDATA.fields_by_name['exts'].message_type = _USERDATA_EXT
+_USERDATA.fields_by_name['clock'].message_type = definitions__pb2._DATACLOCK
+_USERDATA_LIFECYCLE.containing_type = _USERDATA
+_USER.fields_by_name['data'].message_type = _USERDATA
+_USERPROFILE.fields_by_name['user'].message_type = _USER
+_USERPROFILE.fields_by_name['contact_info'].message_type = _CONTACTRECORD
+_USERPROFILE.fields_by_name['about'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
+_USERPROFILE.fields_by_name['time_zone'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
+_USERPROFILE.fields_by_name['bot_commands'].message_type = _BOTCOMMAND
+_USERPROFILE.fields_by_name['integration_token'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
 _FULLUSER.fields_by_name['contact_info'].message_type = _CONTACTRECORD
 _FULLUSER.fields_by_name['about'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
 _FULLUSER.fields_by_name['time_zone'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
@@ -1126,6 +1403,7 @@ _FULLUSER.fields_by_name['is_blocked'].message_type = google_dot_protobuf_dot_wr
 _FULLUSER.fields_by_name['integration_token'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
 _FULLUSER.fields_by_name['status'].message_type = _USERSTATUS
 _BOTCOMMAND.fields_by_name['loc_key'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
+_UPDATEUSER.fields_by_name['data'].message_type = _USERDATA
 _UPDATEUSERAVATARCHANGED.fields_by_name['avatar'].message_type = media__and__files__pb2._AVATAR
 _UPDATEUSERLOCALNAMECHANGED.fields_by_name['local_name'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
 _UPDATEUSERCONTACTSCHANGED.fields_by_name['contact_records'].message_type = _CONTACTRECORD
@@ -1141,10 +1419,13 @@ _REQUESTLOADFULLUSERS.fields_by_name['user_peers'].message_type = peers__pb2._US
 _RESPONSELOADFULLUSERS.fields_by_name['full_users'].message_type = _FULLUSER
 DESCRIPTOR.message_types_by_name['ContactRecord'] = _CONTACTRECORD
 DESCRIPTOR.message_types_by_name['UserStatus'] = _USERSTATUS
+DESCRIPTOR.message_types_by_name['UserData'] = _USERDATA
 DESCRIPTOR.message_types_by_name['User'] = _USER
+DESCRIPTOR.message_types_by_name['UserProfile'] = _USERPROFILE
 DESCRIPTOR.message_types_by_name['FullUser'] = _FULLUSER
 DESCRIPTOR.message_types_by_name['BotCommand'] = _BOTCOMMAND
 DESCRIPTOR.message_types_by_name['RequestEditUserLocalName'] = _REQUESTEDITUSERLOCALNAME
+DESCRIPTOR.message_types_by_name['UpdateUser'] = _UPDATEUSER
 DESCRIPTOR.message_types_by_name['UpdateUserAvatarChanged'] = _UPDATEUSERAVATARCHANGED
 DESCRIPTOR.message_types_by_name['UpdateUserNameChanged'] = _UPDATEUSERNAMECHANGED
 DESCRIPTOR.message_types_by_name['UpdateUserLocalNameChanged'] = _UPDATEUSERLOCALNAMECHANGED
@@ -1180,12 +1461,34 @@ UserStatus = _reflection.GeneratedProtocolMessageType('UserStatus', (_message.Me
   ))
 _sym_db.RegisterMessage(UserStatus)
 
+UserData = _reflection.GeneratedProtocolMessageType('UserData', (_message.Message,), dict(
+
+  Ext = _reflection.GeneratedProtocolMessageType('Ext', (_message.Message,), dict(
+    DESCRIPTOR = _USERDATA_EXT,
+    __module__ = 'users_pb2'
+    # @@protoc_insertion_point(class_scope:dialog.UserData.Ext)
+    ))
+  ,
+  DESCRIPTOR = _USERDATA,
+  __module__ = 'users_pb2'
+  # @@protoc_insertion_point(class_scope:dialog.UserData)
+  ))
+_sym_db.RegisterMessage(UserData)
+_sym_db.RegisterMessage(UserData.Ext)
+
 User = _reflection.GeneratedProtocolMessageType('User', (_message.Message,), dict(
   DESCRIPTOR = _USER,
   __module__ = 'users_pb2'
   # @@protoc_insertion_point(class_scope:dialog.User)
   ))
 _sym_db.RegisterMessage(User)
+
+UserProfile = _reflection.GeneratedProtocolMessageType('UserProfile', (_message.Message,), dict(
+  DESCRIPTOR = _USERPROFILE,
+  __module__ = 'users_pb2'
+  # @@protoc_insertion_point(class_scope:dialog.UserProfile)
+  ))
+_sym_db.RegisterMessage(UserProfile)
 
 FullUser = _reflection.GeneratedProtocolMessageType('FullUser', (_message.Message,), dict(
   DESCRIPTOR = _FULLUSER,
@@ -1207,6 +1510,13 @@ RequestEditUserLocalName = _reflection.GeneratedProtocolMessageType('RequestEdit
   # @@protoc_insertion_point(class_scope:dialog.RequestEditUserLocalName)
   ))
 _sym_db.RegisterMessage(RequestEditUserLocalName)
+
+UpdateUser = _reflection.GeneratedProtocolMessageType('UpdateUser', (_message.Message,), dict(
+  DESCRIPTOR = _UPDATEUSER,
+  __module__ = 'users_pb2'
+  # @@protoc_insertion_point(class_scope:dialog.UpdateUser)
+  ))
+_sym_db.RegisterMessage(UpdateUser)
 
 UpdateUserAvatarChanged = _reflection.GeneratedProtocolMessageType('UpdateUserAvatarChanged', (_message.Message,), dict(
   DESCRIPTOR = _UPDATEUSERAVATARCHANGED,
@@ -1330,14 +1640,20 @@ _CONTACTRECORD.fields_by_name['title']._options = None
 _CONTACTRECORD.fields_by_name['subtitle']._options = None
 _USERSTATUS.fields_by_name['type']._options = None
 _USERSTATUS.fields_by_name['text']._options = None
+_USERDATA.fields_by_name['name']._options = None
+_USERDATA.fields_by_name['nick']._options = None
+_USERDATA.fields_by_name['sex']._options = None
+_USERDATA.fields_by_name['avatar']._options = None
+_USERDATA.fields_by_name['is_bot']._options = None
+_USERDATA.fields_by_name['user_status']._options = None
 _USER.fields_by_name['id']._options = None
 _USER.fields_by_name['access_hash']._options = None
-_USER.fields_by_name['name']._options = None
-_USER.fields_by_name['local_name']._options = None
-_USER.fields_by_name['nick']._options = None
-_USER.fields_by_name['sex']._options = None
-_USER.fields_by_name['avatar']._options = None
-_USER.fields_by_name['is_bot']._options = None
+_USERPROFILE.fields_by_name['user']._options = None
+_USERPROFILE.fields_by_name['contact_info']._options = None
+_USERPROFILE.fields_by_name['about']._options = None
+_USERPROFILE.fields_by_name['preferred_languages']._options = None
+_USERPROFILE.fields_by_name['time_zone']._options = None
+_USERPROFILE.fields_by_name['bot_commands']._options = None
 _FULLUSER.fields_by_name['id']._options = None
 _FULLUSER.fields_by_name['contact_info']._options = None
 _FULLUSER.fields_by_name['about']._options = None
@@ -1391,8 +1707,8 @@ _USERS = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=3950,
-  serialized_end=4197,
+  serialized_start=4740,
+  serialized_end=4987,
   methods=[
   _descriptor.MethodDescriptor(
     name='EditUserLocalName',

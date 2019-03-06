@@ -25,6 +25,11 @@ class ConfigSyncStub(object):
         request_serializer=config__sync__pb2.RequestEditParameter.SerializeToString,
         response_deserializer=miscellaneous__pb2.ResponseSeq.FromString,
         )
+    self.FeatureFlags = channel.unary_unary(
+        '/dialog.ConfigSync/FeatureFlags',
+        request_serializer=config__sync__pb2.RequestFeatureFlags.SerializeToString,
+        response_deserializer=config__sync__pb2.ResponseFeatureFlags.FromString,
+        )
 
 
 class ConfigSyncServicer(object):
@@ -45,6 +50,13 @@ class ConfigSyncServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def FeatureFlags(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_ConfigSyncServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -57,6 +69,11 @@ def add_ConfigSyncServicer_to_server(servicer, server):
           servicer.EditParameter,
           request_deserializer=config__sync__pb2.RequestEditParameter.FromString,
           response_serializer=miscellaneous__pb2.ResponseSeq.SerializeToString,
+      ),
+      'FeatureFlags': grpc.unary_unary_rpc_method_handler(
+          servicer.FeatureFlags,
+          request_deserializer=config__sync__pb2.RequestFeatureFlags.FromString,
+          response_serializer=config__sync__pb2.ResponseFeatureFlags.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

@@ -25,7 +25,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='dialog',
   syntax='proto3',
   serialized_options=_b('\342?\026\n\024im.dlg.grpc.services'),
-  serialized_pb=_b('\n\x13miscellaneous.proto\x12\x06\x64ialog\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x11\x64\x65\x66initions.proto\x1a\x0bpeers.proto\x1a\x15scalapb/scalapb.proto\"-\n\x0cResponseVoid:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\x83\x01\n\x0bResponseSeq\x12\x1a\n\x03seq\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05state\x18\x02 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x64\x61te\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\xb6\x01\n\x0fResponseSeqDate\x12\x1a\n\x03seq\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05state\x18\x02 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x64\x61te\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12-\n\x03mid\x18\x04 \x01(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\xb9\x01\n\x12ResponseSeqDateMid\x12\x1a\n\x03seq\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05state\x18\x02 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x64\x61te\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12-\n\x03mid\x18\x04 \x01(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"K\n\x0cResponseBool\x12\x1c\n\x05value\x18\x01 \x01(\x08\x42\r\x8a\xea\x30\t\n\x07visible:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\xf0\x03\n\x06\x43onfig\x12%\n\x0emax_group_size\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x31\n\x08\x64iscover\x18\x02 \x01(\x0b\x32\x10.dialog.DiscoverB\r\x8a\xea\x30\t\n\x07visible\x12\x43\n\x0eshare_endpoint\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12\x38\n\x0c\x63\x61lls_config\x18\x05 \x01(\x0b\x32\x13.dialog.CallsConfigB\r\x8a\xea\x30\t\n\x07visible\x12\x41\n\x13group_invite_config\x18\x06 \x01(\x0b\x32\x15.dialog.InvitesConfigB\r\x8a\xea\x30\t\n\x07visible\x12?\n\x10server_meta_info\x18\x07 \x01(\x0b\x32\x16.dialog.ServerMetaInfoB\r\x8a\xea\x30\t\n\x07visible\x12,\n\x15\x63ustom_profile_schema\x18\x08 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12:\n\rservice_peers\x18\t \x01(\x0b\x32\x14.dialog.ServicePeersB\r\x8a\xea\x30\t\n\x07visible\x12\x1f\n\nextensions\x18\x03 \x03(\x0b\x32\x0b.dialog.Any\"s\n\x0cServicePeers\x12!\n\x08security\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeer\x12 \n\x07support\x18\x02 \x01(\x0b\x32\x0f.dialog.OutPeer\x12\x1e\n\x05stash\x18\x03 \x01(\x0b\x32\x0f.dialog.OutPeer\"v\n\x0eServerMetaInfo\x12#\n\x0crelease_date\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12?\n\x0b\x61pi_version\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\r\x8a\xea\x30\t\n\x07visible\"\x81\x04\n\x0b\x43\x61llsConfig\x12@\n\rcalls_enabled\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12\x46\n\x13video_calls_enabled\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12\x46\n\x13group_calls_enabled\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12K\n\x17group_calls_max_members\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\r\x8a\xea\x30\t\n\x07visible\x12=\n\x0frtcp_mux_policy\x18\x05 \x01(\x0e\x32\x15.dialog.RtcpMuxPolicyB\r\x8a\xea\x30\t\n\x07visible\x12I\n\x16\x65moji_security_enabled\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12I\n\x16screen_sharing_enabled\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\"\xac\x02\n\rInvitesConfig\x12=\n\x08\x62\x61se_url\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12L\n\x17group_invite_url_prefix\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12G\n\x12resolve_url_prefix\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12\x45\n\x10share_invite_url\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\"9\n\x08\x44iscover\x12-\n\x05peers\x18\x01 \x03(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible\"C\n\tExtension\x12\x19\n\x02id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x64\x61ta\x18\x02 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07visible\"B\n\x03\x41ny\x12\x1f\n\x08type_url\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x04\x64\x61ta\x18\x02 \x01(\x0c\x42\x0c\x8a\xea\x30\x08\n\x06hidden\"~\n\x0cUpdateConfig\x12-\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x0e.dialog.ConfigB\r\x8a\xea\x30\t\n\x07visible\x12?\n\x0b\x63onfig_hash\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\r\x8a\xea\x30\t\n\x07visible\"\xa0\x04\n\x11RecursiveMapValue\x12<\n\x05items\x18\x01 \x03(\x0b\x32\x1e.dialog.RecursiveMapValue.ItemB\r\x8a\xea\x30\t\n\x07visible\x1a\xa0\x02\n\x05Value\x12)\n\x01\x64\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.DoubleValueH\x00\x12*\n\x03i32\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueH\x00\x12*\n\x03i64\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueH\x00\x12+\n\x03str\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.StringValueH\x00\x12(\n\x03rec\x18\x06 \x01(\x0b\x32\x19.dialog.RecursiveMapValueH\x00\x12\x34\n\tarray_rec\x18\x07 \x01(\x0b\x32\x1f.dialog.RecursiveMapValue.ArrayH\x00\x42\x07\n\x05value\x1aG\n\x05\x41rray\x12>\n\x06values\x18\x01 \x03(\x0b\x32\x1f.dialog.RecursiveMapValue.ValueB\r\x8a\xea\x30\t\n\x07visible\x1a\x61\n\x04Item\x12\x1a\n\x03key\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12=\n\x05value\x18\x02 \x01(\x0b\x32\x1f.dialog.RecursiveMapValue.ValueB\r\x8a\xea\x30\t\n\x07visible*b\n\rRtcpMuxPolicy\x12\x19\n\x15RTCPMUXPOLICY_UNKNOWN\x10\x00\x12\x1b\n\x17RTCPMUXPOLICY_NEGOTIATE\x10\x01\x12\x19\n\x15RTCPMUXPOLICY_REQUIRE\x10\x02*\xe1\x02\n\x12UpdateOptimization\x12\x1e\n\x1aUPDATEOPTIMIZATION_UNKNOWN\x10\x00\x12\x1b\n\x17UPDATEOPTIMIZATION_NONE\x10\x01\x12%\n!UPDATEOPTIMIZATION_STRIP_ENTITIES\x10\x02\x12&\n\"UPDATEOPTIMIZATION_ENABLE_COMBINED\x10\x03\x12&\n\"UPDATEOPTIMIZATION_FASTER_MESSAGES\x10\x04\x12%\n!UPDATEOPTIMIZATION_STRIP_COUNTERS\x10\x05\x12$\n UPDATEOPTIMIZATION_COMPACT_USERS\x10\x06\x12 \n\x1cUPDATEOPTIMIZATION_GROUPS_V2\x10\x07\x12(\n$UPDATEOPTIMIZATION_STRIP_ENTITIES_V2\x10\x08\x42\x19\xe2?\x16\n\x14im.dlg.grpc.servicesb\x06proto3')
+  serialized_pb=_b('\n\x13miscellaneous.proto\x12\x06\x64ialog\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x11\x64\x65\x66initions.proto\x1a\x0bpeers.proto\x1a\x15scalapb/scalapb.proto\"-\n\x0cResponseVoid:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\x83\x01\n\x0bResponseSeq\x12\x1a\n\x03seq\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05state\x18\x02 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x64\x61te\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\xb6\x01\n\x0fResponseSeqDate\x12\x1a\n\x03seq\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05state\x18\x02 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x64\x61te\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12-\n\x03mid\x18\x04 \x01(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\xb9\x01\n\x12ResponseSeqDateMid\x12\x1a\n\x03seq\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05state\x18\x02 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x64\x61te\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12-\n\x03mid\x18\x04 \x01(\x0b\x32\x11.dialog.UUIDValueB\r\x8a\xea\x30\t\n\x07visible:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"K\n\x0cResponseBool\x12\x1c\n\x05value\x18\x01 \x01(\x08\x42\r\x8a\xea\x30\t\n\x07visible:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\x9a\x04\n\x06\x43onfig\x12%\n\x0emax_group_size\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x31\n\x08\x64iscover\x18\x02 \x01(\x0b\x32\x10.dialog.DiscoverB\r\x8a\xea\x30\t\n\x07visible\x12\x43\n\x0eshare_endpoint\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12\x38\n\x0c\x63\x61lls_config\x18\x05 \x01(\x0b\x32\x13.dialog.CallsConfigB\r\x8a\xea\x30\t\n\x07visible\x12\x41\n\x13group_invite_config\x18\x06 \x01(\x0b\x32\x15.dialog.InvitesConfigB\r\x8a\xea\x30\t\n\x07visible\x12?\n\x10server_meta_info\x18\x07 \x01(\x0b\x32\x16.dialog.ServerMetaInfoB\r\x8a\xea\x30\t\n\x07visible\x12,\n\x15\x63ustom_profile_schema\x18\x08 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12:\n\rservice_peers\x18\t \x01(\x0b\x32\x14.dialog.ServicePeersB\r\x8a\xea\x30\t\n\x07visible\x12\x1f\n\nextensions\x18\x03 \x03(\x0b\x32\x0b.dialog.Any\x12(\n\x11\x63lient_keep_alive\x18\n \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\"s\n\x0cServicePeers\x12!\n\x08security\x18\x01 \x01(\x0b\x32\x0f.dialog.OutPeer\x12 \n\x07support\x18\x02 \x01(\x0b\x32\x0f.dialog.OutPeer\x12\x1e\n\x05stash\x18\x03 \x01(\x0b\x32\x0f.dialog.OutPeer\"v\n\x0eServerMetaInfo\x12#\n\x0crelease_date\x18\x01 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\x12?\n\x0b\x61pi_version\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\r\x8a\xea\x30\t\n\x07visible\"\x81\x04\n\x0b\x43\x61llsConfig\x12@\n\rcalls_enabled\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12\x46\n\x13video_calls_enabled\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12\x46\n\x13group_calls_enabled\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12K\n\x17group_calls_max_members\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\r\x8a\xea\x30\t\n\x07visible\x12=\n\x0frtcp_mux_policy\x18\x05 \x01(\x0e\x32\x15.dialog.RtcpMuxPolicyB\r\x8a\xea\x30\t\n\x07visible\x12I\n\x16\x65moji_security_enabled\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\x12I\n\x16screen_sharing_enabled\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\r\x8a\xea\x30\t\n\x07visible\"\xac\x02\n\rInvitesConfig\x12=\n\x08\x62\x61se_url\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12L\n\x17group_invite_url_prefix\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12G\n\x12resolve_url_prefix\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\x12\x45\n\x10share_invite_url\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\r\x8a\xea\x30\t\n\x07visible\"9\n\x08\x44iscover\x12-\n\x05peers\x18\x01 \x03(\x0b\x32\x0f.dialog.OutPeerB\r\x8a\xea\x30\t\n\x07visible\"C\n\tExtension\x12\x19\n\x02id\x18\x01 \x01(\x05\x42\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x04\x64\x61ta\x18\x02 \x01(\x0c\x42\r\x8a\xea\x30\t\n\x07visible\"B\n\x03\x41ny\x12\x1f\n\x08type_url\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1a\n\x04\x64\x61ta\x18\x02 \x01(\x0c\x42\x0c\x8a\xea\x30\x08\n\x06hidden\"~\n\x0cUpdateConfig\x12-\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x0e.dialog.ConfigB\r\x8a\xea\x30\t\n\x07visible\x12?\n\x0b\x63onfig_hash\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\r\x8a\xea\x30\t\n\x07visible\"\xa0\x04\n\x11RecursiveMapValue\x12<\n\x05items\x18\x01 \x03(\x0b\x32\x1e.dialog.RecursiveMapValue.ItemB\r\x8a\xea\x30\t\n\x07visible\x1a\xa0\x02\n\x05Value\x12)\n\x01\x64\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.DoubleValueH\x00\x12*\n\x03i32\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueH\x00\x12*\n\x03i64\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueH\x00\x12+\n\x03str\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.StringValueH\x00\x12(\n\x03rec\x18\x06 \x01(\x0b\x32\x19.dialog.RecursiveMapValueH\x00\x12\x34\n\tarray_rec\x18\x07 \x01(\x0b\x32\x1f.dialog.RecursiveMapValue.ArrayH\x00\x42\x07\n\x05value\x1aG\n\x05\x41rray\x12>\n\x06values\x18\x01 \x03(\x0b\x32\x1f.dialog.RecursiveMapValue.ValueB\r\x8a\xea\x30\t\n\x07visible\x1a\x61\n\x04Item\x12\x1a\n\x03key\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12=\n\x05value\x18\x02 \x01(\x0b\x32\x1f.dialog.RecursiveMapValue.ValueB\r\x8a\xea\x30\t\n\x07visible*b\n\rRtcpMuxPolicy\x12\x19\n\x15RTCPMUXPOLICY_UNKNOWN\x10\x00\x12\x1b\n\x17RTCPMUXPOLICY_NEGOTIATE\x10\x01\x12\x19\n\x15RTCPMUXPOLICY_REQUIRE\x10\x02*\xe1\x02\n\x12UpdateOptimization\x12\x1e\n\x1aUPDATEOPTIMIZATION_UNKNOWN\x10\x00\x12\x1b\n\x17UPDATEOPTIMIZATION_NONE\x10\x01\x12%\n!UPDATEOPTIMIZATION_STRIP_ENTITIES\x10\x02\x12&\n\"UPDATEOPTIMIZATION_ENABLE_COMBINED\x10\x03\x12&\n\"UPDATEOPTIMIZATION_FASTER_MESSAGES\x10\x04\x12%\n!UPDATEOPTIMIZATION_STRIP_COUNTERS\x10\x05\x12$\n UPDATEOPTIMIZATION_COMPACT_USERS\x10\x06\x12 \n\x1cUPDATEOPTIMIZATION_GROUPS_V2\x10\x07\x12(\n$UPDATEOPTIMIZATION_STRIP_ENTITIES_V2\x10\x08\x42\x19\xe2?\x16\n\x14im.dlg.grpc.servicesb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,definitions__pb2.DESCRIPTOR,peers__pb2.DESCRIPTOR,scalapb_dot_scalapb__pb2.DESCRIPTOR,])
 
@@ -50,8 +50,8 @@ _RTCPMUXPOLICY = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3205,
-  serialized_end=3303,
+  serialized_start=3247,
+  serialized_end=3345,
 )
 _sym_db.RegisterEnumDescriptor(_RTCPMUXPOLICY)
 
@@ -101,8 +101,8 @@ _UPDATEOPTIMIZATION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3306,
-  serialized_end=3659,
+  serialized_start=3348,
+  serialized_end=3701,
 )
 _sym_db.RegisterEnumDescriptor(_UPDATEOPTIMIZATION)
 
@@ -396,6 +396,13 @@ _CONFIG = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='client_keep_alive', full_name='dialog.Config.client_keep_alive', index=9,
+      number=10, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -409,7 +416,7 @@ _CONFIG = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=780,
-  serialized_end=1276,
+  serialized_end=1318,
 )
 
 
@@ -453,8 +460,8 @@ _SERVICEPEERS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1278,
-  serialized_end=1393,
+  serialized_start=1320,
+  serialized_end=1435,
 )
 
 
@@ -491,8 +498,8 @@ _SERVERMETAINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1395,
-  serialized_end=1513,
+  serialized_start=1437,
+  serialized_end=1555,
 )
 
 
@@ -564,8 +571,8 @@ _CALLSCONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1516,
-  serialized_end=2029,
+  serialized_start=1558,
+  serialized_end=2071,
 )
 
 
@@ -616,8 +623,8 @@ _INVITESCONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2032,
-  serialized_end=2332,
+  serialized_start=2074,
+  serialized_end=2374,
 )
 
 
@@ -647,8 +654,8 @@ _DISCOVER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2334,
-  serialized_end=2391,
+  serialized_start=2376,
+  serialized_end=2433,
 )
 
 
@@ -685,8 +692,8 @@ _EXTENSION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2393,
-  serialized_end=2460,
+  serialized_start=2435,
+  serialized_end=2502,
 )
 
 
@@ -723,8 +730,8 @@ _ANY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2462,
-  serialized_end=2528,
+  serialized_start=2504,
+  serialized_end=2570,
 )
 
 
@@ -761,8 +768,8 @@ _UPDATECONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2530,
-  serialized_end=2656,
+  serialized_start=2572,
+  serialized_end=2698,
 )
 
 
@@ -830,8 +837,8 @@ _RECURSIVEMAPVALUE_VALUE = _descriptor.Descriptor(
       name='value', full_name='dialog.RecursiveMapValue.Value.value',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=2743,
-  serialized_end=3031,
+  serialized_start=2785,
+  serialized_end=3073,
 )
 
 _RECURSIVEMAPVALUE_ARRAY = _descriptor.Descriptor(
@@ -860,8 +867,8 @@ _RECURSIVEMAPVALUE_ARRAY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3033,
-  serialized_end=3104,
+  serialized_start=3075,
+  serialized_end=3146,
 )
 
 _RECURSIVEMAPVALUE_ITEM = _descriptor.Descriptor(
@@ -897,8 +904,8 @@ _RECURSIVEMAPVALUE_ITEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3106,
-  serialized_end=3203,
+  serialized_start=3148,
+  serialized_end=3245,
 )
 
 _RECURSIVEMAPVALUE = _descriptor.Descriptor(
@@ -927,8 +934,8 @@ _RECURSIVEMAPVALUE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2659,
-  serialized_end=3203,
+  serialized_start=2701,
+  serialized_end=3245,
 )
 
 _RESPONSESEQDATE.fields_by_name['mid'].message_type = definitions__pb2._UUIDVALUE
@@ -1163,6 +1170,7 @@ _CONFIG.fields_by_name['group_invite_config']._options = None
 _CONFIG.fields_by_name['server_meta_info']._options = None
 _CONFIG.fields_by_name['custom_profile_schema']._options = None
 _CONFIG.fields_by_name['service_peers']._options = None
+_CONFIG.fields_by_name['client_keep_alive']._options = None
 _SERVERMETAINFO.fields_by_name['release_date']._options = None
 _SERVERMETAINFO.fields_by_name['api_version']._options = None
 _CALLSCONFIG.fields_by_name['calls_enabled']._options = None

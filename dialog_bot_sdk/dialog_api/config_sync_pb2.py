@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='dialog',
   syntax='proto3',
   serialized_options=_b('\342?\026\n\024im.dlg.grpc.services'),
-  serialized_pb=_b('\n\x11\x63onfig_sync.proto\x12\x06\x64ialog\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x11\x64\x65\x66initions.proto\x1a\x13miscellaneous.proto\x1a\x15scalapb/scalapb.proto\"D\n\tParameter\x12\x1a\n\x03key\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x05value\x18\x02 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\"4\n\x14RequestGetParameters:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"]\n\x15ResponseGetParameters\x12%\n\nparameters\x18\x01 \x03(\x0b\x32\x11.dialog.Parameter:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\x8b\x01\n\x14RequestEditParameter\x12\x1a\n\x03key\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x39\n\x05value\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"o\n\x16UpdateParameterChanged\x12\x1a\n\x03key\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x39\n\x05value\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden2\xfa\x01\n\nConfigSync\x12z\n\rGetParameters\x12\x1c.dialog.RequestGetParameters\x1a\x1d.dialog.ResponseGetParameters\",\x82\xd3\xe4\x93\x02&\"!/v1/grpc/ConfigSync/GetParameters:\x01*\x12p\n\rEditParameter\x12\x1c.dialog.RequestEditParameter\x1a\x13.dialog.ResponseSeq\",\x82\xd3\xe4\x93\x02&\"!/v1/grpc/ConfigSync/EditParameter:\x01*B\x19\xe2?\x16\n\x14im.dlg.grpc.servicesb\x06proto3')
+  serialized_pb=_b('\n\x11\x63onfig_sync.proto\x12\x06\x64ialog\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x11\x64\x65\x66initions.proto\x1a\x13miscellaneous.proto\x1a\x15scalapb/scalapb.proto\"D\n\tParameter\x12\x1a\n\x03key\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1b\n\x05value\x18\x02 \x01(\tB\x0c\x8a\xea\x30\x08\n\x06hidden\"4\n\x14RequestGetParameters:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"]\n\x15ResponseGetParameters\x12%\n\nparameters\x18\x01 \x03(\x0b\x32\x11.dialog.Parameter:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"\x8b\x01\n\x14RequestEditParameter\x12\x1a\n\x03key\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x39\n\x05value\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"e\n\x0b\x46\x65\x61tureFlag\x12\x1a\n\x03key\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05value\x18\x02 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x1c\n\x05\x63lock\x18\x03 \x01(\x03\x42\r\x8a\xea\x30\t\n\x07visible\"B\n\x13RequestFeatureFlags\x12\r\n\x05\x63lock\x18\x01 \x01(\x03:\x1c\xe2?\x19\n\x17im.dlg.grpc.GrpcRequest\"b\n\x14ResponseFeatureFlags\x12+\n\x0e\x66\x65\x61ture_config\x18\x01 \x03(\x0b\x32\x13.dialog.FeatureFlag:\x1d\xe2?\x1a\n\x18im.dlg.grpc.GrpcResponse\"O\n\x18UpdateFeatureFlagChanged\x12\x33\n\x07\x66\x65\x61ture\x18\x01 \x01(\x0b\x32\x13.dialog.FeatureFlagB\r\x8a\xea\x30\t\n\x07visible\"o\n\x16UpdateParameterChanged\x12\x1a\n\x03key\x18\x01 \x01(\tB\r\x8a\xea\x30\t\n\x07visible\x12\x39\n\x05value\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x0c\x8a\xea\x30\x08\n\x06hidden2\xf2\x02\n\nConfigSync\x12z\n\rGetParameters\x12\x1c.dialog.RequestGetParameters\x1a\x1d.dialog.ResponseGetParameters\",\x82\xd3\xe4\x93\x02&\"!/v1/grpc/ConfigSync/GetParameters:\x01*\x12p\n\rEditParameter\x12\x1c.dialog.RequestEditParameter\x1a\x13.dialog.ResponseSeq\",\x82\xd3\xe4\x93\x02&\"!/v1/grpc/ConfigSync/EditParameter:\x01*\x12v\n\x0c\x46\x65\x61tureFlags\x12\x1b.dialog.RequestFeatureFlags\x1a\x1c.dialog.ResponseFeatureFlags\"+\x82\xd3\xe4\x93\x02%\" /v1/grpc/ConfigSync/FeatureFlags:\x01*B\x19\xe2?\x16\n\x14im.dlg.grpc.servicesb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,definitions__pb2.DESCRIPTOR,miscellaneous__pb2.DESCRIPTOR,scalapb_dot_scalapb__pb2.DESCRIPTOR,])
 
@@ -162,6 +162,144 @@ _REQUESTEDITPARAMETER = _descriptor.Descriptor(
 )
 
 
+_FEATUREFLAG = _descriptor.Descriptor(
+  name='FeatureFlag',
+  full_name='dialog.FeatureFlag',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='dialog.FeatureFlag.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='dialog.FeatureFlag.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='clock', full_name='dialog.FeatureFlag.clock', index=2,
+      number=3, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=515,
+  serialized_end=616,
+)
+
+
+_REQUESTFEATUREFLAGS = _descriptor.Descriptor(
+  name='RequestFeatureFlags',
+  full_name='dialog.RequestFeatureFlags',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='clock', full_name='dialog.RequestFeatureFlags.clock', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=_b('\342?\031\n\027im.dlg.grpc.GrpcRequest'),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=618,
+  serialized_end=684,
+)
+
+
+_RESPONSEFEATUREFLAGS = _descriptor.Descriptor(
+  name='ResponseFeatureFlags',
+  full_name='dialog.ResponseFeatureFlags',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='feature_config', full_name='dialog.ResponseFeatureFlags.feature_config', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=_b('\342?\032\n\030im.dlg.grpc.GrpcResponse'),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=686,
+  serialized_end=784,
+)
+
+
+_UPDATEFEATUREFLAGCHANGED = _descriptor.Descriptor(
+  name='UpdateFeatureFlagChanged',
+  full_name='dialog.UpdateFeatureFlagChanged',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='feature', full_name='dialog.UpdateFeatureFlagChanged.feature', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3520\t\n\007visible'), file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=786,
+  serialized_end=865,
+)
+
+
 _UPDATEPARAMETERCHANGED = _descriptor.Descriptor(
   name='UpdateParameterChanged',
   full_name='dialog.UpdateParameterChanged',
@@ -195,17 +333,23 @@ _UPDATEPARAMETERCHANGED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=515,
-  serialized_end=626,
+  serialized_start=867,
+  serialized_end=978,
 )
 
 _RESPONSEGETPARAMETERS.fields_by_name['parameters'].message_type = _PARAMETER
 _REQUESTEDITPARAMETER.fields_by_name['value'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
+_RESPONSEFEATUREFLAGS.fields_by_name['feature_config'].message_type = _FEATUREFLAG
+_UPDATEFEATUREFLAGCHANGED.fields_by_name['feature'].message_type = _FEATUREFLAG
 _UPDATEPARAMETERCHANGED.fields_by_name['value'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
 DESCRIPTOR.message_types_by_name['Parameter'] = _PARAMETER
 DESCRIPTOR.message_types_by_name['RequestGetParameters'] = _REQUESTGETPARAMETERS
 DESCRIPTOR.message_types_by_name['ResponseGetParameters'] = _RESPONSEGETPARAMETERS
 DESCRIPTOR.message_types_by_name['RequestEditParameter'] = _REQUESTEDITPARAMETER
+DESCRIPTOR.message_types_by_name['FeatureFlag'] = _FEATUREFLAG
+DESCRIPTOR.message_types_by_name['RequestFeatureFlags'] = _REQUESTFEATUREFLAGS
+DESCRIPTOR.message_types_by_name['ResponseFeatureFlags'] = _RESPONSEFEATUREFLAGS
+DESCRIPTOR.message_types_by_name['UpdateFeatureFlagChanged'] = _UPDATEFEATUREFLAGCHANGED
 DESCRIPTOR.message_types_by_name['UpdateParameterChanged'] = _UPDATEPARAMETERCHANGED
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -237,6 +381,34 @@ RequestEditParameter = _reflection.GeneratedProtocolMessageType('RequestEditPara
   ))
 _sym_db.RegisterMessage(RequestEditParameter)
 
+FeatureFlag = _reflection.GeneratedProtocolMessageType('FeatureFlag', (_message.Message,), dict(
+  DESCRIPTOR = _FEATUREFLAG,
+  __module__ = 'config_sync_pb2'
+  # @@protoc_insertion_point(class_scope:dialog.FeatureFlag)
+  ))
+_sym_db.RegisterMessage(FeatureFlag)
+
+RequestFeatureFlags = _reflection.GeneratedProtocolMessageType('RequestFeatureFlags', (_message.Message,), dict(
+  DESCRIPTOR = _REQUESTFEATUREFLAGS,
+  __module__ = 'config_sync_pb2'
+  # @@protoc_insertion_point(class_scope:dialog.RequestFeatureFlags)
+  ))
+_sym_db.RegisterMessage(RequestFeatureFlags)
+
+ResponseFeatureFlags = _reflection.GeneratedProtocolMessageType('ResponseFeatureFlags', (_message.Message,), dict(
+  DESCRIPTOR = _RESPONSEFEATUREFLAGS,
+  __module__ = 'config_sync_pb2'
+  # @@protoc_insertion_point(class_scope:dialog.ResponseFeatureFlags)
+  ))
+_sym_db.RegisterMessage(ResponseFeatureFlags)
+
+UpdateFeatureFlagChanged = _reflection.GeneratedProtocolMessageType('UpdateFeatureFlagChanged', (_message.Message,), dict(
+  DESCRIPTOR = _UPDATEFEATUREFLAGCHANGED,
+  __module__ = 'config_sync_pb2'
+  # @@protoc_insertion_point(class_scope:dialog.UpdateFeatureFlagChanged)
+  ))
+_sym_db.RegisterMessage(UpdateFeatureFlagChanged)
+
 UpdateParameterChanged = _reflection.GeneratedProtocolMessageType('UpdateParameterChanged', (_message.Message,), dict(
   DESCRIPTOR = _UPDATEPARAMETERCHANGED,
   __module__ = 'config_sync_pb2'
@@ -253,6 +425,12 @@ _RESPONSEGETPARAMETERS._options = None
 _REQUESTEDITPARAMETER.fields_by_name['key']._options = None
 _REQUESTEDITPARAMETER.fields_by_name['value']._options = None
 _REQUESTEDITPARAMETER._options = None
+_FEATUREFLAG.fields_by_name['key']._options = None
+_FEATUREFLAG.fields_by_name['value']._options = None
+_FEATUREFLAG.fields_by_name['clock']._options = None
+_REQUESTFEATUREFLAGS._options = None
+_RESPONSEFEATUREFLAGS._options = None
+_UPDATEFEATUREFLAGCHANGED.fields_by_name['feature']._options = None
 _UPDATEPARAMETERCHANGED.fields_by_name['key']._options = None
 _UPDATEPARAMETERCHANGED.fields_by_name['value']._options = None
 
@@ -262,8 +440,8 @@ _CONFIGSYNC = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=629,
-  serialized_end=879,
+  serialized_start=981,
+  serialized_end=1351,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetParameters',
@@ -282,6 +460,15 @@ _CONFIGSYNC = _descriptor.ServiceDescriptor(
     input_type=_REQUESTEDITPARAMETER,
     output_type=miscellaneous__pb2._RESPONSESEQ,
     serialized_options=_b('\202\323\344\223\002&\"!/v1/grpc/ConfigSync/EditParameter:\001*'),
+  ),
+  _descriptor.MethodDescriptor(
+    name='FeatureFlags',
+    full_name='dialog.ConfigSync.FeatureFlags',
+    index=2,
+    containing_service=None,
+    input_type=_REQUESTFEATUREFLAGS,
+    output_type=_RESPONSEFEATUREFLAGS,
+    serialized_options=_b('\202\323\344\223\002%\" /v1/grpc/ConfigSync/FeatureFlags:\001*'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_CONFIGSYNC)
