@@ -64,13 +64,13 @@ class InteractiveMediaConfirm(object):
         """
         confirm = messaging_pb2.InteractiveMediaConfirm()
         if self.text is not None:
-            confirm.text = wrappers_pb2.StringValue(value=self.text)
+            confirm.text.value = self.text
         if self.title is not None:
-            confirm.title = wrappers_pb2.StringValue(value=self.title)
+            confirm.title.value = self.title
         if self.ok is not None:
-            confirm.ok = wrappers_pb2.StringValue(value=self.ok)
+            confirm.ok.value = self.ok
         if self.dismiss is not None:
-            confirm.dismiss = wrappers_pb2.StringValue(value=self.dismiss)
+            confirm.dismiss.value = self.dismiss
         return confirm
 
 
@@ -106,7 +106,12 @@ class InteractiveMedia(object):
             elif isinstance(self.widget, InteractiveMediaSelect):
                 self.widget.render(target.widget.interactiveMediaSelect)
         if self.confirm is not None:
-            target.confirm = self.confirm.render()
+            result_confirm = self.confirm.render()
+            target.confirm.text.value = result_confirm.text.value
+            target.confirm.title.value = result_confirm.title.value
+            target.confirm.ok.value = result_confirm.ok.value
+            target.confirm.dismiss.value = result_confirm.dismiss.value
+
         return target
 
 
