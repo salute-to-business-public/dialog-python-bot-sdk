@@ -1,5 +1,4 @@
 from google.protobuf import empty_pb2
-import time
 import imghdr
 import threading
 import random
@@ -63,7 +62,7 @@ class Messaging(ManagedService):
             last_edited_at=message.date
         ))
 
-    def send_file(self, peer, file, cert=None, private_key=None):
+    def send_file(self, peer, file):
         """Send file to current peer.
 
         :param peer: receiver's peer
@@ -74,7 +73,7 @@ class Messaging(ManagedService):
             print('Peer can\'t be None!')
             return None
 
-        location = self.internal.uploading.upload_file(file, cert=cert, private_key=private_key)
+        location = self.internal.uploading.upload_file(file)
         outpeer = self.manager.get_outpeer(peer)
         msg = messaging_pb2.MessageContent()
 

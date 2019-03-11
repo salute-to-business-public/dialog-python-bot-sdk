@@ -62,7 +62,7 @@ class Uploading(object):
 
         return put_response
 
-    def upload_file(self, file, max_chunk_size=1024*1024, parallelism=10, cert=None, private_key=None):
+    def upload_file(self, file, max_chunk_size=1024*1024, parallelism=10):
         """Upload file for sending.
 
         :param file: path to file

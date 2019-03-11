@@ -1,5 +1,5 @@
 Version 1.2.2
-    + fix on confirmation 
+    + fix on interactive actions confirmation api
 
 Version 1.2.1
     + fix on sending files with pfx cert
