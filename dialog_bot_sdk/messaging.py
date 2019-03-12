@@ -133,11 +133,12 @@ class Messaging(ManagedService):
         updates_thread = threading.Thread(target=self.on_message, args=(callback, interactive_media_callback))
         updates_thread.start()
 
-    def on_message(self, callback, interactive_media_callback=None):
+    def on_message(self, callback, interactive_media_callback=None, raw_callback=None):
         """Message receiving event handler.
 
         :param callback: function that will be called when message received
         :param interactive_media_callback: function that will be called when interactive media action is performed
+        :param raw_callback: function to handle any other type of update
         :return: None
         """
 
@@ -148,7 +149,11 @@ class Messaging(ManagedService):
                 self.internal.thread_pool_executor.submit(
                     callback(up.updateMessage)
                 )
-            if up.WhichOneof('update') == 'updateInteractiveMediaEvent' and callable(interactive_media_callback):
+            elif up.WhichOneof('update') == 'updateInteractiveMediaEvent' and callable(interactive_media_callback):
                 self.internal.thread_pool_executor.submit(
                     interactive_media_callback(up.updateInteractiveMediaEvent)
+                )
+            else:
+                self.internal.thread_pool_executor.submit(
+                    raw_callback(up)
                 )
