@@ -2,6 +2,7 @@ from google.protobuf import empty_pb2
 import imghdr
 import threading
 import random
+import grpc
 
 from .service import ManagedService
 from .dialog_api import messaging_pb2, sequence_and_updates_pb2
@@ -141,19 +142,24 @@ class Messaging(ManagedService):
         :param raw_callback: function to handle any other type of update
         :return: None
         """
-
-        for update in self.internal.updates.SeqUpdates(empty_pb2.Empty()):
-            up = sequence_and_updates_pb2.UpdateSeqUpdate()
-            up.ParseFromString(update.update.value)
-            if up.WhichOneof('update') == 'updateMessage':
-                self.internal.thread_pool_executor.submit(
-                    callback(up.updateMessage)
-                )
-            elif up.WhichOneof('update') == 'updateInteractiveMediaEvent' and callable(interactive_media_callback):
-                self.internal.thread_pool_executor.submit(
-                    interactive_media_callback(up.updateInteractiveMediaEvent)
-                )
-            else:
-                self.internal.thread_pool_executor.submit(
-                    raw_callback(up)
-                )
+        while True:
+            try:
+                for update in self.internal.updates.SeqUpdates(empty_pb2.Empty()):
+                    up = sequence_and_updates_pb2.UpdateSeqUpdate()
+                    up.ParseFromString(update.update.value)
+                    if up.WhichOneof('update') == 'updateMessage':
+                        self.internal.thread_pool_executor.submit(
+                            callback(up.updateMessage)
+                        )
+                    elif up.WhichOneof('update') == 'updateInteractiveMediaEvent' and callable(interactive_media_callback):
+                        self.internal.thread_pool_executor.submit(
+                            interactive_media_callback(up.updateInteractiveMediaEvent)
+                        )
+                    else:
+                        if callable(raw_callback):
+                            self.internal.thread_pool_executor.submit(
+                                raw_callback(up)
+                            )
+            except grpc.RpcError as e:
+                if e.details() in ['Socket closed', 'GOAWAY received']:
+                    continue
