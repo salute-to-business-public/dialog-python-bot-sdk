@@ -148,10 +148,19 @@ class Messaging(ManagedService):
                     up = sequence_and_updates_pb2.UpdateSeqUpdate()
                     up.ParseFromString(update.update.value)
                     if up.WhichOneof('update') == 'updateMessage':
+                        self.internal.messaging.MessageReceived(messaging_pb2.RequestMessageReceived(
+                                peer=self.manager.get_outpeer(up.updateMessage.peer),
+                                date=up.updateMessage.date
+                        ))
+                        self.internal.messaging.MessageRead(messaging_pb2.RequestMessageRead(
+                            peer=self.manager.get_outpeer(up.updateMessage.peer),
+                            date=up.updateMessage.date
+                        ))
                         self.internal.thread_pool_executor.submit(
                             callback(up.updateMessage)
                         )
-                    elif up.WhichOneof('update') == 'updateInteractiveMediaEvent' and callable(interactive_media_callback):
+                    elif up.WhichOneof('update') == 'updateInteractiveMediaEvent' and \
+                            callable(interactive_media_callback):
                         self.internal.thread_pool_executor.submit(
                             interactive_media_callback(up.updateInteractiveMediaEvent)
                         )
