@@ -24,7 +24,7 @@ jobs:
             - run:
                 name: Push packs in TestPyPI
                 command: |
-                    python3 -m twine upload --repository pypitest dist/*
+                    python3 -m twine upload --repository pypi dist/*
 workflows:
     version: 2
     build_package:
