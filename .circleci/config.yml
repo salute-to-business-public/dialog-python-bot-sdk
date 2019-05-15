@@ -1,0 +1,31 @@
+version: 2
+jobs:
+    build_package:
+        docker:
+            - image: circleci/python:latest
+        steps:
+            - checkout
+            - setup_remote_docker
+            - run:
+                name: Install twine, setuptools and wheel
+                command: python3 -m pip install twine setuptools wheel
+            - run:
+                name: init .pypirc
+                command: |
+                    echo -e "[pypi]" >> ~/.pypirc
+                    echo -e "username = dialog_llc" >> ~/.pypirc
+                    echo -e "password = $PYPI_PASSWORD" >> ~/.pypirc
+            - run:
+                name: Build packs
+                command: python3 setup.py sdist bdist_wheel
+            - run:
+                name: Push packs in TestPyPI
+                python3 -m twine upload --repository-url https://test.pypi.org/python-bot-sdk/ dist/*
+workflows:
+    version: 2
+    build_package:
+        jobs:
+          - build_package:
+              filters:
+                branches:
+                  only: master
