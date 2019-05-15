@@ -13,9 +13,10 @@ jobs:
             - run:
                 name: init .pypirc
                 command: |
-                    echo -e "[test]" >> ~/.pypirc
-                    echo -e "username = dialog_llc" >> ~/.pypirc
-                    echo -e "password = $PYPI_PASSWORD" >> ~/.pypirc
+                    echo -e "[pypitest]" >> ~/.pypirc
+                    echo -e "repository: https://testpypi.python.org/pypi" >> ~/.pypirc
+                    echo -e "username: dialog_llc" >> ~/.pypirc
+                    echo -e "password: $PYPI_PASSWORD" >> ~/.pypirc
             - run:
                 name: Build packs
                 command: |
