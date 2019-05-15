@@ -23,7 +23,7 @@ class MessagingStub(object):
     self.SendMessage = channel.unary_unary(
         '/dialog.Messaging/SendMessage',
         request_serializer=messaging__pb2.RequestSendMessage.SerializeToString,
-        response_deserializer=miscellaneous__pb2.ResponseSeqDate.FromString,
+        response_deserializer=messaging__pb2.ResponseSendMessage.FromString,
         )
     self.UpdateMessage = channel.unary_unary(
         '/dialog.Messaging/UpdateMessage',
@@ -308,7 +308,7 @@ def add_MessagingServicer_to_server(servicer, server):
       'SendMessage': grpc.unary_unary_rpc_method_handler(
           servicer.SendMessage,
           request_deserializer=messaging__pb2.RequestSendMessage.FromString,
-          response_serializer=miscellaneous__pb2.ResponseSeqDate.SerializeToString,
+          response_serializer=messaging__pb2.ResponseSendMessage.SerializeToString,
       ),
       'UpdateMessage': grpc.unary_unary_rpc_method_handler(
           servicer.UpdateMessage,

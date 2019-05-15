@@ -15,7 +15,7 @@ class DialogBot(object):
 
     """
     def __init__(self, channel, bot_token=None, verbose=False, cert=None, private_key=None):
-        self.internal = InternalBot(channel, verbose=verbose, cert=cert, private_key=private_key)
+        self.internal = InternalBot(channel, verbose=verbose)
         self.user_info = None
         if bot_token:
             self.user_info = self.internal.authorize(bot_token)

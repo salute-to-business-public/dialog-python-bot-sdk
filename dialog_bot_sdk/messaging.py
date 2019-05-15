@@ -38,7 +38,7 @@ class Messaging(ManagedService):
                 g.render(media)
         return self.internal.messaging.SendMessage(messaging_pb2.RequestSendMessage(
             peer=outpeer,
-            rid=random.randint(0, 100000000),
+            deduplication_id=random.randint(0, 100000000),
             message=msg
         ))
 
@@ -84,7 +84,7 @@ class Messaging(ManagedService):
 
         return self.internal.messaging.SendMessage(messaging_pb2.RequestSendMessage(
             peer=outpeer,
-            rid=random.randint(0, 100000000),
+            deduplication_id=random.randint(0, 100000000),
             message=msg
         ))
 
@@ -112,7 +112,7 @@ class Messaging(ManagedService):
 
         return self.internal.messaging.SendMessage(messaging_pb2.RequestSendMessage(
             peer=outpeer,
-            rid=random.randint(0, 100000000),
+            deduplication_id=random.randint(0, 100000000),
             message=msg
         ))
 
@@ -142,6 +142,7 @@ class Messaging(ManagedService):
         :param raw_callback: function to handle any other type of update
         :return: None
         """
+
         while True:
             try:
                 for update in self.internal.updates.SeqUpdates(empty_pb2.Empty()):
@@ -149,8 +150,8 @@ class Messaging(ManagedService):
                     up.ParseFromString(update.update.value)
                     if up.WhichOneof('update') == 'updateMessage':
                         self.internal.messaging.MessageReceived(messaging_pb2.RequestMessageReceived(
-                                peer=self.manager.get_outpeer(up.updateMessage.peer),
-                                date=up.updateMessage.date
+                            peer=self.manager.get_outpeer(up.updateMessage.peer),
+                            date=up.updateMessage.date
                         ))
                         self.internal.messaging.MessageRead(messaging_pb2.RequestMessageRead(
                             peer=self.manager.get_outpeer(up.updateMessage.peer),

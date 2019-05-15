@@ -36,7 +36,7 @@ class Users(ManagedService):
         ).users
 
         for user in users:
-            if user.nick.value == nick:
+            if user.data.nick.value == nick:
                 outpeer = peers_pb2.OutPeer(
                     type=peers_pb2.PEERTYPE_PRIVATE,
                     id=int(user.id),
@@ -58,7 +58,7 @@ class Users(ManagedService):
         ).users
 
         for user in users:
-            if user.nick.value == nick:
+            if user.data.nick.value == nick:
                 return user
 
     def get_user_full_profile_by_nick(self, nick):

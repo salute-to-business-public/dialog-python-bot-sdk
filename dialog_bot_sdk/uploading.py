@@ -47,7 +47,6 @@ class Uploading(object):
                         headers={'Content-Type': 'application/octet-stream'},
                         cert=(cert_file.name, private_key_file.name)
                     )
-                    print(put_response)
 
         else:
             put_response = requests.put(
