@@ -8,7 +8,8 @@ jobs:
             - setup_remote_docker
             - run:
                 name: Install twine, setuptools and wheel
-                command: python3 -m pip install twine setuptools wheel
+                command: |
+                    python3 -m pip install twine setuptools wheel
             - run:
                 name: init .pypirc
                 command: |
@@ -17,10 +18,12 @@ jobs:
                     echo -e "password = $PYPI_PASSWORD" >> ~/.pypirc
             - run:
                 name: Build packs
-                command: python3 setup.py sdist bdist_wheel
+                command: |
+                    python3 setup.py sdist bdist_wheel
             - run:
                 name: Push packs in TestPyPI
-                python3 -m twine upload --repository-url https://test.pypi.org/python-bot-sdk/ dist/*
+                command: |
+                    python3 -m twine upload --repository-url https://test.pypi.org/python-bot-sdk/ dist/*
 workflows:
     version: 2
     build_package:
