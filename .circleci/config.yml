@@ -13,7 +13,7 @@ jobs:
             - run:
                 name: init .pypirc
                 command: |
-                    echo -e "[pypi]" >> ~/.pypirc
+                    echo -e "[test]" >> ~/.pypirc
                     echo -e "username = dialog_llc" >> ~/.pypirc
                     echo -e "password = $PYPI_PASSWORD" >> ~/.pypirc
             - run:
