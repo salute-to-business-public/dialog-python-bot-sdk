@@ -7,6 +7,10 @@ jobs:
             - checkout
             - setup_remote_docker
             - run:
+                name: Install envsubst
+                command: |
+                    sudo apt-get update && sudo apt-get -y install gettext-base
+            - run:
                 name: init .pypirc
                 command: |
                     echo -e "[pypi]" >> ~/.pypirc
