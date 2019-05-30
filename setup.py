@@ -24,7 +24,8 @@ setuptools.setup(
         'grpcio-tools',
         'requests',
         'pyopenssl',
-        'Pillow'
+        'Pillow',
+        'filetype'
     ],
     python_requires='>=3',
     classifiers=[

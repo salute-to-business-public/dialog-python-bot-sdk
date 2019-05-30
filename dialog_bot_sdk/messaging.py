@@ -1,5 +1,5 @@
 from google.protobuf import empty_pb2
-import imghdr
+import filetype
 import threading
 import random
 import grpc
@@ -99,7 +99,7 @@ class Messaging(ManagedService):
             print('Peer can\'t be None!')
             return None
 
-        if imghdr.what(file) not in ['gif', 'jpeg', 'png', 'bmp']:
+        if not filetype.helpers.is_image(file):
             raise IOError('File is not an image.')
 
         location = self.internal.uploading.upload_file(file)

@@ -22,7 +22,7 @@ jobs:
                 command: |
                     python3 setup.py sdist bdist_wheel
             - run:
-                name: Push packs in TestPyPI
+                name: Push packs in PyPI
                 command: |
                     python3 -m twine upload --repository pypi dist/*
 workflows:
@@ -32,4 +32,6 @@ workflows:
           - build_package:
               filters:
                 branches:
-                  only: master
+                  ignore: /.*/
+                tags:
+                  only: /^\d+\.\d+\.\d+$/
