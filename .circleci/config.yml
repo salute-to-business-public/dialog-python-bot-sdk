@@ -7,24 +7,25 @@ jobs:
             - checkout
             - setup_remote_docker
             - run:
-                name: Install twine, setuptools and wheel
-                command: |
-                    python3 -m pip install --user twine setuptools wheel
-            - run:
                 name: init .pypirc
                 command: |
                     echo -e "[pypi]" >> ~/.pypirc
-                    echo -e "repository: https://upload.pypi.org/legacy/" >> ~/.pypirc
                     echo -e "username: dialog_llc" >> ~/.pypirc
                     echo -e "password: $PYPI_PASSWORD" >> ~/.pypirc
             - run:
-                name: Build packs
+                name: Change setup.py
+                command: |
+                    envsubst < setup_unfilled.py > setup.py
+            - run:
+                name: Install twine
+                command: |
+                    python3 -m pip install --user twine
+                    python3 -m pip install --upgrade setuptools wheel
+            - run:
+                name: Build & push package
                 command: |
                     python3 setup.py sdist bdist_wheel
-            - run:
-                name: Push packs in PyPI
-                command: |
-                    python3 -m twine upload --repository pypi dist/*
+                    python3 -m twine upload ./dist/*
 workflows:
     version: 2
     build_package:
