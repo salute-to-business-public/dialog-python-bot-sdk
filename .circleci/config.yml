@@ -24,7 +24,7 @@ jobs:
                 name: Install twine
                 command: |
                     python3 -m pip install --user twine
-                    python3 -m pip install --upgrade setuptools wheel
+                    python3 -m pip install --upgrade --user setuptools wheel
             - run:
                 name: Build & push package
                 command: |
