@@ -29,3 +29,11 @@ def get_image_thumb_bytes(file):
     im.save(stream, "JPEG")
 
     return size[0], size[1], stream.getvalue()
+
+
+def is_image(file):
+    try:
+        Image.open(file)
+    except IOError:
+        return False
+    return True

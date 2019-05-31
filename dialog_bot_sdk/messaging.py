@@ -1,5 +1,4 @@
 from google.protobuf import empty_pb2
-import filetype
 import threading
 import random
 import grpc
@@ -7,7 +6,7 @@ import grpc
 from .service import ManagedService
 from .dialog_api import messaging_pb2, sequence_and_updates_pb2
 from .content import content
-
+from .utils.get_image_metadata import is_image
 
 class Messaging(ManagedService):
     """Main messaging class.
@@ -99,7 +98,7 @@ class Messaging(ManagedService):
             print('Peer can\'t be None!')
             return None
 
-        if not filetype.helpers.is_image(file):
+        if not is_image(file):
             raise IOError('File is not an image.')
 
         location = self.internal.uploading.upload_file(file)
