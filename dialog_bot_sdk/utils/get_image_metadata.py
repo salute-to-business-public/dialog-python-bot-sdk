@@ -1,4 +1,5 @@
 from PIL import Image
+import magic
 import io
 
 
@@ -32,8 +33,5 @@ def get_image_thumb_bytes(file):
 
 
 def is_image(file):
-    try:
-        Image.open(file)
-    except IOError:
-        return False
-    return True
+    mime = magic.Magic(mime=True)
+    return mime.from_file(file) in ['image/jpeg', 'image/png', 'image/gif']

@@ -24,7 +24,10 @@ setuptools.setup(
         'grpcio-tools',
         'requests',
         'pyopenssl',
-        'Pillow'
+        'Pillow',
+        'python-magic-bin',
+        'python-magic',
+        'libmagic'
     ],
     python_requires='>=3',
     classifiers=[
