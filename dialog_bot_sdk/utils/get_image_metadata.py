@@ -1,5 +1,5 @@
 from PIL import Image
-import magic
+import mimetypes
 import io
 
 
@@ -25,7 +25,7 @@ def get_image_thumb_bytes(file):
 
     im = Image.open(file)
     im = im.convert('RGB')
-    im.thumbnail(get_image_w_h(file))
+    im.thumbnail(size)
     stream = io.BytesIO()
     im.save(stream, "JPEG")
 
@@ -33,5 +33,5 @@ def get_image_thumb_bytes(file):
 
 
 def is_image(file):
-    mime = magic.Magic(mime=True)
-    return mime.from_file(file) in ['image/jpeg', 'image/png', 'image/gif']
+    mime = mimetypes.guess_type(file)[0]
+    return mime in ['image/jpeg', 'image/png', 'image/gif', 'image/bmp']
