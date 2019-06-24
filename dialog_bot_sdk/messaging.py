@@ -8,6 +8,7 @@ from .dialog_api import messaging_pb2, sequence_and_updates_pb2
 from .content import content
 from .utils.get_image_metadata import is_image
 
+
 class Messaging(ManagedService):
     """Main messaging class.
 

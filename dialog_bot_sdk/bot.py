@@ -15,7 +15,7 @@ class DialogBot(object):
 
     """
     def __init__(self, channel, bot_token=None, verbose=False, cert=None, private_key=None):
-        self.internal = InternalBot(channel, verbose=verbose)
+        self.internal = InternalBot(channel, verbose=verbose, cert=cert, private_key=private_key)
         self.user_info = None
         if bot_token:
             self.user_info = self.internal.authorize(bot_token)
@@ -23,7 +23,6 @@ class DialogBot(object):
             self.user_info = self.internal.anonymous_authorize()
         self.manager = EntityManager(self.internal)
         self.messaging = Messaging(self.manager, self.internal)
-        self.uploading = Uploading(self.internal, cert, private_key)
         self.updates = Updates(self.manager, self.internal)
         self.users = Users(self.manager, self.internal)
         print('Bot is ready.')
