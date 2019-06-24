@@ -36,8 +36,8 @@ class Uploading(object):
         ).url
 
         if self.cert and self.private_key:
-            with NamedTemporaryFile(dir=access_dir) as cert_file:
-                with NamedTemporaryFile(dir=access_dir) as private_key_file:
+            with NamedTemporaryFile(dir=access_dir, delete=False) as cert_file:
+                with NamedTemporaryFile(dir=access_dir, delete=False) as private_key_file:
                     cert_file.write(self.cert)
                     private_key_file.write(self.private_key)
                     cert_file.flush()
@@ -48,6 +48,14 @@ class Uploading(object):
                         headers={'Content-Type': 'application/octet-stream'},
                         cert=(cert_file.name, private_key_file.name)
                     )
+                    try:
+                        cert_file.close()
+                        private_key_file.close()
+                        os.unlink(cert_file.name)
+                        os.unlink(private_key_file.name)
+                    except Exception as e:
+                        print(e)
+                        pass
 
         else:
             put_response = requests.put(
