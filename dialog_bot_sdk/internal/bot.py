@@ -13,7 +13,7 @@ class InternalBot(object):
 
     """
 
-    def __init__(self, channel, verbose=False, cert=None, private_key=None):
+    def __init__(self, channel, verbose=False, cert=None, private_key=None, access_dir=None):
         self.app_id = 10
         self.app_title = "PythonBotSDK/1.0"
         self.channel = channel
@@ -27,7 +27,7 @@ class InternalBot(object):
         self.users = self.wrap_service(users_pb2_grpc.UsersStub, verbose=verbose)
         self.token = self.get_session_token()
         self.thread_pool_executor = ThreadPoolExecutor(max_workers=10)
-        self.uploading = Uploading(self, cert, private_key)
+        self.uploading = Uploading(self, cert, private_key, access_dir=access_dir)
 
     def authorize(self, bot_token):
         """Authorization function for Internal bot instance.

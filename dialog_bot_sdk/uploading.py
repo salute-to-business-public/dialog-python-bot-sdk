@@ -12,12 +12,13 @@ class Uploading(object):
 
     """
 
-    def __init__(self, internal, cert, private_key):
+    def __init__(self, internal, cert, private_key, access_dir):
         self.internal = internal
         self.cert = cert
         self.private_key = private_key
+        self.access_dir = access_dir
 
-    def upload_file_chunk(self, part_number, chunk, upload_key):
+    def upload_file_chunk(self, part_number, chunk, upload_key, access_dir=None):
         """Upload file chunk.
 
         :param part_number: number of chunk (>=0)
@@ -35,8 +36,8 @@ class Uploading(object):
         ).url
 
         if self.cert and self.private_key:
-            with NamedTemporaryFile() as cert_file:
-                with NamedTemporaryFile() as private_key_file:
+            with NamedTemporaryFile(dir=access_dir) as cert_file:
+                with NamedTemporaryFile(dir=access_dir) as private_key_file:
                     cert_file.write(self.cert)
                     private_key_file.write(self.private_key)
                     cert_file.flush()
@@ -81,7 +82,7 @@ class Uploading(object):
                 executor.map(
                     lambda x: self.upload_file_chunk(*x),
                     (
-                        (part_number, chunk, upload_key) for part_number, chunk in enumerate(
+                        (part_number, chunk, upload_key, self.access_dir) for part_number, chunk in enumerate(
                             read_file_in_chunks(file, max_chunk_size)
                         )
                     )
