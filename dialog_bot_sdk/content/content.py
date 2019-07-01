@@ -1,7 +1,7 @@
 import os
 import mimetypes
 
-from dialog_bot_sdk.dialog_api import messaging_pb2
+from dialog_api import messaging_pb2
 from dialog_bot_sdk.utils.get_image_metadata import get_image_thumb_bytes, get_image_w_h
 
 

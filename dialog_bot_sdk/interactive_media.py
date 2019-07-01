@@ -1,5 +1,4 @@
-from .dialog_api import messaging_pb2
-from google.protobuf import wrappers_pb2
+from dialog_api import messaging_pb2
 
 
 class InteractiveMediaButton(object):

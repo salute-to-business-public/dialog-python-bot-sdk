@@ -4,7 +4,7 @@ from concurrent.futures import ThreadPoolExecutor
 from tempfile import NamedTemporaryFile
 
 from .utils.read_file_in_chunks import read_file_in_chunks
-from .dialog_api import media_and_files_pb2
+from dialog_api import media_and_files_pb2
 
 
 class Uploading(object):

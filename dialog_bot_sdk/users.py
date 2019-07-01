@@ -1,5 +1,5 @@
 from .service import ManagedService
-from .dialog_api import contacts_pb2, peers_pb2, users_pb2, messaging_pb2
+from dialog_api import contacts_pb2, peers_pb2, users_pb2, messaging_pb2
 
 
 class Users(ManagedService):

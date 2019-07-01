@@ -4,7 +4,7 @@ import random
 import grpc
 
 from .service import ManagedService
-from .dialog_api import messaging_pb2, sequence_and_updates_pb2
+from dialog_api import messaging_pb2, sequence_and_updates_pb2
 from .content import content
 from .utils.get_image_metadata import is_image
 
