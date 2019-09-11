@@ -28,3 +28,12 @@ class Updates(ManagedService):
         )
 
         return diff
+
+    def get_state(self):
+        """Current application seq number
+
+        :return: seq
+        """
+        return self.internal.updates.GetState(sequence_and_updates_pb2.RequestGetState(
+            optimizations=DEFAULT_OPTIMIZATIONS
+        )).seq

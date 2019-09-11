@@ -8,6 +8,8 @@ from .entity_manager import EntityManager
 from .messaging import Messaging
 from .updates import Updates
 from .users import Users
+from .groups import Groups
+from .peers import Peers
 
 
 class DialogBot(object):
@@ -22,7 +24,9 @@ class DialogBot(object):
         else:
             self.user_info = self.internal.anonymous_authorize()
         self.manager = EntityManager(self.internal)
+        self.groups = Groups(self.manager, self.internal)
         self.messaging = Messaging(self.manager, self.internal)
+        self.peers = Peers(self.manager, self.internal)
         self.updates = Updates(self.manager, self.internal)
         self.users = Users(self.manager, self.internal)
         print('Bot is ready.')
