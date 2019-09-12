@@ -1,5 +1,5 @@
 from .service import ManagedService
-from dialog_api import contacts_pb2, peers_pb2, users_pb2, messaging_pb2
+from dialog_api import contacts_pb2, peers_pb2, users_pb2, messaging_pb2, search_pb2
 
 
 class Users(ManagedService):
@@ -119,3 +119,23 @@ class Users(ManagedService):
                 if len(full_profile.full_users) > 0:
                     if hasattr(full_profile.full_users[0], 'custom_profile'):
                         return str(full_profile.full_users[0].custom_profile)
+
+    def search_users_by_nick_substring(self, query):
+        """Returns list of User objects by substring of nickname (not complete coincidence!)
+
+        :param query: user's nickname
+        :return: list User objects
+        """
+        return self.internal.search.PeerSearch(
+            search_pb2.RequestPeerSearch(
+                query=[
+                    search_pb2.SearchCondition(
+                        searchPeerTypeCondition=search_pb2.SearchPeerTypeCondition(
+                            peer_type=search_pb2.SEARCHPEERTYPE_CONTACTS)
+                    ),
+                    search_pb2.SearchCondition(
+                        searchPieceText=search_pb2.SearchPieceText(query=query)
+                    )
+                ]
+            )
+        ).users
