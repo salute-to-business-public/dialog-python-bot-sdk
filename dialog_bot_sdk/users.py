@@ -23,6 +23,10 @@ class Users(ManagedService):
                     access_hash=outpeer.access_hash
                 )
 
+    @staticmethod
+    def get_user_peer_by_id(uid):
+        return peers_pb2.Peer(type=peers_pb2.PEERTYPE_PRIVATE, id=uid)
+
     def find_user_outpeer_by_nick(self, nick):
         """Returns user's Outpeer object by nickname for direct messaging
 
