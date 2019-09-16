@@ -7,14 +7,18 @@ class Groups(ManagedService):
 
     """
 
-    def create_group(self, title, users):
+    def create_group(self, title, username, users=None):
         """Create group
 
         :param title: title of group
-        :param users: list of users
+        :param username: group name
+        :param users: list of UserOutPeer's objects
         """
+        if users is None:
+            users = []
         self.internal.groups.CreateGroup(groups_pb2.RequestCreateGroup(
             title=title,
+            username=username,
             users=users,
             group_type=groups_pb2.GROUPTYPE_GROUP
         ))

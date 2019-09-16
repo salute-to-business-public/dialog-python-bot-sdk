@@ -2,6 +2,7 @@ from google.protobuf import empty_pb2
 import threading
 import random
 import grpc
+import time
 
 from .service import ManagedService
 from dialog_api import messaging_pb2, sequence_and_updates_pb2
@@ -45,10 +46,10 @@ class Messaging(ManagedService):
             is_only_for_user=uid
         ))
 
-    def update_message(self, message, text, interactive_media_groups=None):
+    def update_message(self, message_id, text, interactive_media_groups=None):
         """Update text message or interactive media (buttons, selects etc.).
 
-        :param message object received from any send method (send_message, send_file etc.)
+        :param message_id: object received from any send method (send_message, send_file etc.)
         :param text: message text (not null)
         :param interactive_media_groups: groups of interactive media components (buttons etc.)
         :return: value of UpdateMessage response object
@@ -61,9 +62,9 @@ class Messaging(ManagedService):
                 g.render(media)
 
         return self.internal.messaging.UpdateMessage(messaging_pb2.RequestUpdateMessage(
-            mid=message.mid,
+            mid=message_id,
             updated_message=msg,
-            last_edited_at=message.date
+            last_edited_at=int(time.time() * 1000)
         ))
 
     def delete(self, mids):
