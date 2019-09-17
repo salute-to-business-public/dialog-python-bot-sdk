@@ -23,7 +23,7 @@ class Groups(ManagedService):
             group_type=groups_pb2.GROUPTYPE_GROUP
         ))
 
-    def search_group_by_shortname(self, query):
+    def find_group_by_shortname(self, query):
         """Find a group by shortname (substring name)
 
         :param query: shortname of group
