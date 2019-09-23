@@ -143,3 +143,14 @@ class Users(ManagedService):
                 ]
             )
         ).users
+
+    def get_user_outpeer_by_outpeer(self, outpeer):
+        """Return UserOutPeer by OutPeer
+
+        :param outpeer: OutPeer
+        :return: UserOutPeer object
+        """
+        return peers_pb2.UserOutPeer(
+            uid=outpeer.id,
+            access_hash=outpeer.access_hash
+        )

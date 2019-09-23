@@ -1,3 +1,5 @@
+from google.protobuf import wrappers_pb2
+
 from .service import ManagedService
 from dialog_api import search_pb2, groups_pb2
 
@@ -18,16 +20,16 @@ class Groups(ManagedService):
             users = []
         self.internal.groups.CreateGroup(groups_pb2.RequestCreateGroup(
             title=title,
-            username=username,
+            username=wrappers_pb2.StringValue(value=username),
             users=users,
             group_type=groups_pb2.GROUPTYPE_GROUP
         ))
 
     def find_group_by_shortname(self, query):
-        """Find a group by shortname (substring name)
+        """Find a groups by shortname (substring name)
 
         :param query: shortname of group
-        :return: group
+        :return: groups list
         """
         return self.internal.search.PeerSearch(
             search_pb2.RequestPeerSearch(
