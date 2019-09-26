@@ -1,5 +1,4 @@
 import copy
-import time
 import unittest
 import grpc
 from dialog_api import peers_pb2, messaging_pb2, definitions_pb2
@@ -9,15 +8,10 @@ from mock import patch
 
 from dialog_bot_sdk.bot import DialogBot
 from dialog_bot_sdk.utils.get_media import get_webpage
+from tests.fake_classes import FakeMessage
 
 
-class FakeMessage:
-    def __init__(self, mid):
-        self.mid = mid
-        self.date = int(time.time() - 1000)
-
-
-class MyTestCase(unittest.TestCase):
+class TestMessaging(unittest.TestCase):
 
     test_file = "./files/test.png"
     test_image = test_file
@@ -25,9 +19,9 @@ class MyTestCase(unittest.TestCase):
     test_audio = "./files/test.mp3"
 
     bot = DialogBot.get_secure_bot(
-        '',                               # bot endpoint from environment
+        '',                                         # bot endpoint from environment
         grpc.ssl_channel_credentials(),             # SSL credentials (empty by default!)
-        ''  # bot token from environment
+        ''                                          # bot token from environment
     )
 
     outpeer = peers_pb2.OutPeer(type=PEERTYPE_PRIVATE, id=0, access_hash=0)

@@ -8,12 +8,12 @@ class Users(ManagedService):
     """
 
     def get_user_outpeer_by_id(self, uid):
-        req = messaging_pb2.RequestLoadDialogs(
+        request = messaging_pb2.RequestLoadDialogs(
             min_date=0,
             limit=1,
             peers_to_load=[peers_pb2.Peer(type=peers_pb2.PEERTYPE_PRIVATE, id=uid)]
         )
-        result = self.internal.messaging.LoadDialogs(req)
+        result = self._load_dialogs(request)
 
         for outpeer in result.user_peers:
             if outpeer.uid == uid:
@@ -33,7 +33,7 @@ class Users(ManagedService):
         :param nick: user's nickname
         :return: Outpeer object of user
         """
-        users = self.internal.contacts.SearchContacts(
+        users = self._search_contacts(
             contacts_pb2.RequestSearchContacts(
                 request=nick
             )
@@ -55,7 +55,7 @@ class Users(ManagedService):
         :param nick: user's nickname
         :return: User object
         """
-        users = self.internal.contacts.SearchContacts(
+        users = self._search_contacts(
             contacts_pb2.RequestSearchContacts(
                 request=nick
             )
@@ -72,16 +72,15 @@ class Users(ManagedService):
         :return: FullUser object
         """
         user = self.find_user_outpeer_by_nick(nick)
-        full_profile = self.internal.users.LoadFullUsers(
-            users_pb2.RequestLoadFullUsers(
-                user_peers=[
-                    peers_pb2.UserOutPeer(
-                        uid=user.id,
-                        access_hash=user.access_hash
-                    )
-                ]
-            )
+        request = users_pb2.RequestLoadFullUsers(
+            user_peers=[
+                peers_pb2.UserOutPeer(
+                    uid=user.id,
+                    access_hash=user.access_hash
+                )
+            ]
         )
+        full_profile = self._load_full_users(request)
 
         if full_profile:
             if hasattr(full_profile, 'full_users'):
@@ -107,16 +106,15 @@ class Users(ManagedService):
         """
         outpeer = self.manager.get_outpeer(peer)
 
-        full_profile = self.internal.users.LoadFullUsers(
-            users_pb2.RequestLoadFullUsers(
-                user_peers=[
-                    peers_pb2.UserOutPeer(
-                        uid=outpeer.id,
-                        access_hash=outpeer.access_hash
-                    )
-                ]
-            )
+        request = users_pb2.RequestLoadFullUsers(
+            user_peers=[
+                peers_pb2.UserOutPeer(
+                    uid=outpeer.id,
+                    access_hash=outpeer.access_hash
+                )
+            ]
         )
+        full_profile = self._load_full_users(request)
 
         if full_profile:
             if hasattr(full_profile, 'full_users'):
@@ -130,19 +128,18 @@ class Users(ManagedService):
         :param query: user's nickname
         :return: list User objects
         """
-        return self.internal.search.PeerSearch(
-            search_pb2.RequestPeerSearch(
-                query=[
-                    search_pb2.SearchCondition(
-                        searchPeerTypeCondition=search_pb2.SearchPeerTypeCondition(
-                            peer_type=search_pb2.SEARCHPEERTYPE_CONTACTS)
-                    ),
-                    search_pb2.SearchCondition(
-                        searchPieceText=search_pb2.SearchPieceText(query=query)
-                    )
-                ]
-            )
-        ).users
+        request = search_pb2.RequestPeerSearch(
+            query=[
+                search_pb2.SearchCondition(
+                    searchPeerTypeCondition=search_pb2.SearchPeerTypeCondition(
+                        peer_type=search_pb2.SEARCHPEERTYPE_CONTACTS)
+                ),
+                search_pb2.SearchCondition(
+                    searchPieceText=search_pb2.SearchPieceText(query=query)
+                )
+            ]
+        )
+        return self._peer_search(request).users
 
     def get_user_outpeer_by_outpeer(self, outpeer):
         """Return UserOutPeer by OutPeer
@@ -154,3 +151,15 @@ class Users(ManagedService):
             uid=outpeer.id,
             access_hash=outpeer.access_hash
         )
+
+    def _load_dialogs(self, request):
+        return self.internal.messaging.LoadDialogs(request)
+
+    def _search_contacts(self, request):
+        return self.internal.contacts.SearchContacts(request)
+
+    def _load_full_users(self, request):
+        return self.internal.users.LoadFullUsers(request)
+
+    def _peer_search(self, request):
+        return self.internal.search.PeerSearch(request)
