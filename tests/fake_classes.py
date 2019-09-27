@@ -50,3 +50,9 @@ class FakeFullUser:
     def __init__(self, custom_profile=None):
         if custom_profile:
             self.custom_profile = custom_profile
+
+
+class FakeSearch:
+    def __init__(self):
+        self.groups = ["group"]
+        self.peer = "peer"

@@ -12,7 +12,10 @@ class Peers(ManagedService):
         :param shortname: shortname (str)
         :return: OutPeer object
         """
-        return self.internal.search.ResolvePeer(search_pb2.RequestResolvePeer(
-                shortname=shortname
-            )
-        ).peer
+        request = search_pb2.RequestResolvePeer(
+            shortname=shortname
+        )
+        return self._resolve_peer(request).peer
+
+    def _resolve_peer(self, request):
+        return self.internal.search.ResolvePeer(request)
