@@ -8,8 +8,15 @@ class FakeMessage:
 
 
 class FakeDialog:
-    def __init__(self):
-        self.user_peers = [FakeOutpeer()]
+    def __init__(self, user_peers=None, group_peers=None):
+        if user_peers:
+            self.user_peers = user_peers
+        else:
+            self.user_peers = [FakeOutpeer()]
+        if group_peers:
+            self.group_peers = group_peers
+        else:
+            self.group_peers = [FakeOutpeer()]
 
 
 class FakeOutpeer:
@@ -56,3 +63,20 @@ class FakeSearch:
     def __init__(self):
         self.groups = ["group"]
         self.peer = "peer"
+
+
+class FakeState:
+    def __init__(self):
+        self.seq = 1
+
+
+class FakeUrl:
+    def __init__(self):
+        self.url = "url"
+
+
+class FakePut:
+    def __init__(self, status_code=None, upload_key=None, uploaded_file_location=None):
+        self.status_code = status_code
+        self.upload_key = upload_key
+        self.uploaded_file_location = uploaded_file_location

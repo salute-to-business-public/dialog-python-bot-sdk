@@ -22,16 +22,17 @@ class EntityManager(object):
         """Finds outpeers for all list of contacts.
 
         """
-        contacts = self.internal.contacts.GetContacts(contacts_pb2.RequestGetContacts(
+        request = contacts_pb2.RequestGetContacts(
             optimizations=DEFAULT_OPTIMIZATIONS
-        ))
+        )
+        contacts = self._get_contacts(request)
         for user in contacts.user_peers:
             self.adopt_peer(user)
 
     def adopt_peer(self, peer):
         """Finds outpeer for given peer and store it in internal peers_to_outpeers dict.
 
-        :param peer: Peer object
+        :param peer: Peer object (UserOutPeer or GroupOutPeer)
         """
         if isinstance(peer, peers_pb2.UserOutPeer):
             outpeer = peers_pb2.OutPeer(type=peers_pb2.PEERTYPE_PRIVATE, id=peer.uid, access_hash=peer.access_hash)
@@ -60,10 +61,16 @@ class EntityManager(object):
                 peers_to_load=[peer],
                 optimizations=DEFAULT_OPTIMIZATIONS
             )
-            result = self.internal.messaging.LoadDialogs(req)
+            result = self._load_dialogs(req)
             for user in result.user_peers:
                 self.adopt_peer(user)
             for group in result.group_peers:
                 self.adopt_peer(group)
             return self.peers_to_outpeers.get(peer_hash)
         return result
+
+    def _get_contacts(self, request):
+        return self.internal.contacts.GetContacts(request)
+
+    def _load_dialogs(self, request):
+        return self.internal.messaging.LoadDialogs(request)
