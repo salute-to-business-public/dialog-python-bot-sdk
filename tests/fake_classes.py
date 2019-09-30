@@ -1,5 +1,7 @@
 import time
 
+from OpenSSL.crypto import PKey
+
 
 class FakeMessage:
     def __init__(self, mid):
@@ -80,3 +82,11 @@ class FakePut:
         self.status_code = status_code
         self.upload_key = upload_key
         self.uploaded_file_location = uploaded_file_location
+
+
+class FakePKey:
+    def get_privatekey(self):
+        return PKey()
+
+    def get_certificate(self):
+        return
