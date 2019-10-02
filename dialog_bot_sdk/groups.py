@@ -48,4 +48,4 @@ class Groups(ManagedService):
         self.internal.groups.CreateGroup(request)
 
     def _peer_search(self, request):
-        self.internal.search.PeerSearch(request)
+        return self.internal.search.PeerSearch(request)
