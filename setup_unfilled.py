@@ -25,7 +25,8 @@ setuptools.setup(
         'grpcio-tools',
         'requests',
         'pyopenssl',
-        'Pillow'
+        'Pillow',
+        'opencv-python'
     ],
     python_requires='>=3',
     classifiers=[
