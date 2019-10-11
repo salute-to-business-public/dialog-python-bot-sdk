@@ -141,7 +141,8 @@ class Users(ManagedService):
         )
         return self._peer_search(request).users
 
-    def get_user_outpeer_by_outpeer(self, outpeer):
+    @staticmethod
+    def get_user_outpeer_by_outpeer(outpeer):
         """Return UserOutPeer by OutPeer
 
         :param outpeer: OutPeer
