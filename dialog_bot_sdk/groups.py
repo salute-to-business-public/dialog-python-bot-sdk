@@ -142,7 +142,8 @@ class Groups(ManagedService):
         return self.internal.groups.KickUser(
             groups_pb2.RequestKickUser(
                 group_peer=group_out_peer,
-                user=user_out_peer
+                user=user_out_peer,
+                rid=random.randint(0, 100000000),
             )
         )
 
@@ -158,7 +159,8 @@ class Groups(ManagedService):
         return self.internal.groups.InviteUser(
             groups_pb2.RequestInviteUser(
                 group_peer=group_out_peer,
-                user=user_out_peer
+                user=user_out_peer,
+                rid=random.randint(0, 100000000),
             )
         )
 
