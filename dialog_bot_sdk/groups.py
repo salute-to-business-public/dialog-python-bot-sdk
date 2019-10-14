@@ -173,7 +173,7 @@ class Groups(ManagedService):
         """
         result = []
         for user in users:
-            result.append(self.kick_user(group_peer.id, user))
+            result.append(self.kick_user(group_peer, user))
         return result
 
     def invite_users(self, group_peer, users):
@@ -185,7 +185,7 @@ class Groups(ManagedService):
         """
         result = []
         for user in users:
-            result.append(self.invite_user(group_peer.id, user))
+            result.append(self.invite_user(group_peer, user))
         return result
 
     def set_default_group_permissions(self, group_peer, add_permissions=None, del_permissions=None):
