@@ -105,14 +105,14 @@ class Groups(ManagedService):
                     if result.shortname.value == query:
                         return result
 
-    def load_members(self, group_id, limit=0):
+    def load_members(self, group_peer, limit=0):
         """User's list from group
 
-        :param group_id: group's id
+        :param group_peer: group's peer
         :param limit: count members
         :return: list of User's
         """
-        group_out_peer = self.get_group_outpeer(group_id)
+        group_out_peer = self.get_group_outpeer(group_peer.id)
         request = groups_pb2.RequestLoadMembers(
             group=group_out_peer,
             limit=limit
@@ -131,14 +131,14 @@ class Groups(ManagedService):
 
         return result
 
-    def kick_user(self, group_id, user):
+    def kick_user(self, group_peer, user):
         """return response of KickUser
 
-        :param group_id: group's id
+        :param group_peer: group's peer
         :param user: user's OutPeer
         :return: response
         """
-        group_out_peer, user_out_peer = self.get_group_outpeer(group_id), self.get_user_outpeer(user)
+        group_out_peer, user_out_peer = self.get_group_outpeer(group_peer.id), self.get_user_outpeer(user)
         return self.internal.groups.KickUser(
             groups_pb2.RequestKickUser(
                 group_peer=group_out_peer,
@@ -147,14 +147,14 @@ class Groups(ManagedService):
             )
         )
 
-    def invite_user(self, group_id, user):
+    def invite_user(self, group_peer, user):
         """return response of InviteUser
 
-        :param group_id: group's id
+        :param group_peer: group's peer
         :param user: user's OutPeer
         :return: response
         """
-        group_out_peer = self.get_group_outpeer(group_id)
+        group_out_peer = self.get_group_outpeer(group_peer.id)
         user_out_peer = self.get_user_outpeer(user)
         return self.internal.groups.InviteUser(
             groups_pb2.RequestInviteUser(
@@ -164,34 +164,34 @@ class Groups(ManagedService):
             )
         )
 
-    def kick_users(self, group_id, users):
+    def kick_users(self, group_peer, users):
         """return response list of KickUser
 
-        :param group_id: group's id
+        :param group_peer: group's peer
         :param users: user's OutPeers
         :return: response list
         """
         result = []
         for user in users:
-            result.append(self.kick_user(group_id, user))
+            result.append(self.kick_user(group_peer.id, user))
         return result
 
-    def invite_users(self, group_id, users):
+    def invite_users(self, group_peer, users):
         """return response list of InviteUser
 
-        :param group_id: group's id
+        :param group_peer: group's peer
         :param users: user's OutPeers
         :return: response list
         """
         result = []
         for user in users:
-            result.append(self.invite_user(group_id, user))
+            result.append(self.invite_user(group_peer.id, user))
         return result
 
-    def set_default_group_permissions(self, group_id, add_permissions=None, del_permissions=None):
+    def set_default_group_permissions(self, group_peer, add_permissions=None, del_permissions=None):
         """add/del default group permissions
 
-        :param group_id: group's id
+        :param group_peer: group's peer
         :param add_permissions: list of permissions (on permissions_map) to add
         :param del_permissions: list of permissions (on permissions_map) to delete
         :return: response list
@@ -201,7 +201,7 @@ class Groups(ManagedService):
         if add_permissions is None:
             add_permissions = []
         result = []
-        group_out_peer = self.get_group_outpeer(group_id)
+        group_out_peer = self.get_group_outpeer(group_peer.id)
         for permission in add_permissions:
             request = groups_pb2.RequestEditGroupBasePermissions(
                     group_peer=group_out_peer,
@@ -218,10 +218,10 @@ class Groups(ManagedService):
             result.append(self._set_default_group_permissions(request))
         return result
 
-    def set_member_permissions(self, group_id, user, add_permissions=None, del_permissions=None):
+    def set_member_permissions(self, group_peer, user, add_permissions=None, del_permissions=None):
         """add/del group's member permissions
 
-        :param group_id: group's id
+        :param group_peer: group's peer
         :param user: OutPeer of user
         :param add_permissions: list of permissions (on permissions_map) to add
         :param del_permissions: list of permissions (on permissions_map) to delete
@@ -231,7 +231,7 @@ class Groups(ManagedService):
             del_permissions = []
         if add_permissions is None:
             add_permissions = []
-        group_out_peer, user_out_peer = self.get_group_outpeer(group_id), self.get_user_outpeer(user)
+        group_out_peer, user_out_peer = self.get_group_outpeer(group_peer.id), self.get_user_outpeer(user)
         result = []
         for permission in add_permissions:
             request = groups_pb2.RequestEditMemberPermissions(

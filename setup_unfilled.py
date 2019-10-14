@@ -16,16 +16,18 @@ setuptools.setup(
     license='Apache License 2.0',
     keywords='dialog messenger bot sdk',
     install_requires=[
-        'dialog_api',
-        'protobuf',
-        'google-api-python-client',
-        'googleapis-common-protos',
-        'gevent',
-        'grpcio',
-        'grpcio-tools',
-        'requests',
-        'pyopenssl',
-        'Pillow'
+        'dialog_api==0.0.50',
+        'protobuf==3.10.0',
+        'google-api-python-client==1.7.11',
+        'googleapis-common-protos==1.6.0',
+        'gevent==1.4.0',
+        'grpcio==1.24.1',
+        'grpcio-tools==1.24.1',
+        'requests==2.22.0',
+        'pyopenssl==19.0.0',
+        'Pillow==6.2.0',
+        'opencv-python==4.1.1.26',
+        'audioread==2.1.8'
     ],
     python_requires='>=3',
     classifiers=[
