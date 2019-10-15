@@ -9,20 +9,6 @@ class EntityManager(object):
     def __init__(self, internal):
         self.internal = internal
         self.peers_to_outpeers = {}
-        self.bootstrap()
-
-    def bootstrap(self):
-        """Finds outpeers for all list of contacts.
-
-        """
-        request = messaging_pb2.RequestLoadDialogs(
-            min_date=0,
-        )
-        dialogs = self._load_dialogs(request)
-        for user in dialogs.user_peers:
-            self.adopt_peer(user)
-        for group in dialogs.group_peers:
-            self.adopt_peer(group)
 
     def adopt_peer(self, peer):
         """Finds outpeer for given peer and store it in internal peers_to_outpeers dict.

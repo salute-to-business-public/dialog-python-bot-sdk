@@ -1,9 +1,5 @@
 from .service import ManagedService
-from dialog_api import sequence_and_updates_pb2, miscellaneous_pb2
-
-DEFAULT_OPTIMIZATIONS = [
-    miscellaneous_pb2.UPDATEOPTIMIZATION_UNKNOWN
-]
+from dialog_api import sequence_and_updates_pb2
 
 
 class Updates(ManagedService):
@@ -17,10 +13,7 @@ class Updates(ManagedService):
         :param seq: seq value
         :return: GetDifferenceResponse object
         """
-        request = sequence_and_updates_pb2.RequestGetDifference(
-            seq=seq,
-            optimizations=DEFAULT_OPTIMIZATIONS
-        )
+        request = sequence_and_updates_pb2.RequestGetDifference(seq=seq)
 
         return self._get_difference(request)
 
@@ -29,10 +22,7 @@ class Updates(ManagedService):
 
         :return: seq
         """
-        request = sequence_and_updates_pb2.RequestGetState(
-            optimizations=DEFAULT_OPTIMIZATIONS
-        )
-        return self._get_state(request).seq
+        return self._get_state(sequence_and_updates_pb2.RequestGetState()).seq
 
     def _get_difference(self, request):
         return self.internal.updates.GetDifference(request)
