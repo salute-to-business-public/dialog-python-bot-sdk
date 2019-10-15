@@ -1,7 +1,6 @@
 import grpc
 import OpenSSL.crypto
 import io
-import os
 
 from .internal.bot import InternalBot
 from .entity_manager import EntityManager
