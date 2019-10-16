@@ -1,3 +1,5 @@
+import time
+
 from google.protobuf import empty_pb2
 import threading
 import random
@@ -61,10 +63,16 @@ class Messaging(ManagedService):
                 media = msg.textMessage.media.add()
                 g.render(media)
 
+        # TODO: uncomment after 0.3.3 version
+        # if message.edited_at.value:
+        #     last_edited_at = message.edited_at.value
+        # else:
+        #     last_edited_at = int(time.time() * 1000)
+        last_edited_at = int(time.time() * 1000)
         request = messaging_pb2.RequestUpdateMessage(
             mid=message.mid,
             updated_message=msg,
-            last_edited_at=message.date
+            last_edited_at=last_edited_at
         )
         return self._update_message(request)
 

@@ -3,7 +3,7 @@ import random
 from google.protobuf import wrappers_pb2
 
 from .service import ManagedService
-from dialog_api import search_pb2, groups_pb2, peers_pb2, sequence_and_updates_pb2
+from dialog_api import search_pb2, groups_pb2, peers_pb2, sequence_and_updates_pb2, media_and_files_pb2
 
 
 class Groups(ManagedService):
@@ -249,6 +249,16 @@ class Groups(ManagedService):
             result.append(self._set_member_permissions(request))
         return result
 
+    def edit_avatar(self, group_id, file):
+        outpeer = self.get_group_outpeer(group_id)
+        location = self.internal.uploading.upload_file(file)
+        request = groups_pb2.RequestEditGroupAvatar(
+            group_peer=outpeer,
+            rid=random.randint(0, 100000000),
+            file_location=location
+        )
+        return self._edit_group_avatar(request)
+
     def get_group_outpeer(self, group_id):
         """return GroupOutPeer object
 
@@ -291,4 +301,7 @@ class Groups(ManagedService):
         return self.internal.groups.EditGroupBasePermissions(request)
 
     def _set_member_permissions(self, request):
-        self.internal.groups.EditMemberPermissions(request)
+        return self.internal.groups.EditMemberPermissions(request)
+
+    def _edit_group_avatar(self, request):
+        return self.internal.groups.EditGroupAvatar(request)
