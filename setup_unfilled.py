@@ -16,7 +16,7 @@ setuptools.setup(
     license='Apache License 2.0',
     keywords='dialog messenger bot sdk',
     install_requires=[
-        'dialog_api==799',
+        'dialog_api==1.8.17',
         'protobuf==3.10.0',
         'google-api-python-client==1.7.11',
         'googleapis-common-protos==1.6.0',
