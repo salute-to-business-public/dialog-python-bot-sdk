@@ -34,13 +34,7 @@ class Messaging(ManagedService):
             print('Peer can\'t be None!')
             return None
 
-        outpeer = self.manager.get_outpeer(peer)
-        msg = messaging_pb2.MessageContent()
-        msg.textMessage.text = text
-        if interactive_media_groups is not None:
-            for g in interactive_media_groups:
-                media = msg.textMessage.media.add()
-                g.render(media)
+        outpeer, msg = self.get_outpeer_and_message(peer, text, interactive_media_groups)
         request = messaging_pb2.RequestSendMessage(
             peer=outpeer,
             deduplication_id=random.randint(0, 100000000),
@@ -236,7 +230,7 @@ class Messaging(ManagedService):
 
         :param mids: mids (array) of messages
         :param peer: receiver's peer
-        :param text: message text (not null)
+        :param text: message text (may be None)
         :param interactive_media_groups: groups of interactive media components (buttons etc.)
         :return: value of SendMessage response object
         """
@@ -248,13 +242,7 @@ class Messaging(ManagedService):
             print('Peer can\'t be None!')
             return None
 
-        outpeer = self.manager.get_outpeer(peer)
-        msg = messaging_pb2.MessageContent()
-        msg.textMessage.text = text
-        if interactive_media_groups is not None:
-            for g in interactive_media_groups:
-                media = msg.textMessage.media.add()
-                g.render(media)
+        outpeer, msg = self.get_outpeer_and_message(peer, text, interactive_media_groups)
         request = messaging_pb2.RequestSendMessage(
             peer=outpeer,
             deduplication_id=random.randint(0, 100000000),
@@ -263,10 +251,38 @@ class Messaging(ManagedService):
         )
         return self._send_message(request)
 
-    def load_message_history(self, outpeer, date=0, direction=messaging_pb2.LISTLOADMODE_FORWARD, limit=2):
-        if not outpeer:
-            print('Outpeer can\'t be None!')
+    def forward(self, peer, mids, text=None, interactive_media_groups=None):
+        """Forward message to current peer. Message can contain interactive media groups (buttons, selects etc.).
+
+        :param peer: receiver's peer
+        :param mids: mids (array) of messages
+        :param text: message text (may be None)
+        :param interactive_media_groups: groups of interactive media components (buttons etc.)
+        :return: value of SendMessage response object
+        """
+
+        if text is None:
+            text = ''
+
+        if not peer:
+            print('Peer can\'t be None!')
             return None
+
+        outpeer, msg = self.get_outpeer_and_message(peer, text, interactive_media_groups)
+        request = messaging_pb2.RequestSendMessage(
+            peer=outpeer,
+            deduplication_id=random.randint(0, 100000000),
+            message=msg,
+            forward=messaging_pb2.ReferencedMessages(mids=mids),
+        )
+        return self._send_message(request)
+
+    def load_message_history(self, peer, date=0, direction=messaging_pb2.LISTLOADMODE_FORWARD, limit=2):
+        if not peer:
+            print('Peer can\'t be None!')
+            return None
+
+        outpeer = self.manager.get_outpeer(peer)
 
         request = messaging_pb2.RequestLoadHistory(
             peer=outpeer,
@@ -319,6 +335,16 @@ class Messaging(ManagedService):
             except grpc.RpcError as e:
                 if e.details() in ['Socket closed', 'GOAWAY received']:
                     continue
+
+    def get_outpeer_and_message(self, peer, text, interactive_media_groups):
+        outpeer = self.manager.get_outpeer(peer)
+        msg = messaging_pb2.MessageContent()
+        msg.textMessage.text = text
+        if interactive_media_groups is not None:
+            for g in interactive_media_groups:
+                media = msg.textMessage.media.add()
+                g.render(media)
+        return outpeer, msg
 
     def _send_message(self, request):
         return self.internal.messaging.SendMessage(request)
