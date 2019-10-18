@@ -1,3 +1,5 @@
+import time
+
 from google.protobuf import empty_pb2
 import threading
 import random
@@ -8,6 +10,7 @@ from dialog_api import messaging_pb2, sequence_and_updates_pb2
 from .content import content
 from .utils.get_image_metadata import is_image
 from .utils.get_video_file import is_video
+import google.protobuf.wrappers_pb2 as wrappers_pb2
 
 
 class Messaging(ManagedService):
@@ -47,7 +50,7 @@ class Messaging(ManagedService):
 
     def update_message(self, message, text, interactive_media_groups=None):
         """Update text message or interactive media (buttons, selects etc.).
-        :param message object received from any send method (send_message, send_file etc.)
+        :param message: object received from any send method (send_message, send_file etc.)
         :param text: message text (not null)
         :param interactive_media_groups: groups of interactive media components (buttons etc.)
         :return: value of UpdateMessage response object
@@ -59,19 +62,39 @@ class Messaging(ManagedService):
                 media = msg.textMessage.media.add()
                 g.render(media)
 
+        # TODO: uncomment after 0.3.3 version
+        # if message.edited_at.value:
+        #     last_edited_at = message.edited_at.value
+        # else:
+        #     last_edited_at = int(time.time() * 1000)
+        last_edited_at = int(time.time() * 1000)
+
         return self.internal.messaging.UpdateMessage(messaging_pb2.RequestUpdateMessage(
             mid=message.mid,
             updated_message=msg,
-            last_edited_at=message.date
+            last_edited_at=last_edited_at
         ))
 
-    def delete(self, mids):
+    def delete(self, message):
         """Delete text messages or interactive media (buttons, selects etc.).
 
-        :param mids array objects received from any send method (send_message, send_file etc.)
+        :param message: message object received from any send method (send_message, send_file etc.)
         """
-        self.internal.messaging.DeleteMessageObsolete(messaging_pb2.RequestDeleteMessageObsolete(
-            mids=mids
+        msg = messaging_pb2.MessageContent(
+            deletedMessage=messaging_pb2.DeletedMessage(is_local=wrappers_pb2.BoolValue(value=False))
+        )
+
+        # TODO: uncomment after 0.3.3 version
+        # if message.edited_at.value:
+        #     last_edited_at = message.edited_at.value
+        # else:
+        #     last_edited_at = int(time.time() * 1000)
+        last_edited_at = int(time.time() * 1000)
+
+        return self.internal.messaging.UpdateMessage(messaging_pb2.RequestUpdateMessage(
+            mid=message.mid,
+            updated_message=msg,
+            last_edited_at=last_edited_at
         ))
 
     def messages_read(self, peer, date):
@@ -163,7 +186,7 @@ class Messaging(ManagedService):
 
             :param peer: receiver's peer
             :param file: path to audio file
-            :return: value of SendMessage response object
+            :return: value of SendMessage response objectF
         """
         if not peer:
             print('Peer can\'t be None!')
