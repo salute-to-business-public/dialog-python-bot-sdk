@@ -1,11 +1,23 @@
 from .service import ManagedService
-from dialog_api import contacts_pb2, peers_pb2, users_pb2, messaging_pb2, search_pb2
+from dialog_api import peers_pb2, users_pb2, messaging_pb2, search_pb2, sequence_and_updates_pb2
 
 
 class Users(ManagedService):
     """Class for handling users
 
     """
+    def find_user_outpeer_by_nick(self, nick):
+        """Return OutPeer by shortname
+
+        :param nick: nick (str)
+        :return: OutPeer object
+        """
+        result = self.internal.search.ResolvePeer(search_pb2.RequestResolvePeer(
+                shortname=nick
+            )
+        )
+        if hasattr(result, "peer"):
+            return result.peer
 
     def get_user_outpeer_by_id(self, uid):
         req = messaging_pb2.RequestLoadDialogs(
@@ -27,42 +39,25 @@ class Users(ManagedService):
     def get_user_peer_by_id(uid):
         return peers_pb2.Peer(type=peers_pb2.PEERTYPE_PRIVATE, id=uid)
 
-    def find_user_outpeer_by_nick(self, nick):
-        """Returns user's Outpeer object by nickname for direct messaging
-
-        :param nick: user's nickname
-        :return: Outpeer object of user
-        """
-        users = self.internal.contacts.SearchContacts(
-            contacts_pb2.RequestSearchContacts(
-                request=nick
-            )
-        ).users
-
-        for user in users:
-            if user.data.nick.value == nick:
-                outpeer = peers_pb2.OutPeer(
-                    type=peers_pb2.PEERTYPE_PRIVATE,
-                    id=int(user.id),
-                    access_hash=int(user.access_hash)
-                )
-                return outpeer
-        return None
-
     def get_user_by_nick(self, nick):
         """Returns User object by nickname
 
         :param nick: user's nickname
         :return: User object
         """
-        users = self.internal.contacts.SearchContacts(
-            contacts_pb2.RequestSearchContacts(
-                request=nick
-            )
-        ).users
+        outpeer = self.find_user_outpeer_by_nick(nick)
+        if not (outpeer.id and outpeer.access_hash):
+            return
 
-        for user in users:
-            if user.data.nick.value == nick:
+        result = self.internal.updates.GetReferencedEntitites(
+            sequence_and_updates_pb2.RequestGetReferencedEntitites(
+                users=[
+                    peers_pb2.UserOutPeer(uid=outpeer.id, access_hash=outpeer.access_hash)
+                ]
+            )
+        )
+        for user in result.users:
+            if hasattr(user.data, "nick") and user.data.nick.value == nick:
                 return user
 
     def get_user_full_profile_by_nick(self, nick):
@@ -130,7 +125,7 @@ class Users(ManagedService):
         :param query: user's nickname
         :return: list User objects
         """
-        return self.internal.search.PeerSearch(
+        user_peers = self.internal.search.PeerSearch(
             search_pb2.RequestPeerSearch(
                 query=[
                     search_pb2.SearchCondition(
@@ -142,15 +137,18 @@ class Users(ManagedService):
                     )
                 ]
             )
-        ).users
-
-    def get_user_outpeer_by_outpeer(self, outpeer):
-        """Return UserOutPeer by OutPeer
-
-        :param outpeer: OutPeer
-        :return: UserOutPeer object
-        """
-        return peers_pb2.UserOutPeer(
-            uid=outpeer.id,
-            access_hash=outpeer.access_hash
+        ).user_peers
+        users_list = self.internal.updates.GetReferencedEntitites(
+            sequence_and_updates_pb2.RequestGetReferencedEntitites(
+                users=list(user_peers)
+            )
         )
+        result = []
+
+        for user in users_list.users:
+            if hasattr(user.data, "nick") and query in user.data.nick.value:
+                result.append(user)
+        return result
+
+    def _get_referenced_entitites(self, request):
+        return self.internal.updates.GetReferencedEntitites(request)
