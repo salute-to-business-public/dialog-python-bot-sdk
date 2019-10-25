@@ -62,40 +62,16 @@ class Messaging(ManagedService):
                 media = msg.textMessage.media.add()
                 g.render(media)
 
-        # TODO: uncomment after 0.3.3 version
-        # if message.edited_at.value:
-        #     last_edited_at = message.edited_at.value
-        # else:
-        #     last_edited_at = int(time.time() * 1000)
-        last_edited_at = int(time.time() * 1000)
-
-        return self.internal.messaging.UpdateMessage(messaging_pb2.RequestUpdateMessage(
-            mid=message.mid,
-            updated_message=msg,
-            last_edited_at=last_edited_at
-        ))
+        return self._update(message, msg)
 
     def delete(self, message):
         """Delete text messages or interactive media (buttons, selects etc.).
-
         :param message: message object received from any send method (send_message, send_file etc.)
         """
         msg = messaging_pb2.MessageContent(
             deletedMessage=messaging_pb2.DeletedMessage(is_local=wrappers_pb2.BoolValue(value=False))
         )
-
-        # TODO: uncomment after 0.3.3 version
-        # if message.edited_at.value:
-        #     last_edited_at = message.edited_at.value
-        # else:
-        #     last_edited_at = int(time.time() * 1000)
-        last_edited_at = int(time.time() * 1000)
-
-        return self.internal.messaging.UpdateMessage(messaging_pb2.RequestUpdateMessage(
-            mid=message.mid,
-            updated_message=msg,
-            last_edited_at=last_edited_at
-        ))
+        return self._update(message, msg)
 
     def messages_read(self, peer, date):
         """Marking a message and all previous as read
@@ -324,3 +300,25 @@ class Messaging(ManagedService):
             except grpc.RpcError as e:
                 if e.details() in ['Socket closed', 'GOAWAY received']:
                     continue
+
+    def _update(self, message, new_message):
+        if hasattr(message, "mid"):
+            mid = message.mid
+        elif hasattr(message, "message_id"):
+            mid = message.message_id
+        else:
+            raise AttributeError("message has not attribute message_id or mid")
+
+        # TODO: uncomment after 0.3.3 version
+        # if message.edited_at.value:
+        #     last_edited_at = message.edited_at.value
+        # else:
+        #     last_edited_at = int(time.time() * 1000)
+        last_edited_at = int(time.time() * 1000)
+
+        request = messaging_pb2.RequestUpdateMessage(
+            mid=mid,
+            updated_message=new_message,
+            last_edited_at=last_edited_at
+        )
+        return self.internal.messaging.UpdateMessage(request)
