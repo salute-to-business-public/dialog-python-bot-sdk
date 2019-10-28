@@ -61,19 +61,7 @@ class Messaging(ManagedService):
                 media = msg.textMessage.media.add()
                 g.render(media)
 
-        # TODO: uncomment after 0.3.3 version
-        # if message.edited_at.value:
-        #     last_edited_at = message.edited_at.value
-        # else:
-        #     last_edited_at = int(time.time() * 1000)
-        last_edited_at = int(time.time() * 1000)
-
-        request = messaging_pb2.RequestUpdateMessage(
-            mid=message.mid,
-            updated_message=msg,
-            last_edited_at=last_edited_at
-        )
-        return self._update_message(request)
+        return self._update(message, msg)
 
     def delete(self, message):
         """Delete text messages or interactive media (buttons, selects etc.).
@@ -82,20 +70,15 @@ class Messaging(ManagedService):
         msg = messaging_pb2.MessageContent(
             deletedMessage=messaging_pb2.DeletedMessage(is_local=wrappers_pb2.BoolValue(value=False))
         )
+        return self._update(message, msg)
 
-        # TODO: uncomment after 0.3.3 version
-        # if message.edited_at.value:
-        #     last_edited_at = message.edited_at.value
-        # else:
-        #     last_edited_at = int(time.time() * 1000)
-        last_edited_at = int(time.time() * 1000)
-
-        request = messaging_pb2.RequestUpdateMessage(
-            mid=message.mid,
-            updated_message=msg,
-            last_edited_at=last_edited_at
+    def get_messages_by_id(self, mids):
+        result = self.internal.updates.GetReferencedEntitites(
+            sequence_and_updates_pb2.RequestGetReferencedEntitites(
+                users=mids
+            )
         )
-        return self._update_message(request)
+        return result.messages
 
     def messages_read(self, peer, date):
         """Marking a message and all previous as read
@@ -362,14 +345,30 @@ class Messaging(ManagedService):
     def _update_message(self, request):
         return self.internal.messaging.UpdateMessage(request)
 
-    def _send_message(self, request):
-        return self.internal.messaging.SendMessage(request)
-
     def _load_history(self, request):
         return self.internal.messaging.LoadHistory(request)
 
-    def _delete(self, request):
-        return self.internal.messaging.DeleteMessageObsolete(request)
-
     def _read(self, request):
         return self.internal.messaging.MessageRead(request)
+
+    def _update(self, message, new_message):
+        if hasattr(message, "mid"):
+            mid = message.mid
+        elif hasattr(message, "message_id"):
+            mid = message.message_id
+        else:
+            raise AttributeError("message has not attribute message_id or mid")
+
+        # TODO: uncomment after 0.3.3 version
+        # if message.edited_at.value:
+        #     last_edited_at = message.edited_at.value
+        # else:
+        #     last_edited_at = int(time.time() * 1000)
+        last_edited_at = int(time.time() * 1000)
+
+        request = messaging_pb2.RequestUpdateMessage(
+            mid=mid,
+            updated_message=new_message,
+            last_edited_at=last_edited_at
+        )
+        return self._update_message(request)
