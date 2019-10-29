@@ -75,7 +75,7 @@ class Messaging(ManagedService):
     def get_messages_by_id(self, mids):
         result = self.internal.updates.GetReferencedEntitites(
             sequence_and_updates_pb2.RequestGetReferencedEntitites(
-                users=mids
+                mids=mids
             )
         )
         return result.messages
