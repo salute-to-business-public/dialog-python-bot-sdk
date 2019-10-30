@@ -33,6 +33,24 @@ class Users(ManagedService):
                     access_hash=outpeer.access_hash
                 )
 
+    def get_user_by_id(self, uid):
+        req = messaging_pb2.RequestLoadDialogs(
+            min_date=0,
+            limit=1,
+            peers_to_load=[peers_pb2.Peer(type=peers_pb2.PEERTYPE_PRIVATE, id=uid)]
+        )
+        result = self.internal.messaging.LoadDialogs(req)
+        users_list = self.internal.updates.GetReferencedEntitites(
+            sequence_and_updates_pb2.RequestGetReferencedEntitites(
+                users=list(result.user_peers)
+            )
+        )
+
+        for user in users_list.users:
+            if hasattr(user, "id") and user.id == uid:
+                return user
+        return None
+
     @staticmethod
     def get_user_peer_by_id(uid):
         return peers_pb2.Peer(type=peers_pb2.PEERTYPE_PRIVATE, id=uid)
