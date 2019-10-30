@@ -1,13 +1,13 @@
 import copy
 import unittest
-from dialog_api import peers_pb2, messaging_pb2, definitions_pb2
+from dialog_api import peers_pb2, messaging_pb2, definitions_pb2, sequence_and_updates_pb2
 from dialog_bot_sdk import interactive_media
 from dialog_api.peers_pb2 import PEERTYPE_PRIVATE
 from mock import patch
 
 from tests.bot import bot
 from dialog_bot_sdk.utils.get_media import get_webpage
-from tests.fake_classes import FakeMessage
+from tests.fake_classes import FakeMessage, FakeEntities, FakeMessageFromSend
 
 
 class TestMessaging(unittest.TestCase):
@@ -187,15 +187,47 @@ class TestMessaging(unittest.TestCase):
         bot.messaging.load_message_history(self.outpeer, 1, messaging_pb2.LISTLOADMODE_BACKWARD, 1)
         self.assertTrue(isinstance(load.call_args.args[0], messaging_pb2.RequestLoadHistory))
 
-    @patch('dialog_bot_sdk.messaging.Messaging._delete')
-    def test_delete(self, delete):
+    @patch('dialog_bot_sdk.messaging.Messaging._update')
+    def test_delete(self, update):
         bot.messaging.delete([self.mid])
-        self.assertTrue(isinstance(delete.call_args.args[0], messaging_pb2.RequestDeleteMessageObsolete))
+        self.assertTrue(isinstance(update.call_args.args[1], messaging_pb2.MessageContent))
 
     @patch('dialog_bot_sdk.messaging.Messaging._read')
     def test_read(self, read):
         bot.messaging.messages_read(self.outpeer, 0)
         self.assertTrue(isinstance(read.call_args.args[0], messaging_pb2.RequestMessageRead))
+
+    @patch('dialog_bot_sdk.messaging.Messaging._get_referenced_entities')
+    def test_get_message_by_id(self, entities):
+        entities.return_value = FakeEntities()
+        self.assertEqual(bot.messaging.get_messages_by_id([self.mid]), ["your message"])
+        self.assertTrue(isinstance(entities.call_args.args[0], sequence_and_updates_pb2.RequestGetReferencedEntitites))
+
+    @patch('dialog_bot_sdk.messaging.Messaging._update_message')
+    def test_update(self, update):
+        msg = messaging_pb2.MessageContent()
+        with self.assertRaises(AttributeError):
+            bot.messaging._update("1", msg)
+        self.assertTrue(bot.messaging._update(FakeMessage(self.mid), msg))
+        self.assertTrue(bot.messaging._update(FakeMessageFromSend(self.mid), msg))
+        self.assertTrue(isinstance(update.call_args.args[0], messaging_pb2.RequestUpdateMessage))
+
+    @patch('random.randint')
+    @patch('dialog_bot_sdk.messaging.Messaging._send_message')
+    @patch('dialog_bot_sdk.entity_manager.EntityManager.get_outpeer')
+    def test_forward(self, get_outpeer, send, rnd):
+        self.assertIsNone(bot.messaging.forward(None, ""))
+
+        get_outpeer.return_value = self.outpeer
+        rnd.return_value = 1
+
+        bot.messaging.forward(self.outpeer, [self.mid])
+
+        self.assertTrue(isinstance(send.call_args.args[0], messaging_pb2.RequestSendMessage))
+
+        bot.messaging.forward(self.outpeer, [self.mid], "hello", self.group)
+
+        self.assertTrue(isinstance(send.call_args.args[0], messaging_pb2.RequestSendMessage))
 
 
 if __name__ == '__main__':

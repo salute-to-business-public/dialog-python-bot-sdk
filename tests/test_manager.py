@@ -17,14 +17,6 @@ class TestManager(unittest.TestCase):
     peer = peers_pb2.Peer(type=PEERTYPE_PRIVATE, id=0)
     group_peer = peers_pb2.Peer(type=PEERTYPE_GROUP, id=1)
 
-    @patch('dialog_bot_sdk.entity_manager.EntityManager.adopt_peer')
-    @patch('dialog_bot_sdk.entity_manager.EntityManager._get_contacts')
-    def test_bootstrap(self, contacts, peer):
-        contacts.return_value = FakeDialog()
-        entity_manager.EntityManager(bot.internal)
-        self.assertTrue(isinstance(contacts.call_args.args[0], contacts_pb2.RequestGetContacts))
-        self.assertTrue(isinstance(peer.call_args.args[0], FakeOutpeer))
-
     def test_adopt_peer(self):
         manager = entity_manager.EntityManager(bot.internal)
         manager.adopt_peer(self.user_out_peer)

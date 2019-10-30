@@ -118,8 +118,7 @@ class Groups(ManagedService):
             limit=limit
         )
         members = self._load_members(request).members
-        result = self.internal.updates.GetReferencedEntitites(
-            sequence_and_updates_pb2.RequestGetReferencedEntitites(
+        request = sequence_and_updates_pb2.RequestGetReferencedEntitites(
                 group_members=[
                     sequence_and_updates_pb2.GroupMembersSubset(
                         group_peer=group_out_peer,
@@ -127,7 +126,7 @@ class Groups(ManagedService):
                     )
                 ]
             )
-        )
+        result = self._get_referenced_entities(request)
 
         return result
 
@@ -139,13 +138,12 @@ class Groups(ManagedService):
         :return: response
         """
         group_out_peer, user_out_peer = self.get_group_outpeer(group_peer.id), self.get_user_outpeer(user)
-        return self.internal.groups.KickUser(
-            groups_pb2.RequestKickUser(
+        request = groups_pb2.RequestKickUser(
                 group_peer=group_out_peer,
                 user=user_out_peer,
                 rid=random.randint(0, 100000000),
             )
-        )
+        return self._kick_user(request)
 
     def invite_user(self, group_peer, user):
         """return response of InviteUser
@@ -156,13 +154,12 @@ class Groups(ManagedService):
         """
         group_out_peer = self.get_group_outpeer(group_peer.id)
         user_out_peer = self.get_user_outpeer(user)
-        return self.internal.groups.InviteUser(
-            groups_pb2.RequestInviteUser(
+        request = groups_pb2.RequestInviteUser(
                 group_peer=group_out_peer,
                 user=user_out_peer,
                 rid=random.randint(0, 100000000),
             )
-        )
+        return self._invite_user(request)
 
     def kick_users(self, group_peer, users):
         """return response list of KickUser
@@ -200,7 +197,7 @@ class Groups(ManagedService):
             del_permissions = []
         if add_permissions is None:
             add_permissions = []
-        result = []
+
         group_out_peer = self.get_group_outpeer(group_peer.id)
         for permission in add_permissions:
             request = groups_pb2.RequestEditGroupBasePermissions(
@@ -208,15 +205,14 @@ class Groups(ManagedService):
                     random_id=random.randint(0, 100000000),
                     granted_permissions=[self.permissions_map[permission]]
                 )
-            result.append(self._set_default_group_permissions(request))
+            self._set_default_group_permissions(request)
         for permission in del_permissions:
             request = groups_pb2.RequestEditGroupBasePermissions(
                     group_peer=group_out_peer,
                     random_id=random.randint(0, 100000000),
                     revoked_permissions=[self.permissions_map[permission]]
                 )
-            result.append(self._set_default_group_permissions(request))
-        return result
+            self._set_default_group_permissions(request)
 
     def set_member_permissions(self, group_peer, user, add_permissions=None, del_permissions=None):
         """add/del group's member permissions
@@ -232,26 +228,24 @@ class Groups(ManagedService):
         if add_permissions is None:
             add_permissions = []
         group_out_peer, user_out_peer = self.get_group_outpeer(group_peer.id), self.get_user_outpeer(user)
-        result = []
         for permission in add_permissions:
             request = groups_pb2.RequestEditMemberPermissions(
                     group_peer=group_out_peer,
                     user_peer=user_out_peer,
                     granted_permissions=[self.permissions_map[permission]]
                 )
-            result.append(self._set_member_permissions(request))
+            self._set_member_permissions(request)
         for permission in del_permissions:
             request = groups_pb2.RequestEditMemberPermissions(
                     group_peer=group_out_peer,
                     user_peer=user_out_peer,
                     revoked_permissions=[self.permissions_map[permission]]
                 )
-            result.append(self._set_member_permissions(request))
-        return result
+            self._set_member_permissions(request)
 
     def edit_avatar(self, group_id, file):
         outpeer = self.get_group_outpeer(group_id)
-        location = self.internal.uploading.upload_file(file)
+        location = self._upload(file)
         request = groups_pb2.RequestEditGroupAvatar(
             group_peer=outpeer,
             rid=random.randint(0, 100000000),
@@ -305,3 +299,15 @@ class Groups(ManagedService):
 
     def _edit_group_avatar(self, request):
         return self.internal.groups.EditGroupAvatar(request)
+
+    def _get_referenced_entities(self, request):
+        return self.internal.updates.GetReferencedEntitites(request)
+
+    def _kick_user(self, request):
+        return self.internal.groups.KickUser(request)
+
+    def _invite_user(self, request):
+        return self.internal.groups.InviteUser(request)
+
+    def _upload(self, file):
+        return self.internal.uploading.upload_file(file)

@@ -10,20 +10,20 @@ class Users(ManagedService):
         :param nick: nick (str)
         :return: OutPeer object
         """
-        result = self.internal.search.ResolvePeer(search_pb2.RequestResolvePeer(
+        request = search_pb2.RequestResolvePeer(
                 shortname=nick
             )
-        )
+        result = self._resolve_peer(request)
         if hasattr(result, "peer"):
             return result.peer
 
     def get_user_outpeer_by_id(self, uid):
-        req = messaging_pb2.RequestLoadDialogs(
+        request = messaging_pb2.RequestLoadDialogs(
             min_date=0,
             limit=1,
             peers_to_load=[peers_pb2.Peer(type=peers_pb2.PEERTYPE_PRIVATE, id=uid)]
         )
-        result = self.internal.messaging.LoadDialogs(req)
+        result = self._load_dialogs(request)
 
         for outpeer in result.user_peers:
             if outpeer.uid == uid:
@@ -46,13 +46,12 @@ class Users(ManagedService):
         if not (outpeer.id and outpeer.access_hash):
             return
 
-        result = self.internal.updates.GetReferencedEntitites(
-            sequence_and_updates_pb2.RequestGetReferencedEntitites(
+        request = sequence_and_updates_pb2.RequestGetReferencedEntitites(
                 users=[
                     peers_pb2.UserOutPeer(uid=outpeer.id, access_hash=outpeer.access_hash)
                 ]
             )
-        )
+        result = self._get_reference_entities(request)
         for user in result.users:
             if hasattr(user.data, "nick") and user.data.nick.value == nick:
                 return user
@@ -63,8 +62,7 @@ class Users(ManagedService):
         :return: FullUser object
         """
         user = self.find_user_outpeer_by_nick(nick)
-        full_profile = self.internal.users.LoadFullUsers(
-            users_pb2.RequestLoadFullUsers(
+        request = users_pb2.RequestLoadFullUsers(
                 user_peers=[
                     peers_pb2.UserOutPeer(
                         uid=user.id,
@@ -72,7 +70,7 @@ class Users(ManagedService):
                     )
                 ]
             )
-        )
+        full_profile = self._load_full_users(request)
 
         if full_profile:
             if hasattr(full_profile, 'full_users'):
@@ -96,8 +94,7 @@ class Users(ManagedService):
         """
         outpeer = self.manager.get_outpeer(peer)
 
-        full_profile = self.internal.users.LoadFullUsers(
-            users_pb2.RequestLoadFullUsers(
+        request = users_pb2.RequestLoadFullUsers(
                 user_peers=[
                     peers_pb2.UserOutPeer(
                         uid=outpeer.id,
@@ -105,7 +102,7 @@ class Users(ManagedService):
                     )
                 ]
             )
-        )
+        full_profile = self._load_full_users(request)
 
         if full_profile:
             if hasattr(full_profile, 'full_users'):
@@ -118,8 +115,7 @@ class Users(ManagedService):
         :param query: user's nickname
         :return: list User objects
         """
-        user_peers = self.internal.search.PeerSearch(
-            search_pb2.RequestPeerSearch(
+        request = search_pb2.RequestPeerSearch(
                 query=[
                     search_pb2.SearchCondition(
                         searchPeerTypeCondition=search_pb2.SearchPeerTypeCondition(
@@ -130,12 +126,11 @@ class Users(ManagedService):
                     )
                 ]
             )
-        ).user_peers
-        users_list = self.internal.updates.GetReferencedEntitites(
-            sequence_and_updates_pb2.RequestGetReferencedEntitites(
+        user_peers = self._peer_search(request).user_peers
+        request = sequence_and_updates_pb2.RequestGetReferencedEntitites(
                 users=list(user_peers)
             )
-        )
+        users_list = self._get_reference_entities(request)
         result = []
 
         for user in users_list.users:
@@ -143,5 +138,17 @@ class Users(ManagedService):
                 result.append(user)
         return result
 
-    def _get_referenced_entitites(self, request):
+    def _load_dialogs(self, request):
+        return self.internal.messaging.LoadDialogs(request)
+
+    def _resolve_peer(self, request):
+        return self.internal.search.ResolvePeer(request)
+
+    def _get_reference_entities(self, request):
         return self.internal.updates.GetReferencedEntitites(request)
+
+    def _load_full_users(self, request):
+        return self.internal.users.LoadFullUsers(request)
+
+    def _peer_search(self, request):
+        return self.internal.search.PeerSearch(request)

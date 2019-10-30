@@ -1,11 +1,19 @@
 import time
 
 from OpenSSL.crypto import PKey
+from dialog_api import peers_pb2
+from google.protobuf import wrappers_pb2
 
 
 class FakeMessage:
     def __init__(self, mid):
         self.mid = mid
+        self.date = int(time.time() - 1000)
+
+
+class FakeMessageFromSend:
+    def __init__(self, mid):
+        self.message_id = mid
         self.date = int(time.time() - 1000)
 
 
@@ -62,9 +70,21 @@ class FakeFullUser:
 
 
 class FakeSearch:
-    def __init__(self):
+    def __init__(self, shortname=None):
         self.groups = ["group"]
         self.peer = "peer"
+        self.search_results = [FakeSearchResult(shortname)]
+
+
+class FakeSearchResult:
+    def __init__(self, shortname=None):
+        self.peer = peers_pb2.Peer(id=0, type=peers_pb2.PEERTYPE_GROUP)
+        self.shortname = wrappers_pb2.StringValue(value=shortname)
+
+
+class FakeEntities:
+    def __init__(self):
+        self.messages = ["your message"]
 
 
 class FakeState:
@@ -84,9 +104,6 @@ class FakePut:
         self.uploaded_file_location = uploaded_file_location
 
 
-class FakePKey:
-    def get_privatekey(self):
-        return PKey()
-
-    def get_certificate(self):
-        return
+class FakeMembers:
+    def __init__(self):
+        self.members = [FakeOutpeer()]

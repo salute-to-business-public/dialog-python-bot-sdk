@@ -5,6 +5,7 @@ import threading
 import random
 import grpc
 
+from dialog_bot_sdk.utils.get_audio_metadata import is_audio
 from .service import ManagedService
 from dialog_api import messaging_pb2, sequence_and_updates_pb2
 from .content import content
@@ -73,11 +74,10 @@ class Messaging(ManagedService):
         return self._update(message, msg)
 
     def get_messages_by_id(self, mids):
-        result = self.internal.updates.GetReferencedEntitites(
-            sequence_and_updates_pb2.RequestGetReferencedEntitites(
+        request = sequence_and_updates_pb2.RequestGetReferencedEntitites(
                 mids=mids
             )
-        )
+        result = self._get_referenced_entities(request)
         return result.messages
 
     def messages_read(self, peer, date):
@@ -175,6 +175,8 @@ class Messaging(ManagedService):
             print('Peer can\'t be None!')
             return None
 
+        if not is_audio(file):
+            raise IOError('File is not an audio.')
         location = self.internal.uploading.upload_file(file)
         msg = messaging_pb2.MessageContent()
 
@@ -372,3 +374,6 @@ class Messaging(ManagedService):
             last_edited_at=last_edited_at
         )
         return self._update_message(request)
+
+    def _get_referenced_entities(self, request):
+        return self.internal.updates.GetReferencedEntitites(request)
