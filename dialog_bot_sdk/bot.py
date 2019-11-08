@@ -1,7 +1,6 @@
 import grpc
 import OpenSSL.crypto
 import io
-import os
 
 from .internal.bot import InternalBot
 from .entity_manager import EntityManager
@@ -9,6 +8,12 @@ from .messaging import Messaging
 from .updates import Updates
 from .users import Users
 from .groups import Groups
+
+
+SEC = 1000
+OPTIONS = [('grpc.keepalive_timeout_ms', 15 * SEC), ('grpc.keepalive_time_ms', 30 * SEC),
+           ('grpc.keepalive_permit_without_calls', 1), ('grpc.http2.max_pings_without_data', 0),
+           ('grpc.http2.min_time_between_pings_ms', 10 * SEC), ('grpc.http2.min_ping_interval_without_data_ms', 5 * SEC)]
 
 
 class DialogBot(object):
@@ -38,7 +43,8 @@ class DialogBot(object):
         :param verbose: verbosity level of functions calling
         :return: Dialog bot instance
         """
-        channel = grpc.insecure_channel(endpoint)
+
+        channel = grpc.insecure_channel(endpoint, options=OPTIONS)
         return DialogBot(channel, bot_token, verbose=verbose)
 
     @staticmethod
@@ -51,7 +57,7 @@ class DialogBot(object):
         :param verbose: verbosity level of functions calling
         :return: Dialog bot instance
         """
-        channel = grpc.secure_channel(endpoint, credentials)
+        channel = grpc.secure_channel(endpoint, credentials, options=OPTIONS)
         return DialogBot(channel, bot_token, verbose=verbose)
 
     @staticmethod
@@ -74,7 +80,8 @@ class DialogBot(object):
                 root_certificates=None,
                 private_key=private_key.read(),
                 certificate_chain=cert.read()
-            )
+            ),
+            options=OPTIONS
         )
 
         private_key.seek(0)
