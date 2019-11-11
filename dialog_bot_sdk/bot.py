@@ -1,6 +1,7 @@
 import grpc
 import OpenSSL.crypto
 import io
+import copy
 
 from .internal.bot import InternalBot
 from .entity_manager import EntityManager
@@ -8,6 +9,16 @@ from .messaging import Messaging
 from .updates import Updates
 from .users import Users
 from .groups import Groups
+
+
+DEFAULT_OPTIONS = {
+    'grpc.keepalive_timeout_ms': 15000,
+    'grpc.keepalive_time_ms': 30000,
+    'grpc.keepalive_permit_without_calls': 1,
+    'grpc.http2.max_pings_without_data': 0,
+    'grpc.http2.min_time_between_pings_ms': 10000,
+    'grpc.http2.min_ping_interval_without_data_ms': 5000
+}
 
 
 class DialogBot(object):
@@ -29,7 +40,7 @@ class DialogBot(object):
         print('Bot is ready.')
 
     @staticmethod
-    def get_insecure_bot(endpoint, bot_token, verbose=False):
+    def get_insecure_bot(endpoint, bot_token, verbose=False, options=None):
         """Returns Dialog bot with established gRPC insecure channel.
 
         :param endpoint: bot's endpoint address
@@ -37,11 +48,12 @@ class DialogBot(object):
         :param verbose: verbosity level of functions calling
         :return: Dialog bot instance
         """
-        channel = grpc.insecure_channel(endpoint)
+        options = DialogBot.get_options(options)
+        channel = grpc.insecure_channel(endpoint, options=options)
         return DialogBot(channel, bot_token, verbose=verbose)
 
     @staticmethod
-    def get_secure_bot(endpoint, credentials, bot_token, verbose=False):
+    def get_secure_bot(endpoint, credentials, bot_token, verbose=False, options=None):
         """Returns Dialog bot with established gRPC insecure channel.
 
         :param endpoint: bot's endpoint address
@@ -50,11 +62,13 @@ class DialogBot(object):
         :param verbose: verbosity level of functions calling
         :return: Dialog bot instance
         """
-        channel = grpc.secure_channel(endpoint, credentials)
+        options = DialogBot.get_options(options)
+        channel = grpc.secure_channel(endpoint, credentials, options=options)
         return DialogBot(channel, bot_token, verbose=verbose)
 
     @staticmethod
-    def get_secure_bot_with_pfx_certificate(endpoint, pfx_certificate, pfx_password, verbose=False, access_dir=None):
+    def get_secure_bot_with_pfx_certificate(endpoint, pfx_certificate, pfx_password, verbose=False, access_dir=None, options=None):
+        options = DialogBot.get_options(options)
         pfx1 = open(pfx_certificate, 'rb').read()
         p12 = OpenSSL.crypto.load_pkcs12(pfx1, pfx_password)
 
@@ -73,10 +87,20 @@ class DialogBot(object):
                 root_certificates=None,
                 private_key=private_key.read(),
                 certificate_chain=cert.read()
-            )
+            ),
+            options=options
         )
 
         private_key.seek(0)
         cert.seek(0)
 
         return DialogBot(channel, verbose=verbose, cert=cert.read(), private_key=private_key.read(), access_dir=access_dir)
+
+    @staticmethod
+    def get_options(options):
+        options_dict = copy.deepcopy(DEFAULT_OPTIONS)
+        if options:
+            for key, value in options.items:
+                options_dict[key] = value
+        return list(options_dict.items())
+
