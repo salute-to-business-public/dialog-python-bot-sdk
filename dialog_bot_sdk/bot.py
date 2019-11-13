@@ -46,6 +46,7 @@ class DialogBot(object):
         :param endpoint: bot's endpoint address
         :param bot_token: bot's token
         :param verbose: verbosity level of functions calling
+        :param options: channel's options
         :return: Dialog bot instance
         """
         options = DialogBot.get_options(options)
@@ -60,6 +61,7 @@ class DialogBot(object):
         :param credentials: SSL credentials
         :param bot_token: bot's token
         :param verbose: verbosity level of functions calling
+        :param options: channel's options
         :return: Dialog bot instance
         """
         options = DialogBot.get_options(options)
@@ -100,7 +102,7 @@ class DialogBot(object):
     def get_options(options):
         options_dict = copy.deepcopy(DEFAULT_OPTIONS)
         if options:
-            for key, value in options.items:
+            for key, value in options.items():
                 options_dict[key] = value
         return list(options_dict.items())
 
