@@ -1,9 +1,8 @@
-import time
-
 from google.protobuf import empty_pb2
 import threading
 import random
 import grpc
+import logging
 
 from .service import ManagedService
 from dialog_api import messaging_pb2, sequence_and_updates_pb2
@@ -72,6 +71,13 @@ class Messaging(ManagedService):
             deletedMessage=messaging_pb2.DeletedMessage(is_local=wrappers_pb2.BoolValue(value=False))
         )
         return self._update(message, msg)
+
+    def get_messages_by_id(self, mids):
+        request = sequence_and_updates_pb2.RequestGetReferencedEntitites(
+                mids=mids
+            )
+        result = self._get_referenced_entities(request)
+        return result.messages
 
     def messages_read(self, peer, date):
         """Marking a message and all previous as read
@@ -298,6 +304,7 @@ class Messaging(ManagedService):
                                 raw_callback(up)
                             )
             except grpc.RpcError as e:
+                logging.error(e)
                 if e.details() in ['Socket closed', 'GOAWAY received']:
                     continue
 
@@ -309,12 +316,10 @@ class Messaging(ManagedService):
         else:
             raise AttributeError("message has not attribute message_id or mid")
 
-        # TODO: uncomment after 0.3.3 version
-        # if message.edited_at.value:
-        #     last_edited_at = message.edited_at.value
-        # else:
-        #     last_edited_at = int(time.time() * 1000)
-        last_edited_at = int(time.time() * 1000)
+        if message.edited_at.value:
+            last_edited_at = message.edited_at.value
+        else:
+            last_edited_at = message.date
 
         request = messaging_pb2.RequestUpdateMessage(
             mid=mid,
@@ -322,3 +327,6 @@ class Messaging(ManagedService):
             last_edited_at=last_edited_at
         )
         return self.internal.messaging.UpdateMessage(request)
+
+    def _get_referenced_entities(self, request):
+        return self.internal.updates.GetReferencedEntitites(request)
