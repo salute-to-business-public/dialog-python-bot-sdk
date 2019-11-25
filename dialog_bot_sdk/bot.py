@@ -23,7 +23,6 @@ DEFAULT_OPTIONS = {
 
 class DialogBot(object):
     """Main Dialog Bot class.
-
     """
     def __init__(self, channel, bot_token=None, verbose=False, cert=None, private_key=None, access_dir=None):
         self.internal = InternalBot(channel, verbose=verbose, cert=cert, private_key=private_key, access_dir=access_dir)
@@ -42,10 +41,10 @@ class DialogBot(object):
     @staticmethod
     def get_insecure_bot(endpoint, bot_token, verbose=False, options=None):
         """Returns Dialog bot with established gRPC insecure channel.
-
         :param endpoint: bot's endpoint address
         :param bot_token: bot's token
         :param verbose: verbosity level of functions calling
+        :param options: channel's options
         :return: Dialog bot instance
         """
         options = DialogBot.get_options(options)
@@ -55,11 +54,11 @@ class DialogBot(object):
     @staticmethod
     def get_secure_bot(endpoint, credentials, bot_token, verbose=False, options=None):
         """Returns Dialog bot with established gRPC insecure channel.
-
         :param endpoint: bot's endpoint address
         :param credentials: SSL credentials
         :param bot_token: bot's token
         :param verbose: verbosity level of functions calling
+        :param options: channel's options
         :return: Dialog bot instance
         """
         options = DialogBot.get_options(options)
@@ -103,4 +102,3 @@ class DialogBot(object):
             for key, value in options.items():
                 options_dict[key] = value
         return list(options_dict.items())
-

@@ -371,7 +371,7 @@ class Messaging(ManagedService):
             updated_message=new_message,
             last_edited_at=last_edited_at
         )
-        return self._update_message(request)
+        return self.internal.messaging.UpdateMessage(request)
 
     def _get_referenced_entities(self, request):
         return self.internal.updates.GetReferencedEntitites(request)
