@@ -100,7 +100,7 @@ class DialogBot(object):
     def get_options(options):
         options_dict = copy.deepcopy(DEFAULT_OPTIONS)
         if options:
-            for key, value in options.items:
+            for key, value in options.items():
                 options_dict[key] = value
         return list(options_dict.items())
 

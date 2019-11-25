@@ -1,9 +1,8 @@
-import time
-
 from google.protobuf import empty_pb2
 import threading
 import random
 import grpc
+import logging
 
 from dialog_bot_sdk.utils.get_audio_metadata import is_audio
 from .service import ManagedService
@@ -328,6 +327,7 @@ class Messaging(ManagedService):
                                 raw_callback(up)
                             )
             except grpc.RpcError as e:
+                logging.error(e)
                 if e.details() in ['Socket closed', 'GOAWAY received']:
                     continue
 
@@ -361,12 +361,10 @@ class Messaging(ManagedService):
         else:
             raise AttributeError("message has not attribute message_id or mid")
 
-        # TODO: uncomment after 0.3.3 version
-        # if message.edited_at.value:
-        #     last_edited_at = message.edited_at.value
-        # else:
-        #     last_edited_at = int(time.time() * 1000)
-        last_edited_at = int(time.time() * 1000)
+        if message.edited_at.value:
+            last_edited_at = message.edited_at.value
+        else:
+            last_edited_at = message.date
 
         request = messaging_pb2.RequestUpdateMessage(
             mid=mid,
