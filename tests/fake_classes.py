@@ -1,6 +1,5 @@
 import time
 
-from OpenSSL.crypto import PKey
 from dialog_api import peers_pb2
 from google.protobuf import wrappers_pb2
 
@@ -8,13 +7,15 @@ from google.protobuf import wrappers_pb2
 class FakeMessage:
     def __init__(self, mid):
         self.mid = mid
-        self.date = int(time.time() - 1000)
+        self.date = int(time.time() / 1000)
+        self.edited_at = wrappers_pb2.Int32Value(value=int(time.time() / 1000))
 
 
 class FakeMessageFromSend:
     def __init__(self, mid):
         self.message_id = mid
-        self.date = int(time.time() - 1000)
+        self.date = int(time.time() / 1000)
+        self.edited_at = wrappers_pb2.Int32Value(value=int(time.time() / 1000))
 
 
 class FakeDialog:
