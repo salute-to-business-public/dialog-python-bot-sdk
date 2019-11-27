@@ -11,7 +11,7 @@ class EntityManager(object):
         self.peers_to_outpeers = {}
 
     def adopt_peer(self, peer):
-        """Finds outpeer for given peer and store it in internal peers_to_outpeers dict.
+        """Find outpeer for given peer and store it in internal peers_to_outpeers dict.
 
         :param peer: Peer object (UserOutPeer or GroupOutPeer)
         """

@@ -17,7 +17,7 @@ class Messaging(ManagedService):
     """Main messaging class.
     """
     def send_message(self, peer, text, interactive_media_groups=None, uid=None):
-        """Send text message to current peer. Message can contain interactive media groups (buttons, selects etc.).
+        """Send text message to peer. Message can contain interactive media groups (buttons, selects etc.).
         :param peer: receiver's peer
         :param text: message text (not null)
         :param interactive_media_groups: groups of interactive media components (buttons etc.)
@@ -91,7 +91,7 @@ class Messaging(ManagedService):
         return self._read(request)
 
     def send_file(self, peer, file):
-        """Send file to current peer.
+        """Send file to peer.
         :param peer: receiver's peer
         :param file: path to file
         :return: value of SendMessage response object
@@ -116,7 +116,7 @@ class Messaging(ManagedService):
         return self._send_message(request)
 
     def send_media(self, peer, medias):
-        """Send media to current peer.
+        """Send media to peer.
         :param peer: receiver's peer
         :param medias: medias (list)
         :return: value of SendMessage response object
@@ -137,7 +137,7 @@ class Messaging(ManagedService):
         return self._send_message(request)
 
     def send_image(self, peer, file):
-        """Send image as image (not as file) to current peer.
+        """Send image as image (not as file) to peer.
         :param peer: receiver's peer
         :param file: path to image file
         :return: value of SendMessage response object
@@ -165,10 +165,10 @@ class Messaging(ManagedService):
         return self._send_message(request)
 
     def send_audio(self, peer, file):
-        """Send audio as audio (not as file) to current peer.
-            :param peer: receiver's peer
-            :param file: path to audio file
-            :return: value of SendMessage response objectF
+        """Send audio as audio (not as file) to peer.
+        :param peer: receiver's peer
+        :param file: path to audio file
+        :return: value of SendMessage response objectF
         """
         if not peer:
             print('Peer can\'t be None!')
@@ -191,10 +191,10 @@ class Messaging(ManagedService):
         return self._send_message(request)
 
     def send_video(self, peer, file):
-        """Send video as video (not as file) to current peer.
-            :param peer: receiver's peer
-            :param file: path to video file
-            :return: value of SendMessage response object
+        """Send video as video (not as file) to peer.
+        :param peer: receiver's peer
+        :param file: path to video file
+        :return: value of SendMessage response object
         """
         if not peer:
             print('Peer can\'t be None!')
@@ -218,7 +218,7 @@ class Messaging(ManagedService):
         return self._send_message(request)
 
     def reply(self, peer, mids, text=None, interactive_media_groups=None):
-        """Reply message to current peer. Message can contain interactive media groups (buttons, selects etc.).
+        """Reply messages to peer. Message can contain interactive media groups (buttons, selects etc.).
         :param mids: mids (array) of messages
         :param peer: receiver's peer
         :param text: message text (not null)
@@ -249,7 +249,7 @@ class Messaging(ManagedService):
         return self._send_message(request)
 
     def forward(self, peer, mids, text=None, interactive_media_groups=None):
-        """Forward message to current peer. Message can contain interactive media groups (buttons, selects etc.).
+        """Forward messages to peer. Message can contain interactive media groups (buttons, selects etc.).
         :param peer: receiver's peer
         :param mids: mids (array) of messages
         :param text: message text (may be None)
