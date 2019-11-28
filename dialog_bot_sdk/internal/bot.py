@@ -13,19 +13,19 @@ class InternalBot(object):
 
     """
 
-    def __init__(self, channel, verbose=False, cert=None, private_key=None, access_dir=None):
+    def __init__(self, channel, verbose=False, cert=None, private_key=None, access_dir=None, options=None):
         self.app_id = 10
         self.app_title = "PythonBotSDK/1.0"
         self.channel = channel
-        self.registration = self.wrap_service(registration_pb2_grpc.RegistrationStub, verbose=verbose)
-        self.messaging = self.wrap_service(messaging_pb2_grpc.MessagingStub, verbose=verbose)
-        self.media_and_files = self.wrap_service(media_and_files_pb2_grpc.MediaAndFilesStub, verbose=verbose)
-        self.updates = self.wrap_service(sequence_and_updates_pb2_grpc.SequenceAndUpdatesStub, verbose=verbose)
-        self.auth = self.wrap_service(authentication_pb2_grpc.AuthenticationStub, verbose=verbose)
-        self.contacts = self.wrap_service(contacts_pb2_grpc.ContactsStub, verbose=verbose)
-        self.search = self.wrap_service(search_pb2_grpc.SearchStub, verbose=verbose)
-        self.users = self.wrap_service(users_pb2_grpc.UsersStub, verbose=verbose)
-        self.groups = self.wrap_service(groups_pb2_grpc.GroupsStub, verbose=verbose)
+        self.registration = self.wrap_service(registration_pb2_grpc.RegistrationStub, verbose=verbose, options=options)
+        self.messaging = self.wrap_service(messaging_pb2_grpc.MessagingStub, verbose=verbose, options=options)
+        self.media_and_files = self.wrap_service(media_and_files_pb2_grpc.MediaAndFilesStub, verbose=verbose, options=options)
+        self.updates = self.wrap_service(sequence_and_updates_pb2_grpc.SequenceAndUpdatesStub, verbose=verbose, options=options)
+        self.auth = self.wrap_service(authentication_pb2_grpc.AuthenticationStub, verbose=verbose, options=options)
+        self.contacts = self.wrap_service(contacts_pb2_grpc.ContactsStub, verbose=verbose, options=options)
+        self.search = self.wrap_service(search_pb2_grpc.SearchStub, verbose=verbose, options=options)
+        self.users = self.wrap_service(users_pb2_grpc.UsersStub, verbose=verbose, options=options)
+        self.groups = self.wrap_service(groups_pb2_grpc.GroupsStub, verbose=verbose, options=options)
         self.token = self.get_session_token()
         self.thread_pool_executor = ThreadPoolExecutor(max_workers=10)
         self.uploading = Uploading(self, cert, private_key, access_dir=access_dir)
@@ -60,9 +60,10 @@ class InternalBot(object):
         )
         return registration_response.token
 
-    def wrap_service(self, stub_func, verbose=False):
+    def wrap_service(self, stub_func, verbose=False, options=None):
         """Wrapper for authenticating of gRPC service calls.
 
+        :param options: retries options
         :param stub_func: name of gRPC service
         :param verbose: verbosity level of functions calling
         :return: wrapped gRPC service
@@ -70,5 +71,6 @@ class InternalBot(object):
         return AuthenticatedService(
             lambda: self.token if hasattr(self, 'token') else None,
             stub_func(self.channel),
-            verbose=verbose
+            verbose=verbose,
+            options=options
         )
