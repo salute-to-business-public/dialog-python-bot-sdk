@@ -1,12 +1,5 @@
 from .service import ManagedService
-from dialog_api import sequence_and_updates_pb2, miscellaneous_pb2
-
-DEFAULT_OPTIMIZATIONS = [
-    miscellaneous_pb2.UPDATEOPTIMIZATION_STRIP_ENTITIES,
-    miscellaneous_pb2.UPDATEOPTIMIZATION_STRIP_ENTITIES_V2,
-    miscellaneous_pb2.UPDATEOPTIMIZATION_STRIP_COUNTERS,
-    miscellaneous_pb2.UPDATEOPTIMIZATION_COMPACT_USERS
-]
+from dialog_api import sequence_and_updates_pb2
 
 
 class Updates(ManagedService):
@@ -20,20 +13,20 @@ class Updates(ManagedService):
         :param seq: seq value
         :return: GetDifferenceResponse object
         """
-        diff = self.internal.updates.GetDifference(
-            sequence_and_updates_pb2.RequestGetDifference(
-                seq=seq,
-                optimizations=DEFAULT_OPTIMIZATIONS
-            )
-        )
+        request = sequence_and_updates_pb2.RequestGetDifference(seq=seq)
 
-        return diff
+        return self._get_difference(request)
 
     def get_state(self):
         """Current application seq number
 
         :return: seq
         """
-        return self.internal.updates.GetState(sequence_and_updates_pb2.RequestGetState(
-            optimizations=DEFAULT_OPTIMIZATIONS
-        )).seq
+        return self._get_state(sequence_and_updates_pb2.RequestGetState()).seq
+
+    def _get_difference(self, request):
+        return self.internal.updates.GetDifference(request)
+
+    def _get_state(self, request):
+        return self.internal.updates.GetState(request)
+

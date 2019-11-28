@@ -3,7 +3,7 @@ import mimetypes
 
 
 def get_video_w_h(file):
-    """Returns image's width and height
+    """Returns video's width and height
 
     :param file: path to video
     :return: width, height

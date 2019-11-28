@@ -2,6 +2,9 @@ import google.protobuf.wrappers_pb2 as wrappers_pb2
 from dialog_api import messaging_pb2, media_and_files_pb2
 import mimetypes
 
+from dialog_bot_sdk.utils.get_audio_metadata import get_audio_duration, is_audio
+from dialog_bot_sdk.utils.get_image_metadata import is_image
+
 
 def get_str_val(s):
     """Return obj google.protobuf.StringValue
@@ -40,6 +43,8 @@ def get_image_location(bot, file, width=100, height=100):
     :param height: image's height
     :return: ImageLocation
     """
+    if not is_image(file):
+        raise IOError('File is not an image.')
     location = bot.internal.uploading.upload_file(file)
     return media_and_files_pb2.ImageLocation(file_location=location, width=width, height=height)
 
@@ -65,7 +70,11 @@ def get_audio(bot, file, duration=0):
     :param duration: duration audio
     :return: MessageMedia obj
     """
+    if not is_audio(file):
+        raise IOError('File is not an audio.')
     mime_type = mimetypes.guess_type(file)[0]
+    if not duration:
+        duration = get_audio_duration(file)
     file_location = bot.internal.uploading.upload_file(file)
     return messaging_pb2.MessageMedia(
         audio=messaging_pb2.AudioMedia(

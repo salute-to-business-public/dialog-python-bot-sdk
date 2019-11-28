@@ -142,7 +142,7 @@ class InteractiveMediaGroup(object):
             media.description.value = self.description
         if self.translations:
             for lang, trans in self.translations.items():
-                group = messaging_pb2.InteractiveMediaTranslationGroup(lang=lang)
+                group = messaging_pb2.InteractiveMediaTranslationGroup(language=lang)
                 for idx, value in trans.items():
                     group.messages.append(messaging_pb2.InteractiveMediaTranslation(id=idx, value=value))
                 media.translations.append(group)
