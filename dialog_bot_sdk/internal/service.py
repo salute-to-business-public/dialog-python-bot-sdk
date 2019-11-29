@@ -19,10 +19,9 @@ class AuthenticatedService(object):
         self.auth_token_func = auth_token_func
         self.verbose = verbose
         if options:
-            self.retry_flag = True
             self.min_delay, self.max_delay, self.delay_factor, self.max_retries = self.parse_options(options)
         else:
-            self.retry_flag, self.min_delay = None, None
+            self.min_delay, self.max_retries = 0, 0
         for method_name in dir(stub):
             method = getattr(stub, method_name)
             if not method_name.startswith('__') and callable(method):
@@ -39,7 +38,7 @@ class AuthenticatedService(object):
                 metadata = None
             tries = 0
             delay = self.min_delay
-            while self.retry_flag:
+            while 1:
                 try:
                     return method(param, metadata=metadata)
                 except Exception as e:
@@ -49,7 +48,7 @@ class AuthenticatedService(object):
                         delay = min(delay * self.delay_factor, self.max_delay)
                         logging.error(str(e))
                         continue
-                    logging.error("Max retries requests to server, with error: " + str(e))
+                    logging.error("Max retries requests to server, with error:")
                     raise Exception(e)
             return method(param, metadata=metadata)
         return inner
