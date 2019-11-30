@@ -42,7 +42,7 @@ class DialogBot(object):
     @staticmethod
     def get_insecure_bot(endpoint, bot_token, verbose=False, options=None, retry_options=None):
         """Returns Dialog bot with established gRPC insecure channel.
-        :param retry_options: dict of retries options (delay_factor23, min_delay, max_delay, max_retries)
+        :param retry_options: dict of retries options (delay_factor, min_delay, max_delay, max_retries)
         :param endpoint: bot's endpoint address
         :param bot_token: bot's token
         :param verbose: verbosity level of functions calling
@@ -56,7 +56,7 @@ class DialogBot(object):
     @staticmethod
     def get_secure_bot(endpoint, credentials, bot_token, verbose=False, options=None, retry_options=None):
         """Returns Dialog bot with established gRPC insecure channel.
-        :param retry_options: dict of retries options (delay_factor23, min_delay, max_delay, max_retries)
+        :param retry_options: dict of retries options (delay_factor, min_delay, max_delay, max_retries)
         :param endpoint: bot's endpoint address
         :param credentials: SSL credentials
         :param bot_token: bot's token
