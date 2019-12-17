@@ -8,6 +8,7 @@ DEFAULT_OPTIONS = {
     "delay_factor": math.exp(1),
     "max_retries": 5
 }
+RETRY_CODES = [1, 2, 4, 10, 13, 14, 15]
 
 
 class AuthenticatedService(object):
@@ -42,6 +43,9 @@ class AuthenticatedService(object):
                 try:
                     return method(param, metadata=metadata)
                 except Exception as e:
+                    if e._state.code.value[0] not in RETRY_CODES:
+                        logging.error("Failed request to server, with error:")
+                        raise Exception(e)
                     if self.max_retries > tries:
                         time.sleep(delay)
                         tries += 1
@@ -50,7 +54,6 @@ class AuthenticatedService(object):
                         continue
                     logging.error("Max retries requests to server, with error:")
                     raise Exception(e)
-            return method(param, metadata=metadata)
         return inner
 
     @staticmethod
