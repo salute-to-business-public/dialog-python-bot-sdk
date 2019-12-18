@@ -1,3 +1,7 @@
+import math
+import sched
+import time
+
 from google.protobuf import empty_pb2
 import threading
 import random
@@ -13,7 +17,13 @@ from .utils.get_video_metadata import is_video
 import google.protobuf.wrappers_pb2 as wrappers_pb2
 
 
+SCHEDULER = sched.scheduler(time.time, time.sleep)
+MAX_SLEEP_TIME = 30
+
+
 class Messaging(ManagedService):
+    retry = 0
+    timer = 0
     """Main messaging class.
     """
     def send_message(self, peer, text, interactive_media_groups=None, uid=None):
@@ -287,6 +297,41 @@ class Messaging(ManagedService):
             )
         return self._load_history(request)
 
+    def on_message_schedule(self, callback, interactive_media_callback=None, raw_callback=None):
+        try:
+            self.internal.updates.GetState(sequence_and_updates_pb2.RequestGetState())
+            if self.retry:
+                logging.info("Server was unavailable {} seconds.".format(int(self.timer)))
+                self.timer = 0
+                self.retry = 0
+        except grpc.RpcError as e:
+            raise e
+        for update in self.internal.updates.SeqUpdates(empty_pb2.Empty()):
+            up = sequence_and_updates_pb2.UpdateSeqUpdate()
+            up.ParseFromString(update.update.value)
+            if up.WhichOneof('update') == 'updateMessage':
+                self.internal.messaging.MessageReceived(messaging_pb2.RequestMessageReceived(
+                    peer=self.manager.get_outpeer(up.updateMessage.peer),
+                    date=up.updateMessage.date
+                ))
+                self.internal.messaging.MessageRead(messaging_pb2.RequestMessageRead(
+                    peer=self.manager.get_outpeer(up.updateMessage.peer),
+                    date=up.updateMessage.date
+                ))
+                self.internal.thread_pool_executor.submit(
+                    callback(up.updateMessage)
+                )
+            elif up.WhichOneof('update') == 'updateInteractiveMediaEvent' and \
+                    callable(interactive_media_callback):
+                self.internal.thread_pool_executor.submit(
+                    interactive_media_callback(up.updateInteractiveMediaEvent)
+                )
+            else:
+                if callable(raw_callback):
+                    self.internal.thread_pool_executor.submit(
+                        raw_callback(up)
+                    )
+
     def on_message_async(self, callback, interactive_media_callback=None):
         updates_thread = threading.Thread(target=self.on_message, args=(callback, interactive_media_callback))
         updates_thread.start()
@@ -298,36 +343,19 @@ class Messaging(ManagedService):
         :param raw_callback: function to handle any other type of update
         :return: None
         """
-
         while True:
             try:
-                for update in self.internal.updates.SeqUpdates(empty_pb2.Empty()):
-                    up = sequence_and_updates_pb2.UpdateSeqUpdate()
-                    up.ParseFromString(update.update.value)
-                    if up.WhichOneof('update') == 'updateMessage':
-                        self.internal.messaging.MessageReceived(messaging_pb2.RequestMessageReceived(
-                            peer=self.manager.get_outpeer(up.updateMessage.peer),
-                            date=up.updateMessage.date
-                        ))
-                        self.internal.messaging.MessageRead(messaging_pb2.RequestMessageRead(
-                            peer=self.manager.get_outpeer(up.updateMessage.peer),
-                            date=up.updateMessage.date
-                        ))
-                        self.internal.thread_pool_executor.submit(
-                            callback(up.updateMessage)
-                        )
-                    elif up.WhichOneof('update') == 'updateInteractiveMediaEvent' and \
-                            callable(interactive_media_callback):
-                        self.internal.thread_pool_executor.submit(
-                            interactive_media_callback(up.updateInteractiveMediaEvent)
-                        )
-                    else:
-                        if callable(raw_callback):
-                            self.internal.thread_pool_executor.submit(
-                                raw_callback(up)
-                            )
+                SCHEDULER.enter(min(math.exp(self.retry), MAX_SLEEP_TIME), 1, self.on_message_schedule,
+                                kwargs={'callback': callback,
+                                        'interactive_media_callback': interactive_media_callback,
+                                        'raw_callback': raw_callback})
+                SCHEDULER.run()
             except grpc.RpcError as e:
                 logging.error(e)
+                if e.details() == 'failed to connect to all addresses':
+                    self.timer += min(math.exp(self.retry), MAX_SLEEP_TIME)
+                    self.retry += 1
+                    continue
                 if e.details() in ['Socket closed', 'GOAWAY received']:
                     continue
 

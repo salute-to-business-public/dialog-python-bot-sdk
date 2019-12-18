@@ -2,6 +2,8 @@ import logging
 import time
 import math
 
+import grpc
+
 DEFAULT_OPTIONS = {
     "min_delay": 1,
     "max_delay": 50,
@@ -42,18 +44,18 @@ class AuthenticatedService(object):
             while 1:
                 try:
                     return method(param, metadata=metadata)
-                except Exception as e:
+                except grpc.RpcError as e:
                     if e._state.code.value[0] not in RETRY_CODES:
-                        logging.error("Failed request to server, with error: " + e._state.details, e._state.debug_error_string)
-                        raise Exception(e)
+                        logging.error("Failed request to server, with error: " + e.details(), e.debug_error_string())
+                        raise e
                     if self.max_retries > tries:
                         time.sleep(delay)
                         tries += 1
                         delay = min(delay * self.delay_factor, self.max_delay)
                         logging.error(str(e))
                         continue
-                    logging.error("Max retries requests to server, with error: " + e._state.details, e._state.debug_error_string)
-                    raise Exception(e)
+                    logging.error("Max retries requests to server, with error: " + e.details(), e.debug_error_string())
+                    raise e
         return inner
 
     @staticmethod
