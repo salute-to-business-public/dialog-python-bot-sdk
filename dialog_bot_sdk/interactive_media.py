@@ -1,5 +1,12 @@
 from dialog_api import messaging_pb2
 
+STYLE_MAP = {
+    'unknown': messaging_pb2.INTERACTIVEMEDIASTYLE_UNKNOWN,
+    'default': messaging_pb2.INTERACTIVEMEDIASTYLE_DEFAULT,
+    'primary': messaging_pb2.INTERACTIVEMEDIASTYLE_PRIMARY,
+    'danger': messaging_pb2.INTERACTIVEMEDIASTYLE_DANGER
+}
+
 
 class InteractiveMediaButton(object):
     """Button control class.
@@ -77,11 +84,6 @@ class InteractiveMedia(object):
     """Wrapper class for interactive object styling.
 
     """
-    style_map = {
-        'default': messaging_pb2.INTERACTIVEMEDIASTYLE_DEFAULT,
-        'primary': messaging_pb2.INTERACTIVEMEDIASTYLE_PRIMARY,
-        'danger': messaging_pb2.INTERACTIVEMEDIASTYLE_DANGER
-    }
     # style one of ['default', 'primary', 'danger', None]
     # widget = InteractiveMediaButton | InteractiveMediaSelect
 
@@ -98,7 +100,7 @@ class InteractiveMedia(object):
         :return: wrapped interactive object
         """
         target.id = str(self.media_id)
-        target.style = self.style_map.get(self.style, messaging_pb2.INTERACTIVEMEDIASTYLE_UNKNOWN)
+        target.style = STYLE_MAP.get(self.style, messaging_pb2.INTERACTIVEMEDIASTYLE_UNKNOWN)
         if self.widget is not None:
             if isinstance(self.widget, InteractiveMediaButton):
                 self.widget.render(target.widget.interactiveMediaButton)

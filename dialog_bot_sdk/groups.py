@@ -1,8 +1,20 @@
+import logging
 import random
+from typing import List, Tuple
+
 from google.protobuf import wrappers_pb2
 
+from dialog_bot_sdk.entities.Avatar import Avatar
+from dialog_bot_sdk.entities.Group import Group
+from dialog_bot_sdk.entities.Permissions import Permissions
+from dialog_bot_sdk.entities.ReferencedEntities import ReferencedEntities
+from dialog_bot_sdk.entities.UUID import UUID
+from dialog_bot_sdk.entities.User import User
+from dialog_bot_sdk.entities.peers.OutPeer import OutPeer
+from dialog_bot_sdk.entities.peers.Peer import Peer, PeerType
+from dialog_bot_sdk.entities.peers.PeerSearch import PeerSearch, PeerSearchResult
 from .service import ManagedService
-from dialog_api import search_pb2, groups_pb2, peers_pb2, sequence_and_updates_pb2
+from dialog_api import search_pb2, groups_pb2, peers_pb2, sequence_and_updates_pb2, media_and_files_pb2
 
 
 class Groups(ManagedService):
@@ -23,14 +35,13 @@ class Groups(ManagedService):
         'view_members': groups_pb2.GROUPADMINPERMISSION_VIEWMEMBERS,
     }
 
-    def create_public_group(self, title, shortname):
+    def create_public_group(self, title: str, shortname: str) -> Group:
         """Create public group
 
         :param title: title of group
         :param shortname: group name
-        :return: group
+        :return: Group
         """
-
         request = groups_pb2.RequestCreateGroup(
             title=title,
             username=wrappers_pb2.StringValue(value=shortname),
@@ -38,11 +49,11 @@ class Groups(ManagedService):
         )
         return self._create_group(request)
 
-    def create_private_group(self, title):
+    def create_private_group(self, title: str) -> Group:
         """Create private group
 
         :param title: title of group
-        :return: group
+        :return: Group
         """
         request = groups_pb2.RequestCreateGroup(
             title=title,
@@ -50,12 +61,12 @@ class Groups(ManagedService):
         )
         return self._create_group(request)
 
-    def create_public_channel(self, title, shortname):
+    def create_public_channel(self, title: str, shortname: str) -> Group:
         """Create public channel
 
         :param title: title of group
         :param shortname: group name
-        :return: group
+        :return: Group
         """
 
         request = groups_pb2.RequestCreateGroup(
@@ -65,11 +76,11 @@ class Groups(ManagedService):
         )
         return self._create_group(request)
 
-    def create_private_channel(self, title):
+    def create_private_channel(self, title: str) -> Group:
         """Create private channel
 
         :param title: title of group
-        :return: group
+        :return: Group
         """
 
         request = groups_pb2.RequestCreateGroup(
@@ -78,11 +89,11 @@ class Groups(ManagedService):
         )
         return self._create_group(request)
 
-    def find_group_by_shortname(self, query):
+    def find_group_by_shortname(self, query: str) -> PeerSearchResult:
         """Find a groups by shortname
 
         :param query: shortname of group
-        :return: Group
+        :return: PeerSearchResult or None if could not find
         """
         request = search_pb2.RequestPeerSearch(
             query=[
@@ -98,26 +109,27 @@ class Groups(ManagedService):
         )
         response = self._peer_search(request).search_results
         for result in response:
-            if result.peer.type == peers_pb2.PEERTYPE_GROUP:
-                if hasattr(result, 'shortname'):
-                    if result.shortname.value == query:
-                        return result
+            if result.peer.type == PeerType.PEERTYPE_GROUP and hasattr(result, 'shortname') and result.shortname == query:
+                return result
 
-    def find_group_by_id(self, group_id):
+    def find_group_by_id(self, group_id: int) -> Group:
         """search and return group by id
 
         :param group_id: group's
-        :return: Group
+        :return: Group or None if could not find
         """
-        group_out_peer = self.get_group_outpeer(group_id)
+        try:
+            group_out_peer = self.get_group_outpeer(group_id)
 
-        request = sequence_and_updates_pb2.RequestGetReferencedEntitites(
-            groups=[group_out_peer]
-        )
-        result = self._get_referenced_entities(request).groups
-        return result[0]
+            request = sequence_and_updates_pb2.RequestGetReferencedEntitites(
+                groups=[group_out_peer]
+            )
+            result = self._get_referenced_entities(request).groups
+            return Group.from_api(result[0])
+        except Exception as e:
+            logging.error(str(e))
 
-    def load_members(self, group_peer, limit=0):
+    def load_members(self, group_peer: Peer, limit: int = 0) -> List[User]:
         """User's list from group
 
         :param group_peer: group's Peer
@@ -138,16 +150,14 @@ class Groups(ManagedService):
                     )
                 ]
             )
-        result = self._get_referenced_entities(request)
+        return self._get_referenced_entities(request).users
 
-        return result
-
-    def kick_user(self, group_peer, user):
+    def kick_user(self, group_peer: Peer, user: OutPeer) -> UUID:
         """return response of KickUser
 
         :param group_peer: group's Peer
         :param user: user's OutPeer
-        :return: response (date, mid)
+        :return: UUID
         """
         group_out_peer, user_out_peer = self.get_group_outpeer(group_peer.id), self.get_user_outpeer(user)
         request = groups_pb2.RequestKickUser(
@@ -157,12 +167,12 @@ class Groups(ManagedService):
             )
         return self._kick_user(request)
 
-    def invite_user(self, group_peer, user):
+    def invite_user(self, group_peer: Peer, user: OutPeer) -> UUID:
         """return response of InviteUser
 
         :param group_peer: group's Peer
         :param user: user's OutPeer
-        :return: response (date, mid)
+        :return: UUID
         """
         group_out_peer = self.get_group_outpeer(group_peer.id)
         user_out_peer = self.get_user_outpeer(user)
@@ -173,31 +183,32 @@ class Groups(ManagedService):
             )
         return self._invite_user(request)
 
-    def kick_users(self, group_peer, users):
+    def kick_users(self, group_peer: Peer, users: List[OutPeer]) -> List[UUID]:
         """return response list of KickUser
 
         :param group_peer: group's Peer
         :param users: user's OutPeers
-        :return: response list (date, mid)
+        :return: list of UUIDs
         """
         result = []
         for user in users:
             result.append(self.kick_user(group_peer, user))
         return result
 
-    def invite_users(self, group_peer, users):
+    def invite_users(self, group_peer: Peer, users: List[OutPeer]) -> List[UUID]:
         """return response list of InviteUser
 
         :param group_peer: group's Peer
         :param users: user's OutPeers
-        :return: response list (date, mid)
+        :return: list of UUIDs
         """
         result = []
         for user in users:
             result.append(self.invite_user(group_peer, user))
         return result
 
-    def set_default_group_permissions(self, group_peer, add_permissions=None, del_permissions=None):
+    def set_default_group_permissions(self, group_peer: Peer, add_permissions: List[str] = None,
+                                      del_permissions: List[str] = None) -> None:
         """add/del default group permissions
 
         :param group_peer: group's peer
@@ -226,7 +237,8 @@ class Groups(ManagedService):
                 )
             self._set_default_group_permissions(request)
 
-    def set_member_permissions(self, group_peer, user, add_permissions=None, del_permissions=None):
+    def set_member_permissions(self, group_peer: Peer, user: OutPeer, add_permissions: List[str] = None,
+                               del_permissions: List[str] = None) -> None:
         """add/del group's member permissions
 
         :param group_peer: group's peer
@@ -255,7 +267,7 @@ class Groups(ManagedService):
                 )
             self._set_member_permissions(request)
 
-    def get_group_member_permissions(self, group_peer, user_peers):
+    def get_group_member_permissions(self, group_peer: Peer, user_peers: List[Peer]) -> List[Permissions]:
         """return group member's permissions
 
         :param group_peer: Group's Peer
@@ -270,7 +282,7 @@ class Groups(ManagedService):
         )
         return self._get_group_member_permissions(request)
 
-    def edit_group_title(self, group_peer, title):
+    def edit_group_title(self, group_peer: Peer, title: str) -> UUID:
         """change group's title
 
         :param group_peer: group's Peer
@@ -285,7 +297,7 @@ class Groups(ManagedService):
         )
         return self._edit_group_title(request)
 
-    def edit_avatar(self, group_id, file):
+    def edit_avatar(self, group_id: int, file: str) -> Tuple[Avatar, UUID]:
         """change group's avatar
 
         :param group_id: group's id
@@ -301,7 +313,7 @@ class Groups(ManagedService):
         )
         return self._edit_group_avatar(request)
 
-    def remove_group_avatar(self, group_peer):
+    def remove_group_avatar(self, group_peer: Peer) -> UUID:
         """deleted group's avatar
 
         :param group_peer: group's Peer
@@ -314,7 +326,7 @@ class Groups(ManagedService):
         )
         return self._remove_group_avatar(request)
 
-    def edit_group_about(self, group_peer, about):
+    def edit_group_about(self, group_peer: Peer, about: str) -> None:
         """change group's "about"
 
         :param group_peer: group's peer
@@ -327,9 +339,9 @@ class Groups(ManagedService):
             rid=random.randint(0, 100000000),
             about=wrappers_pb2.StringValue(value=about)
         )
-        return self._edit_group_about(request)
+        self._edit_group_about(request)
 
-    def leave_group(self, group_peer):
+    def leave_group(self, group_peer: Peer) -> UUID:
         """leave from group
 
         :param group_peer: group's Peer
@@ -342,7 +354,7 @@ class Groups(ManagedService):
         )
         return self._leave_group(request)
 
-    def make_user_admin(self, group_peer, user_peer, permissions):
+    def make_user_admin(self, group_peer: Peer, user_peer: Peer, permissions: List[str]) -> None:
         """Set new user's permissions (old permissions will be revoke)
 
         :param group_peer: group's Peer
@@ -360,7 +372,7 @@ class Groups(ManagedService):
         )
         self._make_user_admin(request)
 
-    def transfer_ownership(self, group_peer, user_peer):
+    def transfer_ownership(self, group_peer: Peer, user_peer: Peer) -> None:
         """change group's owner to user
 
         :param group_peer: group's Peer
@@ -372,9 +384,9 @@ class Groups(ManagedService):
             group_peer=group_outpeer,
             new_owner=user_peer.id
         )
-        return self._transfer_ownership(request)  # return seq
+        self._transfer_ownership(request)
 
-    def get_group_invite_url(self, group_peer):
+    def get_group_invite_url(self, group_peer: Peer) -> str:
         """return group's invite url
 
         :param group_peer: Peer
@@ -384,17 +396,17 @@ class Groups(ManagedService):
         request = groups_pb2.RequestGetGroupInviteUrl(
             group_peer=group_outpeer
         )
-        return self._get_group_invite_url(request).url
+        return self._get_group_invite_url(request)
 
-    def get_group_invite_url_base(self):
+    def get_group_invite_url_base(self) -> str:
         """return group's invite url without token/shortname (example https://domain/@)
 
         :return: invite url (string)
         """
         request = groups_pb2.RequestGetGroupInviteUrlBase()
-        return self._get_group_invite_url_base(request).url
+        return self._get_group_invite_url_base(request)
 
-    def revoke_invite_url(self, group_peer):
+    def revoke_invite_url(self, group_peer: Peer) -> str:
         """revoke current invite url and return new group's invite url
 
         :return: invite url (string)
@@ -403,9 +415,9 @@ class Groups(ManagedService):
         request = groups_pb2.RequestRevokeInviteUrl(
             group_peer=group_outpeer
         )
-        return self._revoke_invite_url(request).url
+        return self._revoke_invite_url(request)
 
-    def join_group(self, token_or_url):
+    def join_group(self, token_or_url: str) -> Tuple[Group, UUID]:
         """join to group by token or invite url (used for private groups)
 
         :param token_or_url: group's token or invite url
@@ -416,7 +428,7 @@ class Groups(ManagedService):
         )
         return self._join_group(request)
 
-    def join_group_by_peer(self, group_peer):
+    def join_group_by_peer(self, group_peer: Peer) -> None:
         """join to group by group's peer (used for public groups)
 
         :param group_peer: Peer
@@ -428,7 +440,7 @@ class Groups(ManagedService):
         )
         self._join_group_by_peer(request)
 
-    def get_group_outpeer(self, group_id):
+    def get_group_outpeer(self, group_id: int) -> peers_pb2.GroupOutPeer:
         """return GroupOutPeer object
 
         :param group_id: group's id
@@ -437,7 +449,7 @@ class Groups(ManagedService):
         gop = self.manager.get_outpeer(peers_pb2.Peer(id=group_id, type=peers_pb2.PEERTYPE_GROUP))
         return peers_pb2.GroupOutPeer(group_id=gop.id, access_hash=gop.access_hash)
 
-    def get_outpeer(self, group_id):
+    def get_outpeer(self, group_id: int) -> peers_pb2.OutPeer:
         """return OutPeer object
 
         :param group_id: group's id
@@ -447,7 +459,7 @@ class Groups(ManagedService):
         return self.manager.get_outpeer(request)
 
     @staticmethod
-    def get_user_outpeer(user):
+    def get_user_outpeer(user: OutPeer) -> peers_pb2.UserOutPeer:
         """return UserOutPeer object
 
         :param user: OutPeer
@@ -455,75 +467,78 @@ class Groups(ManagedService):
         """
         return peers_pb2.UserOutPeer(uid=user.id, access_hash=user.access_hash)
 
-    def _create_group(self, request):
+    def _create_group(self, request: groups_pb2.RequestCreateGroup) -> Group:
         """return Group by RequestCreateGroup
 
         :param request: RequestCreateGroup
         :return: Group
         """
-        group = self.internal.groups.CreateGroup(request).group
+        group = Group.from_api(self.internal.groups.CreateGroup(request).group)
         self.manager.adopt_peer(peers_pb2.GroupOutPeer(group_id=group.id, access_hash=group.access_hash))
         return group
 
-    def _peer_search(self, request):
-        return self.internal.search.PeerSearch(request)
+    def _peer_search(self, request: search_pb2.RequestPeerSearch) -> PeerSearch:
+        return PeerSearch.from_api(self.internal.search.PeerSearch(request))
 
-    def _load_members(self, request):
+    def _load_members(self, request: groups_pb2.RequestLoadMembers) -> groups_pb2.ResponseLoadMembers:
         return self.internal.groups.LoadMembers(request)
 
-    def _set_default_group_permissions(self, request):
+    def _set_default_group_permissions(self, request: groups_pb2.RequestEditGroupBasePermissions) -> None:
         return self.internal.groups.EditGroupBasePermissions(request)
 
-    def _set_member_permissions(self, request):
+    def _set_member_permissions(self, request: groups_pb2.RequestEditMemberPermissions) -> None:
         return self.internal.groups.EditMemberPermissions(request)
 
-    def _get_group_member_permissions(self, request):
-        return self.internal.groups.GetGroupMemberPermissions(request)
+    def _get_group_member_permissions(self, request: groups_pb2.RequestGetGroupMemberPermissions) -> List[Permissions]:
+        return [Permissions.from_api(x) for x in self.internal.groups.GetGroupMemberPermissions(request).permissions]
 
-    def _edit_group_title(self, request):
-        return self.internal.groups.EditGroupTitle(request)
+    def _edit_group_title(self, request: groups_pb2.RequestEditGroupTitle) -> UUID:
+        return UUID.from_api(self.internal.groups.EditGroupTitle(request).mid)
 
-    def _edit_group_avatar(self, request):
-        return self.internal.groups.EditGroupAvatar(request)
+    def _edit_group_avatar(self, request: groups_pb2.RequestEditGroupAvatar) -> Tuple[Avatar, UUID]:
+        response = self.internal.groups.EditGroupAvatar(request)
+        return Avatar.from_api(response.avatar), UUID.from_api(response.mid)
 
-    def _remove_group_avatar(self, request):
-        return self.internal.groups.RemoveGroupAvatar(request)
+    def _remove_group_avatar(self, request: groups_pb2.RequestRemoveGroupAvatar) -> UUID:
+        return UUID.from_api(self.internal.groups.RemoveGroupAvatar(request).mid)
 
-    def _edit_group_about(self, request):
-        return self.internal.groups.EditGroupAbout(request)
+    def _edit_group_about(self, request: groups_pb2.RequestEditGroupAbout) -> None:
+        self.internal.groups.EditGroupAbout(request)
 
-    def _leave_group(self, request):
-        return self.internal.groups.LeaveGroup(request)
+    def _leave_group(self, request: groups_pb2.RequestLeaveGroup) -> UUID:
+        return UUID.from_api(self.internal.groups.LeaveGroup(request).mid)
 
-    def _make_user_admin(self, request):
-        return self.internal.groups.MakeUserAdmin(request)
+    def _make_user_admin(self, request: groups_pb2.RequestMakeUserAdmin) -> None:
+        self.internal.groups.MakeUserAdmin(request)
 
-    def _transfer_ownership(self, request):
-        return self.internal.groups.TransferOwnership(request)
+    def _transfer_ownership(self, request: groups_pb2.RequestTransferOwnership) -> None:
+        self.internal.groups.TransferOwnership(request)
 
-    def _get_group_invite_url(self, request):
-        return self.internal.groups.GetGroupInviteUrl(request)
+    def _get_group_invite_url(self, request: groups_pb2.RequestGetGroupInviteUrl) -> str:
+        return self.internal.groups.GetGroupInviteUrl(request).url
 
-    def _get_group_invite_url_base(self, request):
-        return self.internal.groups.GetGroupInviteUrlBase(request)
+    def _get_group_invite_url_base(self, request: groups_pb2.RequestGetGroupInviteUrlBase) -> str:
+        return self.internal.groups.GetGroupInviteUrlBase(request).url
 
-    def _revoke_invite_url(self, request):
-        return self.internal.groups.RevokeInviteUrl(request)
+    def _revoke_invite_url(self, request: groups_pb2.RequestRevokeInviteUrl) -> str:
+        return self.internal.groups.RevokeInviteUrl(request).url
 
-    def _join_group(self, request):
-        return self.internal.groups.JoinGroup(request)
+    def _join_group(self, request: groups_pb2.RequestJoinGroup) -> Tuple[Group, UUID]:
+        response = self.internal.groups.JoinGroup(request)
+        return Group.from_api(response.group), UUID.from_api(response.mid)
 
-    def _join_group_by_peer(self, request):
+    def _join_group_by_peer(self, request: groups_pb2.RequestJoinGroupByPeer) -> None:
         return self.internal.groups.JoinGroupByPeer(request)
 
-    def _get_referenced_entities(self, request):
+    def _get_referenced_entities(self, request: sequence_and_updates_pb2.RequestGetReferencedEntitites)\
+            -> ReferencedEntities:
         return self.internal.updates.GetReferencedEntitites(request)
 
-    def _kick_user(self, request):
-        return self.internal.groups.KickUser(request)
+    def _kick_user(self, request: groups_pb2.RequestKickUser) -> UUID:
+        return UUID.from_api(self.internal.groups.KickUser(request).mid)
 
-    def _invite_user(self, request):
-        return self.internal.groups.InviteUser(request)
+    def _invite_user(self, request: groups_pb2.RequestInviteUser) -> UUID:
+        return UUID.from_api(self.internal.groups.InviteUser(request).mid)
 
-    def _upload(self, file):
+    def _upload(self, file: str) -> media_and_files_pb2.FileLocation:
         return self.internal.uploading.upload_file(file)
