@@ -12,3 +12,9 @@ class FileLocation:
     @classmethod
     def from_api(cls, location: media_and_files_pb2.FileLocation) -> 'FileLocation':
         return cls(location.file_id, location.access_hash)
+
+    def __dict__(self):
+        return {"file_id": self.file_id, "access_hash": self.access_hash}
+
+    def __str__(self):
+        return "{}".format(self.__dict__())

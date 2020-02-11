@@ -18,6 +18,13 @@ class ImageLocation:
     def from_api(cls, image: media_and_files_pb2.ImageLocation) -> 'ImageLocation':
         return cls(FileLocation.from_api(image.file_location), image.width, image.height, image.file_size)
 
+    def __dict__(self):
+        return {"file_location": self.file_location.__dict__(), "width": self.width, "height": self.height,
+                "file_size": self.file_size}
+
+    def __str__(self):
+        return "{}".format(self.__dict__())
+
 
 class ImageMedia:
     def __init__(self, image: ImageLocation) -> None:
@@ -29,3 +36,9 @@ class ImageMedia:
     @classmethod
     def from_api(cls, image: messaging_pb2.ImageMedia) -> 'ImageMedia':
         return cls(ImageLocation.from_api(image))
+
+    def __dict__(self):
+        return {"image": self.image.__dict__()}
+
+    def __str__(self):
+        return "{}".format(self.__dict__())

@@ -3,14 +3,12 @@ from typing import List
 from dialog_api import messaging_pb2
 from google.protobuf.wrappers_pb2 import StringValue
 
-from dialog_bot_sdk.interactive_media import STYLE_MAP
 
-INTERACTIVE_MEDIA_STYLE_TO_STRING = {
-    messaging_pb2.INTERACTIVEMEDIASTYLE_UNKNOWN: "unknown",
-    messaging_pb2.INTERACTIVEMEDIASTYLE_DEFAULT: "default",
-    messaging_pb2.INTERACTIVEMEDIASTYLE_PRIMARY: "primary",
-    messaging_pb2.INTERACTIVEMEDIASTYLE_DANGER: "danger",
-}
+class InteractiveMediaStyle:
+    INTERACTIVEMEDIASTYLE_UNKNOWN = messaging_pb2.INTERACTIVEMEDIASTYLE_UNKNOWN
+    INTERACTIVEMEDIASTYLE_DEFAULT = messaging_pb2.INTERACTIVEMEDIASTYLE_DEFAULT
+    INTERACTIVEMEDIASTYLE_PRIMARY = messaging_pb2.INTERACTIVEMEDIASTYLE_PRIMARY
+    INTERACTIVEMEDIASTYLE_DANGER = messaging_pb2.INTERACTIVEMEDIASTYLE_DANGER
 
 
 class InteractiveMediaButton:
@@ -26,6 +24,12 @@ class InteractiveMediaButton:
     def from_api(cls, button: messaging_pb2.InteractiveMediaButton) -> 'InteractiveMediaButton':
         return cls(button.value.value, button.label)
 
+    def __dict__(self):
+        return {"value": self.value, "label": self.label}
+
+    def __str__(self):
+        return "{}".format(self.__dict__())
+
 
 class InteractiveMediaSelectOption:
     def __init__(self, value: str, label: str) -> None:
@@ -39,6 +43,12 @@ class InteractiveMediaSelectOption:
     @classmethod
     def from_api(cls, option: messaging_pb2.InteractiveMediaSelectOption) -> 'InteractiveMediaSelectOption':
         return cls(option.value.value, option.label.value)
+
+    def __dict__(self):
+        return {"value": self.value, "label": self.label}
+
+    def __str__(self):
+        return "{}".format(self.__dict__())
 
 
 class InteractiveMediaSelect:
@@ -57,6 +67,13 @@ class InteractiveMediaSelect:
         return cls([InteractiveMediaSelectOption.from_api(x) for x in select.options], select.lable.value,
                    select.default_value.value)
 
+    def __dict__(self):
+        return {"options": [x.__dict__() for x in self.options.__dict__()], "label": self.label,
+                "default_value": self.default_value}
+
+    def __str__(self):
+        return "{}".format(self.__dict__())
+
 
 class InteractiveMediaWidget:
     def __init__(self, interactive_media_button: InteractiveMediaButton,
@@ -72,6 +89,13 @@ class InteractiveMediaWidget:
     def from_api(cls, widget: messaging_pb2.InteractiveMediaWidget) -> 'InteractiveMediaWidget':
         return cls(InteractiveMediaButton.from_api(widget.interactiveMediaButton),
                    InteractiveMediaSelect.from_api(widget.interactiveMediaSelect))
+
+    def __dict__(self):
+        return {"interactive_media_button": self.interactive_media_button.__dict__(),
+                "interactive_media_select": self.interactive_media_select.__dict__()}
+
+    def __str__(self):
+        return "{}".format(self.__dict__())
 
 
 class InteractiveMediaConfirm:
@@ -91,9 +115,16 @@ class InteractiveMediaConfirm:
     def from_api(cls, confirm: messaging_pb2.InteractiveMediaConfirm) -> 'InteractiveMediaConfirm':
         return cls(confirm.text.value, confirm.title.value, confirm.ok.value, confirm.dismiss.value)
 
+    def __dict__(self):
+        return {"text": self.text, "title": self.title, "ok": self.ok, "dismiss": self.dismiss}
+
+    def __str__(self):
+        return "{}".format(self.__dict__())
+
 
 class InteractiveMedia:
-    def __init__(self, id_: str, widget: InteractiveMediaWidget, style: str, confirm: InteractiveMediaConfirm) -> None:
+    def __init__(self, id_: str, widget: InteractiveMediaWidget, style: InteractiveMediaStyle,
+                 confirm: InteractiveMediaConfirm) -> None:
         self.id = id_
         self.widget = widget
         self.style = style
@@ -101,13 +132,19 @@ class InteractiveMedia:
 
     def to_api(self) -> messaging_pb2.InteractiveMedia:
         return messaging_pb2.InteractiveMedia(id=self.id, widget=self.widget,
-                                              style=STYLE_MAP[self.style],
+                                              style=self.style,
                                               confirm=self.confirm.to_api())
 
     @classmethod
     def from_api(cls, media: messaging_pb2.InteractiveMedia) -> 'InteractiveMedia':
         return cls(media.id, InteractiveMediaWidget.from_api(media.widget),
-                   INTERACTIVE_MEDIA_STYLE_TO_STRING[media.style], InteractiveMediaConfirm.from_api(media.confirm))
+                   media.style, InteractiveMediaConfirm.from_api(media.confirm))
+
+    def __dict__(self):
+        return {"id": self.id, "widget": self.widget.__dict__(), "style": self.style, "confirm": self.confirm.__dict__()}
+
+    def __str__(self):
+        return "{}".format(self.__dict__())
 
 
 class InteractiveMediaTranslation:
@@ -123,6 +160,12 @@ class InteractiveMediaTranslation:
     def from_api(cls, translation: messaging_pb2.InteractiveMediaTranslation) -> 'InteractiveMediaTranslation':
         return cls(translation.id.value, translation.value.value)
 
+    def __dict__(self):
+        return {"id": self.id, "value": self.value}
+
+    def __str__(self):
+        return "{}".format(self.__dict__())
+
 
 class InteractiveMediaTranslationGroup:
     def __init__(self, language: str, messages: List[InteractiveMediaTranslation]):
@@ -136,6 +179,12 @@ class InteractiveMediaTranslationGroup:
     @classmethod
     def from_api(cls, translation: messaging_pb2.InteractiveMediaTranslationGroup) -> 'InteractiveMediaTranslationGroup':
         return cls(translation.language.value, [InteractiveMediaTranslation.from_api(x) for x in translation.messages])
+
+    def __dict__(self):
+        return {"language": self.language, "messages": [x.__dict__() for x in self.messages]}
+
+    def __str__(self):
+        return "{}".format(self.__dict__())
 
 
 class InteractiveMediaGroup:
@@ -156,3 +205,10 @@ class InteractiveMediaGroup:
         return cls([InteractiveMedia.from_api(x) for x in media_group.actions], media_group.title,
                    media_group.description,
                    [InteractiveMediaTranslationGroup.from_api(x) for x in media_group.translations])
+
+    def __dict__(self):
+        return {"actions": [x.__dict__() for x in self.actions], "title": self.title, "description": self.description,
+                "translations": [x.__dict__() for x in self.translations]}
+
+    def __str__(self):
+        return "{}".format(self.__dict__())

@@ -1,22 +1,17 @@
 from dialog_api import messaging_pb2
 
-STYLE_MAP = {
-    'unknown': messaging_pb2.INTERACTIVEMEDIASTYLE_UNKNOWN,
-    'default': messaging_pb2.INTERACTIVEMEDIASTYLE_DEFAULT,
-    'primary': messaging_pb2.INTERACTIVEMEDIASTYLE_PRIMARY,
-    'danger': messaging_pb2.INTERACTIVEMEDIASTYLE_DANGER
-}
+from dialog_bot_sdk.entities.media.InteractiveMediaGroup import InteractiveMediaStyle
 
 
 class InteractiveMediaButton(object):
     """Button control class.
 
     """
-    def __init__(self, value, label=None):
+    def __init__(self, value: str, label: str = None) -> None:
         self.value = value
         self.label = label
 
-    def render(self, target):
+    def render(self, target) -> None:
         """Render method for button
 
         :param target: target button
@@ -30,7 +25,7 @@ class InteractiveMediaSelect(object):
     """Select control class.
 
     """
-    def __init__(self, options, label=None, default_value=None):
+    def __init__(self, options, label=None, default_value=None) -> None:
         if options is None:
             raise AttributeError('Attribute \'options\' can\'t be None.')
 
@@ -38,7 +33,7 @@ class InteractiveMediaSelect(object):
         self.label = label
         self.default_value = default_value
 
-    def render(self, target):
+    def render(self, target) -> None:
         """Render method for select
 
         :param target: target select
@@ -57,13 +52,13 @@ class InteractiveMediaConfirm(object):
     """Confirm control class.
 
     """
-    def __init__(self, text=None, title=None, ok=None, dismiss=None):
+    def __init__(self, text=None, title=None, ok=None, dismiss=None) -> None:
         self.text = text
         self.title = title
         self.ok = ok
         self.dismiss = dismiss
 
-    def render(self):
+    def render(self) -> messaging_pb2.InteractiveMediaConfirm:
         """Render method for confirm
 
         :return: confirm
@@ -84,10 +79,12 @@ class InteractiveMedia(object):
     """Wrapper class for interactive object styling.
 
     """
-    # style one of ['default', 'primary', 'danger', None]
     # widget = InteractiveMediaButton | InteractiveMediaSelect
 
-    def __init__(self, media_id, widget, style=None, confirm=None):
+    def __init__(self, media_id: str,
+                 widget: InteractiveMediaButton or InteractiveMediaSelect,
+                 style: InteractiveMediaStyle = InteractiveMediaStyle.INTERACTIVEMEDIASTYLE_UNKNOWN,
+                 confirm: InteractiveMediaConfirm = None) -> None:
         self.media_id = media_id
         self.widget = widget
         self.style = style
@@ -99,8 +96,8 @@ class InteractiveMedia(object):
         :param target: target interactive object
         :return: wrapped interactive object
         """
-        target.id = str(self.media_id)
-        target.style = STYLE_MAP.get(self.style, messaging_pb2.INTERACTIVEMEDIASTYLE_UNKNOWN)
+        target.id = self.media_id
+        target.style = self.style
         if self.widget is not None:
             if isinstance(self.widget, InteractiveMediaButton):
                 self.widget.render(target.widget.interactiveMediaButton)
@@ -120,7 +117,7 @@ class InteractiveMediaGroup(object):
     """Wrapper class for interactive object grouping.
 
     """
-    def __init__(self, actions, title=None, description=None, translations=None):
+    def __init__(self, actions, title=None, description=None, translations=None) -> None:
         if not isinstance(actions, list):
             raise AttributeError('Actions must be an iterable.')
 
@@ -129,7 +126,7 @@ class InteractiveMediaGroup(object):
         self.description = description
         self.translations = translations
 
-    def render(self, target):
+    def render(self, target) -> None:
         """Render method for group of interactive objects.
 
         :param target: group of interactive objects

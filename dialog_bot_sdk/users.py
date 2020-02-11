@@ -1,3 +1,10 @@
+from typing import List
+
+from dialog_bot_sdk.entities.FullUser import FullUser
+from dialog_bot_sdk.entities.ReferencedEntities import ReferencedEntities
+from dialog_bot_sdk.entities.User import User
+from dialog_bot_sdk.entities.Peer import PeerType, Peer
+from dialog_bot_sdk.utils import async_dec
 from .service import ManagedService
 from dialog_api import peers_pb2, users_pb2, messaging_pb2, search_pb2, sequence_and_updates_pb2
 
@@ -5,39 +12,42 @@ from dialog_api import peers_pb2, users_pb2, messaging_pb2, search_pb2, sequence
 class Users(ManagedService):
     """Class for handling users
     """
-    def find_user_outpeer_by_nick(self, nick):
-        """Return OutPeer by shortname
-        :param nick: nick (str)
-        :return: OutPeer object
+    @async_dec()
+    def get_user_by_nick(self, nick: str) -> User or None:
+        """Returns User by nickname
+
+        :param nick: user's nickname
+        :return: User
         """
-        request = search_pb2.RequestResolvePeer(
-                shortname=nick
+        if not isinstance(nick, str):
+            raise RuntimeError("Invalid input data. Expects {}, got {}.".format(str.__class__, type(nick)))
+        out_peer = self.__find_out_peer_by_nick(nick)
+        if out_peer.id == out_peer.access_hash == 0:
+            return None
+
+        request = sequence_and_updates_pb2.RequestGetReferencedEntitites(
+                users=[
+                    peers_pb2.UserOutPeer(uid=out_peer.id, access_hash=out_peer.access_hash)
+                ]
             )
-        result = self._resolve_peer(request)
-        if hasattr(result, "peer"):
-            return result.peer
+        result = self.__get_reference_entities(request)
+        for user in result.users:
+            if hasattr(user.data, "nick") and user.data.nick == nick:
+                return user
 
-    def get_user_outpeer_by_id(self, uid):
-        request = messaging_pb2.RequestLoadDialogs(
-            min_date=0,
-            limit=1,
-            peers_to_load=[peers_pb2.Peer(type=peers_pb2.PEERTYPE_PRIVATE, id=uid)]
-        )
-        result = self._load_dialogs(request)
+    @async_dec()
+    def get_user_by_id(self, user_id: int) -> User or None:
+        """Returns User  by user id
 
-        for outpeer in result.user_peers:
-            if outpeer.uid == uid:
-                return peers_pb2.OutPeer(
-                    type=peers_pb2.PEERTYPE_PRIVATE,
-                    id=outpeer.uid,
-                    access_hash=outpeer.access_hash
-                )
-
-    def get_user_by_id(self, uid):
+        :param user_id: user's nickname
+        :return: User or None if not found
+        """
+        if not isinstance(user_id, int):
+            raise RuntimeError("Invalid input data. Expects {}, got {}.".format(int.__class__, type(user_id)))
         req = messaging_pb2.RequestLoadDialogs(
             min_date=0,
             limit=1,
-            peers_to_load=[peers_pb2.Peer(type=peers_pb2.PEERTYPE_PRIVATE, id=uid)]
+            peers_to_load=[peers_pb2.Peer(type=peers_pb2.PEERTYPE_PRIVATE, id=user_id)]
         )
         result = self.internal.messaging.LoadDialogs(req)
         users_list = self.internal.updates.GetReferencedEntitites(
@@ -47,89 +57,13 @@ class Users(ManagedService):
         )
 
         for user in users_list.users:
-            if hasattr(user, "id") and user.id == uid:
-                return user
-        return None
+            if hasattr(user, "id") and user.id == user_id:
+                return User.from_api(user)
 
-    @staticmethod
-    def get_user_peer_by_id(uid):
-        return peers_pb2.Peer(type=peers_pb2.PEERTYPE_PRIVATE, id=uid)
-
-    def get_user_by_nick(self, nick):
-        """Returns User object by nickname
-        :param nick: user's nickname
-        :return: User object
-        """
-        outpeer = self.find_user_outpeer_by_nick(nick)
-        if not (outpeer.id and outpeer.access_hash):
-            return
-
-        request = sequence_and_updates_pb2.RequestGetReferencedEntitites(
-                users=[
-                    peers_pb2.UserOutPeer(uid=outpeer.id, access_hash=outpeer.access_hash)
-                ]
-            )
-        result = self._get_reference_entities(request)
-        for user in result.users:
-            if hasattr(user.data, "nick") and user.data.nick.value == nick:
-                return user
-
-    def get_user_full_profile_by_nick(self, nick):
-        """Returns FullUser object by nickname
-        :param nick: user's nickname
-        :return: FullUser object
-        """
-        user = self.find_user_outpeer_by_nick(nick)
-        request = users_pb2.RequestLoadFullUsers(
-                user_peers=[
-                    peers_pb2.UserOutPeer(
-                        uid=user.id,
-                        access_hash=user.access_hash
-                    )
-                ]
-            )
-        full_profile = self._load_full_users(request)
-
-        if full_profile:
-            if hasattr(full_profile, 'full_users'):
-                if len(full_profile.full_users) > 0:
-                    return full_profile.full_users[0]
-
-    def get_user_custom_profile_by_nick(self, nick):
-        """Returns custom_profile field of FullUser object by nickname
-        :param nick: user's nickname
-        :return: user's custom profile string
-        """
-        full_profile = self.get_user_full_profile_by_nick(nick)
-
-        if hasattr(full_profile, 'custom_profile'):
-            return str(full_profile.custom_profile)
-
-    def get_user_custom_profile_by_peer(self, peer):
-        """Returns custom_profile field of FullUser object by Peer object
-        :param peer: user's Peer object
-        :return: user's custom profile string
-        """
-        outpeer = self.manager.get_outpeer(peer)
-
-        request = users_pb2.RequestLoadFullUsers(
-                user_peers=[
-                    peers_pb2.UserOutPeer(
-                        uid=outpeer.id,
-                        access_hash=outpeer.access_hash
-                    )
-                ]
-            )
-        full_profile = self._load_full_users(request)
-
-        if full_profile:
-            if hasattr(full_profile, 'full_users'):
-                if len(full_profile.full_users) > 0:
-                    if hasattr(full_profile.full_users[0], 'custom_profile'):
-                        return str(full_profile.full_users[0].custom_profile)
-
-    def search_users_by_nick_substring(self, query):
+    @async_dec()
+    def search_users_by_nick_substring(self, query: str) -> List[User]:
         """Returns list of User objects by substring of nickname (not complete coincidence!)
+
         :param query: user's nickname
         :return: list User objects
         """
@@ -144,29 +78,73 @@ class Users(ManagedService):
                     )
                 ]
             )
-        user_peers = self._peer_search(request).user_peers
+        user_peers = self.__peer_search(request).user_peers
         request = sequence_and_updates_pb2.RequestGetReferencedEntitites(
                 users=list(user_peers)
             )
-        users_list = self._get_reference_entities(request)
+        users_list = self.__get_reference_entities(request)
         result = []
 
         for user in users_list.users:
             if hasattr(user.data, "nick") and query in user.data.nick.value:
                 result.append(user)
-        return result
+        return [User.from_api(x) for x in result]
 
-    def _load_dialogs(self, request):
+    @async_dec()
+    def get_full_profile_by_nick(self, nick: str) -> FullUser or None:
+        """Returns FullUser object by nickname
+
+        :param nick: user's nickname
+        :return: FullUser object
+        """
+        out_peer = self.__find_out_peer_by_nick(nick)
+        return self.get_user_by_id(out_peer.id)
+
+    @async_dec()
+    def get_full_profile_by_id(self, id_: int) -> FullUser or None:
+        out_peer = self.manager.get_out_peer(Peer(id_, PeerType.PEERTYPE_PRIVATE))
+        if not out_peer:
+            return None
+        request = users_pb2.RequestLoadFullUsers(
+            user_peers=[
+                peers_pb2.UserOutPeer(
+                    uid=out_peer.id,
+                    access_hash=out_peer.access_hash
+                )
+            ]
+        )
+        full_profile = self.__load_full_users(request)
+
+        if full_profile and hasattr(full_profile, 'full_users') and len(full_profile.full_users) > 0:
+            return FullUser.from_api(full_profile.full_users[0])
+
+    def __find_out_peer_by_nick(self, nick: str) -> peers_pb2.OutPeer:
+        """Return OutPeer by nick
+
+        :param nick: nick
+        :return: OutPeer object
+        """
+        if not isinstance(nick, str):
+            raise RuntimeError("Invalid input data. Expects {}, got {}.".format(str.__class__, type(nick)))
+        request = search_pb2.RequestResolvePeer(
+                shortname=nick
+            )
+        result = self.__resolve_peer(request)
+        if hasattr(result, "peer"):
+            self.manager.add_out_peer(result.peer)
+            return result.peer
+
+    def __load_dialogs(self, request: messaging_pb2.RequestLoadDialogs) -> messaging_pb2.ResponseLoadDialogs:
         return self.internal.messaging.LoadDialogs(request)
 
-    def _resolve_peer(self, request):
+    def __resolve_peer(self, request: search_pb2.RequestResolvePeer) -> search_pb2.ResponseResolvePeer:
         return self.internal.search.ResolvePeer(request)
 
-    def _get_reference_entities(self, request):
-        return self.internal.updates.GetReferencedEntitites(request)
+    def __get_reference_entities(self, request: sequence_and_updates_pb2.RequestGetReferencedEntitites) -> ReferencedEntities:
+        return ReferencedEntities.from_api(self.internal.updates.GetReferencedEntitites(request))
 
-    def _load_full_users(self, request):
+    def __load_full_users(self, request: users_pb2.RequestLoadFullUsers) -> users_pb2.ResponseLoadFullUsers:
         return self.internal.users.LoadFullUsers(request)
 
-    def _peer_search(self, request):
+    def __peer_search(self, request: search_pb2.RequestPeerSearch) -> search_pb2.ResponsePeerSearch:
         return self.internal.search.PeerSearch(request)

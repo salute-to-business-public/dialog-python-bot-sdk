@@ -12,3 +12,9 @@ class UUID:
     @classmethod
     def from_api(cls, uuid: UUIDValue) -> 'UUID':
         return cls(uuid.msb, uuid.lsb)
+
+    def __dict__(self):
+        return {"msb": self.msb, "lsb": self.lsb}
+
+    def __str__(self):
+        return "{}".format(self.__dict__())

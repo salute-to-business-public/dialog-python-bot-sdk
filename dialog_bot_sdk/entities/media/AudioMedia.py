@@ -18,6 +18,13 @@ class AudioLocation:
     def from_api(cls, audio: media_and_files_pb2.AudioLocation) -> 'AudioLocation':
         return cls(FileLocation.from_api(audio.file_location), audio.duration, audio.mime_type.value, audio.file_size)
 
+    def __dict__(self):
+        return {"file_location": self.file_location.__dict__(), "duration": self.duration,
+                "mime_type": self.mime_type, "file_size": self.file_size}
+
+    def __str__(self):
+        return "{}".format(self.__dict__())
+
 
 class AudioMedia:
     def __init__(self, audio: AudioLocation) -> None:
@@ -29,3 +36,9 @@ class AudioMedia:
     @classmethod
     def from_api(cls, image: messaging_pb2.AudioMedia) -> 'AudioMedia':
         return cls(AudioLocation.from_api(image))
+
+    def __dict__(self):
+        return {"audio": self.audio.__dict__()}
+
+    def __str__(self):
+        return "{}".format(self.__dict__())

@@ -1,0 +1,8 @@
+from dialog_api import messaging_pb2
+
+
+class ListLoadMode:
+    LISTLOADMODE_UNKNOWN = messaging_pb2.LISTLOADMODE_UNKNOWN
+    LISTLOADMODE_FORWARD = messaging_pb2.LISTLOADMODE_FORWARD
+    LISTLOADMODE_BACKWARD = messaging_pb2.LISTLOADMODE_BACKWARD
+    LISTLOADMODE_BOTH = messaging_pb2.LISTLOADMODE_BOTH

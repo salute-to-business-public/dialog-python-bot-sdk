@@ -2,9 +2,7 @@ import os
 import mimetypes
 
 from dialog_api import messaging_pb2
-from dialog_bot_sdk.utils.get_image_metadata import get_image_thumb_bytes, get_image_w_h
-from dialog_bot_sdk.utils.get_video_metadata import get_video_w_h
-from dialog_bot_sdk.utils.get_audio_metadata import get_audio_duration
+from dialog_bot_sdk.utils import get_image_w_h, get_image_thumb_bytes
 
 
 def get_document_content(file, location):
@@ -43,46 +41,6 @@ def get_image_content(file, location):
     photo = messaging_pb2.DocumentExPhoto()
     photo.w, photo.h = get_image_w_h(file)
     ext.photo.CopyFrom(photo)
-    content.ext.CopyFrom(ext)
-
-    return content
-
-
-def get_audio_content(file, location):
-    """Same as get_document_content for audio sending.
-
-    :param file: path to audio
-    :param location: FileLocation object
-    :return: DocumentMessage object
-    """
-
-    content = get_document_content(file, location)
-
-    ext = messaging_pb2.DocumentEx()
-
-    audio = messaging_pb2.DocumentExVoice()
-    audio.duration = get_audio_duration(file)
-    ext.voice.CopyFrom(audio)
-    content.ext.CopyFrom(ext)
-
-    return content
-
-
-def get_video_content(file, location):
-    """Same as get_document_content for video sending.
-
-    :param file: path to video
-    :param location: FileLocation object
-    :return: DocumentMessage object
-    """
-
-    content = get_document_content(file, location)
-
-    ext = messaging_pb2.DocumentEx()
-
-    video = messaging_pb2.DocumentExVideo()
-    video.w, video.h = get_video_w_h(file)
-    ext.video.CopyFrom(video)
     content.ext.CopyFrom(ext)
 
     return content

@@ -8,7 +8,13 @@ class DocumentExtPhoto:
 
     @classmethod
     def from_api(cls, photo: messaging_pb2.DocumentExPhoto) -> 'DocumentExtPhoto':
-        return cls(photo.height, photo.width)
+        return cls(photo.h, photo.w)
+
+    def __dict__(self):
+        return {"height": self.height, "width": self.width}
+
+    def __str__(self):
+        return "{}".format(self.__dict__())
 
 
 class DocumentExtVideo:
@@ -19,7 +25,13 @@ class DocumentExtVideo:
 
     @classmethod
     def from_api(cls, video: messaging_pb2.DocumentExVideo) -> 'DocumentExtVideo':
-        return cls(video.duration, video.height, video.width)
+        return cls(video.duration, video.h, video.w)
+
+    def __dict__(self):
+        return {"duration": self.duration, "height": self.height, "width": self.width}
+
+    def __str__(self):
+        return "{}".format(self.__dict__())
 
 
 class DocumentExtVoice:
@@ -29,6 +41,12 @@ class DocumentExtVoice:
     @classmethod
     def from_api(cls, voice: messaging_pb2.DocumentExVoice) -> 'DocumentExtVoice':
         return cls(voice.duration)
+
+    def __dict__(self):
+        return {"duration": self.duration}
+
+    def __str__(self):
+        return "{}".format(self.__dict__())
 
 
 class DocumentExt:
@@ -41,6 +59,12 @@ class DocumentExt:
     def from_api(cls, ext: messaging_pb2.DocumentEx) -> 'DocumentExt':
         return cls(DocumentExtPhoto.from_api(ext.photo), DocumentExtVideo.from_api(ext.video),
                    DocumentExtVoice.from_api(ext.voice))
+
+    def __dict__(self):
+        return {"photo": self.photo.__dict__(), "video": self.video.__dict__(), "voice": self.voice.__dict__(), }
+
+    def __str__(self):
+        return "{}".format(self.__dict__())
 
 
 class DocumentMessage:
@@ -56,3 +80,10 @@ class DocumentMessage:
     def from_api(cls, document: messaging_pb2.DocumentMessage) -> 'DocumentMessage':
         return cls(document.file_id, document.access_hash, document.file_size, document.mime_type, document.name,
                    DocumentExt.from_api(document.ext))
+
+    def __dict__(self):
+        return {"file_id": self.file_id, "access_hash": self.access_hash, "file_size": self.file_size,
+                "mime_type": self.mime_type, "name": self.name, "ext": self.ext.__dict__()}
+
+    def __str__(self):
+        return "{}".format(self.__dict__())

@@ -20,3 +20,9 @@ class Peer:
     @classmethod
     def from_api(cls, peer: peers_pb2.Peer) -> 'Peer':
         return cls(peer.id, peer.type)
+
+    def __dict__(self):
+        return {"id": self.id, "type": self.type}
+
+    def __str__(self):
+        return "{}".format(self.__dict__())
