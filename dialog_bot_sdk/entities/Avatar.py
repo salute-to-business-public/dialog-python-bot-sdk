@@ -19,7 +19,7 @@ class AvatarImage:
                 "height": self.height, "width": self.width}
 
     def __str__(self):
-        return "{}".format(self.__dict__())
+        return "AvatarImage({})".format(self.__dict__())
 
 
 class Avatar:
@@ -39,4 +39,4 @@ class Avatar:
                 "full_image": self.full_image.__dict__()}
 
     def __str__(self):
-        return "avatar: {}".format(self.__dict__())
+        return "Avatar({})".format(self.__dict__())

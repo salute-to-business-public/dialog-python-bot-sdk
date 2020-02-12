@@ -27,7 +27,7 @@ class ServiceExt:
                 "changed_topic": self.changed_topic, "user_invited": self.user_invited, "user_kicked": self.user_kicked}
 
     def __str__(self):
-        return "{}".format(self.__dict__())
+        return "ServiceExt({})".format(self.__dict__())
 
 
 class ServiceMessage:
@@ -43,4 +43,4 @@ class ServiceMessage:
         return {"text": self.text, "ext": self.ext.__dict__()}
 
     def __str__(self):
-        return "{}".format(self.__dict__())
+        return "ServiceMessage({})".format(self.__dict__())

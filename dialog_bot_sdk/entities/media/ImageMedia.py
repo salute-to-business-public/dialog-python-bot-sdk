@@ -23,7 +23,7 @@ class ImageLocation:
                 "file_size": self.file_size}
 
     def __str__(self):
-        return "{}".format(self.__dict__())
+        return "ImageLocation({})".format(self.__dict__())
 
 
 class ImageMedia:
@@ -41,4 +41,4 @@ class ImageMedia:
         return {"image": self.image.__dict__()}
 
     def __str__(self):
-        return "{}".format(self.__dict__())
+        return "ImageMedia({})".format(self.__dict__())

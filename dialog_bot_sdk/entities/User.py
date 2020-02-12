@@ -23,9 +23,9 @@ class UserData:
 
 
 class User:
-    def __init__(self, id_: int, data: UserData = None) -> None:
+    def __init__(self, id: int, data: UserData = None) -> None:
         self.data = data
-        self.peer = Peer(id_, PeerType.PEERTYPE_PRIVATE)
+        self.peer = Peer(id, PeerType.PEERTYPE_PRIVATE)
 
     @classmethod
     def from_api(cls, user: users_pb2.User) -> 'User':
@@ -35,4 +35,4 @@ class User:
         return {"data": self.data.__dict__(), "peer": self.peer.__dict__()}
 
     def __str__(self):
-        return "{}".format(self.__dict__())
+        return "User({})".format(self.__dict__())

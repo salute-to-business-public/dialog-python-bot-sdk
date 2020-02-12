@@ -50,10 +50,6 @@ class Messaging(ManagedService):
         peer = get_peer(peer)
         if text == '' or text is None:
             raise AttributeError('Text message must contain some text.')
-
-        if not peer:
-            raise AttributeError('Peer can\'t be None!')
-
         out_peer = self.manager.get_out_peer(peer)
         msg = messaging_pb2.MessageContent()
         msg.textMessage.text = text
@@ -126,7 +122,6 @@ class Messaging(ManagedService):
         :return: value of SendMessage response object
         """
         peer = get_peer(peer)
-
         location = self.__get_file_location(file)
         out_peer = self.manager.get_out_peer(peer)
         msg = messaging_pb2.MessageContent()
@@ -173,6 +168,7 @@ class Messaging(ManagedService):
 
         if isinstance(file, str) and not is_image(file):
             raise IOError('File is not an image.')
+
         location = self.__get_file_location(file)
         out_peer = self.manager.get_out_peer(peer)
         msg = messaging_pb2.MessageContent()

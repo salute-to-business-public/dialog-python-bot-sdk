@@ -1,4 +1,5 @@
 from dialog_bot_sdk.entities.Peer import Peer, PeerType
+from dialog_bot_sdk.exceptions.exceptions import UnknownPeerError
 from dialog_bot_sdk.internal.bot import InternalBot
 
 from dialog_api import peers_pb2, messaging_pb2
@@ -7,6 +8,7 @@ from dialog_api import peers_pb2, messaging_pb2
 class EntityManager(object):
     """Entity manager class.
 
+    Add OutPeer's to dict when bot receive a message, to avoid going to the server once again.
     """
     def __init__(self, internal: InternalBot) -> None:
         self.internal = internal
@@ -47,7 +49,7 @@ class EntityManager(object):
         elif isinstance(peer, peers_pb2.GroupOutPeer):
             out_peer = peers_pb2.OutPeer(id=peer.group_id, access_hash=peer.access_hash, type=PeerType.PEERTYPE_GROUP)
         else:
-            raise RuntimeError("Unknown PeerType.")
+            raise UnknownPeerError("Unknown PeerType.")
         self.peer_to_out_peer[(out_peer.type, out_peer.id)] = out_peer
 
     def add_out_peer(self, out_peer: peers_pb2.OutPeer) -> None:

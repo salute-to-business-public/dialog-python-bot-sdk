@@ -1,14 +1,16 @@
 from typing import List
 
 from dialog_api import messaging_pb2
+from dialog_api.messaging_pb2 import INTERACTIVEMEDIASTYLE_UNKNOWN, INTERACTIVEMEDIASTYLE_DEFAULT, \
+    INTERACTIVEMEDIASTYLE_PRIMARY, INTERACTIVEMEDIASTYLE_DANGER
 from google.protobuf.wrappers_pb2 import StringValue
 
 
 class InteractiveMediaStyle:
-    INTERACTIVEMEDIASTYLE_UNKNOWN = messaging_pb2.INTERACTIVEMEDIASTYLE_UNKNOWN
-    INTERACTIVEMEDIASTYLE_DEFAULT = messaging_pb2.INTERACTIVEMEDIASTYLE_DEFAULT
-    INTERACTIVEMEDIASTYLE_PRIMARY = messaging_pb2.INTERACTIVEMEDIASTYLE_PRIMARY
-    INTERACTIVEMEDIASTYLE_DANGER = messaging_pb2.INTERACTIVEMEDIASTYLE_DANGER
+    INTERACTIVEMEDIASTYLE_UNKNOWN = INTERACTIVEMEDIASTYLE_UNKNOWN
+    INTERACTIVEMEDIASTYLE_DEFAULT = INTERACTIVEMEDIASTYLE_DEFAULT
+    INTERACTIVEMEDIASTYLE_PRIMARY = INTERACTIVEMEDIASTYLE_PRIMARY
+    INTERACTIVEMEDIASTYLE_DANGER = INTERACTIVEMEDIASTYLE_DANGER
 
 
 class InteractiveMediaButton:
@@ -28,7 +30,7 @@ class InteractiveMediaButton:
         return {"value": self.value, "label": self.label}
 
     def __str__(self):
-        return "{}".format(self.__dict__())
+        return "InteractiveMediaButton({})".format(self.__dict__())
 
 
 class InteractiveMediaSelectOption:
@@ -48,7 +50,7 @@ class InteractiveMediaSelectOption:
         return {"value": self.value, "label": self.label}
 
     def __str__(self):
-        return "{}".format(self.__dict__())
+        return "InteractiveMediaSelectOption({})".format(self.__dict__())
 
 
 class InteractiveMediaSelect:
@@ -68,22 +70,22 @@ class InteractiveMediaSelect:
                    select.default_value.value)
 
     def __dict__(self):
-        return {"options": [x.__dict__() for x in self.options.__dict__()], "label": self.label,
+        return {"options": [x.__dict__() for x in self.options], "label": self.label,
                 "default_value": self.default_value}
 
     def __str__(self):
-        return "{}".format(self.__dict__())
+        return "InteractiveMediaSelect({})".format(self.__dict__())
 
 
 class InteractiveMediaWidget:
     def __init__(self, interactive_media_button: InteractiveMediaButton,
                  interactive_media_select: InteractiveMediaSelect) -> None:
-        self.interactiveMediaButton = interactive_media_button
-        self.interactiveMediaSelect = interactive_media_select
+        self.interactive_media_button = interactive_media_button
+        self.interactive_media_select = interactive_media_select
 
     def to_api(self) -> messaging_pb2.InteractiveMediaWidget:
-        return messaging_pb2.InteractiveMediaWidget(interactiveMediaButton=self.interactiveMediaButton.to_api(),
-                                                    interactiveMediaSelect=self.interactiveMediaSelect.to_api())
+        return messaging_pb2.InteractiveMediaWidget(interactiveMediaButton=self.interactive_media_button.to_api(),
+                                                    interactiveMediaSelect=self.interactive_media_select.to_api())
 
     @classmethod
     def from_api(cls, widget: messaging_pb2.InteractiveMediaWidget) -> 'InteractiveMediaWidget':
@@ -95,7 +97,7 @@ class InteractiveMediaWidget:
                 "interactive_media_select": self.interactive_media_select.__dict__()}
 
     def __str__(self):
-        return "{}".format(self.__dict__())
+        return "InteractiveMediaWidget({})".format(self.__dict__())
 
 
 class InteractiveMediaConfirm:
@@ -119,13 +121,13 @@ class InteractiveMediaConfirm:
         return {"text": self.text, "title": self.title, "ok": self.ok, "dismiss": self.dismiss}
 
     def __str__(self):
-        return "{}".format(self.__dict__())
+        return "InteractiveMediaConfirm({})".format(self.__dict__())
 
 
 class InteractiveMedia:
-    def __init__(self, id_: str, widget: InteractiveMediaWidget, style: InteractiveMediaStyle,
+    def __init__(self, id: str, widget: InteractiveMediaWidget, style: InteractiveMediaStyle,
                  confirm: InteractiveMediaConfirm) -> None:
-        self.id = id_
+        self.id = id
         self.widget = widget
         self.style = style
         self.confirm = confirm
@@ -144,12 +146,12 @@ class InteractiveMedia:
         return {"id": self.id, "widget": self.widget.__dict__(), "style": self.style, "confirm": self.confirm.__dict__()}
 
     def __str__(self):
-        return "{}".format(self.__dict__())
+        return "InteractiveMedia({})".format(self.__dict__())
 
 
 class InteractiveMediaTranslation:
-    def __init__(self, id_: str, value: str):
-        self.id = id_
+    def __init__(self, id: str, value: str):
+        self.id = id
         self.value = value
 
     def to_api(self) -> messaging_pb2.InteractiveMediaTranslation:
@@ -164,7 +166,7 @@ class InteractiveMediaTranslation:
         return {"id": self.id, "value": self.value}
 
     def __str__(self):
-        return "{}".format(self.__dict__())
+        return "InteractiveMediaTranslation({})".format(self.__dict__())
 
 
 class InteractiveMediaTranslationGroup:
@@ -184,7 +186,7 @@ class InteractiveMediaTranslationGroup:
         return {"language": self.language, "messages": [x.__dict__() for x in self.messages]}
 
     def __str__(self):
-        return "{}".format(self.__dict__())
+        return "InteractiveMediaTranslationGroup({})".format(self.__dict__())
 
 
 class InteractiveMediaGroup:
@@ -211,4 +213,4 @@ class InteractiveMediaGroup:
                 "translations": [x.__dict__() for x in self.translations]}
 
     def __str__(self):
-        return "{}".format(self.__dict__())
+        return "InteractiveMediaGroup({})".format(self.__dict__())

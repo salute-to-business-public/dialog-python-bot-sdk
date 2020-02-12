@@ -23,7 +23,7 @@ class AudioLocation:
                 "mime_type": self.mime_type, "file_size": self.file_size}
 
     def __str__(self):
-        return "{}".format(self.__dict__())
+        return "AudioLocation({})".format(self.__dict__())
 
 
 class AudioMedia:
@@ -41,4 +41,4 @@ class AudioMedia:
         return {"audio": self.audio.__dict__()}
 
     def __str__(self):
-        return "{}".format(self.__dict__())
+        return "AudioMedia({})".format(self.__dict__())

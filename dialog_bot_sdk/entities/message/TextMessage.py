@@ -31,7 +31,7 @@ class MessageMedia:
                 "audio": self.audio.__dict__(), "actions": [x.__dict__() for x in self.actions]}
 
     def __str__(self):
-        return "{}".format(self.__dict__())
+        return "MessageMedia({})".format(self.__dict__())
 
 
 class TextMessage:
@@ -50,4 +50,4 @@ class TextMessage:
         return {"text": self.text, "media": [x.__dict__() for x in self.media], "mentions": self.mentions}
 
     def __str__(self):
-        return "{}".format(self.__dict__())
+        return "TextMessage({})".format(self.__dict__())

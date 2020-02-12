@@ -28,9 +28,9 @@ class UpdateMessage:
 
     def __dict__(self):
         return {"peer": self.peer.__dict__(), "sender_peer": self.sender_peer.__dict__(),
-                "mid": self.mid.__dict__(), "message": self.message.__dict__(),
-                "forward": [x.__dict__() for x in self.forward], "reply": [x.__dict__() for x in self.reply],
-                "previous_mid": self.previous_mid.__dict__(), "date": self.date}
+                "mid": self.mid.__str__(), "message": self.message.__dict__(),
+                "forward": [x.__str__() for x in self.forward], "reply": [x.__str__() for x in self.reply],
+                "previous_mid": self.previous_mid.__str__(), "date": self.date}
 
     def __str__(self):
-        return "on message: {}".format(self.__dict__())
+        return "UpdateMessage({})".format(self.__dict__())

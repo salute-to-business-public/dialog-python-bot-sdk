@@ -9,7 +9,8 @@ from PIL import Image
 from dialog_api import peers_pb2, media_and_files_pb2, messaging_pb2
 from google.protobuf import wrappers_pb2
 
-from dialog_bot_sdk.entities.Peer import Peer
+from dialog_bot_sdk.entities.Peer import Peer, PeerType
+from dialog_bot_sdk.exceptions.exceptions import UnknownPeerError
 
 
 def get_image_w_h(file):
@@ -134,6 +135,7 @@ class AsyncTask:
             self.result = self.target(*self.args, **self.kwargs)
         except:
             self.result = sys.exc_info()
+            six.reraise(self.result[0], self.result[1], self.result[2])
 
         self.done = True
 
@@ -141,11 +143,10 @@ class AsyncTask:
         if not self.done:
             self.thread.join()
         if isinstance(self.result, BaseException):
-            logging.error(self.result)
             six.reraise(self.result[0], self.result[1], self.result[2])
         else:
-            logging.info("target: {}\nargs: {}\nkwargs: {}\nresult: {}\n"
-                         .format(self.target, self.args, self.kwargs, self.result))
+            logging.debug("target: {}\nargs: {}\nkwargs: {}\nresult: {}\n"
+                          .format(self.target, self.args, self.kwargs, self.result))
             return self.result
 
 
@@ -159,7 +160,7 @@ def async_dec():
     return decorator
 
 
-def get_peer(peer: Peer or AsyncTask) -> peers_pb2.Peer:
+def get_peer(peer: Peer or AsyncTask) -> peers_pb2.Peer or None:
     if isinstance(peer, AsyncTask):
         from_task = peer.wait()
         if not hasattr(from_task, 'peer'):
@@ -167,5 +168,7 @@ def get_peer(peer: Peer or AsyncTask) -> peers_pb2.Peer:
         peer = from_task.peer
     if not isinstance(peer, Peer):
         raise AttributeError("peer must be {}, got {}.".format(Peer.__class__, type(peer)))
-    return peers_pb2.Peer(id=peer.id, type=peer.type)
-
+    if peer.type in [PeerType.PEERTYPE_PRIVATE, PeerType.PEERTYPE_GROUP]:
+        return peers_pb2.Peer(id=peer.id, type=peer.type)
+    else:
+        raise UnknownPeerError("Unknown PeerType.")

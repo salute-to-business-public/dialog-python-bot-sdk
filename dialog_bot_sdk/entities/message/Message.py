@@ -20,7 +20,7 @@ class DeletedMessage:
         return {"is_local": self.is_local}
 
     def __str__(self):
-        return "{}".format(self.__dict__())
+        return "DeleteMessage({})".format(self.__dict__())
 
 
 class JsonMessage:
@@ -35,7 +35,7 @@ class JsonMessage:
         return {"raw_json": self.raw_json}
 
     def __str__(self):
-        return "{}".format(self.__dict__())
+        return "JsonMessage({})".format(self.__dict__())
 
 
 class MessageContent:
@@ -59,7 +59,7 @@ class MessageContent:
                 "service_message": self.service_message.__dict__(), "text_message": self.text_message.__dict__()}
 
     def __str__(self):
-        return "{}".format(self.__dict__())
+        return "MessageContent({})".format(self.__dict__())
 
 
 class Message:
@@ -82,10 +82,10 @@ class Message:
                    [UUID.from_api(x.mid) for x in message.forward], message.date, message.edited_at.value)
 
     def __dict__(self):
-        return {"mid": self.mid.__dict__(), "prev_mid": self.prev_mid.__dict__(),
+        return {"mid": self.mid.__str__(), "prev_mid": self.prev_mid.__str__(),
                 "sender_peer": self.sender_peer.__dict__(),
-                "message": self.message.__dict__(), "reply": [x.__dict__() for x in self.reply],
-                "forward": [x.__dict__() for x in self.forward], "date": self.date, "edited_at": self.edited_at}
+                "message": self.message.__dict__(), "reply": [x.__str__() for x in self.reply],
+                "forward": [x.__str__() for x in self.forward], "date": self.date, "edited_at": self.edited_at}
 
     def __str__(self):
-        return "{}".format(self.__dict__())
+        return "Message({})".format(self.__dict__())

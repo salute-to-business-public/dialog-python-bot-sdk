@@ -14,7 +14,7 @@ class DocumentExtPhoto:
         return {"height": self.height, "width": self.width}
 
     def __str__(self):
-        return "{}".format(self.__dict__())
+        return "DocumentExtPhoto({})".format(self.__dict__())
 
 
 class DocumentExtVideo:
@@ -31,7 +31,7 @@ class DocumentExtVideo:
         return {"duration": self.duration, "height": self.height, "width": self.width}
 
     def __str__(self):
-        return "{}".format(self.__dict__())
+        return "DocumentExtVideo({})".format(self.__dict__())
 
 
 class DocumentExtVoice:
@@ -46,7 +46,7 @@ class DocumentExtVoice:
         return {"duration": self.duration}
 
     def __str__(self):
-        return "{}".format(self.__dict__())
+        return "DocumentExtVoice({})".format(self.__dict__())
 
 
 class DocumentExt:
@@ -64,7 +64,7 @@ class DocumentExt:
         return {"photo": self.photo.__dict__(), "video": self.video.__dict__(), "voice": self.voice.__dict__(), }
 
     def __str__(self):
-        return "{}".format(self.__dict__())
+        return "DocumentExt({})".format(self.__dict__())
 
 
 class DocumentMessage:
@@ -86,4 +86,4 @@ class DocumentMessage:
                 "mime_type": self.mime_type, "name": self.name, "ext": self.ext.__dict__()}
 
     def __str__(self):
-        return "{}".format(self.__dict__())
+        return "DocumentMessage({})".format(self.__dict__())

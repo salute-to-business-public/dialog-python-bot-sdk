@@ -16,7 +16,7 @@ class UpdateInteractiveMediaEvent:
         return cls(UUID.from_api(event.mid), event.id, event.value, Peer(event.uid, PeerType.PEERTYPE_PRIVATE))
 
     def __dict__(self):
-        return {"mid": self.mid.__dict__(), "id": self.id, "value": self.value, "peer": self.peer.__dict__()}
+        return {"mid": self.mid.__str__(), "id": self.id, "value": self.value, "peer": self.peer.__dict__()}
 
     def __str__(self):
-        return "on event: {}".format(self.__dict__())
+        return "UpdateInteractiveMediaEvent({})".format(self.__dict__())

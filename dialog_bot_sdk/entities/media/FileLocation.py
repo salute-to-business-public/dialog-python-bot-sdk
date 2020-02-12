@@ -17,4 +17,4 @@ class FileLocation:
         return {"file_id": self.file_id, "access_hash": self.access_hash}
 
     def __str__(self):
-        return "{}".format(self.__dict__())
+        return "FileLocation({})".format(self.__dict__())

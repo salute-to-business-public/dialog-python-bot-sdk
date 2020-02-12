@@ -22,4 +22,4 @@ class WebPageMedia:
         return {"url": self.url, "title": self.title, "description": self.description, "image": self.image.__dict__()}
 
     def __str__(self):
-        return "{}".format(self.__dict__())
+        return "WebPageMedia({})".format(self.__dict__())

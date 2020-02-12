@@ -1,23 +1,24 @@
 from dialog_api import groups_pb2
+from dialog_api.groups_pb2 import GROUPTYPE_GROUP, GROUPTYPE_UNKNOWN, GROUPTYPE_CHANNEL, GROUPTYPE_THREAD
 
 from dialog_bot_sdk.entities.Avatar import Avatar
 from dialog_bot_sdk.entities.Peer import PeerType, Peer
 
 
 class GroupType:
-    GROUPTYPE_UNKNOWN = groups_pb2.GROUPTYPE_UNKNOWN
-    GROUPTYPE_GROUP = groups_pb2.GROUPTYPE_GROUP
-    GROUPTYPE_CHANNEL = groups_pb2.GROUPTYPE_CHANNEL
-    GROUPTYPE_THREAD = groups_pb2.GROUPTYPE_THREAD
+    GROUPTYPE_UNKNOWN = GROUPTYPE_UNKNOWN
+    GROUPTYPE_GROUP = GROUPTYPE_GROUP
+    GROUPTYPE_CHANNEL = GROUPTYPE_CHANNEL
+    GROUPTYPE_THREAD = GROUPTYPE_THREAD
 
 
 class GroupData:
-    def __init__(self, about: str, avatar: Avatar, name: str, title: str, type_: int) -> None:
+    def __init__(self, about: str, avatar: Avatar, name: str, title: str, type: int) -> None:
         self.about = about
         self.avatar = avatar
         self.name = name
         self.title = title
-        self.type = type_
+        self.type = type
 
     @classmethod
     def from_api(cls, data: groups_pb2.GroupData) -> 'GroupData':
@@ -28,7 +29,7 @@ class GroupData:
                 "type": self.type}
 
     def __str__(self):
-        return "{}".format(self.__dict__())
+        return "GroupData({})".format(self.__dict__())
 
 
 class Group:
@@ -44,4 +45,4 @@ class Group:
         return {"data": self.data.__dict__(), "peer": self.peer.__dict__()}
 
     def __str__(self):
-        return "group: {}".format(self.__dict__())
+        return "Group({})".format(self.__dict__())
