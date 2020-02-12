@@ -32,7 +32,7 @@ class Uploading(object):
             part_size=len(chunk),
             upload_key=upload_key
         )
-        url = self._get_file_upload_part_url(request).url
+        url = self.internal.media_and_files.GetFileUploadPartUrl(request).url
 
         if self.cert and self.private_key:
             with NamedTemporaryFile(dir=access_dir, delete=False) as cert_file:
@@ -81,7 +81,7 @@ class Uploading(object):
         req = media_and_files_pb2.RequestGetFileUploadUrl(
                 expected_size=os.path.getsize(file)
             )
-        upload_key = self._get_file_upload_url(req).upload_key
+        upload_key = self.internal.media_and_files.GetFileUploadUrl(req).upload_key
 
         with ThreadPoolExecutor(max_workers=parallelism) as executor:
             result = list(
@@ -102,13 +102,4 @@ class Uploading(object):
             upload_key=upload_key,
             file_name=os.path.basename(file)
         )
-        return self._commit_file_upload(request).uploaded_file_location
-
-    def _get_file_upload_part_url(self, request):
-        return self.internal.media_and_files.GetFileUploadPartUrl(request)
-
-    def _get_file_upload_url(self, request):
-        return self.internal.media_and_files.GetFileUploadUrl(request)
-
-    def _commit_file_upload(self, request):
-        return self.internal.media_and_files.CommitFileUpload(request)
+        return self.internal.media_and_files.CommitFileUpload(request).uploaded_file_location

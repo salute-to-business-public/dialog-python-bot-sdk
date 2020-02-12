@@ -98,7 +98,7 @@ class Messaging(ManagedService):
         request = sequence_and_updates_pb2.RequestGetReferencedEntitites(
                 mids=mids
             )
-        result = self.__get_referenced_entities(request)
+        result = ReferencedEntities.from_api(self.internal.updates.GetReferencedEntitites(request))
         return result.messages
 
     @async_dec()
@@ -112,7 +112,7 @@ class Messaging(ManagedService):
             peer=peer,
             date=date
         )
-        self.__read(request)
+        self.internal.messaging.MessageRead(request)
 
     @async_dec()
     def send_file(self, peer: Peer or AsyncTask, file: str or FileLocation) -> UUID:
@@ -249,7 +249,7 @@ class Messaging(ManagedService):
                 load_mode=direction,
                 limit=limit
             )
-        return self.__load_history(request)
+        return [Message.from_api(x) for x in self.internal.messaging.LoadHistory(request)]
 
     def on_message_async(self, callback, interactive_media_callback=None):
         updates_thread = threading.Thread(target=self.on_message, args=(callback, interactive_media_callback))
@@ -338,15 +338,6 @@ class Messaging(ManagedService):
     def __send_message(self, request: messaging_pb2.RequestSendMessage) -> UUID:
         return UUID.from_api(self.internal.messaging.SendMessage(request).message_id)
 
-    def __update_message(self, request: messaging_pb2.RequestUpdateMessage) -> None:
-        self.internal.messaging.UpdateMessage(request)
-
-    def __load_history(self, request: messaging_pb2.RequestLoadHistory) -> List[Message]:
-        return [Message.from_api(x) for x in self.internal.messaging.LoadHistory(request)]
-
-    def __read(self, request: messaging_pb2.RequestMessageRead) -> None:
-        self.internal.messaging.MessageRead(request)
-
     def __update(self, message: Message, new_message: messaging_pb2.MessageContent) -> None:
         if hasattr(message, "mid"):
             mid = message.mid
@@ -363,8 +354,4 @@ class Messaging(ManagedService):
             updated_message=new_message,
             last_edited_at=last_edited_at
         )
-        self.__update_message(request)
-
-    def __get_referenced_entities(self, request: sequence_and_updates_pb2.RequestGetReferencedEntitites)\
-            -> ReferencedEntities:
-        return ReferencedEntities.from_api(self.internal.updates.GetReferencedEntitites(request))
+        self.internal.messaging.UpdateMessage(request)

@@ -96,7 +96,7 @@ class Groups(ManagedService):
                 )
             ]
         )
-        response = self.__peer_search(request).search_results
+        response = self.internal.search.PeerSearch(request).search_results
         for result in response:
             print(result)
             if result.peer.type == PeerType.PEERTYPE_GROUP and hasattr(result, 'shortname') and \
@@ -116,7 +116,7 @@ class Groups(ManagedService):
         request = sequence_and_updates_pb2.RequestGetReferencedEntitites(
             groups=[out_peer[1]]
         )
-        result = self.__get_referenced_entities(request).groups
+        result = self.internal.updates.GetReferencedEntitites(request).groups
         self.manager.add_out_peer(self.__get_out_peer(Peer(result[0].id, PeerType.PEERTYPE_GROUP))[0])
         return Group.from_api(result[0])
 
@@ -138,7 +138,7 @@ class Groups(ManagedService):
             group=out_peer,
             limit=limit
         )
-        members = self.__load_members(request).members
+        members = self.internal.groups.LoadMembers(request).members
         request = sequence_and_updates_pb2.RequestGetReferencedEntitites(
             group_members=[
                 sequence_and_updates_pb2.GroupMembersSubset(
@@ -147,7 +147,7 @@ class Groups(ManagedService):
                 )
             ]
         )
-        return self.__get_referenced_entities(request).users
+        return [User.from_api(x) for x in self.internal.updates.GetReferencedEntitites(request).users]
 
     @async_dec()
     def kick_user(self, group_peer: Peer or AsyncTask, user_peer: Peer or AsyncTask) -> None:
@@ -164,7 +164,7 @@ class Groups(ManagedService):
             user=user_out_peer,
             rid=random.randint(0, 100000000),
         )
-        self.__kick_user(request)
+        self.internal.groups.KickUser(request)
 
     @async_dec()
     def invite_user(self, group_peer: Peer or AsyncTask, user_peer: Peer or AsyncTask) -> None:
@@ -181,7 +181,7 @@ class Groups(ManagedService):
             user=user_out_peer,
             rid=random.randint(0, 100000000),
         )
-        self.__invite_user(request)
+        self.internal.groups.InviteUser(request)
 
     @async_dec()
     def set_default_group_permissions(self, group_peer: Peer or AsyncTask,
@@ -212,8 +212,8 @@ class Groups(ManagedService):
             revoked_permissions=[x for x in del_permissions]
         )
 
-        self.__set_default_group_permissions(add_request)
-        self.__set_default_group_permissions(del_request)
+        self.internal.groups.EditGroupBasePermissions(add_request)
+        self.internal.groups.EditGroupBasePermissions(del_request)
 
     @async_dec()
     def set_member_permissions(self, group_peer: Peer or AsyncTask, user_peer: Peer or AsyncTask,
@@ -244,8 +244,8 @@ class Groups(ManagedService):
             revoked_permissions=[x for x in del_permissions]
         )
 
-        self.__set_member_permissions(add_request)
-        self.__set_member_permissions(del_request)
+        self.internal.groups.EditMemberPermissions(add_request)
+        self.internal.groups.EditMemberPermissions(del_request)
 
     @async_dec()
     def get_group_member_permissions(self, group_peer: Peer or AsyncTask, user_peers: List[Peer or AsyncTask]) \
@@ -261,7 +261,7 @@ class Groups(ManagedService):
             group_id=group_peer.id,
             user_ids=[peer.id for peer in user_peers]
         )
-        return self.__get_group_member_permissions(request)
+        return [Permissions.from_api(x) for x in self.internal.groups.GetGroupMemberPermissions(request).permissions]
 
     @async_dec()
     def edit_group_title(self, group_peer: Peer or AsyncTask, title: str) -> None:
@@ -278,7 +278,7 @@ class Groups(ManagedService):
             rid=random.randint(0, 100000000),
             title=title
         )
-        self.__edit_group_title(request)
+        self.internal.groups.EditGroupTitle(request)
 
     @async_dec()
     def edit_avatar(self, group_peer: Peer or AsyncTask, file: str) -> Avatar:
@@ -290,16 +290,16 @@ class Groups(ManagedService):
         """
         group_peer = get_peer(group_peer)
         out_peer = self.__get_out_peer(group_peer)[1]
-        location = self.__upload(file)
+        location = self.internal.uploading.upload_file(file)
         request = groups_pb2.RequestEditGroupAvatar(
             group_peer=out_peer,
             rid=random.randint(0, 100000000),
             file_location=location
         )
-        return self.__edit_group_avatar(request)
+        return Avatar.from_api(self.internal.groups.EditGroupAvatar(request).avatar)
 
     @async_dec()
-    def remove_group_avatar(self, group_peer: Peer or AsyncTask) -> None:
+    def remove_group_avatar(self, group_peer: Peer or AsyncTask) -> UUID:
         """deleted group's avatar
 
         :param group_peer: group's Peer
@@ -311,7 +311,7 @@ class Groups(ManagedService):
             group_peer=out_peer,
             rid=random.randint(0, 100000000),
         )
-        self.__remove_group_avatar(request)
+        return UUID.from_api(self.internal.groups.RemoveGroupAvatar(request).mid)
 
     @async_dec()
     def edit_group_about(self, group_peer: Peer or AsyncTask, about: str) -> None:
@@ -328,7 +328,7 @@ class Groups(ManagedService):
             rid=random.randint(0, 100000000),
             about=wrappers_pb2.StringValue(value=about)
         )
-        self.__edit_group_about(request)
+        self.internal.groups.EditGroupAbout(request)
 
     @async_dec()
     def leave_group(self, group_peer: Peer or AsyncTask) -> None:
@@ -343,7 +343,7 @@ class Groups(ManagedService):
             group_peer=out_peer,
             rid=random.randint(0, 100000000),
         )
-        self.__leave_group(request)
+        self.internal.groups.LeaveGroup(request)
 
     @async_dec()
     def make_user_admin(self, group_peer: Peer or AsyncTask, user_peer: Peer or AsyncTask,
@@ -362,7 +362,7 @@ class Groups(ManagedService):
             user_peer=user_out_peer,
             permissions=permissions
         )
-        self.__make_user_admin(request)
+        self.internal.groups.MakeUserAdmin(request)
 
     @async_dec()
     def transfer_ownership(self, group_peer: Peer or AsyncTask, user_peer: Peer or AsyncTask) -> None:
@@ -378,7 +378,7 @@ class Groups(ManagedService):
             group_peer=out_peer,
             new_owner=user_peer.id
         )
-        self.__transfer_ownership(request)
+        self.internal.groups.TransferOwnership(request)
 
     @async_dec()
     def get_group_invite_url(self, group_peer: Peer or AsyncTask) -> str:
@@ -392,7 +392,7 @@ class Groups(ManagedService):
         request = groups_pb2.RequestGetGroupInviteUrl(
             group_peer=out_peer
         )
-        return self.__get_group_invite_url(request)
+        return self.internal.groups.GetGroupInviteUrl(request).url
 
     @async_dec()
     def get_group_invite_url_base(self) -> str:
@@ -401,7 +401,7 @@ class Groups(ManagedService):
         :return: invite url (string)
         """
         request = groups_pb2.RequestGetGroupInviteUrlBase()
-        return self.__get_group_invite_url_base(request)
+        return self.internal.groups.GetGroupInviteUrlBase(request).url
 
     @async_dec()
     def revoke_invite_url(self, group_peer: Peer or AsyncTask) -> str:
@@ -414,7 +414,7 @@ class Groups(ManagedService):
         request = groups_pb2.RequestRevokeInviteUrl(
             group_peer=out_peer
         )
-        return self.__revoke_invite_url(request)
+        return self.internal.groups.RevokeInviteUrl(request).url
 
     @async_dec()
     def join_group(self, token_or_url: str) -> Group:
@@ -426,7 +426,9 @@ class Groups(ManagedService):
         request = groups_pb2.RequestJoinGroup(
             token=token_or_url
         )
-        return self.__join_group(request)
+        response = self.internal.groups.JoinGroup(request)
+        self.manager.add_out_peer(response.group.out_peer)
+        return Group.from_api(response.group)
 
     @async_dec()
     def join_group_by_peer(self, group_peer: Peer or AsyncTask) -> None:
@@ -440,7 +442,7 @@ class Groups(ManagedService):
         request = groups_pb2.RequestJoinGroupByPeer(
             peer=out_peer
         )
-        self.__join_group_by_peer(request)
+        self.internal.groups.JoinGroupByPeer(request)
 
     def __get_out_peer(self, peer: peers_pb2.Peer) -> Tuple[peers_pb2.OutPeer,
                                                       peers_pb2.GroupOutPeer or peers_pb2.UserOutPeer] or None:
@@ -462,69 +464,3 @@ class Groups(ManagedService):
         self.manager.add_out_peer(
             peers_pb2.OutPeer(id=group.id, access_hash=group.access_hash, type=PeerType.PEERTYPE_GROUP))
         return Group.from_api(group)
-
-    def __peer_search(self, request: search_pb2.RequestPeerSearch) -> search_pb2.ResponsePeerSearch:
-        return self.internal.search.PeerSearch(request)
-
-    def __load_members(self, request: groups_pb2.RequestLoadMembers) -> groups_pb2.ResponseLoadMembers:
-        return self.internal.groups.LoadMembers(request)
-
-    def __set_default_group_permissions(self, request: groups_pb2.RequestEditGroupBasePermissions) -> None:
-        return self.internal.groups.EditGroupBasePermissions(request)
-
-    def __set_member_permissions(self, request: groups_pb2.RequestEditMemberPermissions) -> None:
-        return self.internal.groups.EditMemberPermissions(request)
-
-    def __get_group_member_permissions(self, request: groups_pb2.RequestGetGroupMemberPermissions) -> List[Permissions]:
-        return [Permissions.from_api(x) for x in self.internal.groups.GetGroupMemberPermissions(request).permissions]
-
-    def __edit_group_title(self, request: groups_pb2.RequestEditGroupTitle) -> None:
-        self.internal.groups.EditGroupTitle(request)
-
-    def __edit_group_avatar(self, request: groups_pb2.RequestEditGroupAvatar) -> Avatar:
-        return Avatar.from_api(self.internal.groups.EditGroupAvatar(request).avatar)
-
-    def __remove_group_avatar(self, request: groups_pb2.RequestRemoveGroupAvatar) -> UUID:
-        return UUID.from_api(self.internal.groups.RemoveGroupAvatar(request).mid)
-
-    def __edit_group_about(self, request: groups_pb2.RequestEditGroupAbout) -> None:
-        self.internal.groups.EditGroupAbout(request)
-
-    def __leave_group(self, request: groups_pb2.RequestLeaveGroup) -> None:
-        self.internal.groups.LeaveGroup(request)
-
-    def __make_user_admin(self, request: groups_pb2.RequestMakeUserAdmin) -> None:
-        self.internal.groups.MakeUserAdmin(request)
-
-    def __transfer_ownership(self, request: groups_pb2.RequestTransferOwnership) -> None:
-        self.internal.groups.TransferOwnership(request)
-
-    def __get_group_invite_url(self, request: groups_pb2.RequestGetGroupInviteUrl) -> str:
-        return self.internal.groups.GetGroupInviteUrl(request).url
-
-    def __get_group_invite_url_base(self, request: groups_pb2.RequestGetGroupInviteUrlBase) -> str:
-        return self.internal.groups.GetGroupInviteUrlBase(request).url
-
-    def __revoke_invite_url(self, request: groups_pb2.RequestRevokeInviteUrl) -> str:
-        return self.internal.groups.RevokeInviteUrl(request).url
-
-    def __join_group(self, request: groups_pb2.RequestJoinGroup) -> Group:
-        response = self.internal.groups.JoinGroup(request)
-        self.manager.add_out_peer(response.group.out_peer)
-        return Group.from_api(response.group)
-
-    def __join_group_by_peer(self, request: groups_pb2.RequestJoinGroupByPeer) -> None:
-        return self.internal.groups.JoinGroupByPeer(request)
-
-    def __get_referenced_entities(self, request: sequence_and_updates_pb2.RequestGetReferencedEntitites) \
-            -> ReferencedEntities:
-        return self.internal.updates.GetReferencedEntitites(request)
-
-    def __kick_user(self, request: groups_pb2.RequestKickUser) -> None:
-        self.internal.groups.KickUser(request)
-
-    def __invite_user(self, request: groups_pb2.RequestInviteUser) -> None:
-        self.internal.groups.InviteUser(request)
-
-    def __upload(self, file: str) -> media_and_files_pb2.FileLocation:
-        return self.internal.uploading.upload_file(file)

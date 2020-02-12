@@ -31,7 +31,7 @@ class EntityManager(object):
                 limit=1,
                 peers_to_load=[peer],
             )
-            result = self.__load_dialogs(req)
+            result = self.internal.messaging.LoadDialogs(req)
             for user in result.user_peers:
                 self.__adopt_peer(user)
             for group in result.group_peers:
@@ -54,6 +54,3 @@ class EntityManager(object):
 
     def add_out_peer(self, out_peer: peers_pb2.OutPeer) -> None:
         self.peer_to_out_peer.get((out_peer.type, out_peer.id))
-
-    def __load_dialogs(self, request):
-        return self.internal.messaging.LoadDialogs(request)

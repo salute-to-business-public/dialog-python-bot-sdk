@@ -30,7 +30,7 @@ class Users(ManagedService):
                     peers_pb2.UserOutPeer(uid=out_peer.id, access_hash=out_peer.access_hash)
                 ]
             )
-        result = self.__get_reference_entities(request)
+        result = ReferencedEntities.from_api(self.internal.updates.GetReferencedEntitites(request))
         for user in result.users:
             if hasattr(user.data, "nick") and user.data.nick == nick:
                 return user
@@ -78,11 +78,11 @@ class Users(ManagedService):
                     )
                 ]
             )
-        user_peers = self.__peer_search(request).user_peers
+        user_peers = self.internal.search.PeerSearch(request).user_peers
         request = sequence_and_updates_pb2.RequestGetReferencedEntitites(
                 users=list(user_peers)
             )
-        users_list = self.__get_reference_entities(request)
+        users_list = ReferencedEntities.from_api(self.internal.updates.GetReferencedEntitites(request))
         result = []
 
         for user in users_list.users:
@@ -113,7 +113,7 @@ class Users(ManagedService):
                 )
             ]
         )
-        full_profile = self.__load_full_users(request)
+        full_profile = self.internal.users.LoadFullUsers(request)
 
         if full_profile and hasattr(full_profile, 'full_users') and len(full_profile.full_users) > 0:
             return FullUser.from_api(full_profile.full_users[0])
@@ -129,22 +129,7 @@ class Users(ManagedService):
         request = search_pb2.RequestResolvePeer(
                 shortname=nick
             )
-        result = self.__resolve_peer(request)
+        result = self.internal.search.ResolvePeer(request)
         if hasattr(result, "peer"):
             self.manager.add_out_peer(result.peer)
             return result.peer
-
-    def __load_dialogs(self, request: messaging_pb2.RequestLoadDialogs) -> messaging_pb2.ResponseLoadDialogs:
-        return self.internal.messaging.LoadDialogs(request)
-
-    def __resolve_peer(self, request: search_pb2.RequestResolvePeer) -> search_pb2.ResponseResolvePeer:
-        return self.internal.search.ResolvePeer(request)
-
-    def __get_reference_entities(self, request: sequence_and_updates_pb2.RequestGetReferencedEntitites) -> ReferencedEntities:
-        return ReferencedEntities.from_api(self.internal.updates.GetReferencedEntitites(request))
-
-    def __load_full_users(self, request: users_pb2.RequestLoadFullUsers) -> users_pb2.ResponseLoadFullUsers:
-        return self.internal.users.LoadFullUsers(request)
-
-    def __peer_search(self, request: search_pb2.RequestPeerSearch) -> search_pb2.ResponsePeerSearch:
-        return self.internal.search.PeerSearch(request)
