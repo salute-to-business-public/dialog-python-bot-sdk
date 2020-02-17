@@ -14,7 +14,7 @@ class Users(ManagedService):
     """
     @async_dec()
     def get_user_by_nick(self, nick: str) -> User or None:
-        """Returns User by nickname
+        """return User by nickname
 
         :param nick: user's nickname
         :return: User
@@ -37,9 +37,9 @@ class Users(ManagedService):
 
     @async_dec()
     def get_user_by_id(self, user_id: int) -> User or None:
-        """Returns User  by user id
+        """return User by user id
 
-        :param user_id: user's nickname
+        :param user_id: user's id
         :return: User or None if not found
         """
         if not isinstance(user_id, int):
@@ -65,7 +65,7 @@ class Users(ManagedService):
         """Returns list of User objects by substring of nickname (not complete coincidence!)
 
         :param query: user's nickname
-        :return: list User objects
+        :return: list of Users
         """
         request = search_pb2.RequestPeerSearch(
                 query=[
@@ -92,10 +92,10 @@ class Users(ManagedService):
 
     @async_dec()
     def get_full_profile_by_nick(self, nick: str) -> FullUser or None:
-        """Returns FullUser object by nickname
+        """return FullUser profile by nickname
 
         :param nick: user's nickname
-        :return: FullUser object
+        :return: FullUser
         """
         out_peer = self.__find_out_peer_by_nick(nick)
         return self.get_user_by_id(out_peer.id)
@@ -119,11 +119,6 @@ class Users(ManagedService):
             return FullUser.from_api(full_profile.full_users[0])
 
     def __find_out_peer_by_nick(self, nick: str) -> peers_pb2.OutPeer:
-        """Return OutPeer by nick
-
-        :param nick: nick
-        :return: OutPeer object
-        """
         if not isinstance(nick, str):
             raise RuntimeError("Invalid input data. Expects {}, got {}.".format(str.__class__, type(nick)))
         request = search_pb2.RequestResolvePeer(

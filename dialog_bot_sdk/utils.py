@@ -2,15 +2,20 @@ import io
 import logging
 import mimetypes
 import sys
-import threading
+import time
+from typing import List
+from concurrent.futures import ThreadPoolExecutor
 
 import six
 from PIL import Image
 from dialog_api import peers_pb2, media_and_files_pb2, messaging_pb2
-from google.protobuf import wrappers_pb2
 
 from dialog_bot_sdk.entities.Peer import Peer, PeerType
+from dialog_bot_sdk.entities.UUID import UUID
 from dialog_bot_sdk.exceptions.exceptions import UnknownPeerError
+
+
+POOL = ThreadPoolExecutor(max_workers=10)
 
 
 def get_image_w_h(file):
@@ -40,34 +45,6 @@ def get_image_thumb_bytes(file):
     im.save(stream, "JPEG")
 
     return size[0], size[1], stream.getvalue()
-
-
-def get_str_val(s):
-    """Return obj google.protobuf.StringValue
-
-    :param s: string
-    :return: StringValue
-    """
-    return wrappers_pb2.StringValue(value=s)
-
-
-def get_webpage(url, title=None, description=None, image_location=None):
-    """Return MessageMedia with WebpageMedia for messaging.send_media
-
-    :param url: url (str)
-    :param title: title (str)
-    :param description: description (str)
-    :param image_location: image (ImageLocation)
-    :return: MessageMedia obj
-    """
-    return messaging_pb2.MessageMedia(
-        webpage=messaging_pb2.WebpageMedia(
-            url=get_str_val(url),
-            title=get_str_val(title),
-            description=get_str_val(description),
-            image=image_location
-        )
-    )
 
 
 def get_image_location(bot, file, width=100, height=100):
@@ -110,7 +87,6 @@ def read_file_in_chunks(file, chunk_size=1024*1024):
     :param chunk_size: size of a chunk
     :return: generator object that iterates over file chunks
     """
-
     file_object = open(file, 'rb')
     while True:
         data = file_object.read(chunk_size)
@@ -127,22 +103,22 @@ class AsyncTask:
         self.kwargs = kwargs
 
         self.done = False
-        self.thread = threading.Thread(target=self._run)
-        self.thread.start()
+        POOL.submit(self._run)
 
     def _run(self):
         try:
             self.result = self.target(*self.args, **self.kwargs)
         except:
             self.result = sys.exc_info()
+            logging.error(self.result[0], self.result[1], self.result[2])
             six.reraise(self.result[0], self.result[1], self.result[2])
-
         self.done = True
 
     def wait(self):
-        if not self.done:
-            self.thread.join()
+        while not self.done:
+            time.sleep(0.01)
         if isinstance(self.result, BaseException):
+            logging.error(self.result[0], self.result[1], self.result[2])
             six.reraise(self.result[0], self.result[1], self.result[2])
         else:
             logging.debug("target: {}\nargs: {}\nkwargs: {}\nresult: {}\n"
@@ -164,7 +140,7 @@ def get_peer(peer: Peer or AsyncTask) -> peers_pb2.Peer or None:
     if isinstance(peer, AsyncTask):
         from_task = peer.wait()
         if not hasattr(from_task, 'peer'):
-            raise AttributeError("'{}' has not attribute 'peer'".format(type(from_task)))
+            raise AttributeError("{} has not attribute 'peer'".format(type(from_task)))
         peer = from_task.peer
     if not isinstance(peer, Peer):
         raise AttributeError("peer must be {}, got {}.".format(Peer.__class__, type(peer)))
@@ -172,3 +148,15 @@ def get_peer(peer: Peer or AsyncTask) -> peers_pb2.Peer or None:
         return peers_pb2.Peer(id=peer.id, type=peer.type)
     else:
         raise UnknownPeerError("Unknown PeerType.")
+
+
+def get_uuids(uuids: List[UUID or AsyncTask]):
+    for i in range(len(uuids)):
+        uuid = uuids[i]
+        if isinstance(uuid, AsyncTask):
+            uuid = uuid.wait()
+        if isinstance(uuid, UUID):
+            uuids[i] = uuid.to_api()
+        else:
+            raise AttributeError("uuid must be {}, got {}.".format(UUID.__class__, type(uuid)))
+    return uuids

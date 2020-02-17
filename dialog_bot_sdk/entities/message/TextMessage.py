@@ -9,16 +9,24 @@ from dialog_bot_sdk.entities.media.WebpageMedia import WebPageMedia
 
 
 class MessageMedia:
-    def __init__(self, web_page: WebPageMedia, image: ImageMedia, audio: AudioMedia,
-                 actions: List[InteractiveMediaGroup]) -> None:
+    def __init__(self, web_page: WebPageMedia = None, image: ImageMedia = None, audio: AudioMedia = None,
+                 actions: List[InteractiveMediaGroup] = None) -> None:
         self.web_page = web_page
         self.image = image
         self.audio = audio
         self.actions = actions
 
     def to_api(self) -> messaging_pb2.MessageMedia:
-        return messaging_pb2.MessageMedia(webpage=self.web_page.to_api(), image=self.image.to_api(),
-                                          audio=self.audio.to_api(), actions=[x.to_api() for x in self.actions])
+        web, image, audio, actions = None, None, None, []
+        if self.web_page is not None:
+            web = self.web_page.to_api()
+        if self.image is not None:
+            image = self.image.to_api()
+        if self.audio is not None:
+            audio = self.audio.to_api()
+        if self.actions is not None:
+            actions = [x.to_api() for x in self.actions]
+        return messaging_pb2.MessageMedia(webpage=web, image=image, audio=audio, actions=actions)
 
     @classmethod
     def from_api(cls, message_media: messaging_pb2.MessageMedia) -> 'MessageMedia':

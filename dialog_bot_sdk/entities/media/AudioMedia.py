@@ -1,10 +1,12 @@
 from dialog_api import media_and_files_pb2, messaging_pb2
 
 from dialog_bot_sdk.entities.media.FileLocation import FileLocation
+from dialog_bot_sdk.utils import AsyncTask
 
 
 class AudioLocation:
-    def __init__(self, file_location: FileLocation, duration: int, mime_type: str, file_size: int) -> None:
+    def __init__(self, file_location: FileLocation or AsyncTask, duration: int = 0, mime_type: str = "",
+                 file_size: int = 0) -> None:
         self.file_location = file_location
         self.duration = duration
         self.mime_type = mime_type
@@ -31,7 +33,7 @@ class AudioMedia:
         self.audio = audio
 
     def to_api(self) -> messaging_pb2.AudioMedia:
-        return messaging_pb2.AudioMedia(audio=self.audio)
+        return messaging_pb2.AudioMedia(audio=self.audio.to_api())
 
     @classmethod
     def from_api(cls, image: messaging_pb2.AudioMedia) -> 'AudioMedia':

@@ -1,4 +1,3 @@
-from concurrent.futures import ThreadPoolExecutor
 from .service import AuthenticatedService
 from dialog_api import registration_pb2, registration_pb2_grpc, \
     sequence_and_updates_pb2_grpc, \
@@ -27,7 +26,6 @@ class InternalBot(object):
         self.users = self.wrap_service(users_pb2_grpc.UsersStub, verbose=verbose, options=options)
         self.groups = self.wrap_service(groups_pb2_grpc.GroupsStub, verbose=verbose, options=options)
         self.token = self.get_session_token()
-        self.thread_pool_executor = ThreadPoolExecutor(max_workers=10)
         self.uploading = Uploading(self, cert, private_key, access_dir=access_dir)
 
     def authorize(self, bot_token):

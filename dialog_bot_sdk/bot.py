@@ -50,14 +50,15 @@ class DialogBot(object):
     def get_insecure_bot(endpoint: str, bot_token: str, verbose: bool = False, options: dict = None,
                          retry_options: dict = None) -> 'DialogBot':
         """Returns Dialog bot with established gRPC insecure channel.
-        :param retry_options: dict of retries options (delay_factor, min_delay, max_delay, max_retries)
+
         :param endpoint: bot's endpoint address
         :param bot_token: bot's token
         :param verbose: verbosity level of functions calling
         :param options: channel's options
+        :param retry_options: dict of retries options (delay_factor, min_delay, max_delay, max_retries)
         :return: Dialog bot instance
         """
-        options = DialogBot.get_options(options)
+        options = DialogBot.__get_options(options)
         channel = grpc.insecure_channel(endpoint, options=options)
         return DialogBot(channel, bot_token, verbose=verbose, options=retry_options)
 
@@ -65,15 +66,16 @@ class DialogBot(object):
     def get_secure_bot(endpoint: str, credentials, bot_token: str, verbose: bool = False, options: dict = None,
                        retry_options: dict = None) -> 'DialogBot':
         """Returns Dialog bot with established gRPC insecure channel.
-        :param retry_options: dict of retries options (delay_factor, min_delay, max_delay, max_retries)
+
         :param endpoint: bot's endpoint address
         :param credentials: SSL credentials
         :param bot_token: bot's token
         :param verbose: verbosity level of functions calling
         :param options: channel's options
+        :param retry_options: dict of retries options (delay_factor, min_delay, max_delay, max_retries)
         :return: Dialog bot instance
         """
-        options = DialogBot.get_options(options)
+        options = DialogBot.__get_options(options)
         channel = grpc.secure_channel(endpoint, credentials, options=options)
         return DialogBot(channel, bot_token, verbose=verbose, options=retry_options)
 
@@ -81,7 +83,7 @@ class DialogBot(object):
     def get_secure_bot_with_pfx_certificate(endpoint: str, pfx_certificate, pfx_password, verbose: bool = False,
                                             access_dir=None, options: dict = None,
                                             retry_options: dict = None) -> 'DialogBot':
-        options = DialogBot.get_options(options)
+        options = DialogBot.__get_options(options)
         pfx1 = open(pfx_certificate, 'rb').read()
         p12 = OpenSSL.crypto.load_pkcs12(pfx1, pfx_password)
 
@@ -111,7 +113,7 @@ class DialogBot(object):
                          access_dir=access_dir, options=retry_options)
 
     @staticmethod
-    def get_options(options: dict) -> list:
+    def __get_options(options: dict) -> list:
         options_dict = copy.deepcopy(DEFAULT_OPTIONS)
         if options:
             for key, value in options.items():

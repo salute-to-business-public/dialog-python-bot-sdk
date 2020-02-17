@@ -1,3 +1,5 @@
+from typing import List
+
 from dialog_api import messaging_pb2
 
 from dialog_bot_sdk.entities.media.InteractiveMediaGroup import InteractiveMediaStyle
@@ -25,7 +27,7 @@ class InteractiveMediaSelect(object):
     """Select control class.
 
     """
-    def __init__(self, options, label=None, default_value=None) -> None:
+    def __init__(self, options: dict, label: str = None, default_value: str = None) -> None:
         if options is None:
             raise AttributeError('Attribute \'options\' can\'t be None.')
 
@@ -52,7 +54,7 @@ class InteractiveMediaConfirm(object):
     """Confirm control class.
 
     """
-    def __init__(self, text=None, title=None, ok=None, dismiss=None) -> None:
+    def __init__(self, text: str = None, title: str = None, ok: str = None, dismiss: str = None) -> None:
         self.text = text
         self.title = title
         self.ok = ok
@@ -117,7 +119,8 @@ class InteractiveMediaGroup(object):
     """Wrapper class for interactive object grouping.
 
     """
-    def __init__(self, actions, title=None, description=None, translations=None) -> None:
+    def __init__(self, actions: List[InteractiveMedia], title: str = None, description: str = None,
+                 translations: List[str] = None) -> None:
         if not isinstance(actions, list):
             raise AttributeError('Actions must be an iterable.')
 

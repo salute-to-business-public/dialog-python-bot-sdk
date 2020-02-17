@@ -7,7 +7,7 @@ class FileLocation:
         self.access_hash = access_hash
 
     def to_api(self) -> media_and_files_pb2.FileLocation:
-        return FileLocation(file_id=self.file_id, access_hash=self.access_hash)
+        return media_and_files_pb2.FileLocation(file_id=self.file_id, access_hash=self.access_hash)
 
     @classmethod
     def from_api(cls, location: media_and_files_pb2.FileLocation) -> 'FileLocation':

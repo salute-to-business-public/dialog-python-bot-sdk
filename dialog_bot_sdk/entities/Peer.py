@@ -24,7 +24,12 @@ class Peer:
         return cls(peer.id, peer.type)
 
     def __dict__(self):
-        return {"id": self.id, "type": PeerTypeMap.self.type}
+        return {"id": self.id, "type": self.type}
 
     def __str__(self):
         return "Peer({})".format(self.__dict__())
+
+    def __eq__(self, other):
+        if self.id == other.id and self.type == other.type:
+            return True
+        return False

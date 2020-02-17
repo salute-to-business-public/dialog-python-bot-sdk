@@ -78,8 +78,8 @@ class Message:
     def from_api(cls, message: messaging_pb2.HistoryMessage) -> 'Message':
         return cls(UUID.from_api(message.mid), UUID.from_api(message.prev_mid),
                    Peer(message.sender_peer.id, PeerType.PEERTYPE_PRIVATE),
-                   MessageContent.from_api(message.message), [UUID.from_api(x.mid) for x in message.reply],
-                   [UUID.from_api(x.mid) for x in message.forward], message.date, message.edited_at.value)
+                   MessageContent.from_api(message.message), [UUID.from_api(x) for x in message.reply.mids],
+                   [UUID.from_api(x) for x in message.forward.mids], message.date, message.edited_at.value)
 
     def __dict__(self):
         return {"mid": self.mid.__str__(), "prev_mid": self.prev_mid.__str__(),

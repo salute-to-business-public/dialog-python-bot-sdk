@@ -17,8 +17,8 @@ class EntityManager(object):
     def get_out_peer(self, peer: Peer or peers_pb2.Peer) -> peers_pb2.OutPeer or None:
         """Returns OutPeer for given Peer.
 
-        :param peer: Peer object
-        :return: OutPeer object
+        :param peer: Peer
+        :return: OutPeer
         """
         if isinstance(peer, Peer):
             peer = peer.to_api()
@@ -53,4 +53,9 @@ class EntityManager(object):
         self.peer_to_out_peer[(out_peer.type, out_peer.id)] = out_peer
 
     def add_out_peer(self, out_peer: peers_pb2.OutPeer) -> None:
+        """Adding OutPeers to peer_to_out_peer
+
+        :param out_peer: OutPeer
+        :return: None
+        """
         self.peer_to_out_peer.get((out_peer.type, out_peer.id))

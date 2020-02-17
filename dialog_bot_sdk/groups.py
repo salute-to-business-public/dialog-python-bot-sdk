@@ -6,13 +6,12 @@ from google.protobuf import wrappers_pb2
 from dialog_bot_sdk.entities.Avatar import Avatar
 from dialog_bot_sdk.entities.Group import Group
 from dialog_bot_sdk.entities.Permissions import Permissions, GroupPermission
-from dialog_bot_sdk.entities.ReferencedEntities import ReferencedEntities
 from dialog_bot_sdk.entities.UUID import UUID
 from dialog_bot_sdk.entities.User import User
 from dialog_bot_sdk.entities.Peer import Peer, PeerType
 from dialog_bot_sdk.utils import async_dec, AsyncTask, get_peer
 from .service import ManagedService
-from dialog_api import search_pb2, groups_pb2, peers_pb2, sequence_and_updates_pb2, media_and_files_pb2
+from dialog_api import search_pb2, groups_pb2, peers_pb2, sequence_and_updates_pb2
 
 
 class Groups(ManagedService):
@@ -79,10 +78,10 @@ class Groups(ManagedService):
 
     @async_dec()
     def find_group_by_short_name(self, short_name: str) -> Group or None:
-        """Find a groups by short_name
+        """Find a Group by short_name
 
         :param short_name: short_name of group
-        :return: PeerSearchResult or None if could not find
+        :return: Group or None if could not find
         """
         request = search_pb2.RequestPeerSearch(
             query=[
@@ -101,20 +100,20 @@ class Groups(ManagedService):
             print(result)
             if result.peer.type == PeerType.PEERTYPE_GROUP and hasattr(result, 'shortname') and \
                     result.shortname.value == short_name:
-                return self.find_group_by_id(result.peer.id)
+                return self.find_group_by_id(result.peer.id).wait()
 
     @async_dec()
     def find_group_by_id(self, group_id: int) -> Group or None:
-        """search and return group by id
+        """Find and return Group by id
 
         :param group_id: group's
         :return: Group or None if could not find
         """
-        out_peer = self.__get_out_peer(Peer(group_id, PeerType.PEERTYPE_GROUP))
+        out_peer = self.__get_out_peer(Peer(group_id, PeerType.PEERTYPE_GROUP))[1]
         if out_peer is None:
             return None
         request = sequence_and_updates_pb2.RequestGetReferencedEntitites(
-            groups=[out_peer[1]]
+            groups=[out_peer]
         )
         result = self.internal.updates.GetReferencedEntitites(request).groups
         self.manager.add_out_peer(self.__get_out_peer(Peer(result[0].id, PeerType.PEERTYPE_GROUP))[0])
@@ -122,14 +121,14 @@ class Groups(ManagedService):
 
     @async_dec()
     def load_members(self, group_peer: Peer or AsyncTask, limit: int = 0) -> List[User] or None:
-        """User's list from group
+        """Load Group members by peer
 
-        :param group_peer: group's Peer
+        :param group_peer: Peer or AsyncTask (in which located Group)
         :param limit: count members
         :return: list of User's
         """
         group_peer = get_peer(group_peer)
-        out_peer = self.__get_out_peer(group_peer)
+        out_peer = self.__get_out_peer(group_peer)[1]
 
         if not out_peer:
             return None
@@ -151,10 +150,10 @@ class Groups(ManagedService):
 
     @async_dec()
     def kick_user(self, group_peer: Peer or AsyncTask, user_peer: Peer or AsyncTask) -> None:
-        """return response of KickUser
+        """Kick user from Group
 
-        :param group_peer: group's Peer
-        :param user_peer: user's Peer
+        :param group_peer: Peer or AsyncTask (in which located Group)
+        :param user_peer: Peer or AsyncTask (in which located User)
         :return: None
         """
         group_peer, user_peer = get_peer(group_peer), get_peer(user_peer)
@@ -168,10 +167,10 @@ class Groups(ManagedService):
 
     @async_dec()
     def invite_user(self, group_peer: Peer or AsyncTask, user_peer: Peer or AsyncTask) -> None:
-        """return response of InviteUser
+        """Invite user in Group
 
-        :param group_peer: group's Peer
-        :param user_peer: user's Peer
+        :param group_peer: Peer or AsyncTask (in which located Group)
+        :param user_peer: Peer or AsyncTask (in which located User)
         :return: None
         """
         group_peer, user_peer = get_peer(group_peer), get_peer(user_peer)
@@ -189,7 +188,7 @@ class Groups(ManagedService):
                                       del_permissions: List[GroupPermission] = None) -> None:
         """add/del default group permissions
 
-        :param group_peer: group's peer
+        :param group_peer: Peer or AsyncTask (in which located Group)
         :param add_permissions: list of permissions to add
         :param del_permissions: list of permissions to delete
         :return: None
@@ -221,8 +220,8 @@ class Groups(ManagedService):
                                del_permissions: List[GroupPermission] = None) -> None:
         """add/del group's member permissions
 
-        :param group_peer: group's peer
-        :param user_peer: OutPeer of user
+        :param group_peer: Peer or AsyncTask (in which located Group)
+        :param user_peer: Peer or AsyncTask (in which located User)
         :param add_permissions: list of permissions to add
         :param del_permissions: list of permissions to delete
         :return: None
@@ -252,8 +251,8 @@ class Groups(ManagedService):
             -> List[Permissions]:
         """return group member's permissions
 
-        :param group_peer: Group's Peer
-        :param user_peers: User's Peer
+        :param group_peer: Peer or AsyncTask (in which located Group)
+        :param user_peers: Peer or AsyncTask (in which located User)
         :return: group member's permissions
         """
         group_peer, user_peers = get_peer(group_peer), [get_peer(x) for x in user_peers]
@@ -267,8 +266,8 @@ class Groups(ManagedService):
     def edit_group_title(self, group_peer: Peer or AsyncTask, title: str) -> None:
         """change group's title
 
-        :param group_peer: group's Peer
-        :param title: new title (string)
+        :param group_peer: Peer or AsyncTask (in which located Group)
+        :param title: new title
         :return: None
         """
         group_peer = get_peer(group_peer)
@@ -284,7 +283,7 @@ class Groups(ManagedService):
     def edit_avatar(self, group_peer: Peer or AsyncTask, file: str) -> Avatar:
         """change group's avatar
 
-        :param group_peer: group's Peer
+        :param group_peer: Peer or AsyncTask (in which located Group)
         :param file: file path
         :return: Avatar
         """
@@ -302,7 +301,7 @@ class Groups(ManagedService):
     def remove_group_avatar(self, group_peer: Peer or AsyncTask) -> UUID:
         """deleted group's avatar
 
-        :param group_peer: group's Peer
+        :param group_peer: Peer or AsyncTask (in which located User)
         :return: None
         """
         group_peer = get_peer(group_peer)
@@ -317,8 +316,8 @@ class Groups(ManagedService):
     def edit_group_about(self, group_peer: Peer or AsyncTask, about: str) -> None:
         """change group's "about"
 
-        :param group_peer: group's peer
-        :param about: about text (string)
+        :param group_peer: Peer or AsyncTask (in which located User)
+        :param about: about text
         :return: None
         """
         group_peer = get_peer(group_peer)
@@ -334,11 +333,11 @@ class Groups(ManagedService):
     def leave_group(self, group_peer: Peer or AsyncTask) -> None:
         """leave from group
 
-        :param group_peer: group's Peer
+        :param group_peer: Peer or AsyncTask (in which located Group)
         :return: None
         """
         group_peer = get_peer(group_peer)
-        out_peer = self.__get_out_peer(group_peer)
+        out_peer = self.__get_out_peer(group_peer)[1]
         request = groups_pb2.RequestLeaveGroup(
             group_peer=out_peer,
             rid=random.randint(0, 100000000),
@@ -350,8 +349,8 @@ class Groups(ManagedService):
                         permissions: List[GroupPermission]) -> None:
         """Set new user's permissions (old permissions will be revoke)
 
-        :param group_peer: group's Peer
-        :param user_peer: user's Peer
+        :param group_peer: Peer or AsyncTask (in which located Group)
+        :param user_peer: Peer or AsyncTask (in which located User)
         :param permissions: permissions list (for admin)
         :return: None
         """
@@ -368,8 +367,8 @@ class Groups(ManagedService):
     def transfer_ownership(self, group_peer: Peer or AsyncTask, user_peer: Peer or AsyncTask) -> None:
         """change group's owner to user
 
-        :param group_peer: group's Peer
-        :param user_peer: user's Peer
+        :param group_peer: Peer or AsyncTask (in which located Group)
+        :param user_peer: Peer or AsyncTask (in which located User)
         :return: None
         """
         group_peer, user_peer = get_peer(group_peer), get_peer(user_peer)
@@ -384,7 +383,7 @@ class Groups(ManagedService):
     def get_group_invite_url(self, group_peer: Peer or AsyncTask) -> str:
         """return group's invite url
 
-        :param group_peer: Peer
+        :param group_peer: Peer or AsyncTask (in which located Group)
         :return: invite url
         """
         group_peer = get_peer(group_peer)
@@ -434,7 +433,7 @@ class Groups(ManagedService):
     def join_group_by_peer(self, group_peer: Peer or AsyncTask) -> None:
         """join to group by group's peer (used for public groups)
 
-        :param group_peer: Peer
+        :param group_peer: Peer or AsyncTask (in which located Group)
         :return: None
         """
         group_peer = get_peer(group_peer)
@@ -445,7 +444,7 @@ class Groups(ManagedService):
         self.internal.groups.JoinGroupByPeer(request)
 
     def __get_out_peer(self, peer: peers_pb2.Peer) -> Tuple[peers_pb2.OutPeer,
-                                                      peers_pb2.GroupOutPeer or peers_pb2.UserOutPeer] or None:
+                                                            peers_pb2.GroupOutPeer or peers_pb2.UserOutPeer] or None:
         out_peer = self.manager.get_out_peer(peer)
         if out_peer is None:
             return None
@@ -455,11 +454,6 @@ class Groups(ManagedService):
             return out_peer, peers_pb2.UserOutPeer(uid=out_peer.id, access_hash=out_peer.access_hash)
 
     def __create_group(self, request: groups_pb2.RequestCreateGroup) -> Group:
-        """return Group by RequestCreateGroup
-
-        :param request: RequestCreateGroup
-        :return: Group
-        """
         group = self.internal.groups.CreateGroup(request).group
         self.manager.add_out_peer(
             peers_pb2.OutPeer(id=group.id, access_hash=group.access_hash, type=PeerType.PEERTYPE_GROUP))
