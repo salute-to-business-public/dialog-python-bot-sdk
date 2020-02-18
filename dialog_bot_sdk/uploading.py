@@ -3,8 +3,10 @@ import requests
 from concurrent.futures import ThreadPoolExecutor
 from tempfile import NamedTemporaryFile
 
-from .utils.read_file_in_chunks import read_file_in_chunks
 from dialog_api import media_and_files_pb2
+
+from dialog_bot_sdk.entities.media.FileLocation import FileLocation
+from dialog_bot_sdk.utils import async_dec, read_file_in_chunks, POOL
 
 
 class Uploading(object):
@@ -12,13 +14,47 @@ class Uploading(object):
 
     """
 
-    def __init__(self, internal, cert, private_key, access_dir):
+    def __init__(self, internal, cert, private_key, access_dir, parallelism=10):
         self.internal = internal
         self.cert = cert
         self.private_key = private_key
         self.access_dir = access_dir
+        self.pool = ThreadPoolExecutor(max_workers=parallelism)
 
-    def upload_file_chunk(self, part_number, chunk, upload_key, access_dir=None):
+    @async_dec()
+    def upload_file(self, file, max_chunk_size=1024*1024):
+        """Upload file for sending.
+
+        :param file: path to file
+        :param max_chunk_size: maximum size of one chunk (default 1024 * 1024)
+        :return: FileLocation object if success or None otherwise
+        """
+
+        req = media_and_files_pb2.RequestGetFileUploadUrl(
+                expected_size=os.path.getsize(file)
+            )
+        upload_key = self.internal.media_and_files.GetFileUploadUrl(req).upload_key
+        result = list(
+            self.pool.map(
+                lambda x: self.__upload_file_chunk(*x),
+                (
+                    (part_number, chunk, upload_key, self.access_dir) for part_number, chunk in enumerate(
+                     read_file_in_chunks(file, max_chunk_size)
+                    )
+                )
+            )
+        )
+
+        if not all(result):
+            return None
+
+        request = media_and_files_pb2.RequestCommitFileUpload(
+            upload_key=upload_key,
+            file_name=os.path.basename(file)
+        )
+        return FileLocation.from_api(self.internal.media_and_files.CommitFileUpload(request).uploaded_file_location)
+
+    def __upload_file_chunk(self, part_number, chunk, upload_key, access_dir=None):
         """Upload file chunk.
 
         :param part_number: number of chunk (>=0)
@@ -32,7 +68,7 @@ class Uploading(object):
             part_size=len(chunk),
             upload_key=upload_key
         )
-        url = self._get_file_upload_part_url(request).url
+        url = self.internal.media_and_files.GetFileUploadPartUrl(request).url
 
         if self.cert and self.private_key:
             with NamedTemporaryFile(dir=access_dir, delete=False) as cert_file:
@@ -68,47 +104,3 @@ class Uploading(object):
             return None
 
         return put_response
-
-    def upload_file(self, file, max_chunk_size=1024*1024, parallelism=10):
-        """Upload file for sending.
-
-        :param file: path to file
-        :param max_chunk_size: maximum size of one chunk (default 1024 * 1024)
-        :param parallelism: number of uploading threads (default: 10)
-        :return: FileLocation object if success or None otherwise
-        """
-
-        req = media_and_files_pb2.RequestGetFileUploadUrl(
-                expected_size=os.path.getsize(file)
-            )
-        upload_key = self._get_file_upload_url(req).upload_key
-
-        with ThreadPoolExecutor(max_workers=parallelism) as executor:
-            result = list(
-                executor.map(
-                    lambda x: self.upload_file_chunk(*x),
-                    (
-                        (part_number, chunk, upload_key, self.access_dir) for part_number, chunk in enumerate(
-                            read_file_in_chunks(file, max_chunk_size)
-                        )
-                    )
-                )
-            )
-
-            if not all(result):
-                return None
-
-        request = media_and_files_pb2.RequestCommitFileUpload(
-            upload_key=upload_key,
-            file_name=os.path.basename(file)
-        )
-        return self._commit_file_upload(request).uploaded_file_location
-
-    def _get_file_upload_part_url(self, request):
-        return self.internal.media_and_files.GetFileUploadPartUrl(request)
-
-    def _get_file_upload_url(self, request):
-        return self.internal.media_and_files.GetFileUploadUrl(request)
-
-    def _commit_file_upload(self, request):
-        return self.internal.media_and_files.CommitFileUpload(request)

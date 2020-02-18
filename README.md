@@ -15,18 +15,16 @@ import grpc
 import os
 
 
-def on_msg(*params):
-    bot.messaging.send_message(
-        params[0].peer, 'Reply to : ' + str(params[0].message.textMessage.text)
-    )
+def on_msg(params):
+    bot.messaging.send_message(params.peer, 'Reply to : ' + str(params.message.textMessage.text))
 
 
 if __name__ == '__main__':
     bot = DialogBot.get_secure_bot(
-        os.environ.get('BOT_ENDPOINT'),  # bot endpoint from environment
-        grpc.ssl_channel_credentials(), # SSL credentials (empty by default!)
-        os.environ.get('BOT_TOKEN')  # bot token from environment
+        os.environ.get('BOT_ENDPOINT'),     # bot endpoint from environment
+        grpc.ssl_channel_credentials(),     # SSL credentials (empty by default!)
+        os.environ.get('BOT_TOKEN')         # bot token from environment
     )
 
-    bot.messaging.on_message(on_msg)
+    bot.messaging.on_message_async(on_msg)
 ```
