@@ -20,7 +20,7 @@ class Users(ManagedService):
         :return: User
         """
         if not isinstance(nick, str):
-            raise RuntimeError("Invalid input data. Expects {}, got {}.".format(str.__class__, type(nick)))
+            raise RuntimeError("Invalid input data. Expects {}, got {}.".format(str, type(nick)))
         out_peer = self.__find_out_peer_by_nick(nick)
         if out_peer.id == out_peer.access_hash == 0:
             return None
@@ -43,7 +43,7 @@ class Users(ManagedService):
         :return: User or None if not found
         """
         if not isinstance(user_id, int):
-            raise RuntimeError("Invalid input data. Expects {}, got {}.".format(int.__class__, type(user_id)))
+            raise RuntimeError("Invalid input data. Expects {}, got {}.".format(int, type(user_id)))
         req = messaging_pb2.RequestLoadDialogs(
             min_date=0,
             limit=1,
@@ -82,13 +82,13 @@ class Users(ManagedService):
         request = sequence_and_updates_pb2.RequestGetReferencedEntitites(
                 users=list(user_peers)
             )
-        users_list = ReferencedEntities.from_api(self.internal.updates.GetReferencedEntitites(request))
+        users_list = ReferencedEntities.from_api(self.internal.updates.GetReferencedEntitites(request)).users
         result = []
 
-        for user in users_list.users:
-            if hasattr(user.data, "nick") and query in user.data.nick.value:
+        for user in users_list:
+            if hasattr(user.data, "nick") and query in user.data.nick:
                 result.append(user)
-        return [User.from_api(x) for x in result]
+        return result
 
     @async_dec()
     def get_full_profile_by_nick(self, nick: str) -> FullUser or None:
@@ -98,7 +98,7 @@ class Users(ManagedService):
         :return: FullUser
         """
         out_peer = self.__find_out_peer_by_nick(nick)
-        return self.get_user_by_id(out_peer.id)
+        return self.get_full_profile_by_id(out_peer.id).wait()
 
     @async_dec()
     def get_full_profile_by_id(self, id_: int) -> FullUser or None:
@@ -120,7 +120,7 @@ class Users(ManagedService):
 
     def __find_out_peer_by_nick(self, nick: str) -> peers_pb2.OutPeer:
         if not isinstance(nick, str):
-            raise RuntimeError("Invalid input data. Expects {}, got {}.".format(str.__class__, type(nick)))
+            raise RuntimeError("Invalid input data. Expects {}, got {}.".format(str, type(nick)))
         request = search_pb2.RequestResolvePeer(
                 shortname=nick
             )

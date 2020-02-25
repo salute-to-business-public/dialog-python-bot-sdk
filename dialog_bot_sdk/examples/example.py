@@ -100,9 +100,9 @@ def on_event(params):
 
 if __name__ == '__main__':
     bot = DialogBot.get_secure_bot(
-        'eem.dlg.im:443',                           # bot endpoint
+        'endpoint',                                 # bot endpoint
         grpc.ssl_channel_credentials(),             # SSL credentials (empty by default!)
-        '072e0743ce68189fdde6aa6944c0fcde86c4b73a'  # bot token
+        'token'                                     # bot token
     )
 
     bot.messaging.on_message_async(on_msg, on_event)

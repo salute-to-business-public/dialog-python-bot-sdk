@@ -58,4 +58,4 @@ class EntityManager(object):
         :param out_peer: OutPeer
         :return: None
         """
-        self.peer_to_out_peer.get((out_peer.type, out_peer.id))
+        self.peer_to_out_peer[(out_peer.type, out_peer.id)] = out_peer

@@ -126,6 +126,7 @@ class Messaging(ManagedService):
         :return: None
         """
         peer = get_peer(peer)
+        peer = self.manager.get_out_peer(peer)
         request = messaging_pb2.RequestMessageRead(
             peer=peer,
             date=date
@@ -133,7 +134,7 @@ class Messaging(ManagedService):
         self.internal.messaging.MessageRead(request)
 
     @async_dec()
-    def send_file(self, peer: Peer or AsyncTask, file: str) -> UUID:
+    def send_file(self, peer: Peer or AsyncTask, file: str) -> UUID or None:
         """Send file to peer.
 
         :param peer: Peer or AsyncTask (in which located User or Group)
@@ -141,7 +142,11 @@ class Messaging(ManagedService):
         :return: UUID (message id)
         """
         peer = get_peer(peer)
-        location = self.internal.uploading.upload_file(file).wait().to_api()
+        location = self.internal.uploading.upload_file(file).wait()
+        if location is None:
+            return None
+        location = location.to_api()
+
         out_peer = self.manager.get_out_peer(peer)
         msg = messaging_pb2.MessageContent()
 
@@ -179,7 +184,7 @@ class Messaging(ManagedService):
         return self.__send_message(request)
 
     @async_dec()
-    def send_image(self, peer: Peer or AsyncTask, file: str) -> UUID:
+    def send_image(self, peer: Peer or AsyncTask, file: str) -> UUID or None:
         """Send image as image (not as file) to peer.
 
         :param peer: Peer or AsyncTask (in which located User or Group)
@@ -191,7 +196,10 @@ class Messaging(ManagedService):
         if isinstance(file, str) and not is_image(file):
             raise IOError('File is not an image.')
 
-        location = self.internal.uploading.upload_file(file).wait().to_api()
+        location = self.internal.uploading.upload_file(file).wait()
+        if location is None:
+            return None
+        location = location.to_api()
         out_peer = self.manager.get_out_peer(peer)
         msg = messaging_pb2.MessageContent()
 
@@ -361,12 +369,12 @@ class Messaging(ManagedService):
         return out_peer, msg
 
     @staticmethod
-    def __get_medias(medias: List[MessageMedia]) -> List[messaging_pb2.MessageMedia]:
+    def __get_medias(medias: List[MessageMedia]) -> List[messaging_pb2.MessageMedia] or None:
         for i in range(len(medias)):
             if medias[i].audio and isinstance(medias[i].audio.audio.file_location, AsyncTask):
                 medias[i].audio.audio.file_location = medias[i].audio.audio.file_location.wait()
             if medias[i].image and isinstance(medias[i].image.image.file_location, AsyncTask):
-                medias[i].image.image.file_location = medias[i].audio.audio.file_location.wait()
+                medias[i].image.image.file_location = medias[i].image.image.file_location.wait()
             if medias[i].web_page and medias[i].web_page.image and \
                     isinstance(medias[i].web_page.image.file_location, AsyncTask):
                 medias[i].web_page.image.file_location = medias[i].web_page.image.file_location.wait()
