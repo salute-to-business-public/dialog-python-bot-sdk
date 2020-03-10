@@ -143,7 +143,7 @@ def get_peer(peer: Peer or AsyncTask) -> peers_pb2.Peer or None:
             raise AttributeError("{} has not attribute 'peer'".format(type(from_task)))
         peer = from_task.peer
     if not isinstance(peer, Peer):
-        raise AttributeError("peer must be {}, got {}.".format(Peer.__class__, type(peer)))
+        raise AttributeError("peer must be {}, got {}.".format(Peer, type(peer)))
     if peer.type in [PeerType.PEERTYPE_PRIVATE, PeerType.PEERTYPE_GROUP]:
         return peers_pb2.Peer(id=peer.id, type=peer.type)
     else:
