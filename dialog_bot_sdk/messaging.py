@@ -291,7 +291,7 @@ class Messaging(ManagedService):
                 load_mode=direction,
                 limit=limit
             )
-        return [Message.from_api(x) for x in self.internal.messaging.LoadHistory(request)]
+        return [Message.from_api(x) for x in self.internal.messaging.LoadHistory(request).history]
 
     def on_message_async(self, callback, interactive_media_callback=None) -> None:
         updates_thread = threading.Thread(target=self.on_message, args=(callback, interactive_media_callback))
