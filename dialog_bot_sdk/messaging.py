@@ -20,14 +20,14 @@ from dialog_bot_sdk.entities.message.Message import Message
 from dialog_bot_sdk.entities.Peer import Peer
 from dialog_bot_sdk.utils import POOL
 from .service import ManagedService
-from dialog_api import messaging_pb2, sequence_and_updates_pb2, peers_pb2, media_and_files_pb2
+from dialog_api import messaging_pb2, sequence_and_updates_pb2, peers_pb2
 from .content import content
 import google.protobuf.wrappers_pb2 as wrappers_pb2
 from dialog_bot_sdk.utils import get_peer, async_dec, AsyncTask, is_image, get_uuids
 
 SCHEDULER = sched.scheduler(time.time, time.sleep)
 MAX_SLEEP_TIME = 30
-
+EXCEPTION_CODES = [1, 13]
 
 class Messaging(ManagedService):
     retry = 0
@@ -318,7 +318,7 @@ class Messaging(ManagedService):
                     self.timer += min(math.exp(self.retry), MAX_SLEEP_TIME)
                     self.retry += 1
                     continue
-                if e.details() in ['Socket closed', 'GOAWAY received']:
+                if e.details() in EXCEPTION_CODES:
                     continue
 
     def __on_message_schedule(self, callback, interactive_media_callback=None, raw_callback=None):
