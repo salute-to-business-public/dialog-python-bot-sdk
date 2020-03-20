@@ -37,7 +37,7 @@ class ImageMedia:
 
     @classmethod
     def from_api(cls, image: messaging_pb2.ImageMedia) -> 'ImageMedia':
-        return cls(ImageLocation.from_api(image))
+        return cls(ImageLocation.from_api(image.image))
 
     def __dict__(self):
         return {"image": self.image.__dict__()}

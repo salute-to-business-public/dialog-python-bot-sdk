@@ -24,7 +24,7 @@ class InteractiveMediaButton:
 
     @classmethod
     def from_api(cls, button: messaging_pb2.InteractiveMediaButton) -> 'InteractiveMediaButton':
-        return cls(button.value.value, button.label)
+        return cls(button.value, button.label.value)
 
     def __dict__(self):
         return {"value": self.value, "label": self.label}
@@ -44,7 +44,7 @@ class InteractiveMediaSelectOption:
 
     @classmethod
     def from_api(cls, option: messaging_pb2.InteractiveMediaSelectOption) -> 'InteractiveMediaSelectOption':
-        return cls(option.value.value, option.label.value)
+        return cls(option.value, option.label)
 
     def __dict__(self):
         return {"value": self.value, "label": self.label}
@@ -66,7 +66,7 @@ class InteractiveMediaSelect:
 
     @classmethod
     def from_api(cls, select: messaging_pb2.InteractiveMediaSelect) -> 'InteractiveMediaSelect':
-        return cls([InteractiveMediaSelectOption.from_api(x) for x in select.options], select.lable.value,
+        return cls([InteractiveMediaSelectOption.from_api(x) for x in select.options], select.label.value,
                    select.default_value.value)
 
     def __dict__(self):

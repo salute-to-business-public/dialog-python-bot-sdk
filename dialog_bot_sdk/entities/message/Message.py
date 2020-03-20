@@ -77,7 +77,7 @@ class Message:
     @classmethod
     def from_api(cls, message: messaging_pb2.HistoryMessage) -> 'Message':
         return cls(UUID.from_api(message.mid), UUID.from_api(message.prev_mid),
-                   Peer(message.sender_peer.id, PeerType.PEERTYPE_PRIVATE),
+                   Peer(message.sender_uid, PeerType.PEERTYPE_PRIVATE),
                    MessageContent.from_api(message.message), [UUID.from_api(x) for x in message.reply.mids],
                    [UUID.from_api(x) for x in message.forward.mids], message.date, message.edited_at.value)
 
