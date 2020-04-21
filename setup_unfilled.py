@@ -20,6 +20,8 @@ setuptools.setup(
         'protobuf==3.10.0',
         'grpcio==1.24.1',
         'grpcio-tools==1.24.1',
+        'google-api-python-client==1.7.11',
+        'googleapis-common-protos==1.6.0',
         'requests==2.22.0',
         'pyopenssl==19.0.0',
         'Pillow==6.2.0',
