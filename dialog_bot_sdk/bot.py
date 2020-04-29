@@ -1,5 +1,4 @@
 import logging
-
 import grpc
 import OpenSSL.crypto
 import io
@@ -13,6 +12,7 @@ from .messaging import Messaging
 from .updates import Updates
 from .users import Users
 from .groups import Groups
+from .profile import Profile
 
 
 DEFAULT_OPTIONS = {
@@ -44,6 +44,7 @@ class DialogBot(object):
         self.messaging = Messaging(self.manager, self.internal)
         self.updates = Updates(self.manager, self.internal)
         self.users = Users(self.manager, self.internal)
+        self.profile = Profile(self.manager, self.internal)
         logging.info('Bot is ready.')
 
     @staticmethod

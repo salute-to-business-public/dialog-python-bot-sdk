@@ -3,7 +3,7 @@ from dialog_api import registration_pb2, registration_pb2_grpc, \
     sequence_and_updates_pb2_grpc, \
     authentication_pb2, authentication_pb2_grpc, \
     contacts_pb2_grpc, search_pb2_grpc, messaging_pb2_grpc, \
-    media_and_files_pb2_grpc, users_pb2_grpc, groups_pb2_grpc
+    media_and_files_pb2_grpc, users_pb2_grpc, groups_pb2_grpc, profile_pb2_grpc
 from dialog_bot_sdk.uploading import Uploading
 
 
@@ -25,6 +25,7 @@ class InternalBot(object):
         self.search = self.wrap_service(search_pb2_grpc.SearchStub, verbose=verbose, options=options)
         self.users = self.wrap_service(users_pb2_grpc.UsersStub, verbose=verbose, options=options)
         self.groups = self.wrap_service(groups_pb2_grpc.GroupsStub, verbose=verbose, options=options)
+        self.profile = self.wrap_service(profile_pb2_grpc.ProfileStub, verbose=verbose, options=options)
         self.token = self.get_session_token()
         self.uploading = Uploading(self, cert, private_key, access_dir=access_dir)
 

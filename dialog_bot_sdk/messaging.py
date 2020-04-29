@@ -29,6 +29,7 @@ SCHEDULER = sched.scheduler(time.time, time.sleep)
 MAX_SLEEP_TIME = 30
 EXCEPTION_CODES = [1, 13]
 
+
 class Messaging(ManagedService):
     retry = 0
     timer = 0
