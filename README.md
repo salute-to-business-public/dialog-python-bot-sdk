@@ -16,7 +16,7 @@ import os
 
 
 def on_msg(params):
-    bot.messaging.send_message(params.peer, 'Reply to : ' + str(params.message.textMessage.text))
+    bot.messaging.send_message(params.peer, 'Reply to : ' + str(params.message.text_message.text))
 
 
 if __name__ == '__main__':
