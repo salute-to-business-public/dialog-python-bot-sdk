@@ -24,7 +24,7 @@ class AuthenticatedService(object):
         if options:
             self.min_delay, self.max_delay, self.delay_factor, self.max_retries = self.parse_options(options)
         else:
-            self.min_delay, self.max_retries = 0, 0
+            self.min_delay, self.max_delay, self.delay_factor, self.max_retries = 1, 50, math.exp(1), 5
         for method_name in dir(stub):
             method = getattr(stub, method_name)
             if not method_name.startswith('__') and callable(method):
