@@ -8,7 +8,7 @@ DEFAULT_OPTIONS = {
     "min_delay": 1,
     "max_delay": 50,
     "delay_factor": math.exp(1),
-    "max_retries": 5
+    "max_retries": 10
 }
 RETRY_CODES = [1, 2, 4, 10, 13, 14, 15]
 
@@ -24,7 +24,7 @@ class AuthenticatedService(object):
         if options:
             self.min_delay, self.max_delay, self.delay_factor, self.max_retries = self.parse_options(options)
         else:
-            self.min_delay, self.max_delay, self.delay_factor, self.max_retries = 1, 50, math.exp(1), 5
+            self.min_delay, self.max_delay, self.delay_factor, self.max_retries = 1, 50, math.exp(1), 10
         for method_name in dir(stub):
             method = getattr(stub, method_name)
             if not method_name.startswith('__') and callable(method):
@@ -46,16 +46,14 @@ class AuthenticatedService(object):
                     return method(param, metadata=metadata)
                 except grpc.RpcError as e:
                     if e._state.code.value[0] not in RETRY_CODES:
-                        logging.error("Failed request to server, with error: " + e.details(), e.debug_error_string())
+                        logging.error(
+                            "Failed request to server, with error: {}\ndetails: {}\ndebug string: {}\nIs not retrieble error\n"
+                                .format(e._state.code.name, e.details(), e.debug_error_string()))
                         raise e
-                    if self.max_retries > tries:
-                        time.sleep(delay)
-                        tries += 1
-                        delay = min(delay * self.delay_factor, self.max_delay)
-                        logging.error(str(e))
-                        continue
-                    logging.error("Max retries requests to server, with error: " + e.details(), e.debug_error_string())
-                    raise e
+                    tries, delay = self.retry(tries, delay, e)
+                except Exception as e:
+                    tries, delay = self.retry(tries, delay, e)
+
         return inner
 
     @staticmethod
@@ -64,3 +62,20 @@ class AuthenticatedService(object):
             if option not in options:
                 options[option] = value
         return options["min_delay"], options["max_delay"], options["delay_factor"], options["max_retries"]
+
+    def retry(self, tries, delay, e):
+        if self.max_retries > tries:
+            logging.error(
+                "Failed request to server, with error: {}\ndetails: {}\ndebug string: {}\nretry: {} / {}".format(
+                    e._state.code.name,
+                    e.details(),
+                    e.debug_error_string(),
+                    tries + 1,
+                    self.max_retries
+                ))
+            time.sleep(delay)
+            tries += 1
+            delay = min(delay * self.delay_factor, self.max_delay)
+            return tries, delay
+        logging.error("Max retries requests to server, with error: " + e.details(), e.debug_error_string())
+        raise e

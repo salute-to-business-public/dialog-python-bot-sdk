@@ -315,12 +315,13 @@ class Messaging(ManagedService):
                 SCHEDULER.run()
             except grpc.RpcError as e:
                 logging.error(e)
-                if e.details() == 'failed to connect to all addresses':
+                if e.details() == 'failed to connect to all addresses' or e._state.code.value[0] in EXCEPTION_CODES:
                     self.timer += min(math.exp(self.retry), MAX_SLEEP_TIME)
                     self.retry += 1
-                    continue
-                if e.details() in EXCEPTION_CODES:
-                    continue
+            except Exception as e:
+                logging.error(e)
+                self.timer += min(math.exp(self.retry), MAX_SLEEP_TIME)
+                self.retry += 1
 
     def __on_message_schedule(self, callback, interactive_media_callback=None, raw_callback=None):
         try:
