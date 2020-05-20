@@ -8,7 +8,7 @@ DEFAULT_OPTIONS = {
     "min_delay": 1,
     "max_delay": 50,
     "delay_factor": math.exp(1),
-    "max_retries": 5
+    "max_retries": 10
 }
 RETRY_CODES = [1, 2, 4, 10, 13, 14, 15]
 
