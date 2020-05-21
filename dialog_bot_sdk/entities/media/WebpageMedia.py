@@ -12,8 +12,12 @@ class WebPageMedia:
         self.image = image
 
     def to_api(self) -> messaging_pb2.WebpageMedia:
+        if self.image is not None:
+            image = self.image.to_api()
+        else:
+            image = None
         return messaging_pb2.WebpageMedia(url=StringValue(value=self.url), title=StringValue(value=self.title),
-                                          description=StringValue(value=self.description), image=self.image.to_api())
+                                          description=StringValue(value=self.description), image=image)
 
     @classmethod
     def from_api(cls, web_page: messaging_pb2.WebpageMedia) -> 'WebPageMedia':

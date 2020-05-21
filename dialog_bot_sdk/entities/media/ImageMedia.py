@@ -13,6 +13,8 @@ class ImageLocation:
         self.file_size = file_size
 
     def to_api(self) -> media_and_files_pb2.ImageLocation:
+        if isinstance(self.file_location, AsyncTask):
+            self.file_location.wait()
         return media_and_files_pb2.ImageLocation(file_location=self.file_location.to_api(), width=self.width,
                                                  height=self.height, file_size=self.file_size)
 
