@@ -43,7 +43,7 @@ class Profile(ManagedService):
         :return: True or False
         """
         try:
-            return self.internal.profile.CheckNickName(profile_pb2.RequestCheckNickName(nickname=nick))
+            return self.internal.profile.CheckNickName(profile_pb2.RequestCheckNickName(nickname=nick)).value
         except:
             return False
 
