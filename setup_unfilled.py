@@ -16,7 +16,7 @@ setuptools.setup(
     license='Apache License 2.0',
     keywords='dialog messenger bot sdk',
     install_requires=[
-        'dialog_api==1.33.0',
+        'dialog_api==1.53.0',
         'protobuf==3.10.0',
         'grpcio==1.24.1',
         'grpcio-tools==1.24.1',
