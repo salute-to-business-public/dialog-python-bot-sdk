@@ -24,7 +24,7 @@ setuptools.setup(
         'googleapis-common-protos==1.6.0',
         'requests==2.22.0',
         'pyopenssl==19.0.0',
-        'Pillow==6.2.0',
+        'Pillow==6.2.2',
     ],
     python_requires='>=3',
     classifiers=[
