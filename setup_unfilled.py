@@ -18,8 +18,8 @@ setuptools.setup(
     install_requires=[
         'dialog_api==1.53.0',
         'protobuf==3.10.0',
-        'grpcio==1.24.1',
-        'grpcio-tools==1.24.1',
+        'grpcio==1.36.3',
+        'grpcio-tools==1.36.3',
         'google-api-python-client==1.7.11',
         'googleapis-common-protos==1.6.0',
         'requests==2.22.0',
