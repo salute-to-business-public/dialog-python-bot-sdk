@@ -141,8 +141,9 @@ class Groups(ManagedService):
             limit=limit,
             next=BytesValue(value=cursor)
         )
-        members = self.internal.groups.LoadMembers(request).members
-        cursor = self.internal.groups.LoadMembers(request).cursor.value
+        response = self.internal.groups.LoadMembers(request)
+        members = response.members
+        cursor = response.cursor.value
         request = sequence_and_updates_pb2.RequestGetReferencedEntitites(
             group_members=[
                 sequence_and_updates_pb2.GroupMembersSubset(
