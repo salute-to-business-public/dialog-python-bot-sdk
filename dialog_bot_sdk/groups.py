@@ -2,6 +2,7 @@ import random
 from typing import List
 
 from google.protobuf import wrappers_pb2
+from google.protobuf.wrappers_pb2 import BytesValue
 
 from dialog_bot_sdk.entities.Avatar import Avatar
 from dialog_bot_sdk.entities.Group import Group
@@ -120,11 +121,13 @@ class Groups(ManagedService):
         return Group.from_api(result[0])
 
     @async_dec()
-    def load_members(self, group_peer: Peer or AsyncTask, limit: int = 0) -> List[User] or None:
+    def load_members(self, group_peer: Peer or AsyncTask, limit: int = 0, cursor: bytes = b"") -> \
+            List[User] and bytes or None:
         """Load Group members by peer
 
         :param group_peer: Peer or AsyncTask (in which located Group)
         :param limit: count members
+        :param cursor: bytes object that specify to the user from whom to start (returned from this method)
         :return: list of User's
         """
         group_peer = get_peer(group_peer)
@@ -134,9 +137,11 @@ class Groups(ManagedService):
 
         request = groups_pb2.RequestLoadMembers(
             group=out_peer,
-            limit=limit
+            limit=limit,
+            next=BytesValue(value=cursor)
         )
         members = self.internal.groups.LoadMembers(request).members
+        cursor = self.internal.groups.LoadMembers(request).cursor.value
         request = sequence_and_updates_pb2.RequestGetReferencedEntitites(
             group_members=[
                 sequence_and_updates_pb2.GroupMembersSubset(
@@ -145,7 +150,7 @@ class Groups(ManagedService):
                 )
             ]
         )
-        return [User.from_api(x) for x in self.internal.updates.GetReferencedEntitites(request).users]
+        return [User.from_api(x) for x in self.internal.updates.GetReferencedEntitites(request).users], cursor
 
     @async_dec()
     def kick_user(self, group_peer: Peer or AsyncTask, user_peer: Peer or AsyncTask) -> None:
