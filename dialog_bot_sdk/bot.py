@@ -81,8 +81,8 @@ class DialogBot(object):
         return DialogBot(channel, bot_token, verbose=verbose, options=retry_options)
 
     @staticmethod
-    def get_secure_bot_with_pfx_certificate(endpoint: str, pfx_certificate, pfx_password, verbose: bool = False,
-                                            access_dir=None, options: dict = None,
+    def get_secure_bot_with_pfx_certificate(endpoint: str, pfx_certificate: str, pfx_password: str,
+                                            verbose: bool = False, access_dir=None, options: dict = None,
                                             retry_options: dict = None) -> 'DialogBot':
         options = DialogBot.__get_options(options)
         pfx1 = open(pfx_certificate, 'rb').read()
