@@ -121,13 +121,14 @@ class Groups(ManagedService):
         return Group.from_api(result[0])
 
     @async_dec()
-    def load_members(self, group_peer: Peer or AsyncTask, limit: int = 0, cursor: bytes = b"") -> \
-            List[User] and bytes or None:
+    def load_members(self, group_peer: Peer or AsyncTask, limit: int = 0, cursor: bytes = b"",
+                     cursor_flag: bool = False) -> List[User] or List[User] and bytes or None:
         """Load Group members by peer
 
         :param group_peer: Peer or AsyncTask (in which located Group)
         :param limit: count members
         :param cursor: bytes object that specify to the user from whom to start (returned from this method)
+        :param cursor_flag: returned cursor? (True/False)
         :return: list of User's
         """
         group_peer = get_peer(group_peer)
@@ -150,7 +151,9 @@ class Groups(ManagedService):
                 )
             ]
         )
-        return [User.from_api(x) for x in self.internal.updates.GetReferencedEntitites(request).users], cursor
+        if cursor_flag:
+            return [User.from_api(x) for x in self.internal.updates.GetReferencedEntitites(request).users], cursor
+        return [User.from_api(x) for x in self.internal.updates.GetReferencedEntitites(request).users]
 
     @async_dec()
     def kick_user(self, group_peer: Peer or AsyncTask, user_peer: Peer or AsyncTask) -> None:
