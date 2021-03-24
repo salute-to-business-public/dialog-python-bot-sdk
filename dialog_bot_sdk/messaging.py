@@ -76,13 +76,6 @@ class Messaging(ManagedService):
         :param interactive_media_groups: groups of interactive media components (buttons etc.)
         :return: None
         """
-        try:
-            if isinstance(message, AsyncTask):
-                message = message.wait()[0]
-                if not isinstance(message, Message):
-                    raise AttributeError()
-        except Exception as e:
-            raise AttributeError("if message is AsyncTask class, result must be list of Message")
         msg = messaging_pb2.MessageContent()
         msg.textMessage.text = text
         if interactive_media_groups is not None:
@@ -90,7 +83,7 @@ class Messaging(ManagedService):
                 media = msg.textMessage.media.add()
                 g.render(media)
 
-        self.__update(message, msg)
+        self.__update(self.__get_message(message), msg)
 
     @async_dec()
     def delete(self, message: Message or AsyncTask) -> None:
@@ -102,7 +95,8 @@ class Messaging(ManagedService):
         msg = messaging_pb2.MessageContent(
             deletedMessage=messaging_pb2.DeletedMessage(is_local=wrappers_pb2.BoolValue(value=False))
         )
-        self.__update(message, msg)
+
+        self.__update(self.__get_message(message), msg)
 
     @async_dec()
     def get_messages_by_id(self, mids: List[UUID or AsyncTask]) -> List[Message]:
@@ -402,3 +396,14 @@ class Messaging(ManagedService):
             last_edited_at=last_edited_at
         )
         self.internal.messaging.UpdateMessage(request)
+
+    @staticmethod
+    def __get_message(message: Message or AsyncTask) -> Message:
+        try:
+            if isinstance(message, AsyncTask):
+                message = message.wait()[0]
+                if not isinstance(message, Message):
+                    raise AttributeError()
+        except Exception as e:
+            raise AttributeError("if message is AsyncTask class, result must be list of Message")
+        return message
