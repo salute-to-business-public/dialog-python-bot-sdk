@@ -150,7 +150,7 @@ def get_peer(peer: Peer or AsyncTask) -> peers_pb2.Peer or None:
         raise UnknownPeerError("Unknown PeerType.")
 
 
-def get_uuids(uuids: List[UUID or AsyncTask]):
+def get_uuids(uuids: List[UUID or AsyncTask]) -> List[UUID]:
     for i in range(len(uuids)):
         uuid = uuids[i]
         if isinstance(uuid, AsyncTask):
