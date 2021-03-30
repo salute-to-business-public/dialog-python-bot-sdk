@@ -129,11 +129,12 @@ class Messaging(ManagedService):
         self.internal.messaging.MessageRead(request)
 
     @async_dec()
-    def send_file(self, peer: Peer or AsyncTask, file: str) -> UUID or None:
+    def send_file(self, peer: Peer or AsyncTask, file: str, uid: int = None) -> UUID or None:
         """Send file to peer.
 
         :param peer: Peer or AsyncTask (in which located User or Group)
         :param file: path to file
+        :param uid: send message only for user by id
         :return: UUID (message id)
         """
         peer = get_peer(peer)
@@ -152,16 +153,18 @@ class Messaging(ManagedService):
         request = messaging_pb2.RequestSendMessage(
             peer=out_peer,
             deduplication_id=random.randint(0, 100000000),
-            message=msg
+            message=msg,
+            is_only_for_user=uid
         )
         return self.__send_message(request)
 
     @async_dec()
-    def send_media(self, peer: Peer or AsyncTask, medias: List[MessageMedia]) -> UUID:
+    def send_media(self, peer: Peer or AsyncTask, medias: List[MessageMedia], uid: int = None) -> UUID:
         """Send media to peer.
 
         :param peer: Peer or AsyncTask (in which located User or Group)
         :param medias: medias (list of MessageMedias)
+        :param uid: send message only for user by id
         :return: UUID (message id)
         """
         peer = get_peer(peer)
@@ -174,16 +177,18 @@ class Messaging(ManagedService):
         request = messaging_pb2.RequestSendMessage(
             peer=out_peer,
             deduplication_id=random.randint(0, 100000000),
-            message=msg
+            message=msg,
+            is_only_for_user=uid
         )
         return self.__send_message(request)
 
     @async_dec()
-    def send_image(self, peer: Peer or AsyncTask, file: str) -> UUID or None:
+    def send_image(self, peer: Peer or AsyncTask, file: str, uid: int = None) -> UUID or None:
         """Send image as image (not as file) to peer.
 
         :param peer: Peer or AsyncTask (in which located User or Group)
         :param file: path to image file
+        :param uid: send message only for user by id
         :return: UUID (message id)
         """
         peer = get_peer(peer)
@@ -205,20 +210,22 @@ class Messaging(ManagedService):
         request = messaging_pb2.RequestSendMessage(
             peer=out_peer,
             deduplication_id=random.randint(0, 100000000),
-            message=msg
+            message=msg,
+            is_only_for_user=uid
         )
 
         return self.__send_message(request)
 
     @async_dec()
     def reply(self, peer: Peer or AsyncTask, mids: List[UUID or AsyncTask], text: str = None,
-              interactive_media_groups: List[InteractiveMediaGroup] = None) -> UUID:
+              interactive_media_groups: List[InteractiveMediaGroup] = None, uid: int = None) -> UUID:
         """Reply messages to peer. Message can contain interactive media groups (buttons, selects etc.).
 
         :param peer: Peer or AsyncTask (in which located User or Group)
         :param mids: list of UUIDs
         :param text: message text
         :param interactive_media_groups: groups of interactive media components (buttons etc.)
+        :param uid: send message only for user by id
         :return: UUID (message id)
         """
         peer = get_peer(peer)
@@ -237,19 +244,21 @@ class Messaging(ManagedService):
             peer=out_peer,
             deduplication_id=random.randint(0, 100000000),
             message=msg,
-            reply=messaging_pb2.ReferencedMessages(mids=mids)
+            reply=messaging_pb2.ReferencedMessages(mids=mids),
+            is_only_for_user=uid
         )
         return self.__send_message(request)
 
     @async_dec()
     def forward(self, peer: Peer or AsyncTask, mids: List[UUID or AsyncTask], text: str = None,
-                interactive_media_groups: List[InteractiveMediaGroup] = None) -> UUID:
+                interactive_media_groups: List[InteractiveMediaGroup] = None, uid: int = None) -> UUID:
         """Forward messages to peer. Message can contain interactive media groups (buttons, selects etc.).
 
         :param peer: Peer or AsyncTask (in which located User or Group)
         :param mids: list of UUIDs
         :param text: message text
         :param interactive_media_groups: groups of interactive media components (buttons etc.)
+        :param uid: send message only for user by id
         :return: UUID (message id)
         """
         peer = get_peer(peer)
@@ -263,6 +272,7 @@ class Messaging(ManagedService):
             deduplication_id=random.randint(0, 100000000),
             message=msg,
             forward=messaging_pb2.ReferencedMessages(mids=mids),
+            is_only_for_user=uid
         )
         return self.__send_message(request)
 
