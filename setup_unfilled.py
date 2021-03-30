@@ -17,7 +17,7 @@ setuptools.setup(
     keywords='dialog messenger bot sdk',
     install_requires=[
         'dialog_api==1.89.1',
-        'protobuf==4.0.0rc2',
+        'protobuf==3.15.6',
         'grpcio==1.36.1',
         'grpcio-tools==1.36.1',
         'google-api-python-client==2.0.2',
