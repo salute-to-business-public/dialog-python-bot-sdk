@@ -13,20 +13,30 @@ class GroupType:
 
 
 class GroupData:
-    def __init__(self, about: str, avatar: Avatar, name: str, title: str, type: int) -> None:
+    def __init__(self, about: str, avatar: Avatar, name: str, title: str, type: int, owner_user_id: int,
+                 conference_link: str, members_amount: int, members_count_limit: int, shortname: str) -> None:
         self.about = about
         self.avatar = avatar
         self.name = name
         self.title = title
         self.type = type
+        self.owner_user_id = owner_user_id
+        self.conference_link = conference_link
+        self.members_amount = members_amount
+        self.members_count_limit = members_count_limit
+        self.shortname = shortname
 
     @classmethod
     def from_api(cls, data: groups_pb2.GroupData) -> 'GroupData':
-        return cls(data.about.value, Avatar.from_api(data.avatar), data.shortname.value, data.title, data.group_type)
+        return cls(data.about.value, Avatar.from_api(data.avatar), data.shortname.value, data.title, data.group_type,
+                   data.owner_user_id, data.conference_link.value, data.members_amount, data.members_count_limit.value,
+                   data.shortname.value)
 
     def __dict__(self):
         return {"about": self.about, "avatar": self.avatar.__dict__(), "name": self.name, "title": self.title,
-                "type": self.type}
+                "type": self.type, "owner_user_id": self.owner_user_id, "conference_link": self.conference_link,
+                "members_amount": self.members_amount, "members_count_limit": self.members_count_limit,
+                "shortname": self.shortname}
 
     def __str__(self):
         return "GroupData({})".format(self.__dict__())
