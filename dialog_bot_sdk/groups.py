@@ -18,6 +18,20 @@ class Groups(ManagedService):
 
     """
     @async_dec()
+    def delete_group(self, group_id: str) -> None:
+        """Delete Group
+
+        :param title: title of group
+        :return: None
+        """
+        request = groups_pb2.RequestDeleteGroup(
+            group_id = group_id,
+        )
+        self.internal.groups.DeleteGroup(request)
+
+
+
+    @async_dec()
     def create_public_group(self, title: str, short_name: str) -> Group:
         """Create public group
 
@@ -28,7 +42,8 @@ class Groups(ManagedService):
         request = groups_pb2.RequestCreateGroup(
             title=title,
             username=wrappers_pb2.StringValue(value=short_name),
-            group_type=groups_pb2.GROUPTYPE_GROUP
+            group_type=groups_pb2.GROUPTYPE_GROUP,
+            rid=random.randint(0, 100000000)
         )
         return self.__create_group(request)
 
@@ -41,7 +56,8 @@ class Groups(ManagedService):
         """
         request = groups_pb2.RequestCreateGroup(
             title=title,
-            group_type=groups_pb2.GROUPTYPE_GROUP
+            group_type=groups_pb2.GROUPTYPE_GROUP,
+            rid=random.randint(0, 100000000)
         )
         return self.__create_group(request)
 
@@ -179,7 +195,7 @@ class Groups(ManagedService):
         request = groups_pb2.RequestInviteUser(
             group_peer=group_out_peer,
             user=user_out_peer,
-            rid=random.randint(0, 100000000),
+            rid=random.randint(0, 100000000)
         )
         self.internal.groups.InviteUser(request)
 
