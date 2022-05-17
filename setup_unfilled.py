@@ -11,7 +11,7 @@ setuptools.setup(
     description="Python Bot SDK for Dialog Messenger",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/dialogs/python-bot-sdk",
+    url="https://github.com/salute-to-business-public/dialog-python-bot-sdk",
     packages=setuptools.find_packages(),
     license='Apache License 2.0',
     keywords='dialog messenger bot sdk',
