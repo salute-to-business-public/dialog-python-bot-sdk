@@ -4,7 +4,7 @@ Dialog Python Bot SDK
 
 Python Bot SDK for [Dialog](https://dlg.im) messenger.
 
-Full documentation is available [here](https://dialogs.github.io/bots-docs/).
+Full documentation is available [here](https://github.com/salute-to-business-public/dialog-bots-docs).
 
 Usage
 -----
