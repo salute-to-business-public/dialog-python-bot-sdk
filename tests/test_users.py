@@ -1,7 +1,5 @@
 import unittest
-
 from dialog_api import peers_pb2
-
 from dialog_bot_sdk.entities.FullUser import FullUser
 from dialog_bot_sdk.entities.User import User
 from dialog_bot_sdk.utils import AsyncTask
