@@ -1,10 +1,12 @@
-import logging
 import time
 import math
-
+import traceback
+import uuid
 import grpc
+from dialog_bot_sdk.utils import build_error_string, build_log_string
 
-DEFAULT_OPTIONS = {
+
+DEFAULT_OPTIONS_RETRY = {
     "min_delay": 1,
     "max_delay": 50,
     "delay_factor": math.exp(1),
@@ -17,14 +19,15 @@ class AuthenticatedService(object):
     """Initialization class for gRPC services.
 
     """
-    def __init__(self, auth_token_func, stub, verbose=False, options=None):
+    def __init__(self, auth_token_func: callable, stub, **kwargs):
         self.stub = stub
         self.auth_token_func = auth_token_func
-        self.verbose = verbose
-        if options:
-            self.min_delay, self.max_delay, self.delay_factor, self.max_retries = self.parse_options(options)
-        else:
-            self.min_delay, self.max_delay, self.delay_factor, self.max_retries = 1, 50, math.exp(1), 10
+        self.verbose = kwargs.get("verbose")
+        self.rate_limiter = kwargs.get("rate_limiter")
+        self.retry_options = kwargs.get("retry_options")
+        self.timeout = kwargs.get("timeout")
+        self._logger = kwargs["logger"]
+
         for method_name in dir(stub):
             method = getattr(stub, method_name)
             if not method_name.startswith('__') and callable(method):
@@ -33,49 +36,60 @@ class AuthenticatedService(object):
     def __decorated(self, method_name, method):
         def inner(param):
             auth_token = self.auth_token_func()
-            if self.verbose:
-                logging.info('Calling %s with token=`%s`' % (method_name, auth_token))
             if auth_token is not None:
                 metadata = (('x-auth-ticket', auth_token),)
             else:
                 metadata = None
             tries = 0
-            delay = self.min_delay
+            delay = self.retry_options["min_delay"]
+            request_uuid = str(uuid.uuid4())
             while 1:
                 try:
-                    return method(param, metadata=metadata)
+                    with self.rate_limiter:
+                        self._logger.debug(
+                            build_log_string(
+                                request_uuid=request_uuid, method=method_name, request=param, timeout=self.timeout
+                            )
+                        )
+
+                        result = method(
+                            param,
+                            metadata=metadata,
+                            timeout=self.timeout,
+                        )
+
+                        self._logger.debug(build_log_string(request_uuid=request_uuid, response=result))
+
+                        return result
                 except grpc.RpcError as e:
                     if e._state.code.value[0] not in RETRY_CODES:
-                        logging.error(
-                            "Failed request to server, with error: {}\ndetails: {}\ndebug string: {}\nIs not retrieble error\n"
-                                .format(e._state.code.name, e.details(), e.debug_error_string()))
+                        self._logger.error(
+                            build_error_string(
+                                e, request_uuid=request_uuid, method_name=method_name, request=param,
+                                traceback=traceback.format_exc()
+                            )
+                        )
                         raise e
-                    tries, delay = self.retry(tries, delay, e)
-                except Exception as e:
-                    tries, delay = self.retry(tries, delay, e)
+                    tries, delay = self.retry(tries, delay, e, request_uuid, method_name, param)
 
         return inner
 
-    @staticmethod
-    def parse_options(options):
-        for option, value in DEFAULT_OPTIONS.items():
-            if option not in options:
-                options[option] = value
-        return options["min_delay"], options["max_delay"], options["delay_factor"], options["max_retries"]
-
-    def retry(self, tries, delay, e):
-        if self.max_retries > tries:
-            logging.error(
-                "Failed request to server, with error: {}\ndetails: {}\ndebug string: {}\nretry: {} / {}".format(
-                    e._state.code.name,
-                    e.details(),
-                    e.debug_error_string(),
-                    tries + 1,
-                    self.max_retries
-                ))
+    def retry(self, tries: int, delay: float, e: grpc.RpcError, request_uuid: str, method_name: str, request):
+        if self.retry_options["max_retries"] > tries:
+            self._logger.error(
+                build_error_string(
+                    e, retry=tries + 1, max_retries=self.retry_options["max_retries"], request_uuid=request_uuid,
+                    method=method_name
+                )
+            )
             time.sleep(delay)
             tries += 1
-            delay = min(delay * self.delay_factor, self.max_delay)
+            delay = min(delay * self.retry_options["delay_factor"], self.retry_options["max_delay"])
             return tries, delay
-        logging.error("Max retries requests to server, with error: " + e.details(), e.debug_error_string())
+        self._logger.error(
+            build_error_string(
+                e, request_uuid=request_uuid, method=method_name, request=request,
+                annotation="Max retries requests to server", traceback=traceback.format_exc()
+            )
+        )
         raise e

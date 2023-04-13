@@ -1,128 +1,121 @@
-import unittest
-from dialog_api import peers_pb2, messaging_pb2, definitions_pb2
-from dialog_api.peers_pb2 import PEERTYPE_PRIVATE
-from mock import patch
+from pytest import raises
 
-from dialog_bot_sdk.entities.ListLoadMode import ListLoadMode
-from dialog_bot_sdk.entities.Peer import Peer
-from dialog_bot_sdk.entities.UUID import UUID
-from dialog_bot_sdk.entities.media.ImageMedia import ImageMedia, ImageLocation
-from dialog_bot_sdk.entities.message.Message import Message, MessageContent
-from dialog_bot_sdk.entities.message.TextMessage import MessageMedia
-from dialog_bot_sdk.interactive_media import InteractiveMediaGroup, InteractiveMedia, InteractiveMediaButton
-from dialog_bot_sdk.utils import AsyncTask
-from tests.bot import bot
-from tests.test_classes.media_and_files import MediaAndFiles, Put
-
-from tests.test_classes.messaging import Messaging
-from tests.test_classes.updates import Updates
+from dialog_bot_sdk.entities.definitions import UUID
+from dialog_bot_sdk.entities.messaging import Message, ListLoadMode
+from dialog_bot_sdk.exceptions.exceptions import UnknownPeerError
+from dialog_bot_sdk.messaging import Messaging
+from tests.fixtures.client_entities import user_peer, user_peer_invalid, valid_actions, invalid_actions, message, media, \
+    mid, prev_mid, invalid_mid, text, empty_text, invalid_text, file
+from tests.fixtures.internal import internal, manager
 
 
-class TestMessaging(unittest.TestCase):
-    bot.internal.messaging = Messaging()
-    bot.internal.updates = Updates()
-    bot.internal.media_and_files = MediaAndFiles()
-
-    test_file = "../dialog_bot_sdk/examples/files/example.png"
-
-    peer = Peer(1, PEERTYPE_PRIVATE)
-    message = Message(UUID(1, 1), UUID(0, 0), peer, None, [], [], 0, 0)
-    outpeer = peers_pb2.OutPeer(type=PEERTYPE_PRIVATE, id=0, access_hash=0)
-    mid = definitions_pb2.UUIDValue(msb=0, lsb=0)
-    msg_content = messaging_pb2.MessageContent()
-    msg_content.textMessage.text = "Hello"
-    interactive_media = [InteractiveMediaGroup(
-        [
-            InteractiveMedia(
-                "1",
-                InteractiveMediaButton("Yes", "Да")
-            ),
-            InteractiveMedia(
-                "2",
-                InteractiveMediaButton("No", "Нет")
-            ),
-        ]
-    )]
-    # msg_content_with_group = copy.deepcopy(msg_content)
-    # group[0].render(msg_content_with_group.textMessage.media.add())
-    # doc_msg = messaging_pb2.DocumentMessage(
-    #     file_id=0,
-    #     access_hash=0,
-    #     file_size=60,
-    #     name=""
-    # )
-
-    def test_send_message(self):
-        send = bot.messaging.send_message(self.peer, "text", self.interactive_media)
-        self.assertTrue(isinstance(send, AsyncTask))
-        self.assertTrue(isinstance(send.wait(), UUID))
-
-    def test_update_message(self):
-        update = bot.messaging.update_message(self.message, "text", self.interactive_media)
-        self.assertTrue(isinstance(update, AsyncTask))
-        self.assertIsNone(update.wait())
-
-    def test_delete_message(self):
-        delete = bot.messaging.delete(self.message)
-        self.assertTrue(isinstance(delete, AsyncTask))
-        self.assertIsNone(delete.wait())
-
-    def test_get_messages_by_id(self):
-        msg = bot.messaging.get_messages_by_id([UUID(1, 1)])
-        self.assertTrue(isinstance(msg, AsyncTask))
-        self.assertTrue(isinstance(msg.wait()[0], Message))
-
-    def test_messages_read(self):
-        read = bot.messaging.messages_read(self.peer, 0)
-        self.assertTrue(isinstance(read, AsyncTask))
-        self.assertIsNone(read.wait())
-
-    @patch('requests.put')
-    def test_send_file(self, put):
-        put.return_value = Put(200)
-        send = bot.messaging.send_file(self.peer, self.test_file)
-        self.assertTrue(isinstance(send, AsyncTask))
-        self.assertTrue(isinstance(send.wait(), UUID))
-        put.return_value = Put(400)
-        send = bot.messaging.send_file(self.peer, self.test_file)
-        self.assertTrue(isinstance(send, AsyncTask))
-        self.assertIsNone(send.wait())
-
-    @patch('requests.put')
-    def test_send_media(self, put):
-        put.return_value = Put(200)
-        image = bot.internal.uploading.upload_file(self.test_file).wait()
-        media = MessageMedia(image=ImageMedia(ImageLocation(image)))
-        send = bot.messaging.send_media(self.peer, [media])
-        self.assertTrue(isinstance(send, AsyncTask))
-        self.assertTrue(isinstance(send.wait(), UUID))
-
-    @patch('requests.put')
-    def test_send_image(self, put):
-        put.return_value = Put(200)
-        send = bot.messaging.send_image(self.peer, self.test_file)
-        self.assertTrue(isinstance(send, AsyncTask))
-        self.assertTrue(isinstance(send.wait(), UUID))
-        put.return_value = Put(400)
-        send = bot.messaging.send_image(self.peer, self.test_file)
-        self.assertTrue(isinstance(send, AsyncTask))
-        self.assertIsNone(send.wait())
-
-    def test_reply(self):
-        reply = bot.messaging.reply(self.peer, [UUID(1, 1)], None, self.interactive_media)
-        self.assertTrue(isinstance(reply, AsyncTask))
-        self.assertTrue(isinstance(reply.wait(), UUID))
-
-    def test_forward(self):
-        forward = bot.messaging.forward(self.peer, [UUID(1, 1)], None, self.interactive_media)
-        self.assertTrue(isinstance(forward, AsyncTask))
-        self.assertTrue(isinstance(forward.wait(), UUID))
-
-    def test_load_message_history(self):
-        history = bot.messaging.load_message_history(self.peer, 0, ListLoadMode.LISTLOADMODE_BACKWARD, 1)
-        self.assertTrue(isinstance(history, AsyncTask))
-        self.assertTrue(isinstance(history.wait()[0], Message))
+messaging = Messaging(manager, internal)
 
 
-if __name__ == '__main__':
-    unittest.main()
+def test_send_message():
+    assert isinstance(messaging.send_message(user_peer, text), UUID)
+    assert isinstance(messaging.send_message(user_peer, text, valid_actions), UUID)
+    assert isinstance(messaging.send_message(user_peer, text, uid=user_peer.id), UUID)
+    with raises(UnknownPeerError):
+        messaging.send_message(user_peer_invalid, text)
+    with raises(AttributeError):
+        messaging.send_message(user_peer, empty_text)
+        messaging.send_message(user_peer, invalid_text)
+        messaging.send_message(user_peer, text, invalid_actions)
+        messaging.send_message(user_peer, text, uid="user_peer.id")
+
+
+def test_update_message():
+    assert messaging.update_message(message, text) is None
+    assert messaging.update_message(message, text, valid_actions) is None
+    with raises(AttributeError):
+        assert messaging.update_message("", text)
+        assert messaging.update_message(message, text, invalid_actions)
+        assert messaging.update_message(message, empty_text)
+        assert messaging.update_message(message, invalid_text)
+
+
+def test_delete():
+    assert messaging.delete(message) is None
+    with raises(AttributeError):
+        assert messaging.delete("")
+
+
+def test_get_messages_by_id():
+    assert isinstance(messaging.get_messages_by_id([mid]), list)
+    assert isinstance(messaging.get_messages_by_id([mid])[0], Message)
+    with raises(AttributeError):
+        assert messaging.get_messages_by_id("")
+        assert messaging.get_messages_by_id([message])
+
+
+def test_messages_read():
+    assert messaging.messages_read(user_peer, 0) is None
+    assert messaging.messages_read(user_peer, -1) is None
+    with raises(UnknownPeerError):
+        assert messaging.messages_read(user_peer_invalid, 0)
+    with raises(TypeError):
+        assert messaging.messages_read(user_peer, text)
+
+
+def test_send_file():
+    assert messaging.send_file(user_peer, file) is None
+    assert messaging.send_file(user_peer, file, user_peer.id) is None
+    with raises(UnknownPeerError):
+        assert messaging.send_file(user_peer_invalid, file)
+    with raises(TypeError):
+        assert messaging.send_file(user_peer, 1)
+        assert messaging.send_file(user_peer, file, text) is None
+    with raises(FileNotFoundError):
+        assert messaging.send_file(user_peer, text)
+
+
+def test_send_image():
+    assert messaging.send_image(user_peer, file) is None
+    assert messaging.send_image(user_peer, file, user_peer.id) is None
+    with raises(UnknownPeerError):
+        assert messaging.send_image(user_peer_invalid, file)
+    with raises(TypeError):
+        assert messaging.send_image(user_peer, 1)
+        assert messaging.send_image(user_peer, file, text) is None
+    with raises(IOError):
+        assert messaging.send_image(user_peer, text)
+
+
+def test_reply():
+    assert isinstance(messaging.reply(user_peer, [mid, prev_mid]), UUID)
+    assert isinstance(messaging.reply(user_peer, [mid, prev_mid], text), UUID)
+    assert isinstance(messaging.reply(user_peer, [mid, prev_mid], text, valid_actions), UUID)
+    assert isinstance(messaging.reply(user_peer, [mid, prev_mid], text, valid_actions, user_peer.id), UUID)
+    with raises(UnknownPeerError):
+        assert messaging.reply(user_peer_invalid, [])
+    with raises(TypeError):
+        assert messaging.reply(user_peer, [invalid_mid])
+        assert messaging.reply(user_peer, [mid], 1)
+        assert messaging.reply(user_peer, [mid], text, text)
+
+
+def test_forward():
+    assert isinstance(messaging.forward(user_peer, [mid, prev_mid]), UUID)
+    assert isinstance(messaging.forward(user_peer, [mid, prev_mid], text), UUID)
+    assert isinstance(messaging.forward(user_peer, [mid, prev_mid], text, valid_actions), UUID)
+    assert isinstance(messaging.forward(user_peer, [mid, prev_mid], text, valid_actions, user_peer.id), UUID)
+    with raises(UnknownPeerError):
+        assert messaging.forward(user_peer_invalid, [])
+    with raises(TypeError):
+        assert messaging.forward(user_peer, [invalid_mid])
+        assert messaging.forward(user_peer, [mid], 1)
+        assert messaging.forward(user_peer, [mid], text, text)
+
+
+def test_load_message_history():
+    assert isinstance(messaging.load_message_history(user_peer), list)
+    assert isinstance(messaging.load_message_history(user_peer, 1), list)
+    assert isinstance(messaging.load_message_history(user_peer, 1, ListLoadMode.LISTLOADMODE_FORWARD), list)
+    assert isinstance(messaging.load_message_history(user_peer, 1, ListLoadMode.LISTLOADMODE_FORWARD, 10), list)
+    with raises(UnknownPeerError):
+        assert messaging.load_message_history(user_peer_invalid)
+    with raises(TypeError):
+        assert messaging.load_message_history(user_peer, text)
+        assert messaging.load_message_history(user_peer, 1, text)
+        assert messaging.load_message_history(user_peer, 1, ListLoadMode.LISTLOADMODE_FORWARD, text)

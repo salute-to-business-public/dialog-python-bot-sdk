@@ -1,8 +1,26 @@
-from typing import List
+from typing import List, Dict
 
 from dialog_api import messaging_pb2
 
-from dialog_bot_sdk.entities.media.InteractiveMediaGroup import InteractiveMediaStyle
+from dialog_bot_sdk.entities.messaging import InteractiveMediaStyle
+
+
+class InteractiveMediaLink(object):
+    """Link control class.
+
+    """
+    def __init__(self, url: str, label: str = None) -> None:
+        self.url = url
+        self.label = label
+
+    def render(self, target) -> None:
+        """Render method for link
+
+        :param target: target link
+        """
+        if self.label is not None:
+            target.label.value = self.label
+        target.url = self.url
 
 
 class InteractiveMediaButton(object):
@@ -105,6 +123,8 @@ class InteractiveMedia(object):
                 self.widget.render(target.widget.interactiveMediaButton)
             elif isinstance(self.widget, InteractiveMediaSelect):
                 self.widget.render(target.widget.interactiveMediaSelect)
+            elif isinstance(self.widget, InteractiveMediaLink):
+                self.widget.render(target.widget.interactiveMediaLink)
         if self.confirm is not None:
             result_confirm = self.confirm.render()
             target.confirm.text.value = result_confirm.text.value
@@ -120,7 +140,7 @@ class InteractiveMediaGroup(object):
 
     """
     def __init__(self, actions: List[InteractiveMedia], title: str = None, description: str = None,
-                 translations: List[str] = None) -> None:
+                 translations: Dict[str, dict] = None) -> None:
         if not isinstance(actions, list):
             raise AttributeError('Actions must be an iterable.')
 

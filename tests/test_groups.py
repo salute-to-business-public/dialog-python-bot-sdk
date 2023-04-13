@@ -1,158 +1,193 @@
-import unittest
+from dialog_api.groups_pb2 import GROUPADMINPERMISSION_EDITSHORTNAME
+from pytest import raises
+from dialog_bot_sdk.entities.groups import Group
+from dialog_bot_sdk.exceptions.exceptions import UnknownPeerError
+from dialog_bot_sdk.groups import Groups
+from tests.fixtures.client_entities import text, invalid_text, group_peer, user_peer, group_peer_invalid, \
+    user_peer_invalid, file
+from tests.fixtures.internal import manager, internal
+from tests.fixtures.server_entities import group
 
-from dialog_api import peers_pb2
-from mock import patch
-
-from dialog_bot_sdk.entities.Avatar import Avatar
-from dialog_bot_sdk.entities.Group import Group
-from dialog_bot_sdk.entities.Peer import Peer, PeerType
-from dialog_bot_sdk.entities.User import User
-from dialog_bot_sdk.utils import AsyncTask
-from tests.bot import bot
-from tests.test_classes.groups import Groups
-from tests.test_classes.media_and_files import MediaAndFiles, Put
-from tests.test_classes.search import Search
-from tests.test_classes.updates import Updates
+groups = Groups(manager, internal)
 
 
-class TestGroups(unittest.TestCase):
-    group_peer = Peer(id=0, type=PeerType.PEERTYPE_GROUP)
-    user1 = Peer(id=0, type=PeerType.PEERTYPE_PRIVATE)
-    test_file = "../dialog_bot_sdk/examples/files/example.png"
-
-    bot.internal.groups = Groups()
-    bot.internal.search = Search()
-    bot.internal.media_and_files = MediaAndFiles()
-    bot.internal.updates = Updates()
-
-    def test_create_group(self):
-        group = bot.groups.create_public_group("title", "short_name")
-        self.assertTrue(isinstance(group, AsyncTask))
-        self.assertTrue(isinstance(group.wait(), Group))
-        group = bot.groups.create_private_group("title")
-        self.assertTrue(isinstance(group, AsyncTask))
-        self.assertTrue(isinstance(group.wait(), Group))
-        group = bot.groups.create_public_channel("title", "short_name")
-        self.assertTrue(isinstance(group, AsyncTask))
-        self.assertTrue(isinstance(group.wait(), Group))
-        group = bot.groups.create_private_channel("title")
-        self.assertTrue(isinstance(group, AsyncTask))
-        self.assertTrue(isinstance(group.wait(), Group))
-
-    def test_find_group_by_short_name(self):
-        group = bot.groups.find_group_by_short_name("title")
-        self.assertTrue(isinstance(group, AsyncTask))
-        self.assertIsNone(group.wait())
-        bot.manager.add_out_peer(peers_pb2.OutPeer(id=1, access_hash=1, type=PeerType.PEERTYPE_GROUP))
-        group = bot.groups.find_group_by_short_name("short_name")
-        self.assertTrue(isinstance(group, AsyncTask))
-        self.assertTrue(isinstance(group.wait(), Group))
-
-    def test_find_group_by_id(self):
-        group = bot.groups.find_group_by_id(1)
-        self.assertTrue(isinstance(group, AsyncTask))
-        self.assertIsNone(group.wait())
-        bot.manager.add_out_peer(peers_pb2.OutPeer(id=1, access_hash=1, type=PeerType.PEERTYPE_GROUP))
-        group = bot.groups.find_group_by_id(1)
-        self.assertTrue(isinstance(group, AsyncTask))
-        self.assertTrue(isinstance(group.wait(), Group))
-
-    def test_load_members(self):
-        members = bot.groups.load_members(self.group_peer, 2)
-        self.assertTrue(isinstance(members, AsyncTask))
-        self.assertTrue(isinstance(members.wait()[0], User))
-
-    def test_kick_user(self):
-        kick = bot.groups.kick_user(self.group_peer, self.user1)
-        self.assertTrue(isinstance(kick, AsyncTask))
-        self.assertIsNone(kick.wait())
-
-    def test_invite_user(self):
-        invite = bot.groups.invite_user(self.group_peer, self.user1)
-        self.assertTrue(isinstance(invite, AsyncTask))
-        self.assertIsNone(invite.wait())
-
-    def test_set_default_group_permissions(self):
-        permissions = bot.groups.set_default_group_permissions(self.group_peer)
-        self.assertTrue(isinstance(permissions, AsyncTask))
-        self.assertIsNone(permissions.wait())
-
-    def test_set_member_permissions(self):
-        permissions = bot.groups.set_member_permissions(self.group_peer, self.user1)
-        self.assertTrue(isinstance(permissions, AsyncTask))
-        self.assertIsNone(permissions.wait())
-
-    def test_get_group_member_permissions(self):
-        permissions = bot.groups.get_group_member_permissions(self.group_peer, [self.user1])
-        self.assertTrue(isinstance(permissions, AsyncTask))
-        self.assertEqual(permissions.wait(), [])
-
-    def test_edit_group_title(self):
-        title = bot.groups.edit_group_title(self.group_peer, "title")
-        self.assertTrue(isinstance(title, AsyncTask))
-        self.assertIsNone(title.wait())
-
-    @patch('requests.put')
-    def test_edit_avatar(self, put):
-        put.return_value = Put(200)
-        avatar = bot.groups.edit_avatar(self.group_peer, self.test_file)
-        self.assertTrue(isinstance(avatar, AsyncTask))
-        self.assertTrue(isinstance(avatar.wait(), Avatar))
-        put.return_value = Put(400)
-        avatar = bot.groups.edit_avatar(self.group_peer, self.test_file)
-        self.assertTrue(isinstance(avatar, AsyncTask))
-        self.assertIsNone(avatar.wait())
-
-    def test_remove_group_avatar(self):
-        remove = bot.groups.remove_group_avatar(self.group_peer)
-        self.assertTrue(isinstance(remove, AsyncTask))
-        self.assertIsNone(remove.wait())
-
-    def test_edit_group_about(self):
-        about = bot.groups.edit_group_about(self.group_peer, "about")
-        self.assertTrue(isinstance(about, AsyncTask))
-        self.assertIsNone(about.wait())
-
-    def test_leave_group(self):
-        leave = bot.groups.leave_group(self.group_peer)
-        self.assertTrue(isinstance(leave, AsyncTask))
-        self.assertIsNone(leave.wait())
-
-    def test_make_user_admin(self):
-        admin = bot.groups.make_user_admin(self.group_peer, self.user1, None)
-        self.assertTrue(isinstance(admin, AsyncTask))
-        self.assertIsNone(admin.wait())
-
-    def test_transfer_ownership(self):
-        owner = bot.groups.transfer_ownership(self.group_peer, self.user1)
-        self.assertTrue(isinstance(owner, AsyncTask))
-        self.assertIsNone(owner.wait())
-
-    def test_get_group_invite_url(self):
-        url = bot.groups.get_group_invite_url(self.group_peer)
-        self.assertTrue(isinstance(url, AsyncTask))
-        self.assertEqual(url.wait(), "url")
-
-    def test_get_group_invite_url_base(self):
-        url = bot.groups.get_group_invite_url_base()
-        self.assertTrue(isinstance(url, AsyncTask))
-        self.assertEqual(url.wait(), "url")
-
-    def test_revoke_invite_url(self):
-        url = bot.groups.revoke_invite_url(self.group_peer)
-        self.assertTrue(isinstance(url, AsyncTask))
-        self.assertEqual(url.wait(), "url")
-
-    def test_join_group(self):
-        group = bot.groups.join_group("url")
-        self.assertTrue(isinstance(group, AsyncTask))
-        self.assertTrue(isinstance(group.wait(), Group))
-
-    def test_join_group_by_peer(self):
-        group = bot.groups.join_group_by_peer(self.group_peer)
-        self.assertTrue(isinstance(group, AsyncTask))
-        self.assertIsNone(group.wait())
+def test_create_group():
+    assert isinstance(groups.create_public_group(text, text), Group)
+    assert isinstance(groups.create_private_group(text), Group)
+    assert isinstance(groups.create_public_channel(text, text), Group)
+    assert isinstance(groups.create_private_channel(text), Group)
+    with raises(TypeError):
+        assert groups.create_public_group(invalid_text, text)
+        assert groups.create_public_group(text, invalid_text)
+        assert groups.create_private_group(invalid_text)
+        assert groups.create_public_channel(invalid_text, text)
+        assert groups.create_public_channel(text, invalid_text)
+        assert groups.create_private_channel(invalid_text)
 
 
-if __name__ == '__main__':
-    unittest.main()
+def test_find_group_by_short_name():
+    assert isinstance(groups.find_group_by_short_name(text), Group)
+    assert groups.find_group_by_short_name("123") is None
+    with raises(TypeError):
+        assert groups.create_public_group(invalid_text, "")
+
+
+def test_find_group_by_id():
+    assert isinstance(groups.find_group_by_id(group.id), Group)
+    assert groups.find_group_by_id(123).peer.id != 123
+    with raises(TypeError):
+        assert groups.find_group_by_id(text)
+
+
+def test_load_members():
+    pass
+
+
+def test_kick_user():
+    assert groups.kick_user(group_peer, user_peer) is None
+    with raises(UnknownPeerError):
+        assert groups.kick_user(group_peer_invalid, user_peer)
+        assert groups.kick_user(group_peer, user_peer_invalid)
+
+
+def test_invite_user():
+    assert groups.invite_user(group_peer, user_peer) is None
+    with raises(UnknownPeerError):
+        assert groups.invite_user(group_peer_invalid, user_peer)
+        assert groups.invite_user(group_peer, user_peer_invalid)
+
+
+def test_set_default_group_permissions():
+    assert groups.set_default_group_permissions(group_peer) is None
+    assert groups.set_default_group_permissions(group_peer, [GROUPADMINPERMISSION_EDITSHORTNAME]) is None
+    assert groups.set_default_group_permissions(group_peer, del_permissions=[GROUPADMINPERMISSION_EDITSHORTNAME]) is None
+    assert groups.set_default_group_permissions(group_peer, [GROUPADMINPERMISSION_EDITSHORTNAME],
+                                                            [GROUPADMINPERMISSION_EDITSHORTNAME]) is None
+    with raises(UnknownPeerError):
+        assert groups.set_default_group_permissions(group_peer_invalid)
+    with raises(ValueError):
+        assert groups.set_default_group_permissions(group_peer, add_permissions=["EDITSHORTNAME"])
+        assert groups.set_default_group_permissions(group_peer, del_permissions=["EDITSHORTNAME"])
+    with raises(TypeError):
+        assert groups.set_default_group_permissions(group_peer, add_permissions=1)
+        assert groups.set_default_group_permissions(group_peer, del_permissions=1)
+
+
+def test_set_member_permissions():
+    assert groups.set_member_permissions(group_peer, user_peer) is None
+    assert groups.set_member_permissions(group_peer, user_peer,
+                                                     [GROUPADMINPERMISSION_EDITSHORTNAME]) is None
+    assert groups.set_member_permissions(group_peer, user_peer, del_permissions=[
+                                                                GROUPADMINPERMISSION_EDITSHORTNAME]) is None
+    assert groups.set_member_permissions(group_peer, user_peer,
+                                                     [GROUPADMINPERMISSION_EDITSHORTNAME],
+                                                     [GROUPADMINPERMISSION_EDITSHORTNAME]) is None
+    with raises(UnknownPeerError):
+        assert groups.set_member_permissions(group_peer_invalid, user_peer)
+        assert groups.set_member_permissions(group_peer, user_peer_invalid)
+    with raises(ValueError):
+        assert groups.set_member_permissions(group_peer, user_peer, add_permissions=["EDITSHORTNAME"])
+        assert groups.set_member_permissions(group_peer, user_peer, del_permissions=["EDITSHORTNAME"])
+    with raises(TypeError):
+        assert groups.set_member_permissions(group_peer, user_peer, add_permissions=1)
+        assert groups.set_member_permissions(group_peer, user_peer, del_permissions=1)
+
+
+def test_get_group_member_permissions():
+    assert isinstance(groups.get_group_member_permissions(group_peer, [user_peer]), list)
+    with raises(UnknownPeerError):
+        assert groups.get_group_member_permissions(group_peer_invalid, [user_peer])
+        assert groups.get_group_member_permissions(group_peer, [user_peer_invalid])
+    with raises(TypeError):
+        assert groups.get_group_member_permissions(group_peer, user_peer)
+
+
+def test_edit_group_title():
+    assert groups.edit_group_title(group_peer, text) is None
+    with raises(UnknownPeerError):
+        assert groups.edit_group_title(group_peer_invalid, text)
+    with raises(TypeError):
+        assert groups.edit_group_title(group_peer, invalid_text)
+
+
+def test_edit_avatar():
+    assert groups.edit_avatar(group_peer, file) is None
+    with raises(UnknownPeerError):
+        assert groups.edit_avatar(group_peer_invalid, file)
+    with raises(OSError):
+        assert groups.edit_avatar(group_peer, invalid_text)
+    with raises(FileNotFoundError):
+        assert groups.edit_avatar(group_peer, text)
+
+
+def test_remove_group_avatar():
+    assert groups.remove_group_avatar(group_peer) is None
+    with raises(UnknownPeerError):
+        assert groups.remove_group_avatar(group_peer_invalid)
+
+
+def test_edit_group_about():
+    assert groups.edit_group_about(group_peer, text) is None
+    with raises(UnknownPeerError):
+        assert groups.edit_group_about(group_peer_invalid, text)
+    with raises(TypeError):
+        assert groups.edit_group_about(group_peer, invalid_text)
+
+
+def test_leave_group():
+    assert groups.leave_group(group_peer) is None
+    with raises(UnknownPeerError):
+        assert groups.leave_group(group_peer_invalid)
+
+
+def test_make_user_admin():
+    assert groups.make_user_admin(group_peer, user_peer, [GROUPADMINPERMISSION_EDITSHORTNAME]) is None
+    with raises(UnknownPeerError):
+        assert groups.make_user_admin(group_peer, user_peer_invalid, [GROUPADMINPERMISSION_EDITSHORTNAME])
+        assert groups.make_user_admin(group_peer_invalid, user_peer, [GROUPADMINPERMISSION_EDITSHORTNAME])
+    with raises(ValueError):
+        assert groups.make_user_admin(group_peer, user_peer, ["EDITSHORTNAME"])
+    with raises(TypeError):
+        assert groups.make_user_admin(group_peer, user_peer, 1)
+
+
+def test_transfer_ownership():
+    assert groups.transfer_ownership(group_peer, user_peer) is None
+    with raises(UnknownPeerError):
+        assert groups.transfer_ownership(group_peer, user_peer_invalid)
+        assert groups.transfer_ownership(group_peer_invalid, user_peer)
+
+
+def test_get_group_invite_url():
+    assert isinstance(groups.get_group_invite_url(group_peer), str)
+    with raises(UnknownPeerError):
+        assert groups.get_group_invite_url(group_peer_invalid)
+
+
+def test_get_group_invite_url_base():
+    assert isinstance(groups.get_group_invite_url_base(), str)
+
+
+def test_revoke_invite_url():
+    assert isinstance(groups.revoke_invite_url(group_peer), str)
+    with raises(UnknownPeerError):
+        assert groups.revoke_invite_url(group_peer_invalid)
+
+
+def test_join_group():
+    assert isinstance(groups.join_group(text), Group)
+    with raises(TypeError):
+        assert groups.join_group(invalid_text)
+
+
+def test_join_group_by_peer():
+    assert groups.join_group_by_peer(group_peer) is None
+    with raises(UnknownPeerError):
+        assert groups.join_group_by_peer(group_peer_invalid)
+
+
+def test_delete_group():
+    assert groups.delete_group(group_peer.id) is None
+    assert groups.delete_group(group_peer) is None
+    with raises(UnknownPeerError):
+        assert groups.delete_group(group_peer_invalid)
